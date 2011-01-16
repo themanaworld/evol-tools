@@ -54,10 +54,10 @@ public class Process {
     }
 
     private static int[] resolveBounds(Rectangle in, boolean warp) {
-        int x = in.x / 32;
-        int y = in.y / 32;
-        int width = in.width / 32;
-        int height = in.height / 32;
+        int x = Math.round((float)in.x / (float)32);
+        int y = Math.round((float)in.y / (float)32);
+        int width = Math.round((float)in.width / (float)32);
+        int height = Math.round((float)in.height / (float)32);
         if (!warp) {
             if (width > 1) --width;
             if (height > 1) --height;
@@ -81,7 +81,7 @@ public class Process {
         if (y < 0) return;
         int[] shape = resolveBounds(bounds, true);
         System.out.printf("Usable warp found: %s\n", name);
-        out.printf("%s.gat,%d,%d\twarp\t%s\t%d,%d,%s.gat,%d,%d\n", map, shape[0], shape[1], name, shape[2], shape[3], dest, x / 32, y / 32);
+        out.printf("%s.gat,%d,%d\twarp\t%s\t%d,%d,%s.gat,%d,%d\n", map, shape[0], shape[1], name, shape[2], shape[3], dest, Math.round((float)x / (float)32), Math.round((float)y / (float)32));
     }
 
     private static int handleMob(PrintWriter out, String map, String name, Rectangle bounds, Properties props) {
