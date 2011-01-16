@@ -1,0 +1,11 @@
+# temp files
+*.xml~
+*.py~
+*.txt~
+*.conf~
+
+# java converter
+tmwcon/converter.jar
+tmwcon/server-data/
+tmwcon/summary.txt
+tmwcon/tmwdata
