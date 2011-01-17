@@ -11,3 +11,8 @@ tmwcon/summary.txt
 tmwcon/tmwdata
 tmwcon/build
 
+# updates
+update/files
+update/upload
+!update/adler32.c
+update/adler32
