@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (C) 2011  Evol Online
+
 dir=`pwd`
 
 rm adler32
