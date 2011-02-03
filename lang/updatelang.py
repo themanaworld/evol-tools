@@ -11,7 +11,7 @@ defaultLang = "en"
 filt = re.compile(".+[.]txt", re.IGNORECASE)
 
 allStrings = set()
-strre1 = re.compile("[\t +]l[(][\"](?P<str>[^\"]+)[\"][)]")
+strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
 
 langFiles = dict() 
