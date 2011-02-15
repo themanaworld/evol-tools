@@ -11,7 +11,8 @@ defaultLang = "en"
 filt = re.compile(".+[.]txt", re.IGNORECASE)
 
 allStrings = set()
-strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"][)]")
+strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
+#strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
 
 langFiles = dict() 
@@ -76,7 +77,8 @@ def addMissingLines():
 		oldFile = oldLangFiles[trans]
 		for str in newFile:
 			if str not in allStrings:
-				oldFile[str] = newFile[str]
+				if newFile[str] != "":
+					oldFile[str] = newFile[str]
 		for str in oldFile:
 			if str in newFile:
 				del newFile[str]
@@ -123,8 +125,9 @@ def writeFile(dir, texts):
 			f.write (line[1] + "\n\n")
 
 
-collectStrings("../../serverdata/npc")
-loadFiles("../../serverdata/langs")
+collectStrings("../../privserverdata/npc")
+#here need collect names from item_db.txt
+loadFiles("../../privserverdata/langs")
 addMissingLines()
 sorting()
-saveFiles("../../serverdata/langs")
+saveFiles("../../privserverdata/langs")
