@@ -12,14 +12,17 @@ filt = re.compile(".+[.]txt", re.IGNORECASE)
 
 allStrings = set()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
-#strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
+strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
+itemsplit = re.compile(",")
 
 langFiles = dict() 
 oldLangFiles = dict()
 langs = set()
+itemNamesByName = dict()
 
 def collectStrings(parentDir):
+	global itemNamesByName
 	files = os.listdir(parentDir) 
 	for file1 in files:
 		if file1[0] == ".":
@@ -37,7 +40,11 @@ def collectStrings(parentDir):
 					m = strre2.search(line)
 					if m is not None:
 						 allStrings.add(m.group("str"))
-
+					m = strre3.findall(line)
+					if len(m) > 0:
+						for str in m:
+							allStrings.add(itemNamesByName[str.lower()])
+							
 
 def loadFiles(dir):
 	with open(dir + "/langs.txt", "r") as f:
@@ -125,8 +132,18 @@ def writeFile(dir, texts):
 			f.write (line[1] + "\n\n")
 
 
+def loadItemDb(dir):
+	global itemNamesByName
+	with open(dir + "/item_db.txt", "r") as f:
+		for line in f:
+			rows = itemsplit.split(line)
+			if len(rows) < 5:
+				continue
+			itemNamesByName[rows[1].lower().strip()] = rows[2].strip()
+
+
+loadItemDb("../../privserverdata/db")
 collectStrings("../../privserverdata/npc")
-#here need collect names from item_db.txt
 loadFiles("../../privserverdata/langs")
 addMissingLines()
 sorting()
