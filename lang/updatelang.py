@@ -53,16 +53,21 @@ def loadFiles(dir):
 
 	for file in langs:
 		#print dir + "/lang_" + file + ".txt"
-		langFiles[file] = parseFile(dir + "/lang_" + file + ".txt")
-		oldLangFiles[file] = parseFile(dir + "/lang_" + file + ".old")
+		langFiles[file] = parseFile(dir + "/lang_" + file + ".txt", True)
+		oldLangFiles[file] = parseFile(dir + "/lang_" + file + ".old", False)
 
-def parseFile(name):
+def parseFile(name, readFirstLine):
 	trans = dict()
+	firstLine = None
 	if os.path.exists(name):
 		with open(name, "r") as f:
 			line1 = "";
 			line2 = "";
 			for line in f:
+				if readFirstLine is True and firstLine is None:
+					firstLine = line
+					continue
+
 				if (line == ""):
 					line1 = ""
 					line2 = ""
@@ -75,13 +80,13 @@ def parseFile(name):
 				trans[line1] = line2
 				line1 = ""
 				line2 = ""
-	return trans
+	return (trans, firstLine)
 
 
 def addMissingLines():
 	for trans in langFiles:
-		newFile = langFiles[trans]
-		oldFile = oldLangFiles[trans]
+		newFile = langFiles[trans][0]
+		oldFile = oldLangFiles[trans][0]
 		for str in newFile:
 			if str not in allStrings:
 				if newFile[str] != "":
@@ -93,7 +98,7 @@ def addMissingLines():
 
 	for str in allStrings:
 		for trans in langFiles:
-			newFile = langFiles[trans]
+			newFile = langFiles[trans][0]
 			if str not in newFile:
 				if trans == defaultLang:
 					newFile[str] = str
@@ -113,12 +118,12 @@ def sorting():
 
 def sortDict(adict):
 	d2 = [] 
-	keys = adict.keys()
+	keys = adict[0].keys()
 	keys.sort()
 
 	for key in keys:
-		d2.append ((key, adict[key]))
-	return d2
+		d2.append ((key, adict[0][key]))
+	return (d2, adict[1])
 
 def saveFiles(dir):
 	for trans in langFiles:
@@ -127,7 +132,9 @@ def saveFiles(dir):
 
 def writeFile(dir, texts):
 	with open (dir, "w") as f:
-		for line in texts:
+		if texts[1] is not None:
+			f.write(texts[1])
+		for line in texts[0]:
 			f.write (line[0] + "\n")
 			f.write (line[1] + "\n\n")
 
