@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 #
 # Copyright (C) 2011  Evol Online
+# Author: Andrei Karas (4144)
 
 import os
 import re

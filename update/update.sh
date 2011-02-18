@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Copyright (C) 2010-2011  Evol Online
+# Author: Andrei Karas (4144)
 
 dir=`pwd`
 
