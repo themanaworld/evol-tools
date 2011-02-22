@@ -90,8 +90,8 @@ def addMissingLines():
 		oldFile = oldLangFiles[trans][0]
 		for str in newFile:
 			if str not in allStrings:
-				if newFile[str] != "":
-					oldFile[str] = newFile[str]
+#				if newFile[str] != "":
+				oldFile[str] = newFile[str]
 		for str in oldFile:
 			if str in newFile:
 				del newFile[str]
@@ -128,16 +128,17 @@ def sortDict(adict):
 
 def saveFiles(dir):
 	for trans in langFiles:
-		writeFile (dir + "/lang_" + trans + ".txt", langFiles[trans])
-		writeFile (dir + "/lang_" + trans + ".old", oldLangFiles[trans])
+		writeFile (dir + "/lang_" + trans + ".txt", langFiles[trans], False)
+		writeFile (dir + "/lang_" + trans + ".old", oldLangFiles[trans], True)
 
-def writeFile(dir, texts):
+def writeFile(dir, texts, isold):
 	with open (dir, "w") as f:
 		if texts[1] is not None:
 			f.write(texts[1])
 		for line in texts[0]:
-			f.write (line[0] + "\n")
-			f.write (line[1] + "\n\n")
+			if not isold or (line[1] is not None and len(line[1]) > 0):
+				f.write (line[0] + "\n")
+				f.write (line[1] + "\n\n")
 
 
 def loadItemDb(dir):
@@ -149,10 +150,11 @@ def loadItemDb(dir):
 				continue
 			itemNamesByName[rows[1].lower().strip()] = rows[2].strip()
 
+rootPath = "../../gittorious/serverdata"
 
-loadItemDb("../../privserverdata/db")
-collectStrings("../../privserverdata/npc")
-loadFiles("../../privserverdata/langs")
+loadItemDb(rootPath + "/db")
+collectStrings(rootPath + "/npc")
+loadFiles(rootPath + "/langs")
 addMissingLines()
 sorting()
-saveFiles("../../privserverdata/langs")
+saveFiles(rootPath + "/langs")
