@@ -75,13 +75,23 @@ public class Process {
         if (out == null) return;
         String dest = getProp(props, "dest_map", null);
         if (dest == null) return;
-        int x = getProp(props, "dest_x", -1);
-        if (x < 0) return;
-        int y = getProp(props, "dest_y", -1);
-        if (y < 0) return;
+        int x = getProp(props, "dest_tile_x", -1);
+        if (x < 0)
+        {
+            x = getProp(props, "dest_x", -1);
+            if (x < 0) return;
+            x = Math.round((float)x / (float)32);
+        }
+        int y = getProp(props, "dest_tile_y", -1);
+        if (y < 0)
+        {
+            y = getProp(props, "dest_y", -1);
+            if (y < 0) return;
+            y = Math.round((float)y / (float)32);
+        }
         int[] shape = resolveBounds(bounds, true);
         System.out.printf("Usable warp found: %s\n", name);
-        out.printf("%s.gat,%d,%d\twarp\t%s\t%d,%d,%s.gat,%d,%d\n", map, shape[0], shape[1], name, shape[2], shape[3], dest, Math.round((float)x / (float)32), Math.round((float)y / (float)32));
+        out.printf("%s.gat,%d,%d\twarp\t%s\t%d,%d,%s.gat,%d,%d\n", map, shape[0], shape[1], name, shape[2], shape[3], dest, x, y);
     }
 
     private static int handleMob(PrintWriter out, String map, String name, Rectangle bounds, Properties props) {
