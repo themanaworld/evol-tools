@@ -84,6 +84,49 @@ def parseFile(name, readFirstLine):
 	return (trans, firstLine)
 
 
+def loadPoFiles(podir):
+    files = os.listdir(podir)
+    for name in files:
+	    parsePoFile(name[:-3], podir + "/" + name)
+
+
+def parsePoFile(name, path):
+	langFile = langFiles[name][0]
+	with open(path, "r") as f:
+		flag = 0
+		line1 = ""
+		line2 = ""
+		for line in f:
+			if flag == 0:
+				idx = line.find ("msgid ")
+				if idx == 0:
+					line2 = ""
+					line1 = line[len("msgid "):]
+					line1 = line1[1:len(line1) - 2]
+					flag = 1
+			elif flag == 1:
+				idx = line.find ("msgstr ")
+				if idx == 0:
+					line2 = line[len("msgstr "):]
+					line2 = line2[1:len(line2) - 2]
+					flag = 2
+			if line == "\n":
+				if flag == 2:
+					if line1 != "":
+						if line1 in langFile:
+							langFile[line1] = line2
+					flag = 0
+
+			idx = line.find ("\"")
+			if idx == 0:
+				line = line[1:len(line) - 2]
+				if flag == 1:
+					line1 = line1 + line
+				elif flag == 2:
+					line2 = line2 + line
+
+
+
 def addMissingLines():
 	for trans in langFiles:
 		newFile = langFiles[trans][0]
@@ -156,5 +199,6 @@ loadItemDb(rootPath + "/db")
 collectStrings(rootPath + "/npc")
 loadFiles(rootPath + "/langs")
 addMissingLines()
+loadPoFiles("new");
 sorting()
 saveFiles(rootPath + "/langs")
