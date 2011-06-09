@@ -8,6 +8,15 @@
 |      Copyleft Vasily_Makarov 2011       |
 |                                         |
 \*=======================================*/
+
+#include <stdlib.h>
+#include <gtk/gtk.h>
+#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksourcelanguagemanager.h>
+#include <ibusxml.h>
+#include <cairo.h>
+#include <glib/gi18n.h>
+
 typedef struct {
   XMLNode *node;
   GList *next;
@@ -29,6 +38,38 @@ typedef struct {
 static imageset_info *imageset_info_new() {
   return g_new0(imageset_info, 1);
 }
+
+
+const int MIN_WIDTH = 600;
+const int MIN_HEIGHT = 600;
+const int SPRITE_WIDTH_DEFAULT = 64;
+const int SPRITE_HEIGHT_DEFAULT = 64;
+const int GRID_SIZE = 32;
+
+int sprite_width = 64, sprite_height = 64;
+int spriteset_width, spriteset_height;
+
+GtkWidget *win = NULL;
+GtkWidget *darea = NULL;
+GtkWidget *datafoldcbutton = NULL;
+GtkWidget *xmlfcbutton = NULL;
+GtkWidget *xmlfsbutton = NULL;
+GtkWidget *xmlfobutton = NULL;
+GtkWidget *imagesetscombobox = NULL;
+GtkWidget *actionscombobox = NULL;
+GtkWidget *animationscombobox = NULL;
+
+GdkPixbuf *spriteset = NULL;
+
+GList *imagesets = NULL;
+GList *actions = NULL;
+GList *animations = NULL;
+
+XMLNode *root = NULL;
+imageset_info *imageset = NULL;
+
+sprite_info *current_sprite;
+guint running_animation = 0;
 
 static gboolean show_animation_by_sub_nodes (GList *sub_nodes);
 static gchar *markup_bold(gchar *str);
