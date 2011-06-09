@@ -523,16 +523,18 @@ void set_up_interface() {
   g_signal_connect(animationscombobox, "changed", animations_combo_box_changed_handler, NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), animationscombobox, TRUE, TRUE, 0);
 
-  vbox = gtk_vbox_new(TRUE, 0);
+  vbox = gtk_vpaned_new();
   gtk_box_pack_end(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
 
   darea = gtk_drawing_area_new();
-  gtk_box_pack_start(GTK_BOX(vbox), darea, TRUE, TRUE, 0);
+  gtk_paned_pack1(vbox, darea, FALSE, FALSE);
+  gtk_widget_set_size_request(darea, -1, 120);
   g_signal_connect(darea, "expose-event", on_expose_event, NULL);
 
   text = gtk_source_view_new_with_buffer(sbuf);
   gtk_source_view_set_show_line_numbers(text, TRUE);
-  gtk_box_pack_start(GTK_BOX(vbox), text, TRUE, TRUE, 0);
+  gtk_paned_pack2(vbox, text, TRUE, FALSE);
+  gtk_widget_set_size_request(text, -1, 50);
 
   gtk_widget_show_all(win);
   gtk_widget_show_all(text);
