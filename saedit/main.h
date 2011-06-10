@@ -23,7 +23,9 @@ const int SPRITE_WIDTH_DEFAULT = 64;
 const int SPRITE_HEIGHT_DEFAULT = 64;
 const int GRID_SIZE = 32;
 const gchar *BACKGROUNDS_DIR = "backgrounds";
-const gchar *ICON_PATH = "icon.svg";
+const gchar *ICON_FILE = "icon.svg";
+const gchar *CONFIG_FILE = "/saedit/config.ini";
+const gchar *FOLDER_POSTFIX = "/...";
 
 typedef struct {
   XMLNode *node;
@@ -111,3 +113,5 @@ static void show_imageset_window();
 static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
 static cairo_surface_t *get_grid_surface(int w, int h);
 static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data);
+static void load_config();
+static void save_config_and_quit();

@@ -448,7 +448,7 @@ void set_up_interface() {
   gtk_window_set_position(GTK_WINDOW(win), GTK_WIN_POS_CENTER);
   gtk_window_set_icon(GTK_WINDOW(win), icon);
   gtk_widget_realize(win);
-  g_signal_connect(win, "destroy", gtk_main_quit, NULL);
+  g_signal_connect(win, "destroy", G_CALLBACK(save_config_and_quit), NULL);
   gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
 
   vbox = gtk_vbox_new(FALSE, 0);
@@ -490,7 +490,7 @@ void set_up_interface() {
   datafoldcbutton = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), datafoldcbutton, TRUE, TRUE, 0);
   gtk_file_chooser_set_action(GTK_FILE_CHOOSER(datafoldcbutton), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  g_signal_connect(datafoldcbutton, "file-set", G_CALLBACK(data_folder_set_handler), NULL);
+  g_signal_connect(datafoldcbutton, "selection-changed", G_CALLBACK(data_folder_set_handler), NULL);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
@@ -589,16 +589,37 @@ void show_imageset_window() {
   gtk_widget_show_all(iwin);
 }
 
-int main (int argc, char *argv[]) {
+void load_config() {
+  GKeyFile *key_file = g_key_file_new();
+  if (g_key_file_load_from_file(key_file, g_strjoin(NULL, g_get_user_config_dir(), CONFIG_FILE, NULL), G_KEY_FILE_NONE, NULL) &&
+      g_key_file_has_group(key_file, "General") &&
+      g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL)) {
+      } else {
+        g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, g_get_user_data_dir(), FOLDER_POSTFIX, NULL));
+      }
+  gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(datafoldcbutton), g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL));
+  g_key_file_free(key_file);
+}
+
+void save_config_and_quit() {
+  GKeyFile *key_file = g_key_file_new();
+  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(datafoldcbutton)), FOLDER_POSTFIX, NULL));
+  g_file_set_contents(g_strjoin(NULL, g_get_user_config_dir(), CONFIG_FILE, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
+  g_key_file_free(key_file);
+  gtk_main_quit();
+}
+
+int main(int argc, char *argv[]) {
 
   gtk_init(&argc, &argv);
 
-  icon = gdk_pixbuf_new_from_file(ICON_PATH, NULL);
+  icon = gdk_pixbuf_new_from_file(ICON_FILE, NULL);
 
   current_sprite = sprite_info_new(-1, 0, 0);
   imageset = imageset_info_new();
 
   set_up_interface();
+  load_config();
 
   show_imageset_window();
 
