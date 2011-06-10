@@ -38,6 +38,9 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   }
   cairo_set_source_surface(cr, gridsurf, GRID_SIZE, GRID_SIZE);
   cairo_paint(cr);
+  cairo_destroy(scr);
+  cairo_destroy(cr);
+  cairo_surface_destroy(gridsurf);
   return surface;
 }
 
@@ -49,7 +52,8 @@ gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data
 
   cairo_t *cr = gdk_cairo_create(widget->window);
 
-  cairo_set_source_surface(cr, get_grid_surface(w, h), width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
+  cairo_surface_t *surface = get_grid_surface(w, h);
+  cairo_set_source_surface(cr, surface, width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
   cairo_paint(cr);
 
   GdkPixbuf *pbuf = get_sprite_by_index(current_sprite->index);
@@ -58,6 +62,7 @@ gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data
   cairo_paint(cr);
 
   cairo_destroy(cr);
+  cairo_surface_destroy(surface);
   return FALSE;
 }
 
