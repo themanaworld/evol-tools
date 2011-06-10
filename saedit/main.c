@@ -27,6 +27,7 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   cairo_t *scr = cairo_create(gridsurf);
 
   cairo_set_line_width(scr, 1);
+  cairo_set_source_rgba(scr, 0.5, 0.5, 0.5, 1);
 
   for (x = 0; x < w; x++)
     for (y = 0; y < h; y++) {
@@ -101,10 +102,6 @@ void free_animations() {
 
 void save_to_xml_file(GtkButton *button, gpointer buffer) {
   g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xmlfcbutton)), buffer, sizeof(buffer), NULL);
-}
-
-void xml_file_set_handler(GtkFileChooserButton *widget, gpointer data)  {
-  gtk_widget_set_sensitive(xmlfobutton, TRUE);
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
@@ -484,18 +481,12 @@ void set_up_interface() {
 
   xmlfcbutton = gtk_file_chooser_button_new(_("XML source file"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), xmlfcbutton, TRUE, TRUE, 0);
-
-  xmlfobutton = gtk_button_new_from_stock(GTK_STOCK_OPEN);
-  gtk_widget_set_sensitive(xmlfobutton, FALSE);
-  gtk_box_pack_start(GTK_BOX(vbbox), xmlfobutton, TRUE, TRUE, 0);
-  g_signal_connect(xmlfobutton, "clicked", G_CALLBACK(open_xml_file), sbuf);
+  g_signal_connect(xmlfcbutton, "file-set", G_CALLBACK(open_xml_file), sbuf);
 
   xmlfsbutton = gtk_button_new_from_stock(GTK_STOCK_SAVE);
   gtk_widget_set_sensitive(xmlfsbutton, FALSE);
   gtk_box_pack_start(GTK_BOX(vbbox), xmlfsbutton, TRUE, TRUE, 0);
   g_signal_connect(xmlfsbutton, "clicked", G_CALLBACK(save_to_xml_file), sbuf);
-
-  g_signal_connect(xmlfcbutton, "file-set", G_CALLBACK(xml_file_set_handler), NULL);
 
   button = gtk_button_new_with_label("Parse XML buffer");
   gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
