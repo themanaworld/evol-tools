@@ -8,6 +8,7 @@
 |      Copyleft Vasily_Makarov 2011       |
 |                                         |
 \*=======================================*/
+
 #include "main.h";
 
 sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
@@ -16,6 +17,7 @@ sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
   res->offsetX = offsetX;
   res->offsetY = offsetY;
 }
+
 gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
   int width = widget->allocation.width,
       height = widget->allocation.height;
@@ -58,6 +60,7 @@ void open_xml_file(GtkButton *button, gpointer buffer) {
 }
 
 void free_imagesets() {
+  spriteset = NULL;
   imageset = imageset_info_new();
   imagesets = NULL;
   gtk_list_store_clear(gtk_combo_box_get_model(imagesetscombobox));
@@ -396,7 +399,7 @@ void set_up_interface() {
   GtkWidget *menu = NULL;
 
   GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
-  GtkSourceBuffer *sbuf = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
+  sbuf = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
 
   win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
@@ -410,6 +413,15 @@ void set_up_interface() {
 
   menubar = gtk_menu_bar_new();
   gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
+
+  menu = gtk_menu_new();
+  menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
+  g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  menuitem = gtk_menu_item_new_with_label(_("View"));
+  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
 
   menu = gtk_menu_new();
   menuitem = gtk_menu_item_new_with_label(_("About"));
@@ -501,6 +513,44 @@ void set_up_interface() {
   gtk_widget_show_all(text);
 }
 
+gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index) {
+  gchar buf[10];
+  gint len = g_sprintf(buf, "%d", index);
+  gtk_text_buffer_insert_at_cursor(GTK_TEXT_BUFFER(sbuf), buf, len);
+}
+
+void show_imageset_window() {
+  if (spriteset == NULL) return;
+  GtkWidget *iwin = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
+  gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);
+  gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
+  gtk_widget_realize(win);
+  int w = spriteset_width / sprite_width;
+  int h = spriteset_height / sprite_height;
+
+  GtkWidget *vbox = gtk_vbox_new(TRUE, 0);
+  GtkWidget *hbox = NULL;
+  GtkWidget *image = NULL;
+  GtkWidget *event_box = NULL;
+
+  int x, y;
+  for (y = 0; y < h; y++) {
+    hbox = gtk_hbox_new(TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
+    for (x = 0; x < w; x++) {
+      event_box = gtk_event_box_new();
+      g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event), w * y + x);
+      gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
+      image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x));
+      gtk_widget_add_events(image, GDK_BUTTON_PRESS_MASK);
+      gtk_container_add(GTK_CONTAINER(event_box), image);
+    }
+  }
+  gtk_container_add(GTK_CONTAINER(iwin), vbox);
+  gtk_widget_show_all(iwin);
+}
+
 int main (int argc, char *argv[]) {
 
   gtk_init(&argc, &argv);
@@ -509,6 +559,8 @@ int main (int argc, char *argv[]) {
   imageset = imageset_info_new();
 
   set_up_interface();
+
+  show_imageset_window();
 
   gtk_main();
 

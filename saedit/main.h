@@ -39,7 +39,6 @@ static imageset_info *imageset_info_new() {
   return g_new0(imageset_info, 1);
 }
 
-
 const int MIN_WIDTH = 600;
 const int MIN_HEIGHT = 600;
 const int SPRITE_WIDTH_DEFAULT = 64;
@@ -58,6 +57,7 @@ GtkWidget *xmlfobutton = NULL;
 GtkWidget *imagesetscombobox = NULL;
 GtkWidget *actionscombobox = NULL;
 GtkWidget *animationscombobox = NULL;
+GtkSourceBuffer *sbuf = NULL;
 
 GdkPixbuf *spriteset = NULL;
 
@@ -101,3 +101,5 @@ static void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer us
 static void parse_xml_buffer(GtkWidget *button, gpointer buffer);
 static void set_up_interface();
 static void show_about_dialog();
+static void show_imageset_window();
+static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
