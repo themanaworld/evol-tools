@@ -42,7 +42,7 @@ gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data
 }
 
 gchar *markup_bold(gchar *str) {
-  gchar buffer[255];
+  gchar *buffer[255];
   g_sprintf(buffer, "<b>%s</b>", str);
   return buffer;
 }
