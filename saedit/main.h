@@ -62,6 +62,7 @@ GtkWidget *win = NULL;
 GtkWidget *darea = NULL;
 GtkWidget *data_folder_chooser_button = NULL;
 GtkWidget *xml_file_chooser_button = NULL;
+GtkWidget *xml_file_open_button = NULL;
 GtkWidget *xml_file_save_button = NULL;
 GtkWidget *imagesets_combo_box = NULL;
 GtkWidget *actions_combo_box = NULL;

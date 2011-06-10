@@ -79,6 +79,7 @@ void format_src_string(gchar *src) {
 }
 
 void open_xml_file(GtkButton *button, gpointer buffer) {
+  gtk_widget_set_sensitive(xml_file_open_button, TRUE);
   gchar *buf;
   size_t len;
   g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
@@ -499,6 +500,11 @@ void set_up_interface() {
   xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
   g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), sbuf);
+
+  xml_file_open_button = gtk_button_new_from_stock(GTK_STOCK_OPEN);
+  gtk_widget_set_sensitive(xml_file_open_button, FALSE);
+  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_open_button, TRUE, TRUE, 0);
+  g_signal_connect(xml_file_open_button, "clicked", G_CALLBACK(open_xml_file), sbuf);
 
   xml_file_save_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
   gtk_widget_set_sensitive(xml_file_save_button, FALSE);
