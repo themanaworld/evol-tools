@@ -402,7 +402,6 @@ void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
     show_wrong_source_buffer_dialog();
     return;
   }
-  set_up_imageset_by_node(imagesets->data);
 }
 
 void show_about_dialog() {
