@@ -44,7 +44,7 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   return surface;
 }
 
-gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
+gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
   int width = widget->allocation.width,
       height = widget->allocation.height;
 
@@ -58,7 +58,7 @@ gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data
 
   GdkPixbuf *pbuf = get_sprite_by_index(current_sprite->index);
   if (pbuf == NULL) return FALSE;
-  gdk_cairo_set_source_pixbuf(cr, pbuf, width/2 - sprite_width/2 + current_sprite->offsetX + imageset->offsetX, height/2 - sprite_height/2 + current_sprite->offsetY + imageset->offsetY);
+  gdk_cairo_set_source_pixbuf(cr, pbuf, width/2 - sprite_width/2 + offsetX + current_sprite->offsetX + imageset->offsetX, height/2 - sprite_height/2 + offsetY + current_sprite->offsetY + imageset->offsetY);
   cairo_paint(cr);
 
   cairo_destroy(cr);
@@ -399,6 +399,16 @@ void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
     show_wrong_source_buffer_dialog();
     return;
   }
+
+  offsetX = 0;
+  offsetY = 0;
+  gchar *name_attr = xml_node_get_attr_value(root, "name");
+  gchar *action_attr = xml_node_get_attr_value(root, "action");
+  if (name_attr != NULL && action_attr != NULL)
+    if (g_strcmp0(name_attr, "player") == 0 &&
+        g_strcmp0(action_attr, "stand") == 0)
+          offsetY = -16;
+
   if (!set_up_imagesets(root)) {
     show_wrong_source_buffer_dialog();
     return;
@@ -527,7 +537,7 @@ void set_up_interface() {
   darea = gtk_drawing_area_new();
   gtk_paned_pack1(GTK_PANED(vbox), darea, FALSE, FALSE);
   gtk_widget_set_size_request(darea, -1, 120);
-  g_signal_connect(darea, "expose-event", G_CALLBACK(on_expose_event), NULL);
+  g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), NULL);
 
   text = gtk_source_view_new_with_buffer(sbuf);
   gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);

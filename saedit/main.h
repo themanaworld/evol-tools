@@ -53,6 +53,7 @@ static imageset_info *imageset_info_new() {
 
 int sprite_width = 64, sprite_height = 64;
 int spriteset_width, spriteset_height;
+int offsetX = 0, offsetY = 0;
 
 GtkWidget *win = NULL;
 GtkWidget *darea = NULL;
@@ -106,3 +107,4 @@ static void show_about_dialog();
 static void show_imageset_window();
 static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
 static cairo_surface_t *get_grid_surface(int w, int h);
+static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data);
