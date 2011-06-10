@@ -47,6 +47,7 @@ typedef struct {
 static imageset_info *imageset_info_new() {
   imageset_info *res = g_new0(imageset_info, 1);
   res->ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
+  gdk_pixbuf_fill(res->ground, 0x00000000);
   return res;
 }
 
