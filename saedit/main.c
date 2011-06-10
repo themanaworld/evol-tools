@@ -81,36 +81,36 @@ void format_src_string(gchar *src) {
 void open_xml_file(GtkButton *button, gpointer buffer) {
   gchar *buf;
   size_t len;
-  g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xmlfcbutton)), &buf, &len, NULL);
+  g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
   gtk_text_buffer_set_text((GtkTextBuffer *)buffer, buf, len);
-  gtk_widget_set_sensitive(xmlfsbutton, TRUE);
+  gtk_widget_set_sensitive(xml_file_save_button, TRUE);
 }
 
 void free_imagesets() {
   imageset = imageset_info_new();
   imagesets = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesetscombobox))));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesets_combo_box))));
 }
 
 void free_actions() {
   actions = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(actionscombobox))));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(actions_combo_box))));
 }
 
 void free_animations() {
   animations = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animationscombobox))));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animations_combo_box))));
   g_source_remove(running_animation);
   running_animation = 0;
   set_sprite_by_index(0);
 }
 
 void save_to_xml_file(GtkButton *button, gpointer buffer) {
-  g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xmlfcbutton)), buffer, sizeof(buffer), NULL);
+  g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), buffer, sizeof(buffer), NULL);
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
-  gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xmlfcbutton), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
+  gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xml_file_chooser_button), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
 }
 
 void show_wrong_source_buffer_dialog() {
@@ -178,7 +178,7 @@ void set_up_actions_by_imageset_name(gchar *imageset_name) {
     } else
       g_list_append(actions, list->data);
     node = list->data;
-    gtk_combo_box_append_text(GTK_COMBO_BOX(actionscombobox), xml_node_get_attr_value(node, "name"));
+    gtk_combo_box_append_text(GTK_COMBO_BOX(actions_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
 }
@@ -199,12 +199,12 @@ gboolean set_up_imagesets(const XMLNode *root) {
     } else
       g_list_append(imagesets, list->data);
     node = list->data;
-    gtk_combo_box_append_text(GTK_COMBO_BOX(imagesetscombobox), xml_node_get_attr_value(node, "name"));
+    gtk_combo_box_append_text(GTK_COMBO_BOX(imagesets_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (imagesets == NULL)
     return FALSE;
-  gtk_combo_box_set_active(GTK_COMBO_BOX(imagesetscombobox), 0);
+  gtk_combo_box_set_active(GTK_COMBO_BOX(imagesets_combo_box), 0);
   return TRUE;
 }
 
@@ -309,7 +309,7 @@ gboolean set_up_action_by_name(const gchar *name) {
     XMLNode *node = list->data;
     gchar *direction = xml_node_get_attr_value(node, "direction");
     if (direction != NULL) {
-      gtk_combo_box_append_text(GTK_COMBO_BOX(animationscombobox), direction);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(animations_combo_box), direction);
       was_direction = TRUE;
     }
     list = list->next;
@@ -356,7 +356,7 @@ void set_up_imageset_by_node(XMLNode *node) {
 
   gchar *src = xml_node_get_attr_value(imageset->node, "src");
   format_src_string(src);
-  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(datafoldcbutton));
+  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
   gchar path[255];
   g_sprintf(path, "%s/%s", datapath, src);
 
@@ -487,23 +487,23 @@ void set_up_interface() {
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Clientdata folder")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  datafoldcbutton = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
-  gtk_box_pack_start(GTK_BOX(vbbox), datafoldcbutton, TRUE, TRUE, 0);
-  gtk_file_chooser_set_action(GTK_FILE_CHOOSER(datafoldcbutton), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  g_signal_connect(datafoldcbutton, "selection-changed", G_CALLBACK(data_folder_set_handler), NULL);
+  data_folder_chooser_button = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
+  gtk_box_pack_start(GTK_BOX(vbbox), data_folder_chooser_button, TRUE, TRUE, 0);
+  gtk_file_chooser_set_action(GTK_FILE_CHOOSER(data_folder_chooser_button), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+  g_signal_connect(data_folder_chooser_button, "selection-changed", G_CALLBACK(data_folder_set_handler), NULL);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  xmlfcbutton = gtk_file_chooser_button_new(_("XML source file"), 0);
-  gtk_box_pack_start(GTK_BOX(vbbox), xmlfcbutton, TRUE, TRUE, 0);
-  g_signal_connect(xmlfcbutton, "file-set", G_CALLBACK(open_xml_file), sbuf);
+  xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
+  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
+  g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), sbuf);
 
-  xmlfsbutton = gtk_button_new_from_stock(GTK_STOCK_SAVE);
-  gtk_widget_set_sensitive(xmlfsbutton, FALSE);
-  gtk_box_pack_start(GTK_BOX(vbbox), xmlfsbutton, TRUE, TRUE, 0);
-  g_signal_connect(xmlfsbutton, "clicked", G_CALLBACK(save_to_xml_file), sbuf);
+  xml_file_save_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
+  gtk_widget_set_sensitive(xml_file_save_button, FALSE);
+  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_save_button, TRUE, TRUE, 0);
+  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), sbuf);
 
   button = gtk_button_new_with_label("Parse XML buffer");
   gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
@@ -513,25 +513,25 @@ void set_up_interface() {
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  imagesetscombobox = gtk_combo_box_new_text();
-  g_signal_connect(imagesetscombobox, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), imagesetscombobox, TRUE, TRUE, 0);
+  imagesets_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), imagesets_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Actions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  actionscombobox = gtk_combo_box_new_text();
-  g_signal_connect(actionscombobox, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), actionscombobox, TRUE, TRUE, 0);
+  actions_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), actions_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Directions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  animationscombobox = gtk_combo_box_new_text();
-  g_signal_connect(animationscombobox, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), animationscombobox, TRUE, TRUE, 0);
+  animations_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), animations_combo_box, TRUE, TRUE, 0);
 
   vbox = gtk_vpaned_new();
   gtk_box_pack_end(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
@@ -597,13 +597,13 @@ void load_config() {
       } else {
         g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, g_get_user_data_dir(), FOLDER_POSTFIX, NULL));
       }
-  gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(datafoldcbutton), g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL));
+  gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(data_folder_chooser_button), g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL));
   g_key_file_free(key_file);
 }
 
 void save_config_and_quit() {
   GKeyFile *key_file = g_key_file_new();
-  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(datafoldcbutton)), FOLDER_POSTFIX, NULL));
+  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), FOLDER_POSTFIX, NULL));
   g_file_set_contents(g_strjoin(NULL, g_get_user_config_dir(), CONFIG_FILE, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
   g_key_file_free(key_file);
   gtk_main_quit();

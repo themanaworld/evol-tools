@@ -60,12 +60,12 @@ int offsetX = 0, offsetY = 0;
 
 GtkWidget *win = NULL;
 GtkWidget *darea = NULL;
-GtkWidget *datafoldcbutton = NULL;
-GtkWidget *xmlfcbutton = NULL;
-GtkWidget *xmlfsbutton = NULL;
-GtkWidget *imagesetscombobox = NULL;
-GtkWidget *actionscombobox = NULL;
-GtkWidget *animationscombobox = NULL;
+GtkWidget *data_folder_chooser_button = NULL;
+GtkWidget *xml_file_chooser_button = NULL;
+GtkWidget *xml_file_save_button = NULL;
+GtkWidget *imagesets_combo_box = NULL;
+GtkWidget *actions_combo_box = NULL;
+GtkWidget *animations_combo_box = NULL;
 GtkSourceBuffer *sbuf = NULL;
 
 GList *imagesets = NULL;
