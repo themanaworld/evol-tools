@@ -391,7 +391,32 @@ void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data
   set_up_imageset_by_node(list->data);
 }
 
+void load_options() {
+  paths->sprites = NULL;
+  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
+  gchar *path = g_strjoin(SLASH_SEPARATOR, datapath, "paths.xml", NULL);
+  XMLNode *node = ibus_xml_parse_file(path);
+  if (node != NULL) {
+    GList *list = node->sub_nodes;
+    while (TRUE) {
+      list = g_list_find_custom(list, "option", xml_node_compare_with_name);
+      if (list == NULL)
+        break;
+      gchar *name_attr = xml_node_get_attr_value(list->data, "name");
+      if (name_attr != NULL) {
+        if (g_strcmp0(name_attr, "sprites") == 0)
+          paths->sprites = xml_node_get_attr_value(list->data, "value");
+      }
+      list = list->next;
+    }
+  }
+  if (paths->sprites == NULL) paths->sprites = OPTION_SPRITES_DEFAULT;
+  paths->sprites = g_strjoin(SLASH_SEPARATOR, datapath, paths->sprites, NULL);
+}
+
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
+  load_options();
+
   GtkTextIter beg, end;
   gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &beg);
   gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
@@ -402,13 +427,13 @@ void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
     return;
   }
 
-  gchar *spritespath = g_strjoin(SLASH_SEPARATOR, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), SPRITES_PATH, NULL);
+  printf("%s", paths->sprites);
   GList *list = g_list_find_custom(root->sub_nodes, "include", xml_node_compare_with_name);
   while (list != NULL) {
     XMLNode *node = list->data;
     gchar *file_attr = xml_node_get_attr_value(node, "file");
     if (file_attr != NULL) {
-      file_attr = g_strjoin(NULL, spritespath, file_attr, NULL);
+      file_attr = g_strjoin(NULL, paths->sprites, file_attr, NULL);
       gchar *buf;
       if (g_file_get_contents(file_attr, &buf, NULL, NULL))
         g_list_concat(root->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
@@ -639,6 +664,7 @@ int main(int argc, char *argv[]) {
 
   icon = gdk_pixbuf_new_from_file(ICON_FILE, NULL);
 
+  paths = g_new0(options, 1);
   current_sprite = sprite_info_new(-1, 0, 0);
   imageset = imageset_info_new();
 

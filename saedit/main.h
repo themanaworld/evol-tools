@@ -27,7 +27,7 @@ const gchar *ICON_FILE = "icon.svg";
 const gchar *CONFIG_FILE = "/saedit/config.ini";
 const gchar *FOLDER_POSTFIX = "/...";
 const gchar *SLASH_SEPARATOR = "/";
-const gchar *SPRITES_PATH = "graphics/sprites/";
+const gchar *OPTION_SPRITES_DEFAULT = "graphics/sprites/";
 
 
 typedef struct {
@@ -42,6 +42,10 @@ typedef struct {
   int offsetY;
 } sprite_info;
 static sprite_info *sprite_info_new(int index, int offsetX, int offsetY);
+
+typedef struct {
+  gchar *sprites;
+} options;
 
 typedef struct {
   XMLNode *node;
@@ -80,9 +84,9 @@ GdkPixbuf *icon = NULL;
 
 XMLNode *root = NULL;
 imageset_info *imageset = NULL;
-
 sprite_info *current_sprite;
 guint running_animation = 0;
+options *paths;
 
 static gboolean show_animation_by_sub_nodes (GList *sub_nodes);
 static gchar *markup_bold(gchar *str);
@@ -119,3 +123,4 @@ static cairo_surface_t *get_grid_surface(int w, int h);
 static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data);
 static void load_config();
 static void save_config_and_quit();
+static void load_options();
