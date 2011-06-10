@@ -16,3 +16,6 @@ update/files
 update/upload
 !update/adler32.c
 update/adler32
+
+# saedit
+saedit/saedit
