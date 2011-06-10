@@ -396,9 +396,27 @@ void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
   gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &beg);
   gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
   root = ibus_xml_parse_buffer(gtk_text_iter_get_text(&beg, &end));
+
   if (root == NULL) {
     show_wrong_source_buffer_dialog();
     return;
+  }
+
+  gchar *spritespath = g_strjoin(SLASH_SEPARATOR, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), SPRITES_PATH, NULL);
+  GList *list = g_list_find_custom(root->sub_nodes, "include", xml_node_compare_with_name);
+  while (list != NULL) {
+    XMLNode *node = list->data;
+    gchar *file_attr = xml_node_get_attr_value(node, "file");
+    if (file_attr != NULL) {
+      file_attr = g_strjoin(NULL, spritespath, file_attr, NULL);
+      gchar *buf;
+      if (g_file_get_contents(file_attr, &buf, NULL, NULL))
+        g_list_concat(root->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
+    }
+    if (list->next != NULL)
+      list = g_list_find_custom(list->next, "include", xml_node_compare_with_name);
+    else
+      list = NULL;
   }
 
   offsetX = 0;

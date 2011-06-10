@@ -26,6 +26,9 @@ const gchar *BACKGROUNDS_DIR = "backgrounds";
 const gchar *ICON_FILE = "icon.svg";
 const gchar *CONFIG_FILE = "/saedit/config.ini";
 const gchar *FOLDER_POSTFIX = "/...";
+const gchar *SLASH_SEPARATOR = "/";
+const gchar *SPRITES_PATH = "graphics/sprites/";
+
 
 typedef struct {
   XMLNode *node;
