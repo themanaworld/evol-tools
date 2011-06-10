@@ -1,0 +1,2 @@
+#!/bin/sh
+valgrind --read-var-info=yes --track-origins=yes --malloc-fill=11 --free-fill=55 --show-reachable=yes --leak-check=full --leak-resolution=high --partial-loads-ok=yes --error-limit=no --num-callers=30 "./saedit" 2>./valg.log
