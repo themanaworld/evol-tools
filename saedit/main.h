@@ -64,9 +64,6 @@ GtkWidget *actionscombobox = NULL;
 GtkWidget *animationscombobox = NULL;
 GtkSourceBuffer *sbuf = NULL;
 
-//GdkPixbuf *spriteset = NULL;
-//GdkPixbuf *ground = NULL;
-
 GList *imagesets = NULL;
 GList *actions = NULL;
 GList *animations = NULL;
