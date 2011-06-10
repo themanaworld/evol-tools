@@ -9,13 +9,14 @@
 |                                         |
 \*=======================================*/
 
-#include "main.h";
+#include "main.h"
 
 sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
   sprite_info *res = g_new0(sprite_info, 1);
   res->index = index;
   res->offsetX = offsetX;
   res->offsetY = offsetY;
+  return res;
 }
 
 gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
@@ -37,10 +38,11 @@ gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data
   cairo_paint(cr);
 
   cairo_destroy(cr);
+  return FALSE;
 }
 
 gchar *markup_bold(gchar *str) {
-  gchar *buffer[255];
+  gchar buffer[255];
   g_sprintf(buffer, "<b>%s</b>", str);
   return buffer;
 }
@@ -63,17 +65,17 @@ void free_imagesets() {
   spriteset = NULL;
   imageset = imageset_info_new();
   imagesets = NULL;
-  gtk_list_store_clear(gtk_combo_box_get_model(imagesetscombobox));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesetscombobox))));
 }
 
 void free_actions() {
   actions = NULL;
-  gtk_list_store_clear(gtk_combo_box_get_model(actionscombobox));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(actionscombobox))));
 }
 
 void free_animations() {
   animations = NULL;
-  gtk_list_store_clear(gtk_combo_box_get_model(animationscombobox));
+  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animationscombobox))));
   g_source_remove(running_animation);
   running_animation = 0;
   set_sprite_by_index(0);
@@ -88,17 +90,17 @@ void xml_file_set_handler(GtkFileChooserButton *widget, gpointer data)  {
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
-  gtk_file_chooser_set_current_folder(xmlfcbutton, gtk_file_chooser_get_filename(widget));
+  gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xmlfcbutton), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
 }
 
 void show_wrong_source_buffer_dialog() {
-  GtkWidget *dialog = gtk_message_dialog_new(win,
+  GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(win),
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_MESSAGE_WARNING,
                                              GTK_BUTTONS_OK,
                                              NULL);
-  gtk_message_dialog_set_markup(dialog, markup_bold(_("Wrong source buffer! Could not parse XML!")));
-  g_signal_connect(dialog, "response", gtk_widget_destroy, NULL);
+  gtk_message_dialog_set_markup(GTK_MESSAGE_DIALOG(dialog), markup_bold(_("Wrong source buffer! Could not parse XML!")));
+  g_signal_connect(dialog, "response", G_CALLBACK(gtk_widget_destroy), NULL);
   gtk_widget_show_all(dialog);
 }
 
@@ -131,7 +133,6 @@ gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name) {
 
 GdkPixbuf* get_sprite_by_index(size_t index) {
   size_t w = spriteset_width/sprite_width;
-  size_t h = spriteset_height/sprite_height;
   if (spriteset == NULL) return NULL;
   return gdk_pixbuf_new_subpixbuf(spriteset, index%w*sprite_width, index/w*sprite_height, sprite_width, sprite_height);
 }
@@ -157,7 +158,7 @@ void set_up_actions_by_imageset_name(gchar *imageset_name) {
     } else
       g_list_append(actions, list->data);
     node = list->data;
-    gtk_combo_box_append_text(actionscombobox, xml_node_get_attr_value(node, "name"));
+    gtk_combo_box_append_text(GTK_COMBO_BOX(actionscombobox), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
 }
@@ -178,12 +179,12 @@ gboolean set_up_imagesets(const XMLNode *root) {
     } else
       g_list_append(imagesets, list->data);
     node = list->data;
-    gtk_combo_box_append_text(imagesetscombobox, xml_node_get_attr_value(node, "name"));
+    gtk_combo_box_append_text(GTK_COMBO_BOX(imagesetscombobox), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (imagesets == NULL)
     return FALSE;
-  gtk_combo_box_set_active(imagesetscombobox, 0);
+  gtk_combo_box_set_active(GTK_COMBO_BOX(imagesetscombobox), 0);
   return TRUE;
 }
 
@@ -288,7 +289,7 @@ gboolean set_up_action_by_name(const gchar *name) {
     XMLNode *node = list->data;
     gchar *direction = xml_node_get_attr_value(node, "direction");
     if (direction != NULL) {
-      gtk_combo_box_append_text(animationscombobox, direction);
+      gtk_combo_box_append_text(GTK_COMBO_BOX(animationscombobox), direction);
       was_direction = TRUE;
     }
     list = list->next;
@@ -335,7 +336,7 @@ void set_up_imageset_by_node(XMLNode *node) {
 
   gchar *src = xml_node_get_attr_value(imageset->node, "src");
   format_src_string(src);
-  gchar *datapath = gtk_file_chooser_get_filename(datafoldcbutton);
+  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(datafoldcbutton));
   gchar path[255];
   g_sprintf(path, "%s/%s", datapath, src);
 
@@ -358,10 +359,10 @@ void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data
   set_up_imageset_by_node(list->data);
 }
 
-void parse_xml_buffer(GtkWidget *button, gpointer buffer) {
+void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
   GtkTextIter beg, end;
-  gtk_text_buffer_get_start_iter((GtkSourceBuffer *)buffer, &beg);
-  gtk_text_buffer_get_end_iter((GtkSourceBuffer *)buffer, &end);
+  gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &beg);
+  gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
   root = ibus_xml_parse_buffer(gtk_text_iter_get_text(&beg, &end));
   if (root == NULL) {
     show_wrong_source_buffer_dialog();
@@ -426,31 +427,31 @@ void set_up_interface() {
   menu = gtk_menu_new();
   menuitem = gtk_menu_item_new_with_label(_("About"));
   g_signal_connect(menuitem, "activate", show_about_dialog, NULL);
-  gtk_menu_append(menu, menuitem);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
   menuitem = gtk_menu_item_new_with_label(_("Help"));
-  gtk_menu_item_set_submenu(menuitem, menu);
-  gtk_menu_bar_append(menubar, menuitem);
+  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
 
   hbox = gtk_hbox_new(FALSE, 0);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
 
   vbbox = gtk_vbutton_box_new();
-  gtk_button_box_set_layout(vbbox, GTK_BUTTONBOX_START);
-  gtk_button_box_set_child_size(vbbox, 180, 0);
+  gtk_button_box_set_layout(GTK_BUTTON_BOX(vbbox), GTK_BUTTONBOX_START);
+  gtk_button_box_set_child_size(GTK_BUTTON_BOX(vbbox), 180, 0);
   gtk_box_pack_start(GTK_BOX(hbox), vbbox, FALSE, TRUE, 0);
 
   label = gtk_label_new("");
-  gtk_label_set_markup(label, markup_bold(_("Clientdata folder")));
+  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Clientdata folder")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   datafoldcbutton = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), datafoldcbutton, TRUE, TRUE, 0);
-  gtk_file_chooser_set_action(datafoldcbutton, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+  gtk_file_chooser_set_action(GTK_FILE_CHOOSER(datafoldcbutton), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
   g_signal_connect(datafoldcbutton, "file-set", G_CALLBACK(data_folder_set_handler), NULL);
 
   label = gtk_label_new("");
-  gtk_label_set_markup(label, markup_bold(_("XML source file")));
+  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   xmlfcbutton = gtk_file_chooser_button_new(_("XML source file"), 0);
@@ -473,40 +474,40 @@ void set_up_interface() {
   g_signal_connect(button, "clicked", G_CALLBACK(parse_xml_buffer), sbuf);
 
   label = gtk_label_new("");
-  gtk_label_set_markup(label, markup_bold(_("Imagesets")));
+  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   imagesetscombobox = gtk_combo_box_new_text();
-  g_signal_connect(imagesetscombobox, "changed", imagesets_combo_box_changed_handler, NULL);
+  g_signal_connect(imagesetscombobox, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), imagesetscombobox, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
-  gtk_label_set_markup(label, markup_bold(_("Actions")));
+  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Actions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   actionscombobox = gtk_combo_box_new_text();
-  g_signal_connect(actionscombobox, "changed", actions_combo_box_changed_handler, NULL);
+  g_signal_connect(actionscombobox, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), actionscombobox, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
-  gtk_label_set_markup(label, markup_bold(_("Directions")));
+  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Directions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   animationscombobox = gtk_combo_box_new_text();
-  g_signal_connect(animationscombobox, "changed", animations_combo_box_changed_handler, NULL);
+  g_signal_connect(animationscombobox, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), animationscombobox, TRUE, TRUE, 0);
 
   vbox = gtk_vpaned_new();
   gtk_box_pack_end(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
 
   darea = gtk_drawing_area_new();
-  gtk_paned_pack1(vbox, darea, FALSE, FALSE);
+  gtk_paned_pack1(GTK_PANED(vbox), darea, FALSE, FALSE);
   gtk_widget_set_size_request(darea, -1, 120);
-  g_signal_connect(darea, "expose-event", on_expose_event, NULL);
+  g_signal_connect(darea, "expose-event", G_CALLBACK(on_expose_event), NULL);
 
   text = gtk_source_view_new_with_buffer(sbuf);
-  gtk_source_view_set_show_line_numbers(text, TRUE);
-  gtk_paned_pack2(vbox, text, TRUE, FALSE);
+  gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);
+  gtk_paned_pack2(GTK_PANED(vbox), text, TRUE, FALSE);
   gtk_widget_set_size_request(text, -1, 50);
 
   gtk_widget_show_all(win);
@@ -517,6 +518,7 @@ gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *butto
   gchar buf[10];
   gint len = g_sprintf(buf, "%d", index);
   gtk_text_buffer_insert_at_cursor(GTK_TEXT_BUFFER(sbuf), buf, len);
+  return FALSE;
 }
 
 void show_imageset_window() {
