@@ -18,18 +18,37 @@ sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
   res->offsetY = offsetY;
   return res;
 }
+cairo_surface_t *get_grid_surface(int w, int h) {
+  cairo_surface_t *surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, (w + 2) * GRID_SIZE, (h + 2) * GRID_SIZE);
+  cairo_t *cr = cairo_create(surface);
+  int x, y;
+
+  cairo_surface_t *gridsurf = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w * GRID_SIZE + 1, h * GRID_SIZE + 1);
+  cairo_t *scr = cairo_create(gridsurf);
+
+  cairo_set_line_width(scr, 1);
+
+  for (x = 0; x < w; x++)
+    for (y = 0; y < h; y++) {
+    gdk_cairo_set_source_pixbuf(cr, imageset->ground, x * GRID_SIZE, y * GRID_SIZE);
+    cairo_paint(cr);
+    cairo_rectangle(scr, x*GRID_SIZE+0.5, y*GRID_SIZE+0.5, GRID_SIZE, GRID_SIZE);
+    cairo_stroke(scr);
+  }
+  cairo_set_source_surface(cr, gridsurf, GRID_SIZE, GRID_SIZE);
+  cairo_paint(cr);
+  return surface;
+}
 
 gboolean on_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
   int width = widget->allocation.width,
       height = widget->allocation.height;
 
+  int w = 3, h = 3;
+
   cairo_t *cr = gdk_cairo_create(widget->window);
-  cairo_surface_t *gridsurf = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);
-  cairo_t *scr = cairo_create(gridsurf);
-  cairo_set_line_width(scr, 0.1);
-  cairo_rectangle(scr, width/2 -GRID_SIZE/2, height/2, GRID_SIZE, GRID_SIZE);
-  cairo_stroke(scr);
-  cairo_set_source_surface(cr, gridsurf, 0, 0);
+
+  cairo_set_source_surface(cr, get_grid_surface(w, h), width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * ((h + 2) * 0.5 - 0.5));
   cairo_paint(cr);
 
   GdkPixbuf *pbuf = get_sprite_by_index(current_sprite->index);
@@ -62,7 +81,7 @@ void open_xml_file(GtkButton *button, gpointer buffer) {
 }
 
 void free_imagesets() {
-  spriteset = NULL;
+  imageset->spriteset = NULL;
   imageset = imageset_info_new();
   imagesets = NULL;
   gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesetscombobox))));
@@ -133,8 +152,8 @@ gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name) {
 
 GdkPixbuf* get_sprite_by_index(size_t index) {
   size_t w = spriteset_width/sprite_width;
-  if (spriteset == NULL) return NULL;
-  return gdk_pixbuf_new_subpixbuf(spriteset, index%w*sprite_width, index/w*sprite_height, sprite_width, sprite_height);
+  if (imageset->spriteset == NULL) return NULL;
+  return gdk_pixbuf_new_subpixbuf(imageset->spriteset, index%w*sprite_width, index/w*sprite_height, sprite_width, sprite_height);
 }
 
 void set_sprite_by_index(size_t index) {
@@ -340,14 +359,25 @@ void set_up_imageset_by_node(XMLNode *node) {
   gchar path[255];
   g_sprintf(path, "%s/%s", datapath, src);
 
-  spriteset = gdk_pixbuf_new_from_file(path, NULL);
-  spriteset_width = gdk_pixbuf_get_width(spriteset);
-  spriteset_height = gdk_pixbuf_get_height(spriteset);
+  imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
+  spriteset_width = gdk_pixbuf_get_width(imageset->spriteset);
+  spriteset_height = gdk_pixbuf_get_height(imageset->spriteset);
 
   gchar *width = xml_node_get_attr_value(imageset->node, "width");
   sscanf(width, "%d", &sprite_width);
   gchar *height = xml_node_get_attr_value(imageset->node, "height");
   sscanf(height, "%d", &sprite_height);
+
+  GList *list = g_list_find_custom(root->sub_nodes, "background", xml_node_compare_with_name);
+  if (list != NULL) {
+    gchar *image_attr = xml_node_get_attr_value((XMLNode *)list->data, "image");
+    if (image_attr != NULL) {
+      image_attr = g_strjoin(NULL, BACKGROUNDS_DIR, "/", image_attr, ".png", NULL);
+      GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(image_attr, NULL);
+      if(pbuf != NULL)
+        imageset->ground = pbuf;
+    }
+  }
 
   set_sprite_by_index(0);
 }
@@ -522,7 +552,7 @@ gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *butto
 }
 
 void show_imageset_window() {
-  if (spriteset == NULL) return;
+  if (imageset->spriteset == NULL) return;
   GtkWidget *iwin = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
   gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);

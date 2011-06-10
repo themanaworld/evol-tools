@@ -17,6 +17,13 @@
 #include <cairo.h>
 #include <glib/gi18n.h>
 
+const int MIN_WIDTH = 600;
+const int MIN_HEIGHT = 600;
+const int SPRITE_WIDTH_DEFAULT = 64;
+const int SPRITE_HEIGHT_DEFAULT = 64;
+const int GRID_SIZE = 32;
+const gchar *BACKGROUNDS_DIR = "backgrounds";
+
 typedef struct {
   XMLNode *node;
   GList *next;
@@ -34,16 +41,14 @@ typedef struct {
   XMLNode *node;
   int offsetX;
   int offsetY;
+  GdkPixbuf *spriteset;
+  GdkPixbuf *ground;
 } imageset_info;
 static imageset_info *imageset_info_new() {
-  return g_new0(imageset_info, 1);
+  imageset_info *res = g_new0(imageset_info, 1);
+  res->ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
+  return res;
 }
-
-const int MIN_WIDTH = 600;
-const int MIN_HEIGHT = 600;
-const int SPRITE_WIDTH_DEFAULT = 64;
-const int SPRITE_HEIGHT_DEFAULT = 64;
-const int GRID_SIZE = 32;
 
 int sprite_width = 64, sprite_height = 64;
 int spriteset_width, spriteset_height;
@@ -59,7 +64,8 @@ GtkWidget *actionscombobox = NULL;
 GtkWidget *animationscombobox = NULL;
 GtkSourceBuffer *sbuf = NULL;
 
-GdkPixbuf *spriteset = NULL;
+//GdkPixbuf *spriteset = NULL;
+//GdkPixbuf *ground = NULL;
 
 GList *imagesets = NULL;
 GList *actions = NULL;
@@ -103,3 +109,4 @@ static void set_up_interface();
 static void show_about_dialog();
 static void show_imageset_window();
 static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
+static cairo_surface_t *get_grid_surface(int w, int h);
