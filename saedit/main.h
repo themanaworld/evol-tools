@@ -23,6 +23,7 @@ const int SPRITE_WIDTH_DEFAULT = 64;
 const int SPRITE_HEIGHT_DEFAULT = 64;
 const int GRID_SIZE = 32;
 const gchar *BACKGROUNDS_DIR = "backgrounds";
+const gchar *ICON_PATH = "icon.svg";
 
 typedef struct {
   XMLNode *node;
@@ -68,6 +69,8 @@ GtkSourceBuffer *sbuf = NULL;
 GList *imagesets = NULL;
 GList *actions = NULL;
 GList *animations = NULL;
+
+GdkPixbuf *icon = NULL;
 
 XMLNode *root = NULL;
 imageset_info *imageset = NULL;

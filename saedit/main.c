@@ -425,6 +425,7 @@ void show_about_dialog() {
                         "copyright", "Copyleft Vasily_Makarov 2011",
                         "program-name", "Sprite Animation Editor",
                         "version", "0.1 prealpha",
+                        "logo", icon,
                         NULL);
 }
 
@@ -444,7 +445,8 @@ void set_up_interface() {
 
   win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
-  gtk_window_set_position (GTK_WINDOW(win), GTK_WIN_POS_CENTER);
+  gtk_window_set_position(GTK_WINDOW(win), GTK_WIN_POS_CENTER);
+  gtk_window_set_icon(GTK_WINDOW(win), icon);
   gtk_widget_realize(win);
   g_signal_connect(win, "destroy", gtk_main_quit, NULL);
   gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
@@ -590,6 +592,8 @@ void show_imageset_window() {
 int main (int argc, char *argv[]) {
 
   gtk_init(&argc, &argv);
+
+  icon = gdk_pixbuf_new_from_file(ICON_PATH, NULL);
 
   current_sprite = sprite_info_new(-1, 0, 0);
   imageset = imageset_info_new();
