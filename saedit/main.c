@@ -29,24 +29,29 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   cairo_t *cr = cairo_create(surface);
   int x, y;
 
-  cairo_surface_t *gridsurf = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w * GRID_SIZE + 1, h * GRID_SIZE + 1);
-  cairo_t *scr = cairo_create(gridsurf);
-
-  cairo_set_line_width(scr, 1);
-  cairo_set_source_rgba(scr, 0.5, 0.5, 0.5, 1);
-
   for (x = 0; x < w; x++)
     for (y = 0; y < h; y++) {
     gdk_cairo_set_source_pixbuf(cr, imageset->ground, x * GRID_SIZE, y * GRID_SIZE);
     cairo_paint(cr);
-    cairo_rectangle(scr, x*GRID_SIZE+0.5, y*GRID_SIZE+0.5, GRID_SIZE, GRID_SIZE);
-    cairo_stroke(scr);
   }
-  cairo_set_source_surface(cr, gridsurf, GRID_SIZE, GRID_SIZE);
-  cairo_paint(cr);
-  cairo_destroy(scr);
+
+  if (config->show_grid) {
+    cairo_surface_t *gridsurf = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w * GRID_SIZE + 1, h * GRID_SIZE + 1);
+    cairo_t *scr = cairo_create(gridsurf);
+    cairo_set_line_width(scr, 1);
+    cairo_set_source_rgba(scr, 0.5, 0.5, 0.5, 1);
+    for (x = 0; x < w; x++)
+      for (y = 0; y < h; y++) {
+      cairo_rectangle(scr, x*GRID_SIZE+0.5, y*GRID_SIZE+0.5, GRID_SIZE, GRID_SIZE);
+      cairo_stroke(scr);
+    }
+    cairo_set_source_surface(cr, gridsurf, GRID_SIZE, GRID_SIZE);
+    cairo_paint(cr);
+    cairo_destroy(scr);
+    cairo_surface_destroy(gridsurf);
+  }
+
   cairo_destroy(cr);
-  cairo_surface_destroy(gridsurf);
   return surface;
 }
 
@@ -123,7 +128,13 @@ void save_to_xml_file(GtkButton *button, gpointer buffer) {
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
+  config->clientdata_folder = g_strjoin(SEPARATOR_SLASH, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), POSTFIX_FOLDER, NULL);
   gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xml_file_chooser_button), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
+}
+
+void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data) {
+  config->show_grid = gtk_check_menu_item_get_active(checkmenuitem);
+  gtk_widget_queue_draw(darea);
 }
 
 void show_wrong_source_buffer_dialog() {
@@ -528,6 +539,12 @@ void set_up_interface() {
   gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
 
   menu = gtk_menu_new();
+
+  menuitem = gtk_check_menu_item_new_with_label(_("Show grid"));
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+  g_signal_connect(menuitem, "toggled", show_grid_menu_item_toggled, NULL);
+  show_grid_menu_item = menuitem;
+
   menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
   gtk_widget_set_sensitive(menuitem, FALSE);
   g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
@@ -682,19 +699,23 @@ void show_imageset_window() {
 
 void load_config() {
   GKeyFile *key_file = g_key_file_new();
-  if (g_key_file_load_from_file(key_file, g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), G_KEY_FILE_NONE, NULL) &&
-      g_key_file_has_group(key_file, "General") &&
-      g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL)) {
-      } else {
-        g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(SEPARATOR_SLASH, g_get_user_data_dir(), POSTFIX_FOLDER, NULL));
-      }
-  gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(data_folder_chooser_button), g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL));
+
+  g_key_file_load_from_file(key_file, g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), G_KEY_FILE_NONE, NULL);
+  if (g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL))
+    config->clientdata_folder = g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL);
+  if (g_key_file_has_key(key_file, "General", "ShowGrid", NULL))
+    config->show_grid = g_key_file_get_boolean(key_file, "General", "ShowGrid", NULL);
+
+  gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(data_folder_chooser_button), config->clientdata_folder);
+  gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(show_grid_menu_item), config->show_grid);
+
   g_key_file_free(key_file);
 }
 
 void save_config_and_quit() {
   GKeyFile *key_file = g_key_file_new();
-  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(SEPARATOR_SLASH, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), POSTFIX_FOLDER, NULL));
+  g_key_file_set_value(key_file, "General", "ClientdataFolder", config->clientdata_folder);
+  g_key_file_set_boolean(key_file, "General", "ShowGrid", config->show_grid);
   g_file_set_contents(g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
   g_key_file_free(key_file);
   gtk_main_quit();
@@ -706,6 +727,7 @@ int main(int argc, char *argv[]) {
 
   icon = gdk_pixbuf_new_from_file(FILE_ICON, NULL);
 
+  config = keys_new();
   paths = g_new0(options, 1);
   current_sprite = sprite_info_new(-1, 0, 0);
   imageset = imageset_info_new();

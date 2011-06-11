@@ -29,6 +29,9 @@ const gchar *POSTFIX_FOLDER = "...";
 const gchar *SEPARATOR_SLASH = "/";
 const gchar *OPTION_SPRITES_DEFAULT = "graphics/sprites/";
 
+const gboolean KEY_SHOW_GRID_DEFAULT = TRUE;
+const gchar *KEY_CLIENTDATA_FOLDER_DEFAULT = "";
+
 
 typedef struct {
   XMLNode *node;
@@ -46,6 +49,17 @@ static sprite_info *sprite_info_new(int index, int offsetX, int offsetY);
 typedef struct {
   gchar *sprites;
 } options;
+
+typedef struct {
+  gchar *clientdata_folder;
+  gboolean show_grid;
+} keys;
+
+static keys *keys_new() {
+  keys *res = g_new0(keys, 1);
+  res->clientdata_folder = KEY_CLIENTDATA_FOLDER_DEFAULT;
+  res->show_grid = KEY_SHOW_GRID_DEFAULT;
+}
 
 typedef struct {
   XMLNode *node;
@@ -75,6 +89,7 @@ GtkWidget *imagesets_combo_box = NULL;
 GtkWidget *actions_combo_box = NULL;
 GtkWidget *animations_combo_box = NULL;
 GtkWidget *imageset_preview_menu_item = NULL;
+GtkWidget *show_grid_menu_item = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
@@ -89,6 +104,7 @@ imageset_info *imageset = NULL;
 sprite_info *current_sprite;
 guint running_animation = 0;
 options *paths;
+keys *config;
 
 static gboolean show_animation_by_sub_nodes (GList *sub_nodes);
 static gchar *markup_bold(gchar *str);
@@ -128,3 +144,4 @@ static void save_config_and_quit();
 static void load_options();
 static void free_imageset();
 static void kill_timeout(int tag);
+static void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
