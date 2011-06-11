@@ -22,11 +22,11 @@ const int MIN_HEIGHT = 600;
 const int SPRITE_WIDTH_DEFAULT = 64;
 const int SPRITE_HEIGHT_DEFAULT = 64;
 const int GRID_SIZE = 32;
-const gchar *BACKGROUNDS_DIR = "backgrounds";
-const gchar *ICON_FILE = "icon.svg";
-const gchar *CONFIG_FILE = "/saedit/config.ini";
-const gchar *FOLDER_POSTFIX = "/...";
-const gchar *SLASH_SEPARATOR = "/";
+const gchar *DIR_BACKGROUNDS = "backgrounds";
+const gchar *FILE_ICON = "icon.svg";
+const gchar *FILE_CONFIG = "saedit/config.ini";
+const gchar *POSTFIX_FOLDER = "...";
+const gchar *SEPARATOR_SLASH = "/";
 const gchar *OPTION_SPRITES_DEFAULT = "graphics/sprites/";
 
 
@@ -127,3 +127,4 @@ static void load_config();
 static void save_config_and_quit();
 static void load_options();
 static void free_imageset();
+static void kill_timeout(int tag);

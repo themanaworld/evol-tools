@@ -11,6 +11,11 @@
 
 #include "main.h"
 
+void kill_timeout(int tag) {
+  if (tag > 0)
+    g_source_remove(tag);
+}
+
 sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
   sprite_info *res = g_new0(sprite_info, 1);
   res->index = index;
@@ -18,6 +23,7 @@ sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
   res->offsetY = offsetY;
   return res;
 }
+
 cairo_surface_t *get_grid_surface(int w, int h) {
   cairo_surface_t *surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, (w + 2) * GRID_SIZE, (h + 2) * GRID_SIZE);
   cairo_t *cr = cairo_create(surface);
@@ -106,7 +112,7 @@ void free_actions() {
 void free_animations() {
   animations = NULL;
   gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animations_combo_box))));
-  g_source_remove(running_animation);
+  kill_timeout(running_animation);
   running_animation = 0;
   set_sprite_by_index(0);
 }
@@ -261,7 +267,7 @@ gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
     gchar *delay_attr = xml_node_get_attr_value(node, "delay");
     if (delay_attr != NULL)
       sscanf(delay_attr, "%d", &delay);
-    g_source_remove(running_animation);
+    kill_timeout(running_animation);
     running_animation = g_timeout_add(delay, show_animation_by_sub_nodes, next);
     return FALSE;
   }
@@ -286,7 +292,7 @@ gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
     seq->delay = delay;
     seq->next = next;
     seq->node = node;
-    g_source_remove(running_animation);
+    kill_timeout(running_animation);
     running_animation = g_timeout_add(delay, sequence_source_func, seq);
   }
   return FALSE;
@@ -383,12 +389,12 @@ void set_up_imageset_by_node(XMLNode *node) {
   gchar *height = xml_node_get_attr_value(imageset->node, "height");
   sscanf(height, "%d", &sprite_height);
 
-  GList *list = g_list_find_custom(root->sub_nodes, "background", xml_node_compare_with_name);
+  GList *list = g_list_find_custom(root->sub_nodes, "sae", xml_node_compare_with_name);
   if (list != NULL) {
-    gchar *image_attr = xml_node_get_attr_value((XMLNode *)list->data, "image");
-    if (image_attr != NULL) {
-      image_attr = g_strjoin(NULL, BACKGROUNDS_DIR, "/", image_attr, ".png", NULL);
-      GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(image_attr, NULL);
+    gchar *ground_attr = xml_node_get_attr_value((XMLNode *)list->data, "ground");
+    if (ground_attr != NULL) {
+      ground_attr = g_strjoin(NULL, DIR_BACKGROUNDS, SEPARATOR_SLASH, ground_attr, ".png", NULL);
+      GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(ground_attr, NULL);
       if(pbuf != NULL)
         imageset->ground = pbuf;
     }
@@ -407,7 +413,7 @@ void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data
 void load_options() {
   paths->sprites = NULL;
   gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
-  gchar *path = g_strjoin(SLASH_SEPARATOR, datapath, "paths.xml", NULL);
+  gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, "paths.xml", NULL);
   XMLNode *node = ibus_xml_parse_file(path);
   if (node != NULL) {
     GList *list = node->sub_nodes;
@@ -424,7 +430,7 @@ void load_options() {
     }
   }
   if (paths->sprites == NULL) paths->sprites = OPTION_SPRITES_DEFAULT;
-  paths->sprites = g_strjoin(SLASH_SEPARATOR, datapath, paths->sprites, NULL);
+  paths->sprites = g_strjoin(SEPARATOR_SLASH, datapath, paths->sprites, NULL);
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
@@ -672,11 +678,11 @@ void show_imageset_window() {
 
 void load_config() {
   GKeyFile *key_file = g_key_file_new();
-  if (g_key_file_load_from_file(key_file, g_strjoin(NULL, g_get_user_config_dir(), CONFIG_FILE, NULL), G_KEY_FILE_NONE, NULL) &&
+  if (g_key_file_load_from_file(key_file, g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), G_KEY_FILE_NONE, NULL) &&
       g_key_file_has_group(key_file, "General") &&
       g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL)) {
       } else {
-        g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, g_get_user_data_dir(), FOLDER_POSTFIX, NULL));
+        g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(SEPARATOR_SLASH, g_get_user_data_dir(), POSTFIX_FOLDER, NULL));
       }
   gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(data_folder_chooser_button), g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL));
   g_key_file_free(key_file);
@@ -684,8 +690,8 @@ void load_config() {
 
 void save_config_and_quit() {
   GKeyFile *key_file = g_key_file_new();
-  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(NULL, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), FOLDER_POSTFIX, NULL));
-  g_file_set_contents(g_strjoin(NULL, g_get_user_config_dir(), CONFIG_FILE, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
+  g_key_file_set_value(key_file, "General", "ClientdataFolder", g_strjoin(SEPARATOR_SLASH, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), POSTFIX_FOLDER, NULL));
+  g_file_set_contents(g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
   g_key_file_free(key_file);
   gtk_main_quit();
 }
@@ -694,7 +700,7 @@ int main(int argc, char *argv[]) {
 
   gtk_init(&argc, &argv);
 
-  icon = gdk_pixbuf_new_from_file(ICON_FILE, NULL);
+  icon = gdk_pixbuf_new_from_file(FILE_ICON, NULL);
 
   paths = g_new0(options, 1);
   current_sprite = sprite_info_new(-1, 0, 0);
