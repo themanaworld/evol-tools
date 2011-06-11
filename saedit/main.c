@@ -114,6 +114,7 @@ void free_animations() {
   gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animations_combo_box))));
   kill_timeout(running_animation);
   running_animation = 0;
+  current_sprite = sprite_info_new(-1, 0, 0);
   set_sprite_by_index(0);
 }
 
@@ -434,6 +435,9 @@ void load_options() {
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
+  free_imagesets();
+  free_actions();
+  free_animations();
   load_options();
 
   GtkTextIter beg, end;
