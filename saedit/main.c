@@ -483,9 +483,12 @@ void set_up_interface() {
   GtkWidget *menubar = NULL;
   GtkWidget *menuitem = NULL;
   GtkWidget *menu = NULL;
+  GtkWidget *vpaned = NULL;
+  GtkWidget *hscrollbar = NULL;
+  GtkWidget *vscrollbar = NULL;
 
   GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
-  sbuf = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
+  source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
 
   win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
@@ -542,21 +545,21 @@ void set_up_interface() {
 
   xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), sbuf);
+  g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), source_buffer);
 
   xml_file_open_button = gtk_button_new_from_stock(GTK_STOCK_OPEN);
   gtk_widget_set_sensitive(xml_file_open_button, FALSE);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_open_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_open_button, "clicked", G_CALLBACK(open_xml_file), sbuf);
+  g_signal_connect(xml_file_open_button, "clicked", G_CALLBACK(open_xml_file), source_buffer);
 
   xml_file_save_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
   gtk_widget_set_sensitive(xml_file_save_button, FALSE);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_save_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), sbuf);
+  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), source_buffer);
 
   button = gtk_button_new_with_label("Parse XML buffer");
   gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
-  g_signal_connect(button, "clicked", G_CALLBACK(parse_xml_buffer), sbuf);
+  g_signal_connect(button, "clicked", G_CALLBACK(parse_xml_buffer), source_buffer);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
@@ -582,18 +585,30 @@ void set_up_interface() {
   g_signal_connect(animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), animations_combo_box, TRUE, TRUE, 0);
 
-  vbox = gtk_vpaned_new();
-  gtk_box_pack_end(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
+  vpaned = gtk_vpaned_new();
+  gtk_box_pack_end(GTK_BOX(hbox), vpaned, TRUE, TRUE, 0);
 
   darea = gtk_drawing_area_new();
-  gtk_paned_pack1(GTK_PANED(vbox), darea, FALSE, FALSE);
+  gtk_paned_pack1(GTK_PANED(vpaned), darea, FALSE, FALSE);
   gtk_widget_set_size_request(darea, -1, 120);
   g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), NULL);
 
-  text = gtk_source_view_new_with_buffer(sbuf);
+  hbox = gtk_hbox_new(FALSE, 0);
+  gtk_paned_pack2(GTK_PANED(vpaned), hbox, TRUE, FALSE);
+  gtk_widget_set_size_request(hbox, -1, 50);
+
+  vbox = gtk_vbox_new(FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
+
+  text = gtk_source_view_new_with_buffer(source_buffer);
   gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);
-  gtk_paned_pack2(GTK_PANED(vbox), text, TRUE, FALSE);
-  gtk_widget_set_size_request(text, -1, 50);
+  gtk_box_pack_start(GTK_BOX(vbox), text, TRUE, TRUE, 0);
+
+  hscrollbar = gtk_hscrollbar_new(gtk_text_view_get_hadjustment(text));
+  gtk_box_pack_start(GTK_BOX(vbox), hscrollbar, FALSE, TRUE, 0);
+
+  vscrollbar = gtk_vscrollbar_new(gtk_text_view_get_vadjustment(text));
+  gtk_box_pack_start(GTK_BOX(hbox), vscrollbar, FALSE, TRUE, 0);
 
   gtk_widget_show_all(win);
   gtk_widget_show_all(text);
@@ -602,7 +617,7 @@ void set_up_interface() {
 gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index) {
   gchar buf[10];
   gint len = g_sprintf(buf, "%d", index);
-  gtk_text_buffer_insert_at_cursor(GTK_TEXT_BUFFER(sbuf), buf, len);
+  gtk_text_buffer_insert_at_cursor(GTK_TEXT_BUFFER(source_buffer), buf, len);
   return FALSE;
 }
 

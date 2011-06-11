@@ -74,7 +74,8 @@ GtkWidget *xml_file_save_button = NULL;
 GtkWidget *imagesets_combo_box = NULL;
 GtkWidget *actions_combo_box = NULL;
 GtkWidget *animations_combo_box = NULL;
-GtkSourceBuffer *sbuf = NULL;
+
+GtkSourceBuffer *source_buffer = NULL;
 
 GList *imagesets = NULL;
 GList *actions = NULL;
