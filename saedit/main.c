@@ -235,16 +235,18 @@ gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
   if (next == NULL)
     next = g_list_first(sub_nodes);
 
-  int ofX = 0, ofY = 0;
-  gchar *ofX_param, *ofY_param;
-  ofX_param = xml_node_get_attr_value(node, "offsetX");
-  if (ofX_param != NULL)
-    sscanf(ofX_param, "%d", &ofX);
-  ofY_param = xml_node_get_attr_value(node, "offsetY");
-  if (ofY_param != NULL)
-    sscanf(ofY_param, "%d", &ofY);
-  current_sprite->offsetX = ofX;
-  current_sprite->offsetY = ofY;
+  if (g_strcmp0(node->name, "end")) {
+    int ofX = 0, ofY = 0;
+    gchar *ofX_param, *ofY_param;
+    ofX_param = xml_node_get_attr_value(node, "offsetX");
+    if (ofX_param != NULL)
+      sscanf(ofX_param, "%d", &ofX);
+    ofY_param = xml_node_get_attr_value(node, "offsetY");
+    if (ofY_param != NULL)
+      sscanf(ofY_param, "%d", &ofY);
+    current_sprite->offsetX = ofX;
+    current_sprite->offsetY = ofY;
+  }
 
   if (g_strcmp0(node->name, "frame") == 0) {
     gchar *index_attr = xml_node_get_attr_value(node, "index");
