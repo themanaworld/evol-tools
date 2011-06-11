@@ -531,6 +531,8 @@ void set_up_interface() {
   gtk_widget_realize(win);
   g_signal_connect(win, "destroy", G_CALLBACK(save_config_and_quit), NULL);
   gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
+  GtkAccelGroup *ag = gtk_accel_group_new();
+  gtk_window_add_accel_group(win, ag);
 
   vbox = gtk_vbox_new(FALSE, 0);
   gtk_container_add(GTK_CONTAINER(win), vbox);
@@ -539,16 +541,25 @@ void set_up_interface() {
   gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
 
   menu = gtk_menu_new();
+  gtk_menu_set_accel_group(menu, ag);
 
   menuitem = gtk_check_menu_item_new_with_label(_("Show grid"));
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
   g_signal_connect(menuitem, "toggled", show_grid_menu_item_toggled, NULL);
+
+  gtk_menu_item_set_accel_path(menuitem, "<MenuItems>/View/ShowGrid");
+  gtk_accel_map_change_entry("<MenuItems>/View/ShowGrid", gdk_keyval_from_name("G"), GDK_CONTROL_MASK, TRUE);
+
   show_grid_menu_item = menuitem;
 
   menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
   gtk_widget_set_sensitive(menuitem, FALSE);
   g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(menuitem, "<MenuItems>/View/ImagesetPreview");
+  gtk_accel_map_change_entry("<MenuItems>/View/ImagesetPreview", gdk_keyval_from_name("I"), GDK_CONTROL_MASK, TRUE);
 
   imageset_preview_menu_item = menuitem;
 
@@ -670,6 +681,7 @@ void show_imageset_window() {
   gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
   gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);
   gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
+  gtk_widget_set_size_request(iwin, IMAGESET_PREVIEW_WINDOW_WIDTH, IMAGESET_PREVIEW_WINDOW_HEIGHT);
   gtk_widget_realize(win);
   int w = spriteset_width / sprite_width;
   int h = spriteset_height / sprite_height;

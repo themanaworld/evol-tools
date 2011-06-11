@@ -32,6 +32,9 @@ const gchar *OPTION_SPRITES_DEFAULT = "graphics/sprites/";
 const gboolean KEY_SHOW_GRID_DEFAULT = TRUE;
 const gchar *KEY_CLIENTDATA_FOLDER_DEFAULT = "";
 
+const int IMAGESET_PREVIEW_WINDOW_WIDTH = 200;
+const int IMAGESET_PREVIEW_WINDOW_HEIGHT = 300;
+
 
 typedef struct {
   XMLNode *node;
