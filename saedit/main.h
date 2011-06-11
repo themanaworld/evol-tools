@@ -148,3 +148,4 @@ static void load_options();
 static void free_imageset();
 static void kill_timeout(int tag);
 static void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);

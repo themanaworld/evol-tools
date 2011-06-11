@@ -507,7 +507,7 @@ void show_about_dialog() {
                         NULL);
 }
 
-static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog) {
+void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog) {
   gtk_dialog_run(fcdialog);
 }
 
