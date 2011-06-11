@@ -48,6 +48,7 @@ static AnimationInfo *animation_info_new_with_params(GList *sub_nodes_new, guint
   AnimationInfo *res = g_new0(AnimationInfo, 1);
   res->sub_nodes = sub_nodes_new;
   res->anim_tag = anim_tag_new;
+  return res;
 }
 
 typedef struct {
