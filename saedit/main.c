@@ -610,10 +610,14 @@ void set_up_interface() {
   gtk_widget_set_sensitive(xml_file_save_button, FALSE);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_save_button, TRUE, TRUE, 0);
   g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), source_buffer);
+  gtk_widget_set_accel_path(xml_file_save_button, "<Buttons>/SaveXMLBuffer", ag);
+  gtk_accel_map_change_entry("<Buttons>/SaveXMLBuffer", gdk_keyval_from_name("S"), GDK_CONTROL_MASK, TRUE);
 
-  button = gtk_button_new_with_label("Parse XML buffer");
+  button = gtk_button_new_with_label(_("Parse XML buffer"));
   gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
   g_signal_connect(button, "clicked", G_CALLBACK(parse_xml_buffer), source_buffer);
+  gtk_widget_set_accel_path(button, "<Buttons>/ParseXMLBuffer", ag);
+  gtk_accel_map_change_entry("<Buttons>/ParseXMLBuffer", gdk_keyval_from_name("P"), GDK_CONTROL_MASK, TRUE);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
