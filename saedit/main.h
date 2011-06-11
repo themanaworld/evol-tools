@@ -35,33 +35,49 @@ const gchar *KEY_CLIENTDATA_FOLDER_DEFAULT = "";
 const int IMAGESET_PREVIEW_WINDOW_WIDTH = 200;
 const int IMAGESET_PREVIEW_WINDOW_HEIGHT = 300;
 
+typedef struct {
+  GList *sub_nodes;
+  guint *anim_tag;
+} AnimationInfo;
+
+static AnimationInfo *animation_info_new() {
+  return g_new0(AnimationInfo, 1);
+}
+
+static AnimationInfo *animation_info_new_with_params(GList *sub_nodes_new, guint *anim_tag_new) {
+  AnimationInfo *res = g_new0(AnimationInfo, 1);
+  res->sub_nodes = sub_nodes_new;
+  res->anim_tag = anim_tag_new;
+}
 
 typedef struct {
   XMLNode *node;
   GList *next;
   guint delay;
-} sequence;
+  AnimationInfo *anim_info;
+} SequenceInfo;
 
 typedef struct {
   int index;
   int offsetX;
   int offsetY;
-} sprite_info;
-static sprite_info *sprite_info_new(int index, int offsetX, int offsetY);
+} SpriteInfo;
+static SpriteInfo *sprite_info_new(int index, int offsetX, int offsetY);
 
 typedef struct {
   gchar *sprites;
-} options;
+} Options;
 
 typedef struct {
   gchar *clientdata_folder;
   gboolean show_grid;
-} keys;
+} Keys;
 
-static keys *keys_new() {
-  keys *res = g_new0(keys, 1);
+static Keys *keys_new() {
+  Keys *res = g_new0(Keys, 1);
   res->clientdata_folder = KEY_CLIENTDATA_FOLDER_DEFAULT;
   res->show_grid = KEY_SHOW_GRID_DEFAULT;
+  return res;
 }
 
 typedef struct {
@@ -70,9 +86,10 @@ typedef struct {
   int offsetY;
   GdkPixbuf *spriteset;
   GdkPixbuf *ground;
-} imageset_info;
-static imageset_info *imageset_info_new() {
-  imageset_info *res = g_new0(imageset_info, 1);
+} ImagesetInfo;
+
+static ImagesetInfo *imageset_info_new() {
+  ImagesetInfo *res = g_new0(ImagesetInfo, 1);
   res->ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
   gdk_pixbuf_fill(res->ground, 0x00000000);
   return res;
@@ -103,13 +120,13 @@ GList *animations = NULL;
 GdkPixbuf *icon = NULL;
 
 XMLNode *root = NULL;
-imageset_info *imageset = NULL;
-sprite_info *current_sprite;
+ImagesetInfo *imageset = NULL;
+SpriteInfo *current_sprite;
 guint running_animation = 0;
-options *paths;
-keys *config;
+Options *paths;
+Keys *config;
 
-static gboolean show_animation_by_sub_nodes (GList *sub_nodes);
+static gboolean show_animation_by_info(AnimationInfo *anim_info);
 static gchar *markup_bold(gchar *str);
 static void format_src_string(gchar *src);
 static void open_xml_file(GtkButton *button, gpointer buffer);
@@ -128,7 +145,7 @@ static GdkPixbuf* get_sprite_by_index(size_t index);
 static void set_sprite_by_index(size_t index);
 static void set_up_actions_by_imageset_name(gchar *imageset_name);
 static gboolean set_up_imagesets(const XMLNode *root);
-static gboolean sequence_source_func(sequence *seq);
+static gboolean sequence_source_func(SequenceInfo *seq);
 static gboolean show_general_animation();
 static gboolean set_up_action_by_name(const gchar *name);
 static void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);

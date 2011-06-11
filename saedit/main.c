@@ -16,8 +16,8 @@ void kill_timeout(int tag) {
     g_source_remove(tag);
 }
 
-sprite_info *sprite_info_new(int index, int offsetX, int offsetY) {
-  sprite_info *res = g_new0(sprite_info, 1);
+SpriteInfo *sprite_info_new(int index, int offsetX, int offsetY) {
+  SpriteInfo *res = g_new0(SpriteInfo, 1);
   res->index = index;
   res->offsetX = offsetX;
   res->offsetY = offsetY;
@@ -232,19 +232,21 @@ gboolean set_up_imagesets(const XMLNode *root) {
   return TRUE;
 }
 
-gboolean sequence_source_func(sequence *seq) {
+gboolean sequence_source_func(SequenceInfo *seq) {
   gchar *end_attr = xml_node_get_attr_value(seq->node, "end");
   size_t end;
   sscanf(end_attr, "%d", &end);
   if (current_sprite->index == end) {
-    running_animation = g_timeout_add(seq->delay, show_animation_by_sub_nodes, seq->next);
+    seq->anim_info->anim_tag = g_timeout_add(seq->delay, show_animation_by_info, seq->anim_info);
     return FALSE;
   }
   set_sprite_by_index(current_sprite->index+1);
   return TRUE;
 }
 
-gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
+gboolean show_animation_by_info(AnimationInfo *anim_info) {
+  GList *sub_nodes = anim_info->sub_nodes;
+  guint *anim_tag = anim_info->anim_tag;
   XMLNode *node = sub_nodes->data;
   if (node == NULL)
     return FALSE;
@@ -279,8 +281,9 @@ gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
     gchar *delay_attr = xml_node_get_attr_value(node, "delay");
     if (delay_attr != NULL)
       sscanf(delay_attr, "%d", &delay);
-    kill_timeout(running_animation);
-    running_animation = g_timeout_add(delay, show_animation_by_sub_nodes, next);
+    anim_info->sub_nodes = next;
+    kill_timeout(*anim_tag);
+    *anim_tag = g_timeout_add(delay, show_animation_by_info, anim_info);
     return FALSE;
   }
   if (g_strcmp0(node->name, "sequence") == 0) {
@@ -300,12 +303,15 @@ gboolean show_animation_by_sub_nodes(GList *sub_nodes) {
     size_t delay;
     sscanf(delay_attr, "%d", &delay);
     set_sprite_by_index(start);
-    sequence *seq = g_new0(sequence, 1);
+    SequenceInfo *seq = g_new0(SequenceInfo, 1);
     seq->delay = delay;
     seq->next = next;
     seq->node = node;
-    kill_timeout(running_animation);
-    running_animation = g_timeout_add(delay, sequence_source_func, seq);
+    seq->anim_info = anim_info;
+    anim_info->sub_nodes = next;
+    kill_timeout(*anim_tag);
+    *anim_tag = g_timeout_add(delay, sequence_source_func, seq);
+    return FALSE;
   }
   return FALSE;
 }
@@ -314,7 +320,7 @@ gboolean show_general_animation() {
   XMLNode *node = animations->data;
   if (node == NULL)
     return FALSE;
-  return show_animation_by_sub_nodes(node->sub_nodes);
+  return show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &running_animation));
 }
 
 gboolean set_up_action_by_name(const gchar *name) {
@@ -356,7 +362,7 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
   if (list == NULL)
     return;
   XMLNode *node = list->data;
-  show_animation_by_sub_nodes(node->sub_nodes);
+  show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &running_animation));
 }
 
 void set_up_imageset_by_node(XMLNode *node) {
@@ -500,7 +506,7 @@ void show_about_dialog() {
   gtk_show_about_dialog(GTK_WINDOW(win),
                         "authors", authors,
                         "comments", _("Sprite Animation Editor could be used to edit animations from Evol and The Mana World projects"),
-                        "copyright", "Copyleft Vasily_Makarov 2011",
+                        "copyright", "Copyleft \u2184 Vasily_Makarov 2011",
                         "program-name", "Sprite Animation Editor",
                         "version", "0.1 prealpha",
                         "logo", icon,
@@ -767,7 +773,7 @@ int main(int argc, char *argv[]) {
   icon = gdk_pixbuf_new_from_file(FILE_ICON, NULL);
 
   config = keys_new();
-  paths = g_new0(options, 1);
+  paths = g_new0(Options, 1);
   current_sprite = sprite_info_new(-1, 0, 0);
   imageset = imageset_info_new();
 
