@@ -394,7 +394,7 @@ void set_up_imageset_by_node(XMLNode *node) {
   if (list != NULL) {
     gchar *ground_attr = xml_node_get_attr_value((XMLNode *)list->data, "ground");
     if (ground_attr != NULL) {
-      ground_attr = g_strjoin(NULL, DIR_BACKGROUNDS, SEPARATOR_SLASH, ground_attr, ".png", NULL);
+      ground_attr = g_strjoin(NULL, DIR_GROUNDS, SEPARATOR_SLASH, ground_attr, ".png", NULL);
       GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(ground_attr, NULL);
       if(pbuf != NULL)
         imageset->ground = pbuf;
