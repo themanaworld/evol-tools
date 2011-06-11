@@ -74,6 +74,7 @@ GtkWidget *xml_file_save_button = NULL;
 GtkWidget *imagesets_combo_box = NULL;
 GtkWidget *actions_combo_box = NULL;
 GtkWidget *animations_combo_box = NULL;
+GtkWidget *imageset_preview_menu_item = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
@@ -125,3 +126,4 @@ static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpo
 static void load_config();
 static void save_config_and_quit();
 static void load_options();
+static void free_imageset();

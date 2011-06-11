@@ -88,9 +88,14 @@ void open_xml_file(GtkButton *button, gpointer buffer) {
 }
 
 void free_imagesets() {
-  imageset = imageset_info_new();
+  free_imageset();
   imagesets = NULL;
   gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesets_combo_box))));
+}
+
+void free_imageset() {
+  imageset = imageset_info_new();
+  gtk_widget_set_sensitive(imageset_preview_menu_item, FALSE);
 }
 
 void free_actions() {
@@ -335,6 +340,7 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
 }
 
 void set_up_imageset_by_node(XMLNode *node) {
+  free_imageset();
   free_actions();
   free_animations();
 
@@ -362,6 +368,11 @@ void set_up_imageset_by_node(XMLNode *node) {
   g_sprintf(path, "%s/%s", datapath, src);
 
   imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
+  if (imageset->spriteset == NULL) {
+    show_wrong_source_buffer_dialog();
+    return;
+  }
+  gtk_widget_set_sensitive(imageset_preview_menu_item, TRUE);
   spriteset_width = gdk_pixbuf_get_width(imageset->spriteset);
   spriteset_height = gdk_pixbuf_get_height(imageset->spriteset);
 
@@ -506,8 +517,11 @@ void set_up_interface() {
 
   menu = gtk_menu_new();
   menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
+  gtk_widget_set_sensitive(menuitem, FALSE);
   g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  imageset_preview_menu_item = menuitem;
 
   menuitem = gtk_menu_item_new_with_label(_("View"));
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
@@ -644,6 +658,7 @@ void show_imageset_window() {
       event_box = gtk_event_box_new();
       g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event), w * y + x);
       gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
+
       image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x));
       gtk_widget_add_events(image, GDK_BUTTON_PRESS_MASK);
       gtk_container_add(GTK_CONTAINER(event_box), image);
