@@ -507,6 +507,10 @@ void show_about_dialog() {
                         NULL);
 }
 
+static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog) {
+  gtk_dialog_run(fcdialog);
+}
+
 void set_up_interface() {
   GtkWidget *button = NULL;
   GtkWidget *hbox = NULL;
@@ -534,12 +538,30 @@ void set_up_interface() {
   GtkAccelGroup *ag = gtk_accel_group_new();
   gtk_window_add_accel_group(win, ag);
 
+  GtkWidget *fcdialog = gtk_file_chooser_dialog_new(_("Open XML source file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
+
   vbox = gtk_vbox_new(FALSE, 0);
   gtk_container_add(GTK_CONTAINER(win), vbox);
 
   menubar = gtk_menu_bar_new();
   gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
 
+  //File menu
+  menu = gtk_menu_new();
+  gtk_menu_set_accel_group(menu, ag);
+
+  menuitem = gtk_menu_item_new_with_label(_("Open..."));
+  g_signal_connect(menuitem, "activate", open_menu_item_activate, fcdialog);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/Open");
+  gtk_accel_map_change_entry("<MenuItems>/File/Open", gdk_keyval_from_name("O"), GDK_CONTROL_MASK, TRUE);
+
+  menuitem = gtk_menu_item_new_with_label(_("File"));
+  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
+
+  //View menu
   menu = gtk_menu_new();
   gtk_menu_set_accel_group(menu, ag);
 
@@ -597,7 +619,8 @@ void set_up_interface() {
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
+  //xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
+  xml_file_chooser_button = gtk_file_chooser_button_new_with_dialog(fcdialog);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
   g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), source_buffer);
 
