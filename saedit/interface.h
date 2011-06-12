@@ -159,7 +159,8 @@ void set_up_interface() {
   darea = gtk_drawing_area_new();
   gtk_paned_pack1(GTK_PANED(vpaned), darea, FALSE, FALSE);
   gtk_widget_set_size_request(darea, -1, 120);
-  g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), NULL);
+  //g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), player);
+  g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), gen_sae_info);
 
   hbox = gtk_hbox_new(FALSE, 0);
   gtk_paned_pack2(GTK_PANED(vpaned), hbox, TRUE, FALSE);

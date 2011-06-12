@@ -56,7 +56,7 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   return surface;
 }
 
-gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data) {
+gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info) {
   int width = widget->allocation.width,
       height = widget->allocation.height;
 
@@ -68,11 +68,20 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer d
   cairo_set_source_surface(cr, surface, width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
   cairo_paint(cr);
 
-  GdkPixbuf *pbuf = get_sprite_by_index(gen_sae_info->sprite->index);
+  if (player != NULL) {
+    GdkPixbuf *pbuf = get_sprite_by_index(player->sprite->index, player);
+    if (pbuf == NULL) return FALSE;
+    gdk_cairo_set_source_pixbuf(cr, pbuf,
+                                width/2 - player->imageset->width/2 + player->offsetX + player->sprite->offsetX + player->imageset->offsetX,
+                                height/2 - player->imageset->height/2 + player->offsetY + player->sprite->offsetY + player->imageset->offsetY);
+    cairo_paint(cr);
+  }
+
+  GdkPixbuf *pbuf = get_sprite_by_index(sae_info->sprite->index, sae_info);
   if (pbuf == NULL) return FALSE;
   gdk_cairo_set_source_pixbuf(cr, pbuf,
-                              width/2 - gen_sae_info->imageset->width/2 + offsetX + gen_sae_info->sprite->offsetX + gen_sae_info->imageset->offsetX,
-                              height/2 - gen_sae_info->imageset->height/2 + offsetY + gen_sae_info->sprite->offsetY + gen_sae_info->imageset->offsetY);
+                              width/2 - sae_info->imageset->width/2 + sae_info->offsetX + sae_info->sprite->offsetX + sae_info->imageset->offsetX,
+                              height/2 - sae_info->imageset->height/2 + sae_info->offsetY + sae_info->sprite->offsetY + sae_info->imageset->offsetY);
   cairo_paint(cr);
 
   cairo_destroy(cr);
@@ -109,8 +118,8 @@ void free_imagesets(SAEInfo *sae_info) {
 }
 
 void free_imageset(SAEInfo *sae_info) {
-  gen_sae_info->imageset = imageset_info_new();
-  gen_sae_info->ground = sae_info_ground_new();
+  sae_info->imageset = imageset_info_new();
+  sae_info->ground = sae_info_ground_new();
   gtk_widget_set_sensitive(imageset_preview_menu_item, FALSE);
 }
 
@@ -128,7 +137,7 @@ void free_animations(SAEInfo *sae_info) {
   kill_timeout(sae_info->anim_tag);
   sae_info->anim_tag = 0;
   sae_info->sprite = sprite_info_new(-1, 0, 0);
-  set_sprite_by_index(0);
+  set_sprite_by_index(0, sae_info);
 }
 
 void save_to_xml_file(GtkButton *button, gpointer buffer) {
@@ -183,14 +192,14 @@ gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name) {
   return g_strcmp0((gchar *)name, xml_node_get_attr_value((XMLNode *)node, "name"));
 }
 
-GdkPixbuf* get_sprite_by_index(size_t index) {
-  size_t w = spriteset_width/gen_sae_info->imageset->width;
-  if (gen_sae_info->imageset->spriteset == NULL) return NULL;
-  return gdk_pixbuf_new_subpixbuf(gen_sae_info->imageset->spriteset, index%w*gen_sae_info->imageset->width, index/w*gen_sae_info->imageset->height, gen_sae_info->imageset->width, gen_sae_info->imageset->height);
+GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
+  size_t w = sae_info->imageset->spriteset_width/sae_info->imageset->width;
+  if (sae_info->imageset->spriteset == NULL) return NULL;
+  return gdk_pixbuf_new_subpixbuf(sae_info->imageset->spriteset, index%w*sae_info->imageset->width, index/w*sae_info->imageset->height, sae_info->imageset->width, sae_info->imageset->height);
 }
 
-void set_sprite_by_index(size_t index) {
-  gen_sae_info->sprite->index = index;
+void set_sprite_by_index(size_t index, SAEInfo *sae_info) {
+  sae_info->sprite->index = index;
   gtk_widget_queue_draw(darea);
 }
 
@@ -247,17 +256,17 @@ gboolean set_up_imagesets(SAEInfo *sae_info) {
 }
 
 gboolean sequence_source_func(SequenceInfo *seq) {
-  if (gen_sae_info->sprite->index == seq->end) {
+  if (seq->anim_info->sae_info->sprite->index == seq->end) {
     if (seq->repeat <= 1) {
       guint *anim_tag = seq->anim_info->anim_tag;
       *anim_tag = g_timeout_add(seq->delay, show_animation_by_info, seq->anim_info);
       return FALSE;
     } else {
       seq->repeat--;
-      gen_sae_info->sprite->index = seq->start - 1;
+      seq->anim_info->sae_info->sprite->index = seq->start - 1;
     }
   }
-  set_sprite_by_index(gen_sae_info->sprite->index+1);
+  set_sprite_by_index(seq->anim_info->sae_info->sprite->index+1, seq->anim_info->sae_info);
   return TRUE;
 }
 
@@ -281,8 +290,8 @@ gboolean show_animation_by_info(AnimationInfo *anim_info) {
     ofY_param = xml_node_get_attr_value(node, "offsetY");
     if (ofY_param != NULL)
       sscanf(ofY_param, "%d", &ofY);
-    gen_sae_info->sprite->offsetX = ofX;
-    gen_sae_info->sprite->offsetY = ofY;
+    anim_info->sae_info->sprite->offsetX = ofX;
+    anim_info->sae_info->sprite->offsetY = ofY;
   }
 
   if (g_strcmp0(node->name, "frame") == 0) {
@@ -291,7 +300,7 @@ gboolean show_animation_by_info(AnimationInfo *anim_info) {
       return FALSE;
     size_t index;
     sscanf(index_attr, "%d", &index);
-    set_sprite_by_index(index);
+    set_sprite_by_index(index, anim_info->sae_info);
     if (g_list_length(g_list_first(sub_nodes)) == 1)
       return FALSE;
     size_t delay = 0;
@@ -324,7 +333,7 @@ gboolean show_animation_by_info(AnimationInfo *anim_info) {
     size_t repeat = 1;
     if (repeat_attr != NULL)
       sscanf(repeat_attr, "%d", &repeat);
-    set_sprite_by_index(start);
+    set_sprite_by_index(start, anim_info->sae_info);
     anim_info->sub_nodes = next;
     kill_timeout(*anim_tag);
     *anim_tag = g_timeout_add(delay, sequence_source_func, sequence_info_new(node, start, end, delay, anim_info, repeat));
@@ -337,7 +346,7 @@ gboolean show_general_animation(SAEInfo *sae_info) {
   XMLNode *node = sae_info->animations->data;
   if (node == NULL)
     return FALSE;
-  return show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &sae_info->anim_tag));
+  return show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &sae_info->anim_tag, sae_info));
 }
 
 gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
@@ -373,6 +382,8 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
 
 void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
   set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
+  if (player != NULL)
+    set_up_action_by_name(gtk_combo_box_get_active_text(widget), player);
 }
 
 void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
@@ -380,7 +391,14 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
   if (list == NULL)
     return;
   XMLNode *node = list->data;
-  show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &gen_sae_info->anim_tag));
+  show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &gen_sae_info->anim_tag, gen_sae_info));
+  if (player != NULL) {
+    GList *list = g_list_find_custom(player->animations, gtk_combo_box_get_active_text(widget), xml_node_compare_with_direction_attr);
+    if (list == NULL)
+      return;
+    XMLNode *node = list->data;
+    show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &player->anim_tag, player));
+  }
 }
 
 void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
@@ -408,8 +426,8 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
   gchar *src = xml_node_get_attr_value(sae_info->imageset->node, "src");
   format_src_string(src);
   gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
-  gchar path[255];
-  g_sprintf(path, "%s/%s", datapath, src);
+  gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, src, NULL);
+  printf("\n%s\n", path);
 
   sae_info->imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
   if (sae_info->imageset->spriteset == NULL) {
@@ -417,8 +435,8 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
     return;
   }
   gtk_widget_set_sensitive(imageset_preview_menu_item, TRUE);
-  spriteset_width = gdk_pixbuf_get_width(sae_info->imageset->spriteset);
-  spriteset_height = gdk_pixbuf_get_height(sae_info->imageset->spriteset);
+  sae_info->imageset->spriteset_width = gdk_pixbuf_get_width(sae_info->imageset->spriteset);
+  sae_info->imageset->spriteset_height = gdk_pixbuf_get_height(sae_info->imageset->spriteset);
 
   gchar *width = xml_node_get_attr_value(sae_info->imageset->node, "width");
   sscanf(width, "%d", &sae_info->imageset->width);
@@ -434,9 +452,24 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
       if(pbuf != NULL)
         sae_info->ground = pbuf;
     }
+    gchar *player_attr = xml_node_get_attr_value((XMLNode *)list->data, "player");
+    if (player_attr != NULL) {
+      gchar *text;
+      gchar *sprites_path = paths->sprites;
+      gchar *player_file = g_strjoin(NULL, sprites_path, DIR_PLAYERS, player_attr, ".xml", NULL);
+      printf("%s\n", player_file);
+      if (g_file_get_contents(player_file, &text, NULL, NULL)) {
+        player = sae_info_new();
+        parse_xml_text(text, player);
+        GList *list = g_list_find_custom(player->imagesets, "base", xml_node_compare_with_name_attr);
+        XMLNode *node = list->data;
+        printf("\n%s\n", node->name);
+        set_up_imageset_by_node(list->data, player);
+      }
+    }
   }
 
-  set_sprite_by_index(0);
+  set_sprite_by_index(0, sae_info);
 }
 
 void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
@@ -470,6 +503,9 @@ void load_options() {
 }
 
 void parse_xml_text(gchar *text, SAEInfo *sae_info) {
+  free_imagesets(sae_info);
+  free_actions(sae_info);
+  free_animations(sae_info);
   XMLNode *_root_node = ibus_xml_parse_buffer(text);
   sae_info->root = _root_node;
   if (_root_node == NULL) {
@@ -494,14 +530,14 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
       list = NULL;
   }
 
-  offsetX = 0;
-  offsetY = 0;
+  sae_info->offsetX = 0;
+  sae_info->offsetY = 0;
   gchar *name_attr = xml_node_get_attr_value(_root_node, "name");
   gchar *action_attr = xml_node_get_attr_value(_root_node, "action");
   if (name_attr != NULL && action_attr != NULL)
     if (g_strcmp0(name_attr, "player") == 0 &&
         g_strcmp0(action_attr, "stand") == 0)
-          offsetY = -16;
+          sae_info->offsetY = -16;
 
   if (!set_up_imagesets(sae_info)) {
     show_wrong_source_buffer_dialog();
@@ -510,9 +546,6 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
-  free_imagesets(gen_sae_info);
-  free_actions(gen_sae_info);
-  free_animations(gen_sae_info);
   load_options();
 
   GtkTextIter beg, end;
@@ -522,6 +555,10 @@ void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
 }
 
 void show_about_dialog() {
+  /*GList *list = g_list_find_custom(player->imagesets, "base", xml_node_compare_with_name_attr);
+  XMLNode *node = list->data;
+  printf("\n%s\n", node->name);
+  set_up_imageset_by_node(list->data, player);*/
   gchar *authors[] = {"Dan Sagunov <danilka.pro@gmail.com>",
                       "Reid Yaro <reidyaro@gmail.com>",
                       NULL};
@@ -554,8 +591,8 @@ void show_imageset_window() {
   gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
   gtk_widget_set_size_request(iwin, IMAGESET_PREVIEW_WINDOW_WIDTH, IMAGESET_PREVIEW_WINDOW_HEIGHT);
   gtk_widget_realize(win);
-  int w = spriteset_width / gen_sae_info->imageset->width;
-  int h = spriteset_height / gen_sae_info->imageset->height;
+  int w = gen_sae_info->imageset->spriteset_width / gen_sae_info->imageset->width;
+  int h = gen_sae_info->imageset->spriteset_height / gen_sae_info->imageset->height;
 
   GtkWidget *vbox = gtk_vbox_new(TRUE, 0);
   GtkWidget *hbox = NULL;
@@ -571,7 +608,7 @@ void show_imageset_window() {
       g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event), w * y + x);
       gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
 
-      image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x));
+      image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x, gen_sae_info));
       gtk_widget_add_events(image, GDK_BUTTON_PRESS_MASK);
       gtk_container_add(GTK_CONTAINER(event_box), image);
     }
@@ -612,14 +649,11 @@ int main(int argc, char *argv[]) {
 
   config = keys_new();
   paths = g_new0(Options, 1);
+
   gen_sae_info = sae_info_new();
-  gen_sae_info->sprite = sprite_info_new(-1, 0, 0);
-  gen_sae_info->imageset = imageset_info_new();
 
   set_up_interface();
   load_config();
-
-  show_imageset_window();
 
   gtk_main();
 

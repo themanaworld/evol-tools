@@ -22,7 +22,10 @@ const int MIN_HEIGHT = 600;
 const int SPRITE_WIDTH_DEFAULT = 64;
 const int SPRITE_HEIGHT_DEFAULT = 64;
 const int GRID_SIZE = 32;
+
 const gchar *DIR_GROUNDS = "grounds";
+const gchar *DIR_PLAYERS = "players/";
+
 const gchar *FILE_ICON = "icon.svg";
 const gchar *FILE_CONFIG = "saedit/config.ini";
 const gchar *POSTFIX_FOLDER = "...";
@@ -36,18 +39,62 @@ const int IMAGESET_PREVIEW_WINDOW_WIDTH = 200;
 const int IMAGESET_PREVIEW_WINDOW_HEIGHT = 300;
 
 typedef struct {
+  XMLNode *node;
+  int offsetX;
+  int offsetY;
+  int width;
+  int height;
+  int spriteset_width;
+  int spriteset_height;
+  GdkPixbuf *spriteset;
+} ImagesetInfo;
+
+typedef struct {
+  int index;
+  int offsetX;
+  int offsetY;
+} SpriteInfo;
+static SpriteInfo *sprite_info_new(int index, int offsetX, int offsetY);
+
+static ImagesetInfo *imageset_info_new() {
+  ImagesetInfo *res = g_new0(ImagesetInfo, 1);
+  res->width = SPRITE_WIDTH_DEFAULT;
+  res->height = SPRITE_HEIGHT_DEFAULT;
+  return res;
+}
+
+typedef struct {
+  GList *imagesets;
+  GList *actions;
+  GList *animations;
+  ImagesetInfo *imageset;
+  SpriteInfo *sprite;
+  guint anim_tag;
+  XMLNode *root;
+  GtkWidget *imagesets_combo_box;
+  GtkWidget *actions_combo_box;
+  GtkWidget *animations_combo_box;
+  GdkPixbuf *ground;
+  int offsetX;
+  int offsetY;
+} SAEInfo;
+
+
+typedef struct {
   GList *sub_nodes;
   guint *anim_tag;
+  SAEInfo *sae_info;
 } AnimationInfo;
 
 static AnimationInfo *animation_info_new() {
   return g_new0(AnimationInfo, 1);
 }
 
-static AnimationInfo *animation_info_new_with_params(GList *sub_nodes_new, guint *anim_tag_new) {
-  AnimationInfo *res = g_new0(AnimationInfo, 1);
+static AnimationInfo *animation_info_new_with_params(GList *sub_nodes_new, guint *anim_tag_new, SAEInfo *sae_info) {
+  AnimationInfo *res = animation_info_new();
   res->sub_nodes = sub_nodes_new;
   res->anim_tag = anim_tag_new;
+  res->sae_info = sae_info;
   return res;
 }
 
@@ -72,13 +119,6 @@ static SequenceInfo *sequence_info_new(XMLNode *node, int start, int end, guint 
 }
 
 typedef struct {
-  int index;
-  int offsetX;
-  int offsetY;
-} SpriteInfo;
-static SpriteInfo *sprite_info_new(int index, int offsetX, int offsetY);
-
-typedef struct {
   gchar *sprites;
 } Options;
 
@@ -94,36 +134,6 @@ static Keys *keys_new() {
   return res;
 }
 
-typedef struct {
-  XMLNode *node;
-  int offsetX;
-  int offsetY;
-  int width;
-  int height;
-  GdkPixbuf *spriteset;
-} ImagesetInfo;
-
-static ImagesetInfo *imageset_info_new() {
-  ImagesetInfo *res = g_new0(ImagesetInfo, 1);
-  res->width = SPRITE_WIDTH_DEFAULT;
-  res->height = SPRITE_HEIGHT_DEFAULT;
-  return res;
-}
-
-typedef struct {
-  GList *imagesets;
-  GList *actions;
-  GList *animations;
-  ImagesetInfo *imageset;
-  SpriteInfo *sprite;
-  guint anim_tag;
-  XMLNode *root;
-  GtkWidget *imagesets_combo_box;
-  GtkWidget *actions_combo_box;
-  GtkWidget *animations_combo_box;
-  GdkPixbuf *ground;
-} SAEInfo;
-
 static GdkPixbuf *sae_info_ground_new() {
   GdkPixbuf *ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
   gdk_pixbuf_fill(ground, 0x00000000);
@@ -133,11 +143,11 @@ static GdkPixbuf *sae_info_ground_new() {
 static SAEInfo *sae_info_new() {
   SAEInfo *res = g_new0(SAEInfo, 1);
   res->ground = sae_info_ground_new();
+  res->sprite = sprite_info_new(-1, 0, 0);
+  res->imageset = imageset_info_new();
   return res;
 }
 
-int spriteset_width, spriteset_height;
-int offsetX = 0, offsetY = 0;
 
 GtkWidget *win = NULL;
 GtkWidget *darea = NULL;
@@ -153,7 +163,8 @@ GtkSourceBuffer *source_buffer = NULL;
 //GList *imagesets = NULL;
 //GList *actions = NULL;
 //GList *animations = NULL;
-SAEInfo *gen_sae_info;
+SAEInfo *gen_sae_info = NULL;
+SAEInfo *player = NULL;
 
 GdkPixbuf *icon = NULL;
 
@@ -178,8 +189,8 @@ static gint xml_node_compare_with_name(gconstpointer a, gconstpointer b);
 static gint xml_node_compare_with_action_node_by_imageset_name_func(gconstpointer a, gconstpointer b);
 static gint xml_node_compare_with_direction_attr(gconstpointer node, gconstpointer direction);
 static gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name);
-static GdkPixbuf* get_sprite_by_index(size_t index);
-static void set_sprite_by_index(size_t index);
+static GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info);
+static void set_sprite_by_index(size_t index, SAEInfo *sae_info);
 static void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info);
 static gboolean set_up_imagesets(SAEInfo *sae_info);
 static gboolean sequence_source_func(SequenceInfo *seq);
@@ -195,7 +206,7 @@ static void show_about_dialog();
 static void show_imageset_window();
 static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
 static cairo_surface_t *get_grid_surface(int w, int h);
-static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer data);
+static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info);
 static void load_config();
 static void save_config_and_quit();
 static void load_options();
