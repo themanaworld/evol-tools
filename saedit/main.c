@@ -10,6 +10,7 @@
 \*=======================================*/
 
 #include "main.h"
+#include "interface.h"
 
 void kill_timeout(int tag) {
   if (tag > 0)
@@ -31,7 +32,7 @@ cairo_surface_t *get_grid_surface(int w, int h) {
 
   for (x = 0; x < w; x++)
     for (y = 0; y < h; y++) {
-    gdk_cairo_set_source_pixbuf(cr, imageset->ground, x * GRID_SIZE, y * GRID_SIZE);
+    gdk_cairo_set_source_pixbuf(cr, gen_xml_info->imageset->ground, x * GRID_SIZE, y * GRID_SIZE);
     cairo_paint(cr);
   }
 
@@ -67,9 +68,11 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, gpointer d
   cairo_set_source_surface(cr, surface, width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
   cairo_paint(cr);
 
-  GdkPixbuf *pbuf = get_sprite_by_index(current_sprite->index);
+  GdkPixbuf *pbuf = get_sprite_by_index(gen_xml_info->sprite->index);
   if (pbuf == NULL) return FALSE;
-  gdk_cairo_set_source_pixbuf(cr, pbuf, width/2 - sprite_width/2 + offsetX + current_sprite->offsetX + imageset->offsetX, height/2 - sprite_height/2 + offsetY + current_sprite->offsetY + imageset->offsetY);
+  gdk_cairo_set_source_pixbuf(cr, pbuf,
+                              width/2 - gen_xml_info->imageset->width/2 + offsetX + gen_xml_info->sprite->offsetX + gen_xml_info->imageset->offsetX,
+                              height/2 - gen_xml_info->imageset->height/2 + offsetY + gen_xml_info->sprite->offsetY + gen_xml_info->imageset->offsetY);
   cairo_paint(cr);
 
   cairo_destroy(cr);
@@ -98,28 +101,32 @@ void open_xml_file(GtkButton *button, gpointer buffer) {
   gtk_widget_set_sensitive(xml_file_save_button, TRUE);
 }
 
-void free_imagesets() {
-  free_imageset();
-  imagesets = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(imagesets_combo_box))));
+void free_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box) {
+  free_imageset(xml_info);
+  xml_info->imagesets = NULL;
+  if (combo_box != NULL)
+    gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(combo_box))));
 }
 
-void free_imageset() {
-  imageset = imageset_info_new();
+void free_imageset(XMLInfo *xml_info) {
+  xml_info->imageset = imageset_info_new();
   gtk_widget_set_sensitive(imageset_preview_menu_item, FALSE);
 }
 
-void free_actions() {
-  actions = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(actions_combo_box))));
+void free_actions(XMLInfo *xml_info, GtkComboBox *combo_box) {
+  xml_info->actions = NULL;
+  if (combo_box != NULL)
+    gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(combo_box))));
 }
 
-void free_animations() {
-  animations = NULL;
-  gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(animations_combo_box))));
-  kill_timeout(running_animation);
-  running_animation = 0;
-  current_sprite = sprite_info_new(-1, 0, 0);
+void free_animations(XMLInfo *xml_info, GtkComboBox *combo_box) {
+  xml_info->animations = NULL;
+  if (combo_box != NULL)
+    gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(combo_box))));
+
+  kill_timeout(xml_info->anim_tag);
+  xml_info->anim_tag = 0;
+  xml_info->sprite = sprite_info_new(-1, 0, 0);
   set_sprite_by_index(0);
 }
 
@@ -176,72 +183,80 @@ gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name) {
 }
 
 GdkPixbuf* get_sprite_by_index(size_t index) {
-  size_t w = spriteset_width/sprite_width;
-  if (imageset->spriteset == NULL) return NULL;
-  return gdk_pixbuf_new_subpixbuf(imageset->spriteset, index%w*sprite_width, index/w*sprite_height, sprite_width, sprite_height);
+  size_t w = spriteset_width/gen_xml_info->imageset->width;
+  if (gen_xml_info->imageset->spriteset == NULL) return NULL;
+  return gdk_pixbuf_new_subpixbuf(gen_xml_info->imageset->spriteset, index%w*gen_xml_info->imageset->width, index/w*gen_xml_info->imageset->height, gen_xml_info->imageset->width, gen_xml_info->imageset->height);
 }
 
 void set_sprite_by_index(size_t index) {
-  current_sprite->index = index;
+  gen_xml_info->sprite->index = index;
   gtk_widget_queue_draw(darea);
 }
 
-void set_up_actions_by_imageset_name(gchar *imageset_name) {
-  free_actions();
-  free_animations();
-  actions = NULL;
-  GList *list = root->sub_nodes;
+void set_up_actions_by_imageset_name(gchar *imageset_name, XMLInfo *xml_info, GtkComboBox *combo_box) {
+  free_actions(xml_info, combo_box);
+  free_animations(xml_info, animations_combo_box);
+  GList *_actions_list = NULL;
+  GList *list = xml_info->root->sub_nodes;
   XMLNode *node = NULL;
   while (TRUE) {
     list = g_list_find_custom(list, imageset_name, xml_node_compare_with_action_node_by_imageset_name_func);
     if (list == NULL)
       break;
-    if (actions == NULL) {
-      actions = g_list_alloc();
-      actions->data = list->data;
+    if (_actions_list == NULL) {
+      _actions_list = g_list_alloc();
+      xml_info->actions = _actions_list;
+      _actions_list->data = list->data;
     } else
-      g_list_append(actions, list->data);
+      g_list_append(_actions_list, list->data);
     node = list->data;
-    gtk_combo_box_append_text(GTK_COMBO_BOX(actions_combo_box), xml_node_get_attr_value(node, "name"));
+    if (combo_box != NULL)
+      gtk_combo_box_append_text(GTK_COMBO_BOX(combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
 }
 
-gboolean set_up_imagesets(const XMLNode *root) {
-  free_imagesets();
-  free_actions();
-  free_animations();
-  GList *list = root->sub_nodes;
+gboolean set_up_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box) {
+  GList *_imagesets_list = NULL;
+  free_imagesets(xml_info, combo_box);
+  free_actions(xml_info, actions_combo_box);
+  free_animations(xml_info, animations_combo_box);
+  GList *list = xml_info->root->sub_nodes;
   XMLNode *node = NULL;
   while (TRUE) {
     list = g_list_find_custom(list, "imageset", xml_node_compare_with_name);
     if (list == NULL)
       break;
-    if (imagesets == NULL) {
-      imagesets = g_list_alloc();
-      imagesets->data = list->data;
+    if (_imagesets_list == NULL) {
+      _imagesets_list = g_list_alloc();
+      _imagesets_list->data = list->data;
+      xml_info->imagesets = _imagesets_list;
     } else
-      g_list_append(imagesets, list->data);
+      g_list_append(_imagesets_list, list->data);
     node = list->data;
-    gtk_combo_box_append_text(GTK_COMBO_BOX(imagesets_combo_box), xml_node_get_attr_value(node, "name"));
+    if (combo_box != NULL)
+      gtk_combo_box_append_text(GTK_COMBO_BOX(combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
-  if (imagesets == NULL)
+  if (_imagesets_list == NULL)
     return FALSE;
-  gtk_combo_box_set_active(GTK_COMBO_BOX(imagesets_combo_box), 0);
+  if (combo_box != NULL)
+    gtk_combo_box_set_active(GTK_COMBO_BOX(combo_box), 0);
   return TRUE;
 }
 
 gboolean sequence_source_func(SequenceInfo *seq) {
-  gchar *end_attr = xml_node_get_attr_value(seq->node, "end");
-  size_t end;
-  sscanf(end_attr, "%d", &end);
-  if (current_sprite->index == end) {
-    guint *anim_tag = seq->anim_info->anim_tag;
-    *anim_tag = g_timeout_add(seq->delay, show_animation_by_info, seq->anim_info);
-    return FALSE;
+  if (gen_xml_info->sprite->index == seq->end) {
+    if (seq->repeat <= 1) {
+      guint *anim_tag = seq->anim_info->anim_tag;
+      *anim_tag = g_timeout_add(seq->delay, show_animation_by_info, seq->anim_info);
+      return FALSE;
+    } else {
+      seq->repeat--;
+      gen_xml_info->sprite->index = seq->start - 1;
+    }
   }
-  set_sprite_by_index(current_sprite->index+1);
+  set_sprite_by_index(gen_xml_info->sprite->index+1);
   return TRUE;
 }
 
@@ -265,8 +280,8 @@ gboolean show_animation_by_info(AnimationInfo *anim_info) {
     ofY_param = xml_node_get_attr_value(node, "offsetY");
     if (ofY_param != NULL)
       sscanf(ofY_param, "%d", &ofY);
-    current_sprite->offsetX = ofX;
-    current_sprite->offsetY = ofY;
+    gen_xml_info->sprite->offsetX = ofX;
+    gen_xml_info->sprite->offsetY = ofY;
   }
 
   if (g_strcmp0(node->name, "frame") == 0) {
@@ -297,36 +312,36 @@ gboolean show_animation_by_info(AnimationInfo *anim_info) {
     gchar *delay_attr = xml_node_get_attr_value(node, "delay");
     if (delay_attr == NULL)
       return FALSE;
+    gchar *repeat_attr = xml_node_get_attr_value(node, "repeat");
+
     size_t start;
     sscanf(start_attr, "%d", &start);
     size_t end;
     sscanf(end_attr, "%d", &end);
     size_t delay;
     sscanf(delay_attr, "%d", &delay);
+    size_t repeat = 1;
+    if (repeat_attr != NULL)
+      sscanf(repeat_attr, "%d", &repeat);
     set_sprite_by_index(start);
-    SequenceInfo *seq = g_new0(SequenceInfo, 1);
-    seq->delay = delay;
-    seq->next = next;
-    seq->node = node;
-    seq->anim_info = anim_info;
     anim_info->sub_nodes = next;
     kill_timeout(*anim_tag);
-    *anim_tag = g_timeout_add(delay, sequence_source_func, seq);
+    *anim_tag = g_timeout_add(delay, sequence_source_func, sequence_info_new(node, start, end, delay, anim_info, repeat));
     return FALSE;
   }
   return FALSE;
 }
 
-gboolean show_general_animation() {
-  XMLNode *node = animations->data;
+gboolean show_general_animation(XMLInfo *xml_info) {
+  XMLNode *node = xml_info->animations->data;
   if (node == NULL)
     return FALSE;
-  return show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &running_animation));
+  return show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &xml_info->anim_tag));
 }
 
-gboolean set_up_action_by_name(const gchar *name) {
-  free_animations();
-  GList *list = g_list_find_custom(actions, name, xml_node_compare_with_name_attr);
+gboolean set_up_action_by_name(const gchar *name, XMLInfo *xml_info, GtkComboBox *combo_box) {
+  free_animations(xml_info, animations_combo_box);
+  GList *list = g_list_find_custom(xml_info->actions, name, xml_node_compare_with_name_attr);
   if (list == NULL) return FALSE;
   list = ((XMLNode *)list->data)->sub_nodes;
   gboolean was_direction = FALSE;
@@ -334,88 +349,89 @@ gboolean set_up_action_by_name(const gchar *name) {
     list = g_list_find_custom(list, "animation", xml_node_compare_with_name);
     if (list == NULL)
       break;
-    if (animations == NULL) {
-      animations = g_list_alloc();
-      animations->data = list->data;
+    if (xml_info->animations == NULL) {
+      xml_info->animations = g_list_alloc();
+      xml_info->animations->data = list->data;
     } else
-      g_list_append(animations, list->data);
+      g_list_append(xml_info->animations, list->data);
     XMLNode *node = list->data;
     gchar *direction = xml_node_get_attr_value(node, "direction");
     if (direction != NULL) {
-      gtk_combo_box_append_text(GTK_COMBO_BOX(animations_combo_box), direction);
+      if (animations_combo_box != NULL)
+        gtk_combo_box_append_text(GTK_COMBO_BOX(animations_combo_box), direction);
       was_direction = TRUE;
     }
     list = list->next;
   }
-  if (animations == NULL)
+  if (xml_info->animations == NULL)
     return FALSE;
   if (!was_direction)
-    show_general_animation();
+    show_general_animation(xml_info);
   return TRUE;
 }
 
 void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  set_up_action_by_name(gtk_combo_box_get_active_text(widget));
+  set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_xml_info, widget);
 }
 
 void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  GList *list = g_list_find_custom(animations, gtk_combo_box_get_active_text(widget), xml_node_compare_with_direction_attr);
+  GList *list = g_list_find_custom(gen_xml_info->animations, gtk_combo_box_get_active_text(widget), xml_node_compare_with_direction_attr);
   if (list == NULL)
     return;
   XMLNode *node = list->data;
-  show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &running_animation));
+  show_animation_by_info(animation_info_new_with_params(node->sub_nodes, &gen_xml_info->anim_tag));
 }
 
-void set_up_imageset_by_node(XMLNode *node) {
-  free_imageset();
-  free_actions();
-  free_animations();
+void set_up_imageset_by_node(XMLNode *node, XMLInfo *xml_info, GtkComboBox *combo_box) {
+  free_imageset(xml_info);
+  free_actions(xml_info, actions_combo_box);
+  free_animations(xml_info, animations_combo_box);
 
-  imageset->node = node;
-  imageset->offsetX = 0;
-  imageset->offsetY = 0;
+  xml_info->imageset->node = node;
+  xml_info->imageset->offsetX = 0;
+  xml_info->imageset->offsetY = 0;
 
-  gchar *offset_attr = xml_node_get_attr_value(imageset->node, "offsetX");
+  gchar *offset_attr = xml_node_get_attr_value(xml_info->imageset->node, "offsetX");
   if (offset_attr != NULL)
-    sscanf(offset_attr, "%d", &imageset->offsetX);
+    sscanf(offset_attr, "%d", &xml_info->imageset->offsetX);
 
-  offset_attr = xml_node_get_attr_value(imageset->node, "offsetY");
+  offset_attr = xml_node_get_attr_value(xml_info->imageset->node, "offsetY");
   if (offset_attr != NULL)
-    sscanf(offset_attr, "%d", &imageset->offsetY);
+    sscanf(offset_attr, "%d", &xml_info->imageset->offsetY);
 
-  gchar *imageset_name = xml_node_get_attr_value(imageset->node, "name");
-  set_up_actions_by_imageset_name(imageset_name);
-  if (actions == NULL)
+  gchar *imageset_name = xml_node_get_attr_value(xml_info->imageset->node, "name");
+  set_up_actions_by_imageset_name(imageset_name, xml_info, actions_combo_box);
+  if (xml_info->actions == NULL)
     return;
 
-  gchar *src = xml_node_get_attr_value(imageset->node, "src");
+  gchar *src = xml_node_get_attr_value(xml_info->imageset->node, "src");
   format_src_string(src);
   gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
   gchar path[255];
   g_sprintf(path, "%s/%s", datapath, src);
 
-  imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
-  if (imageset->spriteset == NULL) {
+  xml_info->imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
+  if (xml_info->imageset->spriteset == NULL) {
     show_wrong_source_buffer_dialog();
     return;
   }
   gtk_widget_set_sensitive(imageset_preview_menu_item, TRUE);
-  spriteset_width = gdk_pixbuf_get_width(imageset->spriteset);
-  spriteset_height = gdk_pixbuf_get_height(imageset->spriteset);
+  spriteset_width = gdk_pixbuf_get_width(xml_info->imageset->spriteset);
+  spriteset_height = gdk_pixbuf_get_height(xml_info->imageset->spriteset);
 
-  gchar *width = xml_node_get_attr_value(imageset->node, "width");
-  sscanf(width, "%d", &sprite_width);
-  gchar *height = xml_node_get_attr_value(imageset->node, "height");
-  sscanf(height, "%d", &sprite_height);
+  gchar *width = xml_node_get_attr_value(xml_info->imageset->node, "width");
+  sscanf(width, "%d", &xml_info->imageset->width);
+  gchar *height = xml_node_get_attr_value(xml_info->imageset->node, "height");
+  sscanf(height, "%d", &xml_info->imageset->height);
 
-  GList *list = g_list_find_custom(root->sub_nodes, "sae", xml_node_compare_with_name);
+  GList *list = g_list_find_custom(xml_info->root->sub_nodes, "sae", xml_node_compare_with_name);
   if (list != NULL) {
     gchar *ground_attr = xml_node_get_attr_value((XMLNode *)list->data, "ground");
     if (ground_attr != NULL) {
       ground_attr = g_strjoin(NULL, DIR_GROUNDS, SEPARATOR_SLASH, ground_attr, ".png", NULL);
       GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(ground_attr, NULL);
       if(pbuf != NULL)
-        imageset->ground = pbuf;
+        xml_info->imageset->ground = pbuf;
     }
   }
 
@@ -423,10 +439,10 @@ void set_up_imageset_by_node(XMLNode *node) {
 }
 
 void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  GList *list = g_list_find_custom(imagesets, gtk_combo_box_get_active_text(widget), xml_node_compare_with_name_attr);
+  GList *list = g_list_find_custom(gen_xml_info->imagesets, gtk_combo_box_get_active_text(widget), xml_node_compare_with_name_attr);
   if (list == NULL)
     return;
-  set_up_imageset_by_node(list->data);
+  set_up_imageset_by_node(list->data, gen_xml_info, imagesets_combo_box);
 }
 
 void load_options() {
@@ -452,9 +468,9 @@ void load_options() {
   paths->sprites = g_strjoin(SEPARATOR_SLASH, datapath, paths->sprites, NULL);
 }
 
-void parse_xml_text(gchar *text, XMLNode **root_node) {
+void parse_xml_text(gchar *text, XMLInfo *xml_info) {
   XMLNode *_root_node = ibus_xml_parse_buffer(text);
-  *root_node = _root_node;
+  xml_info->root = _root_node;
   if (_root_node == NULL) {
     show_wrong_source_buffer_dialog();
     return;
@@ -486,22 +502,22 @@ void parse_xml_text(gchar *text, XMLNode **root_node) {
         g_strcmp0(action_attr, "stand") == 0)
           offsetY = -16;
 
-  if (!set_up_imagesets(_root_node)) {
+  if (!set_up_imagesets(xml_info, imagesets_combo_box)) {
     show_wrong_source_buffer_dialog();
     return;
   }
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
-  free_imagesets();
-  free_actions();
-  free_animations();
+  free_imagesets(gen_xml_info, imagesets_combo_box);
+  free_actions(gen_xml_info, actions_combo_box);
+  free_animations(gen_xml_info, animations_combo_box);
   load_options();
 
   GtkTextIter beg, end;
   gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &beg);
   gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(buffer), &end);
-  parse_xml_text(gtk_text_iter_get_text(&beg, &end), &root);
+  parse_xml_text(gtk_text_iter_get_text(&beg, &end), gen_xml_info);
 }
 
 void show_about_dialog() {
@@ -522,190 +538,6 @@ void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdial
   gtk_dialog_run(fcdialog);
 }
 
-void set_up_interface() {
-  GtkWidget *button = NULL;
-  GtkWidget *hbox = NULL;
-  GtkWidget *vbox = NULL;
-  GtkWidget *vbbox = NULL;
-  GtkWidget *text = NULL;
-  GtkWidget *label = NULL;
-  GtkWidget *menubar = NULL;
-  GtkWidget *menuitem = NULL;
-  GtkWidget *menu = NULL;
-  GtkWidget *vpaned = NULL;
-  GtkWidget *hscrollbar = NULL;
-  GtkWidget *vscrollbar = NULL;
-
-  GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
-  source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
-
-  win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
-  gtk_window_set_position(GTK_WINDOW(win), GTK_WIN_POS_CENTER);
-  gtk_window_set_icon(GTK_WINDOW(win), icon);
-  gtk_widget_realize(win);
-  g_signal_connect(win, "destroy", G_CALLBACK(save_config_and_quit), NULL);
-  gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
-  GtkAccelGroup *ag = gtk_accel_group_new();
-  gtk_window_add_accel_group(win, ag);
-
-  GtkWidget *fcdialog = gtk_file_chooser_dialog_new(_("Open XML source file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
-
-  vbox = gtk_vbox_new(FALSE, 0);
-  gtk_container_add(GTK_CONTAINER(win), vbox);
-
-  menubar = gtk_menu_bar_new();
-  gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
-
-  //File menu
-  menu = gtk_menu_new();
-  gtk_menu_set_accel_group(menu, ag);
-
-  menuitem = gtk_menu_item_new_with_label(_("Open..."));
-  g_signal_connect(menuitem, "activate", open_menu_item_activate, fcdialog);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-
-  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/Open");
-  gtk_accel_map_change_entry("<MenuItems>/File/Open", gdk_keyval_from_name("O"), GDK_CONTROL_MASK, TRUE);
-
-  menuitem = gtk_menu_item_new_with_label(_("File"));
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
-
-  //View menu
-  menu = gtk_menu_new();
-  gtk_menu_set_accel_group(menu, ag);
-
-  menuitem = gtk_check_menu_item_new_with_label(_("Show grid"));
-  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-
-  g_signal_connect(menuitem, "toggled", show_grid_menu_item_toggled, NULL);
-
-  gtk_menu_item_set_accel_path(menuitem, "<MenuItems>/View/ShowGrid");
-  gtk_accel_map_change_entry("<MenuItems>/View/ShowGrid", gdk_keyval_from_name("G"), GDK_CONTROL_MASK, TRUE);
-
-  show_grid_menu_item = menuitem;
-
-  menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
-  gtk_widget_set_sensitive(menuitem, FALSE);
-  g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-
-  gtk_menu_item_set_accel_path(menuitem, "<MenuItems>/View/ImagesetPreview");
-  gtk_accel_map_change_entry("<MenuItems>/View/ImagesetPreview", gdk_keyval_from_name("I"), GDK_CONTROL_MASK, TRUE);
-
-  imageset_preview_menu_item = menuitem;
-
-  menuitem = gtk_menu_item_new_with_label(_("View"));
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
-
-  menu = gtk_menu_new();
-  menuitem = gtk_menu_item_new_with_label(_("About"));
-  g_signal_connect(menuitem, "activate", show_about_dialog, NULL);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-
-  menuitem = gtk_menu_item_new_with_label(_("Help"));
-  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
-  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
-
-  hbox = gtk_hbox_new(FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
-
-  vbbox = gtk_vbutton_box_new();
-  gtk_button_box_set_layout(GTK_BUTTON_BOX(vbbox), GTK_BUTTONBOX_START);
-  gtk_button_box_set_child_size(GTK_BUTTON_BOX(vbbox), 180, 0);
-  gtk_box_pack_start(GTK_BOX(hbox), vbbox, FALSE, TRUE, 0);
-
-  label = gtk_label_new("");
-  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Clientdata folder")));
-  gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
-
-  data_folder_chooser_button = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
-  gtk_box_pack_start(GTK_BOX(vbbox), data_folder_chooser_button, TRUE, TRUE, 0);
-  gtk_file_chooser_set_action(GTK_FILE_CHOOSER(data_folder_chooser_button), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  g_signal_connect(data_folder_chooser_button, "selection-changed", G_CALLBACK(data_folder_set_handler), NULL);
-
-  label = gtk_label_new("");
-  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
-  gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
-
-  //xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
-  xml_file_chooser_button = gtk_file_chooser_button_new_with_dialog(fcdialog);
-  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), source_buffer);
-
-  xml_file_open_button = gtk_button_new_from_stock(GTK_STOCK_OPEN);
-  gtk_widget_set_sensitive(xml_file_open_button, FALSE);
-  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_open_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_open_button, "clicked", G_CALLBACK(open_xml_file), source_buffer);
-
-  xml_file_save_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
-  gtk_widget_set_sensitive(xml_file_save_button, FALSE);
-  gtk_box_pack_start(GTK_BOX(vbbox), xml_file_save_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), source_buffer);
-  gtk_widget_set_accel_path(xml_file_save_button, "<Buttons>/SaveXMLBuffer", ag);
-  gtk_accel_map_change_entry("<Buttons>/SaveXMLBuffer", gdk_keyval_from_name("S"), GDK_CONTROL_MASK, TRUE);
-
-  button = gtk_button_new_with_label(_("Parse XML buffer"));
-  gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
-  g_signal_connect(button, "clicked", G_CALLBACK(parse_xml_buffer), source_buffer);
-  gtk_widget_set_accel_path(button, "<Buttons>/ParseXMLBuffer", ag);
-  gtk_accel_map_change_entry("<Buttons>/ParseXMLBuffer", gdk_keyval_from_name("P"), GDK_CONTROL_MASK, TRUE);
-
-  label = gtk_label_new("");
-  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
-  gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
-
-  imagesets_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), imagesets_combo_box, TRUE, TRUE, 0);
-
-  label = gtk_label_new("");
-  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Actions")));
-  gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
-
-  actions_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), actions_combo_box, TRUE, TRUE, 0);
-
-  label = gtk_label_new("");
-  gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Directions")));
-  gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
-
-  animations_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), animations_combo_box, TRUE, TRUE, 0);
-
-  vpaned = gtk_vpaned_new();
-  gtk_box_pack_end(GTK_BOX(hbox), vpaned, TRUE, TRUE, 0);
-
-  darea = gtk_drawing_area_new();
-  gtk_paned_pack1(GTK_PANED(vpaned), darea, FALSE, FALSE);
-  gtk_widget_set_size_request(darea, -1, 120);
-  g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), NULL);
-
-  hbox = gtk_hbox_new(FALSE, 0);
-  gtk_paned_pack2(GTK_PANED(vpaned), hbox, TRUE, FALSE);
-  gtk_widget_set_size_request(hbox, -1, 50);
-
-  vbox = gtk_vbox_new(FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
-
-  text = gtk_source_view_new_with_buffer(source_buffer);
-  gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);
-  gtk_box_pack_start(GTK_BOX(vbox), text, TRUE, TRUE, 0);
-
-  hscrollbar = gtk_hscrollbar_new(gtk_text_view_get_hadjustment(text));
-  gtk_box_pack_start(GTK_BOX(vbox), hscrollbar, FALSE, TRUE, 0);
-
-  vscrollbar = gtk_vscrollbar_new(gtk_text_view_get_vadjustment(text));
-  gtk_box_pack_start(GTK_BOX(hbox), vscrollbar, FALSE, TRUE, 0);
-
-  gtk_widget_show_all(win);
-  gtk_widget_show_all(text);
-}
-
 gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index) {
   gchar buf[10];
   gint len = g_sprintf(buf, "%d", index);
@@ -714,15 +546,15 @@ gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *butto
 }
 
 void show_imageset_window() {
-  if (imageset->spriteset == NULL) return;
+  if (gen_xml_info->imageset->spriteset == NULL) return;
   GtkWidget *iwin = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
   gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);
   gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
   gtk_widget_set_size_request(iwin, IMAGESET_PREVIEW_WINDOW_WIDTH, IMAGESET_PREVIEW_WINDOW_HEIGHT);
   gtk_widget_realize(win);
-  int w = spriteset_width / sprite_width;
-  int h = spriteset_height / sprite_height;
+  int w = spriteset_width / gen_xml_info->imageset->width;
+  int h = spriteset_height / gen_xml_info->imageset->height;
 
   GtkWidget *vbox = gtk_vbox_new(TRUE, 0);
   GtkWidget *hbox = NULL;
@@ -779,8 +611,9 @@ int main(int argc, char *argv[]) {
 
   config = keys_new();
   paths = g_new0(Options, 1);
-  current_sprite = sprite_info_new(-1, 0, 0);
-  imageset = imageset_info_new();
+  gen_xml_info = xml_info_new();
+  gen_xml_info->sprite = sprite_info_new(-1, 0, 0);
+  gen_xml_info->imageset = imageset_info_new();
 
   set_up_interface();
   load_config();

@@ -53,10 +53,23 @@ static AnimationInfo *animation_info_new_with_params(GList *sub_nodes_new, guint
 
 typedef struct {
   XMLNode *node;
-  GList *next;
+  int start;
+  int end;
   guint delay;
   AnimationInfo *anim_info;
+  int repeat;
 } SequenceInfo;
+
+static SequenceInfo *sequence_info_new(XMLNode *node, int start, int end, guint delay, AnimationInfo *anim_info, int repeat) {
+  SequenceInfo *res = g_new0(SequenceInfo, 1);
+  res->start = start;
+  res->end = end;
+  res->node = node;
+  res->delay = delay;
+  res->anim_info = anim_info;
+  res->repeat = repeat;
+  return res;
+}
 
 typedef struct {
   int index;
@@ -85,6 +98,8 @@ typedef struct {
   XMLNode *node;
   int offsetX;
   int offsetY;
+  int width;
+  int height;
   GdkPixbuf *spriteset;
   GdkPixbuf *ground;
 } ImagesetInfo;
@@ -92,11 +107,26 @@ typedef struct {
 static ImagesetInfo *imageset_info_new() {
   ImagesetInfo *res = g_new0(ImagesetInfo, 1);
   res->ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
+  res->width = SPRITE_WIDTH_DEFAULT;
+  res->height = SPRITE_HEIGHT_DEFAULT;
   gdk_pixbuf_fill(res->ground, 0x00000000);
   return res;
 }
 
-int sprite_width = 64, sprite_height = 64;
+typedef struct {
+  GList *imagesets;
+  GList *actions;
+  GList *animations;
+  ImagesetInfo *imageset;
+  SpriteInfo *sprite;
+  guint anim_tag;
+  XMLNode *root;
+} XMLInfo;
+
+static XMLInfo *xml_info_new() {
+  return g_new0(XMLInfo, 1);
+}
+
 int spriteset_width, spriteset_height;
 int offsetX = 0, offsetY = 0;
 
@@ -114,16 +144,16 @@ GtkWidget *show_grid_menu_item = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
-GList *imagesets = NULL;
-GList *actions = NULL;
-GList *animations = NULL;
+//GList *imagesets = NULL;
+//GList *actions = NULL;
+//GList *animations = NULL;
+XMLInfo *gen_xml_info;
 
 GdkPixbuf *icon = NULL;
 
-XMLNode *root = NULL;
-ImagesetInfo *imageset = NULL;
-SpriteInfo *current_sprite;
-guint running_animation = 0;
+//XMLNode *root = NULL;
+//ImagesetInfo *imageset = NULL;
+//guint running_animation = 0;
 Options *paths;
 Keys *config;
 
@@ -131,9 +161,9 @@ static gboolean show_animation_by_info(AnimationInfo *anim_info);
 static gchar *markup_bold(gchar *str);
 static void format_src_string(gchar *src);
 static void open_xml_file(GtkButton *button, gpointer buffer);
-static void free_imagesets();
-static void free_actions();
-static void free_animations();
+static void free_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box);
+static void free_actions(XMLInfo *xml_info, GtkComboBox *combo_box);
+static void free_animations(XMLInfo *xml_info, GtkComboBox *combo_box);
 static void save_to_xml_file(GtkButton *button, gpointer buffer);
 static void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data);
 static void show_wrong_source_buffer_dialog();
@@ -144,14 +174,14 @@ static gint xml_node_compare_with_direction_attr(gconstpointer node, gconstpoint
 static gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name);
 static GdkPixbuf* get_sprite_by_index(size_t index);
 static void set_sprite_by_index(size_t index);
-static void set_up_actions_by_imageset_name(gchar *imageset_name);
-static gboolean set_up_imagesets(const XMLNode *root);
+static void set_up_actions_by_imageset_name(gchar *imageset_name, XMLInfo *xml_info, GtkComboBox *combo_box);
+static gboolean set_up_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box);
 static gboolean sequence_source_func(SequenceInfo *seq);
-static gboolean show_general_animation();
-static gboolean set_up_action_by_name(const gchar *name);
+static gboolean show_general_animation(XMLInfo *xml_info);
+static gboolean set_up_action_by_name(const gchar *name, XMLInfo *xml_info, GtkComboBox *combo_box);
 static void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
-static void set_up_imageset_by_node(XMLNode *node);
+static void set_up_imageset_by_node(XMLNode *node, XMLInfo *xml_info, GtkComboBox *combo_box);
 static void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 static void set_up_interface();
