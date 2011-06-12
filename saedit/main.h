@@ -121,10 +121,13 @@ typedef struct {
   SpriteInfo *sprite;
   guint anim_tag;
   XMLNode *root;
-} XMLInfo;
+  GtkWidget *imagesets_combo_box;
+  GtkWidget *actions_combo_box;
+  GtkWidget *animations_combo_box;
+} SAEInfo;
 
-static XMLInfo *xml_info_new() {
-  return g_new0(XMLInfo, 1);
+static SAEInfo *sae_info_new() {
+  return g_new0(SAEInfo, 1);
 }
 
 int spriteset_width, spriteset_height;
@@ -136,9 +139,6 @@ GtkWidget *data_folder_chooser_button = NULL;
 GtkWidget *xml_file_chooser_button = NULL;
 GtkWidget *xml_file_open_button = NULL;
 GtkWidget *xml_file_save_button = NULL;
-GtkWidget *imagesets_combo_box = NULL;
-GtkWidget *actions_combo_box = NULL;
-GtkWidget *animations_combo_box = NULL;
 GtkWidget *imageset_preview_menu_item = NULL;
 GtkWidget *show_grid_menu_item = NULL;
 
@@ -147,7 +147,7 @@ GtkSourceBuffer *source_buffer = NULL;
 //GList *imagesets = NULL;
 //GList *actions = NULL;
 //GList *animations = NULL;
-XMLInfo *gen_xml_info;
+SAEInfo *gen_sae_info;
 
 GdkPixbuf *icon = NULL;
 
@@ -161,9 +161,9 @@ static gboolean show_animation_by_info(AnimationInfo *anim_info);
 static gchar *markup_bold(gchar *str);
 static void format_src_string(gchar *src);
 static void open_xml_file(GtkButton *button, gpointer buffer);
-static void free_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box);
-static void free_actions(XMLInfo *xml_info, GtkComboBox *combo_box);
-static void free_animations(XMLInfo *xml_info, GtkComboBox *combo_box);
+static void free_imagesets(SAEInfo *sae_info);
+static void free_actions(SAEInfo *sae_info);
+static void free_animations(SAEInfo *sae_info);
 static void save_to_xml_file(GtkButton *button, gpointer buffer);
 static void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data);
 static void show_wrong_source_buffer_dialog();
@@ -174,14 +174,14 @@ static gint xml_node_compare_with_direction_attr(gconstpointer node, gconstpoint
 static gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name);
 static GdkPixbuf* get_sprite_by_index(size_t index);
 static void set_sprite_by_index(size_t index);
-static void set_up_actions_by_imageset_name(gchar *imageset_name, XMLInfo *xml_info, GtkComboBox *combo_box);
-static gboolean set_up_imagesets(XMLInfo *xml_info, GtkComboBox *combo_box);
+static void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info);
+static gboolean set_up_imagesets(SAEInfo *sae_info);
 static gboolean sequence_source_func(SequenceInfo *seq);
-static gboolean show_general_animation(XMLInfo *xml_info);
-static gboolean set_up_action_by_name(const gchar *name, XMLInfo *xml_info, GtkComboBox *combo_box);
+static gboolean show_general_animation(SAEInfo *sae_info);
+static gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info);
 static void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
-static void set_up_imageset_by_node(XMLNode *node, XMLInfo *xml_info, GtkComboBox *combo_box);
+static void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info);
 static void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 static void set_up_interface();

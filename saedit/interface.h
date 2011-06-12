@@ -133,25 +133,25 @@ void set_up_interface() {
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Imagesets")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  imagesets_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), imagesets_combo_box, TRUE, TRUE, 0);
+  gen_sae_info->imagesets_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(gen_sae_info->imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->imagesets_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Actions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  actions_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), actions_combo_box, TRUE, TRUE, 0);
+  gen_sae_info->actions_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(gen_sae_info->actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->actions_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("Directions")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  animations_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
-  gtk_box_pack_start(GTK_BOX(vbbox), animations_combo_box, TRUE, TRUE, 0);
+  gen_sae_info->animations_combo_box = gtk_combo_box_new_text();
+  g_signal_connect(gen_sae_info->animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
+  gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->animations_combo_box, TRUE, TRUE, 0);
 
   vpaned = gtk_vpaned_new();
   gtk_box_pack_end(GTK_BOX(hbox), vpaned, TRUE, TRUE, 0);
