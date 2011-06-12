@@ -73,7 +73,7 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *s
     if (pbuf == NULL) return FALSE;
     gdk_cairo_set_source_pixbuf(cr, pbuf,
                                 width/2 - player->imageset->width/2 + player->offsetX + player->sprite->offsetX + player->imageset->offsetX,
-                                height/2 - player->imageset->height/2 + player->offsetY + player->sprite->offsetY + player->imageset->offsetY);
+                                height/2 + GRID_SIZE/2 - player->imageset->height + player->offsetY + player->sprite->offsetY + player->imageset->offsetY);
     cairo_paint(cr);
   }
 
@@ -81,7 +81,7 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *s
   if (pbuf == NULL) return FALSE;
   gdk_cairo_set_source_pixbuf(cr, pbuf,
                               width/2 - sae_info->imageset->width/2 + sae_info->offsetX + sae_info->sprite->offsetX + sae_info->imageset->offsetX,
-                              height/2 - sae_info->imageset->height/2 + sae_info->offsetY + sae_info->sprite->offsetY + sae_info->imageset->offsetY);
+                              height/2 +GRID_SIZE/2 - sae_info->imageset->height + sae_info->offsetY + sae_info->sprite->offsetY + sae_info->imageset->offsetY);
   cairo_paint(cr);
 
   cairo_destroy(cr);
@@ -532,12 +532,12 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 
   sae_info->offsetX = 0;
   sae_info->offsetY = 0;
-  gchar *name_attr = xml_node_get_attr_value(_root_node, "name");
+  /*gchar *name_attr = xml_node_get_attr_value(_root_node, "name");
   gchar *action_attr = xml_node_get_attr_value(_root_node, "action");
   if (name_attr != NULL && action_attr != NULL)
     if (g_strcmp0(name_attr, "player") == 0 &&
         g_strcmp0(action_attr, "stand") == 0)
-          sae_info->offsetY = -16;
+          sae_info->offsetY = -16;*/
 
   if (!set_up_imagesets(sae_info)) {
     show_wrong_source_buffer_dialog();
