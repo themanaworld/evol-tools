@@ -32,7 +32,7 @@ cairo_surface_t *get_grid_surface(int w, int h) {
 
   for (x = 0; x < w; x++)
     for (y = 0; y < h; y++) {
-    gdk_cairo_set_source_pixbuf(cr, gen_sae_info->imageset->ground, x * GRID_SIZE, y * GRID_SIZE);
+    gdk_cairo_set_source_pixbuf(cr, gen_sae_info->ground, x * GRID_SIZE, y * GRID_SIZE);
     cairo_paint(cr);
   }
 
@@ -109,7 +109,8 @@ void free_imagesets(SAEInfo *sae_info) {
 }
 
 void free_imageset(SAEInfo *sae_info) {
-  sae_info->imageset = imageset_info_new();
+  gen_sae_info->imageset = imageset_info_new();
+  gen_sae_info->ground = sae_info_ground_new();
   gtk_widget_set_sensitive(imageset_preview_menu_item, FALSE);
 }
 
@@ -431,7 +432,7 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
       ground_attr = g_strjoin(NULL, DIR_GROUNDS, SEPARATOR_SLASH, ground_attr, ".png", NULL);
       GdkPixbuf *pbuf = gdk_pixbuf_new_from_file(ground_attr, NULL);
       if(pbuf != NULL)
-        sae_info->imageset->ground = pbuf;
+        sae_info->ground = pbuf;
     }
   }
 

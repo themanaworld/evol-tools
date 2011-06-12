@@ -101,15 +101,12 @@ typedef struct {
   int width;
   int height;
   GdkPixbuf *spriteset;
-  GdkPixbuf *ground;
 } ImagesetInfo;
 
 static ImagesetInfo *imageset_info_new() {
   ImagesetInfo *res = g_new0(ImagesetInfo, 1);
-  res->ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
   res->width = SPRITE_WIDTH_DEFAULT;
   res->height = SPRITE_HEIGHT_DEFAULT;
-  gdk_pixbuf_fill(res->ground, 0x00000000);
   return res;
 }
 
@@ -124,10 +121,19 @@ typedef struct {
   GtkWidget *imagesets_combo_box;
   GtkWidget *actions_combo_box;
   GtkWidget *animations_combo_box;
+  GdkPixbuf *ground;
 } SAEInfo;
 
+static GdkPixbuf *sae_info_ground_new() {
+  GdkPixbuf *ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
+  gdk_pixbuf_fill(ground, 0x00000000);
+  return ground;
+}
+
 static SAEInfo *sae_info_new() {
-  return g_new0(SAEInfo, 1);
+  SAEInfo *res = g_new0(SAEInfo, 1);
+  res->ground = sae_info_ground_new();
+  return res;
 }
 
 int spriteset_width, spriteset_height;
@@ -197,3 +203,4 @@ static void free_imageset();
 static void kill_timeout(int tag);
 static void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);
+static void parse_xml_text(gchar *text, SAEInfo *sae_info);
