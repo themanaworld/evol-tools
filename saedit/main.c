@@ -546,6 +546,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
+  player = NULL;
   load_options();
 
   GtkTextIter beg, end;
