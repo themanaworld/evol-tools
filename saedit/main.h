@@ -53,8 +53,10 @@ typedef struct {
   int index;
   int offsetX;
   int offsetY;
-} SpriteInfo;
-static SpriteInfo *sprite_info_new(int index, int offsetX, int offsetY);
+  int delay;
+  GdkPixbuf *pixbuf;
+} Frame;
+static Frame *frame_new(int index, int offsetX, int offsetY, int delay);
 
 static ImagesetInfo *imageset_info_new() {
   ImagesetInfo *res = g_new0(ImagesetInfo, 1);
@@ -67,8 +69,9 @@ typedef struct {
   GList *imagesets;
   GList *actions;
   GList *animations;
+  GList *animation;
   ImagesetInfo *imageset;
-  SpriteInfo *sprite;
+  Frame *sprite;
   guint anim_tag;
   XMLNode *root;
   GtkWidget *imagesets_combo_box;
@@ -143,7 +146,7 @@ static GdkPixbuf *sae_info_ground_new() {
 static SAEInfo *sae_info_new() {
   SAEInfo *res = g_new0(SAEInfo, 1);
   res->ground = sae_info_ground_new();
-  res->sprite = sprite_info_new(-1, 0, 0);
+  res->sprite = frame_new(-1, 0, 0, 0);
   res->imageset = imageset_info_new();
   return res;
 }
@@ -215,3 +218,5 @@ static void kill_timeout(int tag);
 static void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);
 static void parse_xml_text(gchar *text, SAEInfo *sae_info);
+static void show_animation(SAEInfo *sae_info);
+static gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction);
