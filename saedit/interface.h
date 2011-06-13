@@ -1,3 +1,14 @@
+/*=======================================*\
+|  ____                         ____      |
+| /    \         /\            |          |
+| \____         /  \           |____      |
+|      \       /____\          |          |
+| \____/prite /      \nimation |____ditor |
+|                                         |
+|      Copyleft Vasily_Makarov 2011       |
+|                                         |
+\*=======================================*/
+
 void set_up_interface() {
   GtkWidget *button = NULL;
   GtkWidget *hbox = NULL;
@@ -106,7 +117,6 @@ void set_up_interface() {
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
-  //xml_file_chooser_button = gtk_file_chooser_button_new(_("XML source file"), 0);
   xml_file_chooser_button = gtk_file_chooser_button_new_with_dialog(fcdialog);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_chooser_button, TRUE, TRUE, 0);
   g_signal_connect(xml_file_chooser_button, "file-set", G_CALLBACK(open_xml_file), source_buffer);

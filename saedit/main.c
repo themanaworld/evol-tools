@@ -396,10 +396,15 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
   show_animation(gen_sae_info);
 }
 
-void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
+void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
   free_imageset(sae_info);
   free_actions(sae_info);
   free_animations(sae_info);
+
+  GList *list = g_list_find_custom(sae_info->imagesets, name, xml_node_compare_with_name_attr);
+  XMLNode *node = list->data;
+  if (node == NULL)
+    return;
 
   sae_info->imageset->node = node;
   sae_info->imageset->offsetX = 0;
@@ -438,7 +443,7 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
   gchar *height = xml_node_get_attr_value(sae_info->imageset->node, "height");
   sscanf(height, "%d", &sae_info->imageset->height);
 
-  GList *list = g_list_find_custom(sae_info->root->sub_nodes, "sae", xml_node_compare_with_name);
+  list = g_list_find_custom(sae_info->root->sub_nodes, "sae", xml_node_compare_with_name);
   if (list != NULL) {
     gchar *ground_attr = xml_node_get_attr_value((XMLNode *)list->data, "ground");
     if (ground_attr != NULL) {
@@ -448,7 +453,7 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
         sae_info->ground = pbuf;
     }
     gchar *player_attr = xml_node_get_attr_value((XMLNode *)list->data, "player");
-    if (player_attr != NULL) {
+    if (player_attr != NULL && player == NULL) {
       gchar *text;
       gchar *sprites_path = paths->sprites;
       gchar *player_file = g_strjoin(NULL, sprites_path, DIR_PLAYERS, player_attr, ".xml", NULL);
@@ -456,10 +461,7 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
       if (g_file_get_contents(player_file, &text, NULL, NULL)) {
         player = sae_info_new();
         parse_xml_text(text, player);
-        GList *list = g_list_find_custom(player->imagesets, "base", xml_node_compare_with_name_attr);
-        XMLNode *node = list->data;
-        printf("\n%s\n", node->name);
-        set_up_imageset_by_node(list->data, player);
+        set_up_imageset_by_name("base", player);
       }
     }
   }
@@ -468,10 +470,7 @@ void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info) {
 }
 
 void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  GList *list = g_list_find_custom(gen_sae_info->imagesets, gtk_combo_box_get_active_text(widget), xml_node_compare_with_name_attr);
-  if (list == NULL)
-    return;
-  set_up_imageset_by_node(list->data, gen_sae_info);
+  set_up_imageset_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
 }
 
 void load_options() {
@@ -527,12 +526,6 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 
   sae_info->offsetX = 0;
   sae_info->offsetY = 0;
-  /*gchar *name_attr = xml_node_get_attr_value(_root_node, "name");
-  gchar *action_attr = xml_node_get_attr_value(_root_node, "action");
-  if (name_attr != NULL && action_attr != NULL)
-    if (g_strcmp0(name_attr, "player") == 0 &&
-        g_strcmp0(action_attr, "stand") == 0)
-          sae_info->offsetY = -16;*/
 
   if (!set_up_imagesets(sae_info)) {
     show_wrong_source_buffer_dialog();

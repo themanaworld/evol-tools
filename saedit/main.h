@@ -201,7 +201,7 @@ static gboolean show_general_animation(SAEInfo *sae_info);
 static gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info);
 static void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
-static void set_up_imageset_by_node(XMLNode *node, SAEInfo *sae_info);
+static void set_up_imageset_by_name(const gchar* name, SAEInfo *sae_info);
 static void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data);
 static void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 static void set_up_interface();
