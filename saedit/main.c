@@ -407,9 +407,9 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
 }
 
 void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
   if (player != NULL)
     set_up_action_by_name(gtk_combo_box_get_active_text(widget), player);
+  set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
 }
 
 void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {

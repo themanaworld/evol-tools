@@ -166,17 +166,11 @@ GtkWidget *source_view = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
-//GList *imagesets = NULL;
-//GList *actions = NULL;
-//GList *animations = NULL;
 SAEInfo *gen_sae_info = NULL;
 SAEInfo *player = NULL;
 
 GdkPixbuf *icon = NULL;
 
-//XMLNode *root = NULL;
-//ImagesetInfo *imageset = NULL;
-//guint running_animation = 0;
 Options *paths;
 Keys *config;
 
