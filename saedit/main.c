@@ -10,6 +10,7 @@
 \*=======================================*/
 
 #include "main.h"
+#include "search.h"
 #include "interface.h"
 
 void kill_timeout(int tag) {
@@ -141,7 +142,10 @@ void free_animations(SAEInfo *sae_info) {
 }
 
 void save_to_xml_file(GtkButton *button, gpointer buffer) {
-  g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), buffer, sizeof(buffer), NULL);
+  GtkTextIter start, end;
+  gtk_text_buffer_get_start_iter(source_buffer, &start);
+  gtk_text_buffer_get_end_iter(source_buffer, &end);
+  g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), gtk_text_buffer_get_text(source_buffer, &start, &end, NULL), -1, NULL);
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
@@ -274,6 +278,17 @@ GList *merge_animations(SAEInfo *sae_info_bottom, SAEInfo *sae_info_top) {
 }
 
 gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction) {
+  /*GtkTextIter beg, end, start;
+  gtk_text_buffer_get_start_iter(source_buffer, &start);
+  gtk_source_iter_forward_search(&start, "place -->", 0, &beg, &end, NULL);
+  gtk_text_buffer_place_cursor(source_buffer, &beg);
+  gtk_text_buffer_move_mark_by_name(source_buffer, "selection_bound", &end);
+	gtk_text_view_scroll_to_mark (GTK_TEXT_VIEW (source_view),
+	                              gtk_text_buffer_get_insert (source_buffer),
+	                              0.25,
+	                              FALSE,
+	                              0.0,
+	                              0.0);*/
   if (sae_info->imageset->spriteset == NULL)
     return FALSE;
   sae_info->animation = NULL;
@@ -407,7 +422,6 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
 }
 
 void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
-  g_printf("\n%s\n", name);
   free_imageset(sae_info);
   free_actions(sae_info);
   free_animations(sae_info);
@@ -435,7 +449,6 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
   format_src_string(src);
   gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
   gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, src, NULL);
-  printf("\n%s\n", path);
 
   sae_info->imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
   if (sae_info->imageset->spriteset == NULL) {
@@ -466,7 +479,6 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
       gchar *text;
       gchar *sprites_path = paths->sprites;
       gchar *player_file = g_strjoin(NULL, sprites_path, DIR_PLAYERS, player_attr, ".xml", NULL);
-      printf("%s\n", player_file);
       if (g_file_get_contents(player_file, &text, NULL, NULL)) {
         player = sae_info_new();
         parse_xml_text(text, player);
@@ -519,7 +531,6 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
     return;
   }
 
-  printf("%s", paths->sprites);
   GList *list = g_list_find_custom(_root_node->sub_nodes, "include", xml_node_compare_with_name);
   while (list != NULL) {
     XMLNode *node = list->data;
@@ -583,6 +594,7 @@ gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *butto
 void show_imageset_window() {
   if (gen_sae_info->imageset->spriteset == NULL) return;
   GtkWidget *iwin = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_transient_for(iwin, GTK_WINDOW(win));
   gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
   gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);
   gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
@@ -649,6 +661,7 @@ int main(int argc, char *argv[]) {
   paths = g_new0(Options, 1);
 
   set_up_interface();
+  //find_window_new(win);
   load_config();
 
   gtk_main();

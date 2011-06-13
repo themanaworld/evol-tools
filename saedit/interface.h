@@ -20,8 +20,7 @@ void set_up_interface() {
   GtkWidget *menuitem = NULL;
   GtkWidget *menu = NULL;
   GtkWidget *vpaned = NULL;
-  GtkWidget *hscrollbar = NULL;
-  GtkWidget *vscrollbar = NULL;
+  GtkWidget *scrolled_window = NULL;
 
   GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
   source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
@@ -30,6 +29,7 @@ void set_up_interface() {
   gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
   gtk_window_set_position(GTK_WINDOW(win), GTK_WIN_POS_CENTER);
   gtk_window_set_icon(GTK_WINDOW(win), icon);
+  //gtk_window_set_modal(GTK_WINDOW(win), TRUE);
   gtk_widget_realize(win);
   g_signal_connect(win, "destroy", G_CALLBACK(save_config_and_quit), NULL);
   gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
@@ -169,25 +169,17 @@ void set_up_interface() {
   darea = gtk_drawing_area_new();
   gtk_paned_pack1(GTK_PANED(vpaned), darea, FALSE, FALSE);
   gtk_widget_set_size_request(darea, -1, 120);
-  //g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), player);
   g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), gen_sae_info);
 
-  hbox = gtk_hbox_new(FALSE, 0);
-  gtk_paned_pack2(GTK_PANED(vpaned), hbox, TRUE, FALSE);
-  gtk_widget_set_size_request(hbox, -1, 50);
-
-  vbox = gtk_vbox_new(FALSE, 0);
-  gtk_box_pack_start(GTK_BOX(hbox), vbox, TRUE, TRUE, 0);
-
   text = gtk_source_view_new_with_buffer(source_buffer);
+  source_view = text;
   gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);
-  gtk_box_pack_start(GTK_BOX(vbox), text, TRUE, TRUE, 0);
 
-  hscrollbar = gtk_hscrollbar_new(gtk_text_view_get_hadjustment(text));
-  gtk_box_pack_start(GTK_BOX(vbox), hscrollbar, FALSE, TRUE, 0);
+  scrolled_window = gtk_scrolled_window_new(gtk_text_view_get_hadjustment(text), gtk_text_view_get_vadjustment(text));
+  gtk_paned_pack2(GTK_PANED(vpaned), scrolled_window, TRUE, FALSE);
+  gtk_widget_set_size_request(scrolled_window, -1, 50);
 
-  vscrollbar = gtk_vscrollbar_new(gtk_text_view_get_vadjustment(text));
-  gtk_box_pack_start(GTK_BOX(hbox), vscrollbar, FALSE, TRUE, 0);
+  gtk_container_add(scrolled_window, text);
 
   gtk_widget_show_all(win);
   gtk_widget_show_all(text);

@@ -13,6 +13,7 @@
 #include <gtk/gtk.h>
 #include <gtksourceview/gtksourceview.h>
 #include <gtksourceview/gtksourcelanguagemanager.h>
+#include <gtksourceview/gtksourceiter.h>
 #include <ibusxml.h>
 #include <cairo.h>
 #include <glib/gi18n.h>
@@ -161,6 +162,7 @@ GtkWidget *xml_file_open_button = NULL;
 GtkWidget *xml_file_save_button = NULL;
 GtkWidget *imageset_preview_menu_item = NULL;
 GtkWidget *show_grid_menu_item = NULL;
+GtkWidget *source_view = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
