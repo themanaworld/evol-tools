@@ -37,7 +37,7 @@ static gboolean find_text() {
     return FALSE;
 }
 
-static GtkWidget *find_window_new(GtkWindow *parent) {
+static GtkWidget *show_find_dialog() {
   GtkWidget *dialog;
   GtkWidget *vbox;
   GtkWidget *entry;
@@ -45,7 +45,7 @@ static GtkWidget *find_window_new(GtkWindow *parent) {
   GtkWidget *label;
 
   dialog = gtk_dialog_new_with_buttons (_("Find"),
-                                         parent,
+                                         win,
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_FIND,
                                          GTK_RESPONSE_NONE,
@@ -63,5 +63,5 @@ static GtkWidget *find_window_new(GtkWindow *parent) {
                    "response",
                    G_CALLBACK(find_text),
                    NULL);
-  return dialog;
+  gtk_widget_show_all(dialog);
 }

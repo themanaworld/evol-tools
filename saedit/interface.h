@@ -36,8 +36,6 @@ void set_up_interface() {
   GtkAccelGroup *ag = gtk_accel_group_new();
   gtk_window_add_accel_group(win, ag);
 
-  find_dialog = find_window_new(win);
-
   GtkWidget *fcdialog = gtk_file_chooser_dialog_new(_("Open XML source file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
 
   vbox = gtk_vbox_new(FALSE, 0);
