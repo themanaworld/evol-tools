@@ -11,50 +11,57 @@
 
 GtkWidget *find_entry;
 
-static gboolean find_text(GtkWidget *button, gpointer user_data) {
-  GtkTextIter beg, end, start;
-  gtk_text_buffer_get_start_iter(source_buffer, &start);
-  if (!gtk_source_iter_forward_search(&start, gtk_entry_get_text(find_entry), 0, &beg, &end, NULL))
+static gboolean find_text() {
+  gboolean found;
+  gchar *text = gtk_entry_get_text(find_entry);
+
+  GtkTextIter m_start, m_end, start;
+  gtk_text_buffer_get_selection_bounds(source_buffer, NULL, &start);
+  found = gtk_source_iter_forward_search(&start, text, 0, &m_start, &m_end, NULL);
+
+  if (!found) {
+    gtk_text_buffer_get_start_iter(source_buffer, &start);
+    found = gtk_source_iter_forward_search(&start, text, 0, &m_start, &m_end, NULL);
+  }
+  if (found) {
+    gtk_text_buffer_place_cursor(source_buffer, &m_start);
+    gtk_text_buffer_move_mark_by_name(source_buffer, "selection_bound", &m_end);
+    gtk_text_view_scroll_to_mark (GTK_TEXT_VIEW (source_view),
+                                  gtk_text_buffer_get_insert (source_buffer),
+                                  0.25,
+                                  FALSE,
+                                  0.0,
+                                  0.0);
+    return TRUE;
+  } else
     return FALSE;
-  gtk_text_buffer_place_cursor(source_buffer, &beg);
-  gtk_text_view_set_cursor_visible(source_view, FALSE);
-  gtk_text_buffer_move_mark_by_name(source_buffer, "selection_bound", &end);
-  gtk_text_mark_set_visible(gtk_text_buffer_get_insert (source_buffer), TRUE);
-	gtk_text_view_scroll_to_mark (GTK_TEXT_VIEW (source_view),
-	                              gtk_text_buffer_get_insert (source_buffer),
-	                              0.25,
-	                              FALSE,
-	                              0.0,
-	                              0.0);
-  gtk_text_buffer_place_cursor(source_buffer, &end);
 }
 
 static GtkWidget *find_window_new(GtkWindow *parent) {
-  GtkWidget *window;
+  GtkWidget *dialog;
   GtkWidget *vbox;
   GtkWidget *entry;
-  GtkWidget *button;
+  GtkWidget *content_area;
+  GtkWidget *label;
 
-  window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_transient_for(window, parent);
-  gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-  gtk_window_set_title(GTK_WINDOW(window), _("Find"));
-  gtk_widget_set_size_request(window, 250, 100);
-  gtk_container_set_border_width(window, 4);
-  gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
-  gtk_widget_realize(window);
+  dialog = gtk_dialog_new_with_buttons (_("Find"),
+                                         parent,
+                                         GTK_DIALOG_DESTROY_WITH_PARENT,
+                                         GTK_STOCK_FIND,
+                                         GTK_RESPONSE_NONE,
+                                         NULL);
+  content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
 
-  vbox = gtk_vbox_new(FALSE, 4);
-  gtk_container_add(window, vbox);
+  label = gtk_label_new(_("Text:"));
+  gtk_container_add(GTK_CONTAINER(content_area), label);
 
   entry = gtk_entry_new();
-  gtk_box_pack_start(GTK_BOX(vbox), entry, FALSE, FALSE, 0);
+  gtk_container_add(GTK_CONTAINER(content_area), entry);
   find_entry = entry;
 
-  button = gtk_button_new_with_label(_("Find"));
-  gtk_widget_set_size_request(button, 64, 32);
-  gtk_box_pack_start(GTK_BOX(vbox), button, FALSE, FALSE, 0);
-  g_signal_connect(button, "clicked", find_text, NULL);
-
-  gtk_widget_show_all(window);
+  g_signal_connect(dialog,
+                   "response",
+                   G_CALLBACK(find_text),
+                   NULL);
+  return dialog;
 }

@@ -180,6 +180,8 @@ GdkPixbuf *icon = NULL;
 Options *paths;
 Keys *config;
 
+GtkDialog *find_dialog;
+
 static gboolean show_animation_by_info(AnimationInfo *anim_info);
 static gchar *markup_bold(gchar *str);
 static void format_src_string(gchar *src);
@@ -223,3 +225,4 @@ static void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog 
 static void parse_xml_text(gchar *text, SAEInfo *sae_info);
 static void show_animation(SAEInfo *sae_info);
 static gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction);
+static void show_find_dialog();

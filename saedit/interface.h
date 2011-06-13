@@ -36,6 +36,8 @@ void set_up_interface() {
   GtkAccelGroup *ag = gtk_accel_group_new();
   gtk_window_add_accel_group(win, ag);
 
+  find_dialog = find_window_new(win);
+
   GtkWidget *fcdialog = gtk_file_chooser_dialog_new(_("Open XML source file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
 
   vbox = gtk_vbox_new(FALSE, 0);
@@ -56,6 +58,21 @@ void set_up_interface() {
   gtk_accel_map_change_entry("<MenuItems>/File/Open", gdk_keyval_from_name("O"), GDK_CONTROL_MASK, TRUE);
 
   menuitem = gtk_menu_item_new_with_label(_("File"));
+  gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
+
+  //Search menu
+  menu = gtk_menu_new();
+  gtk_menu_set_accel_group(menu, ag);
+
+  menuitem = gtk_menu_item_new_with_label(_("Find..."));
+  g_signal_connect(menuitem, "activate", show_find_dialog, NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/Search/Find");
+  gtk_accel_map_change_entry("<MenuItems>/Search/Find", gdk_keyval_from_name("F"), GDK_CONTROL_MASK, TRUE);
+
+  menuitem = gtk_menu_item_new_with_label(_("Search"));
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
   gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
 

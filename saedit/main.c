@@ -18,6 +18,10 @@ void kill_timeout(int tag) {
     g_source_remove(tag);
 }
 
+void show_find_dialog() {
+  gtk_widget_show_all(find_dialog);
+}
+
 Frame *frame_new(int index, int offsetX, int offsetY, int delay) {
   Frame *res = g_new0(Frame, 1);
   res->index = index;
@@ -661,7 +665,6 @@ int main(int argc, char *argv[]) {
   paths = g_new0(Options, 1);
 
   set_up_interface();
-  //find_window_new(win);
   load_config();
 
   gtk_main();
