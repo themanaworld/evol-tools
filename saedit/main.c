@@ -224,6 +224,8 @@ void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info) {
       gtk_combo_box_append_text(GTK_COMBO_BOX(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
+  if (sae_info->actions_combo_box != NULL);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(sae_info->actions_combo_box), 0);
 }
 
 gboolean set_up_imagesets(SAEInfo *sae_info) {
@@ -267,7 +269,13 @@ void show_animation(SAEInfo *sae_info) {
   return FALSE;
 }
 
+GList *merge_animations(SAEInfo *sae_info_bottom, SAEInfo *sae_info_top) {
+  int time_top = 0, time_bottom = 0;
+}
+
 gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction) {
+  if (sae_info->imageset->spriteset == NULL)
+    return FALSE;
   sae_info->animation = NULL;
 
   GList *list = g_list_find_custom(sae_info->animations, direction, xml_node_compare_with_direction_attr);
@@ -378,6 +386,8 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
     return FALSE;
   if (!was_direction)
     show_general_animation(sae_info);
+  else if (sae_info->animations_combo_box != NULL)
+    gtk_combo_box_set_active(GTK_COMBO_BOX(sae_info->animations_combo_box), 0);
   return TRUE;
 }
 
@@ -397,6 +407,7 @@ void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_dat
 }
 
 void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
+  g_printf("\n%s\n", name);
   free_imageset(sae_info);
   free_actions(sae_info);
   free_animations(sae_info);
@@ -419,9 +430,6 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
     sscanf(offset_attr, "%d", &sae_info->imageset->offsetY);
 
   gchar *imageset_name = xml_node_get_attr_value(sae_info->imageset->node, "name");
-  set_up_actions_by_imageset_name(imageset_name, sae_info);
-  if (sae_info->actions == NULL)
-    return;
 
   gchar *src = xml_node_get_attr_value(sae_info->imageset->node, "src");
   format_src_string(src);
@@ -434,6 +442,7 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
     show_wrong_source_buffer_dialog();
     return;
   }
+
   gtk_widget_set_sensitive(imageset_preview_menu_item, TRUE);
   sae_info->imageset->spriteset_width = gdk_pixbuf_get_width(sae_info->imageset->spriteset);
   sae_info->imageset->spriteset_height = gdk_pixbuf_get_height(sae_info->imageset->spriteset);
@@ -465,12 +474,15 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
       }
     }
   }
-
+  set_up_actions_by_imageset_name(imageset_name, sae_info);
+  if (sae_info->actions == NULL)
+    return;
   set_sprite_by_index(0, sae_info);
 }
 
 void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
-  set_up_imageset_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
+  if (gtk_combo_box_get_active_text(widget) != NULL)
+    set_up_imageset_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
 }
 
 void load_options() {
@@ -534,9 +546,6 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
-  free_imagesets(gen_sae_info);
-  free_actions(gen_sae_info);
-  free_animations(gen_sae_info);
   player = NULL;
   load_options();
 

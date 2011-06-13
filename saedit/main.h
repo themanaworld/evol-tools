@@ -55,6 +55,7 @@ typedef struct {
   int offsetY;
   int delay;
   GdkPixbuf *pixbuf;
+  cairo_surface_t *surface;
 } Frame;
 static Frame *frame_new(int index, int offsetX, int offsetY, int delay);
 
