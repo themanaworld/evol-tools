@@ -108,8 +108,12 @@ void open_xml_file(GtkButton *button, gpointer buffer) {
   gchar *buf;
   size_t len;
   g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
-  gtk_text_buffer_set_text((GtkTextBuffer *)buffer, buf, len);
-  gtk_widget_set_sensitive(xml_file_save_button, TRUE);
+  if (g_utf8_validate(buf, len, NULL)) {
+    gtk_text_buffer_set_text((GtkTextBuffer *)buffer, buf, len);
+    gtk_widget_set_sensitive(xml_file_save_button, TRUE);
+  } else {
+    gtk_file_chooser_unselect_all(GTK_FILE_CHOOSER(xml_file_chooser_button));
+  }
 }
 
 void free_imagesets(SAEInfo *sae_info) {
@@ -149,7 +153,7 @@ void save_to_xml_file(GtkButton *button, gpointer buffer) {
 }
 
 void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
-  config->clientdata_folder = g_strjoin(SEPARATOR_SLASH, gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button)), POSTFIX_FOLDER, NULL);
+  config->clientdata_folder = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
   gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xml_file_chooser_button), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
 }
 
@@ -273,22 +277,7 @@ void show_animation(SAEInfo *sae_info) {
   return FALSE;
 }
 
-GList *merge_animations(SAEInfo *sae_info_bottom, SAEInfo *sae_info_top) {
-  int time_top = 0, time_bottom = 0;
-}
-
 gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction) {
-  /*GtkTextIter beg, end, start;
-  gtk_text_buffer_get_start_iter(source_buffer, &start);
-  gtk_source_iter_forward_search(&start, "place -->", 0, &beg, &end, NULL);
-  gtk_text_buffer_place_cursor(source_buffer, &beg);
-  gtk_text_buffer_move_mark_by_name(source_buffer, "selection_bound", &end);
-	gtk_text_view_scroll_to_mark (GTK_TEXT_VIEW (source_view),
-	                              gtk_text_buffer_get_insert (source_buffer),
-	                              0.25,
-	                              FALSE,
-	                              0.0,
-	                              0.0);*/
   if (sae_info->imageset->spriteset == NULL)
     return FALSE;
   sae_info->animation = NULL;
@@ -447,7 +436,7 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
 
   gchar *src = xml_node_get_attr_value(sae_info->imageset->node, "src");
   format_src_string(src);
-  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
+  gchar *datapath = config->clientdata_folder;
   gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, src, NULL);
 
   sae_info->imageset->spriteset = gdk_pixbuf_new_from_file(path, NULL);
@@ -499,7 +488,7 @@ void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data
 
 void load_options() {
   paths->sprites = NULL;
-  gchar *datapath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
+  gchar *datapath = config->clientdata_folder;
   gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, "paths.xml", NULL);
   XMLNode *node = ibus_xml_parse_file(path);
   if (node != NULL) {
@@ -591,19 +580,16 @@ gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *butto
   return FALSE;
 }
 
-void show_imageset_window() {
+void show_imageset_dialog() {
   if (gen_sae_info->imageset->spriteset == NULL) return;
-  GtkWidget *iwin = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_transient_for(iwin, GTK_WINDOW(win));
-  gtk_window_set_title(GTK_WINDOW(iwin), "Imageset preview");
-  gtk_window_set_position(GTK_WINDOW(iwin), GTK_WIN_POS_CENTER);
-  gtk_widget_add_events(iwin, GDK_BUTTON_PRESS_MASK);
-  gtk_widget_set_size_request(iwin, IMAGESET_PREVIEW_WINDOW_WIDTH, IMAGESET_PREVIEW_WINDOW_HEIGHT);
-  gtk_widget_realize(win);
+  GtkWidget *dialog = gtk_dialog_new();
+  GtkWidget *content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+  gtk_window_set_title(GTK_WINDOW(dialog), _("Imageset preview"));
+  gtk_window_set_transient_for(dialog, GTK_WINDOW(win));
+
   int w = gen_sae_info->imageset->spriteset_width / gen_sae_info->imageset->width;
   int h = gen_sae_info->imageset->spriteset_height / gen_sae_info->imageset->height;
 
-  GtkWidget *vbox = gtk_vbox_new(TRUE, 0);
   GtkWidget *hbox = NULL;
   GtkWidget *image = NULL;
   GtkWidget *event_box = NULL;
@@ -611,7 +597,7 @@ void show_imageset_window() {
   int x, y;
   for (y = 0; y < h; y++) {
     hbox = gtk_hbox_new(TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
+    gtk_container_add(content_area, hbox);
     for (x = 0; x < w; x++) {
       event_box = gtk_event_box_new();
       g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event), w * y + x);
@@ -622,8 +608,7 @@ void show_imageset_window() {
       gtk_container_add(GTK_CONTAINER(event_box), image);
     }
   }
-  gtk_container_add(GTK_CONTAINER(iwin), vbox);
-  gtk_widget_show_all(iwin);
+  gtk_widget_show_all(dialog);
 }
 
 void load_config() {
@@ -643,9 +628,17 @@ void load_config() {
 
 void save_config_and_quit() {
   GKeyFile *key_file = g_key_file_new();
-  g_key_file_set_value(key_file, "General", "ClientdataFolder", config->clientdata_folder);
+  gchar *fuck = g_key_file_to_data(key_file, NULL, NULL);
+  g_key_file_set_value(key_file, "General", "ClientdataFolder",
+                       g_strjoin(SEPARATOR_SLASH,
+                                 config->clientdata_folder,
+                                 POSTFIX_FOLDER,
+                                 NULL));
   g_key_file_set_boolean(key_file, "General", "ShowGrid", config->show_grid);
-  g_file_set_contents(g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), g_key_file_to_data(key_file, NULL, NULL), -1, NULL);
+  g_file_set_contents(g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL),
+                      g_key_file_to_data(key_file, NULL, NULL),
+                      -1,
+                      NULL);
   g_key_file_free(key_file);
   gtk_main_quit();
 }

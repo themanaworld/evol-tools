@@ -50,10 +50,9 @@ static GtkWidget *show_find_dialog() {
                                          GTK_STOCK_FIND,
                                          GTK_RESPONSE_NONE,
                                          NULL);
+  gtk_widget_set_size_request(dialog, 240, 80);
+  gtk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
   content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
-
-  label = gtk_label_new(_("Text:"));
-  gtk_container_add(GTK_CONTAINER(content_area), label);
 
   entry = gtk_entry_new();
   gtk_container_add(GTK_CONTAINER(content_area), entry);

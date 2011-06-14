@@ -90,7 +90,7 @@ void set_up_interface() {
 
   menuitem = gtk_menu_item_new_with_label(_("Imageset preview"));
   gtk_widget_set_sensitive(menuitem, FALSE);
-  g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_window), NULL);
+  g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(show_imageset_dialog), NULL);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
   gtk_menu_item_set_accel_path(menuitem, "<MenuItems>/View/ImagesetPreview");

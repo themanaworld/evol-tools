@@ -84,6 +84,20 @@ typedef struct {
   int offsetY;
 } SAEInfo;
 
+static GdkPixbuf *sae_info_ground_new() {
+  GdkPixbuf *ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
+  gdk_pixbuf_fill(ground, 0x00000000);
+  return ground;
+}
+
+static SAEInfo *sae_info_new() {
+  SAEInfo *res = g_new0(SAEInfo, 1);
+  res->ground = sae_info_ground_new();
+  res->sprite = frame_new(-1, 0, 0, 0);
+  res->imageset = imageset_info_new();
+  return res;
+}
+
 
 typedef struct {
   GList *sub_nodes;
@@ -139,21 +153,6 @@ static Keys *keys_new() {
   return res;
 }
 
-static GdkPixbuf *sae_info_ground_new() {
-  GdkPixbuf *ground = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, GRID_SIZE * 3, GRID_SIZE * 3);
-  gdk_pixbuf_fill(ground, 0x00000000);
-  return ground;
-}
-
-static SAEInfo *sae_info_new() {
-  SAEInfo *res = g_new0(SAEInfo, 1);
-  res->ground = sae_info_ground_new();
-  res->sprite = frame_new(-1, 0, 0, 0);
-  res->imageset = imageset_info_new();
-  return res;
-}
-
-
 GtkWidget *win = NULL;
 GtkWidget *darea = NULL;
 GtkWidget *data_folder_chooser_button = NULL;
@@ -203,7 +202,7 @@ static void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer us
 static void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 static void set_up_interface();
 static void show_about_dialog();
-static void show_imageset_window();
+static void show_imageset_dialog();
 static gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
 static cairo_surface_t *get_grid_surface(int w, int h);
 static gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info);
