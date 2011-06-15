@@ -9,12 +9,15 @@
 |                                         |
 \*=======================================*/
 
-#ifndef SEARCH_H
-#define SEARCH_H
+#ifndef COMMON_H
+#define COMMON_H
 
-gboolean search_find_text(gchar *text);
-gboolean search_find_next();
-void search_find_dialog_show(GtkWindow *parent,
-                             GtkWidget *text_view);
+#include <glib/gi18n.h>
+
+#define POSTFIX_FOLDER "..."
+#define SEPARATOR_SLASH "/"
+#define GRID_SIZE 32
+#define SPRITE_WIDTH_DEFAULT 64
+#define SPRITE_HEIGHT_DEFAULT 64
 
 #endif

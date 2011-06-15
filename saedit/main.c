@@ -9,6 +9,19 @@
 |                                         |
 \*=======================================*/
 
+#include <stdlib.h>
+#include <gtk/gtk.h>
+#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksourcelanguagemanager.h>
+#include <gtksourceview/gtksourceiter.h>
+#include <ibusxml.h>
+#include <cairo.h>
+#include <glib/gi18n.h>
+
+#include "common.h"
+#include "xml.h"
+#include "config.h"
+#include "sae.h"
 #include "main.h"
 #include "search.h"
 #include "interface.h"
@@ -16,15 +29,6 @@
 void kill_timeout(int tag) {
   if (tag > 0)
     g_source_remove(tag);
-}
-
-Frame *frame_new(int index, int offsetX, int offsetY, int delay) {
-  Frame *res = g_new0(Frame, 1);
-  res->index = index;
-  res->offsetX = offsetX;
-  res->offsetY = offsetY;
-  res->delay = delay;
-  return res;
 }
 
 cairo_surface_t *get_grid_surface(int w, int h) {
@@ -123,7 +127,7 @@ void free_imagesets(SAEInfo *sae_info) {
 }
 
 void free_imageset(SAEInfo *sae_info) {
-  sae_info->imageset = imageset_info_new();
+  sae_info->imageset = imageset_new();
   sae_info->ground = sae_info_ground_new();
   gtk_widget_set_sensitive(imageset_preview_menu_item, FALSE);
 }
@@ -152,7 +156,7 @@ void save_to_xml_file(GtkButton *button, gpointer buffer) {
   g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), gtk_text_buffer_get_text(source_buffer, &start, &end, NULL), -1, NULL);
 }
 
-void data_folder_set_handler(GtkFileChooserButton *widget, gpointer data)  {
+void data_folder_set_callback(GtkFileChooserButton *widget, gpointer data)  {
   config->clientdata_folder = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(data_folder_chooser_button));
   gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(xml_file_chooser_button), gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget)));
 }
@@ -171,33 +175,6 @@ void show_wrong_source_buffer_dialog() {
   gtk_message_dialog_set_markup(GTK_MESSAGE_DIALOG(dialog), markup_bold(_("Wrong source buffer! Could not parse XML!")));
   g_signal_connect(dialog, "response", G_CALLBACK(gtk_widget_destroy), NULL);
   gtk_widget_show_all(dialog);
-}
-
-gchar* xml_node_get_attr_value(const XMLNode *node, const gchar *attr_name) {
-  gchar **attr = node->attributes;
-  int i;
-  for (i = 0; i < g_strv_length(attr); i += 2)
-    if (g_str_equal(attr[i], attr_name))
-      return attr[i + 1];
-  return NULL;
-}
-
-
-gint xml_node_compare_with_name(gconstpointer a, gconstpointer b) {
-  return g_strcmp0((gchar *)b, ((XMLNode *)a)->name);
-}
-
-gint xml_node_compare_with_action_node_by_imageset_name_func(gconstpointer a, gconstpointer b) {
-  return g_strcmp0("action", ((XMLNode *)a)->name) ||
-    g_strcmp0((gchar *)b, xml_node_get_attr_value((XMLNode *)a, "imageset"));
-}
-
-gint xml_node_compare_with_direction_attr(gconstpointer node, gconstpointer direction) {
-  return g_strcmp0((gchar *)direction, xml_node_get_attr_value((XMLNode *)node, "direction"));
-}
-
-gint xml_node_compare_with_name_attr(gconstpointer node, gconstpointer name) {
-  return g_strcmp0((gchar *)name, xml_node_get_attr_value((XMLNode *)node, "name"));
 }
 
 GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
@@ -244,7 +221,7 @@ gboolean set_up_imagesets(SAEInfo *sae_info) {
   GList *list = sae_info->root->sub_nodes;
   XMLNode *node = NULL;
   while (TRUE) {
-    list = g_list_find_custom(list, "imageset", xml_node_compare_with_name);
+    list = g_list_find_custom(list, "imageset", xml_node_compare_with_name_func);
     if (list == NULL)
       break;
     if (_imagesets_list == NULL) {
@@ -282,7 +259,9 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
     return FALSE;
   sae_info->animation = NULL;
 
-  GList *list = g_list_find_custom(sae_info->animations, direction, xml_node_compare_with_direction_attr);
+  GList *list = g_list_find_custom(sae_info->animations,
+                                   xml_attr_new("direction", direction),
+                                   xml_node_compare_with_attr_func);
   if (list == NULL)
     return FALSE;
   int count = 0;
@@ -309,13 +288,13 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
     if (delay_attr != NULL)
       sscanf(delay_attr, "%d", &delay);
 
-    if (g_strcmp0(node->name, "frame") == 0) {
+    if (g_str_equal(node->name, "frame")) {
       gchar *index_attr = xml_node_get_attr_value(node, "index");
       if (index_attr != NULL) {
         sscanf(index_attr, "%d", &start);
         end = start;
       }
-    } else if (g_strcmp0(node->name, "sequence") == 0) {
+    } else if (g_str_equal(node->name, "sequence")) {
 
       gchar *start_attr = xml_node_get_attr_value(node, "start");
       if (start_attr != NULL)
@@ -359,17 +338,19 @@ gboolean show_general_animation(SAEInfo *sae_info) {
   XMLNode *node = sae_info->animations->data;
   if (node == NULL)
     return FALSE;
-  animations_combo_box_changed_handler(NULL, NULL);
+  animations_combo_box_changed_callback(NULL, NULL);
 }
 
 gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
   free_animations(sae_info);
-  GList *list = g_list_find_custom(sae_info->actions, name, xml_node_compare_with_name_attr);
+  GList *list = g_list_find_custom(sae_info->actions,
+                                   xml_attr_new("name", name),
+                                   xml_node_compare_with_attr_func);
   if (list == NULL) return FALSE;
   list = ((XMLNode *)list->data)->sub_nodes;
   gboolean was_direction = FALSE;
   while (TRUE) {
-    list = g_list_find_custom(list, "animation", xml_node_compare_with_name);
+    list = g_list_find_custom(list, "animation", xml_node_compare_with_name_func);
     if (list == NULL)
       break;
     if (sae_info->animations == NULL) {
@@ -395,13 +376,13 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
   return TRUE;
 }
 
-void actions_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
+void actions_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
   if (player != NULL)
     set_up_action_by_name(gtk_combo_box_get_active_text(widget), player);
   set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
 }
 
-void animations_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
+void animations_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
   set_up_animation_by_direction(gen_sae_info, gtk_combo_box_get_active_text(widget));
   if (player != NULL) {
     set_up_animation_by_direction(player, gtk_combo_box_get_active_text(widget));
@@ -415,7 +396,13 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
   free_actions(sae_info);
   free_animations(sae_info);
 
-  GList *list = g_list_find_custom(sae_info->imagesets, name, xml_node_compare_with_name_attr);
+  GList *list = g_list_find_custom(sae_info->imagesets,
+                                   xml_attr_new("name", name),
+                                   xml_node_compare_with_attr_func);
+
+  if (list == NULL)
+    return FALSE;
+
   XMLNode *node = list->data;
   if (node == NULL)
     return;
@@ -454,7 +441,7 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
   gchar *height = xml_node_get_attr_value(sae_info->imageset->node, "height");
   sscanf(height, "%d", &sae_info->imageset->height);
 
-  list = g_list_find_custom(sae_info->root->sub_nodes, "sae", xml_node_compare_with_name);
+  list = g_list_find_custom(sae_info->root->sub_nodes, "sae", xml_node_compare_with_name_func);
   if (list != NULL) {
     gchar *ground_attr = xml_node_get_attr_value((XMLNode *)list->data, "ground");
     if (ground_attr != NULL) {
@@ -481,32 +468,15 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
   set_sprite_by_index(0, sae_info);
 }
 
-void imagesets_combo_box_changed_handler(GtkComboBox *widget, gpointer user_data) {
+void imagesets_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
   if (gtk_combo_box_get_active_text(widget) != NULL)
     set_up_imageset_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
 }
 
 void load_options() {
-  paths->sprites = NULL;
   gchar *datapath = config->clientdata_folder;
   gchar *path = g_strjoin(SEPARATOR_SLASH, datapath, "paths.xml", NULL);
-  XMLNode *node = ibus_xml_parse_file(path);
-  if (node != NULL) {
-    GList *list = node->sub_nodes;
-    while (TRUE) {
-      list = g_list_find_custom(list, "option", xml_node_compare_with_name);
-      if (list == NULL)
-        break;
-      gchar *name_attr = xml_node_get_attr_value(list->data, "name");
-      if (name_attr != NULL) {
-        if (g_strcmp0(name_attr, "sprites") == 0)
-          paths->sprites = xml_node_get_attr_value(list->data, "value");
-      }
-      list = list->next;
-    }
-  }
-  if (paths->sprites == NULL) paths->sprites = OPTION_SPRITES_DEFAULT;
-  paths->sprites = g_strjoin(SEPARATOR_SLASH, datapath, paths->sprites, NULL);
+  config_options_load_from_file(paths, path, datapath);
 }
 
 void parse_xml_text(gchar *text, SAEInfo *sae_info) {
@@ -520,7 +490,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
     return;
   }
 
-  GList *list = g_list_find_custom(_root_node->sub_nodes, "include", xml_node_compare_with_name);
+  GList *list = g_list_find_custom(_root_node->sub_nodes, "include", xml_node_compare_with_name_func);
   while (list != NULL) {
     XMLNode *node = list->data;
     gchar *file_attr = xml_node_get_attr_value(node, "file");
@@ -531,7 +501,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
         g_list_concat(_root_node->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
     }
     if (list->next != NULL)
-      list = g_list_find_custom(list->next, "include", xml_node_compare_with_name);
+      list = g_list_find_custom(list->next, "include", xml_node_compare_with_name_func);
     else
       list = NULL;
   }
@@ -612,34 +582,13 @@ void show_imageset_dialog() {
 }
 
 void load_config() {
-  GKeyFile *key_file = g_key_file_new();
-
-  g_key_file_load_from_file(key_file, g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL), G_KEY_FILE_NONE, NULL);
-  if (g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL))
-    config->clientdata_folder = g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL);
-  if (g_key_file_has_key(key_file, "General", "ShowGrid", NULL))
-    config->show_grid = g_key_file_get_boolean(key_file, "General", "ShowGrid", NULL);
-
+  config_keys_load(config);
   gtk_file_chooser_select_filename(GTK_FILE_CHOOSER(data_folder_chooser_button), config->clientdata_folder);
   gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(show_grid_menu_item), config->show_grid);
-
-  g_key_file_free(key_file);
 }
 
 void save_config_and_quit() {
-  GKeyFile *key_file = g_key_file_new();
-  gchar *fuck = g_key_file_to_data(key_file, NULL, NULL);
-  g_key_file_set_value(key_file, "General", "ClientdataFolder",
-                       g_strjoin(SEPARATOR_SLASH,
-                                 config->clientdata_folder,
-                                 POSTFIX_FOLDER,
-                                 NULL));
-  g_key_file_set_boolean(key_file, "General", "ShowGrid", config->show_grid);
-  g_file_set_contents(g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), FILE_CONFIG, NULL),
-                      g_key_file_to_data(key_file, NULL, NULL),
-                      -1,
-                      NULL);
-  g_key_file_free(key_file);
+  config_keys_save(config);
   gtk_main_quit();
 }
 
@@ -650,8 +599,8 @@ int main(int argc, char *argv[]) {
   icon = gdk_pixbuf_new_from_file(FILE_ICON, NULL);
 
   gen_sae_info = sae_info_new();
-  config = keys_new();
-  paths = g_new0(Options, 1);
+  config = config_keys_new();
+  paths = config_options_new();
 
   set_up_interface();
   load_config();

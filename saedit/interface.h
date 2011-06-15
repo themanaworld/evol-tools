@@ -9,6 +9,10 @@
 |                                         |
 \*=======================================*/
 
+void find_menu_item_activate_callback(GtkWidget *menuitem, gpointer user_data) {
+  search_find_dialog_show(win, source_view);
+}
+
 void set_up_interface() {
   GtkWidget *button = NULL;
   GtkWidget *hbox = NULL;
@@ -25,11 +29,13 @@ void set_up_interface() {
   GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
   source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
 
+  text = gtk_source_view_new_with_buffer(source_buffer);
+  source_view = text;
+
   win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(win), "Sprite Animation Editor");
   gtk_window_set_position(GTK_WINDOW(win), GTK_WIN_POS_CENTER);
   gtk_window_set_icon(GTK_WINDOW(win), icon);
-  //gtk_window_set_modal(GTK_WINDOW(win), TRUE);
   gtk_widget_realize(win);
   g_signal_connect(win, "destroy", G_CALLBACK(save_config_and_quit), NULL);
   gtk_widget_set_size_request(win, MIN_WIDTH, MIN_HEIGHT);
@@ -41,6 +47,7 @@ void set_up_interface() {
   vbox = gtk_vbox_new(FALSE, 0);
   gtk_container_add(GTK_CONTAINER(win), vbox);
 
+  //Menubar setup
   menubar = gtk_menu_bar_new();
   gtk_box_pack_start(GTK_BOX(vbox), menubar, FALSE, TRUE, 0);
 
@@ -64,11 +71,18 @@ void set_up_interface() {
   gtk_menu_set_accel_group(menu, ag);
 
   menuitem = gtk_menu_item_new_with_label(_("Find..."));
-  g_signal_connect(menuitem, "activate", show_find_dialog, NULL);
+  g_signal_connect(menuitem, "activate", find_menu_item_activate_callback, NULL);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
   gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/Search/Find");
   gtk_accel_map_change_entry("<MenuItems>/Search/Find", gdk_keyval_from_name("F"), GDK_CONTROL_MASK, TRUE);
+
+  menuitem = gtk_menu_item_new_with_label(_("Find next"));
+  g_signal_connect(menuitem, "activate", search_find_next, NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/Search/FindNext");
+  gtk_accel_map_change_entry("<MenuItems>/Search/FindNext", gdk_keyval_from_name("F3"), 0, TRUE);
 
   menuitem = gtk_menu_item_new_with_label(_("Search"));
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
@@ -102,6 +116,7 @@ void set_up_interface() {
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
   gtk_menu_shell_append(GTK_MENU_SHELL(menubar), menuitem);
 
+  //Help menu
   menu = gtk_menu_new();
   menuitem = gtk_menu_item_new_with_label(_("About"));
   g_signal_connect(menuitem, "activate", show_about_dialog, NULL);
@@ -114,6 +129,7 @@ void set_up_interface() {
   hbox = gtk_hbox_new(FALSE, 0);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
 
+  //Left part setup
   vbbox = gtk_vbutton_box_new();
   gtk_button_box_set_layout(GTK_BUTTON_BOX(vbbox), GTK_BUTTONBOX_START);
   gtk_button_box_set_child_size(GTK_BUTTON_BOX(vbbox), 180, 0);
@@ -126,7 +142,7 @@ void set_up_interface() {
   data_folder_chooser_button = gtk_file_chooser_button_new(_("Clientdata folder"), 0);
   gtk_box_pack_start(GTK_BOX(vbbox), data_folder_chooser_button, TRUE, TRUE, 0);
   gtk_file_chooser_set_action(GTK_FILE_CHOOSER(data_folder_chooser_button), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  g_signal_connect(data_folder_chooser_button, "selection-changed", G_CALLBACK(data_folder_set_handler), NULL);
+  g_signal_connect(data_folder_chooser_button, "selection-changed", G_CALLBACK(data_folder_set_callback), NULL);
 
   label = gtk_label_new("");
   gtk_label_set_markup(GTK_LABEL(label), markup_bold(_("XML source file")));
@@ -159,7 +175,7 @@ void set_up_interface() {
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   gen_sae_info->imagesets_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(gen_sae_info->imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_handler), NULL);
+  g_signal_connect(gen_sae_info->imagesets_combo_box, "changed", G_CALLBACK(imagesets_combo_box_changed_callback), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->imagesets_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
@@ -167,7 +183,7 @@ void set_up_interface() {
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   gen_sae_info->actions_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(gen_sae_info->actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_handler), NULL);
+  g_signal_connect(gen_sae_info->actions_combo_box, "changed", G_CALLBACK(actions_combo_box_changed_callback), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->actions_combo_box, TRUE, TRUE, 0);
 
   label = gtk_label_new("");
@@ -175,9 +191,10 @@ void set_up_interface() {
   gtk_box_pack_start(GTK_BOX(vbbox), label, TRUE, TRUE, 0);
 
   gen_sae_info->animations_combo_box = gtk_combo_box_new_text();
-  g_signal_connect(gen_sae_info->animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_handler), NULL);
+  g_signal_connect(gen_sae_info->animations_combo_box, "changed", G_CALLBACK(animations_combo_box_changed_callback), NULL);
   gtk_box_pack_start(GTK_BOX(vbbox), gen_sae_info->animations_combo_box, TRUE, TRUE, 0);
 
+  //Right part setup
   vpaned = gtk_vpaned_new();
   gtk_box_pack_end(GTK_BOX(hbox), vpaned, TRUE, TRUE, 0);
 
@@ -186,7 +203,6 @@ void set_up_interface() {
   gtk_widget_set_size_request(darea, -1, 120);
   g_signal_connect(darea, "expose-event", G_CALLBACK(darea_expose_event), gen_sae_info);
 
-  text = gtk_source_view_new_with_buffer(source_buffer);
   source_view = text;
   gtk_source_view_set_show_line_numbers(GTK_SOURCE_VIEW(text), TRUE);
 

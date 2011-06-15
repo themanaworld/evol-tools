@@ -8,13 +8,13 @@
 |      Copyleft Vasily_Makarov 2011       |
 |                                         |
 \*=======================================*/
+#ifndef XML_H
+#define XML_H
 
-#ifndef SEARCH_H
-#define SEARCH_H
-
-gboolean search_find_text(gchar *text);
-gboolean search_find_next();
-void search_find_dialog_show(GtkWindow *parent,
-                             GtkWidget *text_view);
+gchar **xml_attr_new(gchar *name, gchar *value);
+gchar *xml_node_get_attr_value(XMLNode *node, gchar *attr_name);
+gint xml_node_compare_with_name_func(gconstpointer a, gconstpointer b);
+gint xml_node_compare_with_action_node_by_imageset_name_func(gconstpointer a, gconstpointer b);
+gint xml_node_compare_with_attr_func(const XMLNode *node, const gchar **attr);
 
 #endif
