@@ -9,8 +9,52 @@
 |                                         |
 \*=======================================*/
 
+GtkWidget *reload_menu_item = NULL;
+
 void find_menu_item_activate_callback(GtkWidget *menuitem, gpointer user_data) {
   search_find_dialog_show(win, source_view);
+}
+
+void save_dialog_response_callback(GtkWidget *dialog, gint response_id, gpointer user_data) {
+  if (response_id == GTK_RESPONSE_ACCEPT) {
+    gchar *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
+    if (filename != NULL) {
+      save_to_xml_file(filename);
+      gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(xml_file_chooser_button), filename);
+    }
+  }
+  gtk_widget_destroy(dialog);
+}
+
+void save_dialog_show() {
+  GtkDialog *dialog = gtk_file_chooser_dialog_new(_("Save file as..."), win, GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL);
+  g_signal_connect(dialog, "response", G_CALLBACK(save_dialog_response_callback), NULL);
+  gtk_dialog_run(dialog);
+}
+
+void save_menu_item_activate_callback(GtkWidget *menuitem, GtkWidget *fsdialog) {
+  gchar *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button));
+  if (filename != NULL)
+    save_to_xml_file(filename);
+  else
+    save_dialog_show();
+}
+
+void xml_file_save_button_callback(GtkWidget *button, gpointer user_data) {
+  gchar *filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button));
+  if (filename != NULL)
+    save_to_xml_file(filename);
+}
+
+void file_new() {
+  GtkTextIter start, end;
+  gtk_text_buffer_get_bounds(source_buffer, &start, &end);
+  gtk_text_buffer_delete(source_buffer, &start, &end);
+  gchar *temp;
+  if (g_file_get_contents(FILE_TEMPLATE, &temp, NULL, NULL))
+    gtk_text_buffer_set_text(GTK_TEXT_BUFFER(source_buffer), temp, -1);
+  gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(xml_file_chooser_button), "");
+  gtk_widget_set_sensitive(reload_menu_item, FALSE);
 }
 
 void set_up_interface() {
@@ -25,10 +69,11 @@ void set_up_interface() {
   GtkWidget *menu = NULL;
   GtkWidget *vpaned = NULL;
   GtkWidget *scrolled_window = NULL;
+  GtkWidget *fcdialog = NULL;
 
   GtkSourceLanguageManager *langman = gtk_source_language_manager_get_default();
-  source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
 
+  source_buffer = gtk_source_buffer_new_with_language(gtk_source_language_manager_get_language(langman, "xml"));
   text = gtk_source_view_new_with_buffer(source_buffer);
   source_view = text;
 
@@ -42,7 +87,7 @@ void set_up_interface() {
   GtkAccelGroup *ag = gtk_accel_group_new();
   gtk_window_add_accel_group(win, ag);
 
-  GtkWidget *fcdialog = gtk_file_chooser_dialog_new(_("Open XML source file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
+  fcdialog = gtk_file_chooser_dialog_new(_("Open file"), win, GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
 
   vbox = gtk_vbox_new(FALSE, 0);
   gtk_container_add(GTK_CONTAINER(win), vbox);
@@ -55,12 +100,45 @@ void set_up_interface() {
   menu = gtk_menu_new();
   gtk_menu_set_accel_group(menu, ag);
 
+  menuitem = gtk_menu_item_new_with_label(_("New"));
+  g_signal_connect(menuitem, "activate", G_CALLBACK(file_new), NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/New");
+  gtk_accel_map_change_entry("<MenuItems>/File/New", gdk_keyval_from_name("N"), GDK_CONTROL_MASK, TRUE);
+
   menuitem = gtk_menu_item_new_with_label(_("Open..."));
   g_signal_connect(menuitem, "activate", open_menu_item_activate, fcdialog);
   gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
 
   gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/Open");
   gtk_accel_map_change_entry("<MenuItems>/File/Open", gdk_keyval_from_name("O"), GDK_CONTROL_MASK, TRUE);
+
+  menuitem = gtk_menu_item_new_with_label(_("Reload"));
+  gtk_widget_set_sensitive(menuitem, FALSE);
+  g_signal_connect(menuitem, "activate", G_CALLBACK(open_xml_file), source_buffer);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/Reload");
+  gtk_accel_map_change_entry("<MenuItems>/File/Reload", gdk_keyval_from_name("R"), GDK_CONTROL_MASK, TRUE);
+
+  reload_menu_item = menuitem;
+
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), gtk_separator_menu_item_new());
+
+  menuitem = gtk_menu_item_new_with_label(_("Save"));
+  g_signal_connect(menuitem, "activate", G_CALLBACK(save_menu_item_activate_callback), NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/Save");
+  gtk_accel_map_change_entry("<MenuItems>/File/Save", gdk_keyval_from_name("S"), GDK_CONTROL_MASK, TRUE);
+
+  menuitem = gtk_menu_item_new_with_label(_("Save as..."));
+  g_signal_connect(menuitem, "activate", G_CALLBACK(save_dialog_show), NULL);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+
+  gtk_menu_item_set_accel_path(GTK_MENU_ITEM(menuitem), "<MenuItems>/File/SaveAs");
+  gtk_accel_map_change_entry("<MenuItems>/File/SaveAs", gdk_keyval_from_name("S"), GDK_CONTROL_MASK + GDK_SHIFT_MASK, TRUE);
 
   menuitem = gtk_menu_item_new_with_label(_("File"));
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), menu);
@@ -160,9 +238,9 @@ void set_up_interface() {
   xml_file_save_button = gtk_button_new_from_stock(GTK_STOCK_SAVE);
   gtk_widget_set_sensitive(xml_file_save_button, FALSE);
   gtk_box_pack_start(GTK_BOX(vbbox), xml_file_save_button, TRUE, TRUE, 0);
-  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(save_to_xml_file), source_buffer);
+  g_signal_connect(xml_file_save_button, "clicked", G_CALLBACK(xml_file_save_button_callback), NULL);
   gtk_widget_set_accel_path(xml_file_save_button, "<Buttons>/SaveXMLBuffer", ag);
-  gtk_accel_map_change_entry("<Buttons>/SaveXMLBuffer", gdk_keyval_from_name("S"), GDK_CONTROL_MASK, TRUE);
+  //gtk_accel_map_change_entry("<Buttons>/SaveXMLBuffer", gdk_keyval_from_name("S"), GDK_CONTROL_MASK, TRUE);
 
   button = gtk_button_new_with_label(_("Parse XML buffer"));
   gtk_box_pack_start(GTK_BOX(vbbox), button, TRUE, TRUE, 0);
@@ -209,6 +287,8 @@ void set_up_interface() {
   scrolled_window = gtk_scrolled_window_new(gtk_text_view_get_hadjustment(text), gtk_text_view_get_vadjustment(text));
   gtk_paned_pack2(GTK_PANED(vpaned), scrolled_window, TRUE, FALSE);
   gtk_widget_set_size_request(scrolled_window, -1, 50);
+
+  file_new();
 
   gtk_container_add(scrolled_window, text);
 

@@ -26,11 +26,6 @@
 #include "search.h"
 #include "interface.h"
 
-void kill_timeout(int tag) {
-  if (tag > 0)
-    g_source_remove(tag);
-}
-
 cairo_surface_t *get_grid_surface(int w, int h) {
   cairo_surface_t *surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, (w + 2) * GRID_SIZE, (h + 2) * GRID_SIZE);
   cairo_t *cr = cairo_create(surface);
@@ -109,6 +104,7 @@ void format_src_string(gchar *src) {
 
 void open_xml_file(GtkButton *button, gpointer buffer) {
   gtk_widget_set_sensitive(xml_file_open_button, TRUE);
+  gtk_widget_set_sensitive(reload_menu_item, TRUE);
   gchar *buf;
   size_t len;
   g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
@@ -138,22 +134,11 @@ void free_actions(SAEInfo *sae_info) {
     gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(sae_info->actions_combo_box))));
 }
 
-void free_animations(SAEInfo *sae_info) {
-  sae_info->animations = NULL;
-  if (sae_info->animations_combo_box != NULL)
-    gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(sae_info->animations_combo_box))));
-
-  kill_timeout(sae_info->anim_tag);
-  sae_info->anim_tag = 0;
-  sae_info->sprite = frame_new(-1, 0, 0, 0);
-  set_sprite_by_index(0, sae_info);
-}
-
-void save_to_xml_file(GtkButton *button, gpointer buffer) {
+void save_to_xml_file(gchar *filename) {
   GtkTextIter start, end;
   gtk_text_buffer_get_start_iter(source_buffer, &start);
   gtk_text_buffer_get_end_iter(source_buffer, &end);
-  g_file_set_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), gtk_text_buffer_get_text(source_buffer, &start, &end, NULL), -1, NULL);
+  g_file_set_contents(filename, gtk_text_buffer_get_text(source_buffer, &start, &end, NULL), -1, NULL);
 }
 
 void data_folder_set_callback(GtkFileChooserButton *widget, gpointer data)  {
@@ -175,12 +160,6 @@ void show_wrong_source_buffer_dialog() {
   gtk_message_dialog_set_markup(GTK_MESSAGE_DIALOG(dialog), markup_bold(_("Wrong source buffer! Could not parse XML!")));
   g_signal_connect(dialog, "response", G_CALLBACK(gtk_widget_destroy), NULL);
   gtk_widget_show_all(dialog);
-}
-
-GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
-  size_t w = sae_info->imageset->spriteset_width/sae_info->imageset->width;
-  if (sae_info->imageset->spriteset == NULL) return NULL;
-  return gdk_pixbuf_new_subpixbuf(sae_info->imageset->spriteset, index%w*sae_info->imageset->width, index/w*sae_info->imageset->height, sae_info->imageset->width, sae_info->imageset->height);
 }
 
 void set_sprite_by_index(size_t index, SAEInfo *sae_info) {
@@ -252,86 +231,6 @@ void show_animation(SAEInfo *sae_info) {
   sae_info->animation = sae_info->animation->next;
   sae_info->anim_tag = g_timeout_add(sprite->delay, show_animation, sae_info);
   return FALSE;
-}
-
-gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction) {
-  if (sae_info->imageset->spriteset == NULL)
-    return FALSE;
-  sae_info->animation = NULL;
-
-  GList *list = g_list_find_custom(sae_info->animations,
-                                   xml_attr_new("direction", direction),
-                                   xml_node_compare_with_attr_func);
-  if (list == NULL)
-    return FALSE;
-  int count = 0;
-  XMLNode *anode = list->data;
-  list = anode->sub_nodes;
-
-  while (list != NULL) {
-    XMLNode *node = list->data;
-
-    int offsetX = 0, offsetY = 0,
-        delay = 0,
-        start = -1, end = -1,
-        repeat = 1;
-
-    gchar *ofX_param, *ofY_param;
-    ofX_param = xml_node_get_attr_value(node, "offsetX");
-    if (ofX_param != NULL)
-      sscanf(ofX_param, "%d", &offsetX);
-    ofY_param = xml_node_get_attr_value(node, "offsetY");
-    if (ofY_param != NULL)
-      sscanf(ofY_param, "%d", &offsetY);
-
-    gchar *delay_attr = xml_node_get_attr_value(node, "delay");
-    if (delay_attr != NULL)
-      sscanf(delay_attr, "%d", &delay);
-
-    if (g_str_equal(node->name, "frame")) {
-      gchar *index_attr = xml_node_get_attr_value(node, "index");
-      if (index_attr != NULL) {
-        sscanf(index_attr, "%d", &start);
-        end = start;
-      }
-    } else if (g_str_equal(node->name, "sequence")) {
-
-      gchar *start_attr = xml_node_get_attr_value(node, "start");
-      if (start_attr != NULL)
-        sscanf(start_attr, "%d", &start);
-
-      gchar *end_attr = xml_node_get_attr_value(node, "end");
-      if (end_attr != NULL)
-        sscanf(end_attr, "%d", &end);
-
-      gchar *repeat_attr = xml_node_get_attr_value(node, "repeat");
-      if (repeat_attr != NULL)
-        sscanf(repeat_attr, "%d", &repeat);
-    }
-
-    if (start >= 0) {
-      int r = 0, i = 0;
-      for (r = 1; r <= repeat; r++) {
-        for (i = start; i <= end; i++) {
-          Frame *sprite = frame_new(i, offsetX, offsetY, delay);
-          sprite->pixbuf = get_sprite_by_index(i, sae_info);
-          count++;
-          if (sae_info->animation != NULL)
-            g_list_append(sae_info->animation, sprite);
-          else {
-            sae_info->animation = g_list_alloc();
-            sae_info->animation->data = sprite;
-          }
-        }
-      }
-    }
-    list = list->next;
-  }
-  if (sae_info->animation == NULL)
-    return FALSE;
-  if (count > 1)
-    g_list_last(sae_info->animation)->next = g_list_first(sae_info->animation);
-  return TRUE;
 }
 
 gboolean show_general_animation(SAEInfo *sae_info) {
@@ -483,6 +382,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
   free_imagesets(sae_info);
   free_actions(sae_info);
   free_animations(sae_info);
+
   XMLNode *_root_node = ibus_xml_parse_buffer(text);
   sae_info->root = _root_node;
   if (_root_node == NULL) {
@@ -590,6 +490,19 @@ void load_config() {
 void save_config_and_quit() {
   config_keys_save(config);
   gtk_main_quit();
+}
+
+
+void free_animations(SAEInfo *sae_info) {
+  sae_info->animations = NULL;
+
+  if (sae_info->animations_combo_box != NULL)
+    gtk_list_store_clear(GTK_LIST_STORE(gtk_combo_box_get_model(GTK_COMBO_BOX(sae_info->animations_combo_box))));
+
+  kill_timeout(sae_info->anim_tag);
+  sae_info->anim_tag = 0;
+  sae_info->sprite = frame_new(-1, 0, 0, 0);
+  set_sprite_by_index(0, sae_info);
 }
 
 int main(int argc, char *argv[]) {

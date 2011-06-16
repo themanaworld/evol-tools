@@ -19,5 +19,6 @@
 #define GRID_SIZE 32
 #define SPRITE_WIDTH_DEFAULT 64
 #define SPRITE_HEIGHT_DEFAULT 64
+#define FILE_TEMPLATE "template.xml"
 
 #endif
