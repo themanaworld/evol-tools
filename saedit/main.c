@@ -58,6 +58,9 @@ cairo_surface_t *get_grid_surface(int w, int h) {
 }
 
 gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info) {
+  if (sae_info == NULL)
+	sae_info = gen_sae_info;
+
   int width = widget->allocation.width,
       height = widget->allocation.height;
 
@@ -102,14 +105,14 @@ void format_src_string(gchar *src) {
   strncpy(str, "\0", 1);
 }
 
-void open_xml_file(GtkButton *button, gpointer buffer) {
+void open_xml_file(GtkButton *button) {
   gtk_widget_set_sensitive(xml_file_open_button, TRUE);
   gtk_widget_set_sensitive(reload_menu_item, TRUE);
   gchar *buf;
   size_t len;
   g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
   if (g_utf8_validate(buf, len, NULL)) {
-    gtk_text_buffer_set_text((GtkTextBuffer *)buffer, buf, len);
+    gtk_text_buffer_set_text(source_buffer, buf, len);
     gtk_widget_set_sensitive(xml_file_save_button, TRUE);
   } else {
     gtk_file_chooser_unselect_all(GTK_FILE_CHOOSER(xml_file_chooser_button));
@@ -416,6 +419,9 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
 }
 
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer) {
+  if (buffer == NULL)
+	buffer = source_buffer;
+
   player = NULL;
   load_options();
 
