@@ -3,6 +3,44 @@
   <requires lib="gtk+" version="2.24"/>
   <!-- interface-requires gtksourceview 0.0 -->
   <!-- interface-naming-policy project-wide -->
+  <object class="GtkAboutDialog" id="about_dialog">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="window_position">center</property>
+    <property name="icon">icon.svg</property>
+    <property name="type_hint">dialog</property>
+    <property name="transient_for">win_main</property>
+    <property name="program_name">Sprite Animation Editor</property>
+    <property name="version">⍺0.1.1</property>
+    <property name="copyright" translatable="yes">Copyleft ↄ Vasily_Makarov 2011</property>
+    <property name="comments" translatable="yes">Sprite Animation Editor could be used to edit animations from Evol and The Mana World projects</property>
+    <property name="authors">Dan "Vasily_Makarov" Sagunov &lt;danilka.pro@gmail.com&gt;
+Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
+    <property name="logo">icon.svg</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkFileChooserDialog" id="fcdialog1">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -66,6 +104,94 @@
       <action-widget response="0">button2</action-widget>
     </action-widgets>
   </object>
+  <object class="GtkDialog" id="find_dialog">
+    <property name="width_request">240</property>
+    <property name="height_request">80</property>
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Find</property>
+    <property name="resizable">False</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="skip_pager_hint">True</property>
+    <property name="deletable">False</property>
+    <property name="transient_for">win_main</property>
+    <signal name="response" handler="search_find_dialog_response_callback" object="find_dialog_entry" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="button4">
+                <property name="label">gtk-find</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button5">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="find_dialog_entry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-3">button4</action-widget>
+      <action-widget response="-6">button5</action-widget>
+    </action-widgets>
+  </object>
   <object class="GtkListStore" id="liststore1">
     <columns>
       <!-- column-name text -->
@@ -118,7 +244,7 @@
                         <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Open...</property>
                         <property name="use_underline">True</property>
-                        <signal name="activate" handler="open_menu_item_activate" object="fcdialog1" swapped="no"/>
+                        <signal name="activate" handler="open_menu_item_activate_callback" object="fcdialog1" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -215,7 +341,7 @@
                         <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">Show _Grid</property>
                         <property name="use_underline">True</property>
-                        <signal name="toggled" handler="show_grid_menu_item_toggled" swapped="no"/>
+                        <signal name="toggled" handler="show_grid_menu_item_toggled_callback" swapped="no"/>
                       </object>
                     </child>
                     <child>
@@ -329,7 +455,7 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">4</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
                 <child>
@@ -345,7 +471,7 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">5</property>
+                    <property name="position">4</property>
                   </packing>
                 </child>
                 <child>
@@ -365,21 +491,6 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="button3">
-                    <property name="label" translatable="yes">Parse XML Buffer</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="use_action_appearance">False</property>
-                    <signal name="clicked" handler="parse_xml_buffer" swapped="no"/>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">7</property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -395,17 +506,18 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBoxText" id="imagesetscbox">
+                  <object class="GtkButton" id="button3">
+                    <property name="label" translatable="yes">Parse XML Buffer</property>
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="model">liststore1</property>
-                    <property name="active">0</property>
-                    <signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="use_action_appearance">False</property>
+                    <signal name="clicked" handler="parse_xml_buffer" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">9</property>
+                    <property name="position">7</property>
                   </packing>
                 </child>
                 <child>
@@ -424,16 +536,17 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBoxText" id="actionscbox">
+                  <object class="GtkComboBoxText" id="imagesetscbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="model">liststore1</property>
                     <property name="active">0</property>
-                    <signal name="changed" handler="actions_combo_box_changed_callback" swapped="no"/>
+                    <signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">11</property>
+                    <property name="position">9</property>
                   </packing>
                 </child>
                 <child>
@@ -444,6 +557,19 @@
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">11</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="actionscbox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="active">0</property>
+                    <signal name="changed" handler="actions_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>

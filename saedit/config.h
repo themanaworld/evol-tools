@@ -12,6 +12,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <glib.h>
+#include <ibusxml.h>
+#include "common.h"
+#include "xml.h"
+
 #define OPTION_SPRITES_DEFAULT "graphics/sprites/"
 
 #define KEY_SHOW_GRID_DEFAULT TRUE

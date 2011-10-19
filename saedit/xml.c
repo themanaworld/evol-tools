@@ -9,9 +9,6 @@
 |                                         |
 \*=======================================*/
 
-#include <glib.h>
-#include <ibusxml.h>
-#include "common.h"
 #include "xml.h"
 
 gchar **xml_attr_new(gchar *name, gchar *value) {

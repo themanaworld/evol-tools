@@ -11,6 +11,10 @@
 #ifndef XML_H
 #define XML_H
 
+#include <glib.h>
+#include <ibusxml.h>
+#include "common.h"
+
 gchar **xml_attr_new(gchar *name, gchar *value);
 gchar *xml_node_get_attr_value(XMLNode *node, gchar *attr_name);
 gint xml_node_compare_with_name_func(gconstpointer a, gconstpointer b);

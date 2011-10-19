@@ -12,6 +12,20 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdlib.h>
+#include <gtk/gtk.h>
+#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksourcelanguagemanager.h>
+#include <gtksourceview/gtksourceiter.h>
+#include <cairo.h>
+#include <glib/gi18n.h>
+
+#include "common.h"
+#include "xml.h"
+#include "config.h"
+#include "sae.h"
+#include "search.h"
+
 const int MIN_WIDTH = 600;
 const int MIN_HEIGHT = 600;
 
@@ -32,6 +46,7 @@ GtkWidget *xml_file_save_button = NULL;
 GtkWidget *imageset_preview_menu_item = NULL;
 GtkWidget *show_grid_menu_item = NULL;
 GtkWidget *source_view = NULL;
+GtkWidget *about_dialog = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
@@ -43,38 +58,50 @@ GdkPixbuf *icon = NULL;
 Options *paths;
 Keys *config;
 
+//Cairo functions
+cairo_surface_t *get_grid_surface(int w, int h);
+gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info);
+
+//String functions (common)
 gchar *markup_bold(gchar *str);
 void format_src_string(gchar *src);
+
+//File working
 void open_xml_file(GtkButton *button);
+void save_to_xml_file(gchar *filename);
+
+//SAEInfo functions
 void free_imagesets(SAEInfo *sae_info);
 void free_actions(SAEInfo *sae_info);
-void save_to_xml_file(gchar *filename);
+void free_animations(SAEInfo *sae_info);
+void free_imageset(SAEInfo *sae_info);
+
+//Callbacks
 void data_folder_set_callback(GtkFileChooserButton *widget, gpointer data);
 void show_wrong_source_buffer_dialog();
+void show_grid_menu_item_toggled_callback(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
+void actions_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data);
+void imagesets_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data);
+void open_menu_item_activate_callback(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);
+gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButton *button, int index);
+
+//Dialogs
+void show_imageset_dialog();
+void show_about_dialog();
+
 void set_sprite_by_index(size_t index, SAEInfo *sae_info);
 void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info);
 gboolean set_up_imagesets(SAEInfo *sae_info);
 gboolean show_general_animation(SAEInfo *sae_info);
 gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info);
-void actions_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data);
 void animations_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data);
 void set_up_imageset_by_name(const gchar* name, SAEInfo *sae_info);
-void imagesets_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data);
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 void set_up_interface();
-void show_about_dialog();
-void show_imageset_dialog();
-gboolean frame_image_button_press_event(GtkWidget *widget, GdkEventButton *button, int index);
-cairo_surface_t *get_grid_surface(int w, int h);
-gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info);
 void load_config();
 void save_config_and_quit();
 void load_options();
-void free_imageset();
-void show_grid_menu_item_toggled(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
-void open_menu_item_activate(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);
 void parse_xml_text(gchar *text, SAEInfo *sae_info);
 void show_animation(SAEInfo *sae_info);
-void free_animations(SAEInfo *sae_info);
 
 #endif

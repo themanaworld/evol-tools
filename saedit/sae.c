@@ -9,10 +9,6 @@
 |                                         |
 \*=======================================*/
 
-#include <gtk/gtk.h>
-#include <ibusxml.h>
-#include "common.h"
-#include "xml.h"
 #include "sae.h"
 
 void kill_timeout(guint tag) {

@@ -12,9 +12,15 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
+#include <gtk/gtk.h>
+#include <gtksourceview/gtksourceiter.h>
+#include "common.h"
+
+void search_init(GtkWidget *text_view);
 gboolean search_find_text(gchar *text);
 gboolean search_find_next();
-void search_find_dialog_show(GtkWindow *parent,
-                             GtkWidget *text_view);
+void search_find_dialog_response_callback(GtkWidget *dialog,
+                   gint response_id,
+                   gpointer entry);
 
 #endif

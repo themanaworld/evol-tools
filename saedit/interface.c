@@ -9,12 +9,11 @@
 |                                         |
 \*=======================================*/
 
-#include "main.h"
-
 GtkWidget *reload_menu_item = NULL;
+GtkWidget *find_dialog = NULL;
 
 void find_menu_item_activate_callback(GtkWidget *menuitem, gpointer user_data) {
-  search_find_dialog_show(win, source_view);
+  gtk_dialog_run(GTK_DIALOG(find_dialog));
 }
 
 void save_dialog_response_callback(GtkWidget *dialog, gint response_id, gpointer user_data) {
@@ -57,6 +56,8 @@ void file_new() {
     gtk_text_buffer_set_text(GTK_TEXT_BUFFER(source_buffer), temp, -1);
   gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(xml_file_chooser_button), "");
   gtk_widget_set_sensitive(reload_menu_item, FALSE);
+  
+  free_lists(gen_sae_info);
 }
 
 void set_up_interface() {
@@ -65,6 +66,7 @@ void set_up_interface() {
   gtk_builder_add_from_file(builder, "interface.ui", NULL);
   gtk_builder_connect_signals(builder, NULL);
 
+  //Setup main window
   win = GTK_WIDGET(gtk_builder_get_object(builder, "win_main"));
 
   //Setup GtkSourceView
@@ -73,8 +75,9 @@ void set_up_interface() {
 
   source_view = GTK_WIDGET(gtk_builder_get_object(builder, "source_view"));
   gtk_text_view_set_buffer(GTK_TEXT_VIEW(source_view), GTK_TEXT_BUFFER(source_buffer));
+  search_init(source_view);
 
-  //Setup ScrolledWindow
+  //Setup GtkScrolledWindow
   GtkWidget *scrolled_window = NULL;
   scrolled_window = GTK_WIDGET(gtk_builder_get_object(builder, "scrolledwindow1"));
   gtk_scrolled_window_set_hadjustment(GTK_SCROLLED_WINDOW(scrolled_window), 
@@ -85,20 +88,30 @@ void set_up_interface() {
   //Setup GtkDrawingArea
   darea = GTK_WIDGET(gtk_builder_get_object(builder, "darea1"));
 
-
   reload_menu_item = GTK_WIDGET(gtk_builder_get_object(builder, "menuitem6"));
   show_grid_menu_item = GTK_WIDGET(gtk_builder_get_object(builder, "menuitem11"));
   imageset_preview_menu_item = GTK_WIDGET(gtk_builder_get_object(builder, "menuitem12"));
 
   data_folder_chooser_button = GTK_WIDGET(gtk_builder_get_object(builder, "datafcbutton"));
   xml_file_chooser_button = GTK_WIDGET(gtk_builder_get_object(builder, "xmlfcbutton"));
+  xml_file_open_button = GTK_WIDGET(gtk_builder_get_object(builder, "xmlfobutton"));
+  xml_file_save_button = GTK_WIDGET(gtk_builder_get_object(builder, "xmlfsbutton"));
 
   gen_sae_info->imagesets_combo_box = GTK_WIDGET(gtk_builder_get_object(builder, "imagesetscbox"));
   gen_sae_info->actions_combo_box = GTK_WIDGET(gtk_builder_get_object(builder, "actionscbox"));
   gen_sae_info->animations_combo_box = GTK_WIDGET(gtk_builder_get_object(builder, "animationscbox"));
 
+  //Setup GtkAboutDialog
+  about_dialog = GTK_WIDGET(gtk_builder_get_object(builder, "about_dialog"));
+
+  //Setup Find dialog
+  find_dialog = GTK_WIDGET(gtk_builder_get_object(builder, "find_dialog"));
+  gtk_widget_hide(find_dialog);
+
   file_new();
 
   gtk_widget_show_all(win);
   gtk_widget_show_all(source_view);
+
+  g_object_unref(builder);
 }

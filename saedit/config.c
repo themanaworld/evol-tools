@@ -9,10 +9,6 @@
 |                                         |
 \*=======================================*/
 
-#include <glib.h>
-#include <ibusxml.h>
-#include "common.h"
-#include "xml.h"
 #include "config.h"
 
 Options *config_options_new() {
