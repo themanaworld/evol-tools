@@ -56,10 +56,13 @@ void config_keys_save(Keys *keys) {
                                  POSTFIX_FOLDER,
                                  NULL));
   g_key_file_set_boolean(key_file, "General", "ShowGrid", keys->show_grid);
-  g_file_set_contents(KEYS_CONFIG_FILE,
-                      g_key_file_to_data(key_file, NULL, NULL),
-                      -1,
-                      NULL);
+
+  mkdir(KEYS_CONFIG_DIR, S_IRWXU);
+  int fd = g_creat(KEYS_CONFIG_FILE, S_IREAD | S_IWRITE);
+  gchar *buf = g_key_file_to_data(key_file, NULL, NULL);
+  write(fd, buf, strlen(buf), NULL);
+  close(fd);
+
   g_key_file_free(key_file);
 }
 
