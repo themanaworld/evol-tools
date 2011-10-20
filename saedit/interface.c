@@ -57,7 +57,7 @@ void file_new() {
   gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(xml_file_chooser_button), "");
   gtk_widget_set_sensitive(reload_menu_item, FALSE);
   
-  free_lists(gen_sae_info);
+  free_current_info();
 }
 
 void set_up_interface() {

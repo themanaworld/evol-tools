@@ -75,6 +75,9 @@ void free_imagesets(SAEInfo *sae_info);
 void free_actions(SAEInfo *sae_info);
 void free_animations(SAEInfo *sae_info);
 void free_imageset(SAEInfo *sae_info);
+void free_lists(SAEInfo *sae_info);
+
+void free_current_info();
 
 //Callbacks
 void data_folder_set_callback(GtkFileChooserButton *widget, gpointer data);

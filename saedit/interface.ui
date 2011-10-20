@@ -471,7 +471,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">4</property>
+                    <property name="position">5</property>
                   </packing>
                 </child>
                 <child>
@@ -491,6 +491,21 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkButton" id="button3">
+                    <property name="label" translatable="yes">Parse XML Buffer</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="use_action_appearance">False</property>
+                    <signal name="clicked" handler="parse_xml_buffer" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">6</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -506,18 +521,17 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="button3">
-                    <property name="label" translatable="yes">Parse XML Buffer</property>
+                  <object class="GtkComboBoxText" id="imagesetscbox">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="use_action_appearance">False</property>
-                    <signal name="clicked" handler="parse_xml_buffer" swapped="no"/>
+                    <property name="can_focus">False</property>
+                    <property name="model">liststore1</property>
+                    <property name="active">0</property>
+                    <signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">7</property>
+                    <property name="position">9</property>
                   </packing>
                 </child>
                 <child>
@@ -536,17 +550,16 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBoxText" id="imagesetscbox">
+                  <object class="GtkComboBoxText" id="actionscbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="model">liststore1</property>
                     <property name="active">0</property>
-                    <signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
+                    <signal name="changed" handler="actions_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">9</property>
+                    <property name="position">11</property>
                   </packing>
                 </child>
                 <child>
@@ -557,19 +570,6 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">11</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkComboBoxText" id="actionscbox">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="active">0</property>
-                    <signal name="changed" handler="actions_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>

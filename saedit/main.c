@@ -110,7 +110,7 @@ void open_xml_file(GtkButton *button) {
     gtk_file_chooser_unselect_all(GTK_FILE_CHOOSER(xml_file_chooser_button));
   }
 
-  free_lists(gen_sae_info);
+  free_current_info();
 }
 
 void save_to_xml_file(gchar *filename) {
@@ -156,6 +156,11 @@ void free_lists(SAEInfo *sae_info) {
   free_imagesets(sae_info);
   free_actions(sae_info);
   free_animations(sae_info);
+}
+
+void free_current_info() {
+  free_lists(gen_sae_info);
+  player = NULL;
 }
 
 //Callbacks
