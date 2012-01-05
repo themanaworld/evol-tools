@@ -82,8 +82,8 @@ Palette::Palette(const std::string &description)
 void Palette::getColor(int intensity, int color[3]) const
 {
     printf ("---------------------------------------------\n");
-    printf ("intensity=%d\n", intensity);
-    printf ("image color: %d, %d, %d\n", color[0], color[1], color[2]);
+    printf ("intensity=%x\n", intensity);
+    printf ("image color: %x, %x, %x\n", color[0], color[1], color[2]);
 
     // Return implicit black
     if (intensity == 0)
@@ -113,13 +113,14 @@ void Palette::getColor(int intensity, int color[3]) const
         g2 = mColors[j].value[1],
         b2 = mColors[j].value[2];
 
-    printf ("r2 = mColors[j].value[0]=%d\n", r2);
-    printf ("g2 = mColors[j].value[1]=%d\n", g2);
-    printf ("b2 = mColors[j].value[2]=%d\n", b2);
+    printf ("read from palate at j (%d)\n", j);
+    printf ("r2 = mColors[j].value[0]=%x\n", r2);
+    printf ("g2 = mColors[j].value[1]=%x\n", g2);
+    printf ("b2 = mColors[j].value[2]=%x\n", b2);
 
     if (t == 0)
     {
-        printf ("t == 0, return rgb = %d, %d, %d\n", r2, g2,b2);
+        printf ("t == 0, return rgb = %x, %x, %x\n", r2, g2, b2);
         // Exact color.
         color[0] = r2;
         color[1] = g2;
@@ -135,9 +136,10 @@ void Palette::getColor(int intensity, int color[3]) const
         r1 = mColors[i - 1].value[0];
         g1 = mColors[i - 1].value[1];
         b1 = mColors[i - 1].value[2];
-        printf ("r1 = mColors[i - 1].value[0] = %d\n", r1);
-        printf ("g1 = mColors[i - 1].value[1] = %d\n", g1);
-        printf ("b1 = mColors[i - 1].value[2] = %d\n", b1);
+        printf ("read from palate at i-1 (%d)\n", i - 1);
+        printf ("r1 = mColors[i - 1].value[0] = %x\n", r1);
+        printf ("g1 = mColors[i - 1].value[1] = %x\n", g1);
+        printf ("b1 = mColors[i - 1].value[2] = %x\n", b1);
     }
 
     // Perform a linear interpolation.
@@ -145,9 +147,9 @@ void Palette::getColor(int intensity, int color[3]) const
     color[1] = ((255 - t) * g1 + t * g2) / 255;
     color[2] = ((255 - t) * b1 + t * b2) / 255;
     printf ("result color:\n");
-    printf ("color[0] = ((255 - t) * r1 + t * r2) / 255 = %d\n", color[0]);
-    printf ("color[1] = ((255 - t) * g1 + t * g2) / 255 = %d\n", color[1]);
-    printf ("color[2] = ((255 - t) * b1 + t * b2) / 255 = %d\n", color[2]);
+    printf ("color[0] = ((255 - t) * r1 + t * r2) / 255  =  %d * %d + %d * %d   = %x\n", 255 - t, r1, t, r2, color[0]);
+    printf ("color[1] = ((255 - t) * g1 + t * g2) / 255  =  %d * %d + %d * %d   = %x\n", 255 - t, g1, t, g2, color[1]);
+    printf ("color[2] = ((255 - t) * b1 + t * b2) / 255  =  %d * %d + %d * %d   = %x\n", 255 - t, b1, t, b2, color[2]);
 }
 
 Dye::Dye(const std::string &description)
