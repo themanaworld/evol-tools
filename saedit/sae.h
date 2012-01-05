@@ -12,6 +12,11 @@
 #ifndef SAE_H
 #define SAE_H
 
+#include <gtk/gtk.h>
+#include <ibusxml.h>
+#include "common.h"
+#include "xml.h"
+
 void kill_timeout(guint tag);
 
 typedef struct {

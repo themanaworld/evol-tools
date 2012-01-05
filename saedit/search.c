@@ -9,12 +9,9 @@
 |                                         |
 \*=======================================*/
 
-#include <gtk/gtk.h>
-#include "common.h"
 #include "search.h"
 
 GtkWidget *search_text_view = NULL;
-GtkWidget *search_find_dialog_entry = NULL;
 gchar *search_last_text = NULL;
 
 gboolean search_find_text(gchar *text) {
@@ -28,11 +25,11 @@ gboolean search_find_text(gchar *text) {
 
   GtkTextIter m_start, m_end, start;
   gtk_text_buffer_get_selection_bounds(text_buffer, NULL, &start);
-  found = gtk_source_iter_forward_search(&start, text, 0, &m_start, &m_end, NULL);
+  found = gtk_source_iter_forward_search(&start, text, GTK_SOURCE_SEARCH_CASE_INSENSITIVE, &m_start, &m_end, NULL);
 
   if (!found) {
     gtk_text_buffer_get_start_iter(text_buffer, &start);
-    found = gtk_source_iter_forward_search(&start, text, 0, &m_start, &m_end, NULL);
+    found = gtk_source_iter_forward_search(&start, text, GTK_SOURCE_SEARCH_CASE_INSENSITIVE, &m_start, &m_end, NULL);
   }
 
   if (found) {
@@ -54,17 +51,25 @@ gboolean search_find_next() {
     search_find_text(search_last_text);
 }
 
-void search_find_dialog_response_callback(GtkDialog *dialog,
+void search_find_dialog_response_callback(GtkWidget *dialog,
                    gint response_id,
-                   gpointer user_data) {
-  if (response_id != GTK_RESPONSE_ACCEPT)
-    return;
+                   gpointer entry) {
 
-  if (!GTK_IS_TEXT_VIEW(search_text_view))
-    return;
+  if (response_id == GTK_RESPONSE_CANCEL || response_id == GTK_RESPONSE_DELETE_EVENT)
+    gtk_widget_hide(dialog);
+  else {
 
-  if (GTK_IS_ENTRY(search_find_dialog_entry))
-    search_find_text(g_strdup(gtk_entry_get_text(GTK_ENTRY(search_find_dialog_entry))));
+    g_return_if_fail(response_id == GTK_RESPONSE_ACCEPT);
+    g_return_if_fail(GTK_IS_TEXT_VIEW(search_text_view));
+    g_return_if_fail(GTK_IS_ENTRY(GTK_ENTRY(entry)));
+
+    search_find_text(g_strdup(gtk_entry_get_text(GTK_ENTRY(entry))));
+
+  }
+}
+
+void search_init(GtkWidget *text_view) {
+	search_text_view = text_view;
 }
 
 void search_find_dialog_show(GtkWindow *parent,
@@ -91,10 +96,9 @@ void search_find_dialog_show(GtkWindow *parent,
   g_signal_connect(dialog,
                    "response",
                    G_CALLBACK(search_find_dialog_response_callback),
-                   NULL);
+                   entry);
 
   search_text_view = text_view;
-  search_find_dialog_entry = entry;
 
   gtk_dialog_run(dialog);
 }
