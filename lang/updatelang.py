@@ -42,7 +42,8 @@ def collectStrings(parentDir):
 					m = strre4.findall(line)
 					if len(m) > 0:
 						for str in m:
-							allStrings.add(str)
+							allStrings.add(str + "#0")
+							allStrings.add(str + "#1")
 					m = strre2.search(line)
 					if m is not None:
 						 allStrings.add(m.group("str"))
