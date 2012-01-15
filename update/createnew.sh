@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2011  Evol Online
+# Copyright (C) 2011-2012  Evol Online
 # Author: Andrei Karas (4144)
 
 dir=`pwd`
@@ -8,10 +8,13 @@ dir=`pwd`
 rm adler32
 gcc -lz adler32.c -o adler32
 
+mkdir files
+mkdir upload
+
 rm files/evol.zip
-cd ../../clientdata
-find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\)" -printf "%P\n" | zip -@ ../evol-tools/update/files/evol.zip
-git log --pretty=oneline -n 1 | awk '{print $1}' >../evol-tools/update/commit.txt
+cd ../../gittorious/clientdata-beta
+find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\)" -printf "%P\n" | zip -@ ../../privtools/update/files/evol.zip
+git log --pretty=oneline -n 1 | awk '{print $1}' >../../privtools/update/commit.txt
 
 cd $dir/files
 sum=`../adler32 1 evol.zip`
