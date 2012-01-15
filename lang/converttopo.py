@@ -27,9 +27,12 @@ def loadFiles(dir):
 			langs.add(line[:-1])
 
 	for file in langs:
-		langFiles[file] = parseFile(dir + "/lang_" + file + ".txt", True)
+		if file == "en":
+			langFiles[file] = parseFile(dir + "/lang_" + file + ".txt", True, True)
+		else:
+			langFiles[file] = parseFile(dir + "/lang_" + file + ".txt", True, False)
 
-def parseFile(name, readFirstLine):
+def parseFile(name, readFirstLine, isBaseLang):
 	trans = dict()
 	firstLine = None
 	if os.path.exists(name):
@@ -50,7 +53,10 @@ def parseFile(name, readFirstLine):
 					continue
 
 				line2 = line[:-1]
-				trans[line1] = line2
+				if isBaseLang:
+					trans[line1] = line1
+				else:
+					trans[line1] = line2
 				line1 = ""
 				line2 = ""
 	return (trans, firstLine)
@@ -81,7 +87,7 @@ def saveFile(path, name):
 			w.write ("msgstr \"" + line2 + "\"\n\n")
 
 
-rootPath = "../../gittorious/serverdata"
+rootPath = "../../gittorious/serverdata-beta"
 
 loadFiles(rootPath + "/langs")
 saveFiles("po")

@@ -15,6 +15,7 @@ allStrings = set()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
 strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
+strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"]")
 itemsplit = re.compile(",")
 
 langFiles = dict() 
@@ -38,6 +39,11 @@ def collectStrings(parentDir):
 					if len(m) > 0:
 						for str in m:
 							allStrings.add(str)
+					m = strre4.findall(line)
+					if len(m) > 0:
+						for str in m:
+							allStrings.add(str + "#0")
+							allStrings.add(str + "#1")
 					m = strre2.search(line)
 					if m is not None:
 						 allStrings.add(m.group("str"))
@@ -81,6 +87,8 @@ def parseFile(name, readFirstLine):
 				trans[line1] = line2
 				line1 = ""
 				line2 = ""
+	elif readFirstLine:
+		firstLine = "Copyright (C) 2010-2012  Evol Online\n"
 	return (trans, firstLine)
 
 
@@ -193,7 +201,7 @@ def loadItemDb(dir):
 				continue
 			itemNamesByName[rows[1].lower().strip()] = rows[2].strip()
 
-rootPath = "../../gittorious/serverdata"
+rootPath = "../../gittorious/serverdata-beta"
 
 loadItemDb(rootPath + "/db")
 collectStrings(rootPath + "/npc")
