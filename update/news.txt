@@ -1,13 +1,22 @@
 ##0 Actual Release:##1 Beta1
 ##0 Welcome in ##BEvol Online##b!
-##0 You can find every ##1rules##0 of ##BEvol Online##b at ##1http://www.evolonline.org/guide_rules.html
-
-
+##0 You can find every ##1rules##0 of ##BEvol Online##b 
+##0 at ##1http://www.evolonline.org/guide_rules.html
+ 
+ 
 ##7 Season 1, Episode 1!
-
-##0 After months of hard work, the world of ##BEvol Online##b is open to the public for his first Beta Release.
-##0 This opening will be the start of a series of 3 Beta Releases which will be there to determinate the good and bad points of the chosen Gameplay.
-##0 We welcome you all to give us your thoughts on this, but also to be a part of this great adventure.
+ 
+##0 After months of work,
+##0 the world of ##BEvol Online##b is open to
+##0 the public for his first Beta Release.
+##0 This opening will be the start of a series
+##0 of 3 Beta Releases which will be there to
+##0 determinate the good and bad points of the
+##0 chosen Gameplay.
+ 
+##0 We welcome you to give us your thoughts on
+##0 this, but also to be a part of this great
+##0 adventure.
 
 ##9-- Dearly yours, Reid.
 ##9 January 2012
