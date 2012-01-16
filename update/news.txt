@@ -3,20 +3,36 @@
 ##0 You can find every ##1rules##0 of ##BEvol Online##b 
 ##0 at ##1http://www.evolonline.org/guide_rules.html
  
+##7 ##BThe adventure begins!
  
 ##7 Season 1, Episode 1!
  
-##0 After months of work,
-##0 the world of ##BEvol Online##b is open to
-##0 the public for his first Beta Release.
-##0 This opening will be the start of a series
-##0 of 3 Beta Releases which will be there to
-##0 determinate the good and bad points of the
-##0 chosen Gameplay.
+##0 After a mysterious past, you find yourself adrift on the waves by 
+##0 a sailor crew in the middle of Oceania.
  
-##0 We welcome you to give us your thoughts on
-##0 this, but also to be a part of this great
-##0 adventure.
+##0 You wake up about 7 days later, in the same ship.
+##0 Meet the crew which saved you and try to understand what happened
+##0 to you before this terrible event!
+ 
+##9-- Dearly yours, Reid.
+##9 January 2012
+ 
+ 
+##7 Evol Online Beta Releases.
+ 
+##0 After months of work, the world of ##BEvol Online##b is open to
+##0 the public for his first Beta Release.
+##0 This opening will be the start of a series of 3 Beta Releases which
+##0 will be there to determinate the good and bad points of the chosen
+##0 Gameplay.
+ 
+##0 We welcome you to give us your thoughts on this, but also to be
+##0 a part of this great adventure.
+ 
+##0 We also warn you that at the end of these Beta Releases, the
+##0 game will get a wipe of all characters, as we are trying to get a
+##0 good balanced game to start with.
+##0 We kindly ask you to accept this.
  
 ##9-- Dearly yours, Reid.
 ##9 January 2012
