@@ -17,6 +17,7 @@ strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
 strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"]")
 strre5 = re.compile("[\t +(]getitemname[(][\"](?P<str>[^\"]+)[\"][)]")
+strre6 = re.compile("[\t ]mesn[ ][\"](?P<str>[^\"]+)[\"]")
 itemsplit = re.compile(",")
 
 langFiles = dict() 
@@ -56,6 +57,11 @@ def collectStrings(parentDir):
 					if len(m) > 0:
 						for str in m:
 							allStrings.add(itemNamesByName[str.lower()])
+					m = strre6.findall(line)
+					if len(m) > 0:
+						for str in m:
+							allStrings.add(str)
+
 
 
 
