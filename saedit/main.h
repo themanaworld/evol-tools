@@ -59,7 +59,7 @@ Keys *config;
 
 //Cairo functions
 cairo_surface_t *get_grid_surface(int w, int h);
-gboolean darea_expose_event(GtkWidget *widget, GdkEvent *event, SAEInfo *sae_info);
+gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info);
 
 //String functions (common)
 gchar *markup_bold(gchar *str);

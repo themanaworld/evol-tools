@@ -45,19 +45,17 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   return surface;
 }
 
-gboolean darea_expose_event(GtkWidget *widget, GdkEvent *event, SAEInfo *sae_info) {
-  if (!(event->type == GDK_EXPOSE || event->type == GDK_DAMAGE)) return FALSE;
+gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info) {
+
   if (sae_info == NULL)
 	sae_info = gen_sae_info;
 
   int width = gtk_widget_get_allocated_width(widget),
       height = gtk_widget_get_allocated_height(widget);
 
-  printf("W and H: %d %d\n", width, height);
-
   int w = 3, h = 3;
 
-  cairo_t *cr = gdk_cairo_create(gtk_widget_get_parent_window(widget));
+  //cairo_t *cr = gdk_cairo_create(gtk_widget_get_parent_window(widget));
 
   cairo_surface_t *surface = get_grid_surface(w, h);
   cairo_set_source_surface(cr, surface, width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
@@ -79,7 +77,6 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEvent *event, SAEInfo *sae_inf
                               height/2 +GRID_SIZE/2 - sae_info->imageset->height + sae_info->offsetY + sae_info->sprite->offsetY + sae_info->imageset->offsetY);
   cairo_paint(cr);
 
-  cairo_destroy(cr);
   cairo_surface_destroy(surface);
   return FALSE;
 }
