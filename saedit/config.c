@@ -60,7 +60,7 @@ void config_keys_save(Keys *keys) {
   mkdir(KEYS_CONFIG_DIR, S_IRWXU);
   int fd = g_creat(KEYS_CONFIG_FILE, S_IREAD | S_IWRITE);
   gchar *buf = g_key_file_to_data(key_file, NULL, NULL);
-  write(fd, buf, strlen(buf), NULL);
+  write(fd, buf, strlen(buf));
   close(fd);
 
   g_key_file_free(key_file);

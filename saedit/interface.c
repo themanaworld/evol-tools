@@ -28,7 +28,7 @@ void save_dialog_response_callback(GtkWidget *dialog, gint response_id, gpointer
 }
 
 void save_dialog_show() {
-  GtkDialog *dialog = gtk_file_chooser_dialog_new(_("Save file as..."), win, GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL);
+  GtkDialog *dialog = GTK_DIALOG(gtk_file_chooser_dialog_new(_("Save file as..."), GTK_WINDOW(win), GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL));
   g_signal_connect(dialog, "response", G_CALLBACK(save_dialog_response_callback), NULL);
   gtk_dialog_run(dialog);
 }
@@ -49,8 +49,8 @@ void xml_file_save_button_callback(GtkWidget *button, gpointer user_data) {
 
 void file_new() {
   GtkTextIter start, end;
-  gtk_text_buffer_get_bounds(source_buffer, &start, &end);
-  gtk_text_buffer_delete(source_buffer, &start, &end);
+  gtk_text_buffer_get_bounds(GTK_TEXT_BUFFER(source_buffer), &start, &end);
+  gtk_text_buffer_delete(GTK_TEXT_BUFFER(source_buffer), &start, &end);
   gchar *temp;
   if (g_file_get_contents(FILE_TEMPLATE, &temp, NULL, NULL))
     gtk_text_buffer_set_text(GTK_TEXT_BUFFER(source_buffer), temp, -1);

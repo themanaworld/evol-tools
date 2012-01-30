@@ -25,11 +25,11 @@ gboolean search_find_text(gchar *text) {
 
   GtkTextIter m_start, m_end, start;
   gtk_text_buffer_get_selection_bounds(text_buffer, NULL, &start);
-  found = gtk_source_iter_forward_search(&start, text, GTK_SOURCE_SEARCH_CASE_INSENSITIVE, &m_start, &m_end, NULL);
+  found = gtk_text_iter_forward_search(&start, text, 4, &m_start, &m_end, NULL);
 
   if (!found) {
     gtk_text_buffer_get_start_iter(text_buffer, &start);
-    found = gtk_source_iter_forward_search(&start, text, GTK_SOURCE_SEARCH_CASE_INSENSITIVE, &m_start, &m_end, NULL);
+    found = gtk_text_iter_forward_search(&start, text, 4, &m_start, &m_end, NULL);
   }
 
   if (found) {

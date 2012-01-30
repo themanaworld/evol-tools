@@ -49,12 +49,12 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *s
   if (sae_info == NULL)
 	sae_info = gen_sae_info;
 
-  int width = widget->allocation.width,
-      height = widget->allocation.height;
+  int width = gtk_widget_get_allocated_width(widget),
+      height = gtk_widget_get_allocated_height(widget);
 
   int w = 3, h = 3;
 
-  cairo_t *cr = gdk_cairo_create(widget->window);
+  cairo_t *cr = gdk_cairo_create(gtk_widget_get_parent_window(widget));
 
   cairo_surface_t *surface = get_grid_surface(w, h);
   cairo_set_source_surface(cr, surface, width/2 - GRID_SIZE * (w + 2) * 0.5, height/2 - GRID_SIZE * (h + 2) * 0.5);
@@ -84,7 +84,7 @@ gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *s
 //String functions (common)
 
 gchar *markup_bold(gchar *str) {
-  gchar *buffer[255];
+  gchar buffer[255];
   g_sprintf(buffer, "<b>%s</b>", str);
   return buffer;
 }
@@ -104,7 +104,7 @@ void open_xml_file(GtkButton *button) {
   size_t len;
   g_file_get_contents(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(xml_file_chooser_button)), &buf, &len, NULL);
   if (g_utf8_validate(buf, len, NULL)) {
-    gtk_text_buffer_set_text(source_buffer, buf, len);
+    gtk_text_buffer_set_text(GTK_TEXT_BUFFER(source_buffer), buf, len);
     gtk_widget_set_sensitive(xml_file_save_button, TRUE);
   } else {
     gtk_file_chooser_unselect_all(GTK_FILE_CHOOSER(xml_file_chooser_button));
@@ -115,9 +115,9 @@ void open_xml_file(GtkButton *button) {
 
 void save_to_xml_file(gchar *filename) {
   GtkTextIter start, end;
-  gtk_text_buffer_get_start_iter(source_buffer, &start);
-  gtk_text_buffer_get_end_iter(source_buffer, &end);
-  g_file_set_contents(filename, gtk_text_buffer_get_text(source_buffer, &start, &end, NULL), -1, NULL);
+  gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(source_buffer), &start);
+  gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(source_buffer), &end);
+  g_file_set_contents(filename, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(source_buffer), &start, &end, NULL), -1, NULL);
 }
 
 //SAEInfo functions (must be ported to sae.c)
@@ -186,24 +186,24 @@ void show_wrong_source_buffer_dialog() {
   gtk_widget_show_all(dialog);
 }
 
-void actions_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
+void actions_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data) {
   if (player != NULL)
-    set_up_action_by_name(gtk_combo_box_get_active_text(widget), player);
-  set_up_action_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
+    set_up_action_by_name(gtk_combo_box_text_get_active_text(widget), player);
+  set_up_action_by_name(gtk_combo_box_text_get_active_text(widget), gen_sae_info);
 }
 
-void animations_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
-  set_up_animation_by_direction(gen_sae_info, gtk_combo_box_get_active_text(widget));
+void animations_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data) {
+  set_up_animation_by_direction(gen_sae_info, gtk_combo_box_text_get_active_text(widget));
   if (player != NULL) {
-    set_up_animation_by_direction(player, gtk_combo_box_get_active_text(widget));
+    set_up_animation_by_direction(player, gtk_combo_box_text_get_active_text(widget));
     show_animation(player);
   }
   show_animation(gen_sae_info);
 }
 
-void imagesets_combo_box_changed_callback(GtkComboBox *widget, gpointer user_data) {
-  if (gtk_combo_box_get_active_text(widget) != NULL)
-    set_up_imageset_by_name(gtk_combo_box_get_active_text(widget), gen_sae_info);
+void imagesets_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data) {
+  if (gtk_combo_box_text_get_active_text(widget) != NULL)
+    set_up_imageset_by_name(gtk_combo_box_text_get_active_text(widget), gen_sae_info);
 }
 
 gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButton *button, int index) {
@@ -280,7 +280,7 @@ void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info) {
       g_list_append(_actions_list, list->data);
     node = list->data;
     if (sae_info->actions_combo_box != NULL)
-      gtk_combo_box_append_text(GTK_COMBO_BOX(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
+      gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (sae_info->actions_combo_box != NULL);
@@ -304,7 +304,7 @@ gboolean set_up_imagesets(SAEInfo *sae_info) {
       g_list_append(_imagesets_list, list->data);
     node = list->data;
     if (sae_info->imagesets_combo_box != NULL)
-      gtk_combo_box_append_text(GTK_COMBO_BOX(sae_info->imagesets_combo_box), xml_node_get_attr_value(node, "name"));
+      gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->imagesets_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (_imagesets_list == NULL)
@@ -354,7 +354,7 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
     gchar *direction = xml_node_get_attr_value(node, "direction");
     if (direction != NULL) {
       if (sae_info->animations_combo_box != NULL)
-        gtk_combo_box_append_text(GTK_COMBO_BOX(sae_info->animations_combo_box), direction);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->animations_combo_box), direction);
       was_direction = TRUE;
     }
     list = list->next;

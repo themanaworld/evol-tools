@@ -8,10 +8,10 @@ endif
 
 LDFLAGS += -export-dynamic
 
-GTK_CFLAGS = `pkg-config --cflags gtk+-2.0 gtksourceview-2.0`
+GTK_CFLAGS = `pkg-config --cflags gtk+-3.0 gtksourceview-3.0`
 IBUS_CFLAGS = `pkg-config --cflags ibus-1.0`
 
-GTK_LDFLAGS = `pkg-config --libs gtk+-2.0 gtksourceview-2.0`
+GTK_LDFLAGS = `pkg-config --libs gtk+-3.0 gtksourceview-3.0`
 IBUS_LDFLAGS = `pkg-config --libs ibus-1.0`
 
 IBUS_FLAGS = ${IBUS_CFLAGS} ${IBUS_LDFLAGS}

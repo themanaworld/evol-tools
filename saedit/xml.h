@@ -12,7 +12,7 @@
 #define XML_H
 
 #include <glib.h>
-#include <ibusxml.h>
+#include <ibus.h>
 #include "common.h"
 
 gchar **xml_attr_new(gchar *name, gchar *value);

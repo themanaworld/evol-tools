@@ -13,7 +13,7 @@
 #define SEARCH_H
 
 #include <gtk/gtk.h>
-#include <gtksourceview/gtksourceiter.h>
+#include <gtksourceview/gtksourceview.h>
 #include "common.h"
 
 void search_init(GtkWidget *text_view);
