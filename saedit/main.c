@@ -45,12 +45,15 @@ cairo_surface_t *get_grid_surface(int w, int h) {
   return surface;
 }
 
-gboolean darea_expose_event(GtkWidget *widget, GdkEventExpose *event, SAEInfo *sae_info) {
+gboolean darea_expose_event(GtkWidget *widget, GdkEvent *event, SAEInfo *sae_info) {
+  if (!(event->type == GDK_EXPOSE || event->type == GDK_DAMAGE)) return FALSE;
   if (sae_info == NULL)
 	sae_info = gen_sae_info;
 
   int width = gtk_widget_get_allocated_width(widget),
       height = gtk_widget_get_allocated_height(widget);
+
+  printf("W and H: %d %d\n", width, height);
 
   int w = 3, h = 3;
 
@@ -214,13 +217,13 @@ gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButt
 }
 
 void open_menu_item_activate_callback(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog) {
-  gtk_dialog_run(fcdialog);
+  gtk_dialog_run(GTK_DIALOG(fcdialog));
 }
 
 //Dialogs
 
 void show_about_dialog() {
-  gtk_dialog_run(about_dialog);
+  gtk_dialog_run(GTK_DIALOG(about_dialog));
   gtk_widget_hide(about_dialog);
 }
 
@@ -229,7 +232,7 @@ void show_imageset_dialog() {
   GtkWidget *dialog = gtk_dialog_new();
   GtkWidget *content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
   gtk_window_set_title(GTK_WINDOW(dialog), _("Imageset preview"));
-  gtk_window_set_transient_for(dialog, GTK_WINDOW(win));
+  gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(win));
 
   int w = gen_sae_info->imageset->spriteset_width / gen_sae_info->imageset->width;
   int h = gen_sae_info->imageset->spriteset_height / gen_sae_info->imageset->height;
@@ -241,10 +244,11 @@ void show_imageset_dialog() {
   int x, y;
   for (y = 0; y < h; y++) {
     hbox = gtk_hbox_new(TRUE, 0);
-    gtk_container_add(content_area, hbox);
+    gtk_container_add(GTK_CONTAINER(content_area), hbox);
     for (x = 0; x < w; x++) {
+      int id = w * y + x;
       event_box = gtk_event_box_new();
-      g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event_callback), w * y + x);
+      g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event_callback), &id);
       gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
 
       image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x, gen_sae_info));

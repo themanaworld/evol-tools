@@ -606,7 +606,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <property name="height_request">120</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <signal name="expose-event" handler="darea_expose_event" swapped="no"/>
+                    <signal name="event" handler="darea_expose_event" swapped="no"/>
                   </object>
                   <packing>
                     <property name="resize">True</property>
