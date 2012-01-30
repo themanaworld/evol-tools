@@ -32,4 +32,4 @@ config.o: config.c config.h common.h
 sae.o: sae.c sae.h common.h
 	gcc ${CFLAGS} ${GTK_CFLAGS} ${IBUS_CFLAGS} -c -o sae.o sae.c
 clean:
-	rm -rfv '${OUTPUT}' *.o *.o~ *.c~ *.h~
+	rm -rfv '${OUTPUT}' *.o *.o~ *~

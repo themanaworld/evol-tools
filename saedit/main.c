@@ -84,9 +84,7 @@ gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info) {
 //String functions (common)
 
 gchar *markup_bold(gchar *str) {
-  gchar buffer[255];
-  g_sprintf(buffer, "<b>%s</b>", str);
-  return buffer;
+  return g_strconcat("<b>", str, "</b>");
 }
 
 void format_src_string(gchar *src) {
@@ -117,7 +115,7 @@ void save_to_xml_file(gchar *filename) {
   GtkTextIter start, end;
   gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(source_buffer), &start);
   gtk_text_buffer_get_end_iter(GTK_TEXT_BUFFER(source_buffer), &end);
-  g_file_set_contents(filename, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(source_buffer), &start, &end, NULL), -1, NULL);
+  g_file_set_contents(filename, gtk_text_buffer_get_text(GTK_TEXT_BUFFER(source_buffer), &start, &end, TRUE), -1, NULL);
 }
 
 //SAEInfo functions (must be ported to sae.c)
@@ -278,10 +276,10 @@ void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info) {
       sae_info->actions = _actions_list;
       _actions_list->data = list->data;
     } else
-      g_list_append(_actions_list, list->data);
+      _actions_list = g_list_append(_actions_list, list->data);
     node = list->data;
     if (sae_info->actions_combo_box != NULL)
-      gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
+      gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (sae_info->actions_combo_box != NULL);
@@ -302,10 +300,10 @@ gboolean set_up_imagesets(SAEInfo *sae_info) {
       _imagesets_list->data = list->data;
       sae_info->imagesets = _imagesets_list;
     } else
-      g_list_append(_imagesets_list, list->data);
+      _imagesets_list = g_list_append(_imagesets_list, list->data);
     node = list->data;
     if (sae_info->imagesets_combo_box != NULL)
-      gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->imagesets_combo_box), xml_node_get_attr_value(node, "name"));
+      gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(sae_info->imagesets_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
   if (_imagesets_list == NULL)
@@ -323,8 +321,7 @@ void show_animation(SAEInfo *sae_info) {
   sae_info->sprite = sprite;
   gtk_widget_queue_draw(darea);
   sae_info->animation = sae_info->animation->next;
-  sae_info->anim_tag = g_timeout_add(sprite->delay, show_animation, sae_info);
-  return FALSE;
+  sae_info->anim_tag = g_timeout_add(sprite->delay, (GSourceFunc)show_animation, sae_info);
 }
 
 gboolean show_general_animation(SAEInfo *sae_info) {
@@ -338,7 +335,7 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
   free_animations(sae_info);
   GList *list = g_list_find_custom(sae_info->actions,
                                    xml_attr_new("name", name),
-                                   xml_node_compare_with_attr_func);
+                                   (GCompareFunc)xml_node_compare_with_attr_func);
   if (list == NULL) return FALSE;
   list = ((XMLNode *)list->data)->sub_nodes;
   gboolean was_direction = FALSE;
@@ -350,12 +347,12 @@ gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {
       sae_info->animations = g_list_alloc();
       sae_info->animations->data = list->data;
     } else
-      g_list_append(sae_info->animations, list->data);
+      sae_info->animations = g_list_append(sae_info->animations, list->data);
     XMLNode *node = list->data;
     gchar *direction = xml_node_get_attr_value(node, "direction");
     if (direction != NULL) {
       if (sae_info->animations_combo_box != NULL)
-        gtk_combo_box_text_append_text(GTK_COMBO_BOX(sae_info->animations_combo_box), direction);
+        gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(sae_info->animations_combo_box), direction);
       was_direction = TRUE;
     }
     list = list->next;
@@ -376,10 +373,10 @@ void set_up_imageset_by_name(const gchar *name, SAEInfo *sae_info) {
 
   GList *list = g_list_find_custom(sae_info->imagesets,
                                    xml_attr_new("name", name),
-                                   xml_node_compare_with_attr_func);
+                                   (GCompareFunc)xml_node_compare_with_attr_func);
 
   if (list == NULL)
-    return FALSE;
+    return;
 
   XMLNode *node = list->data;
   if (node == NULL)
@@ -470,7 +467,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
       file_attr = g_strjoin(NULL, paths->sprites, file_attr, NULL);
       gchar *buf;
       if (g_file_get_contents(file_attr, &buf, NULL, NULL))
-        g_list_concat(_root_node->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
+        _root_node->sub_nodes = g_list_concat(_root_node->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
     }
     if (list->next != NULL)
       list = g_list_find_custom(list->next, "include", xml_node_compare_with_name_func);

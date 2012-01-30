@@ -100,5 +100,5 @@ void search_find_dialog_show(GtkWindow *parent,
 
   search_text_view = text_view;
 
-  gtk_dialog_run(dialog);
+  gtk_dialog_run(GTK_DIALOG(dialog));
 }

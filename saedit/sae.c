@@ -59,7 +59,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
 
   GList *list = g_list_find_custom(sae_info->animations,
                                    xml_attr_new("direction", direction),
-                                   xml_node_compare_with_attr_func);
+                                   (GCompareFunc)xml_node_compare_with_attr_func);
   if (list == NULL)
     return FALSE;
   int count = 0;
@@ -115,7 +115,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
           sprite->pixbuf = get_sprite_by_index(i, sae_info);
           count++;
           if (sae_info->animation != NULL)
-            g_list_append(sae_info->animation, sprite);
+            sae_info->animation = g_list_append(sae_info->animation, sprite);
           else {
             sae_info->animation = g_list_alloc();
             sae_info->animation->data = sprite;

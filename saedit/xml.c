@@ -11,14 +11,14 @@
 
 #include "xml.h"
 
-gchar **xml_attr_new(gchar *name, gchar *value) {
+gchar **xml_attr_new(const gchar *name, const gchar *value) {
   gchar **attr = g_new0(gchar*, 2);
-  attr[0] = name;
-  attr[1] = value;
+  attr[0] = g_strdup(name);
+  attr[1] = g_strdup(value);
   return attr;
 }
 
-gchar* xml_node_get_attr_value(XMLNode *node, gchar *attr_name) {
+gchar* xml_node_get_attr_value(const XMLNode *node, const gchar *attr_name) {
   gchar **attr = node->attributes;
   int i;
   for (i = 0; i < g_strv_length(attr); i += 2)
