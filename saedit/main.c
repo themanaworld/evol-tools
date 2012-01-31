@@ -282,7 +282,7 @@ void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info) {
       gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(sae_info->actions_combo_box), xml_node_get_attr_value(node, "name"));
     list = list->next;
   }
-  if (sae_info->actions_combo_box != NULL);
+  if (sae_info->actions_combo_box != NULL)
     gtk_combo_box_set_active(GTK_COMBO_BOX(sae_info->actions_combo_box), 0);
 }
 
