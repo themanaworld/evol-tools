@@ -1,0 +1,747 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-02-03 02:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ea-skills.xml:11(skills/set@name)
+msgid "Basic"
+msgstr ""
+
+#: ea-skills.xml:12(set/skill@name)
+#: tmp/manaplus_emotes.xml:25(emote/sprite@name)
+msgid "Emote"
+msgstr ""
+
+#: ea-skills.xml:13(set/skill@name)
+msgid "Trade"
+msgstr ""
+
+#: ea-skills.xml:14(set/skill@name)
+msgid "Party"
+msgstr ""
+
+#: ea-skills.xml:15(set/skill@name)
+msgid "Guild"
+msgstr ""
+
+#: ea-skills.xml:16(set/skill@name)
+msgid "Craft"
+msgstr ""
+
+#: ea-skills.xml:17(set/skill@name)
+msgid "Dye"
+msgstr ""
+
+#: ea-skills.xml:19(skills/set@name) ea-skills.xml:20(set/skill@name)
+msgid "Magic"
+msgstr ""
+
+#: ea-skills.xml:21(set/skill@name)
+msgid "Life Magic"
+msgstr ""
+
+#: ea-skills.xml:22(set/skill@name)
+msgid "War Magic"
+msgstr ""
+
+#: ea-skills.xml:23(set/skill@name)
+msgid "Transmutation Magic"
+msgstr ""
+
+#: ea-skills.xml:24(set/skill@name)
+msgid "Nature Magic"
+msgstr ""
+
+#: ea-skills.xml:25(set/skill@name)
+msgid "Necromancy Magic"
+msgstr ""
+
+#: ea-skills.xml:27(skills/set@name) ea-skills.xml:28(set/skill@name)
+msgid "Warrior"
+msgstr ""
+
+#: ea-skills.xml:30(skills/set@name) ea-skills.xml:31(set/skill@name)
+msgid "Archer"
+msgstr ""
+
+#: emotes.xml:16(emotes/emote@name) emotes.xml:17(emote/sprite@name)
+msgid "Disgust"
+msgstr ""
+
+#: emotes.xml:24(emotes/emote@name) emotes.xml:25(emote/sprite@name)
+msgid "Surprise"
+msgstr ""
+
+#: emotes.xml:32(emotes/emote@name) emotes.xml:33(emote/sprite@name)
+msgid "Happy"
+msgstr ""
+
+#: emotes.xml:40(emotes/emote@name) emotes.xml:41(emote/sprite@name)
+#: tmp/manaplus_emotes.xml:18(emote/sprite@name)
+msgid "Sad"
+msgstr ""
+
+#: emotes.xml:48(emotes/emote@name) emotes.xml:49(emote/sprite@name)
+#: tmp/manaplus_emotes.xml:20(emote/sprite@name)
+#: tmp/manaplus_emotes.xml:27(emote/sprite@name)
+msgid "Evil"
+msgstr ""
+
+#: emotes.xml:56(emotes/emote@name) emotes.xml:57(emote/sprite@name)
+msgid "Wink"
+msgstr ""
+
+#: emotes.xml:64(emotes/emote@name) emotes.xml:65(emote/sprite@name)
+msgid "Angel"
+msgstr ""
+
+#: emotes.xml:72(emotes/emote@name) emotes.xml:73(emote/sprite@name)
+msgid "Blush"
+msgstr ""
+
+#: emotes.xml:80(emotes/emote@name) emotes.xml:81(emote/sprite@name)
+msgid "Tongue"
+msgstr ""
+
+#: emotes.xml:88(emotes/emote@name) emotes.xml:89(emote/sprite@name)
+msgid "Grin"
+msgstr ""
+
+#: emotes.xml:96(emotes/emote@name) emotes.xml:97(emote/sprite@name)
+msgid "Upset"
+msgstr ""
+
+#: emotes.xml:104(emotes/emote@name) emotes.xml:105(emote/sprite@name)
+msgid "Perturbed"
+msgstr ""
+
+#: emotes.xml:112(emotes/emote@name) emotes.xml:113(emote/sprite@name)
+msgid "Speech"
+msgstr ""
+
+#: emotes.xml:120(emotes/emote@name) emotes.xml:121(emote/sprite@name)
+msgid "Blah"
+msgstr ""
+
+#: itemcolors.xml:12(list/color@name) itemcolors.xml:35(list/color@name)
+#: itemcolors.xml:58(list/color@name)
+msgid "white"
+msgstr ""
+
+#: itemcolors.xml:13(list/color@name) itemcolors.xml:36(list/color@name)
+msgid "black"
+msgstr ""
+
+#: itemcolors.xml:14(list/color@name) itemcolors.xml:37(list/color@name)
+msgid "silver"
+msgstr ""
+
+#: itemcolors.xml:15(list/color@name) itemcolors.xml:38(list/color@name)
+msgid "camel"
+msgstr ""
+
+#: itemcolors.xml:16(list/color@name) itemcolors.xml:39(list/color@name)
+msgid "brown"
+msgstr ""
+
+#: itemcolors.xml:17(list/color@name) itemcolors.xml:40(list/color@name)
+#: itemcolors.xml:62(list/color@name)
+msgid "orange"
+msgstr ""
+
+#: itemcolors.xml:18(list/color@name) itemcolors.xml:41(list/color@name)
+msgid "darkred"
+msgstr ""
+
+#: itemcolors.xml:19(list/color@name) itemcolors.xml:42(list/color@name)
+#: itemcolors.xml:66(list/color@name)
+msgid "red"
+msgstr ""
+
+#: itemcolors.xml:20(list/color@name) itemcolors.xml:43(list/color@name)
+#: itemcolors.xml:67(list/color@name)
+msgid "fushia"
+msgstr ""
+
+#: itemcolors.xml:21(list/color@name) itemcolors.xml:44(list/color@name)
+#: itemcolors.xml:68(list/color@name)
+msgid "pink"
+msgstr ""
+
+#: itemcolors.xml:22(list/color@name) itemcolors.xml:45(list/color@name)
+#: itemcolors.xml:69(list/color@name)
+msgid "mauve"
+msgstr ""
+
+#: itemcolors.xml:23(list/color@name) itemcolors.xml:46(list/color@name)
+#: itemcolors.xml:70(list/color@name)
+msgid "purple"
+msgstr ""
+
+#: itemcolors.xml:24(list/color@name) itemcolors.xml:47(list/color@name)
+#: itemcolors.xml:71(list/color@name)
+msgid "navy blue"
+msgstr ""
+
+#: itemcolors.xml:25(list/color@name) itemcolors.xml:48(list/color@name)
+msgid "bluegray"
+msgstr ""
+
+#: itemcolors.xml:26(list/color@name) itemcolors.xml:49(list/color@name)
+#: itemcolors.xml:72(list/color@name)
+msgid "blue"
+msgstr ""
+
+#: itemcolors.xml:27(list/color@name) itemcolors.xml:50(list/color@name)
+#: itemcolors.xml:73(list/color@name)
+msgid "teal"
+msgstr ""
+
+#: itemcolors.xml:28(list/color@name) itemcolors.xml:51(list/color@name)
+#: itemcolors.xml:74(list/color@name)
+msgid "green"
+msgstr ""
+
+#: itemcolors.xml:29(list/color@name) itemcolors.xml:52(list/color@name)
+#: itemcolors.xml:75(list/color@name)
+msgid "lime"
+msgstr ""
+
+#: itemcolors.xml:30(list/color@name) itemcolors.xml:53(list/color@name)
+#: itemcolors.xml:76(list/color@name)
+msgid "khaki"
+msgstr ""
+
+#: itemcolors.xml:31(list/color@name) itemcolors.xml:54(list/color@name)
+msgid "yellow"
+msgstr ""
+
+#: itemcolors.xml:59(list/color@name)
+msgid "off black"
+msgstr ""
+
+#: itemcolors.xml:60(list/color@name)
+msgid "ash brown"
+msgstr ""
+
+#: itemcolors.xml:61(list/color@name)
+msgid "copper"
+msgstr ""
+
+#: itemcolors.xml:63(list/color@name)
+msgid "brunette"
+msgstr ""
+
+#: itemcolors.xml:64(list/color@name)
+msgid "blonde"
+msgstr ""
+
+#: itemcolors.xml:65(list/color@name)
+msgid "copper red"
+msgstr ""
+
+#: items.xml:37(items/item@name)
+msgid "Flat ponytail"
+msgstr ""
+
+#: items.xml:40(items/item@name)
+msgid "Bowl cut"
+msgstr ""
+
+#: items.xml:43(items/item@name)
+msgid "Combed back"
+msgstr ""
+
+#: items.xml:46(items/item@name)
+msgid "Emo"
+msgstr ""
+
+#: items.xml:49(items/item@name)
+msgid "Mohawk"
+msgstr ""
+
+#: items.xml:52(items/item@name)
+msgid "Pompadour"
+msgstr ""
+
+#: items.xml:55(items/item@name)
+msgid "Center parting"
+msgstr ""
+
+#: items.xml:58(items/item@name)
+msgid "Long and slick"
+msgstr ""
+
+#: items.xml:61(items/item@name)
+msgid "Short and curly"
+msgstr ""
+
+#: items.xml:64(items/item@name)
+msgid "Pigtails"
+msgstr ""
+
+#: items.xml:67(items/item@name)
+msgid "Long and curly"
+msgstr ""
+
+#: items.xml:70(items/item@name)
+msgid "Parted"
+msgstr ""
+
+#: items.xml:73(items/item@name)
+msgid "Perky ponytail"
+msgstr ""
+
+#: items.xml:76(items/item@name)
+msgid "Wave"
+msgstr ""
+
+#: items.xml:79(items/item@name)
+msgid "Mane"
+msgstr ""
+
+#: items.xml:82(items/item@name)
+msgid "Bun"
+msgstr ""
+
+#: items.xml:85(items/item@name)
+msgid "Wavy"
+msgstr ""
+
+#: items.xml:88(items/item@name)
+msgid "Punk"
+msgstr ""
+
+#: items.xml:91(items/item@name)
+msgid "Long ponytail"
+msgstr ""
+
+#: items.xml:94(items/item@name)
+msgid "Wild"
+msgstr ""
+
+#: items.xml:97(items/item@name)
+msgid "Choppy"
+msgstr ""
+
+#: items.xml:100(items/item@name)
+msgid "Infinitely long"
+msgstr ""
+
+#: items.xml:103(items/item@name)
+msgid "Wedding"
+msgstr ""
+
+#: items.xml:106(items/item@name)
+msgid "Imperial"
+msgstr ""
+
+#: items.xml:109(items/item@name)
+msgid "Tousled layers"
+msgstr ""
+
+#: items.xml:114(items/item@name)
+msgid "Human"
+msgstr ""
+
+#: items.xml:118(items/item@name)
+msgid "Ukar"
+msgstr ""
+
+#: items.xml:122(items/item@name)
+msgid "Demon"
+msgstr ""
+
+#: items.xml:126(items/item@name)
+msgid "Elven"
+msgstr ""
+
+#: items.xml:130(items/item@name)
+msgid "Orc"
+msgstr ""
+
+#: items.xml:134(items/item@name)
+msgid "Raijin"
+msgstr ""
+
+#: items.xml:138(items/item@name)
+msgid "Tritan"
+msgstr ""
+
+#: items.xml:206(items/item@name)
+msgid "Acorn"
+msgstr ""
+
+#: items.xml:206(items/item@description)
+msgid "Squichy's food, should be good in a cake."
+msgstr ""
+
+#: items.xml:206(items/item@effect) items.xml:241(items/item@effect)
+msgid "+15 HP"
+msgstr ""
+
+#: items.xml:213(items/item@name)
+msgid "Bread"
+msgstr ""
+
+#: items.xml:213(items/item@description)
+msgid "Home-made bread."
+msgstr ""
+
+#: items.xml:213(items/item@effect)
+msgid "+30 HP"
+msgstr ""
+
+#: items.xml:220(items/item@name)
+msgid "Carrot"
+msgstr ""
+
+#: items.xml:220(items/item@description)
+msgid "Good in cakes."
+msgstr ""
+
+#: items.xml:220(items/item@effect)
+msgid "+25 HP"
+msgstr ""
+
+#: items.xml:227(items/item@name)
+msgid "Cheese"
+msgstr ""
+
+#: items.xml:227(items/item@description)
+msgid "A ratto's left-overs."
+msgstr ""
+
+#: items.xml:227(items/item@effect)
+msgid "+40 HP"
+msgstr ""
+
+#: items.xml:234(items/item@name)
+msgid "Pious legs"
+msgstr ""
+
+#: items.xml:234(items/item@description)
+msgid "Tasty Pious's legs, well spiced!"
+msgstr ""
+
+#: items.xml:234(items/item@effect)
+msgid "+10 HP"
+msgstr ""
+
+#: items.xml:241(items/item@name)
+msgid "Lettuce"
+msgstr ""
+
+#: items.xml:241(items/item@description)
+msgid "Perfect for when you want to lose some weight."
+msgstr ""
+
+#: items.xml:248(items/item@name)
+msgid "Piberries"
+msgstr ""
+
+#: items.xml:248(items/item@description)
+msgid "The famous staining-fruit."
+msgstr ""
+
+#: items.xml:248(items/item@effect)
+msgid "+20 HP"
+msgstr ""
+
+#: items.xml:255(items/item@name)
+msgid "Sea drop"
+msgstr ""
+
+#: items.xml:255(items/item@description)
+msgid "Some waters drops from the sea, may you shouldn't drink it..."
+msgstr ""
+
+#: items.xml:255(items/item@effect)
+msgid "+15 HP, Headache"
+msgstr ""
+
+#: items.xml:264(items/item@name)
+msgid "Three-leaf clover"
+msgstr ""
+
+#: items.xml:264(items/item@description)
+msgid "A simple clover."
+msgstr ""
+
+#: items.xml:270(items/item@name)
+msgid "Pious feathers"
+msgstr ""
+
+#: items.xml:270(items/item@description)
+msgid "Some yellow feathers.. A pious might have dropped them."
+msgstr ""
+
+#: items.xml:276(items/item@name)
+msgid "Tortugas shell fragment"
+msgstr ""
+
+#: items.xml:276(items/item@description)
+msgid "Yeah, it's really a fragment of a tortugas's shell."
+msgstr ""
+
+#: items.xml:282(items/item@name)
+msgid "Half eggshell"
+msgstr ""
+
+#: items.xml:282(items/item@description)
+msgid "Maybe it was broken to prepare a fried egg."
+msgstr ""
+
+#: items.xml:288(items/item@name)
+msgid "Ratto tail"
+msgstr ""
+
+#: items.xml:288(items/item@description)
+msgid "A long tail from a Ratto."
+msgstr ""
+
+#: items.xml:294(items/item@name)
+msgid "Ratto tooth"
+msgstr ""
+
+#: items.xml:294(items/item@description)
+msgid "Some Ratto's tooth."
+msgstr ""
+
+#: items.xml:300(items/item@name)
+msgid "Root"
+msgstr ""
+
+#: items.xml:300(items/item@description)
+msgid "Could be useful for cooking."
+msgstr ""
+
+#: items.xml:306(items/item@name)
+msgid "Squichy claws"
+msgstr ""
+
+#: items.xml:306(items/item@description)
+msgid "Claws from a wild Squichy."
+msgstr ""
+
+#: items.xml:312(items/item@name)
+msgid "Tortugas shell"
+msgstr ""
+
+#: items.xml:312(items/item@description)
+msgid "This shell comes from a Tortugas."
+msgstr ""
+
+#: items.xml:318(items/item@name)
+msgid "Tortugas tongue"
+msgstr ""
+
+#: items.xml:318(items/item@description)
+msgid "A tongue from a Tortugas."
+msgstr ""
+
+#: items.xml:338(items/item@name)
+msgid "Used shirt"
+msgstr ""
+
+#: items.xml:338(items/item@description)
+msgid "A used shirt given to you by a sailor."
+msgstr ""
+
+#: items.xml:338(items/item@effect)
+msgid "+2 Defense"
+msgstr ""
+
+#: items.xml:350(items/item@name)
+msgid "%Color% sailor tank top"
+msgstr ""
+
+#: items.xml:350(items/item@description)
+msgid "A %color% tank top used by sailors and seamen."
+msgstr ""
+
+#: items.xml:350(items/item@effect)
+msgid "+3% Defense"
+msgstr ""
+
+#: items.xml:360(items/item@name)
+msgid "Sailor shirt"
+msgstr ""
+
+#: items.xml:360(items/item@description)
+msgid "Proof that ye be in the crew, matey!"
+msgstr ""
+
+#: items.xml:360(items/item@effect)
+msgid "+4% Defense"
+msgstr ""
+
+#: items.xml:374(items/item@name)
+msgid "%Color% boots"
+msgstr ""
+
+#: items.xml:374(items/item@description)
+msgid "%Color% boots made for beginners."
+msgstr ""
+
+#: items.xml:374(items/item@effect) items.xml:439(items/item@effect)
+msgid "+1% Defense"
+msgstr ""
+
+#: items.xml:399(items/item@name)
+msgid "Used shorts"
+msgstr ""
+
+#: items.xml:399(items/item@description)
+msgid "A used pair of shorts given to you by a sailor, erk..."
+msgstr ""
+
+#: items.xml:399(items/item@effect)
+msgid "+2% Defense"
+msgstr ""
+
+#: items.xml:439(items/item@name)
+msgid "Bandana"
+msgstr ""
+
+#: items.xml:439(items/item@description)
+msgid "A striped bandana."
+msgstr ""
+
+#: items.xml:474(items/item@name)
+msgid "Knife"
+msgstr ""
+
+#: items.xml:474(items/item@description)
+msgid "A simple knife."
+msgstr ""
+
+#: items.xml:474(items/item@effect)
+msgid "Damage +10"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:7(emote/sprite@name)
+msgid "Kitty"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:8(emote/sprite@name)
+msgid "xD"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:9(emote/sprite@name)
+msgid "^.^"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:10(emote/sprite@name)
+msgid "Heart eye"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:11(emote/sprite@name)
+msgid "Gold eye"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:12(emote/sprite@name)
+msgid "Sleepy"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:13(emote/sprite@name)
+msgid "u.u"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:14(emote/sprite@name)
+msgid "-.-'"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:15(emote/sprite@name)
+msgid "Suprised"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:16(emote/sprite@name)
+msgid "Dead"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:17(emote/sprite@name)
+msgid "Look away"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:19(emote/sprite@name)
+msgid "Palmhead"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:21(emote/sprite@name)
+msgid "Angry"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:22(emote/sprite@name)
+msgid "Purple Sad"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:23(emote/sprite@name)
+msgid "Insult Buble"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:24(emote/sprite@name)
+msgid "Heart"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:26(emote/sprite@name)
+msgid "Pumpkin"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:28(emote/sprite@name)
+msgid "Epic"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:29(emote/sprite@name)
+msgid "Bad geek"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:30(emote/sprite@name)
+msgid "Mimi"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:31(emote/sprite@name)
+msgid "Alien"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:32(emote/sprite@name)
+msgid "Troll"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:33(emote/sprite@name)
+msgid "Metal"
+msgstr ""
+
+#: tmp/manaplus_emotes.xml:34(emote/sprite@name)
+msgid "Crying"
+msgstr ""
+
+#: monsters.xml:31(monsters/monster@name)
+msgid "Pious"
+msgstr ""
+
+#: monsters.xml:40(monsters/monster@name)
+msgid "Piousse"
+msgstr ""
+
+#: monsters.xml:50(monsters/monster@name)
+msgid "Tortugas"
+msgstr ""
+
+#: monsters.xml:59(monsters/monster@name)
+msgid "Ratto"
+msgstr ""
+
+#: monsters.xml:68(monsters/monster@name)
+msgid "Croc"
+msgstr ""
+
+#: monsters.xml:78(monsters/monster@name)
+msgid "Little Blub"
+msgstr ""

@@ -21,4 +21,12 @@ update/adler32
 saedit/saedit
 
 # langs
-lang/tx/
+lang/tx
+lang/new
+
+# lang client
+lang_client/tmp
+lang_client/pot
+
+# tx
+tx
