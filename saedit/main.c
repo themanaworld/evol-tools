@@ -81,7 +81,7 @@ gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info) {
   return FALSE;
 }
 
-//String functions (common)
+//Common functions
 
 gchar *markup_bold(gchar *str) {
   return g_strconcat("<b>", str, "</b>");
@@ -91,6 +91,14 @@ void format_src_string(gchar *src) {
   gchar *str = g_strrstr(src, "|");
   if (str == NULL) return;
   strncpy(str, "\0", 1);
+}
+
+GtkTextIter *gtk_source_buffer_highlight_line(GtkSourceBuffer *buffer, int line_number) {
+  GtkTextIter start;
+  gtk_text_buffer_get_start_iter(GTK_TEXT_BUFFER(buffer), &start);
+  gtk_text_iter_set_line(&start, line_number);
+  gtk_text_buffer_place_cursor(GTK_TEXT_BUFFER(buffer), &start);
+  return gtk_text_iter_copy(&start);
 }
 
 //File working
@@ -220,9 +228,7 @@ void open_menu_item_activate_callback(GtkMenuItem *menuitem, GtkFileChooserDialo
 void toolbar_to_first_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
   toolbar_pause_clicked_callback(toolbutton, user_data);
   gen_sae_info->animation = g_list_first(gen_sae_info->animation);
-  Frame *sprite = gen_sae_info->animation->data;
-  gen_sae_info->sprite = sprite;
-  gtk_widget_queue_draw(darea);
+  show_sprite(gen_sae_info);
 }
 
 void toolbar_prev_frame_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
@@ -231,9 +237,7 @@ void toolbar_prev_frame_clicked_callback(GtkToolButton *toolbutton, gpointer use
   if (prev == NULL)
     return;
   gen_sae_info->animation = prev;
-  Frame *sprite = gen_sae_info->animation->data;
-  gen_sae_info->sprite = sprite;
-  gtk_widget_queue_draw(darea);
+  show_sprite(gen_sae_info);
 }
 
 void toolbar_play_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
@@ -258,17 +262,13 @@ void toolbar_next_frame_clicked_callback(GtkToolButton *toolbutton, gpointer use
   if (next == NULL)
     return;
   gen_sae_info->animation = next;
-  Frame *sprite = gen_sae_info->animation->data;
-  gen_sae_info->sprite = sprite;
-  gtk_widget_queue_draw(darea);
+  show_sprite(gen_sae_info);
 }
 
 void toolbar_to_last_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
   toolbar_pause_clicked_callback(toolbutton, user_data);
   gen_sae_info->animation = g_list_last(gen_sae_info->animation);
-  Frame *sprite = gen_sae_info->animation->data;
-  gen_sae_info->sprite = sprite;
-  gtk_widget_queue_draw(darea);
+  show_sprite(gen_sae_info);
 }
 
 //Dialogs
@@ -369,13 +369,25 @@ gboolean set_up_imagesets(SAEInfo *sae_info) {
   return TRUE;
 }
 
+void show_sprite(SAEInfo *sae_info) {
+  Frame *sprite = sae_info->animation->data;
+  gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(source_view),
+                               gtk_source_buffer_highlight_line(source_buffer, sprite->line_number-1),
+                               0.25,
+                               FALSE,
+                               0.0,
+                               0.0);
+  sae_info->sprite = sprite;
+  gtk_widget_queue_draw(darea);
+}
+
 void show_animation(SAEInfo *sae_info) {
   kill_timeout(sae_info->anim_tag);
   if (sae_info->animation == NULL)
     return;
+
+  show_sprite(sae_info);
   Frame *sprite = sae_info->animation->data;
-  sae_info->sprite = sprite;
-  gtk_widget_queue_draw(darea);
 
   GList *next = g_list_next(sae_info->animation);
   if (next == NULL)

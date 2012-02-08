@@ -61,9 +61,10 @@ Keys *config;
 cairo_surface_t *get_grid_surface(int w, int h);
 gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info);
 
-//String functions (common)
+//Common functions
 gchar *markup_bold(gchar *str);
 void format_src_string(gchar *src);
+GtkTextIter *gtk_source_buffer_highlight_line(GtkSourceBuffer *buffer, int line_number);
 
 //File working
 void open_xml_file(GtkButton *button);
@@ -111,6 +112,7 @@ void load_config();
 void save_config_and_quit();
 void load_options();
 void parse_xml_text(gchar *text, SAEInfo *sae_info);
+void show_sprite(SAEInfo *sae_info);
 void show_animation(SAEInfo *sae_info);
 
 #endif

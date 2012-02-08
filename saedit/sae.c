@@ -112,6 +112,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
       for (r = 1; r <= repeat; r++) {
         for (i = start; i <= end; i++) {
           Frame *sprite = frame_new(i, offsetX, offsetY, delay);
+          sprite->line_number = node->line_number;
           sprite->pixbuf = get_sprite_by_index(i, sae_info);
           count++;
           if (sae_info->animation != NULL)
@@ -123,7 +124,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
         }
       }
     }
-    list = list->next;
+    list = g_list_next(list);
   }
   if (sae_info->animation == NULL)
     return FALSE;

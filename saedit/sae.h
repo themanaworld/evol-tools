@@ -23,6 +23,7 @@ typedef struct {
   int offsetX;
   int offsetY;
   int delay;
+  int line_number;
   GdkPixbuf *pixbuf;
   cairo_surface_t *surface;
 } Frame;

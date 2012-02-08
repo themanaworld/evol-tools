@@ -19,6 +19,7 @@ typedef struct {
     gchar  *name;
     gchar  *text;
     gchar  **attributes;
+    int line_number;
     GList *sub_nodes;
 } XMLNode;
 
