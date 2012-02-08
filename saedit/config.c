@@ -20,7 +20,7 @@ void config_options_load_from_file(Options *options,
                                    gchar *data_folder) {
   options->sprites = NULL;
 
-  XMLNode *node = ibus_xml_parse_file(file);
+  XMLNode *node = xml_parse_file(file);
 
   if (node != NULL) {
     GList *list = node->sub_nodes;

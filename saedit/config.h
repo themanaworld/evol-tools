@@ -13,7 +13,6 @@
 #define CONFIG_H
 
 #include <glib.h>
-#include <ibus.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>

@@ -13,7 +13,6 @@
 #define SAE_H
 
 #include <gtk/gtk.h>
-#include <ibus.h>
 #include "common.h"
 #include "xml.h"
 

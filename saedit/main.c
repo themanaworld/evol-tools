@@ -514,7 +514,7 @@ void load_options() {
 void parse_xml_text(gchar *text, SAEInfo *sae_info) {
   free_lists(sae_info);
 
-  XMLNode *_root_node = ibus_xml_parse_buffer(text);
+  XMLNode *_root_node = xml_parse_buffer(text);
   sae_info->root = _root_node;
   if (_root_node == NULL) {
     show_wrong_source_buffer_dialog();
@@ -529,7 +529,7 @@ void parse_xml_text(gchar *text, SAEInfo *sae_info) {
       file_attr = g_strjoin(NULL, paths->sprites, file_attr, NULL);
       gchar *buf;
       if (g_file_get_contents(file_attr, &buf, NULL, NULL))
-        _root_node->sub_nodes = g_list_concat(_root_node->sub_nodes, ibus_xml_parse_buffer(buf)->sub_nodes);
+        _root_node->sub_nodes = g_list_concat(_root_node->sub_nodes, xml_parse_buffer(buf)->sub_nodes);
     }
     if (list->next != NULL)
       list = g_list_find_custom(list->next, "include", xml_node_compare_with_name_func);
