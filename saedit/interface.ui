@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-requires gtk+ 3.2 -->
   <!-- interface-requires gtksourceview 0.0 -->
-  <!-- interface-naming-policy project-wide -->
   <object class="GtkAboutDialog" id="about_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -12,18 +11,19 @@
     <property name="transient_for">win_main</property>
     <property name="program_name">Sprite Animation Editor</property>
     <property name="version">⍺0.1.1</property>
-    <property name="copyright" translatable="yes">Copyleft ↄ Vasily_Makarov 2011</property>
+    <property name="copyright" translatable="yes">Copyleft ↄ Vasily_Makarov 2011-2012</property>
     <property name="comments" translatable="yes">Sprite Animation Editor could be used to edit animations from Evol and The Mana World projects</property>
     <property name="authors">Dan "Vasily_Makarov" Sagunov &lt;danilka.pro@gmail.com&gt;
 Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
     <property name="logo">icon.svg</property>
+    <property name="license_type">gpl-2-0</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox3">
+      <object class="GtkBox" id="dialog-vbox3">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area3">
+          <object class="GtkButtonBox" id="dialog-action_area3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -47,18 +47,19 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
     <property name="title" translatable="yes">Open file</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox1">
+      <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area1">
+          <object class="GtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button1">
                 <property name="label">gtk-open</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -74,6 +75,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             <child>
               <object class="GtkButton" id="button2">
                 <property name="label">gtk-cancel</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -119,18 +121,19 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
     <property name="transient_for">win_main</property>
     <signal name="response" handler="search_find_dialog_response_callback" object="find_dialog_entry" swapped="no"/>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox4">
+      <object class="GtkBox" id="dialog-vbox4">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area4">
+          <object class="GtkButtonBox" id="dialog-action_area4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button4">
                 <property name="label">gtk-find</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -146,6 +149,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             <child>
               <object class="GtkButton" id="button5">
                 <property name="label">gtk-cancel</property>
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -173,8 +177,6 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             <property name="invisible_char">•</property>
             <property name="primary_icon_activatable">False</property>
             <property name="secondary_icon_activatable">False</property>
-            <property name="primary_icon_sensitive">True</property>
-            <property name="secondary_icon_sensitive">True</property>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -230,9 +232,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             <property name="can_focus">False</property>
             <child>
               <object class="GtkMenuItem" id="menuitem1">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_File</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -241,9 +243,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkMenuItem" id="menuitem4">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_New</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="file_new" swapped="no"/>
@@ -251,9 +253,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem5">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Open...</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="open_menu_item_activate_callback" object="fcdialog1" swapped="no"/>
@@ -261,9 +263,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem6">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Reload</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="open_xml_file" swapped="no"/>
@@ -271,16 +273,16 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkSeparatorMenuItem" id="menuitem15">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem7">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Save</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="save_menu_item_activate_callback" swapped="no"/>
@@ -288,9 +290,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem8">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">Save _As...</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="save_dialog_show" swapped="no"/>
@@ -302,9 +304,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitem2">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Search</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -313,9 +315,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkMenuItem" id="menuitem9">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Find...</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="find_menu_item_activate_callback" swapped="no"/>
@@ -323,9 +325,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem10">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">Find _Next</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="search_find_next" swapped="no"/>
@@ -337,9 +339,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitem3">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_View</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -348,9 +350,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkCheckMenuItem" id="menuitem11">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">Show _Grid</property>
                         <property name="use_underline">True</property>
                         <signal name="toggled" handler="show_grid_menu_item_toggled_callback" swapped="no"/>
@@ -358,10 +360,10 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     </child>
                     <child>
                       <object class="GtkMenuItem" id="menuitem12">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_Imageset view</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="show_imageset_dialog" swapped="no"/>
@@ -373,9 +375,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
             </child>
             <child>
               <object class="GtkMenuItem" id="menuitem13">
+                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Help</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -384,9 +386,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                     <property name="can_focus">False</property>
                     <child>
                       <object class="GtkMenuItem" id="menuitem14">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="label" translatable="yes">_About</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="show_about_dialog" swapped="no"/>
@@ -466,29 +468,14 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
-                    <property name="fill">False</property>
+                    <property name="fill">True</property>
                     <property name="position">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="xmlfobutton">
-                    <property name="label">gtk-open</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="use_stock">True</property>
-                    <signal name="clicked" handler="open_xml_file" swapped="no"/>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
-                    <property name="position">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkButton" id="xmlfsbutton">
                     <property name="label">gtk-save</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -503,8 +490,26 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkButton" id="xmlfobutton">
+                    <property name="label">gtk-open</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="use_action_appearance">False</property>
+                    <property name="use_stock">True</property>
+                    <signal name="clicked" handler="open_xml_file" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkButton" id="button3">
                     <property name="label" translatable="yes">Parse XML Buffer</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -514,7 +519,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">6</property>
+                    <property name="position">7</property>
                   </packing>
                 </child>
                 <child>
@@ -534,16 +539,17 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                 </child>
                 <child>
                   <object class="GtkComboBoxText" id="imagesetscbox">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="model">liststore1</property>
-                    <property name="active">0</property>
-                    <signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
+			<property name="visible">True</property>
+			<property name="can_focus">False</property>
+			<property name="active">0</property>
+			<property name="model">liststore1</property>
+       			<property name="entry_text_column">0</property>
+			<signal name="changed" handler="imagesets_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">9</property>
+                    <property name="position">8</property>
                   </packing>
                 </child>
                 <child>
@@ -565,14 +571,15 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <object class="GtkComboBoxText" id="actionscbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="model">liststore2</property>
                     <property name="active">0</property>
+		    <property name="model">liststore2</property>
+       		    <property name="entry_text_column">0</property>
                     <signal name="changed" handler="actions_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">11</property>
+                    <property name="position">10</property>
                   </packing>
                 </child>
                 <child>
@@ -594,8 +601,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <object class="GtkComboBoxText" id="animationscbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="model">liststore3</property>
                     <property name="active">0</property>
+		    <property name="model">liststore3</property>
+       		    <property name="entry_text_column">0</property>
                     <signal name="changed" handler="animations_combo_box_changed_callback" swapped="no"/>
                   </object>
                   <packing>
@@ -616,14 +624,110 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child>
-                  <object class="GtkDrawingArea" id="darea1">
-                    <property name="height_request">120</property>
-                    <property name="visible">True</property>
+                  <object class="GtkVBox" id="vbox2">
                     <property name="can_focus">False</property>
-                    <signal name="draw" handler="darea_draw_event" swapped="no"/>
+                    <child>
+                      <object class="GtkDrawingArea" id="darea1">
+                        <property name="height_request">120</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <signal name="draw" handler="darea_draw_event" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToolbar" id="toolbar">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkToolButton" id="toolbar-to-first">
+                            <property name="use_action_appearance">False</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="label" translatable="yes">First frame</property>
+                            <property name="use_underline">True</property>
+                            <property name="stock_id">gtk-goto-first</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="homogeneous">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkToolButton" id="toolbar-prev-frame">
+                            <property name="use_action_appearance">False</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="label" translatable="yes">Previous frame</property>
+                            <property name="use_underline">True</property>
+                            <property name="stock_id">gtk-go-back</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="homogeneous">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkToolButton" id="toolbar-play">
+                            <property name="use_action_appearance">False</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="label" translatable="yes">Continue sequencing</property>
+                            <property name="use_underline">True</property>
+                            <property name="stock_id">gtk-media-play</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="homogeneous">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkToolButton" id="toolbar-next-frame">
+                            <property name="use_action_appearance">False</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="label" translatable="yes">Next frame</property>
+                            <property name="use_underline">True</property>
+                            <property name="stock_id">gtk-go-forward</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="homogeneous">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkToolButton" id="toolbar-to-end">
+                            <property name="use_action_appearance">False</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="label" translatable="yes">Last frame</property>
+                            <property name="use_underline">True</property>
+                            <property name="stock_id">gtk-goto-last</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="homogeneous">True</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
-                    <property name="resize">True</property>
+                    <property name="resize">False</property>
                     <property name="shrink">True</property>
                   </packing>
                 </child>
@@ -631,8 +735,6 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <object class="GtkScrolledWindow" id="scrolledwindow1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="hscrollbar_policy">automatic</property>
-                    <property name="vscrollbar_policy">automatic</property>
                     <child>
                       <object class="GtkSourceView" id="source_view">
                         <property name="visible">True</property>

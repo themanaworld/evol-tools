@@ -238,12 +238,12 @@ void show_imageset_dialog() {
 
   int x, y;
   for (y = 0; y < h; y++) {
-    hbox = gtk_hbox_new(TRUE, 0);
-    gtk_container_add(GTK_CONTAINER(content_area), hbox);
+    hbox = gtk_hbox_new(TRUE, 2);
+    gtk_box_pack_start(GTK_BOX(content_area), hbox, TRUE, TRUE, 2);
     for (x = 0; x < w; x++) {
       int id = w * y + x;
       event_box = gtk_event_box_new();
-      g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event_callback), &id);
+      g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event_callback), (gpointer)id);
       gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
 
       image = gtk_image_new_from_pixbuf(get_sprite_by_index(w * y + x, gen_sae_info));
