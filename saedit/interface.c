@@ -11,6 +11,7 @@
 
 GtkWidget *reload_menu_item = NULL;
 GtkWidget *find_dialog = NULL;
+GtkWidget *toolbar = NULL;
 
 void find_menu_item_activate_callback(GtkWidget *menuitem, gpointer user_data) {
   gtk_dialog_run(GTK_DIALOG(find_dialog));
@@ -87,6 +88,9 @@ void set_up_interface() {
 
   //Setup GtkDrawingArea
   darea = GTK_WIDGET(gtk_builder_get_object(builder, "darea1"));
+
+  //Setup GtkToolbar
+  toolbar = GTK_WIDGET(gtk_builder_get_object(builder, "toolbar"));
 
   reload_menu_item = GTK_WIDGET(gtk_builder_get_object(builder, "menuitem6"));
   show_grid_menu_item = GTK_WIDGET(gtk_builder_get_object(builder, "menuitem11"));

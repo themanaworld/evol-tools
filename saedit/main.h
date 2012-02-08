@@ -84,8 +84,16 @@ void show_wrong_source_buffer_dialog();
 void show_grid_menu_item_toggled_callback(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void actions_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);
 void imagesets_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);
+void animations_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);
 void open_menu_item_activate_callback(GtkMenuItem *menuitem, GtkFileChooserDialog *fcdialog);
 gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButton *button, int index);
+//>Toolbar callbacks
+void toolbar_to_first_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
+void toolbar_prev_frame_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
+void toolbar_play_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
+void toolbar_pause_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
+void toolbar_next_frame_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
+void toolbar_to_last_clicked_callback(GtkToolButton *toolbutton, gpointer user_data);
 
 //Dialogs
 void show_imageset_dialog();
@@ -96,7 +104,6 @@ void set_up_actions_by_imageset_name(gchar *imageset_name, SAEInfo *sae_info);
 gboolean set_up_imagesets(SAEInfo *sae_info);
 gboolean show_general_animation(SAEInfo *sae_info);
 gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info);
-void animations_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);
 void set_up_imageset_by_name(const gchar* name, SAEInfo *sae_info);
 void parse_xml_buffer(GtkWidget *button, GtkSourceBuffer *buffer);
 void set_up_interface();

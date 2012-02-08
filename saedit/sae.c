@@ -127,7 +127,9 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
   }
   if (sae_info->animation == NULL)
     return FALSE;
-  if (count > 1)
+  /*if (count > 1) {
     g_list_last(sae_info->animation)->next = g_list_first(sae_info->animation);
+    g_list_first(sae_info->animation)->prev = g_list_last(sae_info->animation);
+  }*/
   return TRUE;
 }
