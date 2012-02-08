@@ -218,6 +218,7 @@ void open_menu_item_activate_callback(GtkMenuItem *menuitem, GtkFileChooserDialo
 
 //>Toolbar callbacks
 void toolbar_to_first_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
+  toolbar_pause_clicked_callback(toolbutton, user_data);
   gen_sae_info->animation = g_list_first(gen_sae_info->animation);
   Frame *sprite = gen_sae_info->animation->data;
   gen_sae_info->sprite = sprite;
@@ -225,6 +226,7 @@ void toolbar_to_first_clicked_callback(GtkToolButton *toolbutton, gpointer user_
 }
 
 void toolbar_prev_frame_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
+  toolbar_pause_clicked_callback(toolbutton, user_data);
   GList *prev = g_list_previous(gen_sae_info->animation);
   if (prev == NULL)
     return;
@@ -247,9 +249,11 @@ void toolbar_pause_clicked_callback(GtkToolButton *toolbutton, gpointer user_dat
       prev = g_list_last(gen_sae_info->animation);
     gen_sae_info->animation = prev;
   }
+  gen_sae_info->anim_tag = 0;
 }
 
 void toolbar_next_frame_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
+  toolbar_pause_clicked_callback(toolbutton, user_data);
   GList *next = g_list_next(gen_sae_info->animation);
   if (next == NULL)
     return;
@@ -260,6 +264,7 @@ void toolbar_next_frame_clicked_callback(GtkToolButton *toolbutton, gpointer use
 }
 
 void toolbar_to_last_clicked_callback(GtkToolButton *toolbutton, gpointer user_data) {
+  toolbar_pause_clicked_callback(toolbutton, user_data);
   gen_sae_info->animation = g_list_last(gen_sae_info->animation);
   Frame *sprite = gen_sae_info->animation->data;
   gen_sae_info->sprite = sprite;
