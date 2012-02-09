@@ -30,4 +30,4 @@ config.o: config.c config.h common.h
 sae.o: sae.c sae.h common.h
 	gcc ${CFLAGS} -c -o sae.o sae.c
 clean:
-	rm -rfv *.o *.o~ *~
+	rm -rfv *.o *~
