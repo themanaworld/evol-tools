@@ -41,6 +41,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
       </object>
     </child>
   </object>
+  <object class="GtkAccelGroup" id="accelgroup"/>
   <object class="GtkFileChooserDialog" id="fcdialog1">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -113,11 +114,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Find</property>
     <property name="resizable">False</property>
-    <property name="destroy_with_parent">True</property>
-    <property name="type_hint">dialog</property>
+    <property name="type_hint">normal</property>
     <property name="skip_taskbar_hint">True</property>
     <property name="skip_pager_hint">True</property>
-    <property name="deletable">False</property>
     <property name="transient_for">win_main</property>
     <signal name="response" handler="search_find_dialog_response_callback" object="find_dialog_entry" swapped="no"/>
     <child internal-child="vbox">
@@ -215,8 +214,10 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
   <object class="GtkMessageDialog" id="parsing-error-dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
+    <property name="title" translatable="yes">Parsing error</property>
     <property name="type_hint">dialog</property>
     <property name="skip_taskbar_hint">True</property>
+    <property name="skip_pager_hint">True</property>
     <property name="message_type">error</property>
     <property name="buttons">close</property>
     <property name="text" translatable="yes">&lt;b&gt;Bad source buffer!&lt;/b&gt;</property>
@@ -277,6 +278,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                   <object class="GtkMenu" id="menu1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="accel_group">accelgroup</property>
                     <child>
                       <object class="GtkMenuItem" id="menuitem4">
                         <property name="use_action_appearance">False</property>
@@ -284,6 +286,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_New</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="n" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="file_new" swapped="no"/>
                       </object>
                     </child>
@@ -294,6 +297,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Open...</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="o" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="open_menu_item_activate_callback" object="fcdialog1" swapped="no"/>
                       </object>
                     </child>
@@ -304,6 +308,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Reload</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="r" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="open_xml_file" swapped="no"/>
                       </object>
                     </child>
@@ -321,6 +326,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Save</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="s" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="save_menu_item_activate_callback" swapped="no"/>
                       </object>
                     </child>
@@ -329,8 +335,9 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Save _As...</property>
+                        <property name="label" translatable="yes">Save _as...</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="s" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="save_dialog_show" swapped="no"/>
                       </object>
                     </child>
@@ -356,6 +363,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Find...</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="f" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="find_menu_item_activate_callback" swapped="no"/>
                       </object>
                     </child>
@@ -366,6 +374,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Find _Next</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="f" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="search_find_next" swapped="no"/>
                       </object>
                     </child>
@@ -391,6 +400,7 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Show _Grid</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="g" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="toggled" handler="show_grid_menu_item_toggled_callback" swapped="no"/>
                       </object>
                     </child>
@@ -398,10 +408,10 @@ Reid Yaro &lt;reidyaro@gmail.com&gt;</property>
                       <object class="GtkMenuItem" id="menuitem12">
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
-                        <property name="sensitive">False</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Imageset view</property>
                         <property name="use_underline">True</property>
+                        <accelerator key="i" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                         <signal name="activate" handler="show_imageset_dialog" swapped="no"/>
                       </object>
                     </child>
