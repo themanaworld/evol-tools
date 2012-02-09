@@ -6,14 +6,17 @@ ifndef LDFLAGS
 	LDFLAGS = 
 endif
 
+ifndef OUTPUT
+	OUTPUT = saedit
+endif
+
 LDFLAGS += -export-dynamic
 
 CFLAGS += `pkg-config --cflags gtk+-3.0 gtksourceview-3.0`
 
 LDFLAGS += `pkg-config --libs gtk+-3.0 gtksourceview-3.0`
 
-OUTPUT = saedit
-all:clean main.o search.o config.o xml.o sae.o compile
+all:main.o search.o config.o xml.o sae.o compile clean
 compile: main.o search.o config.o xml.o
 	gcc ${CFLAGS} ${LDFLAGS} -o '${OUTPUT}' main.o search.o config.o xml.o sae.o
 main.o: main.c main.h search.h config.h common.h xml.h
@@ -27,4 +30,4 @@ config.o: config.c config.h common.h
 sae.o: sae.c sae.h common.h
 	gcc ${CFLAGS} -c -o sae.o sae.c
 clean:
-	rm -rfv '${OUTPUT}' *.o *.o~ *~
+	rm -rfv *.o *.o~ *~
