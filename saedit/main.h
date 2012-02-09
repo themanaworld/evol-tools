@@ -46,6 +46,7 @@ GtkWidget *imageset_preview_menu_item = NULL;
 GtkWidget *show_grid_menu_item = NULL;
 GtkWidget *source_view = NULL;
 GtkWidget *about_dialog = NULL;
+GtkWidget *parsing_error_dialog = NULL;
 
 GtkSourceBuffer *source_buffer = NULL;
 
@@ -81,7 +82,7 @@ void free_current_info();
 
 //Callbacks
 void data_folder_set_callback(GtkFileChooserButton *widget, gpointer data);
-void show_wrong_source_buffer_dialog();
+void parsing_error_warning(SAEInfo *sae_info, const gchar *message);
 void show_grid_menu_item_toggled_callback(GtkCheckMenuItem *checkmenuitem, gpointer user_data);
 void actions_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);
 void imagesets_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user_data);

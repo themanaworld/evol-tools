@@ -28,7 +28,7 @@
 #define KEYS_CONFIG_FILE g_strjoin(SEPARATOR_SLASH, KEYS_CONFIG_DIR, "config.ini", NULL)
 
 typedef struct {
-  gchar *sprites;
+	gchar *sprites;
 } Options;
 
 Options *config_options_new();
@@ -37,8 +37,8 @@ void config_options_load_from_file(Options *options,
                                    gchar *data_folder);
 
 typedef struct {
-  gchar *clientdata_folder;
-  gboolean show_grid;
+	gchar *clientdata_folder;
+	gboolean show_grid;
 } Keys;
 
 Keys *config_keys_new();

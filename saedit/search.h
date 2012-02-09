@@ -20,7 +20,7 @@ void search_init(GtkWidget *text_view);
 gboolean search_find_text(gchar *text);
 gboolean search_find_next();
 void search_find_dialog_response_callback(GtkWidget *dialog,
-                   gint response_id,
-                   gpointer entry);
+        gint response_id,
+        gpointer entry);
 
 #endif

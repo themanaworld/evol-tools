@@ -16,17 +16,17 @@
 #include "common.h"
 
 typedef struct {
-    gchar  *name;
-    gchar  *text;
-    gchar  **attributes;
-    int line_number;
-    GList *sub_nodes;
+	gchar  *name;
+	gchar  *text;
+	gchar  **attributes;
+	int line_number;
+	GList *sub_nodes;
 } XMLNode;
 
 
 XMLNode *xml_parse_file    (const gchar    *name);
 
-XMLNode *xml_parse_buffer  (const gchar    *buffer);
+XMLNode *xml_parse_buffer  (const gchar    *buffer, GError **error);
 
 void     xml_free          (XMLNode        *node);
 
