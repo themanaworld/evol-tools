@@ -71,34 +71,3 @@ void search_find_dialog_response_callback(GtkWidget *dialog,
 void search_init(GtkWidget *text_view) {
 	search_text_view = text_view;
 }
-
-void search_find_dialog_show(GtkWindow *parent,
-                             GtkWidget *text_view) {
-	GtkWidget *dialog;
-	GtkWidget *vbox;
-	GtkWidget *entry;
-	GtkWidget *content_area;
-	GtkWidget *label;
-
-	dialog = gtk_dialog_new_with_buttons(_("Find"),
-	                                     parent,
-	                                     GTK_DIALOG_DESTROY_WITH_PARENT,
-	                                     GTK_STOCK_FIND,
-	                                     GTK_RESPONSE_ACCEPT,
-	                                     NULL);
-	gtk_widget_set_size_request(dialog, 240, 80);
-	gtk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
-	content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
-
-	entry = gtk_entry_new();
-	gtk_container_add(GTK_CONTAINER(content_area), entry);
-
-	g_signal_connect(dialog,
-	                 "response",
-	                 G_CALLBACK(search_find_dialog_response_callback),
-	                 entry);
-
-	search_text_view = text_view;
-
-	gtk_dialog_run(GTK_DIALOG(dialog));
-}
