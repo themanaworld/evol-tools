@@ -18,7 +18,7 @@ LDFLAGS += `pkg-config --libs gtk+-3.0 gtksourceview-3.0`
 
 all:main.o search.o config.o xml.o sae.o compile clean
 compile: main.o search.o config.o xml.o
-	gcc ${CFLAGS} ${LDFLAGS} -o '${OUTPUT}' main.o search.o config.o xml.o sae.o
+	gcc ${CFLAGS} -o '${OUTPUT}' main.o search.o config.o xml.o sae.o ${LDFLAGS}
 main.o: main.c main.h search.h config.h common.h xml.h
 	gcc ${CFLAGS}-c -o main.o main.c
 search.o: search.c search.h common.h
