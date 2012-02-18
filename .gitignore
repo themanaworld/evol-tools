@@ -30,3 +30,6 @@ lang_client/pot
 
 # tx
 tx
+
+# temp files
+*.o
