@@ -33,3 +33,9 @@ tx
 
 # temp files
 *.o
+
+# dyecmd
+dyecmd/src/dyecmd
+dyecmd/src/CMakeFiles/
+dyecmd/src/Makefile
+dyecmd/src/cmake_install.cmake
