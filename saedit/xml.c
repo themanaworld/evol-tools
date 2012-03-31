@@ -42,6 +42,8 @@ gint xml_node_compare_with_attr_func(const XMLNode *node, const gchar **attr) {
 	                 xml_node_get_attr_value(node, attr[0]));
 }
 
+/* redefinition of private _GMarkupParseContext 
+   TODO: must be removed */
 typedef enum {
     STATE_START,
     STATE_AFTER_OPEN_ANGLE,
