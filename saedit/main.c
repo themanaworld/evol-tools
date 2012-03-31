@@ -84,7 +84,7 @@ gboolean darea_draw_event(GtkWidget *widget, cairo_t *cr, SAEInfo *sae_info) {
 //Common functions
 
 gchar *markup_bold(gchar *str) {
-	return g_strconcat("<b>", str, "</b>");
+	return g_strconcat("<b>", str, "</b>", NULL);
 }
 
 void format_src_string(gchar *src) {
@@ -208,9 +208,9 @@ void imagesets_combo_box_changed_callback(GtkComboBoxText *widget, gpointer user
 		set_up_imageset_by_name(gtk_combo_box_text_get_active_text(widget), gen_sae_info);
 }
 
-gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButton *button, int index) {
+gboolean frame_image_button_press_event_callback(GtkWidget *widget, GdkEventButton *button, int idx) {
 	gchar buf[10];
-	gint len = g_sprintf(buf, "%d", index);
+	gint len = g_sprintf(buf, "%d", idx);
 	gtk_text_buffer_insert_at_cursor(GTK_TEXT_BUFFER(source_buffer), buf, len);
 	return FALSE;
 }
@@ -292,7 +292,7 @@ void show_imageset_dialog() {
 		hbox = gtk_hbox_new(TRUE, 2);
 		gtk_box_pack_start(GTK_BOX(content_area), hbox, TRUE, TRUE, 2);
 		for (x = 0; x < w; x++) {
-			int id = w * y + x;
+			unsigned long int id = w * y + x;
 			event_box = gtk_event_box_new();
 			g_signal_connect(G_OBJECT(event_box), "button-press-event", G_CALLBACK(frame_image_button_press_event_callback), (gpointer)id);
 			gtk_box_pack_start(GTK_BOX(hbox), event_box, TRUE, TRUE, 0);
@@ -307,8 +307,8 @@ void show_imageset_dialog() {
 
 //Main functions
 
-void set_sprite_by_index(size_t index, SAEInfo *sae_info) {
-	sae_info->sprite->pixbuf = get_sprite_by_index(index, sae_info);
+void set_sprite_by_index(size_t idx, SAEInfo *sae_info) {
+	sae_info->sprite->pixbuf = get_sprite_by_index(idx, sae_info);
 	gtk_widget_queue_draw(darea);
 }
 
@@ -397,6 +397,7 @@ gboolean show_general_animation(SAEInfo *sae_info) {
 	if (node == NULL)
 		return FALSE;
 	animations_combo_box_changed_callback(NULL, NULL);
+	return TRUE;
 }
 
 gboolean set_up_action_by_name(const gchar *name, SAEInfo *sae_info) {

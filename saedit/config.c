@@ -37,13 +37,13 @@ void config_options_load_from_file(Options *options,
 		}
 	}
 
-	if (options->sprites == NULL) options->sprites = OPTION_SPRITES_DEFAULT;
+	if (options->sprites == NULL) options->sprites = (gchar *)OPTION_SPRITES_DEFAULT;
 	options->sprites = g_strjoin(SEPARATOR_SLASH, data_folder, options->sprites, NULL);
 }
 
 Keys *config_keys_new() {
 	Keys *keys = g_new0(Keys, 1);
-	keys->clientdata_folder = KEY_CLIENTDATA_FOLDER_DEFAULT;
+	keys->clientdata_folder = (gchar *)KEY_CLIENTDATA_FOLDER_DEFAULT;
 	keys->show_grid = KEY_SHOW_GRID_DEFAULT;
 	return keys;
 }

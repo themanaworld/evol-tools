@@ -49,6 +49,7 @@ gboolean search_find_text(gchar *text) {
 gboolean search_find_next() {
 	if (search_last_text != NULL)
 		search_find_text(search_last_text);
+	// here must return some thing
 }
 
 void search_find_dialog_response_callback(GtkWidget *dialog,

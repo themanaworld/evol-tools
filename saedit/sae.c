@@ -16,9 +16,9 @@ void kill_timeout(guint tag) {
 		g_source_remove(tag);
 }
 
-Frame *frame_new(int index, int offsetX, int offsetY, int delay) {
+Frame *frame_new(int index1, int offsetX, int offsetY, int delay) {
 	Frame *res = g_new0(Frame, 1);
-	res->index = index;
+	res->index = index1;
 	res->offsetX = offsetX;
 	res->offsetY = offsetY;
 	res->delay = delay;
@@ -46,9 +46,9 @@ GdkPixbuf *sae_info_ground_new() {
 	return ground;
 }
 
-GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
-
-	if (index == -1) {
+GdkPixbuf* get_sprite_by_index(size_t index1, SAEInfo *sae_info) {
+	// error because index1 is unsigned
+	if (index1 == -1) {
 		GdkPixbuf *res = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8,
 						sae_info->imageset->width,
 						sae_info->imageset->height);
@@ -56,13 +56,14 @@ GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
 		return res;
 	}
 
-	if (index >= 0) {
+	// error because index1 is unsigned
+	if (index1 >= 0) {
 		size_t w = sae_info->imageset->spriteset_width/sae_info->imageset->width;
 		if (sae_info->imageset->spriteset == NULL) return NULL;
 
 		return gdk_pixbuf_new_subpixbuf(sae_info->imageset->spriteset,
-						index%w*sae_info->imageset->width,
-						index/w*sae_info->imageset->height,
+						index1%w*sae_info->imageset->width,
+						index1/w*sae_info->imageset->height,
 						sae_info->imageset->width,
 						sae_info->imageset->height);
 	}
@@ -70,11 +71,11 @@ GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info) {
 	return NULL;
 }
 
-inline void _add_frame(SAEInfo *sae_info, size_t index, size_t offsetX, size_t offsetY, size_t delay, size_t line) {
+inline void _add_frame(SAEInfo *sae_info, size_t index1, size_t offsetX, size_t offsetY, size_t delay, size_t line) {
 
-	Frame *sprite = frame_new(index, offsetX, offsetY, delay);
+	Frame *sprite = frame_new(index1, offsetX, offsetY, delay);
 	sprite->line_number = line;
-	sprite->pixbuf = get_sprite_by_index(index, sae_info);
+	sprite->pixbuf = get_sprite_by_index(index1, sae_info);
 
 	if (sae_info->animation != NULL)
 		sae_info->animation = g_list_append(sae_info->animation, sprite);
@@ -147,7 +148,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
 
 		} else if (g_str_equal(node->name, "pause")) {
 
-			value = "p";
+			value = (gchar *)"p";
 
 			gchar *repeat_attr = xml_node_get_attr_value(node, "repeat");
 			if (repeat_attr != NULL)
@@ -180,7 +181,7 @@ gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction
 
 					} else {
 
-						int f, s;
+						unsigned f, s;
 
 						if (sscanf(*iter, "%u-%u", &f, &s) == 2) {
 

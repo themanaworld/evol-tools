@@ -20,7 +20,7 @@ gchar** xml_attr_new(const gchar *name, const gchar *value) {
 
 gchar* xml_node_get_attr_value(const XMLNode *node, const gchar *attr_name) {
 	gchar **attr = node->attributes;
-	int i;
+	guint i;
 	for (i = 0; i < g_strv_length(attr); i += 2)
 		if (g_str_equal(attr[i], attr_name))
 			return attr[i + 1];
@@ -144,11 +144,11 @@ static void _start_root_element_cb (	GMarkupParseContext *context,
 
 	GArray *attributes = g_array_new (TRUE, TRUE, sizeof (gchar *));
 	while (*attribute_names != NULL && *attribute_values != NULL) {
-		gchar *p;
-		p = g_strdup (*attribute_names++);
-		g_array_append_val (attributes, p);
-		p = g_strdup (*attribute_values++);
-		g_array_append_val (attributes, p);
+		gchar *p2;
+		p2 = g_strdup (*attribute_names++);
+		g_array_append_val (attributes, p2);
+		p2 = g_strdup (*attribute_values++);
+		g_array_append_val (attributes, p2);
 	}
 
 	p->attributes = (gchar **) g_array_free (attributes, FALSE);
@@ -181,11 +181,11 @@ static void _start_element_cb (	GMarkupParseContext *context,
 
 	GArray *attributes = g_array_new (TRUE, TRUE, sizeof (gchar *));
 	while (*attribute_names != NULL && *attribute_values != NULL) {
-		gchar *p;
-		p = g_strdup (*attribute_names++);
-		g_array_append_val (attributes, p);
-		p = g_strdup (*attribute_values++);
-		g_array_append_val (attributes, p);
+		gchar *p2;
+		p2 = g_strdup (*attribute_names++);
+		g_array_append_val (attributes, p2);
+		p2 = g_strdup (*attribute_values++);
+		g_array_append_val (attributes, p2);
 	}
 
 	p->attributes = (gchar **)g_array_free (attributes, FALSE);
@@ -266,7 +266,7 @@ XMLNode *xml_parse_file (const gchar *filename) {
 	GMarkupParseContext *context;
 	XMLNode *node;
 
-	const static GMarkupParser root_parser = {
+	static const GMarkupParser root_parser = {
 		_start_root_element_cb,
 		_end_element_cb,
 		_text_cb,
@@ -313,7 +313,7 @@ XMLNode *xml_parse_buffer (const gchar *buffer, GError **error) {
 	GMarkupParseContext *context;
 	XMLNode *node;
 
-	const static GMarkupParser root_parser = {
+	static const GMarkupParser root_parser = {
 		_start_root_element_cb,
 		_end_element_cb,
 		_text_cb,
