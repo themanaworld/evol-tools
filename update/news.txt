@@ -1,39 +1,152 @@
-##9 Latest client version: ##6ManaPlus 1.2.2.19
+##9 Latest client version:  ##6ManaPlus 1.2.3.4
 ##0 Actual Release:##1 Beta1
 ##0 Welcome in ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b 
 ##0 at ##1http://www.evolonline.org/guide_rules.html
  
-##7 ##BThe adventure begins!
+##7 ##BThe adventure begins!##b
+
+##7 Evolving Beta.
+ 
+##0 Good news, most of the needed works for the Beta #2 has been
+##0 done! However, there are still some language tasks left, and
+##0 we need your help for this!
+##0 You can got more information on this topic on the URL below.
+ 
+##0 The Game Rules were added on the Beta #2, the no-law world is
+##0 ended! You can review a copy of these rules on our site.
+ 
+##0 A Development interlude will be made between the Beta Session
+##0 and the Aurora Release. This break will be to regroup most of
+##0 our futur guidelines.
+
+##0 We will prevent you of the release date on the next news. It
+##0 should technically be one week before the release itself.
+ 
+##9-- Cheers, Reid.
+##9 April 2012
+ 
+ 
+##7 Guidelines for the futur releases has been sat!
+
+##0 As you may know, ##BEvol Online##b has seen multiple development
+##0 stage on the last years, it's now the time to look forward and
+##0 to program what will be our futur development roadmaps.
+
+##0 At the end of the third and last Beta Release, we will switch
+##0 to a new style of development. It will be formed of two type
+##0 of release.
+
+##0 The first, called ##BAurora##b, will continue the selected story and
+##0 will be the main quest line. ##BSkylandia##b will be the second type.
+##0 it will build some side-quests from the Aurora-Releases, as
+##0 well as showing some secrets from the ##BAemil##b world.
+
+##0 A last development release has been prepared, the ##BMercurian##b-
+##0 Releases. This type is currently hidden and nothing will be
+##0 spoiled as it will end the game story.
+##0 So be patient. ;D
+ 
+##9-- Cheers, Reid.
+##9 April 2012
+ 
+
+##7 Land Ahoy!
+
+##0 Almost two months have passed since we began redesigning our
+##0 content and concept base. One of the change is made to the 
+##0 mascot, the Pious, which will now be called Piou.
+
+##0 We still need some weeks before to done the graphic part. But
+##0 we started to concept the Level Design (Including new quests,
+##0 dialogues, maps). Most of this should be done in May, so be
+##0 ready to the next episode on this month!
+
+##0 I let you some important links, if you wish to take part in
+##0 the development or if you just wish to talk with us.
+
+Contributor list: http://wiki.evolonline.org/contributors
+Translation tuto: http://wiki.evolonline.org/translation
+Beta2 roadmap:    http://wiki.evolonline.org/beta2
+News section:     http://evolonline.org/news.html
+Art Development:  http://evolonline.deviantart.com
+IRC webchat:      http://evolonline.org/chat 
+
+##9-- Cheers, Reid.
+##9 March 2012
+ 
+
+##7 On the way for the Beta2!
+
+##0 The Evol Developers and Contributors team, woud like to thank
+##0 the numerous beta-tester who played Evol over the last three
+##0 weeks. So far the number of testers is ##B450##b.
+
+##0 As you have been all waiting for, some news about the Beta#2!
+##0 The door to the outside will be unlocked, there will be new
+##0 monsters, items, quests and a brand new map!
+##0 The second Beta Release will focus in establishing the futur
+##0 style of our gameplay.
+
+##9-- Cheers, Reid.
+##9 February 2012
+
  
 ##7 Season 1, Episode 1!
  
-##0 After a mysterious past, you find yourself adrift on the waves by 
-##0 a sailor crew in the middle of Oceania.
+##0 After a mysterious past, you find yourself adrift on the
+##0 waves in the middle of Oceania. A noble-minded crew, sailing
+##0 near your body, decides to rescue and take care of you. 
  
-##0 You wake up about 7 days later, in the same ship.
-##0 Meet the crew which saved you and try to understand what happened
-##0 to you before this terrible event!
+##0 You now wake up about seven days later in their wooden ship.
+##0 Take some time to know the crew who saved you and try to
+##0 discover what happened to you before this terrible event!
  
-##9-- Dearly yours, Reid.
+##9-- Cheers, Reid.
 ##9 January 2012
  
  
 ##7 Evol Online Beta Releases.
  
-##0 After months of work, the world of ##BEvol Online##b is open to
-##0 the public for his first Beta Release.
-##0 This opening will be the start of a series of 3 Beta Releases which
-##0 will be there to determinate the good and bad points of the chosen
-##0 Gameplay.
+##0 After months of work, the world of ##BEvol Online##b is finally
+##0 opened to everyone for its first Beta release!
  
-##0 We welcome you to give us your thoughts on this, but also to be
-##0 a part of this great adventure.
+#0 This Beta release will be the first among two other ones which
+##0 will  help  the  developers  finding  out  the  qualities and
+##0 problems of the chosen gameplay.
  
-##0 We also warn you that at the end of these Beta Releases, the
-##0 game will get a wipe of all characters, as we are trying to get a
-##0 good balanced game to start with.
+##0 We welcome you to give us your thoughts on this, but we also
+##0  hope you will have fun being part of this amazing adventure.
+ 
+##0 We also need to warn you that at the end of the third release,
+##0 all characters will be wiped as we are trying to have a
+##0 perfect balance for this game and start it over with it.
 ##0 We kindly ask you to accept this.
  
-##9-- Dearly yours, Reid.
+##9-- Cheers, Reid.
 ##9 January 2012
+ 
+ 
+##7 Merry Christmas!
+ 
+##0 On this Christmas morning, the Evol Online team is here to
+##0 wish you all a merry Christmas, and to announce you that the
+##0 beta release of ##BEvol Online##b will be soon available!
+ 
+##0 No, this is not a dream! After more than one year of work and
+##0 through good and bad times, the team have finally decided to
+##0 release the first beta release.
+ 
+##0 Over one year has passed, we've been working on the in-game
+##0 design and in new technology for our server and client, the
+##0 time came to show it to public!
+ 
+##0 We, the ##BEvol Online##b developers team, hope to get as many beta
+##0 testers as we can in order to get as many different views as
+##0 possible.
+ 
+##0 We sincerely thank you for your patience and for sharing the
+##0 same dream than we do.
+ 
+##9-- Cheers, Reid.
+##9 December 2011
