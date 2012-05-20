@@ -24,7 +24,7 @@
 ##0 should technically be one week before the release itself.
  
 ##9-- Cheers, Reid.
-##9 April 2012
+##9 May 2012
  
  
 ##7 Guidelines for the futur releases has been sat!
