@@ -19,6 +19,7 @@ update/adler32
 
 # saedit
 saedit/saedit
+saedit/make.log
 
 # langs
 lang/tx
