@@ -52,11 +52,13 @@ def collectStrings(parentDir):
 					m = strre3.findall(line)
 					if len(m) > 0:
 						for str in m:
-							allStrings.add(itemNamesByName[str.lower()])
+							if str.lower() in itemNamesByName:
+								allStrings.add(itemNamesByName[str.lower()])
 					m = strre5.findall(line)
 					if len(m) > 0:
 						for str in m:
-							allStrings.add(itemNamesByName[str.lower()])
+							if str.lower() in itemNamesByName:
+								allStrings.add(itemNamesByName[str.lower()])
 					m = strre6.findall(line)
 					if len(m) > 0:
 						for str in m:
