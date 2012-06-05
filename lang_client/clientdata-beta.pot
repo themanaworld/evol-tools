@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-05-29 00:18+0300\n"
+"POT-Creation-Date: 2012-06-05 23:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,612 +74,639 @@ msgstr ""
 msgid "Archer"
 msgstr ""
 
-#: emotes.xml:16(emotes/emote@name) emotes.xml:17(emote/sprite@name)
+#: emotes.xml:17(emotes/emote@name) emotes.xml:18(emote/sprite@name)
 msgid "Disgust"
 msgstr ""
 
-#: emotes.xml:24(emotes/emote@name) emotes.xml:25(emote/sprite@name)
+#: emotes.xml:25(emotes/emote@name) emotes.xml:26(emote/sprite@name)
 msgid "Surprise"
 msgstr ""
 
-#: emotes.xml:32(emotes/emote@name) emotes.xml:33(emote/sprite@name)
+#: emotes.xml:33(emotes/emote@name) emotes.xml:34(emote/sprite@name)
 msgid "Happy"
 msgstr ""
 
-#: emotes.xml:40(emotes/emote@name) emotes.xml:41(emote/sprite@name)
+#: emotes.xml:41(emotes/emote@name) emotes.xml:42(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:18(emote/sprite@name)
 msgid "Sad"
 msgstr ""
 
-#: emotes.xml:48(emotes/emote@name) emotes.xml:49(emote/sprite@name)
+#: emotes.xml:49(emotes/emote@name) emotes.xml:50(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:20(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:27(emote/sprite@name)
 msgid "Evil"
 msgstr ""
 
-#: emotes.xml:56(emotes/emote@name) emotes.xml:57(emote/sprite@name)
+#: emotes.xml:57(emotes/emote@name) emotes.xml:58(emote/sprite@name)
 msgid "Wink"
 msgstr ""
 
-#: emotes.xml:64(emotes/emote@name) emotes.xml:65(emote/sprite@name)
+#: emotes.xml:65(emotes/emote@name) emotes.xml:66(emote/sprite@name)
 msgid "Angel"
 msgstr ""
 
-#: emotes.xml:72(emotes/emote@name) emotes.xml:73(emote/sprite@name)
+#: emotes.xml:73(emotes/emote@name) emotes.xml:74(emote/sprite@name)
 msgid "Blush"
 msgstr ""
 
-#: emotes.xml:80(emotes/emote@name) emotes.xml:81(emote/sprite@name)
+#: emotes.xml:81(emotes/emote@name) emotes.xml:82(emote/sprite@name)
 msgid "Tongue"
 msgstr ""
 
-#: emotes.xml:88(emotes/emote@name) emotes.xml:89(emote/sprite@name)
+#: emotes.xml:89(emotes/emote@name) emotes.xml:90(emote/sprite@name)
 msgid "Grin"
 msgstr ""
 
-#: emotes.xml:96(emotes/emote@name) emotes.xml:97(emote/sprite@name)
+#: emotes.xml:97(emotes/emote@name) emotes.xml:98(emote/sprite@name)
 msgid "Upset"
 msgstr ""
 
-#: emotes.xml:104(emotes/emote@name) emotes.xml:105(emote/sprite@name)
+#: emotes.xml:105(emotes/emote@name) emotes.xml:106(emote/sprite@name)
 msgid "Perturbed"
 msgstr ""
 
-#: emotes.xml:112(emotes/emote@name) emotes.xml:113(emote/sprite@name)
+#: emotes.xml:113(emotes/emote@name) emotes.xml:114(emote/sprite@name)
 msgid "Speech"
 msgstr ""
 
-#: emotes.xml:120(emotes/emote@name) emotes.xml:121(emote/sprite@name)
+#: emotes.xml:121(emotes/emote@name) emotes.xml:122(emote/sprite@name)
 msgid "Blah"
 msgstr ""
 
-#: itemcolors.xml:12(list/color@name) itemcolors.xml:35(list/color@name)
-#: itemcolors.xml:58(list/color@name)
+#: itemcolors.xml:13(list/color@name) itemcolors.xml:37(list/color@name)
 msgid "white"
 msgstr ""
 
-#: itemcolors.xml:13(list/color@name) itemcolors.xml:36(list/color@name)
+#: itemcolors.xml:14(list/color@name) itemcolors.xml:38(list/color@name)
 msgid "black"
 msgstr ""
 
-#: itemcolors.xml:14(list/color@name) itemcolors.xml:37(list/color@name)
+#: itemcolors.xml:15(list/color@name) itemcolors.xml:39(list/color@name)
 msgid "silver"
 msgstr ""
 
-#: itemcolors.xml:15(list/color@name) itemcolors.xml:38(list/color@name)
+#: itemcolors.xml:16(list/color@name) itemcolors.xml:40(list/color@name)
 msgid "camel"
 msgstr ""
 
-#: itemcolors.xml:16(list/color@name) itemcolors.xml:39(list/color@name)
+#: itemcolors.xml:17(list/color@name) itemcolors.xml:41(list/color@name)
 msgid "brown"
 msgstr ""
 
-#: itemcolors.xml:17(list/color@name) itemcolors.xml:40(list/color@name)
-#: itemcolors.xml:62(list/color@name)
+#: itemcolors.xml:18(list/color@name) itemcolors.xml:42(list/color@name)
+#: itemcolors.xml:65(list/color@name) itemcolors.xml:88(list/color@name)
 msgid "orange"
 msgstr ""
 
-#: itemcolors.xml:18(list/color@name) itemcolors.xml:41(list/color@name)
+#: itemcolors.xml:19(list/color@name) itemcolors.xml:43(list/color@name)
 msgid "darkred"
 msgstr ""
 
-#: itemcolors.xml:19(list/color@name) itemcolors.xml:42(list/color@name)
-#: itemcolors.xml:66(list/color@name)
+#: itemcolors.xml:20(list/color@name) itemcolors.xml:44(list/color@name)
+#: itemcolors.xml:69(list/color@name)
 msgid "red"
 msgstr ""
 
-#: itemcolors.xml:20(list/color@name) itemcolors.xml:43(list/color@name)
-#: itemcolors.xml:67(list/color@name)
+#: itemcolors.xml:21(list/color@name) itemcolors.xml:45(list/color@name)
+#: itemcolors.xml:70(list/color@name) itemcolors.xml:93(list/color@name)
 msgid "fushia"
 msgstr ""
 
-#: itemcolors.xml:21(list/color@name) itemcolors.xml:44(list/color@name)
-#: itemcolors.xml:68(list/color@name)
+#: itemcolors.xml:22(list/color@name) itemcolors.xml:46(list/color@name)
+#: itemcolors.xml:71(list/color@name) itemcolors.xml:94(list/color@name)
 msgid "pink"
 msgstr ""
 
-#: itemcolors.xml:22(list/color@name) itemcolors.xml:45(list/color@name)
-#: itemcolors.xml:69(list/color@name)
+#: itemcolors.xml:23(list/color@name) itemcolors.xml:47(list/color@name)
+#: itemcolors.xml:72(list/color@name) itemcolors.xml:95(list/color@name)
 msgid "mauve"
 msgstr ""
 
-#: itemcolors.xml:23(list/color@name) itemcolors.xml:46(list/color@name)
-#: itemcolors.xml:70(list/color@name)
+#: itemcolors.xml:24(list/color@name) itemcolors.xml:48(list/color@name)
+#: itemcolors.xml:73(list/color@name) itemcolors.xml:96(list/color@name)
 msgid "purple"
 msgstr ""
 
-#: itemcolors.xml:24(list/color@name) itemcolors.xml:47(list/color@name)
-#: itemcolors.xml:71(list/color@name)
+#: itemcolors.xml:25(list/color@name) itemcolors.xml:49(list/color@name)
+#: itemcolors.xml:74(list/color@name) itemcolors.xml:97(list/color@name)
 msgid "navy blue"
 msgstr ""
 
-#: itemcolors.xml:25(list/color@name) itemcolors.xml:48(list/color@name)
+#: itemcolors.xml:26(list/color@name) itemcolors.xml:50(list/color@name)
 msgid "bluegray"
 msgstr ""
 
-#: itemcolors.xml:26(list/color@name) itemcolors.xml:49(list/color@name)
-#: itemcolors.xml:72(list/color@name)
+#: itemcolors.xml:27(list/color@name) itemcolors.xml:51(list/color@name)
+#: itemcolors.xml:75(list/color@name) itemcolors.xml:98(list/color@name)
 msgid "blue"
 msgstr ""
 
-#: itemcolors.xml:27(list/color@name) itemcolors.xml:50(list/color@name)
-#: itemcolors.xml:73(list/color@name)
+#: itemcolors.xml:28(list/color@name) itemcolors.xml:52(list/color@name)
+#: itemcolors.xml:76(list/color@name) itemcolors.xml:99(list/color@name)
 msgid "teal"
 msgstr ""
 
-#: itemcolors.xml:28(list/color@name) itemcolors.xml:51(list/color@name)
-#: itemcolors.xml:74(list/color@name)
+#: itemcolors.xml:29(list/color@name) itemcolors.xml:53(list/color@name)
+#: itemcolors.xml:77(list/color@name) itemcolors.xml:100(list/color@name)
 msgid "green"
 msgstr ""
 
-#: itemcolors.xml:29(list/color@name) itemcolors.xml:52(list/color@name)
-#: itemcolors.xml:75(list/color@name)
+#: itemcolors.xml:30(list/color@name) itemcolors.xml:54(list/color@name)
+#: itemcolors.xml:78(list/color@name) itemcolors.xml:101(list/color@name)
 msgid "lime"
 msgstr ""
 
-#: itemcolors.xml:30(list/color@name) itemcolors.xml:53(list/color@name)
-#: itemcolors.xml:76(list/color@name)
+#: itemcolors.xml:31(list/color@name) itemcolors.xml:55(list/color@name)
+#: itemcolors.xml:79(list/color@name) itemcolors.xml:102(list/color@name)
 msgid "khaki"
 msgstr ""
 
-#: itemcolors.xml:31(list/color@name) itemcolors.xml:54(list/color@name)
+#: itemcolors.xml:32(list/color@name) itemcolors.xml:56(list/color@name)
 msgid "yellow"
 msgstr ""
 
-#: itemcolors.xml:59(list/color@name)
+#: itemcolors.xml:61(list/color@name) itemcolors.xml:84(list/color@name)
+msgid "Silver Grey"
+msgstr ""
+
+#: itemcolors.xml:62(list/color@name) itemcolors.xml:85(list/color@name)
 msgid "off black"
 msgstr ""
 
-#: itemcolors.xml:60(list/color@name)
+#: itemcolors.xml:63(list/color@name) itemcolors.xml:86(list/color@name)
 msgid "ash brown"
 msgstr ""
 
-#: itemcolors.xml:61(list/color@name)
+#: itemcolors.xml:64(list/color@name) itemcolors.xml:87(list/color@name)
 msgid "copper"
 msgstr ""
 
-#: itemcolors.xml:63(list/color@name)
+#: itemcolors.xml:66(list/color@name) itemcolors.xml:89(list/color@name)
 msgid "brunette"
 msgstr ""
 
-#: itemcolors.xml:64(list/color@name)
+#: itemcolors.xml:67(list/color@name) itemcolors.xml:90(list/color@name)
 msgid "blonde"
 msgstr ""
 
-#: itemcolors.xml:65(list/color@name)
+#: itemcolors.xml:68(list/color@name) itemcolors.xml:91(list/color@name)
 msgid "copper red"
 msgstr ""
 
-#: items.xml:37(items/item@name)
-msgid "Flat ponytail"
+#: itemcolors.xml:92(list/color@name)
+msgid "Pinky Pink"
 msgstr ""
 
-#: items.xml:40(items/item@name)
-msgid "Bowl cut"
+#: items.xml:39(items/item@name)
+msgid "Bald"
 msgstr ""
 
-#: items.xml:43(items/item@name)
-msgid "Combed back"
+#: items.xml:42(items/item@name)
+msgid "Bowl Cut"
 msgstr ""
 
-#: items.xml:46(items/item@name)
+#: items.xml:45(items/item@name)
+msgid "Combed Back"
+msgstr ""
+
+#: items.xml:48(items/item@name)
 msgid "Emo"
 msgstr ""
 
-#: items.xml:49(items/item@name)
+#: items.xml:51(items/item@name)
 msgid "Mohawk"
 msgstr ""
 
-#: items.xml:52(items/item@name)
+#: items.xml:54(items/item@name)
 msgid "Pompadour"
 msgstr ""
 
-#: items.xml:55(items/item@name)
-msgid "Center parting"
+#: items.xml:57(items/item@name)
+msgid "Center Parting"
 msgstr ""
 
-#: items.xml:58(items/item@name)
-msgid "Long and slick"
+#: items.xml:60(items/item@name)
+msgid "Long and Slick"
 msgstr ""
 
-#: items.xml:61(items/item@name)
-msgid "Short and curly"
+#: items.xml:63(items/item@name)
+msgid "Short and Curly"
 msgstr ""
 
-#: items.xml:64(items/item@name)
+#: items.xml:66(items/item@name)
 msgid "Pigtails"
 msgstr ""
 
-#: items.xml:67(items/item@name)
-msgid "Long and curly"
+#: items.xml:69(items/item@name)
+msgid "Long and Curly"
 msgstr ""
 
-#: items.xml:70(items/item@name)
+#: items.xml:72(items/item@name)
 msgid "Parted"
 msgstr ""
 
-#: items.xml:73(items/item@name)
-msgid "Perky ponytail"
+#: items.xml:75(items/item@name)
+msgid "Perky Ponytail"
 msgstr ""
 
-#: items.xml:76(items/item@name)
+#: items.xml:78(items/item@name)
 msgid "Wave"
 msgstr ""
 
-#: items.xml:79(items/item@name)
+#: items.xml:81(items/item@name)
 msgid "Mane"
 msgstr ""
 
-#: items.xml:82(items/item@name)
+#: items.xml:84(items/item@name)
 msgid "Bun"
 msgstr ""
 
-#: items.xml:85(items/item@name)
+#: items.xml:87(items/item@name)
 msgid "Wavy"
 msgstr ""
 
-#: items.xml:88(items/item@name)
-msgid "Punk"
+#: items.xml:90(items/item@name)
+msgid "Bunches"
 msgstr ""
 
-#: items.xml:91(items/item@name)
-msgid "Long ponytail"
+#: items.xml:93(items/item@name)
+msgid "Long Ponytail"
 msgstr ""
 
-#: items.xml:94(items/item@name)
-msgid "Wild"
+#: items.xml:96(items/item@name)
+msgid "Infinitely Long"
 msgstr ""
 
-#: items.xml:97(items/item@name)
+#: items.xml:99(items/item@name)
 msgid "Choppy"
 msgstr ""
 
-#: items.xml:100(items/item@name)
-msgid "Infinitely long"
+#: items.xml:102(items/item@name)
+msgid "Wild"
 msgstr ""
 
-#: items.xml:103(items/item@name)
-msgid "Wedding"
+#: items.xml:105(items/item@name)
+msgid "Punk"
 msgstr ""
 
-#: items.xml:106(items/item@name)
+#: items.xml:108(items/item@name)
 msgid "Imperial"
 msgstr ""
 
-#: items.xml:109(items/item@name)
-msgid "Tousled layers"
+#: items.xml:111(items/item@name)
+msgid "Tousled Layers"
 msgstr ""
 
-#: items.xml:112(items/item@name)
+#: items.xml:114(items/item@name)
 msgid "Messy"
 msgstr ""
 
 #: items.xml:117(items/item@name)
+msgid "Flat Ponytail"
+msgstr ""
+
+#: items.xml:122(items/item@name)
 msgid "Human"
 msgstr ""
 
-#: items.xml:121(items/item@name)
+#: items.xml:126(items/item@name)
 msgid "Ukar"
 msgstr ""
 
-#: items.xml:125(items/item@name)
+#: items.xml:130(items/item@name)
 msgid "Demon"
 msgstr ""
 
-#: items.xml:129(items/item@name)
+#: items.xml:134(items/item@name)
 msgid "Elven"
 msgstr ""
 
-#: items.xml:133(items/item@name)
+#: items.xml:138(items/item@name)
 msgid "Orc"
 msgstr ""
 
-#: items.xml:137(items/item@name)
+#: items.xml:142(items/item@name)
 msgid "Raijin"
 msgstr ""
 
-#: items.xml:141(items/item@name)
+#: items.xml:146(items/item@name)
 msgid "Tritan"
 msgstr ""
 
-#: items.xml:209(items/item@name)
+#: items.xml:194(items/item@name)
 msgid "Acorn"
 msgstr ""
 
-#: items.xml:209(items/item@description)
-msgid "Squichy's food, should be good in a cake."
+#: items.xml:194(items/item@description)
+msgid "Squichy's food which should be good in a cake."
 msgstr ""
 
-#: items.xml:209(items/item@effect) items.xml:244(items/item@effect)
+#: items.xml:194(items/item@effect) items.xml:229(items/item@effect)
 msgid "+15 HP"
 msgstr ""
 
-#: items.xml:216(items/item@name)
+#: items.xml:201(items/item@name)
 msgid "Bread"
 msgstr ""
 
-#: items.xml:216(items/item@description)
-msgid "Home-made Bread."
+#: items.xml:201(items/item@description)
+msgid "Home-made bread."
 msgstr ""
 
-#: items.xml:216(items/item@effect) items.xml:265(items/item@effect)
+#: items.xml:201(items/item@effect) items.xml:250(items/item@effect)
 msgid "+30 HP"
 msgstr ""
 
-#: items.xml:223(items/item@name)
+#: items.xml:208(items/item@name)
 msgid "Fungus"
 msgstr ""
 
-#: items.xml:223(items/item@description)
+#: items.xml:208(items/item@description)
 msgid "A non-toxical mushroom growing in moist place."
 msgstr ""
 
-#: items.xml:223(items/item@effect)
+#: items.xml:208(items/item@effect)
 msgid "+25 HP"
 msgstr ""
 
-#: items.xml:230(items/item@name)
+#: items.xml:215(items/item@name)
 msgid "Cheese"
 msgstr ""
 
-#: items.xml:230(items/item@description)
-msgid "A ratto's left-overs."
+#: items.xml:215(items/item@description)
+msgid "A ratto's meal left-overs."
 msgstr ""
 
-#: items.xml:230(items/item@effect)
+#: items.xml:215(items/item@effect) items.xml:271(items/item@effect)
 msgid "+40 HP"
 msgstr ""
 
-#: items.xml:237(items/item@name)
-msgid "Piou's Legs"
+#: items.xml:222(items/item@name)
+msgid "Piou Legs"
 msgstr ""
 
-#: items.xml:237(items/item@description)
-msgid "Tasty Piou's legs, well spiced!"
+#: items.xml:222(items/item@description)
+msgid "Tasty and well spiced Piou legs."
 msgstr ""
 
-#: items.xml:237(items/item@effect)
+#: items.xml:222(items/item@effect)
 msgid "+10 HP"
 msgstr ""
 
-#: items.xml:244(items/item@name)
+#: items.xml:229(items/item@name)
 msgid "Lettuce"
 msgstr ""
 
-#: items.xml:244(items/item@description)
-msgid "Perfect if you want to lose some weight."
+#: items.xml:229(items/item@description)
+msgid "The perfect food if you're hungry but want to lose some weight."
 msgstr ""
 
-#: items.xml:251(items/item@name)
+#: items.xml:236(items/item@name)
 msgid "Piberries"
 msgstr ""
 
-#: items.xml:251(items/item@description)
-msgid "The famous staining-fruit."
+#: items.xml:236(items/item@description)
+msgid "The famous staining fruit."
 msgstr ""
 
-#: items.xml:251(items/item@effect)
+#: items.xml:236(items/item@effect)
 msgid "+20 HP"
 msgstr ""
 
-#: items.xml:258(items/item@name)
+#: items.xml:243(items/item@name)
 msgid "Sea Drop"
 msgstr ""
 
-#: items.xml:258(items/item@description)
-msgid "Some water drops from the sea, maybe you shouldn't drink them..."
+#: items.xml:243(items/item@description)
+msgid "Some water drops from the sea. Maybe you shouldn't drink them."
 msgstr ""
 
-#: items.xml:258(items/item@effect)
+#: items.xml:243(items/item@effect)
 msgid "+15 HP, Headache"
 msgstr ""
 
-#: items.xml:265(items/item@name)
+#: items.xml:250(items/item@name)
 msgid "Aquada"
 msgstr ""
 
-#: items.xml:265(items/item@description)
-msgid "A strange sea fruit, the blue part seems eatable."
+#: items.xml:250(items/item@description)
+msgid "A strange sea fruit. The blue part seems edible."
 msgstr ""
 
-#: items.xml:272(items/item@name)
+#: items.xml:257(items/item@name)
 msgid "Pink Blobime"
 msgstr ""
 
-#: items.xml:272(items/item@description)
-msgid "Some pink residue left-over by a Little Blub."
+#: items.xml:257(items/item@description)
+msgid "Some pink residue dropped by a Little Blub."
 msgstr ""
 
-#: items.xml:272(items/item@effect)
+#: items.xml:257(items/item@effect)
 msgid "+1 HP, Headache"
 msgstr ""
 
-#: items.xml:288(items/item@name)
-msgid "Little Tentacle"
+#: items.xml:271(items/item@name)
+msgid "Half Croconut"
 msgstr ""
 
-#: items.xml:288(items/item@description)
-msgid "Some cut tentacle from a Little Blub."
+#: items.xml:271(items/item@description)
+msgid "The inside seems delicious."
 msgstr ""
 
-#: items.xml:294(items/item@name)
-msgid "Piou' Feathers"
+#: items.xml:277(items/item@name)
+msgid "Croconut"
 msgstr ""
 
-#: items.xml:294(items/item@description)
-msgid "Some yellow feathers.. A piou might have dropped them."
+#: items.xml:277(items/item@description)
+msgid "Fallen from a palm tree, this croconut can be opened."
 msgstr ""
 
-#: items.xml:300(items/item@name)
-msgid "Tortugas Shell Fragment"
+#: items.xml:286(items/item@name)
+msgid "Small Tentacles"
 msgstr ""
 
-#: items.xml:300(items/item@description)
-msgid "Yeah, it's really a fragment of a tortugas' shell."
+#: items.xml:286(items/item@description)
+msgid "Three tentacles taken from a Little Blub."
 msgstr ""
 
-#: items.xml:306(items/item@name)
+#: items.xml:292(items/item@name)
+msgid "Piou Feathers"
+msgstr ""
+
+#: items.xml:292(items/item@description)
+msgid "Three small yellow feathers. A piou might have dropped them."
+msgstr ""
+
+#: items.xml:298(items/item@name)
+msgid "Tortuga Shell Fragment"
+msgstr ""
+
+#: items.xml:298(items/item@description)
+msgid "A fragment of a tortuga shell."
+msgstr ""
+
+#: items.xml:304(items/item@name)
 msgid "Half Eggshell"
 msgstr ""
 
-#: items.xml:306(items/item@description)
-msgid "Maybe it was broken to prepare a fried egg."
+#: items.xml:304(items/item@description)
+msgid "It maybe got broken in order to cook a fried egg."
 msgstr ""
 
-#: items.xml:312(items/item@name)
+#: items.xml:310(items/item@name)
 msgid "Ratto Tail"
 msgstr ""
 
-#: items.xml:312(items/item@description)
-msgid "A long tail from a Ratto."
+#: items.xml:310(items/item@description)
+msgid "A very long tail from a Ratto."
 msgstr ""
 
-#: items.xml:318(items/item@name)
+#: items.xml:316(items/item@name)
 msgid "Ratto Teeth"
 msgstr ""
 
-#: items.xml:318(items/item@description)
-msgid "Some Ratto's teeth."
+#: items.xml:316(items/item@description)
+msgid "Some teeth of a Ratto."
 msgstr ""
 
-#: items.xml:324(items/item@name)
+#: items.xml:322(items/item@name)
 msgid "Croc Claw"
 msgstr ""
 
-#: items.xml:324(items/item@description)
-msgid "Could be useful for cooking."
+#: items.xml:322(items/item@description)
+msgid "Could be tasty if well cooked."
 msgstr ""
 
-#: items.xml:330(items/item@name)
+#: items.xml:328(items/item@name)
 msgid "Squichy Claws"
 msgstr ""
 
-#: items.xml:330(items/item@description)
+#: items.xml:328(items/item@description)
 msgid "Claws from a wild Squichy."
 msgstr ""
 
-#: items.xml:336(items/item@name)
-msgid "Tortugas Shell"
+#: items.xml:334(items/item@name)
+msgid "Tortuga Shell"
 msgstr ""
 
-#: items.xml:336(items/item@description)
-msgid "This shell comes from a Tortugas."
+#: items.xml:334(items/item@description)
+msgid "This shell comes from a Tortuga."
 msgstr ""
 
-#: items.xml:342(items/item@name)
-msgid "Tortugas Tongue"
+#: items.xml:340(items/item@name)
+msgid "Tortuga Tongue"
 msgstr ""
 
-#: items.xml:342(items/item@description)
-msgid "A tongue from a Tortugas."
+#: items.xml:340(items/item@description)
+msgid "The tongue of a Tortuga."
 msgstr ""
 
-#: items.xml:348(items/item@name)
+#: items.xml:346(items/item@name)
 msgid "Pearl"
 msgstr ""
 
-#: items.xml:348(items/item@description)
-msgid "A perfectly round pearl."
+#: items.xml:346(items/item@description)
+msgid "A perfectly round and shiny pearl."
 msgstr ""
 
-#: items.xml:354(items/item@name)
+#: items.xml:352(items/item@name)
 msgid "Coral"
 msgstr ""
 
-#: items.xml:354(items/item@description)
-msgid "Typical coral visible in Oceania's zone."
+#: items.xml:352(items/item@description)
+msgid "The kind of coral you can see in Oceania."
 msgstr ""
 
-#: items.xml:360(items/item@name)
+#: items.xml:358(items/item@name)
 msgid "Blue Coral"
 msgstr ""
 
-#: items.xml:360(items/item@description)
+#: items.xml:358(items/item@description)
 msgid "A coral dyed in blue by a Blub."
 msgstr ""
 
-#: items.xml:380(items/item@name)
+#: items.xml:378(items/item@name)
 msgid "Worn Shirt"
 msgstr ""
 
-#: items.xml:380(items/item@description)
-msgid "A worn shirt given to you by a sailor."
+#: items.xml:378(items/item@description)
+msgid "An old shirt given to you by a sailor."
 msgstr ""
 
-#: items.xml:380(items/item@effect) items.xml:451(items/item@effect)
+#: items.xml:378(items/item@effect) items.xml:449(items/item@effect)
 msgid "Defense +2"
 msgstr ""
 
-#: items.xml:392(items/item@name)
+#: items.xml:390(items/item@name)
 msgid "%Color% Sailor Tank Top"
 msgstr ""
 
-#: items.xml:392(items/item@description)
+#: items.xml:390(items/item@description)
 msgid "A %color% tank top used by sailors and seamen."
 msgstr ""
 
-#: items.xml:392(items/item@effect)
+#: items.xml:390(items/item@effect)
 msgid "Defense +3"
 msgstr ""
 
-#: items.xml:402(items/item@name)
+#: items.xml:400(items/item@name)
 msgid "Sailor Shirt"
 msgstr ""
 
-#: items.xml:402(items/item@description)
+#: items.xml:400(items/item@description)
 msgid "Proof that ye be in the crew, matey!"
 msgstr ""
 
-#: items.xml:402(items/item@effect)
+#: items.xml:400(items/item@effect)
 msgid "Defense +4"
 msgstr ""
 
-#: items.xml:415(items/item@name)
+#: items.xml:413(items/item@name)
 msgid "Lousy Moccasin"
 msgstr ""
 
-#: items.xml:415(items/item@description)
-msgid "Orc-made moccasin, not sure from which skin these boots were made."
+#: items.xml:413(items/item@description)
+msgid "Orc-made moccasin. Not sure from which skin these boots were made."
 msgstr ""
 
-#: items.xml:415(items/item@effect) items.xml:426(items/item@effect)
-#: items.xml:491(items/item@effect)
+#: items.xml:413(items/item@effect) items.xml:424(items/item@effect)
+#: items.xml:489(items/item@effect)
 msgid "Defense +1"
 msgstr ""
 
-#: items.xml:426(items/item@name)
+#: items.xml:424(items/item@name)
 msgid "%Color% Boots"
 msgstr ""
 
-#: items.xml:426(items/item@description)
+#: items.xml:424(items/item@description)
 msgid "%Color% boots made for beginners."
 msgstr ""
 
-#: items.xml:451(items/item@name)
+#: items.xml:449(items/item@name)
 msgid "Worn Shorts"
 msgstr ""
 
-#: items.xml:451(items/item@description)
-msgid "A worn pair of shorts given to you by a sailor, erk..."
+#: items.xml:449(items/item@description)
+msgid "An old pair of shorts given to you by a sailor, they smell bad."
 msgstr ""
 
-#: items.xml:491(items/item@name)
+#: items.xml:489(items/item@name)
 msgid "Bandana"
 msgstr ""
 
-#: items.xml:491(items/item@description)
-msgid "A striped bandana."
+#: items.xml:489(items/item@description)
+msgid "A striped bandana worn by some sailors."
 msgstr ""
 
-#: items.xml:527(items/item@name)
+#: items.xml:525(items/item@name)
 msgid "Knife"
 msgstr ""
 
-#: items.xml:527(items/item@description)
-msgid "A simple knife."
+#: items.xml:525(items/item@description)
+msgid "A simple, but sharp knife."
 msgstr ""
 
-#: items.xml:527(items/item@effect)
+#: items.xml:525(items/item@effect)
 msgid "Damage +10"
 msgstr ""
 
@@ -788,7 +815,7 @@ msgid "Piousse"
 msgstr ""
 
 #: monsters.xml:50(monsters/monster@name)
-msgid "Tortugas"
+msgid "Tortuga"
 msgstr ""
 
 #: monsters.xml:59(monsters/monster@name)
@@ -804,5 +831,5 @@ msgid "Little Blub"
 msgstr ""
 
 #: monsters.xml:92(monsters/monster@name)
-msgid "Coco Tree"
+msgid "Croco Tree"
 msgstr ""
