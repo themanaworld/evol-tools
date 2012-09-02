@@ -1,4 +1,4 @@
-##9 Latest client version:  ##6ManaPlus 1.2.7.22
+##9 Latest client version:  ##6ManaPlus 1.2.9.2
 ##0 Actual Release:##1 Beta1
 ##0 Welcome in ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b 
@@ -6,6 +6,50 @@
 
 
 ##7 ##BThe adventure begins!##b
+
+
+##7 End of summer, beginning of Beta2!
+
+##0 Summer holidays are now over for the Evol Online developers. We are
+##0 proud to announce the arrival of Beta2 soon, even though we
+##0 unfortunately find ourselves currently behind schedule.
+
+##0 However, a lot of efforts were made to create a lot of new content
+##0 and great new tilesets which took for ever to create and fix.
+##0 We are currently fixing bugs and preparing the release. Final
+##0 modifications are being made to give you the best release ever made
+##0 for this project.
+
+##0 Among the new features is a Quest Window that has been added to the
+##0 client. It will help you see your progress in game.
+
+##0 When the Beta2 release will be out, we would like you to promote it
+##0 by simply spreading the word around you. Players will then be aware
+##0 of the news and this may help us expand our community.
+
+##0 As you already now, new contributors are always welcome! Translators,
+##0 artists and even writers are free to contact us for more information.
+
+##9 -- Regards, Alige.
+##9 August 2012
+
+
+##0 Once more, a lot of work has been done, recently on the consistency
+##0 and quality of the game. A lot of new graphics will be part of the
+##0 next release, Beta2. Interactivity between the player and the game
+##0 was our main goal the past weeks.
+
+##0 This new dynamic and gaming experience will be revealed throughout
+##0 animations full of mysteries. Treasure chests, coconuts and new NPCs
+##0 have appeared on a brand new map!
+
+##0 The work on the translations, the repositorie reorganizations and
+##0 on top of all, the client, were one of our main concerns lately.
+##0 The developers still need a bit of time in order to finish this
+##0 release, thus we thank you for waiting.
+
+##9 -- Regards, Alige.
+##9 July 2012
 
 
 ##7 Summer holidays for Evol Online!
