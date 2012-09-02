@@ -25,7 +25,7 @@
 ##0 release, thus we thank you for waiting.
 
 ##9 -- Regards, Alige.
-##9 July 2012
+##9 June 2012
 
 
 ##7 A contantly evolving Beta!
@@ -45,7 +45,7 @@
 ##0 technically be one week before the release itself.
 
 ##9 -- Cheers, Reid.
-##9 April 2012
+##9 May 2012
 
 
 ##7 Guidelines for future releases have been established!
