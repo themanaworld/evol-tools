@@ -13,6 +13,7 @@ its ea-skills
 its emotes
 its itemcolors
 its monsters
+its quests
 
 cd $DIR
 
