@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-09-08 19:16+0300\n"
+"POT-Creation-Date: 2012-09-16 17:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,62 +74,62 @@ msgstr ""
 msgid "Archer"
 msgstr ""
 
-#: emotes.xml:12(emote/sprite@name)
+#: emotes.xml:11(emote/sprite@name)
 msgid "Disgust"
 msgstr ""
 
-#: emotes.xml:13(emote/sprite@name)
+#: emotes.xml:12(emote/sprite@name)
 msgid "Surprise"
 msgstr ""
 
-#: emotes.xml:14(emote/sprite@name)
+#: emotes.xml:13(emote/sprite@name)
 msgid "Happy"
 msgstr ""
 
-#: emotes.xml:15(emote/sprite@name)
+#: emotes.xml:14(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:18(emote/sprite@name)
 msgid "Sad"
 msgstr ""
 
-#: emotes.xml:16(emote/sprite@name)
+#: emotes.xml:15(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:20(emote/sprite@name)
 #: tmp/manaplus_emotes.xml:27(emote/sprite@name)
 msgid "Evil"
 msgstr ""
 
-#: emotes.xml:17(emote/sprite@name)
+#: emotes.xml:16(emote/sprite@name)
 msgid "Wink"
 msgstr ""
 
-#: emotes.xml:18(emote/sprite@name)
+#: emotes.xml:17(emote/sprite@name)
 msgid "Angel"
 msgstr ""
 
-#: emotes.xml:19(emote/sprite@name)
+#: emotes.xml:18(emote/sprite@name)
 msgid "Blush"
 msgstr ""
 
-#: emotes.xml:20(emote/sprite@name)
+#: emotes.xml:19(emote/sprite@name)
 msgid "Tongue"
 msgstr ""
 
-#: emotes.xml:21(emote/sprite@name)
+#: emotes.xml:20(emote/sprite@name)
 msgid "Grin"
 msgstr ""
 
-#: emotes.xml:22(emote/sprite@name)
+#: emotes.xml:21(emote/sprite@name)
 msgid "Upset"
 msgstr ""
 
-#: emotes.xml:23(emote/sprite@name)
+#: emotes.xml:22(emote/sprite@name)
 msgid "Perturbed"
 msgstr ""
 
-#: emotes.xml:24(emote/sprite@name)
+#: emotes.xml:23(emote/sprite@name)
 msgid "Speech"
 msgstr ""
 
-#: emotes.xml:25(emote/sprite@name)
+#: emotes.xml:24(emote/sprite@name)
 msgid "Blah"
 msgstr ""
 
@@ -510,7 +510,7 @@ msgid "+20 HP"
 msgstr ""
 
 #: items.xml:229(items/item@name)
-msgid "Sea Drop"
+msgid "Sea Drops"
 msgstr ""
 
 #: items.xml:229(items/item@description)
@@ -676,82 +676,115 @@ msgid "Fish Box"
 msgstr ""
 
 #: items.xml:387(items/item@description)
-msgid "A wooden box full of fresh fish."
+msgid "A wooden box full of fresh fish that Couwan gave you."
 msgstr ""
 
-#: items.xml:409(items/item@name)
+#: items.xml:395(items/item@name)
+msgid "Aquada Box"
+msgstr ""
+
+#: items.xml:395(items/item@description)
+msgid "A wooden box full of aquadas."
+msgstr ""
+
+#: items.xml:403(items/item@name)
+msgid "Croconut Box"
+msgstr ""
+
+#: items.xml:403(items/item@description)
+msgid "A wooden box full of croconuts."
+msgstr ""
+
+#: items.xml:411(items/item@name)
+msgid "Plushroom Box"
+msgstr ""
+
+#: items.xml:411(items/item@description)
+msgid "A wooden box full of plushrooms."
+msgstr ""
+
+#: items.xml:433(items/item@name)
 msgid "Worn Shirt"
 msgstr ""
 
-#: items.xml:409(items/item@description)
+#: items.xml:433(items/item@description)
 msgid "An old shirt given to you by a sailor."
 msgstr ""
 
-#: items.xml:409(items/item@effect) items.xml:474(items/item@effect)
+#: items.xml:433(items/item@effect) items.xml:500(items/item@effect)
 msgid "Defense +2"
 msgstr ""
 
-#: items.xml:422(items/item@name)
+#: items.xml:446(items/item@name)
 msgid "%Color% Sailor Tank Top"
 msgstr ""
 
-#: items.xml:422(items/item@description)
+#: items.xml:446(items/item@description)
 msgid "A %color% tank top used by sailors and seamen."
 msgstr ""
 
-#: items.xml:422(items/item@effect)
+#: items.xml:446(items/item@effect)
 msgid "Defense +3"
 msgstr ""
 
-#: items.xml:434(items/item@name)
+#: items.xml:458(items/item@name)
 msgid "Sailor Shirt"
 msgstr ""
 
-#: items.xml:434(items/item@description)
+#: items.xml:458(items/item@description)
 msgid "Proof that ye be in the crew, matey!"
 msgstr ""
 
-#: items.xml:434(items/item@effect)
+#: items.xml:458(items/item@effect)
 msgid "Defense +4"
 msgstr ""
 
-#: items.xml:448(items/item@name)
+#: items.xml:472(items/item@name)
 msgid "Lousy Moccasin"
 msgstr ""
 
-#: items.xml:448(items/item@description)
+#: items.xml:472(items/item@description)
 msgid "Orc-made moccasin. Not sure from which skin these boots were made."
 msgstr ""
 
-#: items.xml:448(items/item@effect) items.xml:516(items/item@effect)
+#: items.xml:472(items/item@effect) items.xml:486(items/item@effect)
+#: items.xml:542(items/item@effect)
 msgid "Defense +1"
 msgstr ""
 
-#: items.xml:474(items/item@name)
+#: items.xml:486(items/item@name)
+msgid "Armbands"
+msgstr ""
+
+#: items.xml:486(items/item@description)
+msgid "Small armbands made of wood and iron."
+msgstr ""
+
+#: items.xml:500(items/item@name)
 msgid "Worn Shorts"
 msgstr ""
 
-#: items.xml:474(items/item@description)
+#: items.xml:500(items/item@description)
 msgid "An old pair of shorts given to you by a sailor, they smell bad."
 msgstr ""
 
-#: items.xml:516(items/item@name)
+#: items.xml:542(items/item@name)
 msgid "Bandana"
 msgstr ""
 
-#: items.xml:516(items/item@description)
+#: items.xml:542(items/item@description)
 msgid "A striped bandana worn by some sailors."
 msgstr ""
 
-#: items.xml:554(items/item@name)
+#: items.xml:580(items/item@name)
 msgid "Knife"
 msgstr ""
 
-#: items.xml:554(items/item@description)
+#: items.xml:580(items/item@description)
 msgid "A simple, but sharp knife."
 msgstr ""
 
-#: items.xml:554(items/item@effect)
+#: items.xml:580(items/item@effect)
 msgid "Damage +10"
 msgstr ""
 
@@ -914,22 +947,22 @@ msgstr ""
 
 #: quests.xml:17(quest/text)
 msgid ""
-"3. Do not multibox. This mean you cannot have more than one active character "
-"logged in at a time. You are not allowed to use more than one active client "
-"at a time to attack in groups."
+"3. Do not multibox. This means you cannot have more than one active "
+"character logged in at a time. You are not allowed to use more than one "
+"active client at a time to attack in groups."
 msgstr ""
 
 #: quests.xml:18(quest/text)
 msgid ""
 "4. Do not trashtalk, beg or use rude language in your character name or in "
-"the chat, at the exception of roleplay purposes."
+"the chat, except for roleplay purposes."
 msgstr ""
 
 #: quests.xml:19(quest/text)
 msgid ""
-"5. Do not speak any other language other than English in the public areas. "
-"You are free to speak any language you want in private chats or when alone "
-"with friends."
+"5. Do not speak any other language other than English in public areas. You "
+"are free to speak any language you want in private chats or when alone with "
+"friends."
 msgstr ""
 
 #: quests.xml:20(quest/text)
@@ -937,11 +970,11 @@ msgid "6. Follow the social convention listed on the RFC1855 article."
 msgstr ""
 
 #: quests.xml:25(quest/name)
-msgid "Speaking with Magic Arpan"
+msgid "Speaking to Magic Arpan"
 msgstr ""
 
 #: quests.xml:26(quest/text)
-msgid "Magic Arpan is waiting for you. Go speak with him."
+msgid "Magic Arpan is waiting for you. Go speak to him."
 msgstr ""
 
 #: quests.xml:27(quest/text)
@@ -959,7 +992,7 @@ msgid "Opening the Chest"
 msgstr ""
 
 #: quests.xml:33(quest/text)
-msgid "You need to open the chest and to take the clothes from it."
+msgid "You need to open the chest and take the clothes from it."
 msgstr ""
 
 #: quests.xml:34(quest/text)
@@ -991,8 +1024,8 @@ msgstr ""
 
 #: quests.xml:42(quest/text)
 msgid ""
-"Some items perform different effects. Some will heal you, some can be used "
-"as weapons or armors, and others can be sold for gold."
+"Some items have different effects. Some can heal you, some can be used as "
+"weapons or armors, and others can simply be sold for gold."
 msgstr ""
 
 #: quests.xml:47(quest/name) quests.xml:54(quest/name)
@@ -1001,14 +1034,14 @@ msgstr ""
 
 #: quests.xml:48(quest/text)
 msgid ""
-"A mysterious stowaway needs your help. He is hidden in the bottom level of "
-"the ship, in the storage room."
+"A mysterious stowaway needs your help. He hides at the bottom level of the "
+"ship, in the storage room."
 msgstr ""
 
 #: quests.xml:49(quest/text)
 msgid ""
-"It seems to be an urgent task, but he's paranoid by the fact that you could "
-"be a sailor, stay alert!"
+"It seems to be an urgent task, but he is afraid that you could be a sailor, "
+"so be ready!"
 msgstr ""
 
 #: quests.xml:51(quest/text) quests.xml:59(quest/text)
@@ -1017,24 +1050,25 @@ msgstr ""
 
 #: quests.xml:55(quest/text)
 msgid ""
-"Alige, the mysterious voyager, is requesting your help to find some food."
+"Alige, the mysterious traveller, requests your help to find some food for "
+"him."
 msgstr ""
 
 #: quests.xml:56(quest/text)
 msgid ""
 "He in fact hides in a hole of the hallway, which leads to the ship's storage "
-"where he can reach some barrels of piberries."
+"where he can reach for some barrels full of piberries."
 msgstr ""
 
 #: quests.xml:57(quest/text)
 msgid ""
-"It seems he's now sick of eating these berries all the time. That is why he "
-"would like you to find him other kinds of food and bring it to him."
+"It seems he is now sick of eating these berries all the time. That is why he "
+"would like you to find him other kinds of food and bring them to him."
 msgstr ""
 
 #: quests.xml:60(quest/text) quests.xml:108(quest/text)
 #: quests.xml:117(quest/text) quests.xml:127(quest/text)
-#: quests.xml:135(quest/text)
+#: quests.xml:136(quest/text)
 msgid "Difficulty: ✩✩✩✩✩✩"
 msgstr ""
 
@@ -1049,7 +1083,7 @@ msgstr ""
 #: quests.xml:67(quest/text)
 msgid ""
 "Peter needs your help to clean the bottom of the ship from some Rattos. "
-"Speak with him when you will have some time to help him."
+"Speak to him when you will have time to help him."
 msgstr ""
 
 #: quests.xml:69(quest/text) quests.xml:75(quest/text)
@@ -1081,7 +1115,7 @@ msgstr ""
 
 #: quests.xml:82(quest/text)
 msgid ""
-"It seems that you should again ask him this task, he may got something else "
+"It seems that you should again ask him this task, he may have something else "
 "to offer you..."
 msgstr ""
 
@@ -1103,8 +1137,8 @@ msgstr ""
 
 #: quests.xml:104(quest/text)
 msgid ""
-"A weird light reflection is annoying Darlin. He asked you to go and check "
-"what this could be."
+"A weird light reflection annoys Darlin. He asked you to go and check what it "
+"could possibly be."
 msgstr ""
 
 #: quests.xml:105(quest/text)
@@ -1118,7 +1152,7 @@ msgid "Coordinates: Desert Island. (83,70)"
 msgstr ""
 
 #: quests.xml:109(quest/text) quests.xml:128(quest/text)
-msgid "Rewards: Unknown."
+msgid "Reward: Unknown."
 msgstr ""
 
 #: quests.xml:113(quest/text)
@@ -1127,7 +1161,8 @@ msgid ""
 msgstr ""
 
 #: quests.xml:114(quest/text)
-msgid "Darlin seems to be waiting for you. You should tell him about light."
+msgid ""
+"Darlin seems to be waiting for you. You should tell him about the light."
 msgstr ""
 
 #: quests.xml:116(quest/text)
@@ -1138,14 +1173,35 @@ msgstr ""
 msgid "Rewards: 400GP, Old Book."
 msgstr ""
 
+#: quests.xml:123(quest/name) quests.xml:131(quest/name)
+msgid "Fish and Scams"
+msgstr ""
+
+#: quests.xml:124(quest/text)
+msgid ""
+"A sailor, who wasn't on Gugli's list, gave you his box full of food. He did "
+"not mention any reward, but he would like you to deliver this box to Gugli "
+"as soon as you can."
+msgstr ""
+
 #: quests.xml:126(quest/text)
 msgid "Coordinates: Desert Island. (85,108)"
 msgstr ""
 
-#: quests.xml:134(quest/text)
+#: quests.xml:132(quest/text)
+msgid "Couwan is an awful, roguish person. No reward from him!"
+msgstr ""
+
+#: quests.xml:133(quest/text)
+msgid ""
+"However, Gugli gave you some gold pieces and apologized for this unexpected "
+"task. He also warned you not to trust anyone."
+msgstr ""
+
+#: quests.xml:135(quest/text)
 msgid "Coordinates: Desert Island. (89,36)"
 msgstr ""
 
-#: quests.xml:136(quest/text)
+#: quests.xml:137(quest/text)
 msgid "Rewards: 50GP."
 msgstr ""
