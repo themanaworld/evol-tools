@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-09-16 17:25+0300\n"
+"POT-Creation-Date: 2012-09-23 22:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -461,7 +461,7 @@ msgstr ""
 msgid "A non-toxical mushroom growing in moist place."
 msgstr ""
 
-#: items.xml:184(items/item@effect)
+#: items.xml:184(items/item@effect) items.xml:288(items/item@effect)
 msgid "+25 HP"
 msgstr ""
 
@@ -567,224 +567,232 @@ msgid ""
 "the pages."
 msgstr ""
 
-#: items.xml:289(items/item@name)
+#: items.xml:288(items/item@name)
+msgid "Plushroom"
+msgstr ""
+
+#: items.xml:288(items/item@description)
+msgid "Need a description."
+msgstr ""
+
+#: items.xml:298(items/item@name)
 msgid "Small Tentacles"
 msgstr ""
 
-#: items.xml:289(items/item@description)
+#: items.xml:298(items/item@description)
 msgid "Three tentacles taken from a little blub."
 msgstr ""
 
-#: items.xml:296(items/item@name)
+#: items.xml:305(items/item@name)
 msgid "Piou Feathers"
 msgstr ""
 
-#: items.xml:296(items/item@description)
+#: items.xml:305(items/item@description)
 msgid "Three small yellow feathers. A piou might have dropped them."
 msgstr ""
 
-#: items.xml:304(items/item@name)
+#: items.xml:313(items/item@name)
 msgid "Tortuga Shell Fragment"
 msgstr ""
 
-#: items.xml:304(items/item@description)
+#: items.xml:313(items/item@description)
 msgid "A fragment of a tortuga shell."
 msgstr ""
 
-#: items.xml:312(items/item@name)
+#: items.xml:321(items/item@name)
 msgid "Half Eggshell"
 msgstr ""
 
-#: items.xml:312(items/item@description)
+#: items.xml:321(items/item@description)
 msgid "It maybe got broken in order to cook a fried egg."
 msgstr ""
 
-#: items.xml:319(items/item@name)
+#: items.xml:328(items/item@name)
 msgid "Ratto Tail"
 msgstr ""
 
-#: items.xml:319(items/item@description)
+#: items.xml:328(items/item@description)
 msgid "A very long tail from a ratto."
 msgstr ""
 
-#: items.xml:327(items/item@name)
+#: items.xml:336(items/item@name)
 msgid "Ratto Teeth"
 msgstr ""
 
-#: items.xml:327(items/item@description)
+#: items.xml:336(items/item@description)
 msgid "Some teeth of a ratto."
 msgstr ""
 
-#: items.xml:335(items/item@name)
+#: items.xml:344(items/item@name)
 msgid "Croc Claw"
 msgstr ""
 
-#: items.xml:335(items/item@description)
+#: items.xml:344(items/item@description)
 msgid "Could be tasty if well cooked."
 msgstr ""
 
-#: items.xml:343(items/item@name)
+#: items.xml:352(items/item@name)
 msgid "Squichy Claws"
 msgstr ""
 
-#: items.xml:343(items/item@description)
+#: items.xml:352(items/item@description)
 msgid "Claws from a wild squichy."
 msgstr ""
 
-#: items.xml:351(items/item@name)
+#: items.xml:360(items/item@name)
 msgid "Tortuga Shell"
 msgstr ""
 
-#: items.xml:351(items/item@description)
+#: items.xml:360(items/item@description)
 msgid "This shell comes from a tortuga."
 msgstr ""
 
-#: items.xml:358(items/item@name)
+#: items.xml:367(items/item@name)
 msgid "Tortuga Tongue"
 msgstr ""
 
-#: items.xml:358(items/item@description)
+#: items.xml:367(items/item@description)
 msgid "The tongue of a tortuga."
 msgstr ""
 
-#: items.xml:365(items/item@name)
+#: items.xml:374(items/item@name)
 msgid "Pearl"
 msgstr ""
 
-#: items.xml:365(items/item@description)
+#: items.xml:374(items/item@description)
 msgid "A perfectly round and shiny pearl."
 msgstr ""
 
-#: items.xml:372(items/item@name)
+#: items.xml:381(items/item@name)
 msgid "Coral"
 msgstr ""
 
-#: items.xml:372(items/item@description)
+#: items.xml:381(items/item@description)
 msgid "The kind of coral you can see in Oceania."
 msgstr ""
 
-#: items.xml:379(items/item@name)
+#: items.xml:388(items/item@name)
 msgid "Blue Coral"
 msgstr ""
 
-#: items.xml:379(items/item@description)
+#: items.xml:388(items/item@description)
 msgid "A coral dyed in blue by a blub."
 msgstr ""
 
-#: items.xml:387(items/item@name)
+#: items.xml:396(items/item@name)
 msgid "Fish Box"
 msgstr ""
 
-#: items.xml:387(items/item@description)
+#: items.xml:396(items/item@description)
 msgid "A wooden box full of fresh fish that Couwan gave you."
 msgstr ""
 
-#: items.xml:395(items/item@name)
+#: items.xml:404(items/item@name)
 msgid "Aquada Box"
 msgstr ""
 
-#: items.xml:395(items/item@description)
+#: items.xml:404(items/item@description)
 msgid "A wooden box full of aquadas."
 msgstr ""
 
-#: items.xml:403(items/item@name)
+#: items.xml:412(items/item@name)
 msgid "Croconut Box"
 msgstr ""
 
-#: items.xml:403(items/item@description)
+#: items.xml:412(items/item@description)
 msgid "A wooden box full of croconuts."
 msgstr ""
 
-#: items.xml:411(items/item@name)
+#: items.xml:420(items/item@name)
 msgid "Plushroom Box"
 msgstr ""
 
-#: items.xml:411(items/item@description)
+#: items.xml:420(items/item@description)
 msgid "A wooden box full of plushrooms."
 msgstr ""
 
-#: items.xml:433(items/item@name)
+#: items.xml:442(items/item@name)
 msgid "Worn Shirt"
 msgstr ""
 
-#: items.xml:433(items/item@description)
+#: items.xml:442(items/item@description)
 msgid "An old shirt given to you by a sailor."
 msgstr ""
 
-#: items.xml:433(items/item@effect) items.xml:500(items/item@effect)
+#: items.xml:442(items/item@effect) items.xml:509(items/item@effect)
 msgid "Defense +2"
 msgstr ""
 
-#: items.xml:446(items/item@name)
+#: items.xml:455(items/item@name)
 msgid "%Color% Sailor Tank Top"
 msgstr ""
 
-#: items.xml:446(items/item@description)
+#: items.xml:455(items/item@description)
 msgid "A %color% tank top used by sailors and seamen."
 msgstr ""
 
-#: items.xml:446(items/item@effect)
+#: items.xml:455(items/item@effect)
 msgid "Defense +3"
 msgstr ""
 
-#: items.xml:458(items/item@name)
+#: items.xml:467(items/item@name)
 msgid "Sailor Shirt"
 msgstr ""
 
-#: items.xml:458(items/item@description)
+#: items.xml:467(items/item@description)
 msgid "Proof that ye be in the crew, matey!"
 msgstr ""
 
-#: items.xml:458(items/item@effect)
+#: items.xml:467(items/item@effect)
 msgid "Defense +4"
 msgstr ""
 
-#: items.xml:472(items/item@name)
+#: items.xml:481(items/item@name)
 msgid "Lousy Moccasin"
 msgstr ""
 
-#: items.xml:472(items/item@description)
+#: items.xml:481(items/item@description)
 msgid "Orc-made moccasin. Not sure from which skin these boots were made."
 msgstr ""
 
-#: items.xml:472(items/item@effect) items.xml:486(items/item@effect)
-#: items.xml:542(items/item@effect)
+#: items.xml:481(items/item@effect) items.xml:495(items/item@effect)
+#: items.xml:551(items/item@effect)
 msgid "Defense +1"
 msgstr ""
 
-#: items.xml:486(items/item@name)
+#: items.xml:495(items/item@name)
 msgid "Armbands"
 msgstr ""
 
-#: items.xml:486(items/item@description)
+#: items.xml:495(items/item@description)
 msgid "Small armbands made of wood and iron."
 msgstr ""
 
-#: items.xml:500(items/item@name)
+#: items.xml:509(items/item@name)
 msgid "Worn Shorts"
 msgstr ""
 
-#: items.xml:500(items/item@description)
+#: items.xml:509(items/item@description)
 msgid "An old pair of shorts given to you by a sailor, they smell bad."
 msgstr ""
 
-#: items.xml:542(items/item@name)
+#: items.xml:551(items/item@name)
 msgid "Bandana"
 msgstr ""
 
-#: items.xml:542(items/item@description)
+#: items.xml:551(items/item@description)
 msgid "A striped bandana worn by some sailors."
 msgstr ""
 
-#: items.xml:580(items/item@name)
+#: items.xml:589(items/item@name)
 msgid "Knife"
 msgstr ""
 
-#: items.xml:580(items/item@description)
+#: items.xml:589(items/item@description)
 msgid "A simple, but sharp knife."
 msgstr ""
 
-#: items.xml:580(items/item@effect)
+#: items.xml:589(items/item@effect)
 msgid "Damage +10"
 msgstr ""
 
@@ -910,6 +918,10 @@ msgstr ""
 
 #: monsters.xml:92(monsters/monster@name)
 msgid "Croco Tree"
+msgstr ""
+
+#: monsters.xml:99(monsters/monster@name)
+msgid "Plushroom Field"
 msgstr ""
 
 #: quests.xml:7(quest/name)
