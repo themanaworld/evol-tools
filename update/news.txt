@@ -1,11 +1,37 @@
-##9 Latest client version:  ##6ManaPlus 1.2.11.25
-##0 Actual Release:##1 Beta1
-##0 Welcome in ##BEvol Online##b!
-##0 You can find every ##1rules##0 of ##BEvol Online##b 
-##0 at ##1http://www.evolonline.org/guide_rules.html
+##9 Latest client version: ##6ManaPlus 1.2.11.25
+##0 Actual Release: ##1Beta1
+##0 Welcome to ##BEvol Online##b!
+##0 You can find every ##1rules##0 of ##BEvol Online##b here:
+##1 http://www.evolonline.org/guide_rules.html
 
 
 ##7 ##BThe adventure begins!##b
+
+
+##7 What a scary... I mean... weird development team!
+
+##0 Hey, why did the ship stop?! Was that under Nard's orders? Lets find
+##0 out! Oh no, giant pumpkins overran all of the boat! It seems you must
+##0 get ready for battle. You can sense something very powerful and evil
+##0 at the far bottom of the ship. You should check it out. Maybe Bachus,
+##0 the party spirit, could help you throughout this. We hope you'll
+##0 enjoy this Halloween event.
+
+##0 Once again, Evol Online developers are in a rush. Beta2 takes a whole
+##0 lot longer than they thought but this is of course to avoid any kind
+##0 of issue. Again, a numerous amount of bugs were fixed and scripts
+##0 were mostly all rewritten for a better game experience.
+
+##0 As a lot of dialogues were added and improved for Beta2, translations
+##0 are needed more than ever. Even though some developers also work on
+##0 translations, they cannot afford working on all of them.
+
+##0 If you feel like you can help developers in any way, especially for
+##0 translations if you speak english fluently, feel free to contact them
+##0 using Evol Online's IRC developer channel.
+
+##9 -- Regards, Alige.
+##9 November 2012
 
 
 ##7 End of summer, beginning of Beta2!
