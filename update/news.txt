@@ -3,241 +3,242 @@
 ##0 Welcome to ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b here:
 ##1 http://www.evolonline.org/guide_rules.html
-
-
+ 
+ 
 ##7 ##BThe adventure begins!##b
-
-
+ 
+ 
 ##7 What a scary... I mean... weird development team!
-
-##0 Hey, why did the ship stop?! Was that under Nard's orders? Lets find
-##0 out! Oh no, giant pumpkins overran all of the boat! It seems you must
-##0 get ready for battle. You can sense something very powerful and evil
-##0 at the far bottom of the ship. You should check it out. Maybe Bachus,
-##0 the party spirit, could help you throughout this. We hope you'll
-##0 enjoy this Halloween event.
-
-##0 Once again, Evol Online developers are in a rush. Beta2 takes a whole
-##0 lot longer than they thought but this is of course to avoid any kind
-##0 of issue. Again, a numerous amount of bugs were fixed and scripts
-##0 were mostly all rewritten for a better game experience.
-
-##0 As a lot of dialogues were added and improved for Beta2, translations
-##0 are needed more than ever. Even though some developers also work on
-##0 translations, they cannot afford working on all of them.
-
+ 
+##0 Hey, why did the ship stop?! Was that under Nard's orders? Lets
+##0 find out! Oh no, giant pumpkins overran all of the boat! It seems
+##0 you must get ready for battle. You can sense something very
+##0 powerful and evil at the far bottom of the ship. You should check
+##0 it out. Maybe Bachus, the party spirit, could help you throughout
+##0 this. We hope you'll enjoy this Halloween event.
+ 
+##0 Once again, Evol Online developers are in a rush. Beta2 takes a
+##0 whole lot longer than they thought but this is of course to avoid
+##0 any kind of issue. Again, a numerous amount of bugs were fixed and
+##0 scripts were mostly all rewritten for a better game experience.
+ 
+##0 As a lot of dialogues were added and improved for Beta2,
+##0 translations are needed more than ever. Even though some developers
+##0 also work on these, they cannot afford working on all of them.
+ 
 ##0 If you feel like you can help developers in any way, especially for
-##0 translations if you speak english fluently, feel free to contact them
-##0 using Evol Online's IRC developer channel.
-
+##0 translations if you speak english fluently, feel free to contact
+##0 them using Evol Online's IRC developer channel.
+ 
 ##9 -- Regards, Alige.
 ##9 November 2012
-
-
+ 
+ 
 ##7 End of summer, beginning of Beta2!
-
+ 
 ##0 Summer holidays are now over for the Evol Online developers. We are
 ##0 proud to announce the arrival of Beta2 soon, even though we
 ##0 unfortunately find ourselves currently behind schedule.
-
+ 
 ##0 However, a lot of efforts were made to create a lot of new content
 ##0 and great new tilesets which took for ever to create and fix.
 ##0 We are currently fixing bugs and preparing the release. Final
 ##0 modifications are being made to give you the best release ever made
 ##0 for this project.
-
+ 
 ##0 Among the new features is a Quest Window that has been added to the
 ##0 client. It will help you see your progress in game.
-
+ 
 ##0 When the Beta2 release will be out, we would like you to promote it
 ##0 by simply spreading the word around you. Players will then be aware
 ##0 of the news and this may help us expand our community.
-
-##0 As you already now, new contributors are always welcome! Translators,
-##0 artists and even writers are free to contact us for more information.
-
+ 
+##0 As you already now, new contributors are always welcome!
+##0 Translators, artists and even writers are free to contact us for
+##0  more information.
+  
 ##9 -- Regards, Alige.
 ##9 August 2012
-
-
+ 
+ 
 ##0 Once more, a lot of work has been done, recently on the consistency
 ##0 and quality of the game. A lot of new graphics will be part of the
 ##0 next release, Beta2. Interactivity between the player and the game
 ##0 was our main goal the past weeks.
-
+ 
 ##0 This new dynamic and gaming experience will be revealed throughout
-##0 animations full of mysteries. Treasure chests, coconuts and new NPCs
+##0 animations full of mysteries. Treasure chests, coconuts and new
 ##0 have appeared on a brand new map!
-
-##0 The work on the translations, the repositorie reorganizations and
+ 
+##0 The work on the translations, the repository reorganizations and
 ##0 on top of all, the client, were one of our main concerns lately.
 ##0 The developers still need a bit of time in order to finish this
 ##0 release, thus we thank you for waiting.
-
+ 
 ##9 -- Regards, Alige.
 ##9 July 2012
-
-
+ 
+ 
 ##7 Summer holidays for Evol Online!
-
+ 
 ##0 Once more, a lot of work has been done, recently on the consistency
 ##0 and quality of the game. A lot of new graphics will be part of the
 ##0 next release, Beta2. Interactivity between the player and the game
 ##0 was our main goal the past weeks.
-
+ 
 ##0 This new dynamic and gaming experience will be revealed throughout
-##0 animations full of mysteries. Treasure chests, coconuts and new NPCs
-##0 have appeared on a brand new map!
-
+##0 animations full of mysteries. Treasure chests, coconuts and new
+##0 NPCs have appeared on a brand new map!
+ 
 ##0 The work on the translations, the repositorie reorganizations and
 ##0 on top of all, the client, were one of our main concerns lately.
 ##0 The developers still need a bit of time in order to finish this
 ##0 release, thus we thank you for waiting.
-
+ 
 ##9 -- Regards, Alige.
 ##9 June 2012
-
-
+ 
+ 
 ##7 A contantly evolving Beta!
-
+ 
 ##0 Good news, most of the needed work for the Beta2 has been finished.
 ##0 However, there are still some language tasks left, and we need
 ##0 your help for this!
-
+ 
 ##0 The game rules were added on the Beta2, the no-law world reached to
 ##0 its end! You can review a copy of these rules on our site.
-
+ 
 ##0 A development pause will be made between the Beta session and the
 ##0 Aurora release. This break will be done in order to rethink most of
 ##0 our future guidelines.
-
+ 
 ##0 We will notify you of the release date in the next news. It should
 ##0 technically be one week before the release itself.
-
+ 
 ##9 -- Cheers, Reid.
 ##9 May 2012
-
-
+ 
+ 
 ##7 Guidelines for future releases have been established!
-
+ 
 ##0 As you may know, ##BEvol Online##b has seen multiple development
-##0 stages during the past years. It is now the time to look forward and
-##0 to establish the bases of our future development roadmaps.
-
+##0 stages during the past years. It is now the time to look forward
+##0 and to establish the bases of our future development roadmaps.
+ 
 ##0 At the end of the third and last Beta release, we will switch
 ##0 to a new style of development. It will be formed of two types
 ##0 of releases.
-
-##0 The first, called ##BAurora##b, will continue the selected story and
-##0 will be the main quest line. ##BSkylandia##b will be the second type.
-##0 It will be composed of some side-quests from the Aurora releases, as
-##0 well as revealing some secrets of the ##BAemil##b world.
-
+ 
+##0 The first, called ##BAurora##b, will continue the selected story
+##0 and will be the main quest line. ##BSkylandia##b will be the second
+##0 type. It will be composed of some side-quests from the Aurora
+##0 releases, as well as revealing the secrets of ##BAemil##b.
+ 
 ##0 A last development release has been prepared, the ##BMercurian##b
-##0 one. This type is currently hidden and nothing will be spoiled as it
-##0 will end the game story.
+##0 one. This type is currently hidden and nothing will be spoiled as
+##0 it will end the game story.
 ##0 So be patient!
-
+ 
 ##9 -- Cheers, Reid.
 ##9 April 2012
-
-
+ 
+ 
 ##7 Land Ahoy!
-
+ 
 ##0 Almost two months have passed since we began redesigning our
 ##0 content and concept base. One of the changes was made for the 
-##0 mascot, the Pious, which will now be renamed to Piou.
-
+##0 mascot, the Pious, which will now be renamed to 'Piou'.
+ 
 ##0 We still need few weeks before being done with the graphic part.
 ##0 But we started to concept the Level Design (including new quests,
 ##0 dialogues, maps). Most of this should be done in May, so be
 ##0 ready to the next episode for this month!
-
+ 
 ##0 Here are some important links, if you wish to take part in the
 ##0 development or if you just wish to talk with us.
-
+ 
 Contributors list: http://wiki.evolonline.org/contributors
 Translation tuto:  http://wiki.evolonline.org/translation
 Beta2 roadmap:     http://wiki.evolonline.org/beta2
 News section:      http://evolonline.org/news.html
 Art Development:   http://evolonline.deviantart.com
 IRC webchat:       http://evolonline.org/chat 
-
+ 
 ##9 -- Cheers, Reid.
 ##9 March 2012
-
-
+ 
+ 
 ##7 On the way for the Beta2!
-
+ 
 ##0 The Evol Online Developers and Contributors, woud like to thank
 ##0 the numerous Beta testers who played Evol over the last three
 ##0 weeks. So far, we have reached ##B450##b testers.
-
+ 
 ##0 As you all have been waiting for news about the Beta2, here it is.
 ##0 The door to the outside will be unlocked, there will be new
 ##0 monsters, items, quests and a brand new map!
 ##0 The second Beta release will focus in establishing the future
 ##0 style of our gameplay.
-
+ 
 ##9 -- Cheers, Reid.
 ##9 February 2012
-
-
+ 
+ 
 ##7 Season 1, Episode 1!
-
+ 
 ##0 After a mysterious past, you find yourself adrift on the waves in
 ##0 the middle of Oceania. A noble-minded crew, sails by your body
 ##0 decides to rescue and take care of you. 
-
+ 
 ##0 You now wake up about seven days later in their wooden ship.
 ##0 Take some time to know the crew who saved you and try to
 ##0 discover what happened to you before this terrible event!
-
+ 
 ##9 -- Cheers, Reid.
 ##9 January 2012
-
-
+ 
+ 
 ##7 Evol Online Beta releases!
-
+ 
 ##0 After several months of work, the world of ##BEvol Online##b is
 ##0 finally opened to everyone for its first Beta release!
-
+ 
 ##0 This Beta will be the first among two other ones which will help
 ##0 the developers finding out the qualities and problems of the
 ##0 chosen gameplay.
-
+ 
 ##0 We welcome you to give us your thoughts about this, but we also
 ##0 hope you will have fun being part of this amazing adventure.
-
+ 
 ##0 We also need to warn you that at the end of the third release,
 ##0 all characters will be wiped out as we are trying to have a
 ##0 perfect balance for this game and start it over with it.
 ##0 We kindly ask you to accept this.
-
+ 
 ##9 -- Cheers, Reid.
 ##9 January 2012
-
-
+ 
+ 
 ##7 Merry Christmas!
-
+ 
 ##0 On this Christmas morning, the Evol Online team is of course here
 ##0 to wish you all a merry Christmas and to announce that the first
 ##0 Beta release of ##BEvol Online##b will soon be available!
-
+ 
 ##0 No, this is not a dream! After more than a year of work and through
 ##0 good and bad times, the team finally decided to release the first
 ##0 Beta release.
-
+ 
 ##0 Over one year has passed and we have been working on the in-game
 ##0 design and in a new technology for our server and client. The
 ##0 time has come to reveal it to the world!
-
+ 
 ##0 We, the ##BEvol Online##b developers, hope to get as many Beta
 ##0 testers as we can in order to get as many different views as
 ##0 possible.
-
+ 
 ##0 We sincerely thank you for your patience and for sharing the same
 ##0 dream we have in common.
-
+ 
 ##9 -- Cheers, Reid.
 ##9 December 2011
