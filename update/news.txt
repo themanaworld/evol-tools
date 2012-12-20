@@ -8,6 +8,41 @@
 ##7 ##BThe adventure begins!##b
  
  
+##9 Latest client version: ##6ManaPlus 1.2.11.25
+##0 Actual Release: ##1Beta1
+##0 Welcome to ##BEvol Online##b!
+##0 You can find every ##1rules##0 of ##BEvol Online##b here:
+##1 http://www.evolonline.org/guide_rules.html
+ 
+ 
+##7 ##BThe adventure begins!##b
+ 
+ 
+##7 Season 1, Episode 2!
+ 
+##0 After over 10 months of intense work, here is the new version of
+##0 Evol Online! A whole new dynamic has been added to the game,
+##0 everything has been rewritten, rethought and redrew.
+##0 We are proud to present you this Beta2 release!
+ 
+##0 Along with the story comes new game and client features, and new
+##0 interactions with the environment. This is in fact an entirely new
+##0 gaming experience.
+ 
+##0 Developers modified the whole game and here are some major
+##0 additions: savepoints, quest window, maps, graphics, etc...
+ 
+##0 You can check the full list of changes at
+##0 http://wiki.evolonline.org/changelog
+##0 And all of the new contributors at
+##0 http://wiki.evolonline.org/contributors
+ 
+##0 Enough said, check out everything by yourself!
+ 
+##9 -- Regards, Alige.
+##9 December 2012
+ 
+ 
 ##7 What a scary... I mean... weird development team!
  
 ##0 Hey, why did the ship stop?! Was that under Nard's orders? Lets
