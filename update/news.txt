@@ -8,9 +8,6 @@
 ##7 ##BThe adventure begins!##b
  
  
-##7 ##BThe adventure begins!##b
- 
- 
 ##7 Season 1, Episode 2!
  
 ##0 After over 10 months of intense work, here is the new version of
