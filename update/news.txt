@@ -1,18 +1,11 @@
-##9 Latest client version: ##6ManaPlus 1.2.12.9
-##0 Actual Release: ##1Beta1
+##9 Latest client version: ##6ManaPlus 1.2.12.23
+##0 Actual Release: ##1Beta2
 ##0 Welcome to ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b here:
-##1 http://www.evolonline.org/guide_rules.html
+##1 [@@http://www.evolonline.org/guide_rules.html|http://www.evolonline.org/guide_rules.html@@]
  
  
 ##7 ##BThe adventure begins!##b
- 
- 
-##9 Latest client version: ##6ManaPlus 1.2.11.25
-##0 Actual Release: ##1Beta1
-##0 Welcome to ##BEvol Online##b!
-##0 You can find every ##1rules##0 of ##BEvol Online##b here:
-##1 http://www.evolonline.org/guide_rules.html
  
  
 ##7 ##BThe adventure begins!##b
