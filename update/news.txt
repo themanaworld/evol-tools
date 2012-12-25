@@ -138,5 +138,7 @@
 ##9 -- Cheers, Reid.
 ##9 January 2012
  
-You can check out this page for older news entries:
-http://wiki.evolonline.org/news
+##0 You can check out this page for older news entries:
+##1 [@@http://wiki.evolonline.org/news|http://wiki.evolonline.org/news@@]
+
+
