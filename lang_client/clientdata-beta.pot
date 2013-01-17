@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-12-22 16:57+0300\n"
+"POT-Creation-Date: 2013-01-18 01:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -397,7 +397,7 @@ msgstr ""
 msgid "Home-made bread."
 msgstr ""
 
-#: items.xml:176(items/item@effect) items.xml:238(items/item@effect)
+#: items.xml:176(items/item@effect)
 msgid "+30 HP"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgid "+10 HP"
 msgstr ""
 
 #: items.xml:211(items/item@name)
-msgid "Lettuce"
+msgid "Lettuce Leaf"
 msgstr ""
 
 #: items.xml:211(items/item@description)
@@ -477,6 +477,10 @@ msgstr ""
 msgid "A strange sea fruit. The blue part seems edible."
 msgstr ""
 
+#: items.xml:238(items/item@effect)
+msgid "+60 HP"
+msgstr ""
+
 #: items.xml:247(items/item@name)
 msgid "Pink Blobime"
 msgstr ""
@@ -485,8 +489,8 @@ msgstr ""
 msgid "Some pink residue dropped by a little blub."
 msgstr ""
 
-#: items.xml:247(items/item@effect) items.xml:295(items/item@effect)
-msgid "+1 HP / Headache"
+#: items.xml:247(items/item@effect)
+msgid "+4 HP / Headache"
 msgstr ""
 
 #: items.xml:264(items/item@name)
@@ -530,6 +534,10 @@ msgstr ""
 
 #: items.xml:295(items/item@description)
 msgid "Doesn't seem very appetizing..."
+msgstr ""
+
+#: items.xml:295(items/item@effect)
+msgid "+1 HP / Headache"
 msgstr ""
 
 #: items.xml:305(items/item@name)
@@ -791,41 +799,41 @@ msgstr ""
 msgid "A carved pumpkin, the face will scare your enemy off."
 msgstr ""
 
-#: items.xml:650(items/item@name)
+#: items.xml:628(items/item@name)
 msgid "Fancy Hat"
 msgstr ""
 
-#: items.xml:650(items/item@description)
+#: items.xml:628(items/item@description)
 msgid "A fancy hat, what else?"
 msgstr ""
 
-#: items.xml:650(items/item@effect)
+#: items.xml:628(items/item@effect)
 msgid "+1 Defense"
 msgstr ""
 
-#: items.xml:683(items/item@name)
+#: items.xml:661(items/item@name)
 msgid "Knife"
 msgstr ""
 
-#: items.xml:683(items/item@description)
+#: items.xml:661(items/item@description)
 msgid "A simple, but sharp knife."
 msgstr ""
 
-#: items.xml:683(items/item@effect)
+#: items.xml:661(items/item@effect)
 msgid "+5 Damage"
 msgstr ""
 
-#: items.xml:698(items/item@name)
+#: items.xml:676(items/item@name)
 msgid "Piou Slayer"
 msgstr ""
 
-#: items.xml:698(items/item@description)
+#: items.xml:676(items/item@description)
 msgid ""
 "A short sword for novice fighters, more useful in the kitchen than in a real "
 "fight..."
 msgstr ""
 
-#: items.xml:698(items/item@effect)
+#: items.xml:676(items/item@effect)
 msgid "+13 Damage"
 msgstr ""
 
@@ -921,35 +929,35 @@ msgstr ""
 msgid "Crying"
 msgstr ""
 
-#: monsters.xml:31(monsters/monster@name)
+#: monsters.xml:23(monsters/monster@name)
 msgid "Piou"
 msgstr ""
 
-#: monsters.xml:40(monsters/monster@name)
+#: monsters.xml:32(monsters/monster@name)
 msgid "Piousse"
 msgstr ""
 
-#: monsters.xml:50(monsters/monster@name)
+#: monsters.xml:42(monsters/monster@name)
 msgid "Tortuga"
 msgstr ""
 
-#: monsters.xml:59(monsters/monster@name)
+#: monsters.xml:51(monsters/monster@name)
 msgid "Ratto"
 msgstr ""
 
-#: monsters.xml:68(monsters/monster@name)
+#: monsters.xml:60(monsters/monster@name)
 msgid "Croc"
 msgstr ""
 
-#: monsters.xml:78(monsters/monster@name)
+#: monsters.xml:70(monsters/monster@name)
 msgid "Little Blub"
 msgstr ""
 
-#: monsters.xml:94(monsters/monster@name)
+#: monsters.xml:86(monsters/monster@name)
 msgid "Crocotree"
 msgstr ""
 
-#: monsters.xml:101(monsters/monster@name)
+#: monsters.xml:93(monsters/monster@name)
 msgid "Plushroom Field"
 msgstr ""
 
@@ -1104,17 +1112,16 @@ msgid ""
 msgstr ""
 
 #: quests.xml:60(quest/text) quests.xml:139(quest/text)
-#: quests.xml:148(quest/text) quests.xml:159(quest/text)
-#: quests.xml:169(quest/text) quests.xml:181(quest/text)
-#: quests.xml:188(quest/text) quests.xml:197(quest/text)
-#: quests.xml:206(quest/text) quests.xml:215(quest/text)
-#: quests.xml:223(quest/text) quests.xml:231(quest/text)
-#: quests.xml:239(quest/text)
+#: quests.xml:151(quest/text) quests.xml:161(quest/text)
+#: quests.xml:173(quest/text) quests.xml:180(quest/text)
+#: quests.xml:189(quest/text) quests.xml:201(quest/text)
+#: quests.xml:209(quest/text) quests.xml:217(quest/text)
+#: quests.xml:225(quest/text) quests.xml:233(quest/text)
 msgid "Difficulty: ✩✩✩✩✩✩"
 msgstr ""
 
 #: quests.xml:61(quest/text)
-msgid "Reward: A handful of Piberries."
+msgid "Reward: A handful of [@@507|Piberries@@]."
 msgstr ""
 
 #: quests.xml:66(quest/name) quests.xml:73(quest/name)
@@ -1147,7 +1154,7 @@ msgid "Difficulty: ✭✩✩✩✩✩"
 msgstr ""
 
 #: quests.xml:78(quest/text)
-msgid "Rewards: 500 GP, 100 EXP."
+msgid "Rewards: 200 GP, 100 EXP."
 msgstr ""
 
 #: quests.xml:81(quest/name) quests.xml:90(quest/name)
@@ -1192,9 +1199,8 @@ msgid "Coordinates: La Johanne, Nard's Room. (25,26)"
 msgstr ""
 
 #: quests.xml:104(quest/text) quests.xml:113(quest/text)
-#: quests.xml:140(quest/text) quests.xml:160(quest/text)
-#: quests.xml:198(quest/text) quests.xml:207(quest/text)
-#: quests.xml:216(quest/text)
+#: quests.xml:152(quest/text) quests.xml:190(quest/text)
+#: quests.xml:202(quest/text)
 msgid "Reward: Unknown."
 msgstr ""
 
@@ -1219,173 +1225,173 @@ msgid "Coordinates: La Johanne, Nard's Room. (25,24)"
 msgstr ""
 
 #: quests.xml:121(quest/text) quests.xml:129(quest/text)
-msgid "Reward: A sailor bandana."
+msgid "Reward: [@@2900|Bandana@@]."
 msgstr ""
 
 #: quests.xml:125(quest/text)
 msgid "Nard has officially proclaimed you member of his crew!"
 msgstr ""
 
-#: quests.xml:134(quest/name) quests.xml:143(quest/name)
+#: quests.xml:134(quest/name)
 msgid "Treasure's Glints"
 msgstr ""
 
 #: quests.xml:135(quest/text)
 msgid ""
-"A weird light reflection annoys Darlin. He asked you to go and check what it "
-"could possibly be."
+"You have spotted a treasure chest on the top of a cliff in the west side of "
+"the island."
 msgstr ""
 
 #: quests.xml:136(quest/text)
-msgid ""
-"The light comes from the top of a cliff, west of the island. A road seems to "
-"go there."
+msgid "The chest contains gold and an [@@514|Old Book@@]."
 msgstr ""
 
 #: quests.xml:138(quest/text)
 msgid "Coordinates: Desert Island. (83,70)"
 msgstr ""
 
-#: quests.xml:144(quest/text)
-msgid ""
-"The sailor was right. The light was the glint of the sun on a treasure chest."
+#: quests.xml:140(quest/text)
+msgid "Rewards: 100 GP, [@@514|Old Book@@]"
 msgstr ""
 
-#: quests.xml:145(quest/text)
-msgid ""
-"Darlin seems to be waiting for you. You should tell him about the light."
-msgstr ""
-
-#: quests.xml:147(quest/text)
-msgid "Coordinates: Desert Island. (90,89)"
-msgstr ""
-
-#: quests.xml:149(quest/text)
-msgid "Rewards: 100 GP, Old Book, Aquada, SeaDrops."
-msgstr ""
-
-#: quests.xml:154(quest/name) quests.xml:163(quest/name)
+#: quests.xml:146(quest/name) quests.xml:155(quest/name)
 msgid "Fish and Scams"
 msgstr ""
 
-#: quests.xml:155(quest/text)
+#: quests.xml:147(quest/text)
 msgid "A sailor, who wasn't on Gugli's list, gave you his box full of food."
 msgstr ""
 
-#: quests.xml:156(quest/text)
+#: quests.xml:148(quest/text)
 msgid ""
 "He did not mention any reward, but he would like you to deliver this box to "
 "Gugli as soon as you can."
 msgstr ""
 
-#: quests.xml:158(quest/text) quests.xml:180(quest/text)
-#: quests.xml:187(quest/text)
+#: quests.xml:150(quest/text) quests.xml:172(quest/text)
+#: quests.xml:179(quest/text)
 msgid "Coordinates: Desert Island. (85,108)"
 msgstr ""
 
-#: quests.xml:164(quest/text)
+#: quests.xml:156(quest/text)
 msgid "Couwan is an awful, roguish person. No reward from him!"
 msgstr ""
 
-#: quests.xml:165(quest/text)
+#: quests.xml:157(quest/text)
 msgid ""
 "However, Gugli gave you some gold pieces and apologized for this unexpected "
 "task."
 msgstr ""
 
-#: quests.xml:166(quest/text)
+#: quests.xml:158(quest/text)
 msgid "He also warned you not to trust anyone."
 msgstr ""
 
-#: quests.xml:168(quest/text)
+#: quests.xml:160(quest/text)
 msgid "Coordinates: Desert Island. (89,36)"
 msgstr ""
 
-#: quests.xml:170(quest/text)
+#: quests.xml:162(quest/text)
 msgid "Reward: 10 GP."
 msgstr ""
 
-#: quests.xml:175(quest/name) quests.xml:184(quest/name)
+#: quests.xml:167(quest/name) quests.xml:176(quest/name)
 msgid "Unexpected Help"
 msgstr ""
 
-#: quests.xml:176(quest/text)
+#: quests.xml:168(quest/text)
 msgid ""
 "Gugli told you about sailors' task on the island. He wants you to help some "
-"of them bringing him 6 boxes full of croconuts, aquadas and plushrooms."
+"of them bringing him 6 boxes full of [@@513|Croconuts@@], [@@714|Aquadas@@] "
+"and [@@515|Plushrooms@@]."
 msgstr ""
 
-#: quests.xml:177(quest/text)
+#: quests.xml:169(quest/text)
 msgid ""
 "You need to collect the boxes from Tibbo, Gulukan, Q'Muller, Astapolos, "
 "Jalad and Ale."
 msgstr ""
 
-#: quests.xml:178(quest/text)
+#: quests.xml:170(quest/text)
 msgid ""
 "Max, Silvio and Lean may have some information about where to find these "
 "sailors."
 msgstr ""
 
-#: quests.xml:185(quest/text)
+#: quests.xml:177(quest/text)
 msgid ""
 "You completed all the tasks Gugli gave you. Sailors of this ship will never "
 "forget you!"
 msgstr ""
 
-#: quests.xml:193(quest/name) quests.xml:201(quest/name)
-#: quests.xml:210(quest/name) quests.xml:219(quest/name)
-#: quests.xml:227(quest/name) quests.xml:235(quest/name)
-msgid "A Poisoned Recipe"
+#: quests.xml:185(quest/name) quests.xml:193(quest/name)
+#: quests.xml:205(quest/name) quests.xml:213(quest/name)
+#: quests.xml:221(quest/name) quests.xml:229(quest/name)
+msgid "Two Lieutenants in One Boat"
 msgstr ""
 
-#: quests.xml:194(quest/text)
+#: quests.xml:186(quest/text)
 msgid ""
-"Chef Gado wants you to collect 2 Piou Legs, 1 Croconut, 1 Aquada and 1 "
-"SeaDrops to prepare a special dish, a poisoned one, for Julia."
+"Chef Gado wants you to collect 2 [@@505|Piou Legs@@], 2 [@@512|Half "
+"Croconut@@], 1 [@@714|Aquada@@] and 1 [@@508|Sea Drops@@] to prepare a "
+"special mean, a [@@717|Poisoned Dish@@], for Julia."
 msgstr ""
 
-#: quests.xml:196(quest/text) quests.xml:205(quest/text)
-#: quests.xml:214(quest/text) quests.xml:222(quest/text)
-#: quests.xml:230(quest/text) quests.xml:238(quest/text)
+#: quests.xml:188(quest/text) quests.xml:200(quest/text)
+#: quests.xml:208(quest/text) quests.xml:216(quest/text)
+#: quests.xml:224(quest/text) quests.xml:232(quest/text)
 msgid "Coordinates: La Johanne, Second Deck. (17,28)"
 msgstr ""
 
-#: quests.xml:202(quest/text)
-msgid "Chef Gado has prepared the poisoned meal for Julia."
+#: quests.xml:194(quest/text)
+msgid "Chef Gado has prepared [@@717|Poisoned Dish@@] for Julia."
 msgstr ""
 
-#: quests.xml:203(quest/text)
+#: quests.xml:195(quest/text)
 msgid "He would like you to give her his special dish."
 msgstr ""
 
-#: quests.xml:211(quest/text)
+#: quests.xml:197(quest/text)
 msgid ""
 "While Chef Gado wants you to poison Julia, you remember she looked after you "
 "when you were sick."
 msgstr ""
 
-#: quests.xml:212(quest/text)
-msgid "At the end of the day she doesn't deserve to be punished."
+#: quests.xml:198(quest/text)
+msgid "She doesn't deserve to be punished, or does she?"
 msgstr ""
 
-#: quests.xml:220(quest/text)
+#: quests.xml:206(quest/text)
 msgid "Go back and talk to Gado. He probably has a reward for you."
 msgstr ""
 
-#: quests.xml:224(quest/text) quests.xml:232(quest/text)
-msgid "Rewards: Bread, 60 GP."
+#: quests.xml:210(quest/text)
+msgid "Rewards: Unknown."
 msgstr ""
 
-#: quests.xml:228(quest/text)
+#: quests.xml:214(quest/text)
 msgid ""
 "You have successfully poisoned Julia. Chef Gado has finally been avenged!"
 msgstr ""
 
-#: quests.xml:236(quest/text)
+#: quests.xml:218(quest/text)
+msgid "Rewards: [@@502|Bread@@], 60 GP."
+msgstr ""
+
+#: quests.xml:222(quest/text)
 msgid "You have refused to accomplish Chef Gado's evil plan. Julia is safe!"
 msgstr ""
 
-#: quests.xml:240(quest/text)
+#: quests.xml:226(quest/text)
 msgid "Reward: 50 GP."
+msgstr ""
+
+#: quests.xml:230(quest/text)
+msgid ""
+"You preferred to trust Julia, she deserves to be the lieutenant of the ship "
+"after all!"
+msgstr ""
+
+#: quests.xml:234(quest/text)
+msgid "Reward: 40 GP."
 msgstr ""
