@@ -1,7 +1,7 @@
 #! /usr/bin/env python2.6
 # -*- coding: utf8 -*-
 #
-# Copyright (C) 2010-2011  Evol Online
+# Copyright (C) 2010-2013  Evol Online
 # Author: Andrei Karas (4144)
 
 import os
@@ -14,7 +14,7 @@ filt = re.compile(".+[.]txt", re.IGNORECASE)
 allStrings = set()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
 strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
-strre2 =  re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+),")
+strre2 = re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+)(,|;)")
 strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"]")
 strre5 = re.compile("[\t +(]getitemname[(][\"](?P<str>[^\"]+)[\"][)]")
 strre6 = re.compile("[\t ]mesn[ ][\"](?P<str>[^\"]+)[\"]")
@@ -165,9 +165,12 @@ def addMissingLines():
 	for str in allStrings:
 		for trans in langFiles:
 			newFile = langFiles[trans][0]
+			oldFile = oldLangFiles[trans][0]
 			if str not in newFile:
 				if trans == defaultLang:
 					newFile[str] = str
+				elif str in oldFile:
+					newFile[str] = oldFile[str]
 				else:
 					newFile[str] = ""
 				print trans + ":new string: " + str
