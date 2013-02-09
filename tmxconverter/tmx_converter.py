@@ -111,6 +111,7 @@ class ContentHandler(xml.sax.ContentHandler):
         'name',     # name property of the current map
         'object',   # stores properties of the latest <object> tag
         'mob_ids',  # set of all mob types that spawn here
+        'collision_fgid', # first gid in collision tileset
     )
     def __init__(self, out, npc_dir, mobs, warps, imports):
         xml.sax.ContentHandler.__init__(self)
@@ -130,6 +131,7 @@ class ContentHandler(xml.sax.ContentHandler):
         self.imports = imports
         self.object = None
         self.mob_ids = set()
+        self.collision_fgid = 0
 
     def setDocumentLocator(self, loc):
         self.locator = loc
@@ -162,6 +164,8 @@ class ContentHandler(xml.sax.ContentHandler):
 
             if name == u'tileset':
                 self.tilesets.add(int(attr[u'firstgid']))
+                if attr.get(u'name','').lower().startswith(u'collision'):
+                    self.collision_fgid = int(attr[u'firstgid'])
 
             if name == u'layer' and attr[u'name'].lower().startswith(u'collision'):
                 self.width = int(attr[u'width'])
@@ -169,6 +173,8 @@ class ContentHandler(xml.sax.ContentHandler):
                 self.out.write(struct.pack('<HH', self.width, self.height))
                 self.state = State.LAYER
         elif self.state is State.LAYER:
+            if name == u'layer':
+                self.collision_lgid = int(attr[u'firstgid'])-1
             if name == u'data':
                 if attr.get(u'encoding','') not in (u'', u'csv', u'base64', u'xml'):
                     print('Bad encoding:', attr.get(u'encoding',''))
@@ -180,9 +186,16 @@ class ContentHandler(xml.sax.ContentHandler):
                 self.compression = attr.get(u'compression','')
                 self.state = State.DATA
         elif self.state is State.DATA:
-            self.out.write(chr(int(attr.get(u'gid',0)) not in self.tilesets))
+            if name == u'tile':
+                gid = int(attr.get(u'gid'))
+                if gid <> 0:
+                    self.out.write(chr(int(attr.get(u'gid',0)) - self.collision_fgid))
+                else:
+                    self.out.write(chr(0))
         elif self.state is State.FINAL:
             if name == u'object':
+                if attr.get(u'type') == None:
+                    return
                 obj_type = attr[u'type'].lower()
                 x = int(attr[u'x']) / TILESIZE;
                 y = int(attr[u'y']) / TILESIZE;
@@ -240,6 +253,8 @@ class ContentHandler(xml.sax.ContentHandler):
         if name == u'object':
             obj = self.object
             if isinstance(obj, Mob):
+                if not hasattr(obj, u'max_beings') or not hasattr(obj, u'ea_spawn') or not hasattr(obj, u'ea_death'):
+                    return
                 mob_id = obj.monster_id
                 if mob_id < 1000:
                     mob_id += 1002
@@ -253,6 +268,8 @@ class ContentHandler(xml.sax.ContentHandler):
                     ])
                 )
             elif isinstance(obj, Warp):
+                if not hasattr(obj, u'dest_map') or not hasattr(obj, u'dest_x') or not hasattr(obj, u'dest_y'):
+                    return
                 self.warps.write(
                     SEPARATOR.join([
                         '%s.gat,%d,%d' % (self.base, obj.x, obj.y),
@@ -266,7 +283,10 @@ class ContentHandler(xml.sax.ContentHandler):
             if self.state is State.DATA:
                 if self.encoding == u'csv':
                     for x in self.buffer.split(','):
-                        self.out.write(chr(int(x) not in self.tilesets))
+                        if x <> 0:
+                            self.out.write(chr(int(x) - self.collision_fgid))
+                        else:
+                            self.out.write(chr(0))
                 elif self.encoding == u'base64':
                     data = base64.b64decode(str(self.buffer))
                     if self.compression == u'zlib':
@@ -274,7 +294,11 @@ class ContentHandler(xml.sax.ContentHandler):
                     elif self.compression == u'gzip':
                         data = zlib.decompressobj().decompress('x\x9c' + data[10:-8])
                     for i in range(self.width*self.height):
-                        self.out.write(chr(int(struct.unpack('<I',data[i*4:i*4+4])[0]) not in self.tilesets))
+                        gid = int(struct.unpack('<I',data[i*4:i*4+4])[0])
+                        if gid <> 0:
+                            self.out.write(chr(gid - self.collision_fgid))
+                        else:
+                            self.out.write(chr(0))
                 self.state = State.FINAL
 
     def endDocument(self):
