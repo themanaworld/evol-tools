@@ -22,7 +22,9 @@
 ##0 you'll like it!
  
 ##0 ManaPlus also got improved along with its awesome new Jewelry
-##0 Theme! You can now play Evol Online on your Android device, enjoy!
+##0 Theme! You can now play Evol Online on Android and Mac OS X,
+##0 enjoy! Special thanks to Socapex for his wonderful work, creating
+##0 the ManaPlus Mac OS X application.
  
 ##0 Check out our Facebook and Google+ pages regularly so that you
 ##0 don't miss anything. Note that we're already working on the Beta3
