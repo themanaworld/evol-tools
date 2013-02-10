@@ -1,11 +1,57 @@
-##9 Latest client version: ##6ManaPlus 1.3.1.20
-##0 Actual Release: ##1Beta2
+##9 Latest client version: ##6ManaPlus 1.3.2.3
+##0 Actual Release: ##1Beta2.1
 ##0 Welcome to ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b here:
 ##1 [@@http://www.evolonline.org/guide_rules.html|http://www.evolonline.org/guide_rules.html@@]
  
  
 ##7 ##BThe adventure begins!##b
+ 
+ 
+##7 Finally, Beta2.1 is out!
+ 
+##0 We are proud to announce the launch of Beta2.1 tonight. This
+##0 update brings a lot of bug fixes. We also did a lot of dialogues and
+##0 quest fixes. Translators greatly helped too! Thanks to everyone
+##0 who contributed.
+ 
+##0 As Evol developers already started working on future releases,
+##0 some improvements, that were not supposed to come in so soon, were
+##0 implemented in this release. We improved and added graphics,
+##0 cleaned databases, added a new indoor sunlight effect. We hope
+##0 you'll like it!
+ 
+##0 ManaPlus also got improved along with its awesome new Jewelry
+##0 Theme! You can now play Evol Online on your Android device, enjoy!
+ 
+##0 Check out our Facebook and Google+ pages regularly so that you
+##0 don't miss anything. Note that we're already working on the Beta3
+##0 and Aurora1 releases, meaning which releases will come much sooner
+##0 than you think!
+ 
+##9 -- Regards, Alige.
+##9 February 2013
+ 
+ 
+##7 End of the World, Epic Fail
+ 
+##0 We just released Beta2 and we hope you enjoyed all of the cool new
+##0 features it brang! This took us a lot of time to put in place but
+##0 sadly, we will soon need to release a small update to fix several
+##0 bugs.
+ 
+##0 Some of us also started working on future releases, that is why
+##0 this bug fixing release, called Beta2.1, will be release in a
+##0 month. In addition, we need to let translators do their job, and
+##0 that takes time!
+ 
+##0 Moreover, ManaPlus never stops getting better, as well as the
+##0 brand new Jewelry Theme, thanks to 4144 and Hal9000! Check it out!
+ 
+##0 Stay tuned for the Beta2.1 release!
+ 
+##9 -- Regards, Alige.
+##9 January 2013
  
  
 ##7 Season 1, Episode 2!
@@ -140,5 +186,4 @@
  
 ##0 You can check out this page for older news entries:
 ##1 [@@http://wiki.evolonline.org/news|http://wiki.evolonline.org/news@@]
-
-
+ 
