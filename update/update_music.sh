@@ -17,9 +17,11 @@ cd ../../gittorious/evol-music
 head=`git log --pretty=oneline -n 1 | awk '{print $1}'`
 u1=`echo ${previous} | cut -c 1-7`
 u2=`echo ${head} | cut -c 1-7`
-git log --name-status ${previous}..${head} | awk '/^(A|M)\t/ {print $2}' | \
-    grep -e "[.]\(ogg\)" | sort | uniq | \
-    xargs zip -9 -r ../../privtools/update/files/music-${u1}..${u2}.zip
+git log --name-status ${previous}..${head} \
+| awk '/^(A|M)\t/ {print $2}'
+#    grep -e "[.]\(ogg\)" | sort | uniq | \
+#    xargs zip -9 -r ../../privtools/update/files/music-${u1}..${u2}.zip
+exit
 
 cd $dir/files
 if [ -f evol-${u1}..${u2}.zip ]; then
