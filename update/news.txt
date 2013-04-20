@@ -3,13 +3,13 @@
 ##0 Welcome to ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b here:
 ##1 [@@http://www.evolonline.org/guide_rules.html|http://www.evolonline.org/guide_rules.html@@]
- 
- 
+
+
 ##7 ##BThe adventure begins!##b
- 
- 
+
+
 ##7 Spring time everybody!
- 
+
 ##0 Beta2.1 was a great success, more than what we thought it would be.
 ##0 We are proud of this release and of the players too! Your bug
 ##0 reports helped us a lot, as well as your feedbacks. Thank you!
@@ -27,190 +27,189 @@
 ##0 of time trying to change our game art's license from GPLv2 to
 ##0 CC BY-SA 3.0. This will help us develop much faster in the future.
 
-##0 Beta3 will soon be released, such as its news post! 
- 
+##0 Beta3 will soon be released, such as its news post!
+
 ##9 -- Cheers, Reid.
 ##9 Mars 2013
- 
- 
+
+
 ##7 Finally, Beta2.1 is out!
- 
+
 ##0 We are proud to announce the launch of Beta2.1 tonight. This
 ##0 update brings a lot of bug fixes. We also did a lot of dialogues and
 ##0 quest fixes. Translators greatly helped too! Thanks to everyone
 ##0 who contributed.
- 
+
 ##0 As Evol developers already started working on future releases,
 ##0 some improvements, that were not supposed to come in so soon, were
 ##0 implemented in this release. We improved and added graphics,
 ##0 cleaned databases, added a new indoor sunlight effect. We hope
 ##0 you'll like it!
- 
+
 ##0 ManaPlus also got improved along with its awesome new Jewelry
 ##0 Theme! You can now play Evol Online on Android and Mac OS X,
 ##0 enjoy! Special thanks to Socapex for his wonderful work, creating
 ##0 the ManaPlus Mac OS X application.
- 
+
 ##0 Check out our Facebook and Google+ pages regularly so that you
 ##0 don't miss anything. Note that we're already working on the Beta3
 ##0 and Aurora1 releases, meaning which releases will come much sooner
 ##0 than you think!
- 
+
 ##9 -- Regards, Alige.
 ##9 February 2013
- 
- 
+
+
 ##7 End of the World, Epic Fail
- 
+
 ##0 We just released Beta2 and we hope you enjoyed all of the cool new
 ##0 features it brang! This took us a lot of time to put in place but
 ##0 sadly, we will soon need to release a small update to fix several
 ##0 bugs.
- 
+
 ##0 Some of us also started working on future releases, that is why
 ##0 this bug fixing release, called Beta2.1, will be release in a
 ##0 month. In addition, we need to let translators do their job, and
 ##0 that takes time!
- 
+
 ##0 Moreover, ManaPlus never stops getting better, as well as the
 ##0 brand new Jewelry Theme, thanks to 4144 and Hal9000! Check it out!
- 
+
 ##0 Stay tuned for the Beta2.1 release!
- 
+
 ##9 -- Regards, Alige.
 ##9 January 2013
- 
- 
+
+
 ##7 Season 1, Episode 2!
- 
+
 ##0 After over 10 months of intense work, here is the new version of
 ##0 Evol Online! A whole new dynamic has been added to the game,
 ##0 everything has been rewritten, rethought and redrew.
 ##0 We are proud to present you this Beta2 release!
- 
+
 ##0 Along with the story comes new game and client features, and new
 ##0 interactions with the environment. This is in fact an entirely new
 ##0 gaming experience.
- 
+
 ##0 Developers modified the whole game and here are some major
 ##0 additions: savepoints, quest window, maps, graphics, etc...
- 
+
 ##0 You can check the full list of changes at
 ##0 http://wiki.evolonline.org/changelog
 ##0 And all of the new contributors at
 ##0 http://wiki.evolonline.org/contributors
- 
+
 ##0 Enough said, check out everything by yourself!
- 
+
 ##9 -- Regards, Alige.
 ##9 December 2012
- 
- 
+
+
 ##7 What a scary... I mean... weird development team!
- 
+
 ##0 Hey, why did the ship stop?! Was that under Nard's orders? Lets
 ##0 find out! Oh no, giant pumpkins overran all of the boat! It seems
 ##0 you must get ready for battle. You can sense something very
 ##0 powerful and evil at the far bottom of the ship. You should check
 ##0 it out. Maybe Bachus, the party spirit, could help you throughout
 ##0 this. We hope you'll enjoy this Halloween event.
- 
+
 ##0 Once again, Evol Online developers are in a rush. Beta2 takes a
 ##0 whole lot longer than they thought but this is of course to avoid
 ##0 any kind of issue. Again, a numerous amount of bugs were fixed and
 ##0 scripts were mostly all rewritten for a better game experience.
- 
+
 ##0 As a lot of dialogues were added and improved for Beta2,
 ##0 translations are needed more than ever. Even though some developers
 ##0 also work on these, they cannot afford working on all of them.
- 
+
 ##0 If you feel like you can help developers in any way, especially for
 ##0 translations if you speak english fluently, feel free to contact
 ##0 them using Evol Online's IRC developer channel.
- 
+
 ##9 -- Regards, Alige.
 ##9 November 2012
- 
- 
+
+
 ##7 End of summer, beginning of Beta2!
- 
+
 ##0 Summer holidays are now over for the Evol Online developers. We are
 ##0 proud to announce the arrival of Beta2 soon, even though we
 ##0 unfortunately find ourselves currently behind schedule.
- 
+
 ##0 However, a lot of efforts were made to create a lot of new content
 ##0 and great new tilesets which took for ever to create and fix.
 ##0 We are currently fixing bugs and preparing the release. Final
 ##0 modifications are being made to give you the best release ever made
 ##0 for this project.
- 
+
 ##0 Among the new features is a Quest Window that has been added to the
 ##0 client. It will help you see your progress in game.
- 
+
 ##0 When the Beta2 release will be out, we would like you to promote it
 ##0 by simply spreading the word around you. Players will then be aware
 ##0 of the news and this may help us expand our community.
- 
+
 ##0 As you already now, new contributors are always welcome!
 ##0 Translators, artists and even writers are free to contact us for
 ##0  more information.
-  
+
 ##9 -- Regards, Alige.
 ##9 August 2012
- 
- 
+
+
 ##0 Once more, a lot of work has been done, recently on the consistency
 ##0 and quality of the game. A lot of new graphics will be part of the
 ##0 next release, Beta2. Interactivity between the player and the game
 ##0 was our main goal the past weeks.
- 
+
 ##0 This new dynamic and gaming experience will be revealed throughout
 ##0 animations full of mysteries. Treasure chests, coconuts and new
 ##0 have appeared on a brand new map!
- 
+
 ##0 The work on the translations, the repository reorganizations and
 ##0 on top of all, the client, were one of our main concerns lately.
 ##0 The developers still need a bit of time in order to finish this
 ##0 release, thus we thank you for waiting.
- 
+
 ##9 -- Regards, Alige.
 ##9 July 2012
- 
- 
+
+
 ##7 Season 1, Episode 1!
- 
+
 ##0 After a mysterious past, you find yourself adrift on the waves in
 ##0 the middle of Oceania. A noble-minded crew, sails by your body
-##0 decides to rescue and take care of you. 
- 
+##0 decides to rescue and take care of you.
+
 ##0 You now wake up about seven days later in their wooden ship.
 ##0 Take some time to know the crew who saved you and try to
 ##0 discover what happened to you before this terrible event!
- 
+
 ##9 -- Cheers, Reid.
 ##9 January 2012
- 
- 
+
+
 ##7 Evol Online Beta releases!
- 
+
 ##0 After several months of work, the world of ##BEvol Online##b is
 ##0 finally opened to everyone for its first Beta release!
- 
+
 ##0 This Beta will be the first among two other ones which will help
 ##0 the developers finding out the qualities and problems of the
 ##0 chosen gameplay.
- 
+
 ##0 We welcome you to give us your thoughts about this, but we also
 ##0 hope you will have fun being part of this amazing adventure.
- 
+
 ##0 We also need to warn you that at the end of the third release,
 ##0 all characters will be wiped out as we are trying to have a
 ##0 perfect balance for this game and start it over with it.
 ##0 We kindly ask you to accept this.
- 
+
 ##9 -- Cheers, Reid.
 ##9 January 2012
- 
+
 ##0 You can check out this page for older news entries:
 ##1 [@@http://wiki.evolonline.org/news|http://wiki.evolonline.org/news@@]
- 
