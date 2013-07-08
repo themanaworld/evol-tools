@@ -8,7 +8,7 @@
 ##7 ##BThe adventure begins!##b
 
 
-##7 ##7 Season 1, Episode 3!
+##7 Season 1, Episode 3!
 
 ##0 Greetings to you all, fellow players! Welcome to this new version of
 ##0 Evol Online! This third Beta release will maybe be followed by a
@@ -108,7 +108,7 @@
 ##9 February 2013
 
 
-##7 End of the World, Epic Fail
+##7 End of the World, Epic Fail!
 
 ##0 We just released Beta2 and we hope you enjoyed all of the cool new
 ##0 features it brang! This took us a lot of time to put in place but
