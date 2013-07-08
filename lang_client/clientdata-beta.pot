@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-03 22:52+0300\n"
+"POT-Creation-Date: 2013-07-03 12:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,1451 +9,1795 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ea-skills.xml:12(skills/set@name)
+#. (itstool) path: skills/set@name
+#: ea-skills.xml:12
 msgid "Basic"
 msgstr ""
 
-#: ea-skills.xml:13(set/skill@name)
-#: tmp/manaplus_emotes.xml:26(emote/sprite@name)
+#. #-#-#-#-#  ea-skills.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: set/skill@name
+#. #-#-#-#-#  manaplus_emotes.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: emote/sprite@name
+#: ea-skills.xml:13 tmp/manaplus_emotes.xml:26
 msgid "Emote"
 msgstr ""
 
-#: ea-skills.xml:13(set/skill@description)
+#. (itstool) path: set/skill@description
+#: ea-skills.xml:13
 msgid "You can share your mood."
 msgstr ""
 
-#: emotes.xml:11(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:11
 msgid "Disgust"
 msgstr ""
 
-#: emotes.xml:12(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:12
 msgid "Surprise"
 msgstr ""
 
-#: emotes.xml:13(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:13
 msgid "Happy"
 msgstr ""
 
-#: emotes.xml:14(emote/sprite@name)
-#: tmp/manaplus_emotes.xml:19(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:14 tmp/manaplus_emotes.xml:19
 msgid "Sad"
 msgstr ""
 
-#: emotes.xml:15(emote/sprite@name)
-#: tmp/manaplus_emotes.xml:21(emote/sprite@name)
-#: tmp/manaplus_emotes.xml:28(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:15 tmp/manaplus_emotes.xml:21 tmp/manaplus_emotes.xml:28
 msgid "Evil"
 msgstr ""
 
-#: emotes.xml:16(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:16
 msgid "Wink"
 msgstr ""
 
-#: emotes.xml:17(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:17
 msgid "Angel"
 msgstr ""
 
-#: emotes.xml:18(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:18
 msgid "Blush"
 msgstr ""
 
-#: emotes.xml:19(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:19
 msgid "Tongue"
 msgstr ""
 
-#: emotes.xml:20(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:20
 msgid "Grin"
 msgstr ""
 
-#: emotes.xml:21(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:21
 msgid "Upset"
 msgstr ""
 
-#: emotes.xml:22(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:22
 msgid "Perturbed"
 msgstr ""
 
-#: emotes.xml:23(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:23
 msgid "Speech"
 msgstr ""
 
-#: emotes.xml:24(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: emotes.xml:24
 msgid "Blah"
 msgstr ""
 
-#: itemcolors.xml:13(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:13
 msgid "white"
 msgstr ""
 
-#: itemcolors.xml:14(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:14
 msgid "black"
 msgstr ""
 
-#: itemcolors.xml:15(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:15
 msgid "silver"
 msgstr ""
 
-#: itemcolors.xml:16(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:16
 msgid "camel"
 msgstr ""
 
-#: itemcolors.xml:17(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:17
 msgid "brown"
 msgstr ""
 
-#: itemcolors.xml:18(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:18
 msgid "orange"
 msgstr ""
 
-#: itemcolors.xml:19(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:19
 msgid "dark red"
 msgstr ""
 
-#: itemcolors.xml:20(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:20
 msgid "red"
 msgstr ""
 
-#: itemcolors.xml:21(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:21
 msgid "fuchsia"
 msgstr ""
 
-#: itemcolors.xml:22(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:22
 msgid "pink"
 msgstr ""
 
-#: itemcolors.xml:23(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:23
 msgid "mauve"
 msgstr ""
 
-#: itemcolors.xml:24(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:24
 msgid "purple"
 msgstr ""
 
-#: itemcolors.xml:25(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:25
 msgid "navy blue"
 msgstr ""
 
-#: itemcolors.xml:26(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:26
 msgid "blue-gray"
 msgstr ""
 
-#: itemcolors.xml:27(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:27
 msgid "blue"
 msgstr ""
 
-#: itemcolors.xml:28(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:28
 msgid "teal"
 msgstr ""
 
-#: itemcolors.xml:29(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:29
 msgid "green"
 msgstr ""
 
-#: itemcolors.xml:30(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:30
 msgid "lime"
 msgstr ""
 
-#: itemcolors.xml:31(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:31
 msgid "khaki"
 msgstr ""
 
-#: itemcolors.xml:32(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:32
 msgid "yellow"
 msgstr ""
 
-#: itemcolors.xml:37(list/color@name) itemcolors.xml:62(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:37 itemcolors.xml:62
 msgid "Off Black"
 msgstr ""
 
-#: itemcolors.xml:38(list/color@name) itemcolors.xml:63(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:38 itemcolors.xml:63
 msgid "Ash Brown"
 msgstr ""
 
-#: itemcolors.xml:39(list/color@name) itemcolors.xml:64(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:39 itemcolors.xml:64
 msgid "Dark Brown"
 msgstr ""
 
-#: itemcolors.xml:40(list/color@name) itemcolors.xml:65(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:40 itemcolors.xml:65
 msgid "Dark Copper"
 msgstr ""
 
-#: itemcolors.xml:41(list/color@name) itemcolors.xml:66(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:41 itemcolors.xml:66
 msgid "Auburn Brown"
 msgstr ""
 
-#: itemcolors.xml:42(list/color@name) itemcolors.xml:67(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:42 itemcolors.xml:67
 msgid "Honey Brown"
 msgstr ""
 
-#: itemcolors.xml:43(list/color@name) itemcolors.xml:68(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:43 itemcolors.xml:68
 msgid "Copper Blonde"
 msgstr ""
 
-#: itemcolors.xml:44(list/color@name) itemcolors.xml:69(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:44 itemcolors.xml:69
 msgid "Golden Blonde"
 msgstr ""
 
-#: itemcolors.xml:45(list/color@name) itemcolors.xml:70(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:45 itemcolors.xml:70
 msgid "Pure Platinum"
 msgstr ""
 
-#: itemcolors.xml:46(list/color@name) itemcolors.xml:71(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:46 itemcolors.xml:71
 msgid "Cherry Blossom"
 msgstr ""
 
-#: itemcolors.xml:47(list/color@name) itemcolors.xml:72(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:47 itemcolors.xml:72
 msgid "Pinky Pink"
 msgstr ""
 
-#: itemcolors.xml:48(list/color@name) itemcolors.xml:73(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:48 itemcolors.xml:73
 msgid "Fire Red"
 msgstr ""
 
-#: itemcolors.xml:49(list/color@name) itemcolors.xml:74(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:49 itemcolors.xml:74
 msgid "Light Violet"
 msgstr ""
 
-#: itemcolors.xml:50(list/color@name) itemcolors.xml:75(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:50 itemcolors.xml:75
 msgid "Purple Plum"
 msgstr ""
 
-#: itemcolors.xml:51(list/color@name) itemcolors.xml:76(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:51 itemcolors.xml:76
 msgid "Navy Blue"
 msgstr ""
 
-#: itemcolors.xml:52(list/color@name) itemcolors.xml:77(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:52 itemcolors.xml:77
 msgid "Lagoon Blue"
 msgstr ""
 
-#: itemcolors.xml:53(list/color@name) itemcolors.xml:78(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:53 itemcolors.xml:78
 msgid "Twisted Teal"
 msgstr ""
 
-#: itemcolors.xml:54(list/color@name) itemcolors.xml:79(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:54 itemcolors.xml:79
 msgid "Spring Green"
 msgstr ""
 
-#: itemcolors.xml:55(list/color@name) itemcolors.xml:80(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:55 itemcolors.xml:80
 msgid "Forest Green"
 msgstr ""
 
-#: itemcolors.xml:56(list/color@name) itemcolors.xml:81(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:56 itemcolors.xml:81
 msgid "Silver Grey"
 msgstr ""
 
-#: itemcolors.xml:57(list/color@name) itemcolors.xml:82(list/color@name)
+#. (itstool) path: list/color@name
+#: itemcolors.xml:57 itemcolors.xml:82
 msgid "Esperia Blue"
 msgstr ""
 
-#: items.xml:39(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:38
 msgid "Bald"
 msgstr ""
 
-#: items.xml:42(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:41
 msgid "Bowl Cut"
 msgstr ""
 
-#: items.xml:45(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:44
 msgid "Combed Back"
 msgstr ""
 
-#: items.xml:48(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:47
 msgid "Emo"
 msgstr ""
 
-#: items.xml:51(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:50
 msgid "Mohawk"
 msgstr ""
 
-#: items.xml:54(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:53
 msgid "Pompadour"
 msgstr ""
 
-#: items.xml:57(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:56
 msgid "Center Parting"
 msgstr ""
 
-#: items.xml:60(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:59
 msgid "Long and Slick"
 msgstr ""
 
-#: items.xml:63(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:62
 msgid "Short and Curly"
 msgstr ""
 
-#: items.xml:66(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:65
 msgid "Pigtails"
 msgstr ""
 
-#: items.xml:69(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:68
 msgid "Long and Curly"
 msgstr ""
 
-#: items.xml:72(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:71
 msgid "Parted"
 msgstr ""
 
-#: items.xml:75(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:74
 msgid "Perky Ponytail"
 msgstr ""
 
-#: items.xml:78(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:77
 msgid "Wave"
 msgstr ""
 
-#: items.xml:81(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:80
 msgid "Mane"
 msgstr ""
 
-#: items.xml:84(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:83
 msgid "Bun"
 msgstr ""
 
-#: items.xml:87(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:86
 msgid "Wavy"
 msgstr ""
 
-#: items.xml:90(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:89
 msgid "Bunches"
 msgstr ""
 
-#: items.xml:93(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:92
 msgid "Long Ponytail"
 msgstr ""
 
-#: items.xml:96(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:95
 msgid "Infinitely Long"
 msgstr ""
 
-#: items.xml:99(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:98
 msgid "Choppy"
 msgstr ""
 
-#: items.xml:102(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:101
 msgid "Wild"
 msgstr ""
 
-#: items.xml:105(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:104
 msgid "Punk"
 msgstr ""
 
-#: items.xml:108(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:107
 msgid "Imperial"
 msgstr ""
 
-#: items.xml:111(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:110
 msgid "Side Strand"
 msgstr ""
 
-#: items.xml:114(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:113
 msgid "Messy"
 msgstr ""
 
-#: items.xml:117(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:116
 msgid "Flat Ponytail"
 msgstr ""
 
-#: items.xml:122(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:119
+msgid "Tapered Nape"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:124
 msgid "Human"
 msgstr ""
 
-#: items.xml:126(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:130
 msgid "Ukar"
 msgstr ""
 
-#: items.xml:130(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:136
 msgid "Demon"
 msgstr ""
 
-#: items.xml:134(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:142
 msgid "Elven"
 msgstr ""
 
-#: items.xml:138(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:148
 msgid "Orc"
 msgstr ""
 
-#: items.xml:142(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:154
 msgid "Raijin"
 msgstr ""
 
-#: items.xml:146(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:160
 msgid "Tritan"
 msgstr ""
 
-#: items.xml:167(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:175
 msgid "Acorn"
 msgstr ""
 
-#: items.xml:167(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:175
 msgid "Squichy's food which could taste good in a cake."
 msgstr ""
 
-#: items.xml:167(items/item@effect) items.xml:211(items/item@effect)
-msgid "+15 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:175
+msgid "Heal 12-18 HP"
 msgstr ""
 
-#: items.xml:176(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:184
 msgid "Bread"
 msgstr ""
 
-#: items.xml:176(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:184
 msgid "Home-made bread."
 msgstr ""
 
-#: items.xml:176(items/item@effect)
-msgid "+30 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:184
+msgid "Heal 25-40 HP"
 msgstr ""
 
-#: items.xml:184(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:192
 msgid "Fungus"
 msgstr ""
 
-#: items.xml:184(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:192
 msgid "A non-toxic mushroom growing in moist places."
 msgstr ""
 
-#: items.xml:184(items/item@effect) items.xml:288(items/item@effect)
-msgid "+25 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:192
+msgid "Damage -5%; Defense +5%; Heal 25-35 HP"
 msgstr ""
 
-#: items.xml:193(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:201
 msgid "Cheese"
 msgstr ""
 
-#: items.xml:193(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:201
 msgid "A ratto's meal left-overs."
 msgstr ""
 
-#: items.xml:193(items/item@effect) items.xml:264(items/item@effect)
-msgid "+40 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:201
+msgid "Heal 30-50 HP"
 msgstr ""
 
-#: items.xml:202(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:210
 msgid "Piou Legs"
 msgstr ""
 
-#: items.xml:202(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:210
 msgid "Tasty and well spiced piou legs."
 msgstr ""
 
-#: items.xml:202(items/item@effect)
-msgid "+10 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:210
+msgid "Heal 7-13 HP"
 msgstr ""
 
-#: items.xml:211(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:219
 msgid "Lettuce Leaf"
 msgstr ""
 
-#: items.xml:211(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:219
 msgid "The perfect food if you're hungry but want to lose weight."
 msgstr ""
 
-#: items.xml:220(items/item@name)
+#. (itstool) path: items/item@effect
+#: items.xml:219
+msgid "Heal 15-25 HP"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:228
 msgid "Piberries"
 msgstr ""
 
-#: items.xml:220(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:228
 msgid "The famous staining fruit."
 msgstr ""
 
-#: items.xml:220(items/item@effect)
-msgid "+20 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:228
+msgid "Heal 12-23 HP"
 msgstr ""
 
-#: items.xml:229(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:237
 msgid "Sea Drops"
 msgstr ""
 
-#: items.xml:229(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:237
 msgid "Some water drops from the sea. Maybe you shouldn't drink them."
 msgstr ""
 
-#: items.xml:229(items/item@effect)
-msgid "+15 HP / Headache"
+#. (itstool) path: items/item@effect
+#: items.xml:237
+msgid "Headache; Heal 10-20 HP"
 msgstr ""
 
-#: items.xml:238(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:246
 msgid "Aquada"
 msgstr ""
 
-#: items.xml:238(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:246
 msgid "A strange sea fruit. The blue part seems edible."
 msgstr ""
 
-#: items.xml:238(items/item@effect)
-msgid "+60 HP"
+#. (itstool) path: items/item@effect
+#: items.xml:246
+msgid "Heal 75-100 HP"
 msgstr ""
 
-#: items.xml:247(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:255
 msgid "Pink Blobime"
 msgstr ""
 
-#: items.xml:247(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:255
 msgid "Some pink residue dropped by a little blub."
 msgstr ""
 
-#: items.xml:247(items/item@effect)
-msgid "+4 HP / Headache"
+#. (itstool) path: items/item@effect
+#: items.xml:255
+msgid "Headache; Heal 2-6 HP"
 msgstr ""
 
-#: items.xml:264(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:272
 msgid "Half Croconut"
 msgstr ""
 
-#: items.xml:264(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:272
 msgid "Its inside seems delicious."
 msgstr ""
 
-#: items.xml:272(items/item@name)
+#. (itstool) path: items/item@effect
+#: items.xml:272
+msgid "Heal 65-90 HP"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:280
 msgid "Croconut"
 msgstr ""
 
-#: items.xml:272(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:280
 msgid "Fallen from a crocotree, this fruit could be opened."
 msgstr ""
 
-#: items.xml:279(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:287
 msgid "Old Book"
 msgstr ""
 
-#: items.xml:279(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:287
 msgid ""
 "A book that threatens to fall apart in your hands as you carefully browse "
 "the pages."
 msgstr ""
 
-#: items.xml:288(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:296
 msgid "Plushroom"
 msgstr ""
 
-#: items.xml:288(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:296
 msgid ""
 "This mushroom, with a skin as soft as fur, seems to wriggle in your hands!"
 msgstr ""
 
-#: items.xml:295(items/item@name)
+#. (itstool) path: items/item@effect
+#: items.xml:296
+msgid "Damage +5%; Defense -5%; Heal 20-30 HP"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:304
 msgid "Pumpkin Seeds"
 msgstr ""
 
-#: items.xml:295(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:304
 msgid "Doesn't seem very appetizing..."
 msgstr ""
 
-#: items.xml:295(items/item@effect)
-msgid "+1 HP / Headache"
+#. (itstool) path: items/item@effect
+#: items.xml:304
+msgid "Headache"
 msgstr ""
 
-#: items.xml:305(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:311
+msgid "Delicious Cookie"
+msgstr ""
+
+#. (itstool) path: items/item@description
+#: items.xml:311
+msgid ""
+"Reward from the Cookie Master, beware before to use it, effects are "
+"unknown..."
+msgstr ""
+
+#. (itstool) path: items/item@effect
+#: items.xml:311
+msgid "Unknown"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:320
 msgid "Small Tentacles"
 msgstr ""
 
-#: items.xml:305(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:320
 msgid "Three tentacles taken from a little blub."
 msgstr ""
 
-#: items.xml:312(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:327
 msgid "Piou Feathers"
 msgstr ""
 
-#: items.xml:312(items/item@description)
-msgid "Three small yellow feathers. A piou might have dropped them."
+#. (itstool) path: items/item@description
+#: items.xml:327
+msgid "A bunch of small feathers. A piou might have dropped them."
 msgstr ""
 
-#: items.xml:320(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:335
 msgid "Tortuga Shell Fragment"
 msgstr ""
 
-#: items.xml:320(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:335
 msgid "A fragment of a tortuga shell."
 msgstr ""
 
-#: items.xml:328(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:343
 msgid "Half Eggshell"
 msgstr ""
 
-#: items.xml:328(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:343
 msgid "It maybe got broken in order to cook a fried egg."
 msgstr ""
 
-#: items.xml:335(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:350
 msgid "Ratto Tail"
 msgstr ""
 
-#: items.xml:335(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:350
 msgid "A very long tail from a ratto."
 msgstr ""
 
-#: items.xml:343(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:358
 msgid "Ratto Teeth"
 msgstr ""
 
-#: items.xml:343(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:358
 msgid "Some teeth of a ratto."
 msgstr ""
 
-#: items.xml:351(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:366
 msgid "Croc Claw"
 msgstr ""
 
-#: items.xml:351(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:366
 msgid "Could be tasty if well cooked."
 msgstr ""
 
-#: items.xml:359(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:374
 msgid "Squichy Claws"
 msgstr ""
 
-#: items.xml:359(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:374
 msgid "Claws from a wild squichy."
 msgstr ""
 
-#: items.xml:367(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:382
 msgid "Tortuga Shell"
 msgstr ""
 
-#: items.xml:367(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:382
 msgid "This shell comes from a tortuga."
 msgstr ""
 
-#: items.xml:374(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:389
 msgid "Tortuga Tongue"
 msgstr ""
 
-#: items.xml:374(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:389
 msgid "The tongue of a tortuga."
 msgstr ""
 
-#: items.xml:381(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:396
 msgid "Pearl"
 msgstr ""
 
-#: items.xml:381(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:396
 msgid "A perfectly round and shiny pearl."
 msgstr ""
 
-#: items.xml:388(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:403
 msgid "Coral"
 msgstr ""
 
-#: items.xml:388(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:403
 msgid "The kind of coral you can see in Oceania."
 msgstr ""
 
-#: items.xml:395(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:410
 msgid "Blue Coral"
 msgstr ""
 
-#: items.xml:395(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:410
 msgid "A coral dyed in blue by a blub."
 msgstr ""
 
-#: items.xml:403(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:418
 msgid "Fish Box"
 msgstr ""
 
-#: items.xml:403(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:418
 msgid "A wooden box full of fresh fish that Couwan gave you."
 msgstr ""
 
-#: items.xml:411(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:426
 msgid "Aquada Box"
 msgstr ""
 
-#: items.xml:411(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:426
 msgid "A wooden box full of aquadas."
 msgstr ""
 
-#: items.xml:419(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:434
 msgid "Croconut Box"
 msgstr ""
 
-#: items.xml:419(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:434
 msgid "A wooden box full of croconuts."
 msgstr ""
 
-#: items.xml:427(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:442
 msgid "Plushroom Box"
 msgstr ""
 
-#: items.xml:427(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:442
 msgid "A wooden box full of plushrooms."
 msgstr ""
 
-#: items.xml:434(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:449
 msgid "Poisoned Dish"
 msgstr ""
 
-#: items.xml:434(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:449
 msgid "A special dish made of strange ingredients."
 msgstr ""
 
-#: items.xml:441(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:456
 msgid "La Johanne's Key"
 msgstr ""
 
-#: items.xml:441(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:456
 msgid "An iron key to open La Johanne's entrance door."
 msgstr ""
 
-#: items.xml:448(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:463
 msgid "Fouit Wing"
 msgstr ""
 
-#: items.xml:448(items/item@description) items.xml:462(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:463 items.xml:477
 msgid "This wing is slight and soft unlike its former owner."
 msgstr ""
 
-#: items.xml:455(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:470
 msgid "Bat Teeth"
 msgstr ""
 
-#: items.xml:455(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:470
 msgid "What sharp teeth! They seem to be more dangerous than a knife."
 msgstr ""
 
-#: items.xml:462(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:477
 msgid "Oufti Wing"
 msgstr ""
 
-#: items.xml:469(items/item@name)
-#: tmp/manaplus_emotes.xml:27(emote/sprite@name)
+#. #-#-#-#-#  items.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: items/item@name
+#. #-#-#-#-#  manaplus_emotes.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: emote/sprite@name
+#: items.xml:484 tmp/manaplus_emotes.xml:27
 msgid "Pumpkin"
 msgstr ""
 
-#: items.xml:469(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:484
 msgid "A pumpkin that can be carved for Halloween."
 msgstr ""
 
-#: items.xml:491(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:504
 msgid "Creased Shirt"
 msgstr ""
 
-#: items.xml:491(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:504
 msgid "An old shirt given to you by a sailor. It isn't very fashionable..."
 msgstr ""
 
-#: items.xml:491(items/item@effect) items.xml:529(items/item@effect)
-#: items.xml:557(items/item@effect) items.xml:595(items/item@effect)
-msgid "+2 Defense"
-msgstr ""
-
-#: items.xml:503(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:516
 msgid "%Color% Sailor Tank Top"
 msgstr ""
 
-#: items.xml:503(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:516
 msgid "A %color% tank top used by sailors and seamen."
 msgstr ""
 
-#: items.xml:503(items/item@effect) items.xml:543(items/item@effect)
-#: items.xml:618(items/item@effect)
-msgid "+3 Defense"
-msgstr ""
-
-#: items.xml:515(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:528
 msgid "Sailor Shirt"
 msgstr ""
 
-#: items.xml:515(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:528
 msgid "Proof that ye be in the crew, matey!"
 msgstr ""
 
-#: items.xml:515(items/item@effect)
-msgid "+4 Defense"
-msgstr ""
-
-#: items.xml:529(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:542
 msgid "Lousy Moccasins"
 msgstr ""
 
-#: items.xml:529(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:542
 msgid "Orc-made moccasins. Not sure from which skin these shoes were made."
 msgstr ""
 
-#: items.xml:543(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:556
 msgid "Armbands"
 msgstr ""
 
-#: items.xml:543(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:556
 msgid "Small armbands made of wood and iron."
 msgstr ""
 
-#: items.xml:557(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:569
 msgid "Creased Shorts"
 msgstr ""
 
-#: items.xml:557(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:569
 msgid "An old pair of shorts given to you by a sailor. They smell awful."
 msgstr ""
 
-#: items.xml:595(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:606
 msgid "Bandana"
 msgstr ""
 
-#: items.xml:595(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:606
 msgid "A striped bandana worn by some sailors."
 msgstr ""
 
-#: items.xml:618(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:629
 msgid "Pumpkin Hat"
 msgstr ""
 
-#: items.xml:618(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:629
 msgid "A carved pumpkin, the face will scare your enemy off."
 msgstr ""
 
-#: items.xml:628(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:639
 msgid "Fancy Hat"
 msgstr ""
 
-#: items.xml:628(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:639
 msgid "A fancy hat, what else?"
 msgstr ""
 
-#: items.xml:628(items/item@effect)
-msgid "+1 Defense"
-msgstr ""
-
-#: items.xml:661(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:670
 msgid "Knife"
 msgstr ""
 
-#: items.xml:661(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:670
 msgid "A simple, but sharp knife."
 msgstr ""
 
-#: items.xml:661(items/item@effect)
-msgid "+5 Damage"
-msgstr ""
-
-#: items.xml:676(items/item@name)
+#. (itstool) path: items/item@name
+#: items.xml:686
 msgid "Piou Slayer"
 msgstr ""
 
-#: items.xml:676(items/item@description)
+#. (itstool) path: items/item@description
+#: items.xml:686
 msgid ""
 "A short sword for novice fighters, more useful in the kitchen than in a real "
 "fight..."
 msgstr ""
 
-#: items.xml:676(items/item@effect)
-msgid "+13 Damage"
-msgstr ""
-
-#: tmp/manaplus_emotes.xml:8(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:8
 msgid "Kitty"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:9(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:9
 msgid "xD"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:10(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:10
 msgid "^.^"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:11(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:11
 msgid "Heart eye"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:12(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:12
 msgid "Gold eye"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:13(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:13
 msgid "Sleepy"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:14(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:14
 msgid "u.u"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:15(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:15
 msgid "-.-'"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:16(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:16
 msgid "Suprised"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:17(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:17
 msgid "Dead"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:18(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:18
 msgid "Look away"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:20(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:20
 msgid "Palmhead"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:22(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:22
 msgid "Angry"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:23(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:23
 msgid "Purple Sad"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:24(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:24
 msgid "Insult Buble"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:25(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:25
 msgid "Heart"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:29(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:29
 msgid "Epic"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:30(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:30
 msgid "Bad geek"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:31(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:31
 msgid "Mimi"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:32(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:32
 msgid "Alien"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:33(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:33
 msgid "Troll"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:34(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:34
 msgid "Metal"
 msgstr ""
 
-#: tmp/manaplus_emotes.xml:35(emote/sprite@name)
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:35
 msgid "Crying"
 msgstr ""
 
-#: monsters.xml:23(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:23
 msgid "Piou"
 msgstr ""
 
-#: monsters.xml:32(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:32
 msgid "Piousse"
 msgstr ""
 
-#: monsters.xml:42(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:42
 msgid "Tortuga"
 msgstr ""
 
-#: monsters.xml:51(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:51
 msgid "Ratto"
 msgstr ""
 
-#: monsters.xml:60(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:60
 msgid "Croc"
 msgstr ""
 
-#: monsters.xml:70(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:70
 msgid "Little Blub"
 msgstr ""
 
-#: monsters.xml:86(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:86
 msgid "Crocotree"
 msgstr ""
 
-#: monsters.xml:93(monsters/monster@name)
+#. (itstool) path: monsters/monster@name
+#: monsters.xml:93
 msgid "Plushroom Field"
 msgstr ""
 
-#: quests.xml:7(quest/name) quests.xml:17(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:8 quests.xml:18
 msgid "Abide by the Rules"
 msgstr ""
 
-#: quests.xml:8(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:9
 msgid ""
 "Before resuming your adventure and exploration, you need to register on the "
 "boarding list of the ship by signing its rules."
 msgstr ""
 
-#: quests.xml:10(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:11
 msgid ""
 "Speak to Julia, the shipkeeper of this ship. She is waiting for you on the "
 "first deck."
 msgstr ""
 
-#: quests.xml:12(quest/text) quests.xml:22(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:13 quests.xml:23
 msgid "Quest giver: Julia."
 msgstr ""
 
-#: quests.xml:13(quest/text) quests.xml:23(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:14 quests.xml:24
 msgid "Coordinates: La Johanne, First Deck. (27,24)"
 msgstr ""
 
-#: quests.xml:14(quest/text) quests.xml:36(quest/text)
-#: quests.xml:80(quest/text) quests.xml:92(quest/text)
-#: quests.xml:114(quest/text) quests.xml:172(quest/text)
-#: quests.xml:182(quest/text) quests.xml:192(quest/text)
-#: quests.xml:233(quest/text) quests.xml:259(quest/text)
-#: quests.xml:277(quest/text) quests.xml:287(quest/text)
-#: quests.xml:295(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:15 quests.xml:39 quests.xml:85 quests.xml:97 quests.xml:121
+#: quests.xml:184 quests.xml:194 quests.xml:204 quests.xml:248 quests.xml:306
+#: quests.xml:324 quests.xml:334 quests.xml:342
 msgid "Reward: Unknown."
 msgstr ""
 
-#: quests.xml:18(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:19
 msgid ""
 "Julia told you about all the rules you have to follow during your adventure "
 "so that you behave properly with other people."
 msgstr ""
 
-#: quests.xml:20(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:21
 msgid ""
 "Keep them in mind, but if you think you still need to hear them again, just "
 "talk to Julia."
 msgstr ""
 
-#: quests.xml:24(quest/text) quests.xml:124(quest/text)
-#: quests.xml:142(quest/text) quests.xml:267(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:25 quests.xml:131 quests.xml:149
 msgid "Reward: Nothing."
 msgstr ""
 
-#: quests.xml:29(quest/name) quests.xml:39(quest/name)
-#: quests.xml:49(quest/name) quests.xml:61(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:32 quests.xml:42 quests.xml:52 quests.xml:64
 msgid "Warm Smelly Clothes"
 msgstr ""
 
-#: quests.xml:30(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:33
 msgid "Magic Arpan is waiting for you. Go speak to him."
 msgstr ""
 
-#: quests.xml:32(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:35
 msgid ""
 "To speak to an NPC, click on it with your mouse or select him using the N "
 "key and then chat using the T key."
 msgstr ""
 
-#: quests.xml:34(quest/text) quests.xml:44(quest/text)
-#: quests.xml:56(quest/text) quests.xml:66(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:37 quests.xml:47 quests.xml:59 quests.xml:69
 msgid "Quest giver: Magic Arpan."
 msgstr ""
 
-#: quests.xml:35(quest/text) quests.xml:57(quest/text)
-#: quests.xml:67(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:38 quests.xml:60 quests.xml:70
 msgid "Coordinates: La Johanne, Second Deck. (39,33)"
 msgstr ""
 
-#: quests.xml:40(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:43
 msgid "You need to open the chest and take the clothes from it."
 msgstr ""
 
-#: quests.xml:42(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:45
 msgid ""
 "To perform this action, click on the chest with your mouse or select it with "
 "the N key and then interact with it using the T key."
 msgstr ""
 
-#: quests.xml:45(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:48
 msgid "Coordinates: La Johanne, Second Deck. (41,37)"
 msgstr ""
 
-#: quests.xml:46(quest/text) quests.xml:58(quest/text)
-#: quests.xml:68(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:49 quests.xml:61 quests.xml:71
 msgid "Reward: Smelly sailor clothes."
 msgstr ""
 
-#: quests.xml:50(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:53
 msgid ""
 "To open your inventory, use the F3 key or use your mouse to select it in the "
-"above menu of your client."
+"above menu in your client."
 msgstr ""
 
-#: quests.xml:52(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:55
 msgid ""
 "When your inventory is open, you can equip an item by selecting it and "
-"clicking on 'Equip'. You can do the same to remove an item by clicking on "
+"clicking 'Equip'. You can do the same to remove an item by clicking on "
 "'Unequip'."
 msgstr ""
 
-#: quests.xml:54(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:57
 msgid ""
 "Items have different effects. Some will heal you, some can be used as "
 "weapons or armor, and some can be sold for gold."
 msgstr ""
 
-#: quests.xml:62(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:65
 msgid ""
 "You wore the clothes you found in the chest that Magic Arpan showed you."
 msgstr ""
 
-#: quests.xml:64(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:67
 msgid ""
 "They are old and a bit smelly but the warm sensation they give makes you "
 "feel at home."
 msgstr ""
 
-#: quests.xml:73(quest/name) quests.xml:83(quest/name)
-#: quests.xml:95(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:78 quests.xml:88 quests.xml:100
 msgid "Piberries Lover"
 msgstr ""
 
-#: quests.xml:74(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:79
 msgid ""
 "A mysterious stowaway needs your help. He hides at the bottom level of the "
 "ship, in the storage room."
 msgstr ""
 
-#: quests.xml:76(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:81
 msgid ""
 "It seems to be an urgent task, but he is afraid that you could be a sailor, "
 "so watch out!"
 msgstr ""
 
-#: quests.xml:78(quest/text) quests.xml:90(quest/text)
-#: quests.xml:100(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:83 quests.xml:95 quests.xml:105
 msgid "Quest Giver: Alige."
 msgstr ""
 
-#: quests.xml:79(quest/text) quests.xml:91(quest/text)
-#: quests.xml:101(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:84 quests.xml:96 quests.xml:106
 msgid "Coordinates: La Johanne, Second Deck. (33,31)"
 msgstr ""
 
-#: quests.xml:84(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:89
 msgid ""
 "Alige, the mysterious traveller, is requesting your help to find him some "
 "food."
 msgstr ""
 
-#: quests.xml:86(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:91
 msgid ""
 "In fact, he hides in a hole in the main hallway. It leads to the ship's "
 "storage room where he can reach for some barrels full of [@@507|Piberries@@]."
 msgstr ""
 
-#: quests.xml:88(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:93
 msgid ""
 "He is sick of eating these berries all the time. That is why he would like "
 "you to find him other kinds of food and bring them to him."
 msgstr ""
 
-#: quests.xml:96(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:101
 msgid ""
 "You brought Alige some food, different from the [@@507|Piberries@@] he "
 "usually eats."
 msgstr ""
 
-#: quests.xml:98(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:103
 msgid ""
 "It looks like he is eager of tasting new flavors. Try bringing him other "
 "types of food. He may have something to give you in exchange."
 msgstr ""
 
-#: quests.xml:102(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:107
 msgid "Reward: A handful of [@@507|Piberries@@]."
 msgstr ""
 
-#: quests.xml:107(quest/name) quests.xml:117(quest/name)
-#: quests.xml:127(quest/name) quests.xml:135(quest/name)
-#: quests.xml:145(quest/name) quests.xml:155(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:114 quests.xml:124 quests.xml:134 quests.xml:142 quests.xml:152
+#: quests.xml:162
 msgid "Ratto Extermination"
 msgstr ""
 
-#: quests.xml:108(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:115
 msgid "Peter needs your help to clean the bottom of the ship from some rattos."
 msgstr ""
 
-#: quests.xml:110(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:117
 msgid "Speak to him when you will have time to help him."
 msgstr ""
 
-#: quests.xml:112(quest/text) quests.xml:122(quest/text)
-#: quests.xml:130(quest/text) quests.xml:140(quest/text)
-#: quests.xml:150(quest/text) quests.xml:158(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:119 quests.xml:129 quests.xml:137 quests.xml:147 quests.xml:157
+#: quests.xml:165
 msgid "Quest Giver: Peter."
 msgstr ""
 
-#: quests.xml:113(quest/text) quests.xml:123(quest/text)
-#: quests.xml:131(quest/text) quests.xml:141(quest/text)
-#: quests.xml:151(quest/text) quests.xml:159(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:120 quests.xml:130 quests.xml:138 quests.xml:148 quests.xml:158
+#: quests.xml:166
 msgid "Coordinates: La Johanne, Second Deck. (60,35)"
 msgstr ""
 
-#: quests.xml:118(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:125
 msgid "Peter asked you to empty the bottom of the ship for free."
 msgstr ""
 
-#: quests.xml:120(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:127
 msgid "Maybe next time he will have something to offer you..."
 msgstr ""
 
-#: quests.xml:128(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:135
 msgid ""
 "Cleaning the bottom of the ship is a tough work, but Peter is offering you "
 "some gold for it."
 msgstr ""
 
-#: quests.xml:132(quest/text) quests.xml:152(quest/text)
-#: quests.xml:160(quest/text)
-msgid "Reward: 200 GP, 100 EXP."
+#. (itstool) path: quest/text
+#: quests.xml:139 quests.xml:159 quests.xml:167
+msgid "Reward: 100 EXP, 1000 E."
 msgstr ""
 
-#: quests.xml:136(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:143
 msgid "You helped Peter cleaning the bottom of the ship for free."
 msgstr ""
 
-#: quests.xml:138(quest/text) quests.xml:148(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:145 quests.xml:155
 msgid ""
 "However, it looks like these rattos can come back again. Later, you could "
 "ask Peter if he needs your help again."
 msgstr ""
 
-#: quests.xml:146(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:153
 msgid ""
 "You helped Peter cleaning the bottom of the ship. He rewarded you with some "
 "gold."
 msgstr ""
 
-#: quests.xml:156(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:163
 msgid ""
 "This time, Peter seems to have a reward for you. After you cleaned the "
 "bottom of the ship, ask him for a reward."
 msgstr ""
 
-#: quests.xml:165(quest/name) quests.xml:175(quest/name)
-#: quests.xml:185(quest/name) quests.xml:195(quest/name)
-#: quests.xml:205(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:177 quests.xml:187 quests.xml:197 quests.xml:207 quests.xml:217
 msgid "One of Us"
 msgstr ""
 
-#: quests.xml:166(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:178
 msgid ""
 "Nard, the captain of the ship, asked you to help his crew on the island "
 "outside the ship."
 msgstr ""
 
-#: quests.xml:168(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:180
 msgid ""
 "Gugli, one of his sailors, is waiting for you on the shore to tell you about "
 "the task."
 msgstr ""
 
-#: quests.xml:170(quest/text) quests.xml:180(quest/text)
-#: quests.xml:190(quest/text) quests.xml:200(quest/text)
-#: quests.xml:208(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:182 quests.xml:192 quests.xml:202 quests.xml:212 quests.xml:220
 msgid "Quest Giver: Nard."
 msgstr ""
 
-#: quests.xml:171(quest/text) quests.xml:181(quest/text)
-#: quests.xml:191(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:183 quests.xml:193 quests.xml:203
 msgid "Coordinates: La Johanne, Nard's Room. (25,26)"
 msgstr ""
 
-#: quests.xml:176(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:188
 msgid "You reported to Nard that you successfully accomplished Gugli's task."
 msgstr ""
 
-#: quests.xml:178(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:190
 msgid "As a perfect sailor, you are waiting for the next order, eagerly."
 msgstr ""
 
-#: quests.xml:186(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:198
 msgid ""
 "Captain Nard has another task for you. It seems he did a mistake in the "
 "past, choosing the right lieutenant for this ship."
 msgstr ""
 
-#: quests.xml:188(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:200
 msgid ""
 "Chef Gado, the former shipkeeper, may have something to say about that. So "
 "does Julia, the current lieutenant of the ship."
 msgstr ""
 
-#: quests.xml:196(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:208
 msgid ""
 "You smartly solved the lieutenants' conflict onboard. Nard is proud of his "
 "new sailor."
 msgstr ""
 
-#: quests.xml:198(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:210
 msgid ""
 "Take your reward from the box near the captain in order to officially become "
 "one of Nard's crew members."
 msgstr ""
 
-#: quests.xml:201(quest/text) quests.xml:209(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:213 quests.xml:221
 msgid "Coordinates: La Johanne, Nard's Room. (25,24)"
 msgstr ""
 
-#: quests.xml:202(quest/text) quests.xml:210(quest/text)
-msgid "Reward: [@@2900|Bandana@@]."
+#. (itstool) path: quest/text
+#: quests.xml:214 quests.xml:222
+msgid "Reward: 50 EXP, [@@2900|Bandana@@]."
 msgstr ""
 
-#: quests.xml:206(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:218
 msgid "Nard officially proclaimed you as member of his crew!"
 msgstr ""
 
-#: quests.xml:215(quest/name)
-msgid "Treasure's Glint"
+#. (itstool) path: quest/name
+#: quests.xml:228
+msgid "Chef's Secret Blade"
 msgstr ""
 
-#: quests.xml:216(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:229
+msgid "You found a sharp knife on a table in one of the rooms of the ship."
+msgstr ""
+
+#. (itstool) path: quest/text
+#: quests.xml:231
 msgid ""
-"You spotted a treasure chest at the top of a cliff on the east side of the "
-"island."
+"It looks like its previous owner used it to prepare delicious dishes for the "
+"crew."
 msgstr ""
 
-#: quests.xml:218(quest/text)
-msgid "The chest contains gold and an [@@514|Old Book@@]."
+#. (itstool) path: quest/text
+#: quests.xml:233
+msgid "Coordinates: La Johanne, Second Deck. (50,24)"
 msgstr ""
 
-#: quests.xml:220(quest/text)
-msgid "Coordinates: Desert Island. (83,70)"
+#. (itstool) path: quest/text
+#: quests.xml:234
+msgid "Reward: [@@3500|Knife@@]."
 msgstr ""
 
-#: quests.xml:221(quest/text)
-msgid "Reward: 100 GP, [@@514|Old Book@@]"
-msgstr ""
-
-#: quests.xml:226(quest/name) quests.xml:236(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:241 quests.xml:251
 msgid "Fish and Scams"
 msgstr ""
 
-#: quests.xml:227(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:242
 msgid "A sailor, who wasn't on Gugli's list, gave you a box full of food."
 msgstr ""
 
-#: quests.xml:229(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:244
 msgid ""
 "He did not mention any reward, but he would like you to deliver it to Gugli "
 "as soon as you can."
 msgstr ""
 
-#: quests.xml:231(quest/text) quests.xml:243(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:246 quests.xml:258
 msgid "Quest Giver: Couwan."
 msgstr ""
 
-#: quests.xml:232(quest/text) quests.xml:258(quest/text)
-#: quests.xml:266(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:247 quests.xml:305 quests.xml:313
 msgid "Coordinates: Desert Island. (85,108)"
 msgstr ""
 
-#: quests.xml:237(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:252
 msgid "Couwan is an awful, roguish person. No reward from him..."
 msgstr ""
 
-#: quests.xml:239(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:254
 msgid ""
 "However, Gugli gave you some gold pieces and apologized for this unexpected "
 "task."
 msgstr ""
 
-#: quests.xml:241(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:256
 msgid "He also warned you not to trust anyone."
 msgstr ""
 
-#: quests.xml:244(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:259
 msgid "Coordinates: Desert Island. (89,36)"
 msgstr ""
 
-#: quests.xml:245(quest/text)
-msgid "Reward: 10 GP."
+#. (itstool) path: quest/text
+#: quests.xml:260
+msgid "Reward: 8 EXP, 10 E."
 msgstr ""
 
-#: quests.xml:250(quest/name) quests.xml:262(quest/name)
+#. (itstool) path: quest/name
+#: quests.xml:266
+msgid "Treasure's Glint"
+msgstr ""
+
+#. (itstool) path: quest/text
+#: quests.xml:267
+msgid ""
+"You spotted a treasure chest at the top of a cliff on the east side of the "
+"island."
+msgstr ""
+
+#. (itstool) path: quest/text
+#: quests.xml:269
+msgid "The chest contains gold and an [@@514|Old Book@@]."
+msgstr ""
+
+#. (itstool) path: quest/text
+#: quests.xml:271
+msgid "Coordinates: Desert Island. (83,70)"
+msgstr ""
+
+#. (itstool) path: quest/text
+#: quests.xml:272
+msgid "Reward: 100 E, [@@514|Old Book@@]."
+msgstr ""
+
+#. (itstool) path: quest/name
+#: quests.xml:297 quests.xml:309
 msgid "Unexpected Help"
 msgstr ""
 
-#: quests.xml:251(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:298
 msgid ""
 "Gugli told you about the sailors' task on the island. He wants you to help "
 "some of them bringing him 6 boxes full of [@@513|Croconuts@@], [@@714|"
 "Aquadas@@] and [@@515|Plushrooms@@]."
 msgstr ""
 
-#: quests.xml:253(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:300
 msgid ""
 "You need to collect the boxes from Tibbo, Gulukan, Q'Muller, Astapolos, "
 "Jalad and Ale."
 msgstr ""
 
-#: quests.xml:255(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:302
 msgid ""
 "Max, Silvio and Lean may have some information about where to find these "
 "sailors."
 msgstr ""
 
-#: quests.xml:257(quest/text) quests.xml:265(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:304 quests.xml:312
 msgid "Quest Giver: Gugli."
 msgstr ""
 
-#: quests.xml:263(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:310
 msgid ""
 "You completed all the tasks Gugli gave you. Sailors of the ship will never "
 "forget you!"
 msgstr ""
 
-#: quests.xml:272(quest/name) quests.xml:280(quest/name)
-#: quests.xml:290(quest/name) quests.xml:298(quest/name)
-#: quests.xml:306(quest/name) quests.xml:314(quest/name)
+#. (itstool) path: quest/text
+#: quests.xml:314
+msgid "Reward: 40 EXP, 250 E."
+msgstr ""
+
+#. (itstool) path: quest/name
+#: quests.xml:319 quests.xml:327 quests.xml:337 quests.xml:345 quests.xml:353
+#: quests.xml:361
 msgid "Two Lieutenants in One Boat"
 msgstr ""
 
-#: quests.xml:273(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:320
 msgid ""
 "Chef Gado wants you to collect 2 [@@505|Piou Legs@@], 2 [@@512|Half "
-"Croconuts@@], 1 [@@714|Aquada@@] and 1 [@@508|Sea Drops@@] to prepare a "
+"Croconuts@@], 1 [@@509|Aquada@@] and 1 [@@508|Sea Drops@@] to prepare a "
 "[@@717|Poisoned Dish@@], for Julia."
 msgstr ""
 
-#: quests.xml:275(quest/text) quests.xml:285(quest/text)
-#: quests.xml:293(quest/text) quests.xml:301(quest/text)
-#: quests.xml:309(quest/text) quests.xml:317(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:322 quests.xml:332 quests.xml:340 quests.xml:348 quests.xml:356
+#: quests.xml:364
 msgid "Quest Giver: Chef Gado."
 msgstr ""
 
-#: quests.xml:276(quest/text) quests.xml:286(quest/text)
-#: quests.xml:294(quest/text) quests.xml:302(quest/text)
-#: quests.xml:310(quest/text) quests.xml:318(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:323 quests.xml:333 quests.xml:341 quests.xml:349 quests.xml:357
+#: quests.xml:365
 msgid "Coordinates: La Johanne, Second Deck. (17,28)"
 msgstr ""
 
-#: quests.xml:281(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:328
 msgid ""
 "Chef Gado prepared the [@@717|Poisoned Dish@@]. He would like you to give it "
 "to Julia."
 msgstr ""
 
-#: quests.xml:283(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:330
 msgid ""
 "While Chef Gado wants you to poison Julia, you remember she looked after you "
 "when you were sick. She doesn't deserve to be punished... or does she?"
 msgstr ""
 
-#: quests.xml:291(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:338
 msgid "Go back and talk to Gado. He probably has a reward for you."
 msgstr ""
 
-#: quests.xml:299(quest/text)
-msgid "You successfully poisoned Julia. Chef Gado has finally been avenged!"
+#. (itstool) path: quest/text
+#: quests.xml:346
+msgid "You successfully poisoned Julia. Chef Gado finally had his revenge!"
 msgstr ""
 
-#: quests.xml:303(quest/text)
-msgid "Reward: 60 GP, [@@502|Bread@@]."
+#. (itstool) path: quest/text
+#: quests.xml:350
+msgid "Reward: 15 EXP, 200 E, [@@502|Bread@@]."
 msgstr ""
 
-#: quests.xml:307(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:354
 msgid "You refused to accomplish Chef Gado's evil plan. Julia is now safe."
 msgstr ""
 
-#: quests.xml:311(quest/text)
-msgid "Reward: 50 GP."
+#. (itstool) path: quest/text
+#: quests.xml:358
+msgid "Reward: 15 EXP, 200 E."
 msgstr ""
 
-#: quests.xml:315(quest/text)
+#. (itstool) path: quest/text
+#: quests.xml:362
 msgid ""
 "You preferred trusting Julia because, after all, she deserves to be the "
 "lieutenant of the ship."
 msgstr ""
 
-#: quests.xml:319(quest/text)
-msgid "Reward: 40 GP."
+#. (itstool) path: quest/text
+#: quests.xml:366
+msgid "Reward: 8 EXP, 100 E."
 msgstr ""
