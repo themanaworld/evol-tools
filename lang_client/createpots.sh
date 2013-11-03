@@ -18,5 +18,6 @@ its quests
 cd $DIR
 
 itstool -o pot/manaplus_emotes.pot tmp/manaplus_emotes.xml
+itstool -o pot/deadmessages.pot tmp/deadmessages.xml
 
 msgcat pot/*.pot > clientdata-beta.pot
