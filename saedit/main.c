@@ -388,6 +388,11 @@ void show_animation(SAEInfo *sae_info) {
 	if (next == NULL)
 		next = g_list_first(sae_info->animation);
 
+    if (!sprite->delay)
+    {
+        free_animations(sae_info);
+        return;
+    }
 	sae_info->animation = next;
 	sae_info->anim_tag = g_timeout_add(sprite->delay, (GSourceFunc)show_animation, sae_info);
 }
