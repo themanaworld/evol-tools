@@ -1,13 +1,169 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-07-03 12:29+0300\n"
+"POT-Creation-Date: 2013-07-10 23:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:9
+msgid "You are dead."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:10
+msgid "We regret to inform you that your character was killed in battle."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:11
+msgid "You are not that alive anymore."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:12
+msgid "The cold hands of the grim reaper are grabbing for your soul."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:13
+msgid "Game Over!"
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:14
+msgid "Insert coin to continue."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:15
+msgid ""
+"No, kids. Your character did not really die. It... err... went to a better "
+"place."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:16
+msgid ""
+"Your plan of breaking your enemies weapon by bashing it with your throat "
+"failed."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:17
+msgid "I guess this did not run too well."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:19
+msgid "Do you want your possessions identified?"
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:21
+msgid "Sadly, no trace of you was ever found..."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:23
+msgid "Annihilated."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:25
+msgid "Looks like you got your head handed to you."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:27
+msgid ""
+"You screwed up again, dump your body down the tubes and get you another one."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:29
+msgid "You're not dead yet. You're just resting."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:30
+msgid "You are no more."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:31
+msgid "You have ceased to be."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:32
+msgid "You've expired and gone to meet your maker."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:33
+msgid "You're a stiff."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:34
+msgid "Bereft of life, you rest in peace."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:35
+msgid "If you weren't so animated, you'd be pushing up the daisies."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:36
+msgid "Your metabolic processes are now history."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:37
+msgid "You're off the twig."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:38
+msgid "You've kicked the bucket."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:39
+msgid ""
+"You've shuffled off your mortal coil, run down the curtain and joined the "
+"bleedin' choir invisibile."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:40
+msgid "You are an ex-player."
+msgstr ""
+
+#. (itstool) path: messages/message
+#: tmp/deadmessages.xml:41
+msgid "You're pining for the fjords."
+msgstr ""
+
+#. (itstool) path: tmp/deadmessages.xml/messages
+#: tmp/deadmessages.xml:4
+msgid ""
+"<_:rules-1/> <_:message-2/> <_:message-3/> <_:message-4/> <_:message-5/> <_:"
+"message-6/> <_:message-7/> <_:message-8/> <_:message-9/> <_:message-10/> // "
+"NetHack reference: <_:message-11/> // Secret of Mana reference: <_:"
+"message-12/> // Final Fantasy VI reference: <_:message-13/> // Earthbound "
+"reference: <_:message-14/> // Leisure Suit Larry 1 reference: <_:message-15/"
+"> // Monty Python references (Dead Parrot sketch mostly): <_:message-16/> <_:"
+"message-17/> <_:message-18/> <_:message-19/> <_:message-20/> <_:message-21/> "
+"<_:message-22/> <_:message-23/> <_:message-24/> <_:message-25/> <_:"
+"message-26/> <_:message-27/> <_:message-28/>"
+msgstr ""
 
 #. (itstool) path: skills/set@name
 #: ea-skills.xml:12
