@@ -14,6 +14,7 @@ its emotes
 its itemcolors
 its monsters
 its quests
+its pets
 
 cd $DIR
 
