@@ -28,6 +28,8 @@ def detectCommand():
         return "mapstotmx"
     elif sys.argv[0][-15:] == "/queststoxml.py":
         return "queststoxml"
+    elif sys.argv[0][-14:] == "/itemstoxml.py":
+        return "itemstoxml"
     return "help"
 
 def makeDir(path):
@@ -82,10 +84,21 @@ def saveFile(fileName, data):
         w.write(data)
 
 def stripQuotes(data):
+    if len(data) == 0:
+        return data
     if data[-1] == "\"":
         data = data[:-1]
     if data[0] == "\"":
         data = data[1:]
+    if data[-1] == "'":
+        data = data[:-1]
+    if data[0] == "'":
+        data = data[1:]
+    return data
+
+def stripQuotes2(data):
+    for idx in xrange(0, len(data)):
+        data[idx] = stripQuotes(data[idx])
     return data
 
 def printHelp():
@@ -187,11 +200,91 @@ def covertQuests():
             data = data + tpl.format(questId, name, text + ": " + str(questId))
     saveFile(destDir + "quests.xml", quests.format(data))
 
+def convertItems():
+    destDir = "clientdata/"
+    templatesDir = "templates/"
+    itemsDbFile = "serverdata/sql-files/item_db_re.sql"
+    fieldsSplit = re.compile(",")
+    bracketsSplit = re.compile("[(]|[)]")
+    makeDir(destDir)
+    tpl = readFile(templatesDir + "item.tpl")
+    items = readFile(templatesDir + "items.xml")
+    data = ""
+    with open(itemsDbFile, "r") as f:
+        for line in f:
+            if len(line) < 10 or line[0:2] == "//" or line[0:12] != "REPLACE INTO":
+                continue
+            rows = bracketsSplit.split(line)
+            if len(rows) < 2:
+                continue
+            rows = fieldsSplit.split(rows[1])
+            if len(rows) < 31:
+                continue
+            rows = stripQuotes2(rows)
+            itemId = rows[0]
+            name = rows[1]
+            name2 = rows[2]
+            itemType = rows[3]
+            priceBuy = rows[4]
+            priceSell = rows[5]
+            weight = rows[6]
+            atk = rows[7]
+            matk = rows[8]
+            defence = rows[9]
+            attackRange = rows[10]
+            slots = rows[11]
+            equipJobs = rows[12]
+            equipUpper = rows[12]
+            equipGender = rows[14]
+            equipLocations = rows[15]
+            weaponLevel = rows[16]
+            equipLevelMin = rows[17]
+            equipLevelMax = rows[18]
+            refinable = rows[19]
+            view = rows[20]
+            bindOnEquip = rows[21]
+            buyInStore = rows[22]
+            delay = rows[23]
+            tradeFlag = rows[24]
+            tradeGroup = rows[25]
+            nouseFlag = rows[26]
+            nouseGroup = rows[27]
+            stackAmount = rows[28]
+            stackFlag = rows[29]
+            sprite = rows[30]
+
+            name = name.replace("\\'", "'")
+            image = ""
+
+            if equipLocations == "512":
+                image = "equipment/chest/sailorshirt.png"
+            elif equipLocations == "64":
+                image = "equipment/feet/boots.png|S:#3c3c3c,40332d,4d4d4d,5e4a3d,686868,705740,919191,a1825d,b6b6b6,b59767,dfdfdf,dbbf88"
+            elif equipLocations == "4":
+                image = "equipment/hands/armbands.png"
+            elif equipLocations == "1":
+                image = "equipment/legs/shorts.png|S:#4d4d4d,514d47,686868,706662,919191,99917b,b6b6b6,c0b698,dfdfdf,e4dfca"
+            elif equipLocations == "256":
+                image = "equipment/head/bandana.png"
+            elif equipLocations == "2":
+                image = "equipment/weapons/knife.png"
+            elif equipLocations == "0":
+                image = "usable/bread.png"
+            else:
+                image = "generic/box-fish.png"
+
+            data = data + tpl.format(itemId, name, weight,
+                atk, matk, defence, attackRange, delay, image)
+    saveFile(destDir + "items.xml", items.format(data))
+
 def readMapCache(path, cmd):
     if cmd == "help":
         printHelp()
     if cmd == "queststoxml":
         covertQuests()
+        return
+    elif cmd == "itemstoxml":
+        convertItems()
         return
 
     with open(path, "rb") as f:
