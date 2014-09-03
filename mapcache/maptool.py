@@ -134,18 +134,21 @@ def covertToTmx(f, mapsCount):
         mapData = dc.decompress(mapData)
         ground = ""
         collision = ""
+        fringe = ""
         for y in xrange(0, sy):
             for x in xrange(0, sx):
                 tile = getTile(mapData, x, y, sx)
-                if x + 1 == sy and y + 1 == sy:
+                if x + 1 == sx and y + 1 == sy:
                     ground = ground + getGroundTile(tile)
                     collision = collision + getCollisionTile(tile)
+                    fringe = fringe + "0";
                 else:
                     ground = ground + getGroundTile(tile) + ","
                     collision = collision + getCollisionTile(tile) + ","
+                    fringe = fringe + "0,";
             ground = ground + "\n"
             collision = collision + "\n"
-        saveFile(mapsDir + name + ".tmx", tmx.format(sx, sy, ground, collision))
+        saveFile(mapsDir + name + ".tmx", tmx.format(sx, sy, ground, collision, fringe))
 
 def readMapCache(path, cmd):
     if cmd == "help":

@@ -12,6 +12,11 @@
 {2}
 </data>
  </layer>
+ <layer name="Fringe" width="{0}" height="{1}">
+  <data encoding="csv">
+{4}
+</data>
+ </layer>
  <layer name="Collision" width="{0}" height="{1}">
   <data encoding="csv">
 {3}
