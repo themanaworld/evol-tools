@@ -26,6 +26,8 @@ def detectCommand():
         return "extractmaps"
     elif sys.argv[0][-13:] == "/mapstotmx.py":
         return "mapstotmx"
+    elif sys.argv[0][-15:] == "/queststoxml.py":
+        return "queststoxml"
     return "help"
 
 def makeDir(path):
@@ -78,6 +80,13 @@ def copyFile(src, dst, name):
 def saveFile(fileName, data):
     with open(fileName, "w") as w:
         w.write(data)
+
+def stripQuotes(data):
+    if data[-1] == "\"":
+        data = data[:-1]
+    if data[0] == "\"":
+        data = data[1:]
+    return data
 
 def printHelp():
     print "Unknown options selected."
@@ -150,9 +159,41 @@ def covertToTmx(f, mapsCount):
             collision = collision + "\n"
         saveFile(mapsDir + name + ".tmx", tmx.format(sx, sy, ground, collision, fringe))
 
+def covertQuests():
+    destDir = "clientdata/"
+    templatesDir = "templates/"
+    questsDbFile = "serverdata/db/quest_db.txt"
+    fieldsSplit = re.compile(",")
+    makeDir(destDir)
+    tpl = readFile(templatesDir + "quest.tpl")
+    quests = readFile(templatesDir + "quests.xml")
+    data = ""
+    with open(questsDbFile, "r") as f:
+        for line in f:
+            if line == "" or line[0:2] == "//":
+                continue
+            rows = fieldsSplit.split(line)
+            if len(rows) < 9:
+                continue
+            questId = rows[0]
+            text = rows[8]
+            if text[-1] == "\n":
+                text = text[:-1]
+            text = stripQuotes(text)
+            name = text
+            if len(name) > 20:
+                name = name[:19]
+
+            data = data + tpl.format(questId, name, text + ": " + str(questId))
+    saveFile(destDir + "quests.xml", quests.format(data))
+
 def readMapCache(path, cmd):
     if cmd == "help":
         printHelp()
+    if cmd == "queststoxml":
+        covertQuests()
+        return
+
     with open(path, "rb") as f:
         size = readInt32(f)
         if os.path.getsize(path) != size:
