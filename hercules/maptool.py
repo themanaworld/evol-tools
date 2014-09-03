@@ -20,12 +20,12 @@ import struct
 import shutil
 
 def detectCommand():
-    if sys.argv[0][-8:] == "/list.py":
-        return "list"
-    elif sys.argv[0][-11:] == "/extract.py":
-        return "extract"
-    elif sys.argv[0][-14:] == "/cachetotmx.py":
-        return "cachetotmx"
+    if sys.argv[0][-12:] == "/listmaps.py":
+        return "listmaps"
+    elif sys.argv[0][-15:] == "/extractmaps.py":
+        return "extractmaps"
+    elif sys.argv[0][-13:] == "/mapstotmx.py":
+        return "mapstotmx"
     return "help"
 
 def makeDir(path):
@@ -161,11 +161,11 @@ def readMapCache(path, cmd):
         mapsCount = readInt16(f)
         print "Maps count: " + str(mapsCount)
         readInt16(f) # padding
-        if cmd == "list":
+        if cmd == "listmaps":
             listMapCache(f, mapsCount)
-        elif cmd == "extract":
+        elif cmd == "extractmaps":
             extractMaps(f, mapsCount)
-        elif cmd == "cachetotmx":
+        elif cmd == "mapstotmx":
             covertToTmx(f, mapsCount)
 
 
