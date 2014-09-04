@@ -101,6 +101,12 @@ def stripQuotes2(data):
         data[idx] = stripQuotes(data[idx])
     return data
 
+def strToXml(data):
+    data = data.replace("&", "&amp;");
+    data = data.replace("<", "&lt;");
+    data = data.replace(">", "&gt;");
+    return data
+
 def printHelp():
     print "Unknown options selected."
     print ""
@@ -170,6 +176,7 @@ def covertToTmx(f, mapsCount):
                     fringe = fringe + "0,";
             ground = ground + "\n"
             collision = collision + "\n"
+            fringe = fringe + "\n"
         saveFile(mapsDir + name + ".tmx", tmx.format(sx, sy, ground, collision, fringe))
 
 def covertQuests():
@@ -192,7 +199,7 @@ def covertQuests():
             text = rows[8]
             if text[-1] == "\n":
                 text = text[:-1]
-            text = stripQuotes(text)
+            text = strToXml(stripQuotes(text))
             name = text
             if len(name) > 20:
                 name = name[:19]
@@ -256,25 +263,47 @@ def convertItems():
             name = name.replace("\\'", "'")
             image = ""
 
-            if equipLocations == "512":
-                image = "equipment/chest/sailorshirt.png"
-            elif equipLocations == "64":
-                image = "equipment/feet/boots.png|S:#3c3c3c,40332d,4d4d4d,5e4a3d,686868,705740,919191,a1825d,b6b6b6,b59767,dfdfdf,dbbf88"
-            elif equipLocations == "4":
-                image = "equipment/hands/armbands.png"
+            typeStr = "other"
+            spriteStr = ""
+            if equipLocations == "0":
+                image = "usable/bread.png"
+                typeStr = "usable"
+                spriteStr = "";
             elif equipLocations == "1":
                 image = "equipment/legs/shorts.png|S:#4d4d4d,514d47,686868,706662,919191,99917b,b6b6b6,c0b698,dfdfdf,e4dfca"
-            elif equipLocations == "256":
-                image = "equipment/head/bandana.png"
+                typeStr = "equip-legs"
+                spriteStr = "equipment/legs/shorts-male.xml|#4d4d4d,514d47,686868,706662,919191,99917b,b6b6b6,c0b698,dfdfdf,e0d5bf";
             elif equipLocations == "2":
                 image = "equipment/weapons/knife.png"
-            elif equipLocations == "0":
-                image = "usable/bread.png"
+                typeStr = "equip-1hand"
+                spriteStr = "equipment/weapons/knife.xml";
+            elif equipLocations == "4":
+                image = "equipment/hands/armbands.png"
+                typeStr = "equip-arms"
+                spriteStr = "equipment/hands/armbands-male.xml";
+            elif equipLocations == "16":
+                image = "equipment/chest/cottonshirt.png|S:#3c3c3c,3e3c38,4d4d4d,514d47,686868,706662,919191,99917b,b6b6b6,c0b698,dfdfdf,e4dfca"
+                typeStr = "equip-torso"
+                spriteStr = "equipment/chest/cottonshirt-male.xml|#43413d,59544f,7a706c,8a8176,a69e88,d1c7a7,e0d5bf";
+            elif equipLocations == "64":
+                image = "equipment/feet/boots.png|S:#3c3c3c,40332d,4d4d4d,5e4a3d,686868,705740,919191,a1825d,b6b6b6,b59767,dfdfdf,dbbf88"
+                typeStr = "equip-feet"
+                spriteStr = "equipment/feet/boots-male.xml|#40332d,5e4a3d,705740,a1825d,b59767,dbbf88";
+            elif equipLocations == "256":
+                image = "equipment/head/bandana.png"
+                typeStr = "equip-head"
+                spriteStr = "equipment/head/bandana-male.xml";
+            elif equipLocations == "512":
+                # no sprites in evol
+                image = "equipment/chest/sailorshirt.png"
+                typeStr = "equip-torso"
+                spriteStr = "equipment/chest/shirt-male.xml|#131913,1b231d,233129,35433e,4e6059,6c8279;#72571e,836737,a5854d,b18f45";
             else:
                 image = "generic/box-fish.png"
 
+            name = strToXml(name);
             data = data + tpl.format(itemId, name, weight,
-                atk, matk, defence, attackRange, delay, image)
+                atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
     saveFile(destDir + "items.xml", items.format(data))
 
 def readMapCache(path, cmd):
