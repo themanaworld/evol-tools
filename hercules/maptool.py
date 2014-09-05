@@ -18,6 +18,7 @@ import sys
 import zlib
 import struct
 import shutil
+from sets import Set
 
 def detectCommand():
     if sys.argv[0][-12:] == "/listmaps.py":
@@ -217,6 +218,7 @@ def convertItems():
     tpl = readFile(templatesDir + "item.tpl")
     items = readFile(templatesDir + "items.xml")
     data = ""
+    ids = Set()
     with open(itemsDbFile, "r") as f:
         for line in f:
             if len(line) < 10 or line[0:2] == "//" or line[0:12] != "REPLACE INTO":
@@ -302,8 +304,16 @@ def convertItems():
                 image = "generic/box-fish.png"
 
             name = strToXml(name);
-            data = data + tpl.format(itemId, name, weight,
-                atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
+
+            if itemId not in ids:
+                ids.add(itemId)
+                data = data + tpl.format(itemId, name, weight,
+                    atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
+            if view != "0" and view not in ids:
+                ids.add(view)
+                data = data + tpl.format(view, name, weight,
+                    atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
+
     saveFile(destDir + "items.xml", items.format(data))
 
 def readMapCache(path, cmd):
