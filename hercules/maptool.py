@@ -69,7 +69,22 @@ def getTile(mapData, x, y, sx):
     data = mapData[y * sx + x]
     arr = array.array("B")
     arr.fromstring(data)
-    return arr[0]
+    data = arr[0]
+    if data == 0:    # 000 normal walkable
+        data = 0
+    elif data == 1:  # 001 non walkable
+        data = 1
+    elif data == 2:  # 010 same with 0
+        data = 0
+    elif data == 3:  # 011 same with 0, but water
+        data = 0
+    elif data == 4:  # 100 same with 0
+        data = 0
+    elif data == 5:  # 101 same with 1, but shootable (for now not supported!!!)
+        data = 1
+    elif data == 6:  # 110 same with 0
+        data = 0
+    return data
 
 def getGroundTile(flag):
     return str(flag + 1)
