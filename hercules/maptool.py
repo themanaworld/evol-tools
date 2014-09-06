@@ -31,6 +31,8 @@ def detectCommand():
         return "queststoxml"
     elif sys.argv[0][-14:] == "/itemstoxml.py":
         return "itemstoxml"
+    elif sys.argv[0][-17:] == "/monsterstoxml.py":
+        return "monsterstoxml"
     return "help"
 
 def makeDir(path):
@@ -291,6 +293,10 @@ def convertItems():
                 image = "equipment/feet/boots.png|S:#3c3c3c,40332d,4d4d4d,5e4a3d,686868,705740,919191,a1825d,b6b6b6,b59767,dfdfdf,dbbf88"
                 typeStr = "equip-feet"
                 spriteStr = "equipment/feet/boots-male.xml|#40332d,5e4a3d,705740,a1825d,b59767,dbbf88";
+            elif equipLocations == "136":
+                image = "equipment/chest/cottonshirt.png|S:#3c3c3c,3e3c38,4d4d4d,514d47,686868,706662,919191,99917b,b6b6b6,c0b698,dfdfdf,e4dfca"
+                typeStr = "equip-torso"
+                spriteStr = "equipment/chest/cottonshirt-male.xml|#43413d,59544f,7a706c,8a8176,a69e88,d1c7a7,e0d5bf";
             elif equipLocations == "256":
                 image = "equipment/head/bandana.png"
                 typeStr = "equip-head"
@@ -316,6 +322,34 @@ def convertItems():
 
     saveFile(destDir + "items.xml", items.format(data))
 
+def convertMonsters():
+    destDir = "clientdata/"
+    templatesDir = "templates/"
+    monstersDbFile = "serverdata/sql-files/mob_db_re.sql"
+    fieldsSplit = re.compile(",")
+    bracketsSplit = re.compile("[(]|[)]")
+    makeDir(destDir)
+    tpl = readFile(templatesDir + "monster.tpl")
+    monsters = readFile(templatesDir + "monsters.xml")
+    data = ""
+    ids = Set()
+    with open(monstersDbFile, "r") as f:
+        for line in f:
+            if len(line) < 10 or line[0:2] == "//" or line[0:12] != "REPLACE INTO":
+                continue
+            rows = bracketsSplit.split(line)
+            if len(rows) < 2:
+                continue
+            rows = fieldsSplit.split(rows[1])
+            if len(rows) < 5:
+                continue
+            monsterId = rows[0]
+            name = strToXml(stripQuotes(rows[2]))
+            data = data + tpl.format(monsterId, name)
+
+    saveFile(destDir + "monsters.xml", monsters.format(data))
+
+
 def readMapCache(path, cmd):
     if cmd == "help":
         printHelp()
@@ -324,6 +358,9 @@ def readMapCache(path, cmd):
         return
     elif cmd == "itemstoxml":
         convertItems()
+        return
+    elif cmd == "monsterstoxml":
+        convertMonsters();
         return
 
     with open(path, "rb") as f:
