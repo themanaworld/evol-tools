@@ -282,8 +282,11 @@ def convertItems():
             name = name.replace("\\'", "'")
             image = ""
 
-            typeStr = "other"
-            spriteStr = ""
+#            print itemId + "," + equipLocations
+#            typeStr = "other"
+            typeStr = "equip-legs"
+            spriteStr = "equipment/legs/trousers-male.xml"
+            image = "generic/box-fish.png"
             if equipLocations == "0":
                 image = "usable/bread.png"
                 typeStr = "usable"
@@ -321,8 +324,6 @@ def convertItems():
                 image = "equipment/chest/sailorshirt.png"
                 typeStr = "equip-torso"
                 spriteStr = "equipment/chest/shirt-male.xml|#131913,1b231d,233129,35433e,4e6059,6c8279;#72571e,836737,a5854d,b18f45";
-            else:
-                image = "generic/box-fish.png"
 
             name = strToXml(name);
 
