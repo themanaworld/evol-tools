@@ -36,12 +36,12 @@ def saveFile(fileName, data):
 def parsePacket(line):
     m = packetRe.search(line)
     if m is not None:
-        return (m.group("id"), m.group("size"), m.group("func"))
+        return (m.group("id").lower(), int(m.group("size")), m.group("func"))
     return None
 
 def readPackets(path, oldVersion, newVersion):
-    oldPackets = {}
-    newPackets = {}
+    oldPackets = dict()
+    newPackets = dict()
     with open(path, "r") as f:
         searchState = 0
         newBlock = False
@@ -70,24 +70,32 @@ def readPackets(path, oldVersion, newVersion):
 def findChangedPackets(data):
     old = data[0]
     new = data[1]
-    ret = []
+    ret = dict()
     for line in old.iteritems():
         if line[0] in new:
-            ret.append(line[1])
+            ret[line[0]] = line[1]
     return (ret, new)
 
 def showPlan(data):
-    oldFunc = {}
-    newFunc = {}
-    for line in data[0]:
-        oldFunc[line[2]] = line
+    oldFunc = dict()
+    newFunc = dict()
+
+    for line in data[0].iteritems():
+        if line[1][2] not in oldFunc:
+            oldFunc[line[1][2]] = []
+        oldFunc[line[1][2]].append(line[1])
+
     for line in data[1].iteritems():
-        newFunc[line[1][2]] = line[1]
+        if line[1][2] not in newFunc:
+            newFunc[line[1][2]] = []
+        newFunc[line[1][2]].append(line[1])
 
     for line in oldFunc:
-        print "{0:30} {1:4} {2}".format(line, oldFunc[line][0], newFunc[line][0])
-#        if line not in newFunc:
-#            print line
+        if line in oldFunc and line in newFunc:
+            for line2 in oldFunc[line]:
+                print "{0:30} {1:4}  ->  {2:4}".format(line, line2[0], newFunc[line][0][0])
+#                print "{0:30} {1:4}  -  {2:4}".format(line, line2, newFunc[line])
+#         print "{0:30} {1:4}  {2:3} {3:4} {4:3}".format(line, oldFunc[line][0], oldFunc[line][1], newFunc[line][0], newFunc[line][1])
 
 def main():
     data = readPackets("hercules/src/map/packets.h", 20131223, 20131230)
