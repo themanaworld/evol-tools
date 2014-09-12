@@ -287,7 +287,11 @@ def convertItems():
             typeStr = "equip-legs"
             spriteStr = "equipment/legs/trousers-male.xml"
             image = "generic/box-fish.png"
-            if equipLocations == "0":
+            if itemType == 0 or itemType == 2 or itemType == 18: # usable
+                image = "usable/bread.png"
+                typeStr = "usable"
+                spriteStr = "";
+            elif equipLocations == "0":
                 image = "usable/bread.png"
                 typeStr = "usable"
                 spriteStr = "";
