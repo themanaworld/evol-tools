@@ -98,7 +98,7 @@ def showPlan(data):
 #         print "{0:30} {1:4}  {2:3} {3:4} {4:3}".format(line, oldFunc[line][0], oldFunc[line][1], newFunc[line][0], newFunc[line][1])
 
 def main():
-    data = readPackets("hercules/src/map/packets.h", 20131223, 20131230)
+    data = readPackets("hercules/src/map/packets.h", 20140416, )
     changed = findChangedPackets(data)
     showPlan(changed)
 
