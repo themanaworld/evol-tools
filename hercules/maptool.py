@@ -33,6 +33,8 @@ def detectCommand():
         return "itemstoxml"
     elif sys.argv[0][-17:] == "/monsterstoxml.py":
         return "monsterstoxml"
+    elif sys.argv[0][-20:] == "/mercenariestoxml.py":
+        return "mercenariestoxml"
     return "help"
 
 def makeDir(path):
@@ -371,6 +373,27 @@ def convertMonsters():
 
     saveFile(destDir + "monsters.xml", monsters.format(data))
 
+def convertMercenaries():
+    destDir = "clientdata/"
+    templatesDir = "templates/"
+    mercenariesDbFile = "serverdata/db/mercenary_db.txt"
+    fieldsSplit = re.compile(",")
+    makeDir(destDir)
+    tpl = readFile(templatesDir + "mercenary.tpl")
+    mercenaries = readFile(templatesDir + "mercenaries.xml")
+    data = ""
+    mercenarySprite = "<sprite>monsters/croc.xml</sprite>";
+    with open(mercenariesDbFile, "r") as f:
+        for line in f:
+            if line == "" or line[0:2] == "//":
+                continue
+            rows = fieldsSplit.split(line)
+            if len(rows) < 9:
+                continue
+            mercenaryId = rows[0]
+            data = data + tpl.format(mercenaryId, mercenarySprite)
+    saveFile(destDir + "mercenaries.xml", mercenaries.format(data))
+
 
 def readMapCache(path, cmd):
     if cmd == "help":
@@ -383,6 +406,9 @@ def readMapCache(path, cmd):
         return
     elif cmd == "monsterstoxml":
         convertMonsters();
+        return
+    elif cmd == "mercenariestoxml":
+        convertMercenaries();
         return
 
     with open(path, "rb") as f:
