@@ -229,6 +229,11 @@ def covertQuests():
             data = data + tpl.format(questId, name, text + ": " + str(questId))
     saveFile(destDir + "quests.xml", quests.format(data))
 
+def prepStat(val, text):
+    if val != "0" and val != "":
+        return "        {0}=\"{1}\"\n".format(text, val)
+    return ""
+
 def convertItems():
     destDir = "clientdata/"
     templatesDir = "templates/"
@@ -286,6 +291,12 @@ def convertItems():
             name = name.replace("\\'", "'")
             image = ""
 
+            statStr = prepStat(atk, "attack")
+            statStr = statStr + prepStat(matk, "mattack")
+            statStr = statStr + prepStat(defence, "defence")
+            statStr = statStr + prepStat(weight, "weight")
+            statStr = statStr + prepStat(attackRange, "range")
+            statStr = statStr + prepStat(delay, "speed")
 #            print itemId + "," + equipLocations
 #            typeStr = "other"
             typeStr = "equip-legs"
@@ -337,12 +348,12 @@ def convertItems():
 
             if itemId not in ids:
                 ids.add(itemId)
-                data = data + tpl.format(itemId, name, weight,
-                    atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
+                data = data + tpl.format(itemId, name, 0,
+                    statStr, image, typeStr, spriteStr)
             if view != "0" and view not in ids:
                 ids.add(view)
-                data = data + tpl.format(view, name, weight,
-                    atk, matk, defence, attackRange, delay, image, typeStr, spriteStr)
+                data = data + tpl.format(view, name, 0,
+                    statStr, image, typeStr, spriteStr)
 
     saveFile(destDir + "items.xml", items.format(data))
 
