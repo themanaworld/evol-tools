@@ -37,6 +37,8 @@ def detectCommand():
         return "mercenariestoxml"
     elif sys.argv[0][-13:] == "/petstoxml.py":
         return "petstoxml"
+    elif sys.argv[0][-21:] == "/homunculusestoxml.py":
+        return "homunculusestoxml"
     return "help"
 
 def makeDir(path):
@@ -428,6 +430,27 @@ def convertPets():
             data = data + tpl.format(petId, petSprite)
     saveFile(destDir + "pets.xml", pets.format(data))
 
+def convertHomunculuses():
+    destDir = "clientdata/"
+    templatesDir = "templates/"
+    homunculusesDbFile = "serverdata/db/re/homunculus_db.txt"
+    fieldsSplit = re.compile(",")
+    makeDir(destDir)
+    tpl = readFile(templatesDir + "homunculus.tpl")
+    homunculuses = readFile(templatesDir + "homunculuses.xml")
+    data = ""
+    homunculusSprite = "<sprite>monsters/tortuga.xml</sprite>";
+    with open(homunculusesDbFile, "r") as f:
+        for line in f:
+            if line == "" or line[0:2] == "//":
+                continue
+            rows = fieldsSplit.split(line)
+            if len(rows) < 9:
+                continue
+            homunculusId = rows[0]
+            data = data + tpl.format(homunculusId, homunculusSprite)
+    saveFile(destDir + "homunculuses.xml", homunculuses.format(data))
+
 
 def readMapCache(path, cmd):
     if cmd == "help":
@@ -446,6 +469,9 @@ def readMapCache(path, cmd):
         return
     elif cmd == "petstoxml":
         convertPets();
+        return
+    elif cmd == "homunculusestoxml":
+        convertHomunculuses();
         return
 
     with open(path, "rb") as f:
