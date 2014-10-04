@@ -17,6 +17,11 @@ update/upload
 !update/adler32.c
 update/adler32
 
+hercules_update/files
+hercules_update/upload
+!hercules_update/adler32.c
+hercules_update/adler32
+
 # saedit
 saedit/saedit
 saedit/make.log

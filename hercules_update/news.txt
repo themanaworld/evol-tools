@@ -1,0 +1,6 @@
+##0 Welcome to ##BHercules test server##b!
+
+##0 This server is only technical preview.
+##0 In server present data from RO.
+##0 For client art and data was used evol art and auto generated xml files
+##0 Some features may not work.
