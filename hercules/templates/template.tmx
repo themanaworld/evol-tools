@@ -4,7 +4,7 @@
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
   <image source="../graphics/tilesets/tileset.png" width="64" height="32"/>
  </tileset>
- <tileset firstgid="3" name="Collision" tilewidth="32" tileheight="32">
+ <tileset firstgid="5" name="Collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tilesets/collision.png" width="64" height="32"/>
  </tileset>
  <layer name="ground" width="{0}" height="{1}">

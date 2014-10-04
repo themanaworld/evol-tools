@@ -73,26 +73,38 @@ def readFile(path):
     with open(path, "r") as f:
         return f.read()
 
-def getTile(mapData, x, y, sx):
+def getTileData(mapData, x, y, sx):
     data = mapData[y * sx + x]
     arr = array.array("B")
     arr.fromstring(data)
     data = arr[0]
-    if data == 0:    # 000 normal walkable
-        data = 0
-    elif data == 1:  # 001 non walkable
-        data = 1
-    elif data == 2:  # 010 same with 0
-        data = 0
-    elif data == 3:  # 011 same with 0, but water
-        data = 0
-    elif data == 4:  # 100 same with 0
-        data = 0
-    elif data == 5:  # 101 same with 1, but shootable (for now not supported!!!)
-        data = 1
-    elif data == 6:  # 110 same with 0
-        data = 0
     return data
+
+def getTile(data):
+    normal = 0
+    collison = 0
+    if data == 0:    # 000 normal walkable
+        normal = 1
+        collision = 5
+    elif data == 1:  # 001 non walkable
+        normal = 2
+        collision = 6
+    elif data == 2:  # 010 same with 0
+        normal = 1
+        collision = 5
+    elif data == 3:  # 011 same with 0, but water
+        normal = 3
+        collision = 5
+    elif data == 4:  # 100 same with 0
+        normal = 1
+        collision = 5
+    elif data == 5:  # 101 same with 1, but shootable (for now not supported!!!)
+        normal = 4
+        collision = 6
+    elif data == 6:  # 110 same with 0
+        normal = 1
+        collision = 5
+    return (str(normal), str(collision))
 
 def getGroundTile(flag):
     return str(flag + 1)
@@ -191,14 +203,15 @@ def covertToTmx(f, mapsCount):
         fringe = ""
         for y in xrange(0, sy):
             for x in xrange(0, sx):
-                tile = getTile(mapData, x, y, sx)
+                tileData = getTileData(mapData, x, y, sx)
+                tile = getTile(tileData)
                 if x + 1 == sx and y + 1 == sy:
-                    ground = ground + getGroundTile(tile)
-                    collision = collision + getCollisionTile(tile)
+                    ground = ground + tile[0]
+                    collision = collision + tile[1]
                     fringe = fringe + "0";
                 else:
-                    ground = ground + getGroundTile(tile) + ","
-                    collision = collision + getCollisionTile(tile) + ","
+                    ground = ground + tile[0] + ","
+                    collision = collision + tile[1] + ","
                     fringe = fringe + "0,";
             ground = ground + "\n"
             collision = collision + "\n"
