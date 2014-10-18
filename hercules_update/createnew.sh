@@ -13,8 +13,8 @@ mkdir upload
 
 rm files/hercules.zip
 cd ../../herculesclientdata
-find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -@ ../privtools/hercules_update/files/hercules.zip
-git log --pretty=oneline -n 1 | awk '{print $1}' >../privtools/update/commit.txt
+find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -@ ../evol-tools/hercules_update/files/hercules.zip
+git log --pretty=oneline -n 1 | awk '{print $1}' >../evol-tools/update/commit.txt
 
 cd $dir/files
 sum=`../adler32 1 hercules.zip`

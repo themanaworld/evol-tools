@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function its {
-    itstool -o ../../privtools/lang_client/pot/$1.pot $1.xml
+    itstool -o ../../evol-tools/lang_client/pot/$1.pot $1.xml
 }
 
 DIR=`pwd`

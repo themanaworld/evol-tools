@@ -13,8 +13,8 @@ mkdir upload
 
 rm files/music.zip
 cd ../../gittorious/evol-music
-find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -@ ../../privtools/update/files/music.zip
-git log --pretty=oneline -n 1 | awk '{print $1}' >../../privtools/update/musiccommit.txt
+find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -@ ../../evol-tools/update/files/music.zip
+git log --pretty=oneline -n 1 | awk '{print $1}' >../../evol-tools/update/musiccommit.txt
 
 cd $dir/files
 sum=`../adler32 1 music.zip`

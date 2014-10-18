@@ -19,7 +19,7 @@ u1=`echo ${previous} | cut -c 1-7`
 u2=`echo ${head} | cut -c 1-7`
 git log --name-status ${previous}..${head} | awk '/^(A|M)\t/ {print $2}' | \
     grep -e "[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" | sort | uniq | \
-    xargs zip -9 -r ../../privtools/update/files/evol-${u1}..${u2}.zip
+    xargs zip -9 -r ../../evol-tools/update/files/evol-${u1}..${u2}.zip
 
 cd $dir/files
 if [ -f evol-${u1}..${u2}.zip ]; then

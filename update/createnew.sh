@@ -13,8 +13,8 @@ mkdir upload
 
 rm files/evol.zip
 cd ../../gittorious/clientdata-beta
-find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -@ ../../privtools/update/files/evol.zip
-git log --pretty=oneline -n 1 | awk '{print $1}' >../../privtools/update/commit.txt
+find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -@ ../../evol-tools/update/files/evol.zip
+git log --pretty=oneline -n 1 | awk '{print $1}' >../../evol-tools/update/commit.txt
 
 cd $dir/files
 sum=`../adler32 1 evol.zip`

@@ -19,7 +19,7 @@ FILES=`ls`
 
 for file in $FILES; do
     cd $file
-    find . -type f | xargs zip -9 -r ../../../../privtools/update/files/mod-$file.zip
+    find . -type f | xargs zip -9 -r ../../../../evol-tools/update/files/mod-$file.zip
     cd $dir/files
     sum=`../adler32 1 mod-$file.zip`
     echo "    <update type=\"data\" group=\"$file\" file=\"mod-$file.zip\" hash=\"${sum}\" />" >> xml_header.txt
