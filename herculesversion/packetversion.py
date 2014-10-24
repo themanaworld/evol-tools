@@ -93,12 +93,13 @@ def showPlan(data):
     for line in oldFunc:
         if line in oldFunc and line in newFunc:
             for line2 in oldFunc[line]:
-                print "{0:30} {1:4}  ->  {2:4}".format(line, line2[0], newFunc[line][0][0])
-#                print "{0:30} {1:4}  -  {2:4}".format(line, line2, newFunc[line])
-#         print "{0:30} {1:4}  {2:3} {3:4} {4:3}".format(line, oldFunc[line][0], oldFunc[line][1], newFunc[line][0], newFunc[line][1])
+                id1 = line2[0]
+                id2 = newFunc[line][0][0]
+                if id1 != id2:
+                    print "{0:30} {1:4}  ->  {2:4}".format(line, id1, id2)
 
 def main():
-    data = readPackets("hercules/src/map/packets.h", 20140416, )
+    data = readPackets("hercules/src/map/packets.h", 20140416, 20141022)
     changed = findChangedPackets(data)
     showPlan(changed)
 
