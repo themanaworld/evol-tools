@@ -529,6 +529,7 @@ def recreateMapCache():
         writeInt32(w, 0)  # file size
         writeInt16(w, 0)  # maps count
         writeInt16(w, 0)  # padding
+        sz = sz + 8
         for fileName in getTmxFiles(srcDir):
             dom = minidom.parse(fileName)
             root = dom.documentElement
@@ -587,7 +588,7 @@ def recreateMapCache():
                     writeData(w, binData)
                     print fileName
                     mapsCount = mapsCount + 1
-                    sz = sz + 8 + len(binData)
+                    sz = sz + 12 + 8 + len(binData)
                     break
         w.seek(0);
         writeInt32(w, sz)
