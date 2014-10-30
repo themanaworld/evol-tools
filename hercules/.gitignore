@@ -2,3 +2,5 @@ clientdata
 maps
 serverdata
 mapcache
+
+*.pyc
