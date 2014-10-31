@@ -26,3 +26,10 @@ def strToXml(data):
     data = data.replace("<", "&lt;");
     data = data.replace(">", "&gt;");
     return data
+
+def stripNewLine(data):
+    if len(data) == 0:
+        return data
+    if data[-1] == "\n":
+        data = data[:-1]
+    return data

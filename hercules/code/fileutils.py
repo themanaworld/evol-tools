@@ -60,3 +60,7 @@ def saveFile(fileName, data):
 def makeDir(path):
     if not os.path.exists(path):
         os.makedirs(path)
+
+def removeAllFiles(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)
