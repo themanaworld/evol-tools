@@ -78,11 +78,8 @@ def convertTextLine(tracker):
     if idx >= 0:
         processMapFlag(tracker)
         return False
-    idx = line.find("setskill ")
-    if idx >= 0:
-        processStrReplace(tracker)
-        return False
-    return True
+    processStrReplace(tracker)
+    return False
 
 def processScriptMapLine(line):
     global mapsIndex
@@ -178,4 +175,5 @@ def processStrReplace(tracker):
     line = tracker.line
     w = tracker.w
     line = line.replace("setskill ", "addtoskill ")
+    line = line.replace("zeny", "Zeny")
     w.write(line)
