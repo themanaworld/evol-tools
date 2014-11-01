@@ -177,4 +177,12 @@ def processStrReplace(tracker):
     line = line.replace("setskill ", "addtoskill ")
     line = line.replace("zeny", "Zeny")
     line = line.replace("countitem(", "countitemcolor(")
+    idx = line.find("getmapmobs(")
+    if idx >= 0:
+        idx2 = line.find("\"", idx + len("getmapmobs(") + 1)
+        idx3 = line.find(")", idx + len("getmapmobs(") + 1)
+        if idx2 + 1 == idx3:
+            line = line[:idx2 + 1] + ",\"all\"" + line[idx2 + 1:]
+
+        line = line.replace("getmapmobs(", "mobcount(")
     w.write(line)
