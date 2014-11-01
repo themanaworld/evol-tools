@@ -177,6 +177,7 @@ def processStrReplace(tracker):
     line = line.replace("setskill ", "addtoskill ")
     line = line.replace("zeny", "Zeny")
     line = line.replace("countitem(", "countitemcolor(")
+    line = line.replace("misceffect ", "misceffect2 ")
     idx = line.find("getmapmobs(")
     if idx >= 0:
         idx2 = line.find("\"", idx + len("getmapmobs(") + 1)
