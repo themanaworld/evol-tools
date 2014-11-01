@@ -20,6 +20,9 @@ shopRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d
     "[\t](?P<tag>shop)[\t](?P<name>[\w#' ]+)[\t]"
     "(?P<class>[\d]+),(?P<items>(.+))$")
 
+mapFlagRe = re.compile("^(?P<map>[^/](.+))[.]gat" +
+    "[ ](?P<tag>mapflag)[ ](?P<name>[\w#']+)(|[ ](?P<flag>.*))$")
+
 class ScriptTracker:
     pass
 
@@ -70,6 +73,10 @@ def convertTextLine(tracker):
     idx = line.find("\tshop\t")
     if idx >= 0:
         processShop(tracker)
+        return False
+    idx = line.find(".gat mapflag ")
+    if idx >= 0:
+        processMapFlag(tracker)
         return False
     return True
 
@@ -131,10 +138,35 @@ def processShop(tracker):
         w.write("!!!error parsing line")
         w.write(line)
         return
-    print "source=" + line[:-1]
-    print "map={0} x={1} y={2} dir={3} gender={4} tag={5} name={6} class={7} items={8}".format(
-        m.group("map"), m.group("x"), m.group("y"), m.group("dir"), m.group("gender"),
-        m.group("tag"), m.group("name"), m.group("class"), m.group("items"))
+#    print "source=" + line[:-1]
+#    print "map={0} x={1} y={2} dir={3} gender={4} tag={5} name={6} class={7} items={8}".format(
+#        m.group("map"), m.group("x"), m.group("y"), m.group("dir"), m.group("gender"),
+#        m.group("tag"), m.group("name"), m.group("class"), m.group("items"))
 
     writeScript(w, m)
     w.write("," + m.group("items") + "\n")
+
+def processMapFlag(tracker):
+    line = tracker.line
+    w = tracker.w
+
+    m = mapFlagRe.search(line)
+    if m == None:
+        print "error in parsing: " + line
+        w.write("!!!error parsing line")
+        w.write(line)
+        return
+#    print "source=" + line[:-1]
+#    print "map={0} tag={1} name={2} flag={3}".format(
+#        m.group("map"), m.group("tag"), m.group("name"), m.group("flag"))
+
+    if m.group("name") == "invisible":
+        w.write("// {0}\n".format(line));
+        return
+
+    w.write("{0}\t{1}\t{2}".format(m.group("map"), m.group("tag"), m.group("name")))
+    if m.group("flag") == None:
+        w.write("\n")
+    else:
+        w.write("\t{0}\n".format(m.group("flag")))
+
