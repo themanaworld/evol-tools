@@ -8,4 +8,5 @@ from code.server.npcs import *
 from code.server.utils import *
 
 cleanServerData()
+createMainScript()
 convertNpcs();

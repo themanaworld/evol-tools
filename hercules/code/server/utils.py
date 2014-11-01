@@ -9,3 +9,4 @@ def cleanServerData():
     removeAllFiles("newserverdata")
     makeDir("newserverdata/conf")
     makeDir("newserverdata/db")
+    makeDir("newserverdata/npc/re/")
