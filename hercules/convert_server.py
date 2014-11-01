@@ -5,8 +5,10 @@
 # Author: Andrei Karas (4144)
 
 from code.server.npcs import *
+from code.server.mobdb import *
 from code.server.utils import *
 
 cleanServerData()
 createMainScript()
 convertNpcs();
+convertMobDb();

@@ -8,5 +8,5 @@ from code.fileutils import *
 def cleanServerData():
     removeAllFiles("newserverdata")
     makeDir("newserverdata/conf")
-    makeDir("newserverdata/db")
+    makeDir("newserverdata/db/re/")
     makeDir("newserverdata/npc/re/")
