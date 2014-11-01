@@ -176,4 +176,5 @@ def processStrReplace(tracker):
     w = tracker.w
     line = line.replace("setskill ", "addtoskill ")
     line = line.replace("zeny", "Zeny")
+    line = line.replace("countitem(", "countitemcolor(")
     w.write(line)
