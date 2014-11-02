@@ -5,31 +5,9 @@
 
 import re
 
+from code.configutils import *
 from code.fileutils import *
 from code.stringutils import *
-
-def writeIntField(w, name, value):
-    if value == "":
-        value = "0"
-    w.write("    {0}: {1}\n".format(name, value))
-
-def writeStrField(w, name, value):
-    w.write("    {0}: \"{1}\"\n".format(name, value))
-
-def writeSubField(w, name, value):
-    w.write("        {0}: {1}\n".format(name, value));
-
-def writeStartBlock(w, text):
-    w.write("    {0}: {{\n".format(text));
-
-def writeEndBlock(w):
-    w.write("    }\n");
-
-def writeStartScript(w, name):
-    w.write("    {0}: <\"\n".format(name))
-
-def writeEndScript(w):
-    w.write("    \">\n")
 
 def convertItemDb():
     srcFile = "oldserverdata/db/item_db.txt"
