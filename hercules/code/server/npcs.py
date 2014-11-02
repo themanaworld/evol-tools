@@ -97,11 +97,14 @@ def writeScript(w, m):
     if m.group("gender") != None:
         w.write("// Gender = {0}\n".format(m.group("gender")));
 
-    if m.group("x") == 0 and m.group("y") == 0 and m.group("class") == 0: # float npc
+    if m.group("x") == 0 and m.group("y") == 0: # float npc
         w.write("-")
     else:
         w.write("{0},{1},{2},{3}".format(m.group("map"), m.group("x"), m.group("y"), m.group("dir")))
-    w.write("\t{0}\t{1}\t{2}".format(m.group("tag"), m.group("name"), m.group("class")));
+    class_ = m.group("class")
+    if class_ == "0": # hidden npc
+        class_ = "32767"
+    w.write("\t{0}\t{1}\t{2}".format(m.group("tag"), m.group("name"), class_));
 
 def processScript(tracker):
     line = tracker.line
