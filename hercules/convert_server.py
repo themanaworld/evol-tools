@@ -10,6 +10,7 @@ from code.server.mobdb import *
 from code.server.mobskilldb import *
 from code.server.npcs import *
 from code.server.utils import *
+from code.server.questsdb import *
 
 cleanServerData()
 createMainScript()
@@ -18,3 +19,4 @@ convertMobDb()
 convertItemDb()
 convertConsts()
 convertMobSkillDb()
+convertQuestsDb()
