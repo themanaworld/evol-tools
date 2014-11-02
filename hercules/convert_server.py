@@ -7,6 +7,7 @@
 from code.server.consts import *
 from code.server.itemdb import *
 from code.server.mobdb import *
+from code.server.mobskilldb import *
 from code.server.npcs import *
 from code.server.utils import *
 
@@ -16,3 +17,4 @@ convertNpcs()
 convertMobDb()
 convertItemDb()
 convertConsts()
+convertMobSkillDb()
