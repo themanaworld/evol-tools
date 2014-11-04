@@ -28,6 +28,7 @@ class ScriptTracker:
 
 def createMainScript():
     with open(npcMainScript, "w") as w:
+        w.write("npc: npc/functions/main.txt\n")
         w.write("import: npc/scripts.conf\n")
 
 def convertNpcs():
