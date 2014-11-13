@@ -5,17 +5,22 @@ make clean
 ./build.sh static
 
 if [[ $? == 0 ]]; then
-    cp -f char-server ../server-bin
-    cp -f login-server ../server-bin
-    cp -f map-server ../server-bin
+    cp -f char-server ../server-local
+    cp -f login-server ../server-local
+    cp -f map-server ../server-local
 else
     echo Build failed
     exit 1
 fi
 
 cd src/evol
+mkdir build
+autoreconf -i
+cd build
 make clean
-./build.sh
+../configure
+make -j3
+cd ..
 
 if [[ $? == 0 ]]; then
     mkdir ../../../server-local/plugins
