@@ -23,6 +23,9 @@ shopRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d
 mapFlagRe = re.compile("^(?P<map>[^/](.+))[.]gat" +
     "[ ](?P<tag>mapflag)[ ](?P<name>[\w#']+)(|[ ](?P<flag>.*))$")
 
+warpRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[\t]"
+    "(?P<tag>warp)[\t](?P<name>[^\t]+)[\t](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+))[.]gat,([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
+
 class ScriptTracker:
     pass
 
@@ -74,6 +77,10 @@ def convertTextLine(tracker):
     idx = line.find("\tshop\t")
     if idx >= 0:
         processShop(tracker)
+        return False
+    idx = line.find("\twarp\t")
+    if idx >= 0:
+        processWarp(tracker)
         return False
     idx = line.find(".gat mapflag ")
     if idx >= 0:
@@ -175,6 +182,31 @@ def processMapFlag(tracker):
     else:
         w.write("\t{0}\n".format(m.group("flag")))
 
+def processWarp(tracker):
+    line = tracker.line
+    w = tracker.w
+    m = warpRe.search(line)
+    if m == None:
+        print "error in parsing: " + line
+        w.write("!!!error parsing line")
+        w.write(line)
+        return
+
+#    print "source=" + line[:-1]
+#    print "map={0} xy={1},{2} tag={3} name={4} xs={5} ys={6}  target: map={7} xy={8},{9}".format(
+#        m.group("map"), m.group("x"), m.group("y"), m.group("tag"), m.group("name"), m.group("xs"), m.group("ys"), m.group("targetmap"), m.group("targetx"), m.group("targety"))
+
+    xs = int(m.group("xs"))
+    ys = int(m.group("ys"))
+    if xs < 0:
+        xs = 0
+    if ys < 0:
+        ys = 0
+    w.write("{0},{1},{2},{3}\t{4}\t{5}\t{6},{7},{8},{9},{10}\n".format(
+        m.group("map"), m.group("x"), m.group("y"), "0", m.group("tag"), m.group("name"),
+        xs, ys, m.group("targetmap"), m.group("targetx"), m.group("targety")))
+
+
 def processStrReplace(tracker):
     line = tracker.line
     w = tracker.w
@@ -191,3 +223,4 @@ def processStrReplace(tracker):
 
         line = line.replace("getmapmobs(", "mobcount(")
     w.write(line)
+
