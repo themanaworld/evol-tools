@@ -33,6 +33,9 @@ def convertItemDb():
                         sz = 19
                     for f in xrange(0, sz):
                         rows[f] = rows[f].strip()
+                    if rows[4] == "2":
+                        rows[4] = "0"
+                        rows[3] = str(int(rows[3]) | 4)
                     w.write("{\n")
                     c.write("{0}\t{1}\n".format(rows[1], rows[0]))
                     writeIntField(w, "Id", rows[0])
@@ -65,11 +68,16 @@ def convertItemDb():
                         writeSubField(w, "nodrop", "true")
                     if trade & 2 == 2:
                         writeSubField(w, "notrade", "true")
+                    if trade & 4 == 4:
+                        writeSubField(w, "nodelonuse", "true")
                     if trade & 8 == 8:
                         writeSubField(w, "nostorage", "true")
+                    if trade & 256 == 256:
+                        writeSubField(w, "nogstorage", "true")
                     if trade & 512 == 512:
                         writeSubField(w, "noselltonpc", "true")
-                    writeEndBlock(w)
+                    if trade != 0:
+                        writeEndBlock(w)
                     writeIntField(w, "Sprite", "0")
 
                     scripts = ""

@@ -42,6 +42,7 @@ item_db: (
 		nogstorage: true/false        (boolean, defaults to false)
 		nomail: true/false            (boolean, defaults to false)
 		noauction: true/false         (boolean, defaults to false)
+		nodelonuse: true/false        (boolean, defaults to false)
 	}
 	Nouse: {                      (defaults to no restrictions)
 		override: GroupID             (int, defaults to 100)
