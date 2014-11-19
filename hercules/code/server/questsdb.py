@@ -4,6 +4,7 @@
 # Author: Andrei Karas (4144)
 
 import re
+from sets import Set
 
 from code.fileutils import *
 from code.stringutils import *
@@ -12,6 +13,7 @@ def convertQuestsDb():
     srcFile = "oldserverdata/db/questvars.txt"
     dstFile = "newserverdata/db/quest_db.txt"
     fieldsSplit = re.compile(",")
+    quests = dict()
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:
             tpl = readFile("templates/quest_db.tpl")
@@ -32,3 +34,5 @@ def convertQuestsDb():
 
                 w.write("{0},0,0,0,0,0,0,0,\"{1}\"\n".format(cnt, line))
                 cnt = cnt + 1
+                quests[line] = cnt
+    return quests

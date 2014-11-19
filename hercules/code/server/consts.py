@@ -8,7 +8,7 @@ import re
 from code.fileutils import *
 from code.stringutils import *
 
-def convertConsts():
+def convertConsts(quests):
     dstFile = "newserverdata/db/const.txt"
     fieldsSplit = re.compile("\t+")
     fields = dict()
@@ -29,6 +29,8 @@ def convertConsts():
                     w.write("{0}\t{1}".format(rows[0], rows[1]))
                 else:
                     w.write("{0}\t{1}\t{2}".format(rows[0], rows[1], rows[2]))
+        # build in parameters
+        w.write("ClientVersion\t10000\t1\n");
 
         srcFile = "oldserverdata/db/const.txt"
         w.write("// evol constants\n")
@@ -41,6 +43,8 @@ def convertConsts():
                 if len(rows) != 2:
                     continue
 
+                if rows[0] in quests:
+                    rows[1] = str(quests[rows[0]]) + "\n"
                 if rows[0] in fields:
                     if fields[rows[0]] != rows[1][:-1]:
                         print "warning: different const values for {0} ({1}, {2})".format(rows[0], rows[1][:-1], fields[rows[0]])
