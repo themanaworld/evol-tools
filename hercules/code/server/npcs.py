@@ -112,6 +112,10 @@ def writeScript(w, m):
     class_ = m.group("class")
     if class_ == "0": # hidden npc
         class_ = "32767"
+    else:
+        class_ = int(class_)
+        if class_ > 125 and class_ <= 400:
+            class_ = class_ + 100
     w.write("\t{0}\t{1}\t{2}".format(m.group("tag"), m.group("name"), class_));
 
 def processScript(tracker):
