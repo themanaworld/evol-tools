@@ -18,7 +18,7 @@ def convertQuestsDb():
         with open(dstFile, "w") as w:
             tpl = readFile("templates/quest_db.tpl")
             w.write(tpl)
-            cnt = 1000
+            cnt = 0
             for line in r:
                 if len(line) < 2 or line[0:2] == "//":
                     continue
@@ -33,6 +33,6 @@ def convertQuestsDb():
                 line = line[:idx]
 
                 w.write("{0},0,0,0,0,0,0,0,\"{1}\"\n".format(cnt, line))
-                cnt = cnt + 1
                 quests[line] = cnt
+                cnt = cnt + 1
     return quests
