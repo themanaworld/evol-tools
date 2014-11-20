@@ -220,6 +220,7 @@ def processStrReplace(tracker):
     line = line.replace("misceffect ", "misceffect2 ")
     line = line.replace("getclientversion(\"\")", "ClientVersion")
     line = line.replace("getclientversion()", "ClientVersion")
+    line = line.replace("setlang @", "Lang = @")
     idx = line.find("getmapmobs(")
     if idx >= 0:
         idx2 = line.find("\"", idx + len("getmapmobs(") + 1)
