@@ -221,7 +221,7 @@ def processStrReplace(tracker):
     line = line.replace("getclientversion(\"\")", "ClientVersion")
     line = line.replace("getclientversion()", "ClientVersion")
     line = line.replace("setlang @", "Lang = @")
-    line = re.sub("([^@])@([^@])", "\\1.@\\2", line)
+    line = re.sub("([^@^$])@([^@])", "\\1.@\\2", line)
     line = line.replace(".@menu", "@menu")
     idx = line.find("getmapmobs(")
     if idx >= 0:
