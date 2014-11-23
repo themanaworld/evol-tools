@@ -34,10 +34,10 @@ def createMainScript():
         w.write("npc: npc/functions/main.txt\n")
         w.write("import: npc/scripts.conf\n")
 
-def convertNpcs():
-    processNpcDir("oldserverdata/npc/", "newserverdata/npc/")
+def convertNpcs(items):
+    processNpcDir("oldserverdata/npc/", "newserverdata/npc/", items)
 
-def processNpcDir(srcDir, dstDir):
+def processNpcDir(srcDir, dstDir, items):
     makeDir(dstDir)
     files = os.listdir(srcDir)
     for file1 in files:
@@ -46,15 +46,16 @@ def processNpcDir(srcDir, dstDir):
         srcPath = os.path.abspath(srcDir + os.path.sep + file1)
         dstPath = os.path.abspath(dstDir + os.path.sep + file1)
         if not os.path.isfile(srcPath):
-            processNpcDir(srcPath, dstPath)
+            processNpcDir(srcPath, dstPath, items)
         else:
             if file1[-5:] == ".conf" or file1[-4:] == ".txt":
-                processNpcFile(srcPath, dstPath)
+                processNpcFile(srcPath, dstPath, items)
 
-def processNpcFile(srcFile, dstFile):
+def processNpcFile(srcFile, dstFile, items):
 #    print "file: " + srcFile
     tracker = ScriptTracker()
     tracker.insideScript = False
+    tracker.items = items
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:
             tracker.w = w
@@ -144,6 +145,19 @@ def processScript(tracker):
     w.write(",{\n");
 
 
+def itemsToShop(tracker, itemsStr):
+    itemsSplit = re.compile(",")
+    itemsSplit2 = re.compile(":")
+    itemsDict = tracker.items
+    outStr = ""
+    items = itemsSplit.split(itemsStr)
+    for str2 in items:
+        parts = itemsSplit2.split(str2)
+        if outStr != "":
+            outStr = outStr + ","
+        outStr = outStr + itemsDict[parts[0].strip()] + ":" + parts[1]
+    return outStr
+
 def processShop(tracker):
     line = tracker.line
     w = tracker.w
@@ -160,7 +174,7 @@ def processShop(tracker):
 #        m.group("tag"), m.group("name"), m.group("class"), m.group("items"))
 
     writeScript(w, m)
-    w.write("," + m.group("items") + "\n")
+    w.write("," + itemsToShop(tracker, m.group("items")) + "\n")
 
 def processMapFlag(tracker):
     line = tracker.line

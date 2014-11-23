@@ -14,9 +14,9 @@ from code.server.questsdb import *
 
 cleanServerData()
 createMainScript()
-convertNpcs()
+items = convertItemDb()
+convertNpcs(items)
 convertMobDb()
 quests = convertQuestsDb()
 convertConsts(quests)
-convertItemDb()
 convertMobSkillDb()

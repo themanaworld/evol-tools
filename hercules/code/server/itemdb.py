@@ -15,6 +15,7 @@ def convertItemDb():
     constsFile = "newserverdata/db/const.txt"
     fieldsSplit = re.compile(",")
     scriptsSplit = re.compile("{")
+    items = dict()
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:
             with open(constsFile, "a") as c:
@@ -36,6 +37,8 @@ def convertItemDb():
                     if rows[4] == "2":
                         rows[4] = "0"
                         rows[3] = str(int(rows[3]) | 4)
+
+                    items[rows[1]] = rows[0]
                     w.write("{\n")
                     c.write("{0}\t{1}\n".format(rows[1], rows[0]))
                     writeIntField(w, "Id", rows[0])
@@ -99,3 +102,4 @@ def convertItemDb():
 
                     w.write("},\n")
                 w.write(")\n")
+    return items
