@@ -57,7 +57,10 @@ def convertItemDb():
                     writeIntField(w, "WeaponLv", rows[15])
                     writeIntField(w, "EquipLv", rows[16])
                     writeIntField(w, "Refine", "false")
-                    writeIntField(w, "View", rows[0])
+                    if rows[14] == "2":
+                        writeIntField(w, "View", "1")
+                    else:
+                        writeIntField(w, "View", rows[0])
                     writeIntField(w, "BindOnEquip", "false")
                     writeIntField(w, "BuyingStore", "false")
                     writeIntField(w, "Delay", "0")
