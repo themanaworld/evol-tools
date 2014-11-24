@@ -26,6 +26,10 @@ mapFlagRe = re.compile("^(?P<map>[^/](.+))[.]gat" +
 warpRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[\t]"
     "(?P<tag>warp)[\t](?P<name>[^\t]+)[\t](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+))[.]gat,([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
 
+monsterRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)\t"
+    "(?P<tag>monster)[\t](?P<name>[\w#' ]+)[\t]"
+    "(?P<class>[\d]+),(?P<num>[\d]+),(?P<look>[\d-]+),(?P<delay1>[\d]+),(?P<delay2>[\d]+)$")
+
 class ScriptTracker:
     pass
 
@@ -78,6 +82,10 @@ def convertTextLine(tracker):
     idx = line.find("\tshop\t")
     if idx >= 0:
         processShop(tracker)
+        return False
+    idx = line.find("\tmonster\t")
+    if idx >= 0:
+        processMonster(tracker)
         return False
     idx = line.find("\twarp\t")
     if idx >= 0:
@@ -223,6 +231,28 @@ def processWarp(tracker):
     w.write("{0},{1},{2},{3}\t{4}\t{5}\t{6},{7},{8},{9},{10}\n".format(
         m.group("map"), m.group("x"), m.group("y"), "0", m.group("tag"), m.group("name"),
         xs, ys, m.group("targetmap"), m.group("targetx"), m.group("targety")))
+
+
+def processMonster(tracker):
+    line = tracker.line
+    w = tracker.w
+    m = monsterRe.search(line)
+    if m == None:
+        print "error in parsing: " + line
+        w.write("!!!error parsing line")
+        w.write(line)
+        return
+
+#    print "source=" + line[:-1]
+#    print ("map={0} xy={1},{2} xs={3} ys={4} tag={5} name={6} class={7} " +
+#        "num={8} look={9} delays={10},{11}").format(
+#        m.group("map"), m.group("x"), m.group("y"), m.group("xs"), m.group("ys"),
+#        m.group("tag"), m.group("name"), m.group("class"),
+#        m.group("num"), m.group("look"), m.group("delay1"), m.group("delay2"))
+    w.write("{0},{1},{2},{3},{4}\t{5}\t{6}\t{7},{8},{9},{10}\n".format(m.group("map"),
+        m.group("x"), m.group("y"), m.group("xs"), m.group("ys"),
+        m.group("tag"), m.group("name"),
+        m.group("class"), m.group("num"), m.group("delay1"), m.group("delay2")))
 
 
 def processStrReplace(tracker):
