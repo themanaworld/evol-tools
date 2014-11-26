@@ -261,7 +261,6 @@ def processStrReplace(tracker):
     line = line.replace("setskill ", "addtoskill ")
     line = line.replace("zeny", "Zeny")
     line = line.replace("countitem(", "countitemcolor(")
-    line = line.replace("misceffect ", "misceffect2 ")
     line = line.replace("getclientversion(\"\")", "ClientVersion")
     line = line.replace("getclientversion()", "ClientVersion")
     line = line.replace("setlang @", "Lang = @")
