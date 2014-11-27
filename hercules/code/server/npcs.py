@@ -198,10 +198,6 @@ def processMapFlag(tracker):
 #    print "map={0} tag={1} name={2} flag={3}".format(
 #        m.group("map"), m.group("tag"), m.group("name"), m.group("flag"))
 
-    if m.group("name") == "invisible":
-        w.write("// {0}\n".format(line));
-        return
-
     w.write("{0}\t{1}\t{2}".format(m.group("map"), m.group("tag"), m.group("name")))
     if m.group("flag") == None:
         w.write("\n")
