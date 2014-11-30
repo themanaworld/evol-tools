@@ -1,0 +1,9 @@
+Here located for LOCAL server usage ONLY.
+Can be unsecure to use this files in public or production server.
+
+givegm.sh         - give gm rights to first account created on server.
+initdb.sh         - initialize mariadb database.
+installconfigs.sh - install configurations into server data directory.
+
+See also http://wiki.evolonline.org/guidelines/installmariadb
+         http://wiki.evolonline.org/guidelines/localserver
