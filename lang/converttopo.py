@@ -87,7 +87,7 @@ def saveFile(path, name):
 			w.write ("msgstr \"" + line2 + "\"\n\n")
 
 
-rootPath = "../../gittorious/serverdata-beta"
+rootPath = "../../server-data"
 
 loadFiles(rootPath + "/langs")
 saveFiles("po")

@@ -14,7 +14,7 @@ filt = re.compile(".+[.]txt", re.IGNORECASE)
 allStrings = set()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
 strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
-strre2 = re.compile("^[^/](.+)[.]gat([^\t]+)[\t](script|shop)[\t](?P<str>[\w ]+)[\t]([\d]+)(,|;)")
+strre2 = re.compile("^[^/](.+)([^\t]+)[\t](script|shop)[\t](?P<str>[^\t]+)[\t]([\d]+),")
 strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"]")
 strre5 = re.compile("[\t +(]getitemname[(][\"](?P<str>[^\"]+)[\"][)]")
 strre6 = re.compile("[\t ]mesn[ ][\"](?P<str>[^\"]+)[\"]")
@@ -47,8 +47,8 @@ def collectStrings(parentDir):
 							allStrings.add(str + "#0")
 							allStrings.add(str + "#1")
 					m = strre2.search(line)
-					if m is not None:
-						 allStrings.add(m.group("str"))
+					if m is not None and m.group("str")[0] != "#":
+						allStrings.add(m.group("str"))
 					m = strre3.findall(line)
 					if len(m) > 0:
 						for str in m:
@@ -196,31 +196,57 @@ def sortDict(adict):
 
 def saveFiles(dir):
 	for trans in langFiles:
-		writeFile (dir + "/lang_" + trans + ".txt", langFiles[trans], False)
-		writeFile (dir + "/lang_" + trans + ".old", oldLangFiles[trans], True)
+		writeFile (dir + "/lang_" + trans + ".txt", langFiles[trans], trans, False)
+		writeFile (dir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
 
-def writeFile(dir, texts, isold):
+def writeFile(dir, texts, trans, isold):
 	with open (dir, "w") as f:
 		if texts[1] is not None:
 			f.write(texts[1])
 		for line in texts[0]:
 			if not isold or (line[1] is not None and len(line[1]) > 0):
 				f.write (line[0] + "\n")
-				f.write (line[1] + "\n\n")
+				trLine = line[1]
+				if trans == "en":
+					if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
+						trLine = trLine[:-2]
+				f.write (trLine + "\n\n")
 
+def stripQuotes(data):
+	if len(data) == 0:
+		return data
+	if data[-1] == "\"":
+		data = data[:-1]
+	if data[0] == "\"":
+		data = data[1:]
+	if data[-1] == "'":
+		data = data[:-1]
+	if data[0] == "'":
+		 data = data[1:]
+	return data
 
 def loadItemDb(dir):
 	global itemNamesByName
-	with open(dir + "/item_db.txt", "r") as f:
+	with open(dir + "/item_db.conf", "r") as f:
 		for line in f:
-			rows = itemsplit.split(line)
-			if len(rows) < 5:
-				continue
-			itemNamesByName[rows[1].lower().strip()] = rows[2].strip()
+			line = line.strip()
+			if line == "{":
+				itemId = ""
+				itemName = ""
+				for line in f:
+					line = line.strip()
+					if line[0] == "}":
+						if itemId != "" and itemName != "":
+							itemNamesByName[itemId] = itemName
+						break
+					if len(line) > 6 and line[:5] == "Name:":
+						itemName = stripQuotes(line[5:].strip())
+					if len(line) > 4 and line[:3] == "Id:":
+						itemId = stripQuotes(line[3:].strip())
 
-rootPath = "../../gittorious/serverdata-beta"
+rootPath = "../../server-data/"
 
-loadItemDb(rootPath + "/db")
+loadItemDb(rootPath + "db/re")
 collectStrings(rootPath + "/npc")
 loadFiles(rootPath + "/langs")
 addMissingLines()
