@@ -21,8 +21,8 @@ def getTmxFiles(srcDir):
         yield fileName
 
 def recreateMapCache():
-    destDir = "mapcache/"
-    srcDir = "clientdata/maps/"
+    destDir = "../../server-data/db/re/"
+    srcDir = "../../client-data/maps/"
     makeDir(destDir)
     sz = 0L
     mapsCount = 0
