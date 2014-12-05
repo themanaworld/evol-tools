@@ -30,6 +30,8 @@ monsterRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>
     "(?P<tag>monster)[\t](?P<name>[\w#' ]+)[\t]"
     "(?P<class>[\d]+),(?P<num>[\d]+),(?P<look>[\d-]+),(?P<delay1>[\d]+),(?P<delay2>[\d]+)$")
 
+setRe = re.compile("^(?P<space>[ ]+)set[ ](?P<var>[^,]+),([ ]*)(?P<val>[^;]+);$");
+
 class ScriptTracker:
     pass
 
@@ -270,5 +272,10 @@ def processStrReplace(tracker):
             line = line[:idx2 + 1] + ",\"all\"" + line[idx2 + 1:]
 
         line = line.replace("getmapmobs(", "mobcount(")
+
+    m = setRe.search(line);
+    if m != None:
+        line = "{0}{1} = {2};\n".format(m.group("space"), m.group("var"), m.group("val"))
+
     w.write(line)
 
