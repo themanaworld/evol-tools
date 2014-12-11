@@ -13,7 +13,7 @@ mkdir upload
 
 previous=`cat musiccommit.txt`
 
-cd ../../gittorious/evol-music
+cd ../../music
 head=`git log --pretty=oneline -n 1 | awk '{print $1}'`
 u1=`echo ${previous} | cut -c 1-7`
 u2=`echo ${head} | cut -c 1-7`

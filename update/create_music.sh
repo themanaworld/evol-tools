@@ -12,9 +12,9 @@ mkdir files
 mkdir upload
 
 rm files/music.zip
-cd ../../gittorious/evol-music
-find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -@ ../../evol-tools/update/files/music.zip
-git log --pretty=oneline -n 1 | awk '{print $1}' >../../evol-tools/update/musiccommit.txt
+cd ../../music
+find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -@ ../tools/update/files/music.zip
+git log --pretty=oneline -n 1 | awk '{print $1}' >../tools/update/musiccommit.txt
 
 cd $dir/files
 sum=`../adler32 1 music.zip`

@@ -13,7 +13,7 @@ mkdir upload
 
 previous=`cat commit.txt`
 
-cd ../../gittorious/clientdata-beta/mods
+cd ../../client-data/mods
 
 FILES=`ls`
 
