@@ -4,13 +4,6 @@
 *.txt~
 *.conf~
 
-# java converter
-tmwcon/converter.jar
-tmwcon/server-data/
-tmwcon/summary.txt
-tmwcon/tmwdata
-tmwcon/build
-
 # updates
 update/files
 update/upload
