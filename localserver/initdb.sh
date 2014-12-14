@@ -10,9 +10,4 @@ export CMD="mysql -u evol -pevol evol"
 
 echo Creating tables...
 $CMD <main.sql
-$CMD <mob_skill_db.sql
-$CMD <mob_skill_db2.sql
 $CMD <logs.sql
-$CMD <item_db_re.sql
-$CMD <mob_db_re.sql
-$CMD <mob_skill_db_re.sql
