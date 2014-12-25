@@ -15,9 +15,10 @@ allStrings = set()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
 strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 = re.compile("^[^/](.+)([^\t]+)[\t](script|shop)[\t](?P<str>[^\t]+)[\t]([\d]+),")
-strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"]")
+strre4 = re.compile("[\t +(]lg[(][\"](?P<str>[^\"]+)[\"][)]")
 strre5 = re.compile("[\t +(]getitemname[(][\"](?P<str>[^\"]+)[\"][)]")
 strre6 = re.compile("[\t ]mesn[ ][\"](?P<str>[^\"]+)[\"]")
+strre7 = re.compile("[\t +(]lg[(][\"](?P<str1>[^\"]+)[\"],([ ]*)[\"](?P<str2>[^\"]+)[\"]")
 itemsplit = re.compile(",")
 
 langFiles = dict() 
@@ -63,6 +64,11 @@ def collectStrings(parentDir):
 					if len(m) > 0:
 						for str in m:
 							allStrings.add(str)
+					m = strre7.findall(line)
+					if len(m) > 0:
+						for str in m:
+							allStrings.add(str[0] + "#0")
+							allStrings.add(str[2] + "#1")
 
 
 
