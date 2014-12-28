@@ -4,9 +4,11 @@
 # Author: Andrei Karas (4144)
 
 import array
+import csv
 import os
 import zlib
 import struct
+import StringIO
 from xml.dom import minidom
 
 from code.fileutils import *
@@ -53,7 +55,12 @@ def recreateMapCache():
                     width = int(layer.attributes["width"].value)
                     height = int(layer.attributes["height"].value)
                     encoding = data.attributes["encoding"].value
-                    compression = data.attributes["compression"].value
+                    try:
+                        compression = data.attributes["compression"].value
+                    except:
+                        compression = ""
+
+                    tiles = []
                     if encoding == "base64":
                         binData = data.childNodes[0].data.strip()
                         binData = binData.decode('base64')
@@ -64,19 +71,39 @@ def recreateMapCache():
                         layerData = dc.decompress(binData)
                         arr = array.array("I")
                         arr.fromstring(layerData)
+                        for tile in arr:
+                            if tile == 0:
+                                tileType = 0
+                            else:
+                                tileType = tile - firstgid;
+                            if tileType == 0 or tileType == 4:
+                                tiles.append(0)
+                            else:
+                                tiles.append(1)
+                    elif encoding == "csv":
+                        binData = data.childNodes[0].data.strip()
+                        f = StringIO.StringIO(binData)
+                        arr = list(csv.reader(f, delimiter=',', quotechar='|'))
+                        for row in arr:
+                            try:
+                                for item in row:
+                                    if item != "":
+                                        tile = int(item)
+                                        if tile == 0:
+                                            tileType = 0
+                                        else:
+                                            tileType = tile - firstgid;
+                                        if tileType == 0 or tileType == 4:
+                                            tiles.append(0)
+                                        else:
+                                            tiles.append(1)
+                            except:
+                                None
+                        f.close()
                     else:
                         print "map format not supported: " + fileName
                         continue
-                    tiles = []
-                    for tile in arr:
-                        if tile == 0:
-                            tileType = 0
-                        else:
-                            tileType = tile - firstgid;
-                        if tileType == 0 or tileType == 4:
-                            tiles.append(0)
-                        else:
-                            tiles.append(1)
+
                     comp = zlib.compressobj()
                     binData = struct.pack(str(len(tiles))+"B", *tiles)
                     binData = zlib.compress(binData)
