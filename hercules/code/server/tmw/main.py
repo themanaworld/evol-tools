@@ -7,7 +7,7 @@
 from code.server.tmw.consts import *
 from code.server.tmw.itemdb import *
 from code.server.tmw.mobdb import *
-from code.server.mobskilldb import *
+from code.server.tmw.mobskilldb import *
 from code.server.tmw.npcs import *
 from code.server.utils import *
 from code.server.questsdb import *
@@ -21,4 +21,4 @@ def serverTmwMain():
     convertMobDb()
     quests = dict()
     convertConsts(quests)
-    #convertMobSkillDb()
+    convertMobSkillDb()
