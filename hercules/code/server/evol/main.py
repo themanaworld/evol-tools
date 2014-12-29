@@ -8,7 +8,7 @@ from code.server.consts import *
 from code.server.evol.itemdb import *
 from code.server.mobdb import *
 from code.server.mobskilldb import *
-from code.server.npcs import *
+from code.server.evol.npcs import *
 from code.server.utils import *
 from code.server.questsdb import *
 from code.serverutils import *
