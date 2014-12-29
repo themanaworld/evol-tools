@@ -4,19 +4,12 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.server.consts import *
-from code.server.itemdb import *
-from code.server.mobdb import *
-from code.server.mobskilldb import *
-from code.server.npcs import *
-from code.server.utils import *
-from code.server.questsdb import *
+from code.serverutils import *
+from code.server.evol.main import *
+from code.server.tmw.main import *
 
-cleanServerData()
-createMainScript()
-items = convertItemDb()
-convertNpcs(items)
-convertMobDb()
-quests = convertQuestsDb()
-convertConsts(quests)
-convertMobSkillDb()
+serverType = detectServerType()
+if serverType == "evol":
+    serverEvolMain();
+else:
+    serverTmwMain();
