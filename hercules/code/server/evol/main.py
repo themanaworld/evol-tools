@@ -4,7 +4,7 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.server.consts import *
+from code.server.evol.consts import *
 from code.server.evol.itemdb import *
 from code.server.evol.mobdb import *
 from code.server.mobskilldb import *

@@ -4,7 +4,7 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.server.consts import *
+from code.server.tmw.consts import *
 from code.server.tmw.itemdb import *
 from code.server.tmw.mobdb import *
 from code.server.mobskilldb import *
@@ -19,6 +19,6 @@ def serverTmwMain():
     items = convertItemDb()
     convertNpcs(items)
     convertMobDb()
-    #quests = convertQuestsDb()
-    #convertConsts(quests)
+    quests = dict()
+    convertConsts(quests)
     #convertMobSkillDb()
