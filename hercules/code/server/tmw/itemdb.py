@@ -25,11 +25,11 @@ def convertItemDb():
 
     tpl = readFile("templates/item_db.tpl")
     with open(dstFile, "w") as w:
+        w.write(tpl)
         with open(constsFile, "a") as c:
+            c.write("// items\n");
             for srcFile in getItemDbFile(srcDir):
                 with open(srcDir + srcFile, "r") as r:
-                    c.write("// items\n");
-                    w.write(tpl)
                     for line in r:
                         if len(line) < 2 or line[0] == "#" or line[0:2] == "//":
                             continue
@@ -89,5 +89,5 @@ def convertItemDb():
                                     writeEndScript(w)
 
                         w.write("},\n")
-                    w.write(")\n")
+        w.write(")\n")
     return items
