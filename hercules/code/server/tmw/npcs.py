@@ -131,7 +131,7 @@ def writeScript(w, m):
     else:
         w.write("{0},{1},{2},{3}".format(m.group("map"), m.group("x"), m.group("y"), m.group("dir")))
     if isFunction:
-        w.write("\t{0}\t{1}".format(m.group("tag"), m.group("name")));
+        w.write("\t{0}\t{1}\t".format(m.group("tag"), m.group("name")));
     else:
         class_ = m.group("class")
         if class_ == "0": # hidden npc
@@ -159,8 +159,19 @@ def processScript(tracker):
     writeScript(w, m)
     if m.group("xs") != None:
         w.write(",{0},{1}".format(m.group("xs"), m.group("ys")));
-    w.write(",{\n");
 
+
+    try:
+        if m.group("function") != None:
+            isFunction = True
+        else:
+            isFunction = False
+    except:
+        isFunction = True
+    if isFunction == False:
+        w.write(",{\n");
+    else:
+        w.write("{\n");
 
 def itemsToShop(tracker, itemsStr):
     itemsSplit = re.compile(",")
