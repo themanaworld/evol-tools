@@ -18,6 +18,24 @@ def convertConsts(quests):
     dstFile = "newserverdata/db/const.txt"
     fieldsSplit = re.compile("\t+")
     fields = dict()
+    vals = [("MF_NOTELEPORT", "mf_noteleport"),
+        ("MF_NORETURN", "mf_noreturn"),
+        ("MF_MONSTER_NOTELEPORT", "mf_monster_noteleport"),
+        ("MF_NOSAVE", "mf_nosave"),
+        ("MF_NOPENALTY", "mf_nopenalty"),
+        ("MF_PVP", "mf_pvp"),
+        ("MF_PVP_NOPARTY", "mf_pvp_noparty"),
+        ("MF_PVP_NOCALCRANK", "mf_pvp_nocalcrank"),
+        ("MF_NOWARP", "mf_nowarp"),
+        ("MF_NOWARPTO", "mf_nowarpto"),
+        ("MF_SNOW", "mf_snow"),
+        ("MF_FOG", "mf_fog"),
+        ("MF_SAKURA", "mf_sakura"),
+        ("MF_LEAVES", "mf_leaves"),
+        ("MF_TOWN", "mf_town"),
+        ("sc_poison", "SC_POISON"),
+        ("sc_slowpoison", "SC_SLOWPOISON")
+    ]
     with open(dstFile, "w") as w:
         srcFile = "serverdata/db/const.txt"
         with open(srcFile, "r") as r:
@@ -39,7 +57,7 @@ def convertConsts(quests):
         w.write("ClientVersion\t10000\t1\n");
 
         srcDir = "oldserverdata/db/"
-        w.write("// evol constants\n")
+        w.write("// tmw constants\n")
         for srcFile in getConstsFile(srcDir):
             with open(srcFile, "r") as r:
                 for line in r:
@@ -50,6 +68,9 @@ def convertConsts(quests):
                     if len(rows) != 2:
                         continue
 
+                    for val in vals:
+                        if rows[0] == val[0]:
+                            rows[0] = val[1]
                     if rows[0] in quests:
                         rows[1] = str(quests[rows[0]]) + "\n"
                     if rows[0] in fields:
