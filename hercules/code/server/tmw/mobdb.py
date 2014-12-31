@@ -28,6 +28,13 @@ def convertMobDb():
                     rows = fieldsSplit.split(line)
                     for f in xrange(0, len(rows)):
                         rows[f] = rows[f].strip()
+                    try:
+                        val = int(rows[23])
+                        if val < 20:
+                            rows[23] = "20"
+                    except:
+                        None
+
                     w.write("{0:<5} {1:<15} {2:<16} {3:<16} {4:<5} {5:<5} {6:<5} "
                             "{7:<5} {8:<5} {9:<7} {10:<5} {11:<5} {12:<5} {13:<5} "
                             "{14:<5} {15:<5} {16:<5} {17:<5} {18:<5} {19:<5} {20:<7}"
@@ -61,8 +68,7 @@ def convertMobDb():
                         rows[20] + ",",
                         rows[21] + ",",
                         rows[22] + ",",
-                        #rows[23] + ",",
-                        "0,",
+                        rows[23] + ",",
                         rows[24] + ",",
                         rows[25] + ",",
                         rows[26] + ",",
