@@ -308,6 +308,7 @@ def processStrReplace(tracker):
     line = line.replace("L_next", "L_Next")
     line = line.replace("L_close", "L_Close")
 
+    line = line.replace(".gat", "")
     line = re.sub("([^@^$])@([^@])", "\\1.@\\2", line)
     line = line.replace(".@menu", "@menu")
 
