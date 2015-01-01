@@ -296,6 +296,18 @@ def processStrReplace(tracker):
     line = line.replace("sc_slowpoison", "SC_SLOWPOISON")
     line = line.replace("countitem(", "countitemcolor(")
     line = line.replace("Bugleg", "BugLeg")
+    line = line.replace("getmap()", "getmapname()")
+    line = line.replace("L_end", "L_End")
+    line = line.replace("gmcommand", "atcommand")
+    line = line.replace("MF_NOSAVE", "mf_nosave")
+    line = line.replace("S_update_var", "S_Update_Var")
+    line = line.replace("L_teach", "L_Teach")
+    line = line.replace("L_focus", "L_Focus")
+    line = line.replace("L_unfocus", "L_Unfocus")
+    line = line.replace("L_main", "L_Main")
+    line = line.replace("L_next", "L_Next")
+    line = line.replace("L_close", "L_Close")
+
     line = re.sub("([^@^$])@([^@])", "\\1.@\\2", line)
     line = line.replace(".@menu", "@menu")
 
