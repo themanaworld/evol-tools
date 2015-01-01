@@ -295,7 +295,13 @@ def processStrReplace(tracker):
     line = line.replace("sc_poison", "SC_POISON")
     line = line.replace("sc_slowpoison", "SC_SLOWPOISON")
     line = line.replace("countitem(", "countitemcolor(")
+
+    line = line.replace(".gat", "")
     line = line.replace("Bugleg", "BugLeg")
+    line = line.replace("set BugLeg, 0;", "//set BugLeg, 0;")
+    line = line.replace("set CaveSnakeLamp, 0;", "//set CaveSnakeLamp, 0;")
+    line = line.replace("set Class, @BaseClass;", "//set Class, @BaseClass;")
+
     line = line.replace("getmap()", "getmapname()")
     line = line.replace("L_end", "L_End")
     line = line.replace("gmcommand", "atcommand")
@@ -307,10 +313,6 @@ def processStrReplace(tracker):
     line = line.replace("L_main", "L_Main")
     line = line.replace("L_next", "L_Next")
     line = line.replace("L_close", "L_Close")
-
-    line = line.replace(".gat", "")
-    line = re.sub("([^@^$])@([^@])", "\\1.@\\2", line)
-    line = line.replace(".@menu", "@menu")
 
     # fix at same time usage with same name function and variable
     line = line.replace("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\"")
