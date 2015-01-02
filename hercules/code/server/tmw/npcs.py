@@ -290,52 +290,56 @@ def processStrReplace(tracker):
     w = tracker.w
     if line == "{\n":
         return
-    line = line.replace("setskill ", "addtoskill ")
-    line = line.replace("zeny", "Zeny")
-    line = line.replace("sc_poison", "SC_POISON")
-    line = line.replace("sc_slowpoison", "SC_SLOWPOISON")
-    line = line.replace("countitem(", "countitemcolor(")
+    vals = [
+        ("setskill ", "addtoskill "),
+        ("zeny", "Zeny"),
+        ("sc_poison", "SC_POISON"),
+        ("sc_slowpoison", "SC_SLOWPOISON"),
+        ("countitem(", "countitemcolor("),
 
-    line = line.replace(".gat", "")
-    line = line.replace("Bugleg", "BugLeg")
-    line = line.replace("set BugLeg, 0;", "//set BugLeg, 0;")
-    line = line.replace("set CaveSnakeLamp, 0;", "//set CaveSnakeLamp, 0;")
-    line = line.replace("set Class, @BaseClass;", "//set Class, @BaseClass;")
-    line = line.replace("goto_Exit;", "goto L_Exit;")
-    line = line.replace("if @spants_state < 7 goto", "if(@spants_state < 7) goto")
-    line = line.replace("isdead()", "ispcdead()")
+        (".gat", ""),
+        ("Bugleg", "BugLeg"),
+        ("set BugLeg, 0;", "//set BugLeg, 0;"),
+        ("set CaveSnakeLamp, 0;", "//set CaveSnakeLamp, 0;"),
+        ("set Class, @BaseClass;", "//set Class, @BaseClass;"),
+        ("goto_Exit;", "goto L_Exit;"),
+        ("if @spants_state < 7 goto", "if(@spants_state < 7) goto"),
+        ("isdead()", "ispcdead()"),
 
-    line = line.replace("getmap()", "getmapname()")
-    line = line.replace("L_end", "L_End")
-    line = line.replace("gmcommand", "atcommand")
-    line = line.replace("MF_NOSAVE", "mf_nosave")
-    line = line.replace("S_update_var", "S_Update_Var")
-    line = line.replace("L_teach", "L_Teach")
-    line = line.replace("L_focus", "L_Focus")
-    line = line.replace("L_unfocus", "L_Unfocus")
-    line = line.replace("L_main", "L_Main")
-    line = line.replace("L_next", "L_Next")
-    line = line.replace("L_close", "L_Close")
-    line = line.replace("@NpcName$", "@npcname$")
-    line = line.replace("@cost", "@Cost")
-    line = line.replace("@TEMP", "@temp")
-    line = line.replace("L_Menuitems", "L_MenuItems")
-    line = line.replace("L_no_item", "L_No_Item")
-    line = line.replace("L_no_water", "L_No_Water")
-    line = line.replace("L_NOT_ENOUGH", "L_No_Water")
-    line = line.replace("L_bye", "L_Bye")
-    line = line.replace("L_NOHELP", "L_NoHelp")
-    line = line.replace("L_Eyepatch", "L_EyePatch")
-    line = line.replace("@PC_STAMINA", "@pc_stamina")
-    line = line.replace("L_magic", "L_Magic")
-    line = line.replace("L_cont", "L_Cont")
-    line = line.replace("L_accept", "L_Accept")
-    line = line.replace("L_no_event", "L_No_Event")
-    line = line.replace("L_event_done", "L_Event_Done")
-    line = line.replace("L_nobeer", "L_NoBeer")
+        ("getmap()", "getmapname()"),
+        ("L_end", "L_End"),
+        ("gmcommand", "atcommand"),
+        ("MF_NOSAVE", "mf_nosave"),
+        ("S_update_var", "S_Update_Var"),
+        ("L_teach", "L_Teach"),
+        ("L_focus", "L_Focus"),
+        ("L_unfocus", "L_Unfocus"),
+        ("L_main", "L_Main"),
+        ("L_next", "L_Next"),
+        ("L_close", "L_Close"),
+        ("@NpcName$", "@npcname$"),
+        ("@cost", "@Cost"),
+        ("@TEMP", "@temp"),
+        ("L_Menuitems", "L_MenuItems"),
+        ("L_no_item", "L_No_Item"),
+        ("L_no_water", "L_No_Water"),
+        ("L_NOT_ENOUGH", "L_No_Water"),
+        ("L_bye", "L_Bye"),
+        ("L_NOHELP", "L_NoHelp"),
+        ("L_Eyepatch", "L_EyePatch"),
+        ("@PC_STAMINA", "@pc_stamina"),
+        ("L_magic", "L_Magic"),
+        ("L_cont", "L_Cont"),
+        ("L_accept", "L_Accept"),
+        ("L_no_event", "L_No_Event"),
+        ("L_event_done", "L_Event_Done"),
+        ("L_nobeer", "L_NoBeer"),
+        # fix at same time usage with same name function and variable
+        ("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\"")
+    ];
 
-    # fix at same time usage with same name function and variable
-    line = line.replace("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\"")
+    for val in vals:
+        line = line.replace(val[0], val[1]);
 
     idx = line.find("getmapmobs(")
     if idx >= 0:
