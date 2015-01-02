@@ -303,6 +303,7 @@ def processStrReplace(tracker):
     line = line.replace("set Class, @BaseClass;", "//set Class, @BaseClass;")
     line = line.replace("goto_Exit;", "goto L_Exit;")
     line = line.replace("if @spants_state < 7 goto", "if(@spants_state < 7) goto")
+    line = line.replace("isdead()", "ispcdead()")
 
     line = line.replace("getmap()", "getmapname()")
     line = line.replace("L_end", "L_End")
