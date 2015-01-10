@@ -1,1 +1,2 @@
+min_char_class: 0
 max_char_class: 6
