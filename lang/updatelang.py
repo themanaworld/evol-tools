@@ -243,7 +243,7 @@ def loadItemDb(dir):
 					line = line.strip()
 					if line[0] == "}":
 						if itemId != "" and itemName != "":
-							itemNamesByName[itemId] = itemName
+							itemNamesByName[itemName.lower()] = itemName
 						break
 					if len(line) > 6 and line[:5] == "Name:":
 						itemName = stripQuotes(line[5:].strip())
