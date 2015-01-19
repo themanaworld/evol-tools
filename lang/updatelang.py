@@ -142,7 +142,7 @@ def parsePoFile(name, path):
 				if flag == 2:
 					if line1 != "":
 						if line1 in langFile:
-							langFile[line1] = line2
+							langFile[line1] = line2.replace("\\\"", "\"");
 					flag = 0
 
 			idx = line.find ("\"")
