@@ -79,7 +79,6 @@ def loadFiles(dir):
 			langs.add(line[:-1])
 
 	for file in langs:
-		#print dir + "/lang_" + file + ".txt"
 		langFiles[file] = parseFile(dir + "/lang_" + file + ".txt", True)
 		oldLangFiles[file] = parseFile(dir + "/lang_" + file + ".old", False)
 
@@ -108,7 +107,7 @@ def parseFile(name, readFirstLine):
 				line1 = ""
 				line2 = ""
 	elif readFirstLine:
-		firstLine = "Copyright (C) 2010-2012  Evol Online\n"
+		firstLine = "Copyright (C) 2010-2015  Evol Online\n"
 	return (trans, firstLine)
 
 
@@ -141,7 +140,7 @@ def parsePoFile(name, path):
 			if line == "\n":
 				if flag == 2:
 					if line1 != "":
-						if line1 in langFile:
+						if line1 in langFile and line2 != "":
 							langFile[line1] = line2.replace("\\\"", "\"");
 					flag = 0
 
@@ -166,20 +165,24 @@ def addMissingLines():
 		for str in oldFile:
 			if str in newFile:
 				del newFile[str]
-				print trans + ":moved to old: " + str
+#				print trans + ":moved to old: " + str
 
 	for str in allStrings:
 		for trans in langFiles:
 			newFile = langFiles[trans][0]
 			oldFile = oldLangFiles[trans][0]
 			if str not in newFile:
+#				print "lang: " + trans + ", str: " + str
 				if trans == defaultLang:
+#					print "newFile[str] = str"
 					newFile[str] = str
 				elif str in oldFile:
 					newFile[str] = oldFile[str]
+#					print "newFile[str] = oldFile[str]: " + newFile[str]
 				else:
+#					print "newFile[str] = """
 					newFile[str] = ""
-				print trans + ":new string: " + str
+#				print trans + ":new string: " + str
 
 
 def sorting():
@@ -250,6 +253,25 @@ def loadItemDb(dir):
 					if len(line) > 4 and line[:3] == "Id:":
 						itemId = stripQuotes(line[3:].strip())
 
+def dumpTranslations():
+	for trans in oldLangFiles:
+		print "old lang: " + trans
+		newFile = oldLangFiles[trans][0]
+		for line in newFile:
+			print line
+			if line in newFile:
+				print newFile[line]
+			print "\n"
+	for trans in langFiles:
+		print "new lang: " + trans
+		newFile = langFiles[trans][0]
+		for line in newFile:
+			print line
+			if line in newFile:
+				print newFile[line]
+			print "\n"
+
+
 rootPath = "../../server-data/"
 
 loadItemDb(rootPath + "db/re")
@@ -257,5 +279,6 @@ collectStrings(rootPath + "/npc")
 loadFiles(rootPath + "/langs")
 addMissingLines()
 loadPoFiles("new");
+#dumpTranslations();
 sorting()
 saveFiles(rootPath + "/langs")
