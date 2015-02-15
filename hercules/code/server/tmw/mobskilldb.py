@@ -9,7 +9,7 @@ from code.fileutils import *
 from code.stringutils import *
 
 def convertMobSkillDb():
-    srcFile = "oldserverdata/db/mob_skill_db.txt"
+    srcFile = "oldserverdata/world/map/db/mob_skill_db.txt"
     dstFile = "newserverdata/db/re/mob_skill_db.txt"
     fieldsSplit = re.compile(",")
     with open(srcFile, "r") as r:

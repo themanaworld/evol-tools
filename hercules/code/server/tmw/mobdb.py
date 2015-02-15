@@ -15,7 +15,7 @@ def getMobDbFile(srcDir):
             yield srcFile
 
 def convertMobDb():
-    srcDir = "oldserverdata/db/"
+    srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/mob_db.txt"
     fieldsSplit = re.compile(",")
     with open(dstFile, "w") as w:

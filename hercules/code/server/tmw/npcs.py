@@ -12,21 +12,21 @@ mapsConfFile = "newserverdata/conf/maps.conf"
 mapsIndexFile = "newserverdata/db/map_index.txt"
 npcMainScript = "newserverdata/npc/re/scripts_main.conf"
 mapsIndex = 1
-scriptRe = re.compile("^(((?P<map>[^/](.+))([.]gat|),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+))|(?P<function>function)|-)" +
+scriptRe = re.compile("^(((?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+))|(?P<function>function)|-)" +
     "[|](?P<tag>script)[|](?P<name>[^|]+)([|]"
     "(?P<class>[\d-]+)((,((?P<xs>[\d]+),(?P<ys>[\d]+)))|)|)$")
 
-shopRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)(|,(?P<gender>[\d]+))" +
+shopRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)(|,(?P<gender>[\d]+))" +
     "[|](?P<tag>shop)[|](?P<name>[\w#' ]+)[|]"
     "(?P<class>[\d]+),(?P<items>(.+))$")
 
-mapFlagRe = re.compile("^(?P<map>[^/](.+))[.]gat" +
+mapFlagRe = re.compile("^(?P<map>[^/](.+))" +
     "[|](?P<tag>mapflag)[|](?P<name>[\w#']+)(|[|](?P<flag>.*))$")
 
-warpRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|]"
-    "(?P<tag>warp)[|](?P<name>[^|]+)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+))[.]gat,([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
+warpRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|]"
+    "(?P<tag>warp)[|](?P<name>[^|]+)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+)),([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
 
-monsterRe = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)[|]"
+monsterRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)[|]"
     "(?P<tag>monster)[|](?P<name>[\w#' ]+)[|]"
     "(?P<class>[\d]+),(?P<num>[\d]+),(?P<delay1>[\d]+)ms,(?P<delay2>[\d]+)ms(|,(?P<label>[\w+-:#]+))$")
 
@@ -41,7 +41,7 @@ def createMainScript():
         w.write("import: npc/scripts.conf\n")
 
 def convertNpcs(items):
-    processNpcDir("oldserverdata/npc/", "newserverdata/npc/", items)
+    processNpcDir("oldserverdata/world/map/npc/", "newserverdata/npc/", items)
 
 def processNpcDir(srcDir, dstDir, items):
     makeDir(dstDir)

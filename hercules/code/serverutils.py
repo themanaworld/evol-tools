@@ -6,7 +6,7 @@
 import os
 
 def detectServerType():
-    if os.path.exists("oldserverdata/news.d"):
+    if os.path.exists("oldserverdata/world/map/news.d"):
         return "tmw"
     else:
         return "evol"

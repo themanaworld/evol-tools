@@ -56,7 +56,7 @@ def convertConsts(quests):
         # build in parameters
         w.write("ClientVersion\t10000\t1\n");
 
-        srcDir = "oldserverdata/db/"
+        srcDir = "oldserverdata/world/map/db/"
         w.write("// tmw constants\n")
         for srcFile in getConstsFile(srcDir):
             with open(srcFile, "r") as r:

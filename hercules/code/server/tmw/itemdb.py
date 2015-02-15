@@ -16,7 +16,7 @@ def getItemDbFile(srcDir):
             yield srcFile
 
 def convertItemDb():
-    srcDir = "oldserverdata/db/"
+    srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/item_db.conf"
     constsFile = "newserverdata/db/const.txt"
     fieldsSplit = re.compile(",")
