@@ -186,10 +186,10 @@ def itemsToShop(tracker, itemsStr):
     for str2 in items:
         parts = itemsSplit2.split(str2)
         if parts[1][0] == "*":
-            parts[1] = parts[1][1:]
+            parts[1] = str((int(parts[1][1:]) * int(itemsDict[parts[0].strip()]['buy'])))
         if outStr != "":
             outStr = outStr + ","
-        outStr = outStr + itemsDict[parts[0].strip()] + ":" + parts[1]
+        outStr = outStr + itemsDict[parts[0].strip()]['id'] + ":" + parts[1]
     return outStr
 
 def processShop(tracker):

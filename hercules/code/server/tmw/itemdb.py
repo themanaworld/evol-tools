@@ -43,7 +43,7 @@ def convertItemDb():
                         for f in xrange(0, sz):
                             rows[f] = rows[f].strip()
 
-                        items[rows[1]] = rows[0]
+                        items[rows[1]] = {'id':rows[0],'buy':rows[4]}
                         w.write("{\n")
                         c.write("{0}\t{1}\n".format(rows[1], rows[0]))
                         writeIntField(w, "Id", rows[0])
