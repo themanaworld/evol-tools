@@ -11,7 +11,7 @@ from code.stringutils import *
 def getMobDbFile(srcDir):
     files = os.listdir(srcDir)
     for srcFile in files:
-        if srcFile.find("mob_db.txt") >= 0:
+        if srcFile.find("mob_db") >= 0:
             yield srcFile
 
 def convertMobDb():

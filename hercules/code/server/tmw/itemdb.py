@@ -12,7 +12,7 @@ from code.stringutils import *
 def getItemDbFile(srcDir):
     files = os.listdir(srcDir)
     for srcFile in files:
-        if srcFile.find("item_db.txt") >= 0:
+        if srcFile.find("item_db") >= 0:
             yield srcFile
 
 def convertItemDb():
