@@ -300,6 +300,7 @@ def processStrReplace(tracker):
         ("sc_poison", "SC_POISON"),
         ("sc_slowpoison", "SC_SLOWPOISON"),
         ("countitem(", "countitemcolor("),
+        ("sex", "Sex"),
 
         (".gat", ""),
         ("Bugleg", "BugLeg"),
@@ -309,6 +310,8 @@ def processStrReplace(tracker):
         ("goto_Exit;", "goto L_Exit;"),
         ("if @spants_state < 7 goto", "if(@spants_state < 7) goto"),
         ("isdead()", "ispcdead()"),
+        ("changeSex", "changecharsex()"),
+        ("getpartnerid2()", "getpartnerid()"),
 
         ("getmap()", "getmapname()"),
         ("L_end", "L_End"),
@@ -366,7 +369,6 @@ def processStrReplace(tracker):
         ("@menuID", "@menuid"),
         ("L_NO_ITEM", "L_No_Item"),
         ("L_HELP", "L_Help"),
-        ("sex", "Sex"),
         ("L_Noitem", "L_NoItem"),
         ("L_No_fur", "L_No_Fur"),
         ("@EXP", "@Exp"),
