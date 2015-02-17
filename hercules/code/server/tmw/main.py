@@ -14,7 +14,10 @@ from code.server.questsdb import *
 from code.serverutils import *
 
 def serverTmwMain():
-    cleanServerData()
+    try:
+        cleanServerData()
+    except:
+        print "Updating server"
     createMainScript()
     items = convertItemDb()
     convertNpcs(items)

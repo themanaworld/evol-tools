@@ -9,7 +9,11 @@ from code.fileutils import *
 from code.stringutils import *
 
 mapsConfFile = "newserverdata/conf/maps.conf"
+if os.path.isfile(mapsConfFile):
+    os.remove(mapsConfFile)
 mapsIndexFile = "newserverdata/db/map_index.txt"
+if os.path.isfile(mapsIndexFile):
+    os.remove(mapsIndexFile)
 npcMainScript = "newserverdata/npc/re/scripts_main.conf"
 mapsIndex = 1
 scriptRe = re.compile("^(((?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+))|(?P<function>function)|-)" +

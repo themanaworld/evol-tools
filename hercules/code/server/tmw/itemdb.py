@@ -18,7 +18,11 @@ def getItemDbFile(srcDir):
 def convertItemDb():
     srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/item_db.conf"
+    if os.path.isfile(dstFile):
+        os.remove(dstFile)
     constsFile = "newserverdata/db/const.txt"
+    if os.path.isfile(constsFile):
+        os.remove(constsFile)
     fieldsSplit = re.compile(",")
     scriptsSplit = re.compile("{")
     items = dict()
