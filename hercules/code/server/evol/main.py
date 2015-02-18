@@ -5,6 +5,7 @@
 # Author: Andrei Karas (4144)
 
 from code.server.account import *
+from code.server.storage import *
 from code.server.db.char import *
 from code.server.db.charregnumdb import *
 from code.server.db.inventory import *
@@ -36,3 +37,4 @@ def dbEvolMain():
     saveCharRegNumDbTable(users)
     saveSkillTable(users)
     saveInventoryTable(users)
+    convertStorage()
