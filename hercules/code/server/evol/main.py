@@ -6,6 +6,7 @@
 
 from code.server.account import *
 from code.server.db.char import *
+from code.server.db.charregnumdb import *
 from code.server.evol.athena import *
 from code.server.evol.consts import *
 from code.server.evol.itemdb import *
@@ -28,5 +29,6 @@ def serverEvolMain():
 
 def dbEvolMain():
     convertAccount()
-    users = readAthena();
-    saveCharTable(users);
+    users = readAthena()
+    saveCharTable(users)
+    saveCharRegNumDbTable(users)
