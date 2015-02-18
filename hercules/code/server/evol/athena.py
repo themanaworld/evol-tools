@@ -38,7 +38,7 @@ def parseInventory(line, data):
 
         item.uknownId = rows2[0]
         item.itemId = rows2[1]
-        item.ammount = rows2[2]
+        item.amount = rows2[2]
         item.equip = rows2[3]
         item.color = rows2[4]
         item.refine = rows2[5]

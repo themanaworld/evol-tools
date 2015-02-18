@@ -7,6 +7,7 @@
 from code.server.account import *
 from code.server.db.char import *
 from code.server.db.charregnumdb import *
+from code.server.db.inventory import *
 from code.server.db.skill import *
 from code.server.evol.athena import *
 from code.server.evol.consts import *
@@ -34,3 +35,4 @@ def dbEvolMain():
     saveCharTable(users)
     saveCharRegNumDbTable(users)
     saveSkillTable(users)
+    saveInventoryTable(users)
