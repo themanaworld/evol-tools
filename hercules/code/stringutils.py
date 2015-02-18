@@ -33,3 +33,10 @@ def stripNewLine(data):
     if data[-1] == "\n":
         data = data[:-1]
     return data
+
+def escapeSqlStr(data):
+    data = data.replace("'", "\\'");
+    data = data.replace("`", "\\`");
+    data = data.replace("{", "\\{");
+    data = data.replace("}", "\\}");
+    return data

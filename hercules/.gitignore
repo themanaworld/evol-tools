@@ -4,5 +4,7 @@ serverdata
 oldserverdata
 newserverdata
 mapcache
+olddb
+newdb
 
 *.pyc

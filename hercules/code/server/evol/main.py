@@ -4,6 +4,7 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+from code.server.account import *
 from code.server.evol.consts import *
 from code.server.evol.itemdb import *
 from code.server.evol.mobdb import *
@@ -22,3 +23,6 @@ def serverEvolMain():
     quests = convertQuestsDb()
     convertConsts(quests)
     convertMobSkillDb()
+
+def dbEvolMain():
+    convertAccount()
