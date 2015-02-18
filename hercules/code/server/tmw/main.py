@@ -4,6 +4,13 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+from code.server.account import *
+from code.server.storage import *
+from code.server.db.char import *
+from code.server.db.charregnumdb import *
+from code.server.db.inventory import *
+from code.server.db.skill import *
+from code.server.tmw.athena import *
 from code.server.tmw.consts import *
 from code.server.tmw.itemdb import *
 from code.server.tmw.mobdb import *
@@ -25,3 +32,12 @@ def serverTmwMain():
     quests = dict()
     convertConsts(quests)
     convertMobSkillDb()
+
+def dbTmwMain():
+    convertAccount()
+    users = readAthena()
+    saveCharTable(users)
+    saveCharRegNumDbTable(users)
+    saveSkillTable(users)
+    saveInventoryTable(users)
+    convertStorage()
