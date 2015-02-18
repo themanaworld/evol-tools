@@ -5,6 +5,7 @@
 # Author: Andrei Karas (4144)
 
 from code.server.account import *
+from code.server.accreg import *
 from code.server.storage import *
 from code.server.db.char import *
 from code.server.db.charregnumdb import *
@@ -41,3 +42,4 @@ def dbTmwMain():
     saveSkillTable(users)
     saveInventoryTable(users)
     convertStorage()
+    convertAccReg()
