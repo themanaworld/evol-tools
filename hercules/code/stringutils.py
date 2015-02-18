@@ -40,3 +40,8 @@ def escapeSqlStr(data):
     data = data.replace("{", "\\{");
     data = data.replace("}", "\\}");
     return data
+
+def removeGat(data):
+    if len(data) >= 4 and data[-4:] == ".gat":
+        data = data[:-4]
+    return data

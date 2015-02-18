@@ -181,12 +181,12 @@ def readAthena():
             user.head_bottom = tmp[4]
 
             tmp = comaSplit.split(rows[12])
-            user.last_map = tmp[0]
+            user.last_map = removeGat(tmp[0])
             user.last_x = tmp[1]
             user.last_y = tmp[2]
 
             tmp = comaSplit.split(rows[13])
-            user.save_map = tmp[0]
+            user.save_map = removeGat(tmp[0])
             user.save_x = tmp[1]
             user.save_y = tmp[2]
             user.partner_id = tmp[3]
