@@ -16,6 +16,9 @@ def saveCharRegNumDbTable(users):
         for userId in users:
             user = users[userId]
             for varKey in user.variables:
+                if varKey == "ShipQuests":
+                    continue
+
                 varValue = user.variables[varKey]
 
                 if firstLine == False:
