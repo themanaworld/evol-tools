@@ -5,6 +5,8 @@
 # Author: Andrei Karas (4144)
 
 from code.server.account import *
+from code.server.db.char import *
+from code.server.evol.athena import *
 from code.server.evol.consts import *
 from code.server.evol.itemdb import *
 from code.server.evol.mobdb import *
@@ -26,3 +28,5 @@ def serverEvolMain():
 
 def dbEvolMain():
     convertAccount()
+    users = readAthena();
+    saveCharTable(users);
