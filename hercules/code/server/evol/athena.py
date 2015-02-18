@@ -201,6 +201,7 @@ def readAthena():
             user.skills = parseSkills(line, rows[17])
 
             user.variables = parseVars(line, rows[18])
+            user.variables["Lang"] = user.language_id
 
             users[user.char_id] = user
 

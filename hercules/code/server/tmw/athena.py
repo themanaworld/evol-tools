@@ -191,6 +191,7 @@ def readAthena():
             user.save_y = tmp[2]
 
             user.partner_id = "0"
+            user.language_id = "0"
 
             # skip 14
 
