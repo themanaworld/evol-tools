@@ -100,12 +100,14 @@ def convertItemDb():
                         if len(UseScript) > 1:
                             writeStartScript(w, "Script")
                             for uline in UseScript:
-                                w.write("        {0};\n".format(uline))
+                                if len(uline) > 0:
+                                    w.write("        {0};\n".format(uline))
                             writeEndScript(w)
                         if len(EquipScript) > 1:
                             writeStartScript(w, "OnEquipScript")
                             for eline in EquipScript:
-                                w.write("        {0};\n".format(eline))
+                                if len(eline) > 0:
+                                    w.write("        {0};\n".format(eline))
                             writeEndScript(w)
 
                         w.write("},\n")
