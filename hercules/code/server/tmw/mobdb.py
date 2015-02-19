@@ -3,7 +3,7 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-import re
+import re, math
 
 from code.fileutils import *
 from code.stringutils import *
@@ -35,6 +35,36 @@ def convertMobDb():
                     except:
                         None
 
+                    # Experience and Job experience, following *tmw-eathena*/src/map/mob.c
+                    calc_exp = 0
+
+                    if rows[6] == "0":
+                        if int(rows[4]) <= 1:
+                            calc_exp = 1
+
+                        mod_def = 100 - int(rows[11])
+
+                        if mod_def == 0:
+                            mod_def = 1
+
+                        effective_hp = ((50 - int(rows[18])) * int(rows[4]) / 50) + (2 * int(rows[18]) * int(rows[4]) / mod_def)
+                        attack_factor = (int(rows[9]) + int(rows[10]) + int(rows[13]) / 3 + int(rows[17]) / 2 + int(rows[18])) * (1872 / int(rows[26])) / 4
+                        dodge_factor = (int(rows[3]) + int(rows[14]) + int(rows[18]) / 2)**(4 / 3)
+                        persuit_factor = (3 + int(rows[8])) * (int(rows[24]) % 2) * 1000 / int(rows[25])
+                        aggression_factor = 1
+
+                        if False:
+                            aggression_factor = 10 / 9
+
+                        base_exp_rate = 100 # From *tmw-eathena-data*/conf/battle_athena.conf
+
+                        calc_exp = int(math.floor(effective_hp * (math.sqrt(attack_factor) + math.sqrt(dodge_factor) + math.sqrt(persuit_factor) + 55)**3 * aggression_factor / 2000000 * base_exp_rate / 100))
+
+                        if calc_exp < 1:
+                            calc_exp = 1
+                    else:
+                        calc_exp = rows[6]
+
                     w.write("{0:<5} {1:<15} {2:<16} {3:<16} {4:<5} {5:<5} {6:<5} "
                             "{7:<5} {8:<5} {9:<7} {10:<5} {11:<5} {12:<5} {13:<5} "
                             "{14:<5} {15:<5} {16:<5} {17:<5} {18:<5} {19:<5} {20:<7}"
@@ -51,7 +81,7 @@ def convertMobDb():
                         rows[3] + ",",
                         rows[4] + ",",
                         rows[5] + ",",
-                        rows[6] + ",",
+                        str(calc_exp) + ",",
                         rows[7] + ",",
                         rows[8] + ",",
                         rows[9] + ",",

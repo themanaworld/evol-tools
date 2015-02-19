@@ -24,7 +24,10 @@ def convertItemDb():
     if os.path.isfile(constsFile):
         os.remove(constsFile)
     fieldsSplit = re.compile(",")
-    scriptsSplit = re.compile("{")
+    scriptsSplit = re.compile("},")
+    scriptsTextClean = re.compile('([{}])')
+    scriptsTextComma = re.compile('^,')
+    scriptsTextColon = re.compile('; ')
     items = dict()
 
     tpl = readFile("templates/item_db.tpl")
@@ -48,12 +51,16 @@ def convertItemDb():
                             rows[f] = rows[f].strip()
 
                         items[rows[1]] = {'id':rows[0],'buy':rows[4]}
+                        # set all values then write
                         w.write("{\n")
                         c.write("{0}\t{1}\n".format(rows[1], rows[0]))
                         writeIntField(w, "Id", rows[0])
                         writeStrField(w, "AegisName", rows[1])
                         writeStrField(w, "Name", rows[2])
-                        writeIntField(w, "Type", rows[3])
+                        if rows[3] == "0":
+                            writeIntField(w, "Type", "2")
+                        else:
+                            writeIntField(w, "Type", rows[3])
                         writeIntField(w, "Buy", rows[4])
                         writeIntField(w, "Sell", rows[5])
                         writeIntField(w, "Weight", rows[6])
@@ -83,18 +90,23 @@ def convertItemDb():
                         writeIntField(w, "Sprite", "0")
 
                         scripts = ""
-                        for f in xrange(sz, len(rows)):
+                        for f in xrange(17, len(rows)):
                             scripts = scripts + ", " + rows[f]
                         rows = scriptsSplit.split(scripts)
-                        cnt = len(rows)
-                        if cnt > 1:
-                            text = rows[1].strip()
-                            if len(text) > 1:
-                                text = text[:-2]
-                                if text != "":
-                                    writeStartScript(w, "Script")
-                                    w.write("        {0}\n".format(text))
-                                    writeEndScript(w)
+                        # Needs .split(';') and \n each 
+                        UseScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[0]))).strip().split(';')
+                        EquipScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[1]))).strip().split(';')
+                        # move to for stmt
+                        if len(UseScript) > 1:
+                            writeStartScript(w, "Script")
+                            for uline in UseScript:
+                                w.write("        {0};\n".format(uline))
+                            writeEndScript(w)
+                        if len(EquipScript) > 1:
+                            writeStartScript(w, "OnEquipScript")
+                            for eline in EquipScript:
+                                w.write("        {0};\n".format(eline))
+                            writeEndScript(w)
 
                         w.write("},\n")
         w.write(")\n")
