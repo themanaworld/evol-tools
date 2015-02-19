@@ -6,6 +6,7 @@
 
 from code.server.account import *
 from code.server.accreg import *
+from code.server.party import *
 from code.server.storage import *
 from code.server.db.char import *
 from code.server.db.charregnumdb import *
@@ -40,3 +41,4 @@ def dbEvolMain():
     saveInventoryTable(users)
     convertStorage()
     convertAccReg()
+    convertParty(users)
