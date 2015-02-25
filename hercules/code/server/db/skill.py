@@ -26,6 +26,7 @@ def saveSkillTable(users):
                     char_id = user.char_id,
                     id = skill.skillId,
                     lv = skill.level,
-                    flag = skill.flags
+                    flag = 0
+#                    flag = skill.flags
                 ))
         w.write("\n")
