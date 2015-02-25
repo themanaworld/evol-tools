@@ -21,3 +21,5 @@ CREATE TABLE IF NOT EXISTS `login` (
   KEY `name` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2000000; 
 
+INSERT INTO `login` (`account_id`, `userid`, `user_pass`, `sex`, `email`) VALUES ('1', 's1', 'p1', 'S','athena@athena.com');
+
