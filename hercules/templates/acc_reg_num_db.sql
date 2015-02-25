@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `acc_reg_num_db`;
+
 CREATE TABLE IF NOT EXISTS `acc_reg_num_db` (
   `account_id` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `key` VARCHAR(32) BINARY NOT NULL DEFAULT '',
