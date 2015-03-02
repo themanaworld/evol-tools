@@ -62,7 +62,10 @@ def convertItemDb():
                         else:
                             writeIntField(w, "Type", rows[3])
                         writeIntField(w, "Buy", rows[4])
-                        writeIntField(w, "Sell", rows[5])
+                        if int(rows[4])*.75 <= int(rows[5])*1.24:
+                            writeIntField(w, "Sell", str(int(rows[4])*.75))
+                        else:
+                            writeIntField(w, "Sell", rows[5])
                         writeIntField(w, "Weight", rows[6])
                         writeIntField(w, "Atk", rows[7])
                         writeIntField(w, "Matk", "0")
