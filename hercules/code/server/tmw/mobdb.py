@@ -22,7 +22,7 @@ def convertMobDb():
         for srcFile in getMobDbFile(srcDir):
             with open(srcDir + srcFile, "r") as r:
                 for line in r:
-                    if len(line) < 2:
+                    if len(line) < 2 or line[:2] == "//":
                         w.write(line)
                         continue
                     rows = fieldsSplit.split(line)
@@ -65,8 +65,8 @@ def convertMobDb():
                     else:
                         calc_exp = rows[6]
 
-                    w.write("{0:<5} {1:<15} {2:<16} {3:<16} {4:<5} {5:<5} {6:<5} "
-                            "{7:<5} {8:<5} {9:<7} {10:<5} {11:<5} {12:<5} {13:<5} "
+                    w.write("{0:<5} {1:<23} {2:<23} {3:<23} {4:<5} {5:<6} {6:<3} "
+                            "{7:<7} {8:<6} {9:<7} {10:<5} {11:<5} {12:<5} {13:<5} "
                             "{14:<5} {15:<5} {16:<5} {17:<5} {18:<5} {19:<5} {20:<7}"
                             " {21:<7} {22:<6} {23:<5} {24:<8} {25:<8} {26:<6} "
                             "{27:<8} {28:<9} {29:<8} {30:<5} {31:<7} {32:<8} {33:<7}"
@@ -95,7 +95,7 @@ def convertMobDb():
                         rows[17] + ",",
                         rows[18] + ",",
                         rows[19] + ",",
-                        rows[20] + ",",
+                        "10,",
                         rows[21] + ",",
                         rows[22] + ",",
                         rows[23] + ",",
