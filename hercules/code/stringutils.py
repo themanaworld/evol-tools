@@ -35,6 +35,7 @@ def stripNewLine(data):
     return data
 
 def escapeSqlStr(data):
+    data = data.replace("\\", "\\\\");
     data = data.replace("'", "\\'");
     data = data.replace("`", "\\`");
     data = data.replace("{", "\\{");
