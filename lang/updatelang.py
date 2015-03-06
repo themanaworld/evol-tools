@@ -26,55 +26,63 @@ oldLangFiles = dict()
 langs = set()
 itemNamesByName = dict()
 
-def addStr(str, comment):
-    allStrings.add(str)
+def addStr(text, comment, fileName, lineNum):
+    allStrings.add(text)
     if comment[-1:] == "\n":
         comment = comment[:-1]
-    strComments[str] = comment.strip() + "\n"
+    newComment = "#. code: " + comment.strip() + "\n#: " + fileName + ":" + str(lineNum) + "\n#, no-c-format\n"
+    if text in strComments:
+        strComments[text] = strComments[text] + newComment
+    else:
+        strComments[text] = newComment
 
-def collectStrings(parentDir):
+def collectStrings(parentDir, relativeDir):
     global itemNamesByName
     files = os.listdir(parentDir) 
     for file1 in files:
         if file1[0] == ".":
             continue
         file2 = os.path.abspath(parentDir + os.path.sep + file1)
+        relativeDir2 = relativeDir + os.path.sep + file1
         if not os.path.isfile(file2):
-            collectStrings(file2)
+            collectStrings(file2, relativeDir2)
         elif filt.search(file1):
+            codeFile = relativeDir + os.path.sep + file1
             with open(file2, "r") as f:
+                cnt = -1
                 for line in f:
+                    cnt = cnt + 1
                     m = strre1.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str, line)
+                            addStr(str, line, codeFile, cnt)
                     m = strre4.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str + "#0", line)
-                            addStr(str + "#1", line)
+                            addStr(str + "#0", line, codeFile, cnt)
+                            addStr(str + "#1", line, codeFile, cnt)
                     m = strre2.search(line)
                     if m is not None and m.group("str")[0] != "#":
-                        addStr(m.group("str"), line)
+                        addStr(m.group("str"), line, codeFile, cnt)
                     m = strre3.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line)
+                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt)
                     m = strre5.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line)
+                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt)
                     m = strre6.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str, line)
+                            addStr(str, line, codeFile, cnt)
                     m = strre7.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str[0] + "#0", line)
-                            addStr(str[2] + "#1", line)
+                            addStr(str[0] + "#0", line, codeFile, cnt)
+                            addStr(str[2] + "#1", line, codeFile, cnt)
 
 
 
@@ -247,7 +255,7 @@ def writePoFile(poDir, texts, trans):
         w.write ("\n")
         for line in texts[0]:
             if line[0] in strComments.keys():
-                w.write ("#. code: " + strComments[line[0]])
+                w.write (strComments[line[0]])
 
             w.write ("msgid \"" + line[0].replace("\"", "\\\"") + "\"\n")
             trLine = line[1]
@@ -311,7 +319,7 @@ def dumpTranslations():
 rootPath = "../../server-data/"
 
 loadItemDb(rootPath + "db/re")
-collectStrings(rootPath + "/npc")
+collectStrings(rootPath + "/npc", "npc")
 loadFiles(rootPath + "/langs")
 addMissingLines()
 loadPoFiles("in");
