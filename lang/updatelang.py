@@ -113,7 +113,8 @@ def parseFile(name, readFirstLine):
 def loadPoFiles(podir):
     files = os.listdir(podir)
     for name in files:
-        parsePoFile(name[:-3], podir + "/" + name)
+        if name[-3:] == ".po":
+            parsePoFile(name[:-3], podir + "/" + name)
 
 
 def parsePoFile(name, path):
@@ -202,13 +203,13 @@ def sortDict(adict):
         d2.append ((key, adict[0][key]))
     return (d2, adict[1])
 
-def saveFiles(dir):
+def saveFiles(langDir):
     for trans in langFiles:
-        writeFile (dir + "/lang_" + trans + ".txt", langFiles[trans], trans, False)
-        writeFile (dir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
+        writeFile (langDir + "/lang_" + trans + ".txt", langFiles[trans], trans, False)
+        writeFile (langDir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
 
-def writeFile(dir, texts, trans, isold):
-    with open (dir, "w") as f:
+def writeFile(langDir, texts, trans, isold):
+    with open (langDir, "w") as f:
         if texts[1] is not None:
             f.write(texts[1])
         for line in texts[0]:
