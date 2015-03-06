@@ -30,11 +30,12 @@ def addStr(text, comment, fileName, lineNum):
     allStrings.add(text)
     if comment[-1:] == "\n":
         comment = comment[:-1]
-    newComment = "#. code: " + comment.strip() + "\n#: " + fileName + ":" + str(lineNum) + "\n#, no-c-format\n"
-    if text in strComments:
-        strComments[text] = strComments[text] + newComment
-    else:
-        strComments[text] = newComment
+    if text not in strComments:
+        strComments[text] = set()
+
+    strComments[text].add("#. code: " + comment.strip() + "\n")
+    strComments[text].add("#: " + fileName + ":" + str(lineNum) + "\n")
+    strComments[text].add("#, no-c-format\n")
 
 def collectStrings(parentDir, relativeDir):
     global itemNamesByName
@@ -236,6 +237,19 @@ def writeLangFile(langDir, texts, trans, isold):
                         trLine = trLine[:-2]
                 f.write (trLine + "\n\n")
 
+def writePoComments(w, comments):
+    for line in comments:
+        if line[:3] == "#. ":
+            w.write (line)
+    for line in comments:
+        if line[:3] == "#: ":
+            w.write (line)
+
+    for line in comments:
+        if line[:3] == "#, ":
+            w.write (line)
+            break
+
 def writePoFile(poDir, texts, trans):
     if trans == "en":
         langDir = poDir + "/" + trans + ".pot"
@@ -255,7 +269,7 @@ def writePoFile(poDir, texts, trans):
         w.write ("\n")
         for line in texts[0]:
             if line[0] in strComments.keys():
-                w.write (strComments[line[0]])
+                writePoComments(w, strComments[line[0]])
 
             w.write ("msgid \"" + line[0].replace("\"", "\\\"") + "\"\n")
             trLine = line[1]
