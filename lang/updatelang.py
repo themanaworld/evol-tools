@@ -11,6 +11,7 @@ defaultLang = "en"
 filt = re.compile(".+[.]txt", re.IGNORECASE)
 
 allStrings = set()
+strComments = dict()
 strre1 = re.compile("[\t +(]l[(][\"](?P<str>[^\"]+)[\"]")
 strre3 = re.compile("[\t +(]getitemlink[(][\"](?P<str>[^\"]+)[\"][)]")
 strre2 = re.compile("^[^/](.+)([^\t]+)[\t](script|shop)[\t](?P<str>[^\t]+)[\t]([\d]+),")
@@ -24,6 +25,12 @@ langFiles = dict()
 oldLangFiles = dict()
 langs = set()
 itemNamesByName = dict()
+
+def addStr(str, comment):
+    allStrings.add(str)
+    if comment[-1:] == "\n":
+        comment = comment[:-1]
+    strComments[str] = comment.strip() + "\n"
 
 def collectStrings(parentDir):
     global itemNamesByName
@@ -40,35 +47,34 @@ def collectStrings(parentDir):
                     m = strre1.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            allStrings.add(str)
+                            addStr(str, line)
                     m = strre4.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            allStrings.add(str + "#0")
-                            allStrings.add(str + "#1")
+                            addStr(str + "#0", line)
+                            addStr(str + "#1", line)
                     m = strre2.search(line)
                     if m is not None and m.group("str")[0] != "#":
-                        allStrings.add(m.group("str"))
+                        addStr(m.group("str"), line)
                     m = strre3.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                allStrings.add(itemNamesByName[str.lower()])
+                                addStr(itemNamesByName[str.lower()], line)
                     m = strre5.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                allStrings.add(itemNamesByName[str.lower()])
+                                addStr(itemNamesByName[str.lower()], line)
                     m = strre6.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            allStrings.add(str)
+                            addStr(str, line)
                     m = strre7.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            allStrings.add(str[0] + "#0")
-                            allStrings.add(str[2] + "#1")
-
+                            addStr(str[0] + "#0", line)
+                            addStr(str[2] + "#1", line)
 
 
 
@@ -240,6 +246,9 @@ def writePoFile(poDir, texts, trans):
         w.write ("\"Content-Transfer-Encoding: 8bit\\n\"\n")
         w.write ("\n")
         for line in texts[0]:
+            if line[0] in strComments.keys():
+                w.write ("#. code: " + strComments[line[0]])
+
             w.write ("msgid \"" + line[0].replace("\"", "\\\"") + "\"\n")
             trLine = line[1]
             if trans == "en":
