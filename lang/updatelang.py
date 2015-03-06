@@ -1,12 +1,11 @@
-#! /usr/bin/env python2.6
+#! /usr/bin/env python2.7
 # -*- coding: utf8 -*-
 #
-# Copyright (C) 2010-2013  Evol Online
+# Copyright (C) 2010-2015  Evol Online
 # Author: Andrei Karas (4144)
 
 import os
 import re
-#from sets import Set
 
 defaultLang = "en"
 filt = re.compile(".+[.]txt", re.IGNORECASE)

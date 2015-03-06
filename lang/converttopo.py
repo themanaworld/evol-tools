@@ -1,7 +1,7 @@
-#! /usr/bin/env python2.6
+#! /usr/bin/env python2.7
 # -*- coding: utf8 -*-
 #
-# Copyright (C) 2011  Evol Online
+# Copyright (C) 2011-2015  Evol Online
 # Author: Andrei Karas (4144)
 
 import os
