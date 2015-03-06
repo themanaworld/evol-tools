@@ -90,5 +90,5 @@ def saveFile(path, name):
 rootPath = "../../server-data"
 
 loadFiles(rootPath + "/langs")
-saveFiles("po")
+saveFiles("out")
 

@@ -278,7 +278,7 @@ loadItemDb(rootPath + "db/re")
 collectStrings(rootPath + "/npc")
 loadFiles(rootPath + "/langs")
 addMissingLines()
-loadPoFiles("new");
+loadPoFiles("in");
 #dumpTranslations();
 sorting()
 saveFiles(rootPath + "/langs")
