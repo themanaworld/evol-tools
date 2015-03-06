@@ -203,12 +203,13 @@ def sortDict(adict):
         d2.append ((key, adict[0][key]))
     return (d2, adict[1])
 
-def saveFiles(langDir):
+def saveFiles(langDir, poDir):
     for trans in langFiles:
-        writeFile (langDir + "/lang_" + trans + ".txt", langFiles[trans], trans, False)
-        writeFile (langDir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
+        writeLangFile (langDir + "/lang_" + trans + ".txt", langFiles[trans], trans, False)
+        writeLangFile (langDir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
+        writePoFile (poDir, langFiles[trans], trans)
 
-def writeFile(langDir, texts, trans, isold):
+def writeLangFile(langDir, texts, trans, isold):
     with open (langDir, "w") as f:
         if texts[1] is not None:
             f.write(texts[1])
@@ -220,6 +221,32 @@ def writeFile(langDir, texts, trans, isold):
                     if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
                         trLine = trLine[:-2]
                 f.write (trLine + "\n\n")
+
+def writePoFile(poDir, texts, trans):
+    if trans == "en":
+        langDir = poDir + "/" + trans + ".pot"
+    else:
+        langDir = poDir + "/" + trans + ".po"
+
+    print langDir
+    with open (langDir, "w") as w:
+        w.write ("# " + texts[1] + "")
+        w.write ("#\n\n")
+        w.write ("msgid \"\"\n")
+        w.write ("msgstr \"\"\n")
+        w.write ("\"Project-Id-Version: EvolOnline\\n\"\n")
+        w.write ("\"MIME-Version: 1.0\\n\"\n")
+        w.write ("\"Content-Type: text/plain; charset=UTF-8\\n\"\n")
+        w.write ("\"Content-Transfer-Encoding: 8bit\\n\"\n")
+        w.write ("\n")
+        for line in texts[0]:
+            w.write ("msgid \"" + line[0].replace("\"", "\\\"") + "\"\n")
+            trLine = line[1]
+            if trans == "en":
+                if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
+                    trLine = trLine[:-2]
+            trLine = trLine.replace("\"", "\\\"")
+            w.write ("msgstr \"" + trLine + "\"\n\n")
 
 def stripQuotes(data):
     if len(data) == 0:
@@ -281,4 +308,4 @@ addMissingLines()
 loadPoFiles("in");
 #dumpTranslations();
 sorting()
-saveFiles(rootPath + "/langs")
+saveFiles(rootPath + "/langs", "out")
