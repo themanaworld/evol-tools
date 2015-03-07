@@ -26,7 +26,7 @@ oldLangFiles = dict()
 langs = set()
 itemNamesByName = dict()
 
-def addStr(text, comment, fileName, lineNum):
+def addStr(text, comment, fileName, lineNum, addNoC):
     allStrings.add(text)
     if comment[-1:] == "\n":
         comment = comment[:-1]
@@ -35,9 +35,10 @@ def addStr(text, comment, fileName, lineNum):
 
     strComments[text].add("#. code: " + comment.strip() + "\n")
     strComments[text].add("#: " + fileName + ":" + str(lineNum) + "\n")
-    strComments[text].add("#, no-c-format\n")
+    if addNoC == True:
+        strComments[text].add("#, no-c-format\n")
 
-def collectStrings(parentDir, relativeDir):
+def collectScriptStrings(parentDir, relativeDir):
     global itemNamesByName
     files = os.listdir(parentDir) 
     for file1 in files:
@@ -46,7 +47,7 @@ def collectStrings(parentDir, relativeDir):
         file2 = os.path.abspath(parentDir + os.path.sep + file1)
         relativeDir2 = relativeDir + os.path.sep + file1
         if not os.path.isfile(file2):
-            collectStrings(file2, relativeDir2)
+            collectScriptStrings(file2, relativeDir2)
         elif filt.search(file1):
             codeFile = relativeDir + os.path.sep + file1
             with open(file2, "r") as f:
@@ -56,36 +57,51 @@ def collectStrings(parentDir, relativeDir):
                     m = strre1.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str, line, codeFile, cnt)
+                            addStr(str, line, codeFile, cnt, True)
                     m = strre4.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str + "#0", line, codeFile, cnt)
-                            addStr(str + "#1", line, codeFile, cnt)
+                            addStr(str + "#0", line, codeFile, cnt, True)
+                            addStr(str + "#1", line, codeFile, cnt, True)
                     m = strre2.search(line)
                     if m is not None and m.group("str")[0] != "#":
-                        addStr(m.group("str"), line, codeFile, cnt)
+                        addStr(m.group("str"), line, codeFile, cnt, True)
                     m = strre3.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt)
+                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
                     m = strre5.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt)
+                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
                     m = strre6.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str, line, codeFile, cnt)
+                            addStr(str, line, codeFile, cnt, True)
                     m = strre7.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            addStr(str[0] + "#0", line, codeFile, cnt)
-                            addStr(str[2] + "#1", line, codeFile, cnt)
+                            addStr(str[0] + "#0", line, codeFile, cnt, True)
+                            addStr(str[2] + "#1", line, codeFile, cnt, True)
 
 
+def collectMessages(messagesDir):
+    with open(messagesDir, "r") as r:
+        cnt = -1
+        for line in r:
+            cnt = cnt + 1
+            if line[:2] == "//":
+                continue
+            idx = line.find(": ")
+            if idx < 1:
+                continue
+            msgId = line[:idx]
+            msgStr = line[idx + 2:]
+            if msgStr[-1:] == "\n":
+                msgStr = msgStr[:-1]
+            addStr(msgStr, line, "conf/messages.conf", cnt, False)
 
 def loadFiles(dir):
     with open(dir + "/langs.txt", "r") as f:
@@ -333,7 +349,8 @@ def dumpTranslations():
 rootPath = "../../server-data/"
 
 loadItemDb(rootPath + "db/re")
-collectStrings(rootPath + "/npc", "npc")
+collectScriptStrings(rootPath + "/npc", "npc")
+collectMessages(rootPath + "/conf/messages.conf")
 loadFiles(rootPath + "/langs")
 addMissingLines()
 loadPoFiles("in");
