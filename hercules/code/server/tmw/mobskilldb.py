@@ -12,11 +12,17 @@ def convertMobSkillDb():
     srcFile = "oldserverdata/world/map/db/mob_skill_db.txt"
     dstFile = "newserverdata/db/re/mob_skill_db.txt"
     fieldsSplit = re.compile(",")
+    notintown = re.compile("notintown")
+    notintownSub = re.compile("notintown,0")
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:
             tpl = readFile("templates/mob_skill_db.tpl")
             w.write(tpl)
             for line in r:
+                if notintown.search(line):
+                    if line[0:2] == "//":
+                        line = ''
+                    line = notintownSub.sub("myhpltmaxrate,20",line)
                 if len(line) < 2 or line[0:2] == "//":
                     w.write(line)
                     continue
