@@ -46,7 +46,7 @@ def collectManaPlusPackets(fileName):
         for line in f:
             m = protocolre.search(line)
             if m is not None:
-                clientPackets[m.group("packet")] = m.group("name")
+                clientPackets[m.group("packet").lower()] = m.group("name")
 
 def printPackets():
     for packet in packets:
