@@ -10,6 +10,7 @@ import re
 filt = re.compile(".+[.]c", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
+serverpacketre2 = re.compile("[.]PacketType([ ]*)=([ ]*)(?P<name>[\w]+);")
 protocolre = re.compile("#define[ ](?P<name>[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
 
 packetsSet = set()
@@ -35,6 +36,10 @@ def collectServerPackets(parentDir):
                             while len(data) < 4:
                                 data = "0" + data
                             packetsSet.add(data.lower())
+                    m = serverpacketre2.findall(line)
+                    if len(m) > 0:
+                        for str in m:
+                            packetsSet.add(str[2].lower())
 
 def sortServerPackets():
     for packet in packetsSet:

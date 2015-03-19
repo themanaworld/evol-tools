@@ -364,6 +364,7 @@ b08 client name: SMSG_CHAT_JOIN_CHANNEL
 b0a client name: SMSG_BEING_ATTRS
 b0b client name: SMSG_NPC_AREA
 b10 client name: SMSG_ONLINE_LIST
+xa1a
 2710
 2711
 2712
@@ -570,3 +571,49 @@ b10 client name: SMSG_ONLINE_LIST
 3893
 3894
 7531 client name: SMSG_SERVER_VERSION_RESPONSE
+additemtype
+authoktype
+banking_checktype
+banking_deposit_acktype
+banking_withdraw_acktype
+bgqueue_acktype
+bgqueue_battlebeginstype
+bgqueue_notice_deletetype
+bgqueue_notify_entrytype
+bgqueue_updateinfotype
+cart_additem_acktype
+cartlistequiptype
+cartlistnormaltype
+damagetype
+dropflooritemtype
+equipitemacktype
+graffiti_entrytype
+idle_unit2type
+idle_unittype
+inventorylistequiptype
+inventorylistnormaltype
+item_drop_announcetype
+maptypeproperty2type
+monsterhptype
+notify_bounditemtype
+npcmarketopentype
+npcmarketresultacktype
+package_item_announcetype
+partyleaderchangedtype
+rouletteinfoacktype
+roulettercvitemacktype
+roulettgenerateacktype
+sc_noticktype
+script_cleartype
+skill_entrytype
+spawn_unit2type
+spawn_unittype
+status_change2type
+status_change_endtype
+status_changetype
+storagelistequiptype
+storagelistnormaltype
+unequipitemacktype
+unit_walkingtype
+viewequipacktype
+wisendtype
