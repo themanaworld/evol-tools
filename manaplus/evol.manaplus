@@ -8,7 +8,7 @@
     <option name="onlineServerList" value="http://www.evolonline.org/serverlist.xml"/>
     <option name="onlineServerFile" value="evol.xml"/>
     <option name="defaultServer" value="127.0.0.1"/>
-    <option name="defaultPort" value="6900"/>
+    <option name="defaultPort" value="6901"/>
     <option name="defaultServerType" value="evol2"/>
     <option name="font" value="fonts/dejavusans.ttf" />
     <option name="boldFont" value="fonts/dejavusans-bold.ttf" />
