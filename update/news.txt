@@ -1,11 +1,34 @@
-##9 Latest client version: ##6ManaPlus 1.3.7.7
-##0 Actual Release: ##1Beta3
+##9 Latest client version: ##6ManaPlus 1.5.3.14
+##0 Actual Release: ##1Beta3-H1
 ##0 Welcome to ##BEvol Online##b!
 ##0 You can find every ##1rules##0 of ##BEvol Online##b here:
 ##1 [@@http://www.evolonline.org/guide_rules.html|http://www.evolonline.org/guide_rules.html@@]
 
 
 ##7 ##BThe adventure begins!##b
+
+##7 Season 1, Episode 4
+
+##0 The Evol Online Project is pleased to announce you the release of
+##0 the new server software!
+##0 First of all, remember to update your server list.
+
+##0 This server includes better support for all the main features of
+##0 Evol. You won't actually see much difference from other Beta
+##0 releases, but we still need your help to assure that the current
+##0 server build works with our little world while we work on the first
+##0 release.
+
+##0 we will also release most of our current changes on the island and
+##0 some bug fixes which were waiting in queue since the end of the Beta
+##0 Session.
+
+
+##0 And yet much more work in progress which should be soon available
+##0 through the Aurora1 release this year!
+
+##9 -- Cheers, Reid and WildX
+##9 March 2015
 
 
 ##7 Season 1, Episode 3!
