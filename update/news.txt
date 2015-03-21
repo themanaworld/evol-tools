@@ -22,8 +22,6 @@
 ##0 we will also release most of our current changes on the island and
 ##0 some bug fixes which were waiting in queue since the end of the Beta
 ##0 Session.
-
-
 ##0 And yet much more work in progress which should be soon available
 ##0 through the Aurora1 release this year!
 
