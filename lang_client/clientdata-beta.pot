@@ -1,108 +1,7 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  deadmessages1.pot (PACKAGE VERSION)  #-#-#-#-#\n"
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  deadmessages.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  ea-skills.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  emotes.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  itemcolors.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  items.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  manaplus_emotes1.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  manaplus_emotes.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 14:57+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  monsters.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  npcs.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  pets.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  quests.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-25 15:01+0300\n"
+"POT-Creation-Date: 2015-03-23 13:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,144 +10,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:9
+#: tmp/deadmessages.xml:9 deadmessages.xml:9
 msgid "You are dead."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:10
+#: tmp/deadmessages.xml:10 deadmessages.xml:10
 msgid "We regret to inform you that your character was killed in battle."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:11
+#: tmp/deadmessages.xml:11 deadmessages.xml:11
 msgid "You are not that alive anymore."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:12
+#: tmp/deadmessages.xml:12 deadmessages.xml:12
 msgid "The cold hands of the grim reaper are grabbing for your soul."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:13
+#: tmp/deadmessages.xml:13 deadmessages.xml:13
 msgid "Game Over!"
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:14
+#: tmp/deadmessages.xml:14 deadmessages.xml:14
 msgid "Insert coin to continue."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:15
+#: tmp/deadmessages.xml:15 deadmessages.xml:15
 msgid ""
 "No, kids. Your character did not really die. It... err... went to a better "
 "place."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:16
+#: tmp/deadmessages.xml:16 deadmessages.xml:16
 msgid ""
 "Your plan of breaking your enemies weapon by bashing it with your throat "
 "failed."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:17
+#: tmp/deadmessages.xml:17 deadmessages.xml:17
 msgid "I guess this did not run too well."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:18
+#: tmp/deadmessages.xml:19 deadmessages.xml:18
 msgid "Do you want your possessions identified?"
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:19
+#: tmp/deadmessages.xml:21 deadmessages.xml:19
 msgid "Sadly, no trace of you was ever found..."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:20
+#: tmp/deadmessages.xml:23 deadmessages.xml:20
 msgid "Annihilated."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:21
+#: tmp/deadmessages.xml:25 deadmessages.xml:21
 msgid "Looks like you got your head handed to you."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:22
+#: tmp/deadmessages.xml:27 deadmessages.xml:22
 msgid ""
 "You screwed up again, dump your body down the tubes and get you another one."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:23
+#: tmp/deadmessages.xml:29 deadmessages.xml:23
 msgid "You're not dead yet. You're just resting."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:24
+#: tmp/deadmessages.xml:30 deadmessages.xml:24
 msgid "You are no more."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:25
+#: tmp/deadmessages.xml:31 deadmessages.xml:25
 msgid "You have ceased to be."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:26
+#: tmp/deadmessages.xml:32 deadmessages.xml:26
 msgid "You've expired and gone to meet your maker."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:27
+#: tmp/deadmessages.xml:33 deadmessages.xml:27
 msgid "You're a stiff."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:28
+#: tmp/deadmessages.xml:34 deadmessages.xml:28
 msgid "Bereft of life, you rest in peace."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:29
+#: tmp/deadmessages.xml:35 deadmessages.xml:29
 msgid "If you weren't so animated, you'd be pushing up the daisies."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:30
+#: tmp/deadmessages.xml:36 deadmessages.xml:30
 msgid "Your metabolic processes are now history."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:31
+#: tmp/deadmessages.xml:37 deadmessages.xml:31
 msgid "You're off the twig."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:32
+#: tmp/deadmessages.xml:38 deadmessages.xml:32
 msgid "You've kicked the bucket."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:33
+#: tmp/deadmessages.xml:39 deadmessages.xml:33
 msgid ""
 "You've shuffled off your mortal coil, run down the curtain and joined the "
 "bleedin' choir invisibile."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:34
+#: tmp/deadmessages.xml:40 deadmessages.xml:34
 msgid "You are an ex-player."
 msgstr ""
 
 #. (itstool) path: messages/message
-#: deadmessages.xml:35
+#: tmp/deadmessages.xml:41 deadmessages.xml:35
 msgid "You're pining for the fjords."
 msgstr ""
 
@@ -393,26 +292,6 @@ msgstr ""
 #. (itstool) path: messages/message
 #: deadmessages.xml:63
 msgid "Confusion shall be my epitaph."
-msgstr ""
-
-#. (itstool) path: skills/set@name
-#: ea-skills.xml:12
-msgid "Basic"
-msgstr ""
-
-#. #-#-#-#-#  ea-skills.pot (PACKAGE VERSION)  #-#-#-#-#
-#. (itstool) path: set/skill@name
-#. #-#-#-#-#  manaplus_emotes1.pot (PACKAGE VERSION)  #-#-#-#-#
-#. (itstool) path: emote/sprite@name
-#. #-#-#-#-#  manaplus_emotes.pot (PACKAGE VERSION)  #-#-#-#-#
-#. (itstool) path: emote/sprite@name
-#: ea-skills.xml:13 tmp/manaplus_emotes.xml:26
-msgid "Emote"
-msgstr ""
-
-#. (itstool) path: set/skill@description
-#: ea-skills.xml:13
-msgid "You can share your mood."
 msgstr ""
 
 #. (itstool) path: emote/sprite@name
@@ -886,7 +765,7 @@ msgstr ""
 #. (itstool) path: items/item@useButton
 #: items.xml:188 items.xml:198 items.xml:207 items.xml:217 items.xml:227
 #: items.xml:237 items.xml:247 items.xml:267 items.xml:277 items.xml:296
-#: items.xml:323 items.xml:334 items.xml:343
+#: items.xml:323 items.xml:334 items.xml:343 items.xml:364
 msgid "Eat"
 msgstr ""
 
@@ -1050,8 +929,11 @@ msgstr ""
 msgid "Heal 65-90 HP"
 msgstr ""
 
+#. #-#-#-#-#  items.pot (PACKAGE VERSION)  #-#-#-#-#
 #. (itstool) path: items/item@name
-#: items.xml:305
+#. #-#-#-#-#  monsters.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: monsters/monster@name
+#: items.xml:305 monsters.xml:117
 msgid "Croconut"
 msgstr ""
 
@@ -1060,8 +942,12 @@ msgstr ""
 msgid "Fallen from a crocotree, this fruit could be opened."
 msgstr ""
 
+#. #-#-#-#-#  items.pot (PACKAGE VERSION)  #-#-#-#-#
 #. (itstool) path: items/item@useButton
-#: items.xml:305
+#. #-#-#-#-#  npcs.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: npc/menu@name
+#: items.xml:305 npcs.xml:202 npcs.xml:207 npcs.xml:285 npcs.xml:290
+#: npcs.xml:295
 msgid "Open"
 msgstr ""
 
@@ -1077,8 +963,11 @@ msgid ""
 "the pages."
 msgstr ""
 
+#. #-#-#-#-#  items.pot (PACKAGE VERSION)  #-#-#-#-#
 #. (itstool) path: items/item@useButton
-#: items.xml:313
+#. #-#-#-#-#  npcs.pot (PACKAGE VERSION)  #-#-#-#-#
+#. (itstool) path: npc/menu@name
+#: items.xml:313 npcs.xml:108
 msgid "Read"
 msgstr ""
 
@@ -1131,219 +1020,234 @@ msgid "Unknown"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:363
+#: items.xml:364
+msgid "Urchin Meat"
+msgstr ""
+
+#. (itstool) path: items/item@description
+#: items.xml:364
+msgid "Seafood? Sure, why not? Let's call it seafood."
+msgstr ""
+
+#. (itstool) path: items/item@effect
+#: items.xml:364
+msgid "Heal 28-35 HP"
+msgstr ""
+
+#. (itstool) path: items/item@name
+#: items.xml:372
 msgid "Small Tentacles"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:363
+#: items.xml:372
 msgid ""
 "These colorful tentacles look harmful at first, but don't touch them too "
 "much or your hands will start to burn like hell."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:370
+#: items.xml:379
 msgid "Piou Feathers"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:370
+#: items.xml:379
 msgid "A bunch of small feathers. A piou might have dropped them."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:378
+#: items.xml:387
 msgid "Tortuga Shell Fragment"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:378
+#: items.xml:387
 msgid "A fragment of a tortuga shell."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:386
+#: items.xml:395
 msgid "Half Eggshell"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:386
+#: items.xml:395
 msgid "It maybe got broken in order to cook a fried egg."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:393
+#: items.xml:402
 msgid "Ratto Tail"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:393
+#: items.xml:402
 msgid "A very long tail from a ratto."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:401
+#: items.xml:410
 msgid "Ratto Teeth"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:401
+#: items.xml:410
 msgid "Some teeth of a ratto."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:409
+#: items.xml:418
 msgid "Croc Claw"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:409
+#: items.xml:418
 msgid "Could be tasty if well cooked."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:417
+#: items.xml:426
 msgid "Squichy Claws"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:417
+#: items.xml:426
 msgid "Claws from a wild squichy."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:425
+#: items.xml:434
 msgid "Tortuga Shell"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:425
+#: items.xml:434
 msgid "This shell comes from a tortuga."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:432
+#: items.xml:441
 msgid "Tortuga Tongue"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:432
+#: items.xml:441
 msgid "The tongue of a tortuga."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:439
+#: items.xml:448
 msgid "Pearl"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:439
+#: items.xml:448
 msgid "A perfectly round and shiny pearl."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:446
+#: items.xml:455
 msgid "Coral"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:446
+#: items.xml:455
 msgid "The kind of coral you can see in Oceania."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:453
+#: items.xml:462
 msgid "Blue Coral"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:453
+#: items.xml:462
 msgid "A coral dyed in blue by a blub."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:461
+#: items.xml:470
 msgid "Fish Box"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:461
+#: items.xml:470
 msgid "A wooden box full of fresh fish that Couwan gave you."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:469
+#: items.xml:478
 msgid "Aquada Box"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:469
+#: items.xml:478
 msgid "A wooden box full of aquadas."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:477
+#: items.xml:486
 msgid "Croconut Box"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:477
+#: items.xml:486
 msgid "A wooden box full of croconuts."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:485
+#: items.xml:494
 msgid "Plushroom Box"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:485
+#: items.xml:494
 msgid "A wooden box full of plushrooms."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:492
+#: items.xml:501
 msgid "Poisoned Dish"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:492
+#: items.xml:501
 msgid "A special dish made of strange ingredients."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:499
+#: items.xml:508
 msgid "La Johanne's Key"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:499
+#: items.xml:508
 msgid "An iron key to open La Johanne's entrance door."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:506
+#: items.xml:515
 msgid "Fouit Wing"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:506 items.xml:520
+#: items.xml:515 items.xml:529
 msgid "This wing is slight and soft unlike its former owner."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:513
+#: items.xml:522
 msgid "Bat Teeth"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:513
+#: items.xml:522
 msgid "What sharp teeth! They seem to be more dangerous than a knife."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:520
+#: items.xml:529
 msgid "Oufti Wing"
 msgstr ""
 
@@ -1351,169 +1255,167 @@ msgstr ""
 #. (itstool) path: items/item@name
 #. #-#-#-#-#  manaplus_emotes1.pot (PACKAGE VERSION)  #-#-#-#-#
 #. (itstool) path: emote/sprite@name
-#. #-#-#-#-#  manaplus_emotes.pot (PACKAGE VERSION)  #-#-#-#-#
-#. (itstool) path: emote/sprite@name
-#: items.xml:527 tmp/manaplus_emotes.xml:27
+#: items.xml:536 tmp/manaplus_emotes.xml:27
 msgid "Pumpkin"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:527
+#: items.xml:536
 msgid "A pumpkin that can be carved for Halloween."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:534
+#: items.xml:543
 msgid "Mushroom Spores"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:534 items.xml:541 items.xml:548
+#: items.xml:543 items.xml:550 items.xml:557
 msgid "."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:541
+#: items.xml:550
 msgid "Moss"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:548
+#: items.xml:557
 msgid "Tentacles"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:568
+#: items.xml:577
 msgid "Creased Shirt"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:568
+#: items.xml:577
 msgid "An old shirt given to you by a sailor. It isn't very fashionable..."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:580
+#: items.xml:589
 msgid "%Color% Sailor Tank Top"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:580
+#: items.xml:589
 msgid "A %color% tank top used by sailors and seamen."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:592
+#: items.xml:601
 msgid "Sailor Shirt"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:592
+#: items.xml:601
 msgid "Proof that ye be in the crew, matey!"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:606
+#: items.xml:615
 msgid "Lousy Moccasins"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:606
+#: items.xml:615
 msgid "Orc-made moccasins. Not sure from which skin these shoes were made."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:620
+#: items.xml:629
 msgid "Armbands"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:620
+#: items.xml:629
 msgid "Small armbands made of wood and iron."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:633
+#: items.xml:642
 msgid "Creased Shorts"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:633
+#: items.xml:642
 msgid "An old pair of shorts given to you by a sailor. They smell awful."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:644
+#: items.xml:653
 msgid "Brown Trousers"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:644
+#: items.xml:653
 msgid "A classic trousers ornamented with some fluffy fur."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:681
+#: items.xml:690
 msgid "Bandana"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:681
+#: items.xml:690
 msgid "A striped bandana worn by some sailors."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:705
+#: items.xml:714
 msgid "Pumpkin Hat"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:705
+#: items.xml:714
 msgid "A carved pumpkin, the face will scare your enemy off."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:715
+#: items.xml:724
 msgid "Fancy Hat"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:715 items.xml:729 items.xml:738 items.xml:747
+#: items.xml:724 items.xml:738 items.xml:747 items.xml:756
 msgid "-"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:729
+#: items.xml:738
 msgid "Brimmed Hat"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:738
+#: items.xml:747
 msgid "Brimmed Feather Hat"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:747
+#: items.xml:756
 msgid "Brimmed Flower Hat"
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:773
+#: items.xml:782
 msgid "Knife"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:773
+#: items.xml:782
 msgid "A simple, but sharp knife."
 msgstr ""
 
 #. (itstool) path: items/item@name
-#: items.xml:789
+#: items.xml:798
 msgid "Piou Slayer"
 msgstr ""
 
 #. (itstool) path: items/item@description
-#: items.xml:789
+#: items.xml:798
 msgid ""
 "A short sword for novice fighters, more useful in the kitchen than in a real "
 "fight..."
@@ -1521,12 +1423,12 @@ msgstr ""
 
 #. (itstool) path: items/item@name
 #. (itstool) path: items/item@description
-#: items.xml:800
+#: items.xml:811
 msgid "Piou egg"
 msgstr ""
 
 #. (itstool) path: items/item@useButton
-#: items.xml:800
+#: items.xml:811
 msgid "Hatch"
 msgstr ""
 
@@ -1608,6 +1510,11 @@ msgstr ""
 #. (itstool) path: emote/sprite@name
 #: tmp/manaplus_emotes.xml:25
 msgid "Heart"
+msgstr ""
+
+#. (itstool) path: emote/sprite@name
+#: tmp/manaplus_emotes.xml:26
+msgid "Emote"
 msgstr ""
 
 #. (itstool) path: emote/sprite@name
@@ -1701,23 +1608,56 @@ msgid "Pikpik"
 msgstr ""
 
 #. (itstool) path: npc/menu@name
-#: npcs.xml:176
+#: npcs.xml:21
+msgid "Take"
+msgstr ""
+
+#. (itstool) path: npc/menu@name
+#: npcs.xml:26 npcs.xml:31 npcs.xml:38 npcs.xml:47 npcs.xml:52 npcs.xml:57
+#: npcs.xml:62 npcs.xml:69 npcs.xml:76 npcs.xml:81 npcs.xml:88 npcs.xml:93
+#: npcs.xml:100 npcs.xml:105 npcs.xml:114 npcs.xml:123 npcs.xml:129
+#: npcs.xml:134 npcs.xml:139 npcs.xml:144 npcs.xml:149 npcs.xml:154
+#: npcs.xml:164 npcs.xml:170 npcs.xml:175 npcs.xml:180 npcs.xml:186
+#: npcs.xml:191 npcs.xml:197 npcs.xml:212 npcs.xml:218 npcs.xml:242
+#: npcs.xml:248 npcs.xml:275 npcs.xml:280 npcs.xml:299
 msgid "Talk"
 msgstr ""
 
 #. (itstool) path: npc/menu@name
-#: npcs.xml:177
+#: npcs.xml:32 npcs.xml:63 npcs.xml:70 npcs.xml:82 npcs.xml:94 npcs.xml:115
+#: npcs.xml:249
 msgid "Buy"
 msgstr ""
 
 #. (itstool) path: npc/menu@name
-#: npcs.xml:178
+#: npcs.xml:33 npcs.xml:64 npcs.xml:71 npcs.xml:83 npcs.xml:95 npcs.xml:116
+#: npcs.xml:250
 msgid "Sell"
 msgstr ""
 
 #. (itstool) path: npc/menu@name
-#: npcs.xml:179
+#: npcs.xml:159
+msgid "Touch"
+msgstr ""
+
+#. (itstool) path: npc/menu@name
+#: npcs.xml:225 npcs.xml:232
+msgid "Rotate"
+msgstr ""
+
+#. (itstool) path: npc/menu@name
+#: npcs.xml:237
+msgid "Launch"
+msgstr ""
+
+#. (itstool) path: npc/menu@name
+#: npcs.xml:251
 msgid "Poke"
+msgstr ""
+
+#. (itstool) path: npc/menu@name
+#: npcs.xml:262
+msgid "Save"
 msgstr ""
 
 #. (itstool) path: pets/pet@name
@@ -2318,4 +2258,15 @@ msgstr ""
 #. (itstool) path: quest/text
 #: quests.xml:366
 msgid "Reward: 8 EXP, 100 E."
+msgstr ""
+
+#. (itstool) path: skills/set@name
+#. (itstool) path: set/skill@name
+#: skills.xml:12 skills.xml:13
+msgid "Basic"
+msgstr ""
+
+#. (itstool) path: set/skill@description
+#: skills.xml:13
+msgid "Allow do basic things."
 msgstr ""

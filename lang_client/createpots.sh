@@ -9,7 +9,7 @@ cd ../../client-data
 
 
 its items
-its ea-skills
+its skills
 its emotes
 its itemcolors
 its monsters
