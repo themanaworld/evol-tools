@@ -175,9 +175,9 @@ fd
 1c8 client name: SMSG_PLAYER_INVENTORY_USE
 1cd client name: SMSG_PLAYER_SKILL_AUTO_SPELLS
 1cf client name: SMSG_SKILL_DEVOTION_EFFECT
-1d0 client name: CMSG_SPIRIT_BALLS
-1d1 client name: CMSG_BLADE_STOP
-1d2 client name: CMSG_COMBO_DELAY
+1d0 client name: SMSG_SPIRIT_BALLS
+1d1 client name: SMSG_BLADE_STOP
+1d2 client name: SMSG_COMBO_DELAY
 1d3 client name: SMSG_BEING_SOUND_EFFECT
 1d4 client name: SMSG_NPC_STR_INPUT
 1d6 client name: SMSG_MAP_TYPE
@@ -185,12 +185,12 @@ fd
 1dc client name: SMSG_LOGIN_CODING_KEY
 1de client name: SMSG_SKILL_DAMAGE
 1e0 client name: SMSG_ADMIN_GET_LOGIN_ACK
-1e1 client name: CMSG_SPIRIT_BALL_SINGLE
+1e1 client name: SMSG_SPIRIT_BALL_SINGLE
 1e2
 1e4
 1e6 client name: SMSG_FAMILY_CALL_PARTNER
 1e9 client name: SMSG_PARTY_MEMBER_INFO
-1ea client name: CMSG_WEDDING_EFFECT
+1ea client name: SMSG_WEDDING_EFFECT
 1eb client name: SMSG_GUILD_UPDATE_COORDS
 1f2 client name: SMSG_GUILD_MEMBER_LOGIN
 1f3 client name: SMSG_BEING_SPECIAL_EFFECT
