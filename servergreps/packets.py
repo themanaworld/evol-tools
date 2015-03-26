@@ -21,6 +21,7 @@ clientpacketsSorted = []
 clientPacketsManaPlus = dict()
 clientPacketsManaPlusClient = dict()
 clientPackets = dict()
+sizes = dict()
 
 def collectServerPackets(parentDir):
     global itemNamesByName
@@ -74,8 +75,31 @@ def collectClientPackets(fileName):
                 data = m.group("packet").lower()
                 while len(data) < 4:
                     data = "0" + data
-                clientPackets[data] = (m.group("len"), m.group("function"));
+                clientPackets[data] = (int(m.group("len")), m.group("function"));
                 #print "{0},{1},{2}".format(m.group("packet"), m.group("len"), m.group("function"))
+
+def collectManaPlusSizes(fileName):
+    cnt = 0
+    comaSplit = re.compile(",")
+    with open(fileName, "r") as f:
+        for line in f:
+            line = line.strip()
+            if len(line) < 2 or ((line[0] < "0" or line[0] > "9") and line[0] != "-"):
+                continue
+            cols = comaSplit.split(line)
+            for col in cols:
+                if col == "" or col == "\\":
+                    continue
+                data = hex(cnt).split('x')[1]
+                while len(data) < 4:
+                    data = "0" + data
+                sizes[data] = int(col)
+                cnt = cnt + 1
+#    for d in range(0, 30):
+#        s = ""
+#        for f in range(0, 15):
+#            s = s + "{0:>4},".format(sizes[f + d * 16])
+#        print s
 
 def printPackets():
     with open("serverpackets.txt", "w") as w:
@@ -119,13 +143,27 @@ def printPackets():
             w.write(data)
             w.write("\n")
 
+#    with open("wrongpackersizes.txt", "w") as w:
+#        for packet in sizes:
+#            if packet == "0000":
+#                continue
+#            data = packet
+#            while data[0] == "0":
+#                data = data[1:]
+#            if packet in serverpacketsSorted:
+#                if sizes[packet] != clientPackets[packet][0]:
+#                    w.write("{0:>4} {1:4} -> {2:4}\n".format(data, sizes[packet], clientPackets[packet][0]))
+
 srcPath = "../../server-code/src/"
-protocolPath = "../../manaplus/src/net/eathena/protocol.h"
+manaplusPath = "../../manaplus/src/"
+protocolPath = manaplusPath + "net/eathena/protocol.h"
 clientPacketsPath = srcPath + "map/packets.h"
+packetsPath = manaplusPath + "net/eathena/packets.h"
 
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
 collectManaPlusPackets(protocolPath)
+collectManaPlusSizes(packetsPath);
 sortClientPackets()
 sortServerPackets()
 printPackets()
