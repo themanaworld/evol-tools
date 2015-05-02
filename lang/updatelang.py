@@ -346,9 +346,22 @@ def dumpTranslations():
             print "\n"
 
 
+def loadMobNames(dir):
+    with open(dir + "/mob_db.txt", "r") as r:
+        cnt = -1
+        for line in r:
+            cnt = cnt + 1
+            if len(line) < 1 or line[0:2] == "//":
+                continue
+            parts = itemsplit.split(line)
+            if len(parts) < 3:
+                continue
+            addStr(parts[2].strip(), line, "mob_db.txt", cnt, True)
+
 rootPath = "../../server-data/"
 
 loadItemDb(rootPath + "db/re")
+loadMobNames(rootPath + "db/re")
 collectScriptStrings(rootPath + "/npc", "npc")
 collectMessages(rootPath + "/conf/messages.conf")
 loadFiles(rootPath + "/langs")
