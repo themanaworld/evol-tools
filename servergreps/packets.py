@@ -14,6 +14,7 @@ serverpacketre2 = re.compile("[.]PacketType([ ]*)=([ ]*)(?P<name>[\w]+);")
 protocolre = re.compile("#define[ ](?P<name>[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
 protocolClientre = re.compile("#define[ ](?P<name>CMSG_[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
 clientpacketre = re.compile("(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+),(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
+packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
 
 packetsSet = set()
 serverpacketsSorted = []
@@ -22,6 +23,7 @@ clientPacketsManaPlus = dict()
 clientPacketsManaPlusClient = dict()
 clientPackets = dict()
 sizes = dict()
+manaplusUsedPacketsSet = set()
 
 def collectServerPackets(parentDir):
     global itemNamesByName
@@ -101,6 +103,25 @@ def collectManaPlusSizes(fileName):
 #            s = s + "{0:>4},".format(sizes[f + d * 16])
 #        print s
 
+def collectManaPlusUsedPackets(fileName):
+    with open(fileName, "r") as f:
+        for line in f:
+            m = packetNameClientre.search(line)
+            if m is not None:
+                manaplusUsedPacketsSet.add(m.group("name"))
+                print m.group("name")
+
+def processManaPlusCppFiles(parentDir):
+    files = os.listdir(parentDir)
+    for file1 in files:
+        if file1[0] == ".":
+            continue
+        file2 = os.path.abspath(parentDir + os.path.sep + file1)
+        if not os.path.isfile(file2):
+            processManaPlusCppFiles(file2)
+        elif file1[-4:] == ".cpp":
+            collectManaPlusUsedPackets(file2)
+
 def printPackets():
     with open("serverpackets.txt", "w") as w:
         for packet in serverpacketsSorted:
@@ -108,7 +129,10 @@ def printPackets():
             while data[0] == "0":
                 data = data[1:]
             if packet in clientPacketsManaPlus:
-                w.write(data + " client name: " + clientPacketsManaPlus[packet])
+                clientName = clientPacketsManaPlus[packet]
+                if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
+                    w.write("UNIMPLIMENTED ")
+                w.write(data + " client name: " + clientName)
             else:
                 w.write(data)
             w.write("\n")
@@ -130,6 +154,11 @@ def printPackets():
     manaplusFunc = set()
     rev = []
     with open("clientpackets.txt", "w") as w:
+        for packet in clientPacketsManaPlusClient:
+            clientName = clientPacketsManaPlusClient[packet]
+            if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
+                w.write("UNIMPLIMENTED {0}\n".format(clientName))
+
         for packet in clientPacketsManaPlusClient:
             if packet in clientPackets:
                 manaplusFunc.add(clientPackets[packet][1])
@@ -159,11 +188,13 @@ manaplusPath = "../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/protocol.h"
 clientPacketsPath = srcPath + "map/packets.h"
 packetsPath = manaplusPath + "net/eathena/packets.h"
+eathenaPath = manaplusPath + "net/eathena/"
 
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
 collectManaPlusPackets(protocolPath)
 collectManaPlusSizes(packetsPath);
+processManaPlusCppFiles(eathenaPath);
 sortClientPackets()
 sortServerPackets()
 printPackets()
