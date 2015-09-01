@@ -11,8 +11,16 @@ filt = re.compile(".+[.]c", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
 serverpacketre2 = re.compile("[.]PacketType([ ]*)=([ ]*)(?P<name>[\w]+);")
-protocolre = re.compile("#define[ ](?P<name>[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
-protocolClientre = re.compile("#define[ ](?P<name>CMSG_[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
+#serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)0,([ ]*)"
+#    + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9\w]+)([ ]*)[;]")
+serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
+    + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
+#manaplus re expr all packets
+#protocolre = re.compile("#define[ ](?P<name>[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
+protocolre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
+#manaplus re expr client to server packets
+#protocolClientre = re.compile("#define[ ](?P<name>CMSG_[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
+protocolClientre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
 clientpacketre = re.compile("(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+),(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
 packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
 
@@ -38,8 +46,12 @@ def collectServerPackets(parentDir):
             with open(file2, "r") as f:
                 for line in f:
                     m = serverpacketre.findall(line)
+                    if len(m) == 0:
+                        m = serverpacketre3.findall(line)
                     if len(m) > 0:
                         for str in m:
+                            if str[9] == "0":
+                                continue
                             data = str[9]
                             while len(data) < 4:
                                 data = "0" + data
@@ -47,6 +59,8 @@ def collectServerPackets(parentDir):
                     m = serverpacketre2.findall(line)
                     if len(m) > 0:
                         for str in m:
+                            if str[2] == "0":
+                                continue
                             packetsSet.add(str[2].lower())
 
 def sortServerPackets():
@@ -109,7 +123,7 @@ def collectManaPlusUsedPackets(fileName):
             m = packetNameClientre.search(line)
             if m is not None:
                 manaplusUsedPacketsSet.add(m.group("name"))
-                print m.group("name")
+                #print m.group("name")
 
 def processManaPlusCppFiles(parentDir):
     files = os.listdir(parentDir)
@@ -185,14 +199,16 @@ def printPackets():
 
 srcPath = "../../server-code/src/"
 manaplusPath = "../../manaplus/src/"
-protocolPath = manaplusPath + "net/eathena/protocol.h"
-clientPacketsPath = srcPath + "map/packets.h"
+protocolPath = manaplusPath + "net/eathena/packets"
+#clientPacketsPath = srcPath + "map/packets.h"
+clientPacketsPath = "./packets.h"
 packetsPath = manaplusPath + "net/eathena/packets.h"
 eathenaPath = manaplusPath + "net/eathena/"
 
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
-collectManaPlusPackets(protocolPath)
+collectManaPlusPackets(protocolPath + "in.inc")
+collectManaPlusPackets(protocolPath + "out.inc")
 collectManaPlusSizes(packetsPath);
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()

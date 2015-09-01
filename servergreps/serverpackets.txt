@@ -1,3 +1,4 @@
+j
 62 client name: SMSG_CHAR_PASSWORD_RESPONSE
 63 client name: SMSG_UPDATE_HOST
 69 client name: SMSG_LOGIN_DATA
@@ -68,7 +69,6 @@ ee client name: SMSG_TRADE_CANCEL
 f0 client name: SMSG_TRADE_COMPLETE
 f1 client name: SMSG_TRADE_UNDO
 f2 client name: SMSG_PLAYER_STORAGE_STATUS
-f4 client name: SMSG_PLAYER_STORAGE_ADD_OUTDATED
 f6 client name: SMSG_PLAYER_STORAGE_REMOVE
 f8 client name: SMSG_PLAYER_STORAGE_CLOSE
 fa client name: SMSG_PARTY_CREATE
@@ -94,7 +94,6 @@ UNIMPLIMENTED 115 client name: SMSG_SKILL_GROUND_DAMAGE_UNUSED
 11e client name: SMSG_SKILL_MEMO_MESSAGE
 120 client name: SMSG_BEING_REMOVE_SKILL
 121 client name: SMSG_CART_INFO
-124 client name: SMSG_PLAYER_CART_ADD_OUTDATED
 125 client name: SMSG_PLAYER_CART_REMOVE
 12b client name: SMSG_CART_REMOVE
 12d client name: SMSG_VENDING_OPEN_REQ
@@ -136,7 +135,7 @@ UNIMPLIMENTED 115 client name: SMSG_SKILL_GROUND_DAMAGE_UNUSED
 174 client name: SMSG_GUILD_POSITION_CHANGED
 177 client name: SMSG_PLAYER_IDENTIFY_LIST
 179 client name: SMSG_PLAYER_IDENTIFIED
-17b client name: SMSG_PLAYER_UNE_CARD
+17b client name: SMSG_PLAYER_USE_CARD
 17d client name: SMSG_PLAYER_INSERT_CARD
 17f client name: SMSG_GUILD_MESSAGE
 181 client name: SMSG_GUILD_OPPOSITION_ACK
@@ -171,8 +170,6 @@ UNIMPLIMENTED 185 client name: SMSG_GUILD_ALLIANCE_ADDED_DISABLED
 1b6 client name: SMSG_GUILD_BASIC_INFO
 1b9 client name: SMSG_SKILL_CAST_CANCEL
 1c3 client name: SMSG_GM_CHAT2
-1c4 client name: SMSG_PLAYER_STORAGE_ADD
-1c5 client name: SMSG_PLAYER_CART_ADD
 1c8 client name: SMSG_PLAYER_INVENTORY_USE
 1cd client name: SMSG_PLAYER_SKILL_AUTO_SPELLS
 1cf client name: SMSG_SKILL_DEVOTION_EFFECT
@@ -348,6 +345,8 @@ UNIMPLIMENTED 185 client name: SMSG_GUILD_ALLIANCE_ADDED_DISABLED
 909
 90b
 90c
+96d
+96f
 97a client name: SMSG_QUEST_LIST
 97d client name: SMSG_RANKS_LIST
 97e client name: SMSG_PLAYER_RANK_POINTS
@@ -366,6 +365,10 @@ b0a client name: SMSG_BEING_ATTRS
 b0b client name: SMSG_NPC_AREA
 b10 client name: SMSG_ONLINE_LIST
 b16 client name: SMSG_PLAYER_CLIENT_COMMAND
+b17 client name: SMSG_BEING_CHANGE_LOOKS_CARDS
+b18 client name: SMSG_ITEM_VISIBLE2
+b19 client name: SMSG_ITEM_DROPPED2
+cmd
 xa1a
 2710
 2711
@@ -586,6 +589,7 @@ bgqueue_notice_deletetype
 bgqueue_notify_entrytype
 bgqueue_updateinfotype
 cart_additem_acktype
+cartaddtype
 cartlistequiptype
 cartlistnormaltype
 damagetype
@@ -615,8 +619,10 @@ spawn_unittype
 status_change2type
 status_change_endtype
 status_changetype
+storageaddtype
 storagelistequiptype
 storagelistnormaltype
+tradeaddtype
 unequipitemacktype
 unit_walkingtype
 viewequipacktype
