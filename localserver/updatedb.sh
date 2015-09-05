@@ -1,16 +1,17 @@
 #!/bin/bash
 
 export VER=$(cat versions/sqlver 2>/dev/null)
-export SQLDIR="../../server-data/sql-files/"
+export SQLDIR="../../server-data/sql-files/upgrades"
 export CMD="mysql -u evol -pevol evol"
 
 function run {
     echo "Running $1"
-    $CMD <$1
+    $CMD <${SQLDIR}/$1
 }
 
 if [[ -z "${VER}" ]]; then
     export VER="1"
+    mkdir versions
 fi
 
 if [ "${VER}" -lt "2" ]; then
