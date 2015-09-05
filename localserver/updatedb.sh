@@ -6,7 +6,7 @@ export CMD="mysql -u evol -pevol evol"
 
 function run {
     echo "Running $1"
-#    $CMD <$1
+    $CMD <$1
 }
 
 if [[ -z "${VER}" ]]; then
