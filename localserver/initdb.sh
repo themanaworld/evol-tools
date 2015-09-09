@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export DIR="$(pwd)"
+export VER=$(cat versions/sqlver 2>/dev/null)
+
 cd ../../server-data/sql-files
 
 echo Creating db and user...
@@ -16,3 +19,8 @@ export CMD="mysql -u evol -pevol evol"
 echo Creating tables...
 $CMD <main.sql
 $CMD <logs.sql
+
+if [[ -z "${VER}" ]]; then
+    mkdir ${DIR}/versions
+    echo "2" >${DIR}/versions/sqlver
+fi
