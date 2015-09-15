@@ -9,6 +9,8 @@ from code.fileutils import *
 from code.stringutils import *
 
 def convertQuests():
+    print "quests disabled for now"
+    return
     destDir = "clientdata/"
     templatesDir = "templates/"
     questsDbFile = "serverdata/db/quest_db.txt"

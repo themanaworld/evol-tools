@@ -10,7 +10,7 @@ from code.fileutils import *
 def convertPets():
     destDir = "clientdata/"
     templatesDir = "templates/"
-    petsDbFile = "serverdata/db/pet_db.txt"
+    petsDbFile = "serverdata/db/re/pet_db.txt"
     fieldsSplit = re.compile(",")
     makeDir(destDir)
     tpl = readFile(templatesDir + "pet.tpl")
