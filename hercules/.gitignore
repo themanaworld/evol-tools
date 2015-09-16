@@ -6,5 +6,7 @@ newserverdata
 mapcache
 olddb
 newdb
+rodata
+tools/luadec
 
 *.pyc

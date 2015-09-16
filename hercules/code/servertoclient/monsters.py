@@ -9,7 +9,9 @@ from sets import Set
 from code.fileutils import *
 from code.stringutils import *
 
-def convertMonsters():
+from code.servertoclient.sprites import *
+
+def convertMonsters(isNonFree = False, idtofile = None):
     destDir = "clientdata/"
     templatesDir = "templates/"
     monstersDbFile = "serverdata/sql-files/mob_db_re.sql"
@@ -20,6 +22,7 @@ def convertMonsters():
     monsters = readFile(templatesDir + "monsters.xml")
     data = ""
     ids = Set()
+
     monsterSprite = """<sprite>monsters/blub.xml</sprite>
         <sprite>accessories/blub-tentacle.xml|#3e4164,3a3968,544a82,64437a,7d6db4,a26392,8f99c4,d294ab,b3cdcd,e7b8b8,d9ecd1,f0e8c5</sprite>""";
     with open(monstersDbFile, "r") as f:
@@ -33,6 +36,10 @@ def convertMonsters():
             if len(rows) < 5:
                 continue
             monsterId = rows[0]
+            if isNonFree == True:
+                if monsterId in idtofile:
+                    convertSprite("rodata/data/sprite/ёуЅєЕН/" + idtofile[monsterId])
+
             name = strToXml(stripQuotes(rows[2]))
             data = data + tpl.format(monsterId, name, monsterSprite)
 

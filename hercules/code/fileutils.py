@@ -20,12 +20,21 @@ def readInt16(f):
     arr.fromstring(data)
     return arr[0]
 
+def readInt8(f):
+    data = f.read(1)
+    arr = array.array("B")
+    arr.fromstring(data)
+    return arr[0]
+
 def readMapName(f):
     data = f.read(12)
     data = str(data)
     while data[-1] == '\x00':
         data = data[:-1]
     return data
+
+def skipData(f, sz):
+    f.read(sz)
 
 def readData(f, sz):
     return f.read(sz)

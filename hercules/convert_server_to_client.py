@@ -6,16 +6,20 @@
 
 from code.servertoclient.homunculuses import *
 from code.servertoclient.items import *
+from code.servertoclient.luas import *
 from code.servertoclient.mercenaries import *
 from code.servertoclient.monsters import *
 from code.servertoclient.pets import *
 from code.servertoclient.quests import *
 from code.servertoclient.skills import *
 
-convertHomunculuses();
+# non free data
+idtofile = convertLuas()
+
+convertHomunculuses()
 convertItems()
-convertMercenaries();
-convertMonsters();
-convertPets();
-convertSkillsToXml();
+convertMercenaries()
+convertMonsters(True, idtofile)
+convertPets()
+convertSkillsToXml()
 convertQuests()
