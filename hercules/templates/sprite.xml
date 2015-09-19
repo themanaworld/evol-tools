@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: 4144
+Copyright (C) 2015 Evol Online -->
+<sprite>
+    <imageset name="sprite"
+              src="{src}"
+              width="{width}"
+              height="{height}"/>
+
+    <action name="stand" imageset="sprite">
+{stand}</action>
+
+    <action name="walk" imageset="sprite">
+{walk}</action>
+
+    <action name="attack" imageset="sprite">
+{attack}</action>
+
+    <action name="dead" imageset="sprite">
+{dead}</action>
+</sprite>
