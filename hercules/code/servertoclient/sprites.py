@@ -307,7 +307,7 @@ def saveSpriteXml(act, spr, spriteDir, spriteName):
     deadData = extractSpriteDataAll(act, spr, 32, "dead")
 
     data = tpl.format(
-        src = "graphics/sprites/monsters/" + spriteName + ".png",
+        src = "graphics/sprites/sprites/" + spriteName + ".png",
         width = spr.maxwidth,
         height = spr.maxheight,
         stand = standData,

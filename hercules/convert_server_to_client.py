@@ -9,6 +9,7 @@ from code.servertoclient.items import *
 from code.servertoclient.luas import *
 from code.servertoclient.mercenaries import *
 from code.servertoclient.monsters import *
+from code.servertoclient.npcs import *
 from code.servertoclient.pets import *
 from code.servertoclient.quests import *
 from code.servertoclient.skills import *
@@ -17,6 +18,7 @@ from code.servertoclient.sprites import *
 # non free data
 idtofile = convertLuas()
 convertSpritesNonFree(idtofile)
+convertNpcsNonFree(idtofile)
 
 convertHomunculuses()
 convertItems()
