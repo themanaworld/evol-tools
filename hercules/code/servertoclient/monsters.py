@@ -35,8 +35,8 @@ def convertMonsters(isNonFree = False, idtofile = None):
                 continue
             monsterId = rows[0]
             if isNonFree == True and monsterId in idtofile:
-                convertSprite("rodata/data/sprite/ёуЅєЕН/", idtofile[monsterId])
-                monsterSprite = "<sprite>monsters/{0}.xml</sprite>".format(idtofile[monsterId])
+                #convertSprite("rodata/data/sprite/ёуЅєЕН/", idtofile[monsterId])
+                monsterSprite = "<sprite>sprites/{0}.xml</sprite>".format(idtofile[monsterId])
             else:
                 monsterSprite = """<sprite>monsters/blub.xml</sprite>
                     <sprite>accessories/blub-tentacle.xml|#3e4164,3a3968,544a82,64437a,7d6db4,a26392,8f99c4,d294ab,b3cdcd,e7b8b8,d9ecd1,f0e8c5</sprite>""";

@@ -145,8 +145,7 @@ def decodeSprite(spr):
 
 
 
-def saveSpriteImage(act, spr, spriteName):
-    monstersDir = "clientdata/graphics/sprites/monsters/"
+def saveSpriteImage(act, spr, spriteDir, spriteName):
 #    for imageN in range(0, spr.rgbaSpritesCount):
 #        image = spr.images[imageN + spr.indexedSpritesCount]
 #        print "{0} x {1}".format(image.width, image.height)
@@ -240,8 +239,8 @@ def saveSpriteImage(act, spr, spriteName):
     spr.frameToIdx = frameToIdx
     spr.tilesetWidth = tilesetWidth
     spr.tilesetHeight = tilesetHeight
-    makeDir(monstersDir)
-    tileset.save(monstersDir + spriteName + ".png")
+    makeDir(spriteDir)
+    tileset.save(spriteDir + spriteName + ".png")
 
 def extractSpriteAnimData(act, spr, actIndex, direction):
 #    delay = anim.delay
@@ -291,10 +290,9 @@ def extractSpriteDataAll(act, spr, actIndex, name):
     data = data + extractSpriteAnimData(act, spr, actIndex + 6, "rightdown")
     return data
 
-def saveSpriteXml(act, spr, spriteName):
-    monstersDir = "clientdata/graphics/sprites/monsters/"
+def saveSpriteXml(act, spr, spriteDir, spriteName):
     templatesDir = "templates/"
-    dstFile = monstersDir + spriteName + ".xml"
+    dstFile = spriteDir + spriteName + ".xml"
     tpl = readFile(templatesDir + "sprite.xml")
     # 0, 8, 16, 24, 32, 40, 48
     # 0 - walk or attack or ?
@@ -439,8 +437,33 @@ def convertSprite(spritePath, spriteName):
     act = readAct(actFile)
     spr = readSpr(sprFile)
     decodeSprite(spr)
-    saveSpriteImage(act, spr, spriteName)
-    saveSpriteXml(act, spr, spriteName)
+    saveSpriteImage(act, spr, "clientdata/graphics/sprites/sprites/", spriteName)
+    saveSpriteXml(act, spr, "clientdata/graphics/sprites/sprites/", spriteName)
 #    if actFile.find("wolf") > 0:
 #        exit(0)
 #    exit(0)
+
+def findSpritePath(spriteName):
+    testName = spriteName + ".act"
+    testName2 = spriteName.upper() + ".act"
+    path = findFileIn((testName, testName2),
+        ("rodata/data/sprite/ёуЅєЕН/",
+        "rodata/data/sprite/npc/",
+        "rodata/data/sprite/homun/"))
+    return path
+
+def convertSpritesNonFree(idtofile):
+    processed = []
+    for spriteid in idtofile:
+        spriteName = idtofile[spriteid]
+        if spriteName in processed:
+            print "skipping " + spriteName
+            continue
+
+        path = findSpritePath(spriteName)
+        if path is None:
+            print "not found " + spriteName
+            continue
+        print spriteName
+        convertSprite(path, spriteName)
+        processed.append(spriteName)

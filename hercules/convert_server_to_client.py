@@ -12,9 +12,11 @@ from code.servertoclient.monsters import *
 from code.servertoclient.pets import *
 from code.servertoclient.quests import *
 from code.servertoclient.skills import *
+from code.servertoclient.sprites import *
 
 # non free data
 idtofile = convertLuas()
+convertSpritesNonFree(idtofile)
 
 convertHomunculuses()
 convertItems()

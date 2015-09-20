@@ -73,3 +73,10 @@ def makeDir(path):
 def removeAllFiles(path):
     if os.path.exists(path):
         shutil.rmtree(path)
+
+def findFileIn(names, dirs):
+    for name in names:
+        for path in dirs:
+            if os.path.exists(path + name):
+                return path
+    return None
