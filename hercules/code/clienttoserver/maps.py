@@ -93,10 +93,24 @@ def recreateMapCache():
                                             tileType = 0
                                         else:
                                             tileType = tile - firstgid;
-                                        if tileType == 0 or tileType == 4:
-                                            tiles.append(0)
-                                        else:
-                                            tiles.append(1)
+                                        # tmw collision format
+                                        # 0 - walkable ground
+                                        # 1 - non walkable wall
+                                        # 2 - air allowed            shootable too
+                                        # 3 - water allowed          water, shootable too
+                                        # 4 - sit, walkable ground
+                                        # 5 - none
+
+                                        # server collision format
+                                        # 000 0 - walkable, shootable
+                                        # 001 1 - wall
+                                        # 010 2 - same with 0
+                                        # 011 3 - walkable, shootable, water
+                                        # 100 4 - same with 0
+                                        # 101 5 - shootable
+                                        # 110 6 - same with 0
+                                        # 111 7 - none
+                                        tiles.append(tileType)
                             except:
                                 None
                         f.close()
