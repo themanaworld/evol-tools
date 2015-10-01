@@ -11,16 +11,12 @@ filt = re.compile(".+[.]c", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
 serverpacketre2 = re.compile("[.]PacketType([ ]*)=([ ]*)(?P<name>[\w]+);")
-#serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)0,([ ]*)"
-#    + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9\w]+)([ ]*)[;]")
 serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
-#manaplus re expr all packets
-#protocolre = re.compile("#define[ ](?P<name>[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
-protocolre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
-#manaplus re expr client to server packets
-#protocolClientre = re.compile("#define[ ](?P<name>CMSG_[A-Z0-9_]+)([ ]*)0x(?P<packet>[0-9a-fA-F]+)")
-protocolClientre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
+# need remove SMSG_
+#protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
+protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)")
+protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
 clientpacketre = re.compile("(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+),(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
 packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
 
@@ -76,11 +72,13 @@ def sortClientPackets():
 def collectManaPlusPackets(fileName):
     with open(fileName, "r") as f:
         for line in f:
-            m = protocolre.search(line)
+            m = protocolinre.search(line)
             if m is not None:
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
-            m = protocolClientre.search(line)
+                sizes[m.group("packet").lower()] = m.group("len")
+            m = protocoloutre.search(line)
             if m is not None:
+                clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
                 clientPacketsManaPlusClient[m.group("packet").lower()] = m.group("name")
 
 def collectClientPackets(fileName):
@@ -144,8 +142,8 @@ def printPackets():
                 data = data[1:]
             if packet in clientPacketsManaPlus:
                 clientName = clientPacketsManaPlus[packet]
-                if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
-                    w.write("UNIMPLIMENTED ")
+#                if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
+#                    w.write("UNIMPLIMENTED ")
                 w.write(data + " client name: " + clientName)
             else:
                 w.write(data)
@@ -200,16 +198,15 @@ def printPackets():
 srcPath = "../../server-code/src/"
 manaplusPath = "../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
-#clientPacketsPath = srcPath + "map/packets.h"
 clientPacketsPath = "./packets.h"
-packetsPath = manaplusPath + "net/eathena/packets.h"
+packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
 collectManaPlusPackets(protocolPath + "in.inc")
 collectManaPlusPackets(protocolPath + "out.inc")
-collectManaPlusSizes(packetsPath);
+#collectManaPlusSizes(packetsPath);
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()
 sortServerPackets()
