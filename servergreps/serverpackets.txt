@@ -81,12 +81,12 @@ fd client name: SMSG_PARTY_INVITE_RESPONSE_OUTDATED
 10b client name: SMSG_MVP_EXP
 10c client name: SMSG_MVP_EFFECT
 10d client name: SMSG_MVP_NO_ITEM
-10e client name: SMSG_GUILD_SKILL_UP
+10e client name: SMSG_PLAYER_SKILL_UP
 10f client name: SMSG_PLAYER_SKILLS
 110 client name: SMSG_SKILL_FAILED
 111 client name: SMSG_PLAYER_ADD_SKILL
 114 client name: SMSG_SKILL_DAMAGE_OUTDATED
-UNIMPLIMENTED 115 client name: SMSG_SKILL_GROUND_DAMAGE_UNUSED
+115 client name: SMSG_SKILL_GROUND_DAMAGE_UNUSED
 117 client name: SMSG_SKILL_GROUND_NO_DAMAGE
 119 client name: SMSG_PLAYER_STATUS_CHANGE_OUTDATED
 11a client name: SMSG_SKILL_NO_DAMAGE
@@ -140,7 +140,7 @@ UNIMPLIMENTED 115 client name: SMSG_SKILL_GROUND_DAMAGE_UNUSED
 17f client name: SMSG_GUILD_MESSAGE
 181 client name: SMSG_GUILD_OPPOSITION_ACK
 184 client name: SMSG_GUILD_DEL_ALLIANCE
-UNIMPLIMENTED 185 client name: SMSG_GUILD_ALLIANCE_ADDED_DISABLED
+185 client name: SMSG_GUILD_ALLIANCE_ADDED_DISABLED
 188 client name: SMSG_PLAYER_REFINE
 189 client name: SMSG_PLAYER_NOTIFY_MAPINFO
 18b client name: SMSG_MAP_QUIT_RESPONSE
@@ -368,6 +368,7 @@ b16 client name: SMSG_PLAYER_CLIENT_COMMAND
 b17 client name: SMSG_BEING_CHANGE_LOOKS_CARDS
 b18 client name: SMSG_ITEM_VISIBLE2
 b19 client name: SMSG_ITEM_DROPPED2
+b1a client name: SMSG_BATTLE_EMBLEM2
 cmd
 xa1a
 2710
@@ -596,6 +597,7 @@ damagetype
 dropflooritemtype
 equipitemacktype
 graffiti_entrytype
+hotkeytype
 idle_unit2type
 idle_unittype
 inventorylistequiptype
