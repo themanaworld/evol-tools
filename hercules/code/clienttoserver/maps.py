@@ -76,10 +76,7 @@ def recreateMapCache():
                                 tileType = 0
                             else:
                                 tileType = tile - firstgid;
-                            if tileType == 0 or tileType == 4:
-                                tiles.append(0)
-                            else:
-                                tiles.append(1)
+                            tiles.append(tileType)
                     elif encoding == "csv":
                         binData = data.childNodes[0].data.strip()
                         f = StringIO.StringIO(binData)
