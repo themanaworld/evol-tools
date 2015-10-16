@@ -347,16 +347,17 @@ def dumpTranslations():
 
 
 def loadMobNames(dir):
-    with open(dir + "/mob_db.txt", "r") as r:
+    with open(dir + "/mob_db.conf", "r") as r:
         cnt = -1
         for line in r:
             cnt = cnt + 1
             if len(line) < 1 or line[0:2] == "//":
                 continue
-            parts = itemsplit.split(line)
-            if len(parts) < 3:
+            line = line.strip()
+            idx = line.find("Name: \"")
+            if idx != 0 or line[len(line) - 1] != "\"":
                 continue
-            addStr(parts[2].strip(), line, "mob_db.txt", cnt, True)
+            addStr(line[idx + 7: len(line) - 1], line, "mob_db.txt", cnt, True)
 
 rootPath = "../../server-data/"
 
