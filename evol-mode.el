@@ -10,12 +10,12 @@
   :group 'emacs)
 
 (defcustom evol-all-dir ""
-  "Directory containing server-code and server-data subdirectories"
+  "Directory containing server-code and server-data subdirectories."
   :group 'evol
   :type 'string)
 
-(defvar evol-mode-constants nil "List of all Evol constants")
-(defvar evol-mode-functions nil "List of Evol functions")
+(defvar evol-mode-constants nil "List of all Evol constants.")
+(defvar evol-mode-functions nil "List of Evol functions.")
   
 (defun evol-mode-parse-const-db (dbfile)
   (interactive "fPath to const.txt: ")
@@ -75,7 +75,7 @@
       skills)))
 
 (defun evol-mode-parse-mob-db (dbfile)
-  (interactive "fPath to mob_db.txt: ")
+  (interactive "fPath to mob_db.conf: ")
   (with-temp-buffer
     (message "Loading mob_db from %s" dbfile)
     (insert-file-contents dbfile)
@@ -86,7 +86,7 @@
 		     (line-end-position)))
 	      (mob))
 	  (when (string-match
-		 "^[1-9][0-9]*,[\t ]+\\([A-Za-z]+\\),"
+		 "^[\t ]+SpriteName:[\t ]+\"\\([A-Za-z]+\\)\""
 		 line)
 	    (setq mob (substring line (match-beginning 1)
 				      (match-end 1))
@@ -180,6 +180,25 @@
 	(forward-line 1))
       commands)))
 
+(defun evol-mode-search-custom-functions (func-dir)
+  (interactive "fPath to serverdata/npc/functions directory: ")
+  (let (func-list)
+    (dolist (file-name (directory-files func-dir t "^[a-z0-9]+.txt$") func-list)
+      (with-temp-buffer
+	(message "Loading functions from from %s" file-name)
+	(insert-file-contents file-name)
+	(while (not (eobp))
+	  (let ((line (buffer-substring-no-properties
+		       (line-beginning-position)
+		       (line-end-position)))
+		(func))
+	    (when (string-match
+		   "^function\tscript\t\\([a-z][a-z0-9_]+\\)\t{"
+		   line)
+	      (setq func (substring line (match-beginning 1)
+				    (match-end 1)))
+	      (push func func-list)))
+	  (forward-line 1))))))
 
 (defun evol-mode-setup-syntax-table ()
   (let ((st (standard-syntax-table)))
@@ -213,19 +232,19 @@
 	   (evol-mode-parse-const-db
 	    (concat evol-all-dir "/server-data/db/const.txt"))
 	   (evol-mode-parse-mob-db
-	    (concat evol-all-dir "/server-data/db/re/mob_db.txt"))
+	    (concat evol-all-dir "/server-data/db/re/mob_db.conf"))
 	   (evol-mode-parse-skill-db
 	    (concat evol-all-dir "/server-data/db/re/skill_db.txt"))
 	   ;; (evol-mode-parse-map-index-db
 	   ;; 	(concat evol-all-dir "/server-data/db/map_index.txt"))
 	   (evol-mode-parse-item-db
-	    (concat evol-all-dir "/server-data/db/re/item_db.conf"))
-	   )))
+	    (concat evol-all-dir "/server-data/db/re/item_db.conf")))))
 
     (unless evol-mode-functions
       (setq evol-mode-functions
 	  (append
-	   (list "mesq" "mesn")
+	   (evol-mode-search-custom-functions
+	    (concat evol-all-dir "/server-data/npc/functions"))
 	   (evol-mode-parse-script-c
 	    (concat evol-all-dir "/server-code/src/map/script.c"))       
 	   (evol-mode-parse-atcommand-c
@@ -263,6 +282,6 @@
     (lambda () (setq indent-tabs-mode nil)))
   "Major mode for syntax highlighting of Evol Scripts")
 
-(add-to-list 'magic-mode-alist '("^// Evol scripts." . evol-mode))
+(add-to-list 'magic-mode-alist '("^// Evol \\(scripts\\|functions\\)." . evol-mode))
 
 (provide 'evol-mode)
