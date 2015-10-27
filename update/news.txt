@@ -7,6 +7,25 @@
 
 ##7 ##BThe adventure begins!##b
 
+##7 Hallowe'en Event
+
+##0 Our special Hallowe'en update is out!
+
+##0 This event brings back some old monsters from the beta releases, but
+##0 it also introduces an angry bat monster named "Crafty".
+##0 We have also reworked many graphics and music from the previous
+##0 Hallowe'en theme with the help of Aeonchild and Eric Matyas.
+
+##0 The event will stay online for 3 weeks, it should be enough time to
+##0 re-visit the island and, who knows... Maybe you'll find a new
+##0 place to explore... ;)
+
+##0 We all wish you a happy Hallowe'en and we hope to see you around!
+
+##9 -- Cheers, Reid and WildX
+##9 October 2015
+
+
 ##7 Season 1, Episode 4
 
 ##0 The Evol Online Project is pleased to announce you the release of
