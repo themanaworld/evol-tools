@@ -46,8 +46,7 @@ GdkPixbuf *sae_info_ground_new() {
 	return ground;
 }
 
-GdkPixbuf* get_sprite_by_index(size_t index1, SAEInfo *sae_info) {
-	// error because index1 is unsigned
+GdkPixbuf* get_sprite_by_index(int index1, SAEInfo *sae_info) {
 	if (index1 == -1) {
 		GdkPixbuf *res = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8,
 						sae_info->imageset->width,
@@ -56,7 +55,6 @@ GdkPixbuf* get_sprite_by_index(size_t index1, SAEInfo *sae_info) {
 		return res;
 	}
 
-	// error because index1 is unsigned
 	if (index1 >= 0) {
 		size_t w = sae_info->imageset->spriteset_width/sae_info->imageset->width;
 		if (sae_info->imageset->spriteset == NULL) return NULL;
@@ -71,7 +69,7 @@ GdkPixbuf* get_sprite_by_index(size_t index1, SAEInfo *sae_info) {
 	return NULL;
 }
 
-inline void _add_frame(SAEInfo *sae_info, size_t index1, size_t offsetX, size_t offsetY, size_t delay, size_t line) {
+inline void _add_frame(SAEInfo *sae_info, int index1, int offsetX, int offsetY, int delay, int line) {
 
 	Frame *sprite = frame_new(index1, offsetX, offsetY, delay);
 	sprite->line_number = line;
