@@ -63,7 +63,7 @@ typedef struct {
 SAEInfo *sae_info_new();
 GdkPixbuf *sae_info_ground_new();
 
-GdkPixbuf* get_sprite_by_index(size_t index, SAEInfo *sae_info);
+GdkPixbuf* get_sprite_by_index(int index, SAEInfo *sae_info);
 gboolean set_up_animation_by_direction(SAEInfo *sae_info, const gchar *direction);
 
 #endif
