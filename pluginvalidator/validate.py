@@ -65,14 +65,19 @@ def extractFuncFuncions(path, session):
                     if ch != '(' and ch != ' ' and ch != '\t':
                         continue
                     data = line
+                    line2 = line.strip()
+                    if len(line2) > 2 and line2[:2] == "//":
+                        continue
                     if data.find(")") < 0:
                         for line in f:
                             data = data + line
                             if data.find(")") > 1:
                                 session.decls[s] = data
+#                                print "'{0}'".format(data)
                                 break
                     else:
                         session.decls[s] = data
+#                        print "'{0}'".format(data)
 
 def loadHookedList(name):
     funcToPlug = dict()
@@ -177,6 +182,7 @@ def compareFuncs(session):
 #                print ff
                 if pf != ff:
                     print "Error: wrong parameters in function {0}.".format(func)
+##                    print "{0} vs {1}".format(pf, ff);
                     break
 
 def processServer(name1, name2):
