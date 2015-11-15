@@ -6,6 +6,7 @@ givegm.sh         - give gm rights to first account created on server.
 initdb.sh         - initialize mariadb database.
 installconfigs.sh - install configurations into server data directory.
 updatedb.sh       - update if need sql database
+updateconfigs.sh  - update if need server data configuration
 
 See also http://wiki.evolonline.org/guidelines/installmariadb
          http://wiki.evolonline.org/guidelines/localserver
