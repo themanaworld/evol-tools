@@ -15,7 +15,6 @@ if [[ -z "${VER}" ]]; then
 fi
 
 if [ "${VER}" -lt "2" ]; then
-    run "2015-07-02--18-14.sql"
     run "2015-07-08--13-08.sql"
     run "2015-08-27--20-42.sql"
 fi
