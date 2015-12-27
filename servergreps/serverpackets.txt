@@ -258,7 +258,6 @@ fd client name: SMSG_PARTY_INVITE_RESPONSE_OUTDATED
 29b client name: SMSG_MERCENARY_INFO
 29d client name: SMSG_MERCENARY_SKILLS
 2a2 client name: SMSG_MERCENARY_UPDATE
-2b1 client name: SMSG_QUEST_LIST_OUTDATED
 2b2 client name: SMSG_QUEST_LIST_OBJECTIVES
 2b3 client name: SMSG_QUEST_ADD
 2b4 client name: SMSG_QUEST_REMOVE
@@ -369,6 +368,8 @@ b17 client name: SMSG_BEING_CHANGE_LOOKS_CARDS
 b18 client name: SMSG_ITEM_VISIBLE2
 b19 client name: SMSG_ITEM_DROPPED2
 b1a client name: SMSG_BATTLE_EMBLEM2
+b1b client name: SMSG_MAP_SET_TILES_TYPE
+b1c client name: SMSG_NPC_SKIN
 cmd
 xa1a
 2710
