@@ -351,6 +351,7 @@ fd client name: SMSG_PARTY_INVITE_RESPONSE_OUTDATED
 97e client name: SMSG_PLAYER_RANK_POINTS
 985 client name: SMSG_PLAYER_SKILL_COOLDOWN_LIST
 99d client name: SMSG_CHAR_CHARACTERS
+a02 client name: SMSG_DRESS_ROOM_OPEN
 a28 client name: SMSG_VENDING_OPEN_STATUS
 b00 client name: SMSG_NPC_COMMAND
 b01 client name: SMSG_BEING_NAME_RESPONSE2
@@ -371,6 +372,10 @@ b1a client name: SMSG_BATTLE_EMBLEM2
 b1b client name: SMSG_MAP_SET_TILES_TYPE
 b1c client name: SMSG_NPC_SKIN
 cmd
+x2e1
+x90f
+x914
+x915
 xa1a
 2710
 2711
