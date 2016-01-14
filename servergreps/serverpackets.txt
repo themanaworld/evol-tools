@@ -41,7 +41,7 @@ bc client name: SMSG_PLAYER_STAT_UPDATE_4
 bd client name: SMSG_PLAYER_STAT_UPDATE_5
 be client name: SMSG_PLAYER_STAT_UPDATE_6
 c0 client name: SMSG_BEING_EMOTION
-c2 client name: SMSG_WHO_ANSWER
+c2 client name: SMSG_SELECT_CART
 c3 client name: SMSG_BEING_CHANGE_LOOKS_OUTDATED
 c4 client name: SMSG_NPC_BUY_SELL_CHOICE
 c6 client name: SMSG_NPC_BUY
@@ -349,6 +349,7 @@ fd client name: SMSG_PARTY_INVITE_RESPONSE_OUTDATED
 97a client name: SMSG_QUEST_LIST
 97d client name: SMSG_RANKS_LIST
 97e client name: SMSG_PLAYER_RANK_POINTS
+97f
 985 client name: SMSG_PLAYER_SKILL_COOLDOWN_LIST
 99d client name: SMSG_CHAR_CHARACTERS
 a02 client name: SMSG_DRESS_ROOM_OPEN
