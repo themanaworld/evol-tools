@@ -48,7 +48,11 @@ def readPackets(path, oldVersion, newVersion):
         for line in f:
             if searchState == 0: # search for #if PACKETVER
                 if line.find(defStart) == 0:
-                    ver = int(line[len(defStart):])
+                    ver = line[len(defStart):]
+                    idx = ver.find("//");
+                    if idx > 0:
+                        ver = ver[:idx]
+                    ver = int(ver)
                     if ver <= newVersion:
                         if ver > oldVersion:
                             newBlock = True
@@ -98,8 +102,16 @@ def showPlan(data):
                 if id1 != id2:
                     print "{0:30} {1:4}  ->  {2:4}".format(line, id1, id2)
 
+def showHelp():
+    print "Show difference between packet versions."
+    print "Usage: {0} old new".format(sys.argv[0])
+
 def main():
-    data = readPackets("hercules/src/map/packets.h", 20140416, 20141022)
+    if len(sys.argv) != 3:
+        showHelp();
+        exit();
+
+    data = readPackets("hercules/src/map/packets.h", int(sys.argv[1]), int(sys.argv[2]))
     changed = findChangedPackets(data)
     showPlan(changed)
 
