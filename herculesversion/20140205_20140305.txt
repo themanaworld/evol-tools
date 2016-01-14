@@ -1,0 +1,7 @@
+clif->pFriendsListAdd          0x0436  ->  0x07e4
+clif->pReqOpenBuyingStore      0x0815  ->  0x0361
+clif->pUseSkillToPos           0x0438  ->  0x0436
+clif->pChangeDir               0x0202  ->  0x0815
+clif->pTakeItem                0x095e  ->  0x0202
+clif->pTakeItem                0x07e4  ->  0x0202
+clif->pHomMenu                 0x0361  ->  0x0934
