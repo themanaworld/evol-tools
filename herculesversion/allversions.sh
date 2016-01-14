@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function gendiff {
+    ./packetversion.py "${1}" "${2}" > "${1}_${2}.txt"
+}
+
+gendiff 20131223 20131230
+gendiff 20140115 20140205
+gendiff 20140305 20140402
+gendiff 20140416 20141022
+gendiff 20131230 20140115
+gendiff 20140205 20140305
+gendiff 20140402 20140416
+gendiff 20141022 20150226
+gendiff 20150226 20150513
+gendiff 20150513 20150805
