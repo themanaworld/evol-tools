@@ -8,15 +8,52 @@ import re
 from code.fileutils import *
 from code.stringutils import *
 
+fieldsSplit = re.compile(":")
+
 def getConstsFile(srcDir):
     files = os.listdir(srcDir)
     for srcFile in files:
         if srcFile.find("const") == 0 and srcFile[-4:] == ".txt":
             yield srcDir + srcFile
 
+def readOneConst(r, line):
+    key = ""
+    val = ""
+    depr = 0
+    if line.find(": {") > 0:
+        rows = fieldsSplit.split(line)
+        key = rows[0].strip()
+        line = r.next().strip()
+        rows = fieldsSplit.split(line)
+        if len(rows) != 2:
+            print "error"
+            return ("", "", 0)
+        if rows[0] == "Value":
+            val = rows[1]
+        line = r.next().strip()
+        rows = fieldsSplit.split(line)
+        if len(rows) != 2:
+            print "error"
+            return ("", "", 0)
+        rows[1] = rows[1].strip()
+        if rows[0] == "Deprecated" and rows[1].find("true") == 0:
+            depr = 1
+    else:
+        rows = fieldsSplit.split(line)
+        if len(rows) != 2:
+            return ("", "", 0)
+        key = rows[0];
+        val = rows[1]
+    return (key, val, depr)
+
+def writeConst(w, const):
+    if const[2] == 1:
+        w.write("\t{0}: {{\n\t\tValue:{1}\n\t\tDeprecated: true\n\t}}\n".format(const[0], const[1]))
+    else:
+        w.write("\t{0}:{1}\n".format(const[0], const[1]))
+
 def convertConsts(quests):
-    dstFile = "newserverdata/db/const.txt"
-    fieldsSplit = re.compile("\t+")
+    dstFile = "newserverdata/db/constants.conf"
     fields = dict()
     vals = [("MF_NOTELEPORT", "mf_noteleport"),
         ("MF_NORETURN", "mf_noreturn"),
@@ -37,27 +74,32 @@ def convertConsts(quests):
         ("sc_slowpoison", "SC_SLOWPOISON")
     ]
     with open(dstFile, "w") as w:
-        srcFile = "serverdata/db/const.txt"
+        tpl = readFile("templates/constants.tpl")
+        w.write(tpl);
+        srcFile = "serverdata/db/constants.conf"
         with open(srcFile, "r") as r:
             for line in r:
-                if len(line) < 2 or line[0:2] == "//":
-                    continue
-                line = line.replace(" ", "\t")
-                rows = fieldsSplit.split(line)
-                sz = len(rows)
-                if sz < 2 or sz > 3:
-                    continue
+                if line.find("**************************************************************************/") >= 0:
+                    break
 
-                fields[rows[0]] = rows[1][:-1]
-                if sz == 2:
-                    w.write("{0}\t{1}".format(rows[0], rows[1]))
-                else:
-                    w.write("{0}\t{1}\t{2}".format(rows[0], rows[1], rows[2]))
+            for line in r:
+                line = line.strip()
+                if len(line) < 2 or line[0:2] == "//" or line[0:2] == "/*":
+                    continue
+                const = readOneConst(r, line)
+                if const[0] == "comment__":
+                    continue
+                fields[const[0]] = const[1].strip()
+                writeConst(w, const)
+
         # build in parameters
-        w.write("ClientVersion\t10000\t1\n");
+        writeConst(w, ("ClientVersion", " 10000", 1));
 
         srcDir = "oldserverdata/world/map/db/"
         w.write("// tmw constants\n")
+
+        fieldsSplit = re.compile("\t+")
+
         for srcFile in getConstsFile(srcDir):
             with open(srcFile, "r") as r:
                 for line in r:
@@ -77,4 +119,5 @@ def convertConsts(quests):
                         if fields[rows[0]] != rows[1][:-1]:
                             print "warning: different const values for {0} ({1}, {2})".format(rows[0], rows[1][:-1], fields[rows[0]])
                     else:
-                        w.write("{0}\t{1}".format(rows[0], rows[1]))
+                        writeConst(w, (rows[0], stripNewLine(rows[1]), 0))
+        w.write("}")
