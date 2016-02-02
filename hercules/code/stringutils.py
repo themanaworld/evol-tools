@@ -30,8 +30,19 @@ def strToXml(data):
 def stripNewLine(data):
     if len(data) == 0:
         return data
-    if data[-1] == "\n":
+    if data[-1] == "\r":
         data = data[:-1]
+    if len(data) > 0 and data[-1] == "\n":
+        data = data[:-1]
+    return data
+
+def stripWindows(data):
+    if len(data) == 0:
+        return data
+    if data[-1] == "\r":
+        data = data[:-1]
+    if len(data) > 1 and data[-2] == "\r":
+        data = data[:-2] + data[-1]
     return data
 
 def escapeSqlStr(data):
