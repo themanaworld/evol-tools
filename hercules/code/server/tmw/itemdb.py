@@ -15,6 +15,126 @@ def getItemDbFile(srcDir):
         if srcFile.find("item_db") >= 0:
             yield srcFile
 
+def replaceStr(line):
+    vals = [
+        ("setskill ", "addtoskill "),
+        ("zeny", "Zeny"),
+        ("sc_poison", "SC_POISON"),
+        ("sc_slowpoison", "SC_SLOWPOISON"),
+        ("sex", "Sex"),
+        ("SEX", "Sex"),
+
+        (".gat", ""),
+        ("Bugleg", "BugLeg"),
+        ("set BugLeg, 0;", "//set BugLeg, 0;"),
+        ("set CaveSnakeLamp, 0;", "//set CaveSnakeLamp, 0;"),
+        ("set Class, @BaseClass;", "//set Class, @BaseClass;"),
+        ("goto_Exit;", "goto L_Exit;"),
+        ("if @spants_state < 7 goto", "if(@spants_state < 7) goto"),
+        ("isdead()", "ispcdead()"),
+        ("changeSex", "changecharsex()"),
+        ("getpartnerid2()", "getpartnerid()"),
+
+        ("getmap()", "getmapname()"),
+        ("L_end", "L_End"),
+        ("gmcommand", "atcommand"),
+        ("MF_NOSAVE", "mf_nosave"),
+        ("S_update_var", "S_Update_Var"),
+        ("L_teach", "L_Teach"),
+        ("L_focus", "L_Focus"),
+        ("L_unfocus", "L_Unfocus"),
+        ("L_main", "L_Main"),
+        ("L_next", "L_Next"),
+        ("L_close", "L_Close"),
+        ("@NpcName$", "@npcname$"),
+        ("@cost", "@Cost"),
+        ("@TEMP", "@temp"),
+        ("L_Menuitems", "L_MenuItems"),
+        ("L_no_item", "L_No_Item"),
+        ("L_no_water", "L_No_Water"),
+        ("L_NOT_ENOUGH", "L_No_Water"),
+        ("L_bye", "L_Bye"),
+        ("L_NOHELP", "L_NoHelp"),
+        ("L_Eyepatch", "L_EyePatch"),
+        ("@PC_STAMINA", "@pc_stamina"),
+        ("L_magic", "L_Magic"),
+        ("L_cont", "L_Cont"),
+        ("L_accept", "L_Accept"),
+        ("L_no_event", "L_No_Event"),
+        ("L_event_done", "L_Event_Done"),
+        ("L_nobeer", "L_NoBeer"),
+        ("L_iron", "L_Iron"),
+        ("L_sulphur", "L_Sulphur"),
+        ("L_red", "L_Red"),
+        ("L_yellow", "L_Yellow"),
+        ("L_green", "L_Green"),
+        ("L_orange", "L_Orange"),
+        ("L_pink", "L_Pink"),
+        ("L_purple", "L_Purple"),
+        ("L_question", "L_Question"),
+        ("L_quest", "L_Quest"),
+        ("L_dead", "L_Dead"),
+        ("L_menu", "L_Menu"),
+        ("L_give", "L_Give"),
+        ("@Items$", "@items$"),
+        ("@menuItems$", "@menuitems$"),
+        ("L_Teach_initial", "L_Teach_Initial"),
+        ("L_finish", "L_Finish"),
+        ("L_No_ash", "L_No_Ash"),
+        ("L_No_water", "L_No_Water"),
+        ("L_cave", "L_Cave"),
+        ("L_farewell", "L_Farewell"),
+        ("@Q_forestbow_", "@Q_Forestbow_"),
+        ("L_game", "L_Game"),
+        ("L_good", "L_Good"),
+        ("L_abort", "L_Abort"),
+        ("@menuID", "@menuid"),
+        ("L_NO_ITEM", "L_No_Item"),
+        ("L_HELP", "L_Help"),
+        ("L_Noitem", "L_NoItem"),
+        ("L_No_fur", "L_No_Fur"),
+        ("@EXP", "@Exp"),
+        ("L_water", "L_Water"),
+        ("L_get", "L_Get"),
+        ("L_happy", "L_Happy"),
+        ("L_cheat", "L_Cheat"),
+        ("@Reward_EXP", "@Reward_Exp"),
+        ("@REWARD_EXP", "@Reward_Exp"),
+        ("L_no_money", "L_No_Money"),
+        ("@MinLevel", "@minLevel"),
+        ("L_return", "L_Return"),
+        ("L_intro", "L_Intro"),
+        ("L_full", "L_Full"),
+        ("@minlevel", "@minLevel"),
+        ("@MinLevel", "@minLevel"),
+        ("L_Cleanup", "L_CleanUp"),
+        ("L_Alreadystarted", "L_AlreadyStarted"),
+        ("@amount", "@Amount"),
+        ("L_again", "L_Again"),
+        ("L_no_potion", "L_No_Potion"),
+        ("L_wizard_hat", "L_Wizard_Hat"),
+        ("L_notenough", "L_NotEnough"),
+        ("L_offer", "L_Offer"),
+        ("L_giveup", "L_GiveUp"),
+        ("L_not_ready", "L_Not_Ready"),
+        ("@MobID", "@mobId"),
+        ("@mobID", "@mobId"),
+        ("L_naked", "L_Naked"),
+        ("L_shortcut", "L_Shortcut"),
+        ("L_shirt", "L_Shirt"),
+        ("L_goodjob", "L_GoodJob"),
+        ("L_kill", "L_Kill"),
+        ("L_nothing", "L_Nothing"),
+        ("L_lowlevel", "L_LowLevel"),
+        ("@mask", "@Mask"),
+        # fix at same time usage with same name function and variable
+        ("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\""),
+    ];
+
+    for val in vals:
+        line = line.replace(val[0], val[1]);
+    return line
+
 def convertItemDb():
     srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/item_db.conf"
@@ -104,12 +224,14 @@ def convertItemDb():
                         if len(UseScript) > 1:
                             writeStartScript(w, "Script")
                             for uline in UseScript:
+                                uline = replaceStr(uline)
                                 if len(uline) > 0:
                                     w.write("        {0};\n".format(uline))
                             writeEndScript(w)
                         if len(EquipScript) > 1:
                             writeStartScript(w, "OnEquipScript")
                             for eline in EquipScript:
+                                eline = replaceStr(uline)
                                 if len(eline) > 0:
                                     w.write("        {0};\n".format(eline))
                             writeEndScript(w)
