@@ -51,6 +51,7 @@ def convertItemDb():
                             rows[f] = rows[f].strip()
 
                         items[rows[1]] = {'id':rows[0],'buy':rows[4]}
+                        items[rows[0]] = {'id':rows[0],'buy':rows[4]}
                         # set all values then write
                         w.write("{\n")
                         c.write("{0}\t{1}\n".format(rows[1], rows[0]))
