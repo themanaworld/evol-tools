@@ -76,6 +76,8 @@ def recreateMapCache():
                                 tileType = 0
                             else:
                                 tileType = tile - firstgid;
+                            if tileType > 128 or tileType < 0:
+                                tileType = 1
                             tiles.append(tileType)
                     elif encoding == "csv":
                         binData = data.childNodes[0].data.strip()
@@ -107,6 +109,8 @@ def recreateMapCache():
                                         # 101 5 - shootable
                                         # 110 6 - same with 0
                                         # 111 7 - none
+                                        if tileType > 128 or tileType < 0:
+                                            tileType = 1
                                         tiles.append(tileType)
                             except:
                                 None
