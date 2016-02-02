@@ -66,7 +66,7 @@ def processNpcFile(srcFile, dstFile, items):
         with open(dstFile, "w") as w:
             tracker.w = w
             for line in r:
-                tracker.line = line
+                tracker.line = stripWindows(line)
                 res = convertTextLine(tracker)
                 if res:
                     w.write(tracker.line)
@@ -258,7 +258,6 @@ def processStrReplace(tracker):
     w = tracker.w
     line = line.replace("setskill ", "addtoskill ")
     line = line.replace("zeny", "Zeny")
-    line = line.replace("countitem(", "countitemcolor(")
     line = line.replace("getclientversion(\"\")", "ClientVersion")
     line = line.replace("getclientversion()", "ClientVersion")
     line = line.replace("setlang @", "Lang = @")

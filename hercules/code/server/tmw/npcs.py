@@ -20,19 +20,37 @@ scriptRe = re.compile("^(((?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+
     "[|](?P<tag>script)[|](?P<name>[^|]+)([|]"
     "(?P<class>[\d-]+)((,((?P<xs>[\d]+),(?P<ys>[\d]+)))|)|)$")
 
+scriptRe2 = re.compile("^(((?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+))|(?P<function>function)|-)" +
+    "[\t](?P<tag>script)[\t](?P<name>[\w#'\\[\\]_ äü.-]+)[\t]"
+    "(((?P<class>[\d-]+)((,((?P<xs>[\d-]+),(?P<ys>[\d-]+)))|)(|,)(|[ \t]))|){(|[ ])$")
+
 shopRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)(|,(?P<gender>[\d]+))" +
     "[|](?P<tag>shop)[|](?P<name>[\w#' ]+)[|]"
+    "(?P<class>[\d]+),(?P<items>(.+))$")
+
+shopRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)" +
+    "[\t](?P<tag>shop)[\t](?P<name>[\w#'\\[\\] ]+)[\t]"
     "(?P<class>[\d]+),(?P<items>(.+))$")
 
 mapFlagRe = re.compile("^(?P<map>[^/](.+))" +
     "[|](?P<tag>mapflag)[|](?P<name>[\w#']+)(|[|](?P<flag>.*))$")
 
+mapFlagRe2 = re.compile("^(?P<map>[^/](.+))[.]gat" +
+    "[ ](?P<tag>mapflag)[ ](?P<name>[\w#']+)(|[ ](?P<flag>.*))$")
+
 warpRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|]"
     "(?P<tag>warp)[|](?P<name>[^|]+)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+)),([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
+
+warpRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)([\t]+)"
+    "(?P<tag>warp)[\t](?P<name>[^\t]+)([\t]+)(?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+))[.]gat,([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
 
 monsterRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)[|]"
     "(?P<tag>monster)[|](?P<name>[\w#' ]+)[|]"
     "(?P<class>[\d]+),(?P<num>[\d]+),(?P<delay1>[\d]+)ms,(?P<delay2>[\d]+)ms(|,(?P<label>[\w+-:#]+))$")
+
+monsterRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)\t"
+    "(?P<tag>monster)[\t](?P<name>[\w#' ]+)([\t]+)"
+    "(?P<class>[\d]+),(?P<num>[\d]+),(?P<delay1>[\d]+),(?P<delay2>[\d]+)(|,(?P<label>[\w+-:#]+))$")
 
 setRe = re.compile("^(?P<space>[ ]+)set[ ](?P<var>[^,]+),([ ]*)(?P<val>[^;]+);$");
 
@@ -70,6 +88,7 @@ def processNpcFile(srcFile, dstFile, items):
         with open(dstFile, "w") as w:
             tracker.w = w
             for line in r:
+                line = stripWindows(line)
                 tracker.line = line
                 res = convertTextLine(tracker)
                 if res:
@@ -85,22 +104,32 @@ def convertTextLine(tracker):
         return False
 
     idx = line.find("|script|")
+    if idx <= 0:
+        idx = line.find("\tscript\t")
     if idx >= 0:
         processScript(tracker)
         return False
     idx = line.find("|shop|")
+    if idx <= 0:
+        idx = line.find("\tshop\t")
     if idx >= 0:
         processShop(tracker)
         return False
     idx = line.find("|monster|")
+    if idx <= 0:
+        idx = line.find("\tmonster\t")
     if idx >= 0:
         processMonster(tracker)
         return False
     idx = line.find("|warp|")
+    if idx <= 0:
+        idx = line.find("\twarp\t")
     if idx >= 0:
         processWarp(tracker)
         return False
     idx = line.find("|mapflag|")
+    if idx <= 0:
+        idx = line.find(".gat mapflag ")
     if idx >= 0:
         processMapFlag(tracker)
         return False
@@ -152,7 +181,10 @@ def writeScript(w, m):
 def processScript(tracker):
     line = tracker.line[:-1]
     w = tracker.w
+
     m = scriptRe.search(line)
+    if m == None:
+        m = scriptRe2.search(line)
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
@@ -162,6 +194,7 @@ def processScript(tracker):
 #    print "map={0} x={1} y={2} dir={3} tag={4} name={5} class={6}, xs={7}, ys={8}".format(
 #        m.group("map"), m.group("x"), m.group("y"), m.group("dir"),
 #        m.group("tag"), m.group("name"), m.group("class"), m.group("xs"), m.group("ys"))
+    # debug
 
     try:
         if m.group("function") != None:
@@ -189,11 +222,18 @@ def itemsToShop(tracker, itemsStr):
     items = itemsSplit.split(itemsStr)
     for str2 in items:
         parts = itemsSplit2.split(str2)
+        if len(parts) != 2:
+            print "Wrong shop item name {0}: {1}".format(str2, itemsStr)
+            continue
         if parts[1][0] == "*":
             parts[1] = str((int(parts[1][1:]) * int(itemsDict[parts[0].strip()]['buy'])))
         if outStr != "":
             outStr = outStr + ","
-        outStr = outStr + itemsDict[parts[0].strip()]['id'] + ":" + parts[1]
+        itemName = parts[0].strip()
+        if itemName in itemsDict:
+            outStr = outStr + itemsDict[itemName]['id'] + ":" + parts[1]
+        else:
+            print "Wrong item name in shop: {0}".format(itemName)
     return outStr
 
 def processShop(tracker):
@@ -201,6 +241,8 @@ def processShop(tracker):
     w = tracker.w
 
     m = shopRe.search(line)
+    if m == None:
+        m = shopRe2.search(line)
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
@@ -220,6 +262,8 @@ def processMapFlag(tracker):
     w = tracker.w
 
     m = mapFlagRe.search(line)
+    if m == None:
+        m = mapFlagRe2.search(line)
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
@@ -241,6 +285,8 @@ def processWarp(tracker):
     line = tracker.line
     w = tracker.w
     m = warpRe.search(line)
+    if m == None:
+        m = warpRe2.search(line)
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
@@ -266,6 +312,8 @@ def processMonster(tracker):
     line = tracker.line
     w = tracker.w
     m = monsterRe.search(line)
+    if m == None:
+        m = monsterRe2.search(line)
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
@@ -299,8 +347,8 @@ def processStrReplace(tracker):
         ("zeny", "Zeny"),
         ("sc_poison", "SC_POISON"),
         ("sc_slowpoison", "SC_SLOWPOISON"),
-        ("countitem(", "countitemcolor("),
         ("sex", "Sex"),
+        ("SEX", "Sex"),
 
         (".gat", ""),
         ("Bugleg", "BugLeg"),
