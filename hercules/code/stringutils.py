@@ -3,6 +3,8 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+import codecs
+
 def stripQuotes(data):
     if len(data) == 0:
         return data
@@ -43,6 +45,7 @@ def stripWindows(data):
         data = data[:-1]
     if len(data) > 1 and data[-2] == "\r":
         data = data[:-2] + data[-1]
+    data = data.replace(codecs.BOM_UTF8, "", 1)
     return data
 
 def escapeSqlStr(data):
