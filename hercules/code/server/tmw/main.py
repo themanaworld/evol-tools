@@ -29,10 +29,11 @@ def serverTmwMain():
         print "Updating server"
     createMainScript()
     items = convertItemDb()
-    convertNpcs(items)
+    npcIds = Set()
+    convertNpcs(items, npcIds)
     convertMobDb()
     quests = dict()
-    convertConsts(quests)
+    convertConsts(quests, npcIds)
     convertMobSkillDb()
 
 def dbTmwMain():

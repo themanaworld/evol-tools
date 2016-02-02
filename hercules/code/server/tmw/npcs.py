@@ -62,10 +62,10 @@ def createMainScript():
         w.write("npc: npc/functions/main.txt\n")
         w.write("import: npc/scripts.conf\n")
 
-def convertNpcs(items):
-    processNpcDir("oldserverdata/world/map/npc/", "newserverdata/npc/", items)
+def convertNpcs(items, npcIds):
+    processNpcDir("oldserverdata/world/map/npc/", "newserverdata/npc/", items, npcIds)
 
-def processNpcDir(srcDir, dstDir, items):
+def processNpcDir(srcDir, dstDir, items, npcIds):
     makeDir(dstDir)
     files = os.listdir(srcDir)
     for file1 in files:
@@ -74,16 +74,17 @@ def processNpcDir(srcDir, dstDir, items):
         srcPath = os.path.abspath(srcDir + os.path.sep + file1)
         dstPath = os.path.abspath(dstDir + os.path.sep + file1)
         if not os.path.isfile(srcPath):
-            processNpcDir(srcPath, dstPath, items)
+            processNpcDir(srcPath, dstPath, items, npcIds)
         else:
             if file1[-5:] == ".conf" or file1[-4:] == ".txt":
-                processNpcFile(srcPath, dstPath, items)
+                processNpcFile(srcPath, dstPath, items, npcIds)
 
-def processNpcFile(srcFile, dstFile, items):
+def processNpcFile(srcFile, dstFile, items, npcIds):
 #    print "file: " + srcFile
     tracker = ScriptTracker()
     tracker.insideScript = False
     tracker.items = items
+    tracker.npcIds = npcIds
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:
             tracker.w = w
@@ -148,7 +149,7 @@ def processScriptMapLine(line):
         w.write("{0} {1}\n".format(line[5:], mapsIndex))
     mapsIndex = mapsIndex + 1
 
-def writeScript(w, m):
+def writeScript(w, m, npcIds):
     try:
         if m.group("function") != None:
             isFunction = True
@@ -171,12 +172,15 @@ def writeScript(w, m):
     else:
         class_ = m.group("class")
         if class_ == "0": # hidden npc
-            class_ = "32767"
+            class_ = 32767
         else:
             class_ = int(class_)
 #            if class_ > 125 and class_ <= 400:
 #                class_ = class_ + 100
-        w.write("\t{0}\t{1}\t{2}".format(m.group("tag"), m.group("name"), class_));
+        npcIds.add(int(class_))
+        if class_ == -1:
+            class_ = "MINUS1"
+        w.write("\t{0}\t{1}\tNPC{2}".format(m.group("tag"), m.group("name"), class_));
 
 def processScript(tracker):
     line = tracker.line[:-1]
@@ -204,7 +208,7 @@ def processScript(tracker):
     except:
         isFunction = False
 
-    writeScript(w, m)
+    writeScript(w, m, tracker.npcIds)
 
     if m.group("xs") != None:
         w.write(",{0},{1}".format(m.group("xs"), m.group("ys")));
@@ -254,7 +258,7 @@ def processShop(tracker):
 #        m.group("map"), m.group("x"), m.group("y"), m.group("dir"),
 #        m.group("tag"), m.group("name"), m.group("class"), m.group("items"))
 
-    writeScript(w, m)
+    writeScript(w, m, tracker.npcIds)
     w.write("," + itemsToShop(tracker, m.group("items")) + "\n")
 
 def processMapFlag(tracker):

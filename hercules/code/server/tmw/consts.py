@@ -52,7 +52,7 @@ def writeConst(w, const):
     else:
         w.write("\t{0}:{1}\n".format(const[0], const[1]))
 
-def convertConsts(quests):
+def convertConsts(quests, npcIds):
     dstFile = "newserverdata/db/constants.conf"
     fields = dict()
     vals = [("MF_NOTELEPORT", "mf_noteleport"),
@@ -120,4 +120,11 @@ def convertConsts(quests):
                             print "warning: different const values for {0} ({1}, {2})".format(rows[0], rows[1][:-1], fields[rows[0]])
                     else:
                         writeConst(w, (rows[0], stripNewLine(rows[1]), 0))
+        w.write("// tmw npcs\n")
+        for npc in npcIds:
+            if npc == -1:
+                key = "MINUS1"
+            else:
+                key = str(npc)
+            writeConst(w, ("NPC" + key, npc, 0))
         w.write("}")
