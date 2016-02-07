@@ -29,7 +29,7 @@ const int MIN_WIDTH = 600;
 const int MIN_HEIGHT = 600;
 
 const gchar *DIR_GROUNDS = "grounds";
-const gchar *DIR_PLAYERS = "players/";
+const gchar *DIR_PLAYERS = "races/";
 
 const gchar *FILE_ICON = "icon.svg";
 
