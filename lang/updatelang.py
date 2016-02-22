@@ -318,6 +318,8 @@ def loadItemDb(dir):
                 itemName = ""
                 for line in f:
                     line = line.strip()
+                    if len(line) < 1:
+                        continue
                     if line[0] == "}":
                         if itemId != "" and itemName != "":
                             itemNamesByName[itemName.lower()] = itemName
