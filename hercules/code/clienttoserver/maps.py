@@ -46,6 +46,7 @@ def recreateMapCache():
                     firstgid = int(tileset.attributes["firstgid"].value)
                     break
 
+            found = False
             for layer in root.getElementsByTagName("layer"):
                 if layer.attributes["name"].value == "Collision":
                     data = layer.getElementsByTagName("data")
@@ -132,7 +133,10 @@ def recreateMapCache():
                     print fileName
                     mapsCount = mapsCount + 1
                     sz = sz + 12 + 8 + len(binData)
+                    found = True
                     break
+            if found == False:
+                print "Error: missing collision layer in file: {0}".format(fileName)
         w.seek(0);
         writeInt32(w, sz)
         writeInt16(w, mapsCount)
