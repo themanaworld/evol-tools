@@ -289,11 +289,15 @@ def writePoFile(poDir, texts, trans):
             if line[0] in strComments.keys():
                 writePoComments(w, strComments[line[0]])
 
-            w.write ("msgid \"" + line[0].replace("\"", "\\\"") + "\"\n")
+            srcLine = line[0]
+            srcLine = srcLine.replace("\\", "\\\\");
+            srcLine = srcLine.replace("\"", "\\\"")
+            w.write ("msgid \"" + srcLine + "\"\n")
             trLine = line[1]
             if trans == "en":
                 if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
                     trLine = trLine[:-2]
+            trLine = trLine.replace("\\", "\\\\");
             trLine = trLine.replace("\"", "\\\"")
             w.write ("msgstr \"" + trLine + "\"\n\n")
 
