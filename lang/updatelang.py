@@ -27,7 +27,7 @@ langs = set()
 itemNamesByName = dict()
 
 def addStr(text, comment, fileName, lineNum, addNoC):
-    text = text.replace("\a", "\\\"");
+    text = text.replace("\a", "\"");
     allStrings.add(text)
     if comment[-1:] == "\n":
         comment = comment[:-1]
