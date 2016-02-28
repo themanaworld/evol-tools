@@ -7,6 +7,24 @@
 
 ##7 ##BThe adventure begins!##b
 
+##7 Season 2, Episode 1!
+
+##0 The long awaited Aurora1 release is finally online.
+##0 You can now fully explore Artis, the principale port city of Aurora,
+##0 and benefit of the latest fishing and digging support!
+
+##0 A lot of quests will help you to explore the city and will show off
+##0 the historical and political aspect of the Archipelagos of Andorra.
+
+##0 Welcome our new support, such as walking NPCs, pets, and various
+##0 interactive map elements!
+
+##0 Have fun, the adventure starts now!
+
+##9 -- Crocs, Reid
+##9 February 2016
+
+
 ##7 Hallowe'en Event
 
 ##0 Our special Hallowe'en update is out!
