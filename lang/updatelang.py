@@ -27,6 +27,7 @@ langs = set()
 itemNamesByName = dict()
 
 def addStr(text, comment, fileName, lineNum, addNoC):
+    text = text.replace("\a", "\\\"");
     allStrings.add(text)
     if comment[-1:] == "\n":
         comment = comment[:-1]
@@ -54,6 +55,7 @@ def collectScriptStrings(parentDir, relativeDir):
                 cnt = -1
                 for line in f:
                     cnt = cnt + 1
+                    line = line.replace("\\\"", "\a");
                     m = strre1.findall(line)
                     if len(m) > 0:
                         for str in m:
