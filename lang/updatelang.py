@@ -295,8 +295,7 @@ def writePoFile(poDir, texts, trans):
             w.write ("msgid \"" + srcLine + "\"\n")
             trLine = line[1]
             if trans == "en":
-                if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
-                    trLine = trLine[:-2]
+                trLine = ""
             trLine = trLine.replace("\\", "\\\\");
             trLine = trLine.replace("\"", "\\\"")
             w.write ("msgstr \"" + trLine + "\"\n\n")
@@ -365,7 +364,7 @@ def loadMobNames(dir):
             idx = line.find("Name: \"")
             if idx != 0 or line[len(line) - 1] != "\"":
                 continue
-            addStr(line[idx + 7: len(line) - 1], line, "mob_db.txt", cnt, True)
+            addStr(line[idx + 7: len(line) - 1], line, "mob_db.conf", cnt, True)
 
 rootPath = "../../server-data/"
 
