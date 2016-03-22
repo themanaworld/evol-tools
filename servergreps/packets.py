@@ -6,6 +6,7 @@
 
 import os
 import re
+import sys
 
 filt = re.compile(".+[.]c", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
@@ -135,7 +136,7 @@ def processManaPlusCppFiles(parentDir):
             collectManaPlusUsedPackets(file2)
 
 def printPackets():
-    with open("serverpackets.txt", "w") as w:
+    with open(sys.argv[1] + "/serverpackets.txt", "w") as w:
         for packet in serverpacketsSorted:
             data = packet
             while data[0] == "0":
@@ -158,14 +159,14 @@ def printPackets():
         if packet in clientPackets:
             funcDict[clientPackets[packet][1]] = packet
 
-    with open("uselesspackets.txt", "w") as w:
+    with open(sys.argv[1] + "/uselesspackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
             if packet not in clientPackets:
                 w.write("Useless packet {0}.\n".format(packet))
 
     manaplusFunc = set()
     rev = []
-    with open("clientpackets.txt", "w") as w:
+    with open(sys.argv[1] + "/clientpackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
             clientName = clientPacketsManaPlusClient[packet]
             if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
@@ -184,7 +185,7 @@ def printPackets():
             w.write(data)
             w.write("\n")
 
-#    with open("wrongpackersizes.txt", "w") as w:
+#    with open(sys.argv[1] + "/wrongpackersizes.txt", "w") as w:
 #        for packet in sizes:
 #            if packet == "0000":
 #                continue
@@ -195,10 +196,17 @@ def printPackets():
 #                if sizes[packet] != clientPackets[packet][0]:
 #                    w.write("{0:>4} {1:4} -> {2:4}\n".format(data, sizes[packet], clientPackets[packet][0]))
 
+def showHelp():
+    print("Usage: packets.py version");
+    exit(1)
+
+if len(sys.argv) != 2:
+    showHelp()
+
 srcPath = "../../server-code/src/"
 manaplusPath = "../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
-clientPacketsPath = "./packets.h"
+clientPacketsPath = sys.argv[1] + "/packets.h"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
