@@ -203,8 +203,8 @@ def showHelp():
 if len(sys.argv) != 2:
     showHelp()
 
-srcPath = "../../server-code/src/"
-manaplusPath = "../../manaplus/src/"
+srcPath = "../../../server-code/src/"
+manaplusPath = "../../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
 clientPacketsPath = sys.argv[1] + "/packets.h"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
