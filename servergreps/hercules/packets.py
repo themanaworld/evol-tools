@@ -85,13 +85,17 @@ def sortClientPackets():
         clientpacketsSorted.append(packet)
     clientpacketsSorted.sort()
 
-def collectManaPlusPackets(fileName):
+def collectManaPlusInPackets(fileName):
     with open(fileName, "r") as f:
         for line in f:
             m = protocolinre.search(line)
             if m is not None:
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
                 sizes[m.group("packet").lower()] = m.group("len")
+
+def collectManaPlusOutPackets(fileName):
+    with open(fileName, "r") as f:
+        for line in f:
             m = protocoloutre.search(line)
             if m is not None:
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
@@ -242,8 +246,8 @@ eathenaPath = manaplusPath + "net/eathena/"
 collectNamedPackets(namedPacketsPath);
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
-collectManaPlusPackets(protocolPath + "in.inc")
-collectManaPlusPackets(protocolPath + "out.inc")
+collectManaPlusInPackets(protocolPath + "in.inc")
+collectManaPlusOutPackets(protocolPath + "out.inc")
 #collectManaPlusSizes(packetsPath);
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()
