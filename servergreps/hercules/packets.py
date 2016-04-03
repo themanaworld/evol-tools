@@ -33,11 +33,11 @@ manaplusUsedPacketsSet = set()
 namedPackets = dict()
 
 def addServerPacket(data):
-    packetsSet.add(data.lower())
     if data in namedPackets:
-        #print "renamed {0} to:".format(data)
         for val in namedPackets[data]:
             packetsSet.add(val)
+    else:
+        packetsSet.add(data.lower())
 
 def collectServerPackets(parentDir):
     global itemNamesByName

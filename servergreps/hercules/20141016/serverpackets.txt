@@ -73,10 +73,10 @@ f8 client name: SMSG_PLAYER_STORAGE_CLOSE
 fa client name: SMSG_PARTY_CREATE
 fb client name: SMSG_PARTY_INFO
 fd client name: SMSG_PARTY_INVITE_RESPONSE_OUTDATED
-fe
-101
+fe client name: SMSG_PARTY_INVITED
+101 client name: SMSG_PARTY_SETTINGS
 105 client name: SMSG_PARTY_LEAVE
-106
+106 client name: SMSG_PLAYER_HP
 107 client name: SMSG_PARTY_UPDATE_COORDS
 109 client name: SMSG_PARTY_MESSAGE
 10a client name: SMSG_MVP_ITEM
@@ -290,7 +290,7 @@ fe
 2dd client name: SMSG_BATTLE_EMBLEM
 2de client name: SMSG_BATTLE_UPDATE_SCORE
 2df client name: SMSG_BATTLE_UPDATE_COORDS
-2e0
+2e0 client name: SMSG_BATTLE_UPDATE_HP
 2eb client name: SMSG_MAP_LOGIN_SUCCESS
 2ef client name: SMSG_BEING_FONT
 2f0 client name: SMSG_NPC_SHOW_PROGRESS_BAR
@@ -615,54 +615,5 @@ a28
 3892
 3893
 3894
-additemtype
-authoktype
-banking_checktype
-banking_deposit_acktype
-banking_withdraw_acktype
-bgqueue_acktype
-bgqueue_battlebeginstype
-bgqueue_notice_deletetype
-bgqueue_notify_entrytype
-bgqueue_updateinfotype
-cart_additem_acktype
-cartaddtype
-cartlistequiptype
-cartlistnormaltype
-damagetype
-dropflooritemtype
-equipitemacktype
-graffiti_entrytype
-hotkeytype
 idle_unit2type
-idle_unittype
-inventorylistequiptype
-inventorylistnormaltype
-item_drop_announcetype
-maptypeproperty2type
-monsterhptype
-notify_bounditemtype
-npcmarketopentype
-npcmarketresultacktype
-package_item_announcetype
-partyleaderchangedtype
-questlisttype
-rouletteinfoacktype
-roulettercvitemacktype
-roulettgenerateacktype
-sc_noticktype
-script_cleartype
-skill_entrytype
 spawn_unit2type
-spawn_unittype
-status_change2type
-status_change_endtype
-status_changetype
-storageaddtype
-storagelistequiptype
-storagelistnormaltype
-tradeaddtype
-unequipitemacktype
-unit_walkingtype
-viewequipacktype
-wisendtype
