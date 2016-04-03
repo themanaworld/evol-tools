@@ -20,6 +20,7 @@ protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9
 protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
 clientpacketre = re.compile("(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+),(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
 packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
+namedPacketre = re.compile("((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=([ ]*)0x(?P<value>[0-9a-fA-F]+)")
 
 packetsSet = set()
 serverpacketsSorted = []
@@ -29,6 +30,14 @@ clientPacketsManaPlusClient = dict()
 clientPackets = dict()
 sizes = dict()
 manaplusUsedPacketsSet = set()
+namedPackets = dict()
+
+def addServerPacket(data):
+    packetsSet.add(data.lower())
+    if data in namedPackets:
+        #print "renamed {0} to:".format(data)
+        for val in namedPackets[data]:
+            packetsSet.add(val)
 
 def collectServerPackets(parentDir):
     global itemNamesByName
@@ -52,13 +61,19 @@ def collectServerPackets(parentDir):
                             data = str[9]
                             while len(data) < 4:
                                 data = "0" + data
-                            packetsSet.add(data.lower())
+                            addServerPacket(data)
+
                     m = serverpacketre2.findall(line)
                     if len(m) > 0:
                         for str in m:
                             if str[2] == "0":
                                 continue
-                            packetsSet.add(str[2].lower())
+                            data = str[2]
+                            if len(data) > 2 and data[0:2] == "0x":
+                                data = data[2:]
+                            while len(data) < 4:
+                                data = "0" + data
+                            addServerPacket(data)
 
 def sortServerPackets():
     for packet in packetsSet:
@@ -123,6 +138,19 @@ def collectManaPlusUsedPackets(fileName):
             if m is not None:
                 manaplusUsedPacketsSet.add(m.group("name"))
                 #print m.group("name")
+
+def collectNamedPackets(fileName):
+    with open(fileName, "r") as f:
+        for line in f:
+            m = namedPacketre.search(line)
+            if m is not None:
+                if m.group("name") not in namedPackets:
+                    namedPackets[m.group("name")] = []
+                data = m.group("value").lower()
+                while len(data) < 4:
+                    data = "0" + data
+                namedPackets[m.group("name")].append(data)
+                #print "named: {0} = {1}".format(m.group("name"), m.group("value"))
 
 def processManaPlusCppFiles(parentDir):
     files = os.listdir(parentDir)
@@ -204,12 +232,14 @@ if len(sys.argv) != 2:
     showHelp()
 
 srcPath = "../../../server-code/src/"
+namedPacketsPath = sys.argv[1] + "/packets_struct.h"
 manaplusPath = "../../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
 clientPacketsPath = sys.argv[1] + "/packets.h"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
+collectNamedPackets(namedPacketsPath);
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
 collectManaPlusPackets(protocolPath + "in.inc")

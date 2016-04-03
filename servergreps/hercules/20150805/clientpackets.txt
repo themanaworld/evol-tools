@@ -17,9 +17,7 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 08e7   10 clif->pPartyRecruitSearchReq
 08e9    2 clif->pPartyRecruitDeleteReq
 08eb   39 clif->pPartyRecruitUpdateReq
-08fb    6 clif->pDull
 0916   26 clif->pGuildInvite2
-0953   26 clif->pFriendsListAdd
 0959   18 clif->pPartyBookingRegisterReq
 0963   -1 clif->pItemListWindowSelected
 0964   36 clif->pStoragePassword
@@ -31,3 +29,4 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 0a1d    2 clif->pRouletteClose
 0a1f    2 clif->pRouletteGenerate
 0a21    3 clif->pRouletteRecvItem
+0a2e    6 clif->pDull
