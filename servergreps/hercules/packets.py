@@ -185,8 +185,8 @@ def processManaPlusCppFiles(parentDir):
         elif file1[-4:] == ".cpp":
             collectManaPlusUsedPackets(file2)
 
-def printPackets():
-    with open(sys.argv[1] + "/serverpackets.txt", "w") as w:
+def printPackets(packetDir):
+    with open(packetDir + "/serverpackets.txt", "w") as w:
         for packet in serverpacketsSorted:
             data = packet
             while data[0] == "0":
@@ -209,14 +209,14 @@ def printPackets():
         if packet in clientPackets:
             funcDict[clientPackets[packet][1]] = packet
 
-    with open(sys.argv[1] + "/uselesspackets.txt", "w") as w:
+    with open(packetDir + "/uselesspackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
             if packet not in clientPackets:
                 w.write("Useless packet {0}.\n".format(packet))
 
     manaplusFunc = set()
     rev = []
-    with open(sys.argv[1] + "/clientpackets.txt", "w") as w:
+    with open(packetDir + "/clientpackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
             clientName = clientPacketsManaPlusClient[packet]
             if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
@@ -235,7 +235,7 @@ def printPackets():
             w.write(data)
             w.write("\n")
 
-#    with open(sys.argv[1] + "/wrongpackersizes.txt", "w") as w:
+#    with open(packetDir + "/wrongpackersizes.txt", "w") as w:
 #        for packet in sizes:
 #            if packet == "0000":
 #                continue
@@ -254,11 +254,15 @@ if len(sys.argv) != 2:
     showHelp()
 
 packetVersion = sys.argv[1]
+packetDir = packetVersion
+while len(packetDir) < 8:
+    packetDir = "0" + packetDir
+
 srcPath = "../../../server-code/src/"
-namedPacketsPath = packetVersion + "/packets_struct.h"
+namedPacketsPath = packetDir + "/packets_struct.h"
 manaplusPath = "../../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
-clientPacketsPath = packetVersion + "/packets.h"
+clientPacketsPath = packetDir + "/packets.h"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
@@ -271,4 +275,4 @@ collectManaPlusOutPackets(protocolPath + "out.inc")
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()
 sortServerPackets()
-printPackets()
+printPackets(packetDir)
