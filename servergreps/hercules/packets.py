@@ -11,10 +11,10 @@ import sys
 filt = re.compile(".+[.]c", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
-#serverpacketre2 = re.compile("([.]|[-][>])PacketType([ ]*)=([ ]*)(?P<name>[\w]+);")
 serverpacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
 serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
+serverpacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
 protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)")
 protocolinverre = re.compile("^// (?P<ver>[0-9]+)$")
 protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)[)];")
@@ -52,6 +52,13 @@ def collectServerPackets(parentDir):
         elif filt.search(file1):
             with open(file2, "r") as f:
                 for line in f:
+                    m = serverpacketre4.findall(line)
+                    if len(m) > 0:
+                        for str in m:
+                            data = str[2]
+                            while len(data) < 4:
+                                data = "0" + data
+                            addServerPacket(data)
                     m = serverpacketre.findall(line)
                     if len(m) == 0:
                         m = serverpacketre3.findall(line)
@@ -60,6 +67,8 @@ def collectServerPackets(parentDir):
                             if str[9] == "0":
                                 continue
                             data = str[9]
+                            if data == "cmd":
+                                continue
                             while len(data) < 4:
                                 data = "0" + data
                             addServerPacket(data)
