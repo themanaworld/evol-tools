@@ -30,15 +30,15 @@ j
 9c client name: SMSG_BEING_CHANGE_DIRECTION
 9d client name: SMSG_ITEM_VISIBLE
 9e client name: SMSG_ITEM_DROPPED
-a0
+a0 client name: SMSG_PLAYER_INVENTORY_ADD
 a1 client name: SMSG_ITEM_REMOVE
-a3
+a3 client name: SMSG_PLAYER_INVENTORY
 a4 client name: SMSG_PLAYER_EQUIPMENT
-a5
+a5 client name: SMSG_PLAYER_STORAGE_ITEMS
 a6 client name: SMSG_PLAYER_STORAGE_EQUIP
 a8 client name: SMSG_ITEM_USE_RESPONSE
-aa
-ac
+aa client name: SMSG_PLAYER_EQUIP
+ac client name: SMSG_PLAYER_UNEQUIP
 af client name: SMSG_PLAYER_INVENTORY_REMOVE
 b0 client name: SMSG_PLAYER_STAT_UPDATE_1
 b1 client name: SMSG_PLAYER_STAT_UPDATE_2
@@ -110,7 +110,7 @@ fe client name: SMSG_PARTY_INVITED
 120 client name: SMSG_BEING_REMOVE_SKILL
 121 client name: SMSG_CART_INFO
 122 client name: SMSG_PLAYER_CART_EQUIP
-123
+123 client name: SMSG_PLAYER_CART_ITEMS
 125 client name: SMSG_PLAYER_CART_REMOVE
 12b client name: SMSG_CART_REMOVE
 12c client name: SMSG_PLAYER_CART_ADD_ERROR
@@ -176,7 +176,7 @@ fe client name: SMSG_PARTY_INVITED
 19b client name: SMSG_BEING_SELFEFFECT
 19e client name: SMSG_PET_CATCH_PROCESS
 1a0 client name: SMSG_PET_ROULETTE
-1a2
+1a2 client name: SMSG_PET_STATUS
 1a3 client name: SMSG_PET_FOOD
 1a4 client name: SMSG_PET_DATA
 1a6 client name: SMSG_PET_EGGS_LIST
