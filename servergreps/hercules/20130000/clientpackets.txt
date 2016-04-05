@@ -16,6 +16,7 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 0843    6 clif->pGMRemove2
 0848   -1 clif->pCashShopBuy
 0863   10 clif->pUseSkillToPos
+08a2   12 clif->pSearchStoreInfoListItemClick
 08aa    7 clif->pActionRequest
 08e5   41 clif->pPartyRecruitRegisterReq
 08e7   10 clif->pPartyRecruitSearchReq
@@ -26,6 +27,7 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 091d   18 clif->pPartyBookingRegisterReq
 0929   26 clif->pPartyInvite2
 0945   -1 clif->pItemListWindowSelected
+094b   19 clif->pWantToConnection
 0963    8 clif->pMoveFromKafra
 096e   -1 clif->ackmergeitems
 0974    2 clif->cancelmergeitem

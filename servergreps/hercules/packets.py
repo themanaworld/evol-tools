@@ -111,9 +111,17 @@ def collectManaPlusInPackets(fileName, packetVersion):
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
                 sizes[m.group("packet").lower()] = m.group("len")
 
-def collectManaPlusOutPackets(fileName):
+def collectManaPlusOutPackets(fileName, packetVersion):
+    version = 0
     with open(fileName, "r") as f:
         for line in f:
+            m = protocolinverre.search(line)
+            if m is not None:
+                version = int(m.group("ver"))
+                continue
+            # skip bigger versions than requested
+            if version > packetVersion:
+                continue
             m = protocoloutre.search(line)
             if m is not None:
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
@@ -271,7 +279,7 @@ collectNamedPackets(namedPacketsPath);
 collectServerPackets(srcPath)
 collectClientPackets(clientPacketsPath)
 collectManaPlusInPackets(protocolPath + "in.inc", int(packetVersion))
-collectManaPlusOutPackets(protocolPath + "out.inc")
+collectManaPlusOutPackets(protocolPath + "out.inc", int(packetVersion))
 #collectManaPlusSizes(packetsPath);
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()

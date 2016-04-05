@@ -20,10 +20,12 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 08fb    6 clif->pDull
 0916   26 clif->pGuildInvite2
 091e   10 clif->pUseSkillToPos
+093e   12 clif->pSearchStoreInfoListItemClick
 0944    6 clif->pGetCharNameRequest
 0950   26 clif->pPartyInvite2
 0957    8 clif->pMoveFromKafra
 0959   18 clif->pPartyBookingRegisterReq
+0963   -1 clif->pItemListWindowSelected
 0964   36 clif->pStoragePassword
 096e   -1 clif->ackmergeitems
 0974    2 clif->cancelmergeitem

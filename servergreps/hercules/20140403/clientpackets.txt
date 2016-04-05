@@ -23,6 +23,7 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 0960    5 clif->pHomMenu
 0963   -1 clif->pItemListWindowSelected
 0964   36 clif->pStoragePassword
+0965   12 clif->pSearchStoreInfoListItemClick
 0968    8 clif->pMoveToKafra
 0969    6 clif->pReqClickBuyingStore
 096e   -1 clif->ackmergeitems

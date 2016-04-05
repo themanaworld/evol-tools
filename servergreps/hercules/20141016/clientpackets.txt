@@ -23,6 +23,7 @@ UNIMPLIMENTED CMSG_PARTY_INVITED
 0959   18 clif->pPartyBookingRegisterReq
 0963   -1 clif->pItemListWindowSelected
 0964   36 clif->pStoragePassword
+0965   12 clif->pSearchStoreInfoListItemClick
 096e   -1 clif->ackmergeitems
 0974    2 clif->cancelmergeitem
 09ce  102 clif->pGM_Monster_Item
