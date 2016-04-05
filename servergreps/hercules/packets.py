@@ -258,7 +258,8 @@ packetDir = packetVersion
 while len(packetDir) < 8:
     packetDir = "0" + packetDir
 
-srcPath = "../../../server-code/src/"
+#srcPath = "../../../server-code/src/"
+srcPath = packetDir + "/src"
 namedPacketsPath = packetDir + "/src/packets_struct.h"
 manaplusPath = "../../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
