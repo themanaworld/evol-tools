@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function genpackets {
-    cpp -DPACKETVER=$2 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../../../server-code/src/map/packets.h $1/packets.h
-    cpp -DPACKETVER=$2 -I../../../server-code/src ../../../server-code/src/map/packets_struct.h $1/packets_struct.h
+    cpp -DPACKETVER=$2 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../../../server-code/src/map/packets.h $1/src/packets.h
+    cpp -DPACKETVER=$2 -I../../../server-code/src ../../../server-code/src/map/packets_struct.h $1/src/packets_struct.h
     ./packets.py $2
 }
 

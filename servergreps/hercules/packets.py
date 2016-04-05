@@ -259,10 +259,10 @@ while len(packetDir) < 8:
     packetDir = "0" + packetDir
 
 srcPath = "../../../server-code/src/"
-namedPacketsPath = packetDir + "/packets_struct.h"
+namedPacketsPath = packetDir + "/src/packets_struct.h"
 manaplusPath = "../../../manaplus/src/"
 protocolPath = manaplusPath + "net/eathena/packets"
-clientPacketsPath = packetDir + "/packets.h"
+clientPacketsPath = packetDir + "/src/packets.h"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
