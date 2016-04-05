@@ -31,6 +31,7 @@ clientPackets = dict()
 sizes = dict()
 manaplusUsedPacketsSet = set()
 namedPackets = dict()
+#idToServerFunction = dict()
 
 def addServerPacket(data):
     if data in namedPackets:
@@ -136,6 +137,7 @@ def collectClientPackets(fileName):
                 while len(data) < 4:
                     data = "0" + data
                 clientPackets[data] = (int(m.group("len")), m.group("function"));
+                #idToServerFunction[data] = m.group("function")
                 #print "{0},{1},{2}".format(m.group("packet"), m.group("len"), m.group("function"))
 
 def collectManaPlusSizes(fileName):
@@ -224,19 +226,49 @@ def printPackets(packetDir):
 
     manaplusFunc = set()
     rev = []
+
     with open(packetDir + "/clientpackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
             clientName = clientPacketsManaPlusClient[packet]
             if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
-                w.write("UNIMPLIMENTED {0}\n".format(clientName))
+                w.write("PSESENT BUT UNIMPLIMENTED {0}\n".format(clientName))
 
+#        for packet in clientPacketsManaPlusClient:
+#            if packet in clientPackets:
+#                manaplusFunc.add(clientPackets[packet][1])
+#        for func in funcDict:
+#            if func not in manaplusFunc:
+#                packet = funcDict[func]
+#                rev.append("{0:4} {1:>4} {2}".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
+
+        clientSet = set()
+        for packet in clientPackets:
+            clientSet.add(clientPackets[packet][1])
         for packet in clientPacketsManaPlusClient:
+            if packet in clientPackets and clientPackets[packet][1] in clientSet:
+#                print "removing {0}, function: {1}".format(packet, clientPackets[packet][1])
+                clientSet.remove(clientPackets[packet][1])
+
+        allPackets = set()
+        for packet in clientPackets:
+            allPackets.add(packet)
+        for packet in clientPacketsManaPlusClient:
+            allPackets.add(packet)
+
+        for packet in clientSet:
+            rev.append("{0:4} {1:33} {2}".format("?", "UNIMPLIMENTED", packet))
+#            rev.append("{0:4} {1:>4} {2} UNIMPLIMENTED".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
+
+        for packet in allPackets:
+            if packet not in clientPacketsManaPlusClient:
+                continue
+            data = "{0:4} {1:33} ".format(packet, clientPacketsManaPlusClient[packet])
             if packet in clientPackets:
-                manaplusFunc.add(clientPackets[packet][1])
-        for func in funcDict:
-            if func not in manaplusFunc:
-                packet = funcDict[func]
-                rev.append("{0:4} {1:>4} {2}".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
+                data = data + clientPackets[packet][1]
+            else:
+                data = data + "?"
+            rev.append(data)
+
         rev.sort()
 
         for data in rev:
