@@ -27,7 +27,6 @@ j
 9a client name: SMSG_GM_CHAT
 9c client name: SMSG_BEING_CHANGE_DIRECTION
 9d client name: SMSG_ITEM_VISIBLE
-9e client name: SMSG_ITEM_DROPPED
 a1 client name: SMSG_ITEM_REMOVE
 a8 client name: SMSG_ITEM_USE_RESPONSE
 af client name: SMSG_PLAYER_INVENTORY_REMOVE
@@ -336,6 +335,7 @@ fb client name: SMSG_PARTY_INFO
 840 client name: SMSG_MAP_NOT_FOUND
 845 client name: SMSG_NPC_CASH_POINTS
 849 client name: SMSG_NPC_CASH_BUY
+84b client name: SMSG_ITEM_DROPPED
 8b3 client name: SMSG_SCRIPT_MESSAGE
 8c0 client name: SMSG_NPC_CASH_TAB_PRICE_LIST
 8ca client name: SMSG_NPC_CASH_SCHEDULE

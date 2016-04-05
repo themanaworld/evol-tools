@@ -1,0 +1,21 @@
+UNIMPLIMENTED CMSG_PARTY_CREATE2
+UNIMPLIMENTED CMSG_PARTY_INVITED
+0072   19 clif->pWantToConnection
+007e    6 clif->pTickSend
+0085    5 clif->pWalkToXY
+0089    7 clif->pActionRequest
+008c   -1 clif->pGlobalMessage
+0094    6 clif->pGetCharNameRequest
+009b    5 clif->pChangeDir
+009f    6 clif->pTakeItem
+00a2    6 clif->pDropItem
+00a7    8 clif->pUseItem
+00a9    6 clif->pEquipItem
+00f5    8 clif->pMoveFromKafra
+00f7    2 clif->pCloseKafra
+0113   10 clif->pUseSkillToId
+0116   10 clif->pUseSkillToPos
+013f   26 clif->pGM_Monster_Item
+0190   90 clif->pUseSkillToPosMoreInfo
+096e   -1 clif->ackmergeitems
+0974    2 clif->cancelmergeitem

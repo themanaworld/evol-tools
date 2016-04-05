@@ -30,6 +30,8 @@ j
 9e client name: SMSG_ITEM_DROPPED
 a1 client name: SMSG_ITEM_REMOVE
 a8 client name: SMSG_ITEM_USE_RESPONSE
+aa client name: SMSG_PLAYER_EQUIP
+ac client name: SMSG_PLAYER_UNEQUIP
 af client name: SMSG_PLAYER_INVENTORY_REMOVE
 b0 client name: SMSG_PLAYER_STAT_UPDATE_1
 b1 client name: SMSG_PLAYER_STAT_UPDATE_2
@@ -271,7 +273,11 @@ fb client name: SMSG_PARTY_INFO
 2cc client name: SMSG_INSTANCE_CREATE
 2cd client name: SMSG_INSTANCE_INFO
 2ce client name: SMSG_INSTANCE_DELETE
+2d0 client name: SMSG_PLAYER_EQUIPMENT
+2d1 client name: SMSG_PLAYER_STORAGE_EQUIP
+2d2 client name: SMSG_PLAYER_CART_EQUIP
 2d3 client name: SMSG_BIND_ITEM
+2d4 client name: SMSG_PLAYER_INVENTORY_ADD
 2d9 client name: SMSG_PLAYER_EQUIP_TICK_ACK
 2da client name: SMSG_PLAYER_SHOW_EQUIP
 2dc client name: SMSG_BATTLE_CHAT_MESSAGE
@@ -280,6 +286,9 @@ fb client name: SMSG_PARTY_INFO
 2df client name: SMSG_BATTLE_UPDATE_COORDS
 2e0 client name: SMSG_BATTLE_UPDATE_HP
 2e1 client name: SMSG_BEING_ACTION2
+2e8 client name: SMSG_PLAYER_INVENTORY
+2e9 client name: SMSG_PLAYER_CART_ITEMS
+2ea client name: SMSG_PLAYER_STORAGE_ITEMS
 2eb client name: SMSG_MAP_LOGIN_SUCCESS
 2ef client name: SMSG_BEING_FONT
 2f0 client name: SMSG_NPC_SHOW_PROGRESS_BAR
@@ -336,8 +345,10 @@ fb client name: SMSG_PARTY_INFO
 840 client name: SMSG_MAP_NOT_FOUND
 845 client name: SMSG_NPC_CASH_POINTS
 849 client name: SMSG_NPC_CASH_BUY
+859 client name: SMSG_BEING_VIEW_EQUIPMENT
 8b3 client name: SMSG_SCRIPT_MESSAGE
 8c0 client name: SMSG_NPC_CASH_TAB_PRICE_LIST
+8c7 client name: SMSG_SKILL_ENTRY
 8ca client name: SMSG_NPC_CASH_SCHEDULE
 8cf client name: SMSG_BEING_CHARM
 8d2 client name: SMSG_SKILL_SNAP
@@ -357,19 +368,7 @@ fb client name: SMSG_PARTY_INFO
 97d client name: SMSG_RANKS_LIST
 983 client name: SMSG_BEING_STATUS_CHANGE
 985 client name: SMSG_PLAYER_SKILL_COOLDOWN_LIST
-990 client name: SMSG_PLAYER_INVENTORY_ADD
-991 client name: SMSG_PLAYER_INVENTORY
-992 client name: SMSG_PLAYER_EQUIPMENT
-993 client name: SMSG_PLAYER_CART_ITEMS
-994 client name: SMSG_PLAYER_CART_EQUIP
-995 client name: SMSG_PLAYER_STORAGE_ITEMS
-996 client name: SMSG_PLAYER_STORAGE_EQUIP
-997 client name: SMSG_BEING_VIEW_EQUIPMENT
-999 client name: SMSG_PLAYER_EQUIP
-99a client name: SMSG_PLAYER_UNEQUIP
-99b client name: SMSG_MAP_TYPE_PROPERTY2
 99d client name: SMSG_CHAR_CHARACTERS
-99f client name: SMSG_SKILL_ENTRY
 9a6
 9a8
 9aa

@@ -1,0 +1,30 @@
+UNIMPLIMENTED CMSG_PARTY_CREATE2
+UNIMPLIMENTED CMSG_PARTY_INVITED
+0217    2 clif->pBlacksmith
+0218    2 clif->pAlchemist
+021d    6 clif->pLessEffect
+0225    2 clif->pTaekwon
+0237    2 clif->pRankingPk
+0254    3 clif->pFeelSaveOk
+0443    8 clif->pSkillSelectMenu
+0804   14 clif->pPartyBookingSearchReq
+0806    2 clif->pPartyBookingDeleteReq
+0808   14 clif->pPartyBookingUpdateReq
+0842    6 clif->pGMRecall2
+0843    6 clif->pGMRemove2
+0848   -1 clif->pCashShopBuy
+08e5   41 clif->pPartyRecruitRegisterReq
+08e7   10 clif->pPartyRecruitSearchReq
+08e9    2 clif->pPartyRecruitDeleteReq
+08eb   39 clif->pPartyRecruitUpdateReq
+08fb    6 clif->pDull
+0916   26 clif->pGuildInvite2
+0959   18 clif->pPartyBookingRegisterReq
+0960    5 clif->pHomMenu
+0963   -1 clif->pItemListWindowSelected
+0964   36 clif->pStoragePassword
+0968    8 clif->pMoveToKafra
+0969    6 clif->pReqClickBuyingStore
+096e   -1 clif->ackmergeitems
+0974    2 clif->cancelmergeitem
+09ce  102 clif->pGM_Monster_Item
