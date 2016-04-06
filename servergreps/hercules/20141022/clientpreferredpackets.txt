@@ -1,4 +1,3 @@
-0102 -> 07d7  CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
 0202 -> 08ad  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0361 -> 0899  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 0362 -> 087d  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem

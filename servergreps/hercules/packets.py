@@ -32,6 +32,7 @@ sizes = dict()
 manaplusUsedPacketsSet = set()
 namedPackets = dict()
 serverFunctionToId = dict()
+outMsgNameToId = dict()
 
 def addServerPacket(data):
     if data in namedPackets:
@@ -133,6 +134,7 @@ def collectManaPlusOutPackets(fileName, packetVersion):
                     continue
                 clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
                 clientPacketsManaPlusClient[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
+                outMsgNameToId[m.group("name")] = m.group("packet").lower()
 
 def collectClientPackets(fileName):
     with open(fileName, "r") as f:
@@ -318,7 +320,8 @@ def printPackets(packetDir):
 
     rev = []
     with open(packetDir + "/clientpreferredpackets.txt", "w") as w:
-        for packet in clientPacketsManaPlusClient:
+        for name in outMsgNameToId:
+            packet = outMsgNameToId[name]
             if packet in clientPackets:
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
