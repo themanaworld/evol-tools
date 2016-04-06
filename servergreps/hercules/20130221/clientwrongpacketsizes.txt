@@ -1,5 +1,6 @@
 022d CMSG_BUYINGSTORE_CLOSE            clif->pWantToConnection                2 vs   19
 0436 CMSG_SKILL_USE_POSITION           clif->pFriendsListAdd                 10 vs   26
+07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption               6 vs    8
 0819 CMSG_SEARCHSTORE_SEARCH           clif->pStoragePassword                -1 vs   36
 0871 CMSG_PLAYER_CHANGE_ACT            clif->pChangeDir                       7 vs    5
 089c CMSG_MAP_SERVER_CONNECT           clif->pFriendsListAdd                 19 vs   26

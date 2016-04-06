@@ -300,18 +300,34 @@ def printPackets(packetDir):
     rev = []
     with open(packetDir + "/clientbadpackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
-            if packet in clientPackets and clientPacketsManaPlusClient[packet][2] != clientPackets[packet][1]:
+            if packet in clientPackets:
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
-                if packet1[2] in serverFunctionToId:
-                    data = serverFunctionToId[packet1[2]]
-                else:
-                    data = "UNKNOWN"
-                rev.append("{0:4} {1:33} client: {2:35} server: {3:35} Change id to {4}".format(packet,
-                    packet1[0],
-                    packet1[2],
-                    packet2[1],
-                    data))
+                data = serverFunctionToId[packet1[2]]
+                if packet1[2] != packet2[1]:
+                    rev.append("{0:4} {1:33} client: {2:35} server: {3:35} Change id to {4}".format(packet,
+                        packet1[0],
+                        packet1[2],
+                        packet2[1],
+                        data))
+        rev.sort()
+
+        for data in rev:
+            w.write(data)
+            w.write("\n")
+
+    rev = []
+    with open(packetDir + "/clientpreferredpackets.txt", "w") as w:
+        for packet in clientPacketsManaPlusClient:
+            if packet in clientPackets:
+                packet1 = clientPacketsManaPlusClient[packet]
+                packet2 = clientPackets[packet]
+                data = serverFunctionToId[packet1[2]]
+                if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
+                    rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
+                        data,
+                        packet1[0],
+                        packet1[2]))
         rev.sort()
 
         for data in rev:

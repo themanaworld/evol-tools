@@ -1,4 +1,5 @@
 022d CMSG_BUYINGSTORE_CLOSE            clif->pItemListWindowSelected          2 vs   -1
 035f CMSG_MAP_PING                     clif->pWalkToXY                        6 vs    5
 0436 CMSG_SKILL_USE_POSITION           clif->pFriendsListAdd                 10 vs   26
+07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption               6 vs    8
 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pFriendsListAdd                  2 vs   26

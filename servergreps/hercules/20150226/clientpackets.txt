@@ -163,6 +163,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0436 CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0437 CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 0439 CMSG_PLAYER_INVENTORY_USE         clif->pUseItem
+07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
 07da CMSG_PARTY_CHANGE_LEADER          clif->pPartyChangeLeader
 07e4 CMSG_ITEM_PICKUP                  clif->pTakeItem
 07ec CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra

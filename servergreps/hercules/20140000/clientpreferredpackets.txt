@@ -1,0 +1,15 @@
+0102 -> 07d7  CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
+0202 -> 094a  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
+0360 -> 0969  CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
+0361 -> 0949  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0362 -> 0860  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
+0366 -> 096a  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
+0368 -> 0898  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
+0437 -> 035f  CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
+07e4 -> 092a  CMSG_ITEM_PICKUP                  clif->pTakeItem
+07ec -> 0968  CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
+0811 -> 087f  CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
+0815 -> 0365  CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
+0819 -> 093d  CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0835 -> 0369  CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoNextPage
+083c -> 02c4  CMSG_SKILL_USE_BEING              clif->pUseSkillToId

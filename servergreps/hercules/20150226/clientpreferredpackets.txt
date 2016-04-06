@@ -1,0 +1,12 @@
+0102 -> 07d7  CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
+0202 -> 08ad  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
+0361 -> 0899  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0362 -> 087d  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
+0436 -> 023b  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
+07e4 -> 094e  CMSG_ITEM_PICKUP                  clif->pTakeItem
+07ec -> 0878  CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
+085b -> 08aa  CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
+0871 -> 0369  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
+088a -> 096a  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
+089c -> 093b  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
+095d -> 0896  CMSG_PARTY_INVITE2                clif->pPartyInvite2

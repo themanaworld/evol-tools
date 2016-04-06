@@ -1,0 +1,9 @@
+0102 -> 07d7  CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
+0202 -> 0967  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
+0361 -> 0364  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0436 -> 0438  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
+085b -> 022d  CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
+0871 -> 0369  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
+088a -> 096a  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
+089c -> 086e  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
+095d -> 0802  CMSG_PARTY_INVITE2                clif->pPartyInvite2

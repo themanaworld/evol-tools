@@ -1,2 +1,3 @@
 022d CMSG_BUYINGSTORE_CLOSE            clif->pMoveFromKafra                   2 vs    8
+07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption               6 vs    8
 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pTakeItem                        2 vs    6

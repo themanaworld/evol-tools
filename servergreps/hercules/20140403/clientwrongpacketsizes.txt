@@ -2,6 +2,7 @@
 022d CMSG_BUYINGSTORE_CLOSE            clif->pWantToConnection                2 vs   19
 0360 CMSG_BUYINGSTORE_OPEN             clif->pChangeDir                       6 vs    5
 0361 CMSG_HOMUNCULUS_MENU              clif->pReqOpenBuyingStore              5 vs   -1
+07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption               6 vs    8
 07e4 CMSG_ITEM_PICKUP                  clif->pFriendsListAdd                  6 vs   26
 07ec CMSG_MOVE_TO_STORAGE              clif->pSolveCharName                   8 vs    6
 0815 CMSG_BUYINGSTORE_CREATE           clif->pChangeDir                      -1 vs    5

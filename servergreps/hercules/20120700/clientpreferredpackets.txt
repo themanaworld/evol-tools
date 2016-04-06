@@ -1,0 +1,2 @@
+0102 -> 07d7  CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
+088a -> 096a  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
