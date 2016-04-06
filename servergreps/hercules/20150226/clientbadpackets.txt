@@ -1,0 +1,2 @@
+022d CMSG_BUYINGSTORE_CLOSE            client: clif->pReqCloseBuyingStore          server: clif->pMoveFromKafra                Change id to 0817
+0835 CMSG_SEARCHSTORE_CLICK            client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 0940

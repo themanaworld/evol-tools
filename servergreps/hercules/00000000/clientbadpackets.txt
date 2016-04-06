@@ -1,0 +1,3 @@
+00f3 CMSG_CHAT_MESSAGE                 client: clif->pGlobalMessage                server: clif->pMoveToKafra                  Change id to 008c
+0193 CMSG_CLOSE_STORAGE                client: clif->pCloseKafra                   server: clif->pSolveCharName                Change id to 00f7
+0202 CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pFriendsListAdd               Change id to 009b

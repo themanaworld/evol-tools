@@ -1,0 +1,7 @@
+022d CMSG_BUYINGSTORE_CLOSE            client: clif->pReqCloseBuyingStore          server: clif->pWantToConnection             Change id to 0817
+0436 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pFriendsListAdd               Change id to 0438
+0811 CMSG_BUYINGSTORE_SELL             client: clif->pReqTradeBuyingStore          server: clif->pSearchStoreInfo              Change id to 0940
+0819 CMSG_SEARCHSTORE_SEARCH           client: clif->pSearchStoreInfo              server: clif->pStoragePassword              Change id to 0811
+0871 CMSG_PLAYER_CHANGE_ACT            client: clif->pActionRequest                server: clif->pChangeDir                    Change id to 0369
+089c CMSG_MAP_SERVER_CONNECT           client: clif->pWantToConnection             server: clif->pFriendsListAdd               Change id to 022d
+0940 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pReqTradeBuyingStore          Change id to 0835
