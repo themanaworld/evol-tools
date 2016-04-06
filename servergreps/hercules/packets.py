@@ -302,28 +302,6 @@ def printPackets(packetDir):
 #                if sizes[packet] != clientPackets[packet][0]:
 #                    w.write("{0:>4} {1:4} -> {2:4}\n".format(data, sizes[packet], clientPackets[packet][0]))
 
-#def processTempFile(path):
-#    with open(path + "/packetsout.inc", "r") as r:
-#        with open(path + "/packetsout2.inc", "w") as w:
-#            comaSplit = re.compile(",")
-#            for line in r:
-#                line2 = line.strip()
-#                if len(line2) < 10 or line.find("packet(") < 0:
-#                    w.write(line)
-#                    continue
-#                parts = comaSplit.split(line)
-#                packet = parts[1].strip()
-#                packet = packet[2:].lower()
-#                if packet not in clientPackets:
-#                    w.write(line)
-#                    continue
-#                parts[2] = str(clientPackets[packet][0])
-#                while len(parts[2]) < 4:
-#                    parts[2] = " " + parts[2]
-#                parts[3] = " " + clientPackets[packet][1] + ");\n"
-#                w.write(parts[0] + "," + parts[1] + "," + parts[2] + "," + parts[3])
-
-
 def showHelp():
     print("Usage: packets.py version");
     exit(1)
@@ -354,5 +332,4 @@ collectManaPlusOutPackets(protocolPath + "out.inc", int(packetVersion))
 processManaPlusCppFiles(eathenaPath);
 sortClientPackets()
 sortServerPackets()
-#processTempFile(packetDir)
 printPackets(packetDir)
