@@ -115,11 +115,14 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 020f CMSG_PVP_INFO                     clif->pPVPInfo
 0212 CMSG_ADMIN_MUTE_NAME              clif->pGMRc
 0213 CMSG_ADMIN_REQUEST_STATS          clif->pCheck
+0217 CMSG_BLACKSMITH_RANKS             clif->pBlacksmith
+0218 CMSG_ALCHEMIST_RANKS              clif->pAlchemist
 0222 CMSG_NPC_REFINE                   clif->pWeaponRefine
 0231 CMSG_HOMUNCULUS_SET_NAME          clif->pChangeHomunculusName
 0232 CMSG_HOMMERC_MOVE_TO              clif->pHomMoveTo
 0233 CMSG_HOMMERC_ATTACK               clif->pHomAttack
 0234 CMSG_HOMMERC_MOVE_TO_MASTER       clif->pHomMoveToMaster
+0237 CMSG_PK_RANKS                     clif->pRankingPk
 023f CMSG_MAIL_REFRESH_INBOX           clif->pMail_refreshinbox
 0241 CMSG_MAIL_READ_MESSAGE            clif->pMail_read
 0243 CMSG_MAIL_DELETE_MESSAGE          clif->pMail_delete
@@ -190,7 +193,9 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 091a CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
 095d CMSG_PARTY_INVITE2                clif->pPartyInvite2
+096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems
 0970 CMSG_CHAR_CREATE                  ?
+0974 CMSG_MERGE_ITEM_CANCEL            clif->cancelmergeitem
 097c CMSG_REQUEST_RANKS                clif->pRanklist
 0998 CMSG_PLAYER_EQUIP                 clif->pEquipItem
 09a7 CMSG_BANK_DEPOSIT                 clif->pBankDeposit
@@ -202,10 +207,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 09d6 CMSG_NPC_MARKET_BUY               clif->pNPCMarketPurchase
 09d8 CMSG_NPC_MARKET_CLOSE             clif->pNPCMarketClosed
 0a01 CMSG_SHORTCUTS_ROW_SHIFT          clif->pHotkeyRowShift
-?    UNIMPLIMENTED                     clif->ackmergeitems
-?    UNIMPLIMENTED                     clif->cancelmergeitem
-?    UNIMPLIMENTED                     clif->pAlchemist
-?    UNIMPLIMENTED                     clif->pBlacksmith
 ?    UNIMPLIMENTED                     clif->pCashShopBuy
 ?    UNIMPLIMENTED                     clif->pDull
 ?    UNIMPLIMENTED                     clif->pFeelSaveOk
@@ -223,7 +224,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pPartyRecruitRegisterReq
 ?    UNIMPLIMENTED                     clif->pPartyRecruitSearchReq
 ?    UNIMPLIMENTED                     clif->pPartyRecruitUpdateReq
-?    UNIMPLIMENTED                     clif->pRankingPk
 ?    UNIMPLIMENTED                     clif->pRouletteClose
 ?    UNIMPLIMENTED                     clif->pRouletteGenerate
 ?    UNIMPLIMENTED                     clif->pRouletteInfo
