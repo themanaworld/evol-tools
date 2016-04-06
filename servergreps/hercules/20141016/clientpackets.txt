@@ -235,5 +235,3 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pSkillSelectMenu
 ?    UNIMPLIMENTED                     clif->pStoragePassword
 ?    UNIMPLIMENTED                     clif->pTaekwon
-WRONG SIZE 022d CMSG_BUYINGSTORE_CLOSE            clif->pMoveFromKafra                   2 vs    8
-WRONG SIZE 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pTakeItem                        2 vs    6

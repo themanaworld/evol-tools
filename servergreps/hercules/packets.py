@@ -265,16 +265,6 @@ def printPackets(packetDir):
             rev.append("{0:4} {1:33} {2}".format("?", "UNIMPLIMENTED", packet))
 #            rev.append("{0:4} {1:>4} {2} UNIMPLIMENTED".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
 
-        for packet in clientPacketsManaPlusClient:
-            if packet in clientPackets and clientPacketsManaPlusClient[packet][1] != clientPackets[packet][0]:
-                packet1 = clientPacketsManaPlusClient[packet]
-                packet2 = clientPackets[packet]
-                rev.append("WRONG SIZE {0:4} {1:33} {2:35} {3:4} vs {4:4}".format(packet,
-                    packet1[0],
-                    packet2[1],
-                    packet1[1],
-                    packet2[0]))
-
         for packet in allPackets:
             if packet not in clientPacketsManaPlusClient:
                 continue
@@ -291,16 +281,22 @@ def printPackets(packetDir):
             w.write(data)
             w.write("\n")
 
-#    with open(packetDir + "/wrongpackersizes.txt", "w") as w:
-#        for packet in sizes:
-#            if packet == "0000":
-#                continue
-#            data = packet
-#            while data[0] == "0":
-#                data = data[1:]
-#            if packet in serverpacketsSorted:
-#                if sizes[packet] != clientPackets[packet][0]:
-#                    w.write("{0:>4} {1:4} -> {2:4}\n".format(data, sizes[packet], clientPackets[packet][0]))
+    rev = []
+    with open(packetDir + "/clientwrongpacketsizes.txt", "w") as w:
+        for packet in clientPacketsManaPlusClient:
+            if packet in clientPackets and clientPacketsManaPlusClient[packet][1] != clientPackets[packet][0]:
+                packet1 = clientPacketsManaPlusClient[packet]
+                packet2 = clientPackets[packet]
+                rev.append("{0:4} {1:33} {2:35} {3:4} vs {4:4}".format(packet,
+                    packet1[0],
+                    packet2[1],
+                    packet1[1],
+                    packet2[0]))
+        rev.sort()
+
+        for data in rev:
+            w.write(data)
+            w.write("\n")
 
 def showHelp():
     print("Usage: packets.py version");

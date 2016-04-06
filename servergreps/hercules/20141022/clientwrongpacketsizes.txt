@@ -1,0 +1,2 @@
+022d CMSG_BUYINGSTORE_CLOSE            clif->pMoveFromKafra                   2 vs    8
+0835 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick    2 vs   12

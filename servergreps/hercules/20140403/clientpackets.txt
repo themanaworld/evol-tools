@@ -232,11 +232,3 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pSkillSelectMenu
 ?    UNIMPLIMENTED                     clif->pStoragePassword
 ?    UNIMPLIMENTED                     clif->pTaekwon
-WRONG SIZE 0202 CMSG_PLAYER_CHANGE_DIR            clif->pTakeItem                        5 vs    6
-WRONG SIZE 022d CMSG_BUYINGSTORE_CLOSE            clif->pWantToConnection                2 vs   19
-WRONG SIZE 0360 CMSG_BUYINGSTORE_OPEN             clif->pChangeDir                       6 vs    5
-WRONG SIZE 0361 CMSG_HOMUNCULUS_MENU              clif->pReqOpenBuyingStore              5 vs   -1
-WRONG SIZE 07e4 CMSG_ITEM_PICKUP                  clif->pFriendsListAdd                  6 vs   26
-WRONG SIZE 07ec CMSG_MOVE_TO_STORAGE              clif->pSolveCharName                   8 vs    6
-WRONG SIZE 0815 CMSG_BUYINGSTORE_CREATE           clif->pChangeDir                      -1 vs    5
-WRONG SIZE 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pTakeItem                        2 vs    6
