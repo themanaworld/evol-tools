@@ -4,10 +4,6 @@
 0368 -> 07ec  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
 0436 -> 0364  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0437 -> 093f  CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
-0811 -> 091f  CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
-0819 -> 0933  CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
-0835 -> 085d  CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoNextPage
-083c -> 0868  CMSG_SKILL_USE_BEING              clif->pUseSkillToId
 0871 -> 0946  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 089c -> 0920  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 095d -> 0890  CMSG_PARTY_INVITE2                clif->pPartyInvite2

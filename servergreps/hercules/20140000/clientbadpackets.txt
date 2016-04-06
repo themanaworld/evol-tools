@@ -1,5 +1,3 @@
-022d CMSG_BUYINGSTORE_CLOSE            client: clif->pReqCloseBuyingStore          server: clif->pItemListWindowSelected       Change id to 094c
 035f CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pWalkToXY                     Change id to 0438
 0436 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pFriendsListAdd               Change id to 091e
-088a CMSG_NAME_REQUEST                 client: clif->pGetCharNameRequest           server: clif->pTickSend                     Change id to 0926
 0940 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pFriendsListAdd               Change id to 0369

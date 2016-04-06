@@ -1,6 +1,6 @@
 Useless packet 08fc.
-Useless packet 0200.
 Useless packet 08d4.
+Useless packet 0200.
 Useless packet 028f.
 Useless packet 0970.
 Useless packet 0066.

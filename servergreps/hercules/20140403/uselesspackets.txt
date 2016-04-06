@@ -1,7 +1,7 @@
 Useless packet 0a01.
 Useless packet 08fc.
-Useless packet 0200.
 Useless packet 08d4.
+Useless packet 0200.
 Useless packet 028f.
 Useless packet 091a.
 Useless packet 0970.
