@@ -2,7 +2,6 @@ Useless packet 084a.
 Useless packet 07f5.
 Useless packet 0232.
 Useless packet 0231.
-Useless packet 0234.
 Useless packet 0a01.
 Useless packet 08e0.
 Useless packet 09a9.
@@ -12,12 +11,12 @@ Useless packet 035f.
 Useless packet 083b.
 Useless packet 0844.
 Useless packet 0846.
+Useless packet 0234.
 Useless packet 0998.
 Useless packet 023f.
 Useless packet 0439.
 Useless packet 0233.
 Useless packet 08d4.
-Useless packet 0436.
 Useless packet 029f.
 Useless packet 02b6.
 Useless packet 090a.
@@ -56,7 +55,6 @@ Useless packet 0064.
 Useless packet 0065.
 Useless packet 0061.
 Useless packet 0068.
-Useless packet 07e4.
 Useless packet 020f.
 Useless packet 0246.
 Useless packet 0247.
@@ -64,7 +62,6 @@ Useless packet 0244.
 Useless packet 027c.
 Useless packet 02ba.
 Useless packet 0801.
-Useless packet 0940.
 Useless packet 02c8.
 Useless packet 09a7.
 Useless packet 02c7.
@@ -72,7 +69,6 @@ Useless packet 0243.
 Useless packet 0251.
 Useless packet 097c.
 Useless packet 0368.
-Useless packet 0362.
 Useless packet 08c9.
 Useless packet 0366.
 Useless packet 08da.

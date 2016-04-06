@@ -1,7 +1,4 @@
-0202 -> 094a  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
-0362 -> 0860  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0366 -> 096a  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0368 -> 0898  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
 0437 -> 035f  CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
-07e4 -> 092a  CMSG_ITEM_PICKUP                  clif->pTakeItem
 07ec -> 0968  CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra

@@ -1,9 +1,8 @@
 035f -> 0950  CMSG_MAP_PING                     clif->pTickSend
-0362 -> 0882  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0366 -> 092d  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0368 -> 07ec  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
-0436 -> 0364  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0437 -> 093f  CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
+0815 -> 0360  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0871 -> 0946  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 089c -> 0920  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 095d -> 0890  CMSG_PARTY_INVITE2                clif->pPartyInvite2

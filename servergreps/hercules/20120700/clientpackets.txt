@@ -10,6 +10,9 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0094 CMSG_NAME_REQUEST                 clif->pMoveToKafra
 0096 CMSG_CHAT_WHISPER                 clif->pWisMessage
 0099 CMSG_ADMIN_ANNOUNCE               clif->pBroadcast
+009b CMSG_PLAYER_CHANGE_DIR            clif->pWantToConnection
+009f CMSG_ITEM_PICKUP                  clif->pUseItem
+00a2 CMSG_PLAYER_INVENTORY_DROP        clif->pSolveCharName
 00ab CMSG_PLAYER_UNEQUIP               clif->pUnequipItem
 00b2 CMSG_PLAYER_RESTART               clif->pRestart
 00b8 CMSG_NPC_LIST_CHOICE              clif->pNpcSelectMenu
@@ -47,6 +50,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0108 CMSG_PARTY_MESSAGE                clif->pPartyMessage
 0112 CMSG_SKILL_LEVELUP_REQUEST        clif->pSkillUp
 0113 CMSG_SKILL_USE_BEING              clif->pUseSkillToPos
+0116 CMSG_SKILL_USE_POSITION           clif->pDropItem
 0118 CMSG_PLAYER_STOP_ATTACK           clif->pStopAttack
 011b CMSG_SKILL_USE_MAP                clif->pUseSkillMap
 011d CMSG_PLAYER_SET_MEMO              clif->pRequestMemo
@@ -111,7 +115,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 01f9 CMSG_FAMILY_ASK_FOR_CHILD         clif->pAdopt_request
 01fd CMSG_NPC_REPAIR                   clif->pRepairItem
 0200 CMSG_LOGIN_PING                   ?
-0202 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0203 CMSG_FRIENDS_DELETE_PLAYER        clif->pFriendsListRemove
 0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply
 020f CMSG_PVP_INFO                     clif->pPVPInfo
@@ -161,7 +164,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0362 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0366 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0368 CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
-0436 CMSG_SKILL_USE_POSITION           clif->pFriendsListAdd
 0437 CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 0439 CMSG_PLAYER_INVENTORY_USE         clif->pUseItem
 07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
@@ -174,6 +176,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0815 CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
 0819 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0835 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfoNextPage
+0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick
 083b CMSG_SEARCHSTORE_CLOSE            clif->pCloseSearchStoreInfo
 083c CMSG_SKILL_USE_BEING              clif->pUseSkillToId
 0844 CMSG_NPC_CASH_SHOP_OPEN           clif->pCashShopOpen
@@ -193,7 +196,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
 091a CMSG_FRIENDS_ADD_PLAYER           ?
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        ?
 095d CMSG_PARTY_INVITE2                ?
 096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems
 0970 CMSG_CHAR_CREATE                  ?
@@ -231,8 +233,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pPartyRecruitSearchReq
 ?    UNIMPLIMENTED                     clif->pPartyRecruitUpdateReq
 ?    UNIMPLIMENTED                     clif->pReqCloseBuyingStore
-?    UNIMPLIMENTED                     clif->pSearchStoreInfoListItemClick
 ?    UNIMPLIMENTED                     clif->pSkillSelectMenu
 ?    UNIMPLIMENTED                     clif->pStoragePassword
 ?    UNIMPLIMENTED                     clif->pTaekwon
-?    UNIMPLIMENTED                     clif->pWantToConnection

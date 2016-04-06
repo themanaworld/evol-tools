@@ -1,5 +1,1 @@
-0202 CMSG_PLAYER_CHANGE_DIR            clif->pTakeItem                        5 vs    6
-07e4 CMSG_ITEM_PICKUP                  clif->pFriendsListAdd                  6 vs   26
 07ec CMSG_MOVE_TO_STORAGE              clif->pSolveCharName                   8 vs    6
-0815 CMSG_BUYINGSTORE_CREATE           clif->pChangeDir                      -1 vs    5
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pTakeItem                        2 vs    6

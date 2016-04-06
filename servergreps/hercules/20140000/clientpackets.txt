@@ -10,6 +10,9 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0094 CMSG_NAME_REQUEST                 clif->pMoveToKafra
 0096 CMSG_CHAT_WHISPER                 clif->pWisMessage
 0099 CMSG_ADMIN_ANNOUNCE               clif->pBroadcast
+009b CMSG_PLAYER_CHANGE_DIR            clif->pWantToConnection
+009f CMSG_ITEM_PICKUP                  clif->pUseItem
+00a2 CMSG_PLAYER_INVENTORY_DROP        clif->pSolveCharName
 00ab CMSG_PLAYER_UNEQUIP               clif->pUnequipItem
 00b2 CMSG_PLAYER_RESTART               clif->pRestart
 00b8 CMSG_NPC_LIST_CHOICE              clif->pNpcSelectMenu
@@ -47,6 +50,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0108 CMSG_PARTY_MESSAGE                clif->pPartyMessage
 0112 CMSG_SKILL_LEVELUP_REQUEST        clif->pSkillUp
 0113 CMSG_SKILL_USE_BEING              clif->pUseSkillToPos
+0116 CMSG_SKILL_USE_POSITION           clif->pDropItem
 0118 CMSG_PLAYER_STOP_ATTACK           clif->pStopAttack
 011b CMSG_SKILL_USE_MAP                clif->pUseSkillMap
 011d CMSG_PLAYER_SET_MEMO              clif->pRequestMemo
@@ -163,7 +167,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0365 CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
 0366 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0368 CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
-0436 CMSG_SKILL_USE_POSITION           clif->pFriendsListAdd
+0369 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
 0437 CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 0439 CMSG_PLAYER_INVENTORY_USE         clif->pUseItem
 07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
@@ -176,12 +180,14 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0815 CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
 0819 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0835 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfoNextPage
+0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick
 083b CMSG_SEARCHSTORE_CLOSE            clif->pCloseSearchStoreInfo
 083c CMSG_SKILL_USE_BEING              clif->pUseSkillToId
 0844 CMSG_NPC_CASH_SHOP_OPEN           clif->pCashShopOpen
 0846 CMSG_NPC_CASH_SHOP_REQUEST_TAB    clif->pCashShopReqTab
 084a CMSG_NPC_CASH_SHOP_CLOSE          clif->pCashShopClose
 085b CMSG_MOVE_FROM_STORAGE            ?
+0860 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0871 CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 087b CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 087f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
@@ -197,10 +203,12 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
 091a CMSG_FRIENDS_ADD_PLAYER           ?
+091e CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0926 CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
+092a CMSG_ITEM_PICKUP                  clif->pTakeItem
 093d CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pFriendsListAdd
 0949 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+094a CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 094c CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
 095d CMSG_PARTY_INVITE2                ?
 0969 CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
@@ -221,6 +229,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pCashShopBuy
 ?    UNIMPLIMENTED                     clif->pDull
 ?    UNIMPLIMENTED                     clif->pFeelSaveOk
+?    UNIMPLIMENTED                     clif->pFriendsListAdd
 ?    UNIMPLIMENTED                     clif->pGMRecall2
 ?    UNIMPLIMENTED                     clif->pGMRemove2
 ?    UNIMPLIMENTED                     clif->pGM_Monster_Item

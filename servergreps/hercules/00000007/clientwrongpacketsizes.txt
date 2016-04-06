@@ -1,5 +1,4 @@
 00f3 CMSG_CHAT_MESSAGE                 clif->pMoveToKafra                    -1 vs    8
 0193 CMSG_CLOSE_STORAGE                clif->pSolveCharName                   2 vs    6
 01fd CMSG_NPC_REPAIR                   clif->pRepairItem                     15 vs    4
-0202 CMSG_PLAYER_CHANGE_DIR            clif->pFriendsListAdd                  5 vs   26
 0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply               14 vs   11

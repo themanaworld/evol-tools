@@ -1,5 +1,3 @@
-0202 -> 0967  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
-0436 -> 0438  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 085b -> 022d  CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 0871 -> 0369  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 089c -> 086e  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection

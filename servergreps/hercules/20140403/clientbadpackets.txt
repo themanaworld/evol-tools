@@ -1,5 +1,1 @@
-0202 CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pTakeItem                     Change id to 0360
-07e4 CMSG_ITEM_PICKUP                  client: clif->pTakeItem                     server: clif->pFriendsListAdd               Change id to 0958
 07ec CMSG_MOVE_TO_STORAGE              client: clif->pMoveToKafra                  server: clif->pSolveCharName                Change id to 095c
-0815 CMSG_BUYINGSTORE_CREATE           client: clif->pReqOpenBuyingStore           server: clif->pChangeDir                    Change id to 0944
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pTakeItem                     Change id to 085d

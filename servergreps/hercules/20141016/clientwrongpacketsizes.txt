@@ -1,1 +1,0 @@
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pTakeItem                        2 vs    6

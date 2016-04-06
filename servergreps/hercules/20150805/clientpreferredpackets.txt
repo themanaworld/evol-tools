@@ -1,8 +1,6 @@
-07e4 -> 0958  CMSG_ITEM_PICKUP                  clif->pTakeItem
 07ec -> 0879  CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 085b -> 0864  CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 0871 -> 0369  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 089c -> 0363  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 091a -> 08a8  CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
-0940 -> 0835  CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
 095d -> 094a  CMSG_PARTY_INVITE2                clif->pPartyInvite2

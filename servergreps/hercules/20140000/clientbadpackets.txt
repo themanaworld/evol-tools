@@ -1,3 +1,1 @@
 035f CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pWalkToXY                     Change id to 0438
-0436 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pFriendsListAdd               Change id to 091e
-0940 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pFriendsListAdd               Change id to 0369
