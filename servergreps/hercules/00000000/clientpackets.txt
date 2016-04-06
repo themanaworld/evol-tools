@@ -116,6 +116,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0212 CMSG_ADMIN_MUTE_NAME              ?
 0213 CMSG_ADMIN_REQUEST_STATS          ?
 0222 CMSG_NPC_REFINE                   ?
+022d CMSG_BUYINGSTORE_CLOSE            ?
 0231 CMSG_HOMUNCULUS_SET_NAME          ?
 0232 CMSG_HOMMERC_MOVE_TO              ?
 0233 CMSG_HOMMERC_ATTACK               ?
@@ -166,7 +167,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0801 CMSG_VENDING_BUY2                 ?
 0811 CMSG_BUYINGSTORE_SELL             ?
 0815 CMSG_BUYINGSTORE_CREATE           ?
-0817 CMSG_BUYINGSTORE_CLOSE            ?
 0819 CMSG_SEARCHSTORE_SEARCH           ?
 0835 CMSG_SEARCHSTORE_CLICK            ?
 083b CMSG_SEARCHSTORE_CLOSE            ?
@@ -225,7 +225,4 @@ WRONG SIZE 00f3 CMSG_CHAT_MESSAGE                 clif->pMoveToKafra            
 WRONG SIZE 0193 CMSG_CLOSE_STORAGE                clif->pSolveCharName                   2 vs    6
 WRONG SIZE 01fd CMSG_NPC_REPAIR                   clif->pRepairItem                     15 vs    4
 WRONG SIZE 0202 CMSG_PLAYER_CHANGE_DIR            clif->pFriendsListAdd                  5 vs   26
-WRONG SIZE 0203 CMSG_FRIENDS_DELETE_PLAYER        clif->pFriendsListRemove               0 vs   10
-WRONG SIZE 0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply                0 vs   11
-WRONG SIZE 096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems                    0 vs   -1
-WRONG SIZE 0974 CMSG_MERGE_ITEM_CANCEL            clif->cancelmergeitem                  0 vs    2
+WRONG SIZE 0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply               14 vs   11
