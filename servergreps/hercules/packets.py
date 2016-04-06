@@ -110,7 +110,7 @@ def collectManaPlusInPackets(fileName, packetVersion):
             m = protocolinre.search(line)
             if m is not None:
                 packet = int(m.group("packet"), 16)
-                if packet > 0xb00:
+                if packet > 0xb00 or packet == 0:
                     continue
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
                 sizes[m.group("packet").lower()] = m.group("len")
@@ -129,7 +129,7 @@ def collectManaPlusOutPackets(fileName, packetVersion):
             m = protocoloutre.search(line)
             if m is not None:
                 packet = int(m.group("packet"), 16)
-                if packet > 0xb00:
+                if packet > 0xb00 or packet == 0:
                     continue
                 clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
                 clientPacketsManaPlusClient[m.group("packet").lower()] = m.group("name")
