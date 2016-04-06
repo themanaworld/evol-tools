@@ -112,7 +112,7 @@ def collectManaPlusInPackets(fileName, packetVersion):
                 packet = int(m.group("packet"), 16)
                 if packet > 0xb00 or packet == 0:
                     continue
-                clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
+                clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), "nullptr")
                 sizes[m.group("packet").lower()] = m.group("len")
 
 def collectManaPlusOutPackets(fileName, packetVersion):
@@ -131,8 +131,8 @@ def collectManaPlusOutPackets(fileName, packetVersion):
                 packet = int(m.group("packet"), 16)
                 if packet > 0xb00 or packet == 0:
                     continue
-                clientPacketsManaPlus[m.group("packet").lower()] = m.group("name")
-                clientPacketsManaPlusClient[m.group("packet").lower()] = m.group("name")
+                clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
+                clientPacketsManaPlusClient[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
 
 def collectClientPackets(fileName):
     with open(fileName, "r") as f:
@@ -208,7 +208,7 @@ def printPackets(packetDir):
             while data[0] == "0":
                 data = data[1:]
             if packet in clientPacketsManaPlus:
-                clientName = clientPacketsManaPlus[packet]
+                clientName = clientPacketsManaPlus[packet][0]
 #                if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
 #                    w.write("UNIMPLIMENTED ")
                 w.write(data + " client name: " + clientName)
@@ -235,7 +235,7 @@ def printPackets(packetDir):
 
     with open(packetDir + "/clientpackets.txt", "w") as w:
         for packet in clientPacketsManaPlusClient:
-            clientName = clientPacketsManaPlusClient[packet]
+            clientName = clientPacketsManaPlusClient[packet][0]
             if clientName not in manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
                 w.write("PSESENT BUT UNIMPLIMENTED {0}\n".format(clientName))
 
@@ -265,10 +265,20 @@ def printPackets(packetDir):
             rev.append("{0:4} {1:33} {2}".format("?", "UNIMPLIMENTED", packet))
 #            rev.append("{0:4} {1:>4} {2} UNIMPLIMENTED".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
 
+        for packet in clientPacketsManaPlusClient:
+            if packet in clientPackets and clientPacketsManaPlusClient[packet][1] != clientPackets[packet][0]:
+                packet1 = clientPacketsManaPlusClient[packet]
+                packet2 = clientPackets[packet]
+                rev.append("WRONG SIZE {0:4} {1:33} {2:35} {3:4} vs {4:4}".format(packet,
+                    packet1[0],
+                    packet2[1],
+                    packet1[1],
+                    packet2[0]))
+
         for packet in allPackets:
             if packet not in clientPacketsManaPlusClient:
                 continue
-            data = "{0:4} {1:33} ".format(packet, clientPacketsManaPlusClient[packet])
+            data = "{0:4} {1:33} ".format(packet, clientPacketsManaPlusClient[packet][0])
             if packet in clientPackets:
                 data = data + clientPackets[packet][1]
             else:
