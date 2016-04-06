@@ -134,7 +134,8 @@ def collectManaPlusOutPackets(fileName, packetVersion):
                     continue
                 clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
                 clientPacketsManaPlusClient[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
-                outMsgNameToId[m.group("name")] = m.group("packet").lower()
+                outMsgNameToId[m.group("name").strip()] = m.group("packet").lower()
+                #print "{0} = {1}".format(m.group("name").strip(), m.group("packet").lower())
 
 def collectClientPackets(fileName):
     with open(fileName, "r") as f:
@@ -284,7 +285,9 @@ def printPackets(packetDir):
 
     rev = []
     with open(packetDir + "/clientwrongpacketsizes.txt", "w") as w:
-        for packet in clientPacketsManaPlusClient:
+        for name in outMsgNameToId:
+            packet = outMsgNameToId[name]
+#        for packet in clientPacketsManaPlusClient:
             if packet in clientPackets and clientPacketsManaPlusClient[packet][1] != clientPackets[packet][0]:
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
@@ -301,7 +304,9 @@ def printPackets(packetDir):
 
     rev = []
     with open(packetDir + "/clientbadpackets.txt", "w") as w:
-        for packet in clientPacketsManaPlusClient:
+        for name in outMsgNameToId:
+            packet = outMsgNameToId[name]
+#        for packet in clientPacketsManaPlusClient:
             if packet in clientPackets:
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
