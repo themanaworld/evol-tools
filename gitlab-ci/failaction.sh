@@ -4,8 +4,9 @@ export path="bot"
 export server="irc.freenode.net"
 export channel="#evol-dev"
 export nick="evolbuildbot"
+export buildid="$(cat clientdata/.shared/buildid.log)"
 
-export msg="Build failed. See https://gitlab.com/evol/clientdata/builds/$(clientdata/.shared/buildid.log)"
+export msg="Build failed. See https://gitlab.com/evol/clientdata/builds/${buildid}"
 
 echo "${msg}"
 
