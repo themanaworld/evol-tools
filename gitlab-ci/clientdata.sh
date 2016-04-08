@@ -16,7 +16,7 @@ cd tools/testxml
 export RES=$(cat errors.txt)
 if [[ -n "${RES}" ]]; then
     echo "xml check failed"
-    exit(1)
+    exit 1
 fi
 
 cd ../update
