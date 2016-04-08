@@ -7,9 +7,6 @@ export nick="evolbuildbot"
 
 echo "$1"
 
-apt-get update
-apt-get -y -qq install ii psmisc
-
 mkdir ${path}
 
 ii -s ${server} -i ${path} -n ${nick} -f ${nick} &
