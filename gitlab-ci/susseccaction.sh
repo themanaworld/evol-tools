@@ -30,6 +30,9 @@ if [[ -n "${error}" ]]; then
     sleep 2s
     export LINK=$(pastebinit -b http://paste.ubuntu.com/ shared/error.log)
     echo "Error log: ${LINK}" >${path}/${server}/${channel}/in
+    rm -rf shared/buildid.log
+    rm -rf shared/error.log
+    exit 1
 else
     echo -e ${msg1} >${path}/${server}/${channel}/in
 fi
