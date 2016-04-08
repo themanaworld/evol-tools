@@ -24,6 +24,14 @@ if [[ -n "${RES}" ]]; then
     exit 1
 fi
 
+./testxml.py silent >../../clientdata/.shared/error.log
+if [ "$?" != 0 ]; then
+    echo "test xml error"
+    exit 2
+fi
+
+echo >../../clientdata/.shared/error.log
+
 cd ../update
 ./createnew.sh
 ./create_music.sh
