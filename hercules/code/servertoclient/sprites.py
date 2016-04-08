@@ -328,7 +328,7 @@ def readAct(actFile):
         act.minorVersion = readInt8(f)
         act.majorVersion = readInt8(f)
         act.nanimations = readInt16(f)
-        print "{0}, {1}.{2}, {1}".format(actFile, act.majorVersion, act.minorVersion, act.nanimations)
+        print "{0}, {1}.{2}, {3}".format(actFile, act.majorVersion, act.minorVersion, act.nanimations)
         #print " animations: " + str(act.nanimations)
         act.animations = dict()
         skipData(f, 10)
