@@ -18,6 +18,6 @@ sleep 10s
 echo $1 >${path}/${server}/${channel}/in
 sleep 3s
 
-rm -rf .shared/buildid.log
+rm -rf clientdata/.shared/buildid.log
 
 killall ii
