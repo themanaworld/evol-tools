@@ -3,6 +3,9 @@
 cd clientdata
 rm -rf public
 mkdir public
+mkdir .shared
+echo >.shared/error.log
+echo ${CI_BUILD_ID} >.shared/buildid.log
 
 cd ..
 ln -s clientdata client-data
@@ -16,6 +19,8 @@ cd tools/testxml
 export RES=$(cat errors.txt)
 if [[ -n "${RES}" ]]; then
     echo "xml check failed"
+    echo "xml check failed" >../../clientdata/.shared/error.log
+    echo ${RES} >>../../clientdata/.shared/error.log
     exit 1
 fi
 
