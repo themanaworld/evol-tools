@@ -28,5 +28,6 @@ fi
 sleep 3s
 
 rm -rf clientdata/.shared/buildid.log
+rm -rf clientdata/.shared/error.log
 
 killall ii
