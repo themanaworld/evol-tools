@@ -3,9 +3,9 @@
 cd clientdata
 rm -rf public
 mkdir public
-mkdir .shared
-echo >.shared/error.log
-echo ${CI_BUILD_ID} >.shared/buildid.log
+mkdir shared
+echo >shared/error.log
+echo ${CI_BUILD_ID} >shared/buildid.log
 
 cd ..
 ln -s clientdata client-data
@@ -19,19 +19,19 @@ cd tools/testxml
 export RES=$(cat errors.txt)
 if [[ -n "${RES}" ]]; then
     echo "xml check failed"
-    echo "xml check failed" >../../clientdata/.shared/error.log
-    echo ${RES} >>../../clientdata/.shared/error.log
+    echo "xml check failed" >../../clientdata/shared/error.log
+    echo ${RES} >>../../clientdata/shared/error.log
     exit 0
 fi
 
-echo >../../clientdata/.shared/error.log
-./testxml.py silent >../../clientdata/.shared/error.log
+echo >../../clientdata/shared/error.log
+./testxml.py silent >../../clientdata/shared/error.log
 if [ "$?" != 0 ]; then
     echo "test xml error"
     exit 0
 fi
 
-echo >../../clientdata/.shared/error.log
+echo >../../clientdata/shared/error.log
 
 cd ../update
 ./createnew.sh
