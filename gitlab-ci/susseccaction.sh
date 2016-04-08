@@ -7,8 +7,11 @@ export nick="evolbuildbot"
 export buildid="$(cat clientdata/shared/buildid.log)"
 export error="$(cat clientdata/shared/error.log)"
 
-export msg1="Build success. See https://gitlab.com/evol/clientdata/builds/${buildid}"
-export msg2="Build failed. See https://gitlab.com/evol/clientdata/builds/${buildid}"
+cd clientdata
+export ghead=$(git log --pretty=oneline -n 1 | awk '{print $1}')
+export gitcommit=$(echo ${ghead} | cut -c 1-7)
+export msg1="Build success: ${gitcommit}. See https://gitlab.com/evol/clientdata/builds/${buildid}"
+export msg2="Build failed: ${gitcommit}. See https://gitlab.com/evol/clientdata/builds/${buildid}"
 
 echo "${msg}"
 
@@ -23,7 +26,7 @@ sleep 10s
 if [[ -n "${error}" ]]; then
     echo ${msg2} >${path}/${server}/${channel}/in
     sleep 2s
-    export LINK=$(pastebinit -b http://paste.ubuntu.com/ clientdata/shared/error.log)
+    export LINK=$(pastebinit -b http://paste.ubuntu.com/ shared/error.log)
     echo "Error log: ${LINK}" >${path}/${server}/${channel}/in
 else
     echo ${msg1} >${path}/${server}/${channel}/in
@@ -31,7 +34,7 @@ fi
 
 sleep 3s
 
-rm -rf clientdata/shared/buildid.log
-rm -rf clientdata/shared/error.log
+rm -rf shared/buildid.log
+rm -rf shared/error.log
 
 killall ii
