@@ -50,4 +50,7 @@ cd ../update
 ./create_music.sh
 
 cp -r upload/* ../../clientdata/public
-ls ../../clientdata/public
+cd ../../clientdata
+gitclone https://gitlab.com/4144/pagesindexgen.git pagesindexgen
+./pagesindexgen/pagesindexgen.py public
+ls public
