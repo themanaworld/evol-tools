@@ -8,11 +8,11 @@ export buildid="$(cat clientdata/shared/buildid.log)"
 export error="$(cat clientdata/shared/error.log)"
 export C="\0003"
 export R="\x0f"
+export name="client-data"
 
 cd clientdata
-export ghead=$(git log --pretty=oneline -n 1 | awk '{print $1}')
-export gitcommit=$(echo ${ghead} | cut -c 1-7)
-export msg="Build failed: ${C}03${gitcommit}${R}. See https://gitlab.com/evol/clientdata/builds"
+export gitcommit=$(echo ${CI_BUILD_REF} | cut -c 1-7)
+export msg="[${C}02${name}:${CI_BUILD_REF_NAME}${R}] Build success: ${C}03${gitcommit}${R}. See https://gitlab.com/evol/clientdata/builds"
 
 echo "${msg}"
 
