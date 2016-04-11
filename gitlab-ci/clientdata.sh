@@ -7,11 +7,23 @@ mkdir shared
 echo >shared/error.log
 echo ${CI_BUILD_ID} >shared/buildid.log
 
+function gitclone {
+    git clone $*
+    if [ "$?" != 0 ]; then
+        sleep 1s
+        git clone $*
+        if [ "$?" != 0 ]; then
+            sleep 3s
+            git clone $*
+        fi
+    fi
+}
+
 cd ..
 ln -s clientdata client-data
 
 rm -rf music
-git clone --depth 1 https://gitlab.com/evol/evol-music.git music
+gitclone --depth 1 https://gitlab.com/evol/evol-music.git music
 
 cd tools/testxml
 
