@@ -23,7 +23,7 @@ cd ..
 ln -s clientdata client-data
 
 rm -rf music
-gitclone --depth 1 https://gitlab.com/evol/evol-music.git music
+gitclone https://gitlab.com/evol/evol-music.git music
 
 cd tools/testxml
 
