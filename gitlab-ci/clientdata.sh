@@ -52,5 +52,6 @@ cd ../update
 cp -r upload/* ../../clientdata/public
 cd ../../clientdata
 gitclone https://gitlab.com/4144/pagesindexgen.git pagesindexgen
-./pagesindexgen/pagesindexgen.py public
-ls public
+cd pagesindexgen
+./pagesindexgen.py ../public
+ls ../public
