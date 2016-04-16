@@ -156,6 +156,9 @@ def compareFuncs(session):
     for func in session.plugDecls:
         pfunc = session.plugDecls[func]
         for func2 in session.plugToFunc[func]:
+            if func2 not in session.funcDecls:
+                print "Error: function {0} not found".format(func2)
+                continue
             ffunc = session.funcDecls[func2]
 #            print "{0} - {1}".format(func, func2)
 #            print pfunc
