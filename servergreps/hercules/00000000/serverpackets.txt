@@ -1,5 +1,4 @@
 j
-69 client name: SMSG_LOGIN_DATA
 6a client name: SMSG_LOGIN_ERROR
 6b client name: SMSG_CHAR_LOGIN
 6c client name: SMSG_CHAR_LOGIN_ERROR
@@ -202,7 +201,6 @@ fe client name: SMSG_PARTY_INVITED
 1d3 client name: SMSG_BEING_SOUND_EFFECT
 1d4 client name: SMSG_NPC_STR_INPUT
 1d6 client name: SMSG_MAP_TYPE
-1dc client name: SMSG_LOGIN_CODING_KEY
 1e0 client name: SMSG_ADMIN_GET_LOGIN_ACK
 1e1 client name: SMSG_SPIRIT_BALL_SINGLE
 1e6 client name: SMSG_FAMILY_CALL_PARTNER

@@ -1,5 +1,4 @@
 j
-69 client name: SMSG_LOGIN_DATA
 6a client name: SMSG_LOGIN_ERROR
 6b client name: SMSG_CHAR_LOGIN
 6c client name: SMSG_CHAR_LOGIN_ERROR
@@ -179,7 +178,6 @@ fb client name: SMSG_PARTY_INFO
 1d4 client name: SMSG_NPC_STR_INPUT
 1d6 client name: SMSG_MAP_TYPE
 1d7 client name: SMSG_BEING_CHANGE_LOOKS2
-1dc client name: SMSG_LOGIN_CODING_KEY
 1de client name: SMSG_SKILL_DAMAGE
 1e0 client name: SMSG_ADMIN_GET_LOGIN_ACK
 1e1 client name: SMSG_SPIRIT_BALL_SINGLE
@@ -332,7 +330,6 @@ fb client name: SMSG_PARTY_INFO
 837 client name: SMSG_SEARCHSTORE_SEARCH_FAILED
 83a client name: SMSG_SEARCHSTORE_OPEN
 83d client name: SMSG_SEARCHSTORE_CLICK_ACK
-83e client name: SMSG_LOGIN_ERROR2
 840 client name: SMSG_MAP_NOT_FOUND
 845 client name: SMSG_NPC_CASH_POINTS
 849 client name: SMSG_NPC_CASH_BUY
