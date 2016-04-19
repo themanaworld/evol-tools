@@ -1,7 +1,14 @@
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER3
 PSESENT BUT UNIMPLIMENTED CMSG_PARTY_CREATE2
 PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_HASH_CHECK
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_KEY
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_PCBANG
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_HAN
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_SSO
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0061 CMSG_CHAR_PASSWORD_CHANGE         ?
-0064 CMSG_LOGIN_REGISTER               ?
+0064 CMSG_LOGIN_REGISTER               lclif->p->parse_CA_LOGIN
 0065 CMSG_CHAR_SERVER_CONNECT          ?
 0066 CMSG_CHAR_SELECT                  ?
 0068 CMSG_CHAR_DELETE                  ?
@@ -111,16 +118,20 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 01bd CMSG_ADMIN_RECALL                 clif->pGMRecall
 01ce CMSG_NPC_SELECT_AUTO_SPELL        clif->pAutoSpell
 01d5 CMSG_NPC_STR_RESPONSE             clif->pNpcStringInput
+01db CMSG_LOGIN_REGISTER_KEY           lclif->p->parse_CA_REQ_HASH
+01dd CMSG_LOGIN_REGISTER2              lclif->p->parse_CA_LOGIN2
 01df CMSG_ADMIN_ID_TO_LOGIN            clif->pGMReqAccountName
 01e7 CMSG_DORI_DORI                    clif->pNoviceDoriDori
 01e8 CMSG_PARTY_CREATE2                clif->pCreateParty2
 01ed CMSG_EXPLOSION_SPIRITS            clif->pNoviceExplosionSpirits
 01f7 CMSG_FAMILY_ASK_FOR_CHILD_REPLY   clif->pAdopt_reply
 01f9 CMSG_FAMILY_ASK_FOR_CHILD         clif->pAdopt_request
+01fa CMSG_LOGIN_REGISTER3              lclif->p->parse_CA_LOGIN3
 01fd CMSG_NPC_REPAIR                   clif->pRepairItem
-0200 CMSG_LOGIN_PING                   ?
+0200 CMSG_LOGIN_PING                   lclif->p->parse_CA_CONNECT_INFO_CHANGED
 0202 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0203 CMSG_FRIENDS_DELETE_PLAYER        clif->pFriendsListRemove
+0204 CMSG_LOGIN_HASH_CHECK             lclif->p->parse_CA_EXE_HASHCHECK
 0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply
 020f CMSG_PVP_INFO                     clif->pPVPInfo
 0212 CMSG_ADMIN_MUTE_NAME              clif->pGMRc
@@ -151,11 +162,13 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 025c CMSG_AUCTION_BUY_SELL             clif->pAuction_buysell
 025d CMSG_AUCTION_CLOSE                clif->pAuction_close
 0273 CMSG_MAIL_RETURN_MESSAGE          clif->pMail_return
-027c CMSG_LOGIN_REGISTER2              ?
+0277 CMSG_LOGIN_REGISTER_PCBANG        lclif->p->parse_CA_LOGIN_PCBANG
+027c CMSG_LOGIN_REGISTER4              lclif->p->parse_CA_LOGIN4
 0288 CMSG_NPC_CASH_SHOP_BUY            clif->pcashshop_buy
 028f CMSG_CHAR_RENAME                  ?
 0292 CMSG_PLAYER_AUTO_REVIVE           clif->pAutoRevive
 029f CMSG_MERCENARY_ACTION             clif->pmercenary_action
+02b0 CMSG_LOGIN_REGISTER_HAN           lclif->p->parse_CA_LOGIN_HAN
 02b6 CMSG_QUEST_ACTIVATE               clif->pquestStateAck
 02ba CMSG_SET_SHORTCUTS                clif->pHotkey
 02c4 CMSG_SKILL_USE_BEING              clif->pUseSkillToId
@@ -189,6 +202,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0815 CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
 0817 CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
 0819 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0825 CMSG_LOGIN_REGISTER_SSO           lclif->p->parse_CA_SSO_LOGIN_REQ
 0835 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 0838 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 083b CMSG_SEARCHSTORE_CLOSE            clif->pCloseSearchStoreInfo
