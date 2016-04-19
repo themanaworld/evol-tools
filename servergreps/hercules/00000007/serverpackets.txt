@@ -1,4 +1,6 @@
 j
+64 client name: CMSG_LOGIN_REGISTER
+69 client name: SMSG_LOGIN_DATA
 6a client name: SMSG_LOGIN_ERROR
 6b client name: SMSG_CHAR_LOGIN
 6c client name: SMSG_CHAR_LOGIN_ERROR
@@ -197,6 +199,8 @@ fe client name: SMSG_PARTY_INVITED
 1d4 client name: SMSG_NPC_STR_INPUT
 1d6 client name: SMSG_MAP_TYPE
 1d7 client name: SMSG_BEING_CHANGE_LOOKS2
+1db
+1dc client name: SMSG_LOGIN_CODING_KEY
 1de client name: SMSG_SKILL_DAMAGE
 1e0 client name: SMSG_ADMIN_GET_LOGIN_ACK
 1e1 client name: SMSG_SPIRIT_BALL_SINGLE
@@ -212,7 +216,9 @@ fe client name: SMSG_PARTY_INVITED
 1fc client name: SMSG_PLAYER_REPAIR_LIST
 1fe client name: SMSG_PLAYER_REPAIR_EFFECT
 1ff client name: SMSG_BEING_SLIDE
+200 client name: CMSG_LOGIN_PING
 201 client name: SMSG_FRIENDS_LIST
+204
 205 client name: SMSG_FAMILY_DIVORCED
 206 client name: SMSG_FRIENDS_PLAYER_ONLINE
 207 client name: SMSG_FRIENDS_REQUEST
@@ -260,6 +266,7 @@ fe client name: SMSG_PARTY_INVITED
 25f
 260
 274
+277
 284
 287
 289
@@ -274,6 +281,7 @@ fe client name: SMSG_PARTY_INVITED
 29b
 29d
 2a2
+2b0
 2b1 client name: SMSG_QUEST_LIST
 2b2
 2b3
@@ -326,6 +334,7 @@ fe client name: SMSG_PARTY_INVITED
 81d
 81e
 824
+825
 828 client name: SMSG_CHAR_DELETE2_ACK
 82a client name: SMSG_CHAR_DELETE2_ACCEPT_ACTUAL_ACK
 82c client name: SMSG_CHAR_DELETE2_CANCEL_ACK
@@ -362,6 +371,7 @@ a1a
 a1c
 a20
 a22
+2710
 2711
 2713
 2716
