@@ -1,5 +1,0 @@
-0366 -> 092d  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
-0815 -> 0360  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
-0871 -> 0946  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
-089c -> 0920  CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
-095d -> 0890  CMSG_PARTY_INVITE2                clif->pPartyInvite2

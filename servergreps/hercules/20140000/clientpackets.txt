@@ -12,9 +12,11 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0065 CMSG_CHAR_SERVER_CONNECT          ?
 0066 CMSG_CHAR_SELECT                  ?
 0068 CMSG_CHAR_DELETE                  ?
+0072 CMSG_MAP_SERVER_CONNECT           clif->pUseSkillToId
 007d CMSG_MAP_LOADED                   clif->pLoadEndAck
 007e CMSG_MAP_PING                     clif->pUseSkillToPosMoreInfo
 0085 CMSG_CHAT_MESSAGE                 clif->pChangeDir
+0089 CMSG_PLAYER_CHANGE_ACT            clif->pTickSend
 008c CMSG_CHAT_MESSAGE                 clif->pGetCharNameRequest
 0090 CMSG_NPC_TALK                     clif->pNpcClicked
 0094 CMSG_NAME_REQUEST                 clif->pMoveToKafra
@@ -51,6 +53,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 00ed CMSG_TRADE_CANCEL_REQUEST         clif->pTradeCancel
 00ef CMSG_TRADE_OK                     clif->pTradeCommit
 00f3 CMSG_CHAT_MESSAGE                 clif->pGlobalMessage
+00f5 CMSG_MOVE_FROM_STORAGE            clif->pTakeItem
 00f7 CMSG_CLOSE_STORAGE                clif->pMoveFromKafra
 00f9 CMSG_PARTY_CREATE                 clif->pCreateParty
 00fc CMSG_PARTY_INVITE                 clif->pPartyInvite
@@ -101,6 +104,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0187 CMSG_CHAR_PING                    ?
 018a CMSG_CLIENT_QUIT                  clif->pQuitGame
 018e CMSG_NPC_PRODUCE_MIX              clif->pProduceMix
+0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest
 0193 CMSG_CLOSE_STORAGE                clif->pCloseKafra
 0197 CMSG_ADMIN_RESET_PLAYER           clif->pResetChar
 0198 CMSG_ADMIN_SET_TILE_TYPE          clif->pGMChangeMapType
@@ -182,7 +186,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0361 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 0362 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0365 CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
-0366 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0369 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
 0438 CMSG_MAP_PING                     clif->pTickSend
 0439 CMSG_PLAYER_INVENTORY_USE         clif->pUseItem
@@ -203,13 +206,14 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0844 CMSG_NPC_CASH_SHOP_OPEN           clif->pCashShopOpen
 0846 CMSG_NPC_CASH_SHOP_REQUEST_TAB    clif->pCashShopReqTab
 084a CMSG_NPC_CASH_SHOP_CLOSE          clif->pCashShopClose
-085b CMSG_MOVE_FROM_STORAGE            ?
 0860 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0871 CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 087b CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 087f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
 088a CMSG_NAME_REQUEST                 clif->pTickSend
+0895 CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 089c CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
+08a9 CMSG_PARTY_INVITE2                clif->pPartyInvite2
 08ba CMSG_CHAR_CREATE_PIN              ?
 08c9 CMSG_NPC_CASH_SHOP_SCHEDULE       clif->pCashShopSchedule
 08d4 CMSG_CHAR_CHANGE_SLOT             ?
@@ -219,17 +223,17 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 08fc CMSG_CHAR_CHECK_RENAME            ?
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
-091a CMSG_FRIENDS_ADD_PLAYER           ?
 091e CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0926 CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 092a CMSG_ITEM_PICKUP                  clif->pTakeItem
 093d CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0943 CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
 0949 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 094a CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 094c CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
-095d CMSG_PARTY_INVITE2                ?
 0968 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0969 CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
+096a CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems
 0970 CMSG_CHAR_CREATE                  ?
 0974 CMSG_MERGE_ITEM_CANCEL            clif->cancelmergeitem
@@ -247,7 +251,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 ?    UNIMPLIMENTED                     clif->pCashShopBuy
 ?    UNIMPLIMENTED                     clif->pDull
 ?    UNIMPLIMENTED                     clif->pFeelSaveOk
-?    UNIMPLIMENTED                     clif->pFriendsListAdd
 ?    UNIMPLIMENTED                     clif->pGMRecall2
 ?    UNIMPLIMENTED                     clif->pGMRemove2
 ?    UNIMPLIMENTED                     clif->pGM_Monster_Item
@@ -258,7 +261,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 ?    UNIMPLIMENTED                     clif->pPartyBookingRegisterReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingSearchReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingUpdateReq
-?    UNIMPLIMENTED                     clif->pPartyInvite2
 ?    UNIMPLIMENTED                     clif->pPartyRecruitDeleteReq
 ?    UNIMPLIMENTED                     clif->pPartyRecruitRegisterReq
 ?    UNIMPLIMENTED                     clif->pPartyRecruitSearchReq

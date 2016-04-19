@@ -1,0 +1,1 @@
+0815 -> 0360  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir

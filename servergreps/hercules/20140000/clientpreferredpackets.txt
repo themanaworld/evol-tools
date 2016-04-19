@@ -1,1 +1,0 @@
-0366 -> 096a  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo

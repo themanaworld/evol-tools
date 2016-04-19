@@ -1,9 +1,12 @@
+0072 CMSG_MAP_SERVER_CONNECT           client: clif->pWantToConnection             server: clif->pUseSkillToId                 Change id to 022d
 007e CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pUseSkillToPosMoreInfo        Change id to 035f
 0085 CMSG_CHAT_MESSAGE                 client: clif->pGlobalMessage                server: clif->pChangeDir                    Change id to 00f3
+0089 CMSG_PLAYER_CHANGE_ACT            client: clif->pActionRequest                server: clif->pTickSend                     Change id to 0369
 009b CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pWantToConnection             Change id to 0202
+00f5 CMSG_MOVE_FROM_STORAGE            client: clif->pMoveFromKafra                server: clif->pTakeItem                     Change id to 0364
 0116 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pDropItem                     Change id to 0438
+0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 0366
+0202 CMSG_FRIENDS_ADD_PLAYER           client: clif->pFriendsListAdd               server: clif->pChangeDir                    Change id to 023b
 0819 CMSG_SEARCHSTORE_SEARCH           client: clif->pSearchStoreInfo              server: clif->pStoragePassword              Change id to 0811
 0819 CMSG_SEARCHSTORE_SEARCH           client: clif->pSearchStoreInfo              server: clif->pStoragePassword              Change id to 0811
 0838 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 0835
-0871 CMSG_PLAYER_CHANGE_ACT            client: clif->pActionRequest                server: clif->pChangeDir                    Change id to 0369
-089c CMSG_MAP_SERVER_CONNECT           client: clif->pWantToConnection             server: clif->pFriendsListAdd               Change id to 022d
