@@ -364,6 +364,9 @@ def printPackets(packetDir):
             if packet in clientPackets:
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
+                if packet1[0] != name:
+                    # skip if same id used for other packet already
+                    continue
                 if packet1[2] in serverFunctionToId:
                     data = serverFunctionToId[packet1[2]]
                     if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
