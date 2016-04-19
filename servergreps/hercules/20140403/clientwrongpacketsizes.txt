@@ -1,1 +1,0 @@
-07ec CMSG_MOVE_TO_STORAGE              clif->pSolveCharName                   8 vs    6

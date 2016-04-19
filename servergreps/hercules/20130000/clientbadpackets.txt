@@ -1,3 +1,5 @@
+007e CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pUseSkillToPosMoreInfo        Change id to 035f
+0085 CMSG_CHAT_MESSAGE                 client: clif->pGlobalMessage                server: clif->pChangeDir                    Change id to 00f3
 009b CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pWantToConnection             Change id to 0202
 0116 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pDropItem                     Change id to 0438
 0819 CMSG_SEARCHSTORE_SEARCH           client: clif->pSearchStoreInfo              server: clif->pStoragePassword              Change id to 0811

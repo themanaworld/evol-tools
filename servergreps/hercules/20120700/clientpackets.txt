@@ -6,12 +6,15 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0066 CMSG_CHAR_SELECT                  ?
 0068 CMSG_CHAR_DELETE                  ?
 007d CMSG_MAP_LOADED                   clif->pLoadEndAck
+007e CMSG_MAP_PING                     clif->pUseSkillToPosMoreInfo
+0085 CMSG_CHAT_MESSAGE                 clif->pChangeDir
+008c CMSG_CHAT_MESSAGE                 clif->pGetCharNameRequest
 0090 CMSG_NPC_TALK                     clif->pNpcClicked
 0094 CMSG_NAME_REQUEST                 clif->pMoveToKafra
 0096 CMSG_CHAT_WHISPER                 clif->pWisMessage
 0099 CMSG_ADMIN_ANNOUNCE               clif->pBroadcast
 009b CMSG_PLAYER_CHANGE_DIR            clif->pWantToConnection
-009f CMSG_ITEM_PICKUP                  clif->pUseItem
+009f CMSG_CHAT_MESSAGE                 clif->pUseItem
 00a2 CMSG_PLAYER_INVENTORY_DROP        clif->pSolveCharName
 00ab CMSG_PLAYER_UNEQUIP               clif->pUnequipItem
 00b2 CMSG_PLAYER_RESTART               clif->pRestart
@@ -41,6 +44,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 00ed CMSG_TRADE_CANCEL_REQUEST         clif->pTradeCancel
 00ef CMSG_TRADE_OK                     clif->pTradeCommit
 00f3 CMSG_CHAT_MESSAGE                 clif->pGlobalMessage
+00f7 CMSG_CLOSE_STORAGE                clif->pMoveFromKafra
 00f9 CMSG_PARTY_CREATE                 clif->pCreateParty
 00fc CMSG_PARTY_INVITE                 clif->pPartyInvite
 00ff CMSG_PARTY_INVITED                clif->pReplyPartyInvite
@@ -158,13 +162,10 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 02d8 CMSG_PLAYER_SET_EQUIPMENT_VISIBLE clif->pEquipTick
 02db CMSG_BATTLE_CHAT_MESSAGE          clif->pBattleChat
 02f1 CMSG_NPC_COMPLETE_PROGRESS_BAR    clif->pProgressbar
-035f CMSG_MAP_PING                     clif->pTickSend
 0360 CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
 0361 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 0362 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0366 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
-0368 CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
-0437 CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 0439 CMSG_PLAYER_INVENTORY_USE         clif->pUseItem
 07d7 CMSG_PARTY_SETTINGS               clif->pPartyChangeOption
 07da CMSG_PARTY_CHANGE_LEADER          clif->pPartyChangeLeader
@@ -222,7 +223,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pGuildInvite2
 ?    UNIMPLIMENTED                     clif->pItemListWindowSelected
 ?    UNIMPLIMENTED                     clif->pLessEffect
-?    UNIMPLIMENTED                     clif->pMoveFromKafra
 ?    UNIMPLIMENTED                     clif->pPartyBookingDeleteReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingRegisterReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingSearchReq
@@ -236,3 +236,5 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pSkillSelectMenu
 ?    UNIMPLIMENTED                     clif->pStoragePassword
 ?    UNIMPLIMENTED                     clif->pTaekwon
+?    UNIMPLIMENTED                     clif->pTickSend
+?    UNIMPLIMENTED                     clif->pWalkToXY

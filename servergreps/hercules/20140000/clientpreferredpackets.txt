@@ -1,4 +1,1 @@
 0366 -> 096a  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
-0368 -> 0898  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
-0437 -> 035f  CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
-07ec -> 0968  CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra

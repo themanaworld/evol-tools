@@ -1,3 +1,5 @@
+007e CMSG_MAP_PING                     clif->pUseSkillToPosMoreInfo           6 vs  105
+0085 CMSG_CHAT_MESSAGE                 clif->pChangeDir                      -1 vs   10
 009b CMSG_PLAYER_CHANGE_DIR            clif->pWantToConnection                5 vs   34
 0116 CMSG_SKILL_USE_POSITION           clif->pDropItem                       10 vs   17
 0819 CMSG_SEARCHSTORE_SEARCH           clif->pStoragePassword                -1 vs   36
