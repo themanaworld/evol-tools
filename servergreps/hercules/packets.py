@@ -8,13 +8,14 @@ import os
 import re
 import sys
 
-filt = re.compile(".+[.]c", re.IGNORECASE)
+filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
 serverpacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
 serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
 serverpacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+serverpacketre5 = re.compile("([ ]*)PACKET_ID_(?P<name>[A-Z_]+)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
 protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)")
 protocolinverre = re.compile("^// (?P<ver>[0-9]+)$")
 protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)(?P<function>[0-9a-zA-Z_>-]+)[)];")
@@ -58,6 +59,14 @@ def collectServerPackets(parentDir):
                     if len(m) > 0:
                         for str in m:
                             data = str[2]
+                            while len(data) < 4:
+                                data = "0" + data
+                            addServerPacket(data)
+                    m = serverpacketre5.findall(line)
+                    if len(m) > 0:
+                        for str in m:
+                            # here we ignoring str[1] or "name" for packet name
+                            data = str[4]
                             while len(data) < 4:
                                 data = "0" + data
                             addServerPacket(data)

@@ -19,6 +19,7 @@ function genpackets {
     preproc $1 $2 char char.c
     preproc $1 $2 login login.c
     preproc $1 $2 map clif.c
+    preproc $1 $2 login lclif.p.h
     ./packets.py $2
 }
 
