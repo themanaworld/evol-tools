@@ -359,34 +359,38 @@ def printPackets(packetDir):
 
     rev = []
     with open(packetDir + "/clientpreferredpackets.txt", "w") as w:
-        for name in outMsgNameToId:
-            packet = outMsgNameToId[name]
-            if packet in clientPackets:
-                packet1 = clientPacketsManaPlusClient[packet]
-                packet2 = clientPackets[packet]
-                if packet1[0] != name:
-                    # skip if same id used for other packet already
-                    continue
-                if packet1[2] in serverFunctionToId:
-                    data = serverFunctionToId[packet1[2]]
-                    if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
-                        rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
-                            data,
-                            packet1[0],
+        with open(packetDir + "/clientbadpackets.txt", "a+") as w2:
+            for name in outMsgNameToId:
+                packet = outMsgNameToId[name]
+                if packet in clientPackets:
+                    packet1 = clientPacketsManaPlusClient[packet]
+                    packet2 = clientPackets[packet]
+                    if packet1[0] != name:
+                        # skip if same id used for other packet already
+                        #print("{0}, {1}, {2}, {3}".format(name, packet, packet1, packet2))
+                        w2.write("{0:4} {1:33} hidden by {2}\n".format(packet,
+                            name,
                             packet1[2]))
-                else:
-                    data = "unknown"
-                    if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
-                        rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
-                            data,
-                            packet1[0],
-                            packet1[2]))
+                        continue
+                    if packet1[2] in serverFunctionToId:
+                        data = serverFunctionToId[packet1[2]]
+                        if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
+                            rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
+                                data,
+                                packet1[0],
+                                packet1[2]))
+                    else:
+                        data = "unknown"
+                        if packet1[2] == packet2[1] and serverFunctionToId[packet1[2]] != packet:
+                            rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
+                                data,
+                                packet1[0],
+                                packet1[2]))
 
-        rev.sort()
-
-        for data in rev:
-            w.write(data)
-            w.write("\n")
+            rev.sort()
+            for data in rev:
+                w.write(data)
+                w.write("\n")
 
 def showHelp():
     print("Usage: packets.py version");
