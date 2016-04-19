@@ -277,8 +277,11 @@ def printPackets(packetDir):
             clientSet.add(clientPackets[packet][1])
         for packet in clientPacketsManaPlusClient:
             if packet in clientPackets and clientPackets[packet][1] in clientSet:
-#                print "removing {0}, function: {1}".format(packet, clientPackets[packet][1])
-                clientSet.remove(clientPackets[packet][1])
+                if clientPacketsManaPlusClient[packet][2] == clientPackets[packet][1]:
+                    clientSet.remove(clientPackets[packet][1])
+                else:
+                    if clientPacketsManaPlusClient[packet][2] in clientSet:
+                        clientSet.remove(clientPacketsManaPlusClient[packet][2])
 
         allPackets = set()
         for packet in clientPackets:
@@ -288,17 +291,18 @@ def printPackets(packetDir):
 
         for packet in clientSet:
             rev.append("{0:4} {1:33} {2}".format("?", "UNIMPLIMENTED", packet))
-#            rev.append("{0:4} {1:>4} {2} UNIMPLIMENTED".format(packet, clientPackets[packet][0], clientPackets[packet][1]))
 
         for packet in allPackets:
             if packet not in clientPacketsManaPlusClient:
                 continue
             data = "{0:4} {1:33} ".format(packet, clientPacketsManaPlusClient[packet][0])
             if packet in clientPackets:
-                data = data + clientPackets[packet][1]
+                if clientPacketsManaPlusClient[packet][2] == clientPackets[packet][1]:
+                    data = data + clientPackets[packet][1]
+                    rev.append(data)
             else:
                 data = data + "?"
-            rev.append(data)
+                rev.append(data)
 
         rev.sort()
 
