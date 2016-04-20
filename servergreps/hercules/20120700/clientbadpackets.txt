@@ -8,3 +8,8 @@
 0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 0366
 0202 CMSG_FRIENDS_ADD_PLAYER           client: clif->pFriendsListAdd               server: clif->pChangeDir                    Change id to 023b
 0838 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 0835
+0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pGlobalMessage
+0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pReqOpenBuyingStore
+0819 CMSG_BUYINGSTORE_SELL             hidden by clif->pSearchStoreInfo
+0193 CMSG_SOLVE_CHAR_NAME              hidden by clif->pCloseKafra
+083c CMSG_SEARCHSTORE_CLICK            hidden by clif->pUseSkillToId
