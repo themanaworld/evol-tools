@@ -16,6 +16,7 @@ serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
     + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
 serverpacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
 serverpacketLoginre = re.compile("([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
+serverpacketLoginOutre = re.compile("packet_id([ ]*)=([ ]*)(?P<name>[\w_]+);")
 protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)")
 protocolinverre = re.compile("^// (?P<ver>[0-9]+)$")
 protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)(?P<function>[0-9a-zA-Z_>-]+)[)];")
@@ -71,7 +72,7 @@ def collectServerPackets(parentDir):
                             while len(data) < 4:
                                 data = "0" + data
                             loginPacketNameToId["PACKET_ID_" + str[1]] = data
-                            addServerPacket(data)
+                            #addServerPacket(data)
                     m = serverpacketre.findall(line)
                     if len(m) == 0:
                         m = serverpacketre3.findall(line)
@@ -97,6 +98,14 @@ def collectServerPackets(parentDir):
                             while len(data) < 4:
                                 data = "0" + data
                             addServerPacket(data)
+                    m = serverpacketLoginOutre.findall(line)
+                    if len(m) > 0:
+                        for str in m:
+                            #print str
+                            if str[2] in loginPacketNameToId:
+                                data = str[2]
+                                data = loginPacketNameToId[data]
+                                addServerPacket(data)
 
 def sortServerPackets():
     for packet in packetsSet:
