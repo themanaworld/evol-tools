@@ -1,4 +1,3 @@
-0072 CMSG_MAP_SERVER_CONNECT           client: clif->pWantToConnection             server: clif->pUseSkillToId                 Change id to 022d
 007e CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pUseSkillToPosMoreInfo        Change id to 035f
 0085 CMSG_CHAT_MESSAGE                 client: clif->pGlobalMessage                server: clif->pChangeDir                    Change id to 00f3
 0089 CMSG_PLAYER_CHANGE_ACT            client: clif->pActionRequest                server: clif->pTickSend                     Change id to 0369

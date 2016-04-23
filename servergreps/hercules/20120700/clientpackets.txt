@@ -130,6 +130,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 021d CMSG_PLAYER_LESS_EFFECTS          clif->pLessEffect
 0222 CMSG_NPC_REFINE                   clif->pWeaponRefine
 0225 CMSG_TAEKWON_RANKS                clif->pTaekwon
+022d CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0231 CMSG_HOMUNCULUS_SET_NAME          clif->pChangeHomunculusName
 0232 CMSG_HOMMERC_MOVE_TO              clif->pHomMoveTo
 0233 CMSG_HOMMERC_ATTACK               clif->pHomAttack
@@ -186,6 +187,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0844 CMSG_NPC_CASH_SHOP_OPEN           clif->pCashShopOpen
 0846 CMSG_NPC_CASH_SHOP_REQUEST_TAB    clif->pCashShopReqTab
 084a CMSG_NPC_CASH_SHOP_CLOSE          clif->pCashShopClose
+086a CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 088a CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 08ab CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 08ba CMSG_CHAR_CREATE_PIN              ?
@@ -197,6 +199,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 08fc CMSG_CHAR_CHECK_RENAME            ?
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
+094b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems
 0970 CMSG_CHAR_CREATE                  ?
 0974 CMSG_MERGE_ITEM_CANCEL            clif->cancelmergeitem
@@ -212,6 +215,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 09d8 CMSG_NPC_MARKET_CLOSE             ?
 0a01 CMSG_SHORTCUTS_ROW_SHIFT          ?
 ?    UNIMPLIMENTED                     clif->pCashShopBuy
+?    UNIMPLIMENTED                     clif->pChangeDir
 ?    UNIMPLIMENTED                     clif->pDull
 ?    UNIMPLIMENTED                     clif->pEquipItem
 ?    UNIMPLIMENTED                     clif->pGMRecall2
@@ -236,4 +240,3 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 ?    UNIMPLIMENTED                     clif->pStoragePassword
 ?    UNIMPLIMENTED                     clif->pTickSend
 ?    UNIMPLIMENTED                     clif->pWalkToXY
-?    UNIMPLIMENTED                     clif->pWantToConnection

@@ -1,4 +1,3 @@
-0072 CMSG_MAP_SERVER_CONNECT           clif->pUseSkillToId                   19 vs   22
 007e CMSG_MAP_PING                     clif->pUseSkillToPosMoreInfo           6 vs  105
 0085 CMSG_CHAT_MESSAGE                 clif->pChangeDir                      -1 vs   10
 0089 CMSG_PLAYER_CHANGE_ACT            clif->pTickSend                        7 vs   11

@@ -214,6 +214,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 087b CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 087f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
 0882 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
+0888 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0889 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 088a CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 088e CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
@@ -236,11 +237,13 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
 0918 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0919 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 091e CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 091f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
 0920 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 092a CMSG_ITEM_PICKUP                  clif->pTakeItem
 092d CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
+092f CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0933 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0934 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 093d CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
@@ -255,6 +258,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 094c CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
 0950 CMSG_MAP_PING                     clif->pTickSend
 0958 CMSG_ITEM_PICKUP                  clif->pTakeItem
+095b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 095d CMSG_PARTY_INVITE2                clif->pPartyInvite2
 0965 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 0966 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection

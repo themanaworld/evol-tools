@@ -196,6 +196,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0871 CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 087b CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 087f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
+0888 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0889 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0895 CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 0898 CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
@@ -211,14 +212,18 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
 0918 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0919 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 091e CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0926 CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 092a CMSG_ITEM_PICKUP                  clif->pTakeItem
+092f CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 093d CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0943 CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
 0949 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 094a CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
+094b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 094c CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
+095b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0968 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0969 CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
 096a CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
