@@ -1,33 +1,14 @@
 #!/bin/bash
 
-cd clientdata
-rm -rf public
-mkdir public
-mkdir shared
-echo >shared/error.log
-echo ${CI_BUILD_ID} >shared/buildid.log
+source ./tools/gitlab-ci/init.sh
 
-function gitclone {
-    git clone $*
-    if [ "$?" != 0 ]; then
-        sleep 1s
-        git clone $*
-        if [ "$?" != 0 ]; then
-            sleep 3s
-            git clone $*
-        fi
-    fi
-}
-
-cd ..
-ln -s clientdata client-data
+clientdata_init
 
 cd tools/testxml
 
 ./xsdcheck.sh
 export RES=$(cat errors.txt)
 if [[ -n "${RES}" ]]; then
-    echo "xml check failed"
     echo "xml check failed" >../../clientdata/shared/error.log
     echo ${RES} >>../../clientdata/shared/error.log
     cat ../../clientdata/shared/error.log

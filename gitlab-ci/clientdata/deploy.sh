@@ -1,23 +1,11 @@
 #!/bin/bash
 
-cd clientdata
+source ./tools/gitlab-ci/init.sh
+
+clientdata_init
+
 rm -rf public
 mkdir public
-mkdir shared
-echo >shared/error.log
-echo ${CI_BUILD_ID} >shared/buildid.log
-
-function gitclone {
-    git clone $*
-    if [ "$?" != 0 ]; then
-        sleep 1s
-        git clone $*
-        if [ "$?" != 0 ]; then
-            sleep 3s
-            git clone $*
-        fi
-    fi
-}
 
 cd ..
 ln -s clientdata client-data
