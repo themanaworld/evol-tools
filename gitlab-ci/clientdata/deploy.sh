@@ -25,29 +25,8 @@ ln -s clientdata client-data
 rm -rf music
 gitclone https://gitlab.com/evol/evol-music.git music
 
-cd tools/testxml
+cd tools/update
 
-./xsdcheck.sh
-export RES=$(cat errors.txt)
-if [[ -n "${RES}" ]]; then
-    echo "xml check failed"
-    echo "xml check failed" >../../clientdata/shared/error.log
-    echo ${RES} >>../../clientdata/shared/error.log
-    cat ../../clientdata/shared/error.log
-    exit 1
-fi
-
-echo >../../clientdata/shared/error.log
-./testxml.py silent >../../clientdata/shared/error.log
-if [ "$?" != 0 ]; then
-    echo "test xml error"
-    cat ../../clientdata/shared/error.log
-    exit 1
-fi
-
-echo >../../clientdata/shared/error.log
-
-cd ../update
 ./createnew.sh
 ./create_music.sh
 
