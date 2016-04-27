@@ -16,6 +16,9 @@ comaSplit = re.compile(",")
 class Session:
     pass
 
+class Status:
+    exitCode = 0
+
 def walkFiles(parentDir, session, filt):
     files = os.listdir(parentDir) 
     for file1 in files:
@@ -105,7 +108,10 @@ def loadHookedList(name):
 def checkMissingFunctions(session):
     for f in session.funcList:
         if f not in session.decls:
-            print "Missing function {0} and {1}".format(f, session.funcList[f])
+            # ignore false positive
+            if f != "login_parse_ping":
+                print "Missing function {0} and {1}".format(f, session.funcList[f])
+                Status.exitCode = 1
 
 def decodeTypes(funcs):
     arr = dict()
@@ -157,7 +163,9 @@ def compareFuncs(session):
         pfunc = session.plugDecls[func]
         for func2 in session.plugToFunc[func]:
             if func2 not in session.funcDecls:
-                print "Error: function {0} not found".format(func2)
+                if func2 != "login_parse_ping":
+                    print "Error: function {0} not found".format(func2)
+                    Status.exitCode = 1
                 continue
             ffunc = session.funcDecls[func2]
 #            print "{0} - {1}".format(func, func2)
@@ -166,6 +174,7 @@ def compareFuncs(session):
             if func[-5:] == "_post":
                 if pfunc[0][1] != "-":
                     print "Error: missing first retVal parameter in function {0}.".format(func)
+                    Status.exitCode = 1
                 else:
                     pfunc = pfunc[1:]
             sz1 = len(pfunc)
@@ -173,6 +182,7 @@ def compareFuncs(session):
 #            print "{0} - {1}".format(sz1, sz2)
             if sz1 != sz2:
                 print "Error: wrong number of parameters in function {0}.".format(func)
+                Status.exitCode = 1
                 continue
             for idx in range(0, sz1):
                 pf = pfunc[idx][1]
@@ -185,6 +195,7 @@ def compareFuncs(session):
 #                print ff
                 if pf != ff:
                     print "Error: wrong parameters in function {0}.".format(func)
+                    Status.exitCode = 1
 ##                    print "{0} vs {1}".format(pf, ff);
                     break
 
@@ -219,3 +230,5 @@ def processServer(name1, name2):
 processServer("login", "elogin")
 processServer("char", "echar")
 processServer("map", "emap")
+
+exit(Status.exitCode)
