@@ -5,8 +5,8 @@ function preproc {
     -DCOMMON_SOCKET_H \
     "-DWFIFOW(fd,pos)=WFIFOW(fd,pos)" \
     "-DWBUFW(p,pos)=WBUFW(p,pos)" \
-    -I../../../server-code/src -I../../../server-code/3rdparty \
-    ../../../server-code/src/$3/$4 \
+    -I../links/hercules/src -I../links/hercules/3rdparty \
+    ../links/hercules/src/$3/$4 \
     $1/src/$4
 }
 
@@ -14,7 +14,7 @@ function genpackets {
     if [ ! -d "$1/src" ]; then
         mkdir -p "$1/src"
     fi
-    cpp -DPACKETVER=$2 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../../../server-code/src/map/packets.h $1/src/packets.h
+    cpp -DPACKETVER=$2 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/hercules/src/map/packets.h $1/src/packets.h
     preproc $1 $2 map packets_struct.h
     preproc $1 $2 char char.c
     preproc $1 $2 login login.c
