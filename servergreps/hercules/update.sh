@@ -1,39 +1,39 @@
 #!/bin/bash
 
 function preproc {
-    cpp -DPACKETVER=$2 \
+    cpp -DPACKETVER=$3 \
     -DCOMMON_SOCKET_H \
     "-DWFIFOW(fd,pos)=WFIFOW(fd,pos)" \
     "-DWBUFW(p,pos)=WBUFW(p,pos)" \
-    -I../links/hercules/src -I../links/hercules/3rdparty \
-    ../links/hercules/src/$3/$4 \
-    $1/src/$4
+    -I../links/$1/src -I../links/$1/3rdparty \
+    ../links/$1/src/$4/$5 \
+    $2/src/$5
 }
 
 function genpackets {
-    if [ ! -d "$1/src" ]; then
-        mkdir -p "$1/src"
+    if [ ! -d "$2/src" ]; then
+        mkdir -p "$2/src"
     fi
-    cpp -DPACKETVER=$2 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/hercules/src/map/packets.h $1/src/packets.h
-    preproc $1 $2 map packets_struct.h
-    preproc $1 $2 char char.c
-    preproc $1 $2 login login.c
-    preproc $1 $2 map clif.c
-    preproc $1 $2 login lclif.p.h
-    preproc $1 $2 login lclif.c
-    ./packets.py $2
+    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/hercules/src/map/packets.h $2/src/packets.h
+    preproc $1 $2 $3 map packets_struct.h
+    preproc $1 $2 $3 char char.c
+    preproc $1 $2 $3 login login.c
+    preproc $1 $2 $3 map clif.c
+    preproc $1 $2 $3 login lclif.p.h
+    preproc $1 $2 $3 login lclif.c
+    ./packets.py $3
 }
 
-genpackets 00000000 0
-genpackets 00000007 7
-genpackets 20120700 20120700
-genpackets 20130000 20130000
-genpackets 20130221 20130221
-genpackets 20140000 20140000
-genpackets 20140402 20140402
-genpackets 20141016 20141016
-genpackets 20141022 20141022
-genpackets 20150000 20150000
-genpackets 20150226 20150226
-genpackets 20150513 20150513
-genpackets 20150805 20150805
+genpackets hercules 00000000 0
+genpackets hercules 00000007 7
+genpackets hercules 20120700 20120700
+genpackets hercules 20130000 20130000
+genpackets hercules 20130221 20130221
+genpackets hercules 20140000 20140000
+genpackets hercules 20140402 20140402
+genpackets hercules 20141016 20141016
+genpackets hercules 20141022 20141022
+genpackets hercules 20150000 20150000
+genpackets hercules 20150226 20150226
+genpackets hercules 20150513 20150513
+genpackets hercules 20150805 20150805
