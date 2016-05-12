@@ -1,0 +1,6 @@
+023b CMSG_FRIENDS_ADD_PLAYER           client: clif->pFriendsListAdd               server: clif->pReqOpenBuyingStore           Change id to 07ec
+0360 CMSG_BUYINGSTORE_OPEN             client: clif->pReqClickBuyingStore          server: clif->pWantToConnection             Change id to 0436
+0437 CMSG_PLAYER_CHANGE_DEST           client: clif->pWalkToXY                     server: clif->pDropItem                     Change id to 0363
+07ec CMSG_MOVE_TO_STORAGE              client: clif->pMoveToKafra                  server: clif->pFriendsListAdd               Change id to 088b
+0811 CMSG_BUYINGSTORE_SELL             client: clif->pReqTradeBuyingStore          server: clif->pPartyBookingRegisterReq      Change id to 0815
+0815 CMSG_BUYINGSTORE_CREATE           client: clif->pReqOpenBuyingStore           server: clif->pReqTradeBuyingStore          Change id to 023b

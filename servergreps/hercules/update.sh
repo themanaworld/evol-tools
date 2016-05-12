@@ -14,7 +14,7 @@ function genpackets {
     if [ ! -d "$2/src" ]; then
         mkdir -p "$2/src"
     fi
-    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/hercules/src/map/packets.h $2/src/packets.h
+    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/$1/src/map/packets.h $2/src/packets.h
     preproc $1 $2 $3 map packets_struct.h
     preproc $1 $2 $3 char char.c
     preproc $1 $2 $3 login login.c
@@ -37,3 +37,9 @@ genpackets hercules 20150000 20150000
 genpackets hercules 20150226 20150226
 genpackets hercules 20150513 20150513
 genpackets hercules 20150805 20150805
+genpackets ragemu 20150916 20150916
+genpackets ragemu 20151001 20151001
+genpackets ragemu 20151029 20151029
+genpackets ragemu 20151104 20151104
+genpackets ragemu 20151216 20151216
+genpackets ragemu 20160316 20160316

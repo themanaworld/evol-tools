@@ -1,0 +1,14 @@
+0202 -> 022d  CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
+035f -> 085b  CMSG_MAP_PING                     clif->pTickSend
+0364 -> 0864  CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
+0366 -> 0874  CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
+0368 -> 089e  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
+0369 -> 089d  CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
+0438 -> 0865  CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
+07e4 -> 08a9  CMSG_ITEM_PICKUP                  clif->pTakeItem
+0802 -> 086e  CMSG_PARTY_INVITE2                clif->pPartyInvite2
+0817 -> 083c  CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
+0819 -> 0944  CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0835 -> 0960  CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
+0838 -> 0436  CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
+096a -> 088b  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest

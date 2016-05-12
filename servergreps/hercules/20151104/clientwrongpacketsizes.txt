@@ -1,0 +1,5 @@
+023b CMSG_FRIENDS_ADD_PLAYER           clif->pReqOpenBuyingStore             26 vs   -1
+0360 CMSG_BUYINGSTORE_OPEN             clif->pWantToConnection                6 vs   19
+0437 CMSG_PLAYER_CHANGE_DEST           clif->pDropItem                        5 vs    6
+07ec CMSG_MOVE_TO_STORAGE              clif->pFriendsListAdd                  8 vs   26
+0811 CMSG_BUYINGSTORE_SELL             clif->pPartyBookingRegisterReq        -1 vs   18
