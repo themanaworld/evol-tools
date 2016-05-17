@@ -1,4 +1,6 @@
 00f5 CMSG_MOVE_FROM_STORAGE            clif->pTakeItem                        8 vs   11
 0116 CMSG_MAP_PING                     clif->pDropItem                        9 vs   17
 0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23
+0362 CMSG_PLAYER_CHANGE_DIR            clif->pDropItem                        5 vs    6
+07ec CMSG_MAP_PING                     clif->pMoveToKafra                     6 vs    8
 0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick    2 vs   12

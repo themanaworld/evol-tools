@@ -29,6 +29,8 @@ genpackets hercules 00000007 7
 genpackets hercules 20120700 20120700
 genpackets hercules 20130000 20130000
 genpackets hercules 20130221 20130221
+genpackets hercules 20131223 20131223
+genpackets hercules 20131230 20131230
 genpackets hercules 20140000 20140000
 genpackets hercules 20140402 20140402
 genpackets hercules 20141016 20141016

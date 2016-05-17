@@ -1,14 +1,12 @@
-007e CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pUseSkillToPosMoreInfo        Change id to 035f
-0085 CMSG_CHAT_MESSAGE                 client: clif->pGlobalMessage                server: clif->pChangeDir                    Change id to 00f3
-0089 CMSG_PLAYER_CHANGE_ACT            client: clif->pActionRequest                server: clif->pTickSend                     Change id to 0369
-009b CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pWantToConnection             Change id to 0202
 00f5 CMSG_MOVE_FROM_STORAGE            client: clif->pMoveFromKafra                server: clif->pTakeItem                     Change id to 0364
-0116 CMSG_SKILL_USE_POSITION           client: clif->pUseSkillToPos                server: clif->pDropItem                     Change id to 0438
+0116 CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pDropItem                     Change id to 035f
 0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 0366
-0202 CMSG_FRIENDS_ADD_PLAYER           client: clif->pFriendsListAdd               server: clif->pChangeDir                    Change id to 023b
 0838 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 0835
-0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pGlobalMessage
+0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pChangeDir
 0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pReqOpenBuyingStore
+0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
+0116 CMSG_SKILL_USE_POSITION           hidden by clif->pTickSend
 0819 CMSG_BUYINGSTORE_SELL             hidden by clif->pSearchStoreInfo
 0193 CMSG_SOLVE_CHAR_NAME              hidden by clif->pCloseKafra
+0202 CMSG_FRIENDS_ADD_PLAYER           hidden by clif->pChangeDir
 083c CMSG_SEARCHSTORE_CLICK            hidden by clif->pUseSkillToId

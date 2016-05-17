@@ -10,6 +10,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0064 CMSG_LOGIN_REGISTER               lclif->p->parse_CA_LOGIN
 0065 CMSG_CHAR_SERVER_CONNECT          ?
 0066 CMSG_CHAR_SELECT                  ?
+0067 CMSG_CHAR_CREATE                  ?
 0068 CMSG_CHAR_DELETE                  ?
 0072 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 007d CMSG_MAP_LOADED                   clif->pLoadEndAck
@@ -195,7 +196,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 0907 CMSG_PLAYER_FAVORITE_ITEM         ?
 090a CMSG_BATTLE_CHECK_STATE           ?
 096e CMSG_MERGE_ITEM_ACK               clif->ackmergeitems
-0970 CMSG_CHAR_CREATE                  ?
 0974 CMSG_MERGE_ITEM_CANCEL            clif->cancelmergeitem
 097c CMSG_REQUEST_RANKS                ?
 0998 CMSG_PLAYER_EQUIP                 ?

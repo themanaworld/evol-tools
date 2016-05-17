@@ -1,9 +1,0 @@
-022d CMSG_MAP_SERVER_CONNECT           clif->pChangeDir                      19 vs    5
-023b CMSG_FRIENDS_ADD_PLAYER           clif->pReqOpenBuyingStore             26 vs   -1
-0360 CMSG_BUYINGSTORE_OPEN             clif->pWantToConnection                6 vs   19
-0361 CMSG_HOMUNCULUS_MENU              clif->pReqClickBuyingStore             5 vs    6
-0362 CMSG_PLAYER_INVENTORY_DROP        clif->pHomMenu                         6 vs    5
-0437 CMSG_PLAYER_CHANGE_DEST           clif->pDropItem                        5 vs    6
-07ec CMSG_MOVE_TO_STORAGE              clif->pFriendsListAdd                  8 vs   26
-0811 CMSG_BUYINGSTORE_SELL             clif->pPartyBookingRegisterReq        -1 vs   18
-083c CMSG_SKILL_USE_BEING              clif->pReqCloseBuyingStore            10 vs    2
