@@ -1,0 +1,5 @@
+0360 -> 0895  CMSG_BUYINGSTORE_OPEN             clif->pReqClickBuyingStore
+0361 -> 0958  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0362 -> 095f  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
+0815 -> 0936  CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
+083c -> 0947  CMSG_SKILL_USE_BEING              clif->pUseSkillToId

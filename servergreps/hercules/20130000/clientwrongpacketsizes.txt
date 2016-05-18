@@ -1,5 +1,0 @@
-00f5 CMSG_MOVE_FROM_STORAGE            clif->pTakeItem                        8 vs   11
-0116 CMSG_MAP_PING                     clif->pDropItem                        9 vs   17
-0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23
-0819 CMSG_SEARCHSTORE_SEARCH           clif->pStoragePassword                -1 vs   36
-0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick    2 vs   12

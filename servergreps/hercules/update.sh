@@ -26,9 +26,20 @@ function genpackets {
 
 genpackets hercules 00000000 0
 genpackets hercules 00000007 7
-genpackets hercules 20120700 20120700
-genpackets hercules 20130000 20130000
 genpackets hercules 20130221 20130221
+genpackets hercules 20130320 20130320
+genpackets hercules 20130515 20130515
+genpackets hercules 20130522 20130522
+genpackets hercules 20130529 20130529
+genpackets hercules 20130605 20130605
+genpackets hercules 20130612 20130612
+genpackets hercules 20130618 20130618
+genpackets hercules 20130626 20130626
+genpackets hercules 20130703 20130703
+genpackets hercules 20130724 20130724
+genpackets hercules 20130807 20130807
+genpackets hercules 20130814 20130814
+genpackets hercules 20131218 20131218
 genpackets hercules 20131223 20131223
 genpackets hercules 20131230 20131230
 genpackets hercules 20140000 20140000

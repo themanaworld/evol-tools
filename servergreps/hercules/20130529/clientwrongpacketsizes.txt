@@ -1,0 +1,3 @@
+0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23
+0360 CMSG_BUYINGSTORE_OPEN             clif->pWalkToXY                        6 vs    5
+0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick    2 vs   12

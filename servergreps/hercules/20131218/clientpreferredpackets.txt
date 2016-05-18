@@ -1,0 +1,1 @@
+0361 -> 0811  CMSG_HOMUNCULUS_MENU              clif->pHomMenu

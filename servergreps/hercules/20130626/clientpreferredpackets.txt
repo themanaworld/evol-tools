@@ -1,0 +1,3 @@
+0361 -> 0960  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0362 -> 0952  CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
+088a -> 096a  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest

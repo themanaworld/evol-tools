@@ -1,0 +1,5 @@
+0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23
+0202 CMSG_PLAYER_CHANGE_DIR            clif->pReqClickBuyingStore             5 vs    6
+0360 CMSG_BUYINGSTORE_OPEN             clif->pFriendsListAdd                  6 vs   26
+07ec CMSG_MAP_PING                     clif->pMoveToKafra                     6 vs    8
+0838 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoListItemClick    2 vs   12
