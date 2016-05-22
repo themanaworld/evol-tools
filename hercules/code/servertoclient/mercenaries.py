@@ -24,6 +24,8 @@ def convertMercenaries():
             rows = fieldsSplit.split(line)
             if len(rows) < 9:
                 continue
-            mercenaryId = rows[0]
-            data = data + tpl.format(mercenaryId, mercenarySprite)
+            data = data + tpl.format(
+                id = rows[0],
+                sprite = mercenarySprite,
+                name = rows[2])
     saveFile(destDir + "mercenaries.xml", mercenaries.format(data))

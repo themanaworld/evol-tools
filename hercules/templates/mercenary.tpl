@@ -1,3 +1,3 @@
-    <mercenary id="{0}">
-        {1}
+    <mercenary id="{id}" name="{name}">
+        {sprite}
     </mercenary>
