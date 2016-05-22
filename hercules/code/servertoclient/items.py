@@ -45,7 +45,7 @@ def convertItems():
             weight = rows[6]
             atk = rows[7]
             matk = rows[8]
-            defence = rows[9]
+            defense = rows[9]
             attackRange = rows[10]
             slots = rows[11]
             equipJobs = rows[12]
@@ -73,7 +73,7 @@ def convertItems():
 
             statStr = prepStat(atk, "attack")
             statStr = statStr + prepStat(matk, "mattack")
-            statStr = statStr + prepStat(defence, "defence")
+            statStr = statStr + prepStat(defense, "defense")
             statStr = statStr + prepStat(weight, "weight")
             statStr = statStr + prepStat(attackRange, "range")
             statStr = statStr + prepStat(delay, "speed")
