@@ -24,6 +24,8 @@ def convertHomunculuses():
             rows = fieldsSplit.split(line)
             if len(rows) < 9:
                 continue
-            homunculusId = rows[0]
-            data = data + tpl.format(homunculusId, homunculusSprite)
+            data = data + tpl.format(
+                id = rows[0],
+                sprite = homunculusSprite,
+                name = rows[2])
     saveFile(destDir + "homunculuses.xml", homunculuses.format(data))
