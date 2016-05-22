@@ -281,13 +281,13 @@ def extractSpriteAnimData(act, spr, actIndex, direction):
 
 def extractSpriteDataAll(act, spr, actIndex, name):
     data = extractSpriteAnimData(act, spr, actIndex, "down")
-    data = data + extractSpriteAnimData(act, spr, actIndex + 1, "leftdown")
+    data = data + extractSpriteAnimData(act, spr, actIndex + 1, "downleft")
     data = data + extractSpriteAnimData(act, spr, actIndex + 2, "left")
-    data = data + extractSpriteAnimData(act, spr, actIndex + 3, "leftup")
+    data = data + extractSpriteAnimData(act, spr, actIndex + 3, "upleft")
     data = data + extractSpriteAnimData(act, spr, actIndex + 4, "up")
-    data = data + extractSpriteAnimData(act, spr, actIndex + 5, "rightup")
+    data = data + extractSpriteAnimData(act, spr, actIndex + 5, "upright")
     data = data + extractSpriteAnimData(act, spr, actIndex + 6, "right")
-    data = data + extractSpriteAnimData(act, spr, actIndex + 6, "rightdown")
+    data = data + extractSpriteAnimData(act, spr, actIndex + 6, "downright")
     return data
 
 def saveSpriteXml(act, spr, spriteDir, spriteName):
