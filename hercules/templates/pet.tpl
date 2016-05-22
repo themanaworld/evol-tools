@@ -1,3 +1,3 @@
-    <pet id="{0}">
-        {1}
+    <pet id="{id}" name="{name}">
+        {sprite}
     </pet>

@@ -24,6 +24,8 @@ def convertPets():
             rows = fieldsSplit.split(line)
             if len(rows) < 9:
                 continue
-            petId = rows[0]
-            data = data + tpl.format(petId, petSprite)
+            data = data + tpl.format(
+                id = rows[0],
+                sprite = petSprite,
+                name = rows[2])
     saveFile(destDir + "pets.xml", pets.format(data))
