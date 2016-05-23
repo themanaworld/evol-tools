@@ -16,6 +16,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0085 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0089 CMSG_MAP_PING                     clif->pTickSend
 0090 CMSG_NPC_TALK                     clif->pNpcClicked
+0094 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0096 CMSG_CHAT_WHISPER                 clif->pWisMessage
 0099 CMSG_ADMIN_ANNOUNCE               clif->pBroadcast
 00ab CMSG_PLAYER_UNEQUIP               clif->pUnequipItem
@@ -216,6 +217,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0867 CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
 0868 CMSG_SKILL_USE_BEING              clif->pUseSkillToId
 0869 CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
+086c CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 086e CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0871 CMSG_PLAYER_CHANGE_ACT            clif->pActionRequest
 0873 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
@@ -236,6 +238,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 088c CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 088e CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0890 CMSG_PARTY_INVITE2                clif->pPartyInvite2
+0893 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0895 CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 0896 CMSG_PARTY_INVITE2                clif->pPartyInvite2
 0897 CMSG_MAP_PING                     clif->pTickSend
@@ -245,7 +248,9 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 089c CMSG_ITEM_PICKUP                  clif->pTakeItem
 089e CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
 089f CMSG_ITEM_PICKUP                  clif->pTakeItem
+08a0 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 08a1 CMSG_ITEM_PICKUP                  clif->pTakeItem
+08a3 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 08a6 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 08a7 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 08a8 CMSG_FRIENDS_ADD_PLAYER           clif->pFriendsListAdd
@@ -268,6 +273,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 091e CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 091f CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
 0920 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+0921 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0924 CMSG_PARTY_INVITE2                clif->pPartyInvite2
 0925 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 092a CMSG_ITEM_PICKUP                  clif->pTakeItem
@@ -295,12 +301,14 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 094c CMSG_BUYINGSTORE_CLOSE            clif->pReqCloseBuyingStore
 094d CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 094e CMSG_ITEM_PICKUP                  clif->pTakeItem
+094f CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0950 CMSG_MAP_PING                     clif->pTickSend
 0958 CMSG_ITEM_PICKUP                  clif->pTakeItem
 095a CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 095b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 095d CMSG_PARTY_INVITE2                clif->pPartyInvite2
 0960 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
+0962 CMSG_SKILL_USE_POSITION_MORE      clif->pUseSkillToPosMoreInfo
 0965 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 0966 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 0967 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir

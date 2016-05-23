@@ -1,6 +1,4 @@
-0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 085a
 0819 CMSG_SEARCHSTORE_SEARCH           client: clif->pSearchStoreInfo              server: clif->pStoragePassword              Change id to 094e
-0838 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 092e
 0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pChangeDir
 0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pReqOpenBuyingStore
 0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend

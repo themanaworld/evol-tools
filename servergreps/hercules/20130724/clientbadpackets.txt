@@ -1,11 +1,7 @@
-0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 0366
 0202 CMSG_PLAYER_CHANGE_DIR            client: clif->pChangeDir                    server: clif->pReqClickBuyingStore          Change id to 0930
 0360 CMSG_BUYINGSTORE_OPEN             client: clif->pReqClickBuyingStore          server: clif->pFriendsListAdd               Change id to 0202
-07ec CMSG_MAP_PING                     client: clif->pTickSend                     server: clif->pMoveToKafra                  Change id to 035f
-0838 CMSG_SEARCHSTORE_NEXT_PAGE        client: clif->pSearchStoreInfoNextPage      server: clif->pSearchStoreInfoListItemClick Change id to 0835
 0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pChangeDir
 0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pReqOpenBuyingStore
-07ec CMSG_MOVE_TO_STORAGE              hidden by clif->pTickSend
 0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
 0116 CMSG_SKILL_USE_POSITION           hidden by clif->pDropItem
 0819 CMSG_BUYINGSTORE_SELL             hidden by clif->pSearchStoreInfo
