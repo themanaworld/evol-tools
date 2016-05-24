@@ -1,0 +1,1 @@
+Server code error: function clif->pReqOpenBuyingStore hidden in server code

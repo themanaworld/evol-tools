@@ -349,12 +349,17 @@ def printPackets(packetDir):
                 packet2 = clientPackets[packet]
                 if packet1[2] in serverFunctionToId:
                     data = serverFunctionToId[packet1[2]]
-                    if packet1[2] != packet2[1]:
-                        rev.append("{0:4} {1:33} client: {2:35} server: {3:35} Change id to {4}".format(packet,
-                            packet1[0],
-                            packet1[2],
-                            packet2[1],
-                            data))
+                    data2 = serverFunctionToId[packet2[1]]
+                    if data2 == packet:
+                        if packet1[2] != packet2[1]:
+                            rev.append("{0:4} {1:33} client: {2:35} server: {3:35} Change id to {4}".format(packet,
+                                packet1[0],
+                                packet1[2],
+                                packet2[1],
+                                data))
+                    else:
+                        # here hidden or previous packet
+                        pass
                 else:
                     data = "unknown"
                     if packet1[2] != packet2[1]:
@@ -399,11 +404,33 @@ def printPackets(packetDir):
                                 data,
                                 packet1[0],
                                 packet1[2]))
-
             rev.sort()
             for data in rev:
                 w.write(data)
                 w.write("\n")
+
+    with open(packetDir + "/herculesissues.txt", "w") as w:
+            for name in serverFunctionToId:
+                packet = serverFunctionToId[name]
+                if name != clientPackets[packet][1]:
+                    found = False
+                    oldId = ""
+                    for packet in clientPackets:
+                        if name == clientPackets[packet][1]:
+                            found = True
+                            if oldId == "":
+                                oldId = str(packet)
+                            else:
+                                oldId = oldId + "," + str(packet)
+
+                    if found == False:
+                        w.write("Server code error: function {0} hidden in server code\n".format(
+                            name))
+                    else:
+                        w.write("Server code warning: function {0} hidden in server code but can be used older packets definition {1}\n".format(
+                            name,
+                            oldId))
+
 
 def showHelp():
     print("Usage: packets.py version");

@@ -1,4 +1,3 @@
-0113 CMSG_ITEM_PICKUP                  client: clif->pTakeItem                     server: clif->pUseSkillToPos                Change id to 0815
 0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pTakeItem
 0817 CMSG_BUYINGSTORE_OPEN             hidden by clif->pTickSend
 0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
