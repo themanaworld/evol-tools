@@ -1,1 +1,0 @@
-0360 CMSG_BUYINGSTORE_OPEN             clif->pWalkToXY                        6 vs    5

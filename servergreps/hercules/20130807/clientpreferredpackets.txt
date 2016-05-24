@@ -1,1 +1,0 @@
-088a -> 096a  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest

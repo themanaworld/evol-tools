@@ -1,0 +1,1 @@
+0113 CMSG_ITEM_PICKUP                  clif->pUseSkillToPos                   9 vs   25

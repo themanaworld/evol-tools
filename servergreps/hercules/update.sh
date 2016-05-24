@@ -26,7 +26,23 @@ function genpackets {
 
 genpackets hercules 00000000 0
 genpackets hercules 00000007 7
-genpackets hercules 20130221 20130221
+genpackets hercules 20100105 20100105
+genpackets hercules 20100303 20100303
+genpackets hercules 20100420 20100420
+genpackets hercules 20100608 20100608
+genpackets hercules 20100803 20100803
+genpackets hercules 20101124 20101124
+genpackets hercules 20110718 20110718
+genpackets hercules 20111005 20111005
+genpackets hercules 20111102 20111102
+genpackets hercules 20120307 20120307
+genpackets hercules 20120410 20120410
+genpackets hercules 20120418 20120418
+genpackets hercules 20120604 20120604
+genpackets hercules 20120702 20120702
+# bug in 20120710. it hide one packet
+genpackets hercules 20120710 20120710
+genpackets hercules 20120716 20120716
 genpackets hercules 20130320 20130320
 genpackets hercules 20130515 20130515
 genpackets hercules 20130522 20130522

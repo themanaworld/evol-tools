@@ -1,5 +1,7 @@
-Useless packet 08ba.
+Useless packet 083e.
+Useless packet 083a.
 Useless packet 0970.
+Useless packet 08ba.
 Useless packet 08fc.
 Useless packet 028f.
 Useless packet 0066.
@@ -9,3 +11,4 @@ Useless packet 0061.
 Useless packet 0068.
 Useless packet 0187.
 Useless packet 08d4.
+Useless packet 0238.

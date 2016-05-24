@@ -1,2 +1,0 @@
-0202 CMSG_PLAYER_CHANGE_DIR            clif->pReqClickBuyingStore             5 vs    6
-0360 CMSG_BUYINGSTORE_OPEN             clif->pFriendsListAdd                  6 vs   26

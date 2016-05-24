@@ -1,0 +1,9 @@
+0113 CMSG_ITEM_PICKUP                  client: clif->pTakeItem                     server: clif->pUseSkillToPos                Change id to 00f5
+0190 CMSG_SKILL_USE_POSITION_MORE      client: clif->pUseSkillToPosMoreInfo        server: clif->pActionRequest                Change id to 007e
+0085 CMSG_PLAYER_CHANGE_DEST           hidden by clif->pChangeDir
+0094 CMSG_NAME_REQUEST                 hidden by clif->pMoveToKafra
+0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
+0116 CMSG_SKILL_USE_POSITION           hidden by clif->pDropItem
+0113 CMSG_SKILL_USE_BEING              hidden by clif->pTakeItem
+0193 CMSG_SOLVE_CHAR_NAME              hidden by clif->pCloseKafra
+00f5 CMSG_MOVE_FROM_STORAGE            hidden by clif->pTakeItem

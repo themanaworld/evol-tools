@@ -1,1 +1,0 @@
-0819 CMSG_SEARCHSTORE_SEARCH           clif->pStoragePassword                -1 vs   36

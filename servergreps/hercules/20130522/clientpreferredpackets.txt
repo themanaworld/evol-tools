@@ -1,4 +1,0 @@
-0361 -> 0926  CMSG_HOMUNCULUS_MENU              clif->pHomMenu
-0815 -> 0874  CMSG_BUYINGSTORE_CREATE           clif->pReqOpenBuyingStore
-083c -> 095c  CMSG_SKILL_USE_BEING              clif->pUseSkillToId
-088a -> 08a6  CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
