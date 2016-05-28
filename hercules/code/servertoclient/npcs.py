@@ -30,5 +30,7 @@ def convertNpcsNonFree(idtofile):
 
     for key in getNpcIds(idtofile):
         npcSprite = "<sprite>sprites/{0}.xml</sprite>".format(idtofile[key])
-        data = data + tpl.format(key, idtofile[key], npcSprite)
+        data = data + tpl.format(
+            id = key,
+            sprite = npcSprite)
     saveFile(destDir + "npcs.xml", npcs.format(data))
