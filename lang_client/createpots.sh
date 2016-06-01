@@ -4,6 +4,10 @@ function its {
     itstool -o ../tools/lang_client/pot/$1.pot $1.xml
 }
 
+function its2 {
+    itstool -o ../tools/lang_client/pot/$1.pot -i ../tools/lang_client/its/$1.xml $1.xml
+}
+
 DIR=`pwd`
 cd ../../client-data
 
@@ -17,6 +21,7 @@ its quests
 its pets
 its npcs
 its deadmessages
+its2 itemfields
 
 cd $DIR
 
