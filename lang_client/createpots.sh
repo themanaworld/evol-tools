@@ -11,17 +11,22 @@ function its2 {
 DIR=`pwd`
 cd ../../client-data
 
-
-its items
-its skills
-its emotes
-its itemcolors
-its monsters
-its quests
-its pets
-its npcs
-its deadmessages
+#its2 avatars
+its2 deadmessages
+its2 emotes
+its2 homunculuses
+its2 itemcolors
 its2 itemfields
+its2 items
+its2 mercenaries
+its2 monsters
+#its2 npcdialogs
+its2 npcs
+its2 pets
+its quests
+its2 skills
+its2 skillunits
+its2 status-effects
 
 cd $DIR
 
