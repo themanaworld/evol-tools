@@ -13,7 +13,8 @@ mkdir upload
 
 rm files/evol.zip
 cd ../../client-data
-find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -@ ../tools/update/files/evol.zip
+find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -exec touch --date=2015-01-01 {} \;
+find -iregex ".+[.]\(xml\|png\|tmx\|ogg\|txt\|po\|tsx\)" -printf "%P\n" | zip -X -@ ../tools/update/files/evol.zip
 git log --pretty=oneline -n 1 | awk '{print $1}' >../tools/update/commit.txt
 
 cd $dir/files

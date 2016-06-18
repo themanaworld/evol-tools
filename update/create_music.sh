@@ -13,7 +13,8 @@ mkdir upload
 
 rm files/music.zip
 cd ../../music
-find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -@ ../tools/update/files/music.zip
+find -iregex ".+[.]\(ogg\)" -exec touch --date=2015-01-01 {} \;
+find -iregex ".+[.]\(ogg\)" -printf "%P\n" | zip -X -@ ../tools/update/files/music.zip
 git log --pretty=oneline -n 1 | awk '{print $1}' >../tools/update/musiccommit.txt
 
 cd $dir/files
