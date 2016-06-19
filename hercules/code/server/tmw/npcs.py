@@ -46,7 +46,7 @@ warpRe3 = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|
     "(?P<tag>warp)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+)),([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
 
 monsterRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)[|]"
-    "(?P<tag>monster)[|](?P<name>[\w#' ]+)[|]"
+    "(?P<tag>monster)[|](?P<name>[^|]+)[|]"
     "(?P<class>[\d]+),(?P<num>[\d]+),(?P<delay1>[\d]+)ms,(?P<delay2>[\d]+)ms(|,(?P<label>[\w+-:#]+))$")
 
 monsterRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)\t"
