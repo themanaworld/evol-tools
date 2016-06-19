@@ -40,9 +40,10 @@ mapFlagRe2 = re.compile("^(?P<map>[^/](.+))[.]gat" +
 
 warpRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|]"
     "(?P<tag>warp)[|](?P<name>[^|]+)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+)),([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
-
 warpRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)([\t]+)"
     "(?P<tag>warp)[\t](?P<name>[^\t]+)([\t]+)(?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+))[.]gat,([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
+warpRe3 = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+)[|]"
+    "(?P<tag>warp)[|](?P<xs>[\d-]+),(?P<ys>[\d-]+),(?P<targetmap>[^/](.+)),([ ]*)(?P<targetx>[\d]+),([ ]*)(?P<targety>[\d]+)$")
 
 monsterRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<xs>[\d-]+),(?P<ys>[\d-]+)[|]"
     "(?P<tag>monster)[|](?P<name>[\w#' ]+)[|]"
@@ -177,6 +178,8 @@ def writeScript(w, m, npcIds):
         class_ = m.group("class")
         if class_ == "0": # hidden npc
             class_ = 32767
+        elif class_ == None:
+            class_ = -1;
         else:
             class_ = int(class_)
 #            if class_ > 125 and class_ <= 400:
@@ -293,17 +296,26 @@ def processWarp(tracker):
     line = tracker.line
     w = tracker.w
     m = warpRe.search(line)
+    noName = False
     if m == None:
         m = warpRe2.search(line)
+    if m == None:
+        m = warpRe3.search(line)
+        noName = True
     if m == None:
         print "error in parsing: " + line
         w.write("!!!error parsing line")
         w.write(line)
         return
 
+    if noName == True:
+        warpName = "{0}_{1}_{2}".format(m.group("map"), m.group("x"), m.group("y"))
+    else:
+        warpName = m.group("name")
+
 #    print "source=" + line[:-1]
 #    print "map={0} xy={1},{2} tag={3} name={4} xs={5} ys={6}  target: map={7} xy={8},{9}".format(
-#        m.group("map"), m.group("x"), m.group("y"), m.group("tag"), m.group("name"), m.group("xs"), m.group("ys"), m.group("targetmap"), m.group("targetx"), m.group("targety"))
+#        m.group("map"), m.group("x"), m.group("y"), m.group("tag"), warpName, m.group("xs"), m.group("ys"), m.group("targetmap"), m.group("targetx"), m.group("targety"))
 
     xs = int(m.group("xs"))
     ys = int(m.group("ys"))
@@ -312,7 +324,7 @@ def processWarp(tracker):
     if ys < 0:
         ys = 0
     w.write("{0},{1},{2},{3}\t{4}\t{5}\t{6},{7},{8},{9},{10}\n".format(
-        m.group("map"), m.group("x"), m.group("y"), "0", m.group("tag"), m.group("name"),
+        m.group("map"), m.group("x"), m.group("y"), "0", m.group("tag"), warpName,
         xs, ys, m.group("targetmap"), m.group("targetx"), m.group("targety")))
 
 

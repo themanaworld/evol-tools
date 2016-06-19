@@ -135,7 +135,7 @@ def replaceStr(line):
         line = line.replace(val[0], val[1]);
     return line
 
-def convertItemDb():
+def convertItemDb(isNew):
     srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/item_db.conf"
     if os.path.isfile(dstFile):
@@ -177,34 +177,42 @@ def convertItemDb():
                         c.write("{0}\t{1}\n".format(rows[1], rows[0]))
                         writeIntField(w, "Id", rows[0])
                         writeStrField(w, "AegisName", rows[1])
-                        writeStrField(w, "Name", rows[2])
-                        if rows[3] == "0":
+                        if isNew == True:
+                            offset = -1
+                        else:
+                            offset = 0
+                        writeStrField(w, "Name", rows[offset + 2])
+                        if rows[offset + 3] == "0":
                             writeIntField(w, "Type", "2")
                         else:
-                            writeIntField(w, "Type", rows[3])
-                        writeIntField(w, "Buy", rows[4])
-                        if int(rows[4])*.75 <= int(rows[5])*1.24:
-                            writeIntField(w, "Sell", str(int(rows[4])*.75))
+                            writeIntField(w, "Type", rows[offset + 3])
+                        writeIntField(w, "Buy", rows[offset + 4])
+                        if int(rows[offset + 4])*.75 <= int(rows[offset + 5])*1.24:
+                            writeIntField(w, "Sell", str(int(rows[offset + 4])*.75))
                         else:
-                            writeIntField(w, "Sell", rows[5])
-                        writeIntField(w, "Weight", rows[6])
-                        writeIntField(w, "Atk", rows[7])
+                            writeIntField(w, "Sell", rows[offset + 5])
+                        writeIntField(w, "Weight", rows[offset + 6])
+                        writeIntField(w, "Atk", rows[offset + 7])
                         writeIntField(w, "Matk", "0")
-                        writeIntField(w, "Def", rows[8])
-                        writeIntField(w, "Range", rows[9])
+                        writeIntField(w, "Def", rows[offset + 8])
+                        writeIntField(w, "Range", rows[offset + 9])
                         writeIntField(w, "Slots", "0")
                         writeIntField(w, "Job", "0xFFFFFFFF")
                         writeIntField(w, "Upper", "0x3F")
-                        writeIntField(w, "Gender", rows[12])
-                        writeIntField(w, "Loc", rows[13])
-                        writeIntField(w, "WeaponLv", rows[14])
-                        writeIntField(w, "EquipLv", rows[15])
+                        writeIntField(w, "Gender", rows[offset + 12])
+                        writeIntField(w, "Loc", rows[offset + 13])
+                        writeIntField(w, "WeaponLv", rows[offset + 14])
+                        writeIntField(w, "EquipLv", rows[offset + 15])
                         writeIntField(w, "Refine", "false")
-                        if rows[13] == "2":
+                        if isNew == True:
+                            offset = 2
+                        else:
+                            offset = 0
+                        if rows[offset + 13] == "2":
                             writeIntField(w, "View", "1")
-                        elif rows[13] == "34":
+                        elif rows[offset + 13] == "34":
                             writeIntField(w, "View", "11")
-                        elif rows[13] == "32768":
+                        elif rows[offset + 13] == "32768":
                             writeIntField(w, "View", "1")
                         else:
                             writeIntField(w, "View", rows[0])
@@ -218,8 +226,12 @@ def convertItemDb():
                             scripts = scripts + ", " + rows[f]
                         rows = scriptsSplit.split(scripts)
                         # Needs .split(';') and \n each 
-                        UseScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[0]))).strip().split(';')
-                        EquipScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[1]))).strip().split(';')
+                        if len(rows) > 1:
+                            UseScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[0]))).strip().split(';')
+                            EquipScript = scriptsTextColon.sub(';',scriptsTextComma.sub('', scriptsTextClean.sub('', rows[1]))).strip().split(';')
+                        else:
+                            UseScript = ""
+                            EquipScript = ""
                         # move to for stmt
                         if len(UseScript) > 1:
                             writeStartScript(w, "Script")

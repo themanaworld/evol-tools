@@ -22,13 +22,13 @@ from code.server.utils import *
 from code.server.questsdb import *
 from code.serverutils import *
 
-def serverTmwMain():
+def serverTmwMain(isNew):
     try:
         cleanServerData()
     except:
         print "Updating server"
     createMainScript()
-    items = convertItemDb()
+    items = convertItemDb(isNew)
     npcIds = Set()
     convertNpcs(items, npcIds)
     convertMobDb()

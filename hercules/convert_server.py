@@ -4,12 +4,28 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+import sys
+
 from code.serverutils import *
 from code.server.evol.main import *
 from code.server.tmw.main import *
 
-serverType = detectServerType()
+def showHelp():
+    print "Usage: ./convert_server.py evol"
+    print "       ./convert_server.py tmwold"
+    print "       ./convert_server.py tmwnew"
+    exit(1)
+
+if len(sys.argv) != 2:
+    showHelp()
+    exit(1)
+
+serverType = sys.argv[1]
 if serverType == "evol":
     serverEvolMain();
+elif serverType == "tmwold":
+    serverTmwMain(False);
+elif serverType == "tmwnew":
+    serverTmwMain(True);
 else:
-    serverTmwMain();
+    print "Wrong parameter"
