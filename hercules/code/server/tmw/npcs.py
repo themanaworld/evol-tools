@@ -25,8 +25,8 @@ scriptRe2 = re.compile("^(((?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<
     "(((?P<class>[\d-]+)((,((?P<xs>[\d-]+),(?P<ys>[\d-]+)))|)(|,)(|[ \t]))|){(|[ ])$")
 
 shopRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)(|,(?P<gender>[\d]+))" +
-    "[|](?P<tag>shop)[|](?P<name>[\w#' ]+)[|]"
-    "(?P<class>[\d]+),(?P<items>(.+))$")
+    "[|](?P<tag>shop)[|](?P<name>[^|]+)[|]"
+    "(?P<class>[\d-]+),(?P<items>(.+))$")
 
 shopRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)" +
     "[\t](?P<tag>shop)[\t](?P<name>[\w#'\\[\\] ]+)[\t]"
