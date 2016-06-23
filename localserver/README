@@ -1,7 +1,9 @@
 Here located for LOCAL server usage ONLY.
 Can be unsecure to use this files in public or production server.
 
-build.sh          - build server from sources.
+build.sh          - build server from sources with most compilers.
+buildasan.sh      - build server from sources with asan flags enabled.
+clean.sh          - remove all built and temp files.
 givegm.sh         - give gm rights to first account created on server.
 initdb.sh         - initialize mariadb database.
 installconfigs.sh - install configurations into server data directory.
