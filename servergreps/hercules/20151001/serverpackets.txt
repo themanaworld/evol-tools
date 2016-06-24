@@ -340,6 +340,7 @@ fb client name: SMSG_PARTY_INFO
 8d9 client name: SMSG_BATTLE_JOINED
 8db client name: SMSG_BATTLE_NOTICE_DELETE
 8df client name: SMSG_BATTLE_BEGINS
+8e2 client name: CMSG_NAVIGATE_TO
 908 client name: SMSG_PLAYER_FAVORITE_ITEM
 96d client name: SMSG_MERGE_ITEM
 96f client name: SMSG_ACK_MERGE_ITEMS
