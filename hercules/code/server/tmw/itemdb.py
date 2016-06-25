@@ -187,9 +187,11 @@ def convertItemDb(isNew):
                             offset = 0
                         writeStrField(w, "Name", rows[offset + 2])
                         if rows[offset + 3] == "0":
-                            writeIntField(w, "Type", "2")
+                            itemType = "2"
                         else:
-                            writeIntField(w, "Type", rows[offset + 3])
+                            itemType = rows[offset + 3]
+                        writeIntField(w, "Type", itemType)
+
                         writeIntField(w, "Buy", rows[offset + 4])
                         if int(rows[offset + 4])*.75 <= int(rows[offset + 5])*1.24:
                             writeIntField(w, "Sell", str(int(rows[offset + 4])*.75))
@@ -218,6 +220,8 @@ def convertItemDb(isNew):
                             writeIntField(w, "View", "11")
                         elif rows[offset + 13] == "32768":
                             writeIntField(w, "View", "1")
+                        elif itemType == "4": # weapon
+                            writeIntField(w, "View", "1")
                         else:
                             writeIntField(w, "View", rows[0])
                         writeIntField(w, "BindOnEquip", "false")
@@ -226,7 +230,11 @@ def convertItemDb(isNew):
                         writeIntField(w, "Sprite", "0")
 
                         scripts = ""
-                        for f in xrange(17, len(rows)):
+                        if isNew == True:
+                            offset = -1
+                        else:
+                            offset = 0
+                        for f in xrange(offset + 17, len(rows)):
                             scripts = scripts + ", " + rows[f]
                         rows = scriptsSplit.split(scripts)
                         # Needs .split(';') and \n each 
