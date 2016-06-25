@@ -127,6 +127,8 @@ def replaceStr(line):
         ("L_nothing", "L_Nothing"),
         ("L_lowlevel", "L_LowLevel"),
         ("@mask", "@Mask"),
+        ("Foice", "FoiceItem"),
+        ("LanternaJack", "LanternaJackItem"),
         # fix at same time usage with same name function and variable
         ("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\""),
     ];
@@ -160,6 +162,7 @@ def convertItemDb(isNew):
                     for line in r:
                         if len(line) < 2 or line[0] == "#" or line[0:2] == "//":
                             continue
+                        line = replaceStr(line)
                         rows = fieldsSplit.split(line)
                         if len(rows) < 5 or rows[0] == "0":
                             continue
@@ -237,14 +240,12 @@ def convertItemDb(isNew):
                         if len(UseScript) > 1:
                             writeStartScript(w, "Script")
                             for uline in UseScript:
-                                uline = replaceStr(uline)
                                 if len(uline) > 0:
                                     w.write("        {0};\n".format(uline))
                             writeEndScript(w)
                         if len(EquipScript) > 1:
                             writeStartScript(w, "OnEquipScript")
                             for eline in EquipScript:
-                                eline = replaceStr(uline)
                                 if len(eline) > 0:
                                     w.write("        {0};\n".format(eline))
                             writeEndScript(w)

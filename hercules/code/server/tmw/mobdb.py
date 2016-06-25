@@ -15,6 +15,16 @@ def getMobDbFile(srcDir):
         if srcFile.find("mob_db") >= 0:
             yield srcFile
 
+def replaceStr(line):
+    vals = [
+        ("lanternaJack", "LanternaJack"),
+        ("foice", "Foice"),
+    ];
+
+    for val in vals:
+        line = line.replace(val[0], val[1]);
+    return line
+
 def convertMobDb(items):
     srcDir = "oldserverdata/world/map/db/"
     dstFile = "newserverdata/db/re/mob_db.conf"
@@ -28,6 +38,7 @@ def convertMobDb(items):
                     if len(line) < 2 or line[:2] == "//":
                         w.write(line)
                         continue
+                    line = replaceStr(line)
                     rows = fieldsSplit.split(line)
                     for f in xrange(0, len(rows)):
                         rows[f] = rows[f].strip()
