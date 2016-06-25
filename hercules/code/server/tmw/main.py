@@ -31,7 +31,7 @@ def serverTmwMain(isNew):
     items = convertItemDb(isNew)
     npcIds = Set()
     convertNpcs(items, npcIds)
-    convertMobDb()
+    convertMobDb(items)
     quests = dict()
     convertConsts(quests, npcIds)
     convertMobSkillDb()
