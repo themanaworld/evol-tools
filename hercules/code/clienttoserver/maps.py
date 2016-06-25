@@ -42,7 +42,7 @@ def recreateMapCache():
                     name = tileset.attributes["name"].value
                 except:
                     name = ""
-                if name == "Collision":
+                if name.lower() == "collision":
                     firstgid = int(tileset.attributes["firstgid"].value)
                     break
 
