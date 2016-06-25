@@ -92,9 +92,6 @@ def convertConsts(quests, npcIds):
                 fields[const[0]] = const[1].strip()
                 writeConst(w, const)
 
-        # build in parameters
-        writeConst(w, ("ClientVersion", " 10000", 1));
-
         srcDir = "oldserverdata/world/map/db/"
         w.write("// tmw constants\n")
 
