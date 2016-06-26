@@ -19,6 +19,12 @@ def replaceStr(line):
     vals = [
         ("lanternaJack", "LanternaJack"),
         ("foice", "Foice"),
+        ("BlueFairy", "BlueFairyMob"),
+        ("RedFairy", "RedFairyMob"),
+        ("GreenFairy", "GreenFairyMob"),
+        ("Scorpion", "ScorpionMob"),
+        ("Tritan", "TritanMob"),
+        ("Ukar", "UkarMob"),
     ];
 
     for val in vals:
@@ -35,7 +41,7 @@ def convertMobDb(items):
         for srcFile in getMobDbFile(srcDir):
             with open(srcDir + srcFile, "r") as r:
                 for line in r:
-                    if len(line) < 2 or line[:2] == "//":
+                    if len(line) < 2 or line[:2] == "//" or line[:1] == "#":
                         w.write(line)
                         continue
                     line = replaceStr(line)

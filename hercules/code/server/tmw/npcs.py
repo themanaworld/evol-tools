@@ -29,7 +29,7 @@ shopRe = re.compile("^(?P<map>[^/](.+)),([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([
     "(?P<class>[\d-]+),(?P<items>(.+))$")
 
 shopRe2 = re.compile("^(?P<map>[^/](.+))[.]gat,([ ]*)(?P<x>[\d]+),([ ]*)(?P<y>[\d]+),([ ]*)(?P<dir>[\d]+)" +
-    "[\t](?P<tag>shop)[\t](?P<name>[\w#'\\[\\] ]+)[\t]"
+    "[\t](?P<tag>shop)[\t](?P<name>[^\t]+)[\t]"
     "(?P<class>[\d]+),(?P<items>(.+))$")
 
 mapFlagRe = re.compile("^(?P<map>[^/](.+))" +
@@ -437,7 +437,7 @@ def processStrReplace(tracker):
         ("L_no_ash", "L_No_Ash"),
         ("L_No_water", "L_No_Water"),
         ("L_cave", "L_Cave"),
-        ("L_farewell", "L_Farewell"),
+        ("L_farewell", "L_Farewell2"),
         ("@Q_forestbow_", "@Q_Forestbow_"),
         ("L_game", "L_Game"),
         ("L_good", "L_Good"),
@@ -834,6 +834,27 @@ def processStrReplace(tracker):
         ("lanternaJack", "LanternaJack"),
         ("0), set @preco, ", "0) set @preco, "),
         ("255), set @preco, ", "255) set @preco, "),
+        ("L_pass", "L_Pass"),
+        ("Quest_threepwood1", "QUEST_threepwood1"),
+        ("L_no", "L_No"),
+        ("L_askHelp", "L_AskHelp"),
+        ("L_ask", "L_Ask"),
+        ("L_notEnough", "L_NotEnough"),
+        ("L_done", "L_Done"),
+        ("L_toomany", "L_TooMany"),
+        ("L_not_enough_money", "L_Not_enough_money"),
+        ("L_island", "L_Island"),
+        ("if @colorID == 2 ", "if (@colorID == 2) "),
+        ("L_help", "L_Help"),
+        ("L_yes", "L_Yes"),
+        ("if @opacityID == 2 ", "if (@opacityID == 2) "),
+        ("L_NohMask_Accuse_Respond", "L_NohMask_AResp"),
+        ("if @opacityID > 4 ", "if (@opacityID > 4) "),
+        ("if @tmpHairStyle > 0 ", "if (@tmpHairStyle > 0) "),
+        ("if @colorID > 6 ", "if (@colorID > 6) "),
+        ("if @opacityID < 0 ", "if (@opacityID < 0) "),
+        ("if countitem(\"MaggotSlime\") >= 10 goto", "if (countitem(\"MaggotSlime\") >= 10) goto"),
+        ("if @colorID < 0 set", "if (@colorID < 0) set"),
     ];
 
     for val in vals:

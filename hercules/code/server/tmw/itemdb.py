@@ -131,6 +131,7 @@ def replaceStr(line):
         ("LanternaJack", "LanternaJackItem"),
         # fix at same time usage with same name function and variable
         ("\"DailyQuestPoints\"", "\"DailyQuestPointsFunc\""),
+        ("sc_adrenaline", "SC_ADRENALINE"),
     ];
 
     for val in vals:

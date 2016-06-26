@@ -71,7 +71,8 @@ def convertConsts(quests, npcIds):
         ("MF_LEAVES", "mf_leaves"),
         ("MF_TOWN", "mf_town"),
         ("sc_poison", "SC_POISON"),
-        ("sc_slowpoison", "SC_SLOWPOISON")
+        ("sc_slowpoison", "SC_SLOWPOISON"),
+        ("sc_adrenaline", "SC_ADRENALINE"),
     ]
     with open(dstFile, "w") as w:
         tpl = readFile("templates/constants.tpl")
