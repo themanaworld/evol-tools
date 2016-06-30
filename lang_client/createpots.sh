@@ -20,12 +20,14 @@ its2 itemfields
 its2 items
 its2 mercenaries
 its2 monsters
+# disabled for now because here testing strings only
 #its2 npcdialogs
 its2 npcs
 its2 pets
 its quests
 its2 skills
 its2 skillunits
+its2 stats
 its2 status-effects
 
 cd $DIR

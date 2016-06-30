@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-30 18:05+0300\n"
+"POT-Creation-Date: 2016-06-30 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3597,6 +3597,101 @@ msgstr ""
 #. (itstool) path: skillunits/skillunit@name
 #: skillunits.xml:41
 msgid "Hells plant"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:10
+msgid "Strength"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:15
+msgid "Agility"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:20
+msgid "Vitality"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:25
+msgid "Intelligence"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:30
+msgid "Dexterity"
+msgstr ""
+
+#. (itstool) path: basic/stat@name
+#: stats.xml:35
+msgid "Luck"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:42
+msgid "Attack"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:47
+msgid "Defense"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:52
+msgid "M.Attack"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:57
+msgid "M.Defense"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:62
+msgid "% Accuracy"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:67
+msgid "% Evade"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:72
+msgid "% Critical"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:77
+msgid "Attack Delay"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:82
+msgid "Walk Delay"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:87
+msgid "Attack Range"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:92
+msgid "Damage per sec."
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:97
+msgid "Karma"
+msgstr ""
+
+#. (itstool) path: extended/stat@name
+#: stats.xml:102
+msgid "Manner"
 msgstr ""
 
 #. (itstool) path: status-effects/status-effect@name
