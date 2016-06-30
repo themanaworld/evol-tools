@@ -1,5 +1,5 @@
 #!/bin/bash
 
 export DIR=`pwd`
-./clean.sh
+source ./clean.sh
 ./build.sh old
