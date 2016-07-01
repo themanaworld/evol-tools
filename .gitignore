@@ -38,3 +38,6 @@ dyecmd/src/dyecmd
 dyecmd/src/CMakeFiles/
 dyecmd/src/Makefile
 dyecmd/src/cmake_install.cmake
+
+# testxml
+testxml/errors.txt
