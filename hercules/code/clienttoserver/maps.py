@@ -94,7 +94,7 @@ def recreateMapCache():
                                             tileType = 0
                                         else:
                                             tileType = tile - firstgid;
-                                        # tmw collision format
+                                        # tmx collision format
                                         # 0 - walkable ground
                                         # 1 - non walkable wall
                                         # 2 - air allowed            shootable too
