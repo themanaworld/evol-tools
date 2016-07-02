@@ -28,6 +28,7 @@ def recreateMapCache():
     makeDir(destDir)
     sz = 0L
     mapsCount = 0
+    collisionLayerName = "collision"
     with open(destDir + "map_cache.dat", "wb") as w:
         writeInt32(w, 0)  # file size
         writeInt16(w, 0)  # maps count
@@ -42,13 +43,13 @@ def recreateMapCache():
                     name = tileset.attributes["name"].value
                 except:
                     name = ""
-                if name.lower() == "collision":
+                if name.lower() == collisionLayerName:
                     firstgid = int(tileset.attributes["firstgid"].value)
                     break
 
             found = False
             for layer in root.getElementsByTagName("layer"):
-                if layer.attributes["name"].value == "Collision":
+                if layer.attributes["name"].value.lower() == collisionLayerName:
                     data = layer.getElementsByTagName("data")
                     if data is None or len(data) != 1:
                         continue
