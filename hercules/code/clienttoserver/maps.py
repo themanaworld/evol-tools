@@ -22,6 +22,14 @@ def getTmxFiles(srcDir):
             continue
         yield fileName
 
+def findFirstGid(tilesets, tile):
+    found = -1
+    for t in tilesets:
+        if t <= tile:
+            found = t
+            break
+    return found
+
 def recreateMapCache():
     destDir = "../../server-data/db/re/"
     srcDir = "../../client-data/maps/"
@@ -37,15 +45,11 @@ def recreateMapCache():
         for fileName in getTmxFiles(srcDir):
             dom = minidom.parse(fileName)
             root = dom.documentElement
-            firstgid = 0
+            tilesets = []
             for tileset in root.getElementsByTagName("tileset"):
-                try:
-                    name = tileset.attributes["name"].value
-                except:
-                    name = ""
-                if name.lower() == collisionLayerName:
-                    firstgid = int(tileset.attributes["firstgid"].value)
-                    break
+                tilesets.append(int(tileset.attributes["firstgid"].value))
+
+            tilesets.sort(reverse = True)
 
             found = False
             for layer in root.getElementsByTagName("layer"):
@@ -77,6 +81,7 @@ def recreateMapCache():
                             if tile == 0:
                                 tileType = 0
                             else:
+                                firstgid = findFirstGid(tilesets, tile)
                                 tileType = tile - firstgid;
                             if tileType > 128 or tileType < 0:
                                 tileType = 1
@@ -86,36 +91,34 @@ def recreateMapCache():
                         f = StringIO.StringIO(binData)
                         arr = list(csv.reader(f, delimiter=',', quotechar='|'))
                         for row in arr:
-                            try:
-                                for item in row:
-                                    if item != "":
-                                        tile = int(item)
-                                        if tile == 0:
-                                            tileType = 0
-                                        else:
-                                            tileType = tile - firstgid;
-                                        # tmx collision format
-                                        # 0 - walkable ground
-                                        # 1 - non walkable wall
-                                        # 2 - air allowed            shootable too
-                                        # 3 - water allowed          water, shootable too
-                                        # 4 - sit, walkable ground
-                                        # 5 - none
+                            for item in row:
+                                if item != "":
+                                    tile = int(item)
+                                    if tile == 0:
+                                        tileType = 0
+                                    else:
+                                        firstgid = findFirstGid(tilesets, tile)
+                                        tileType = tile - firstgid;
+                                    # tmx collision format
+                                    # 0 - walkable ground
+                                    # 1 - non walkable wall
+                                    # 2 - air allowed            shootable too
+                                    # 3 - water allowed          water, shootable too
+                                    # 4 - sit, walkable ground
+                                    # 5 - none
 
-                                        # server collision format
-                                        # 000 0 - walkable, shootable
-                                        # 001 1 - wall
-                                        # 010 2 - same with 0
-                                        # 011 3 - walkable, shootable, water
-                                        # 100 4 - same with 0
-                                        # 101 5 - shootable
-                                        # 110 6 - same with 0
-                                        # 111 7 - none
-                                        if tileType > 128 or tileType < 0:
-                                            tileType = 1
-                                        tiles.append(tileType)
-                            except:
-                                None
+                                    # server collision format
+                                    # 000 0 - walkable, shootable
+                                    # 001 1 - wall
+                                    # 010 2 - same with 0
+                                    # 011 3 - walkable, shootable, water
+                                    # 100 4 - same with 0
+                                    # 101 5 - shootable
+                                    # 110 6 - same with 0
+                                    # 111 7 - none
+                                    if tileType > 128 or tileType < 0:
+                                        tileType = 1
+                                    tiles.append(tileType)
                         f.close()
                     else:
                         print "map format not supported: " + fileName
