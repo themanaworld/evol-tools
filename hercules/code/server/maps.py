@@ -33,3 +33,9 @@ def extractMaps(f, mapsCount):
             w.write(struct.pack("H", sx))
             w.write(struct.pack("H", sy))
             w.write(data)
+            with open(destDir + name + ".txt", "wb") as w:
+                arr = array.array("B")
+                arr.fromstring(data)
+                for x in xrange(0, sx):
+                    for y in xrange(0, sy):
+                        w.write("{0},{1}:{2}\n".format(x, y, arr[x + y * sx]))
