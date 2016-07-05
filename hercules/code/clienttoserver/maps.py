@@ -14,7 +14,11 @@ from xml.dom import minidom
 from code.fileutils import *
 
 def getTmxFiles(srcDir):
+    names = []
     for name in os.listdir(srcDir):
+        names.append(name)
+    names.sort()
+    for name in names:
         fileName = srcDir + name
         if os.path.isfile(fileName) == False:
             continue
