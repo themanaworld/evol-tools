@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-08 15:52+0300\n"
+"POT-Creation-Date: 2016-07-09 02:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2320,24 +2320,24 @@ msgid ""
 "first deck."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:13 quests.xml:23
-msgid "Quest giver: Julia."
+msgid "Julia"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:14 quests.xml:24
-msgid "Coordinates: La Johanne, First Deck. (27,24)"
+msgid "La Johanne, First Deck. (27,24)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:15 quests.xml:39 quests.xml:85 quests.xml:97 quests.xml:121
-#: quests.xml:186 quests.xml:196 quests.xml:206 quests.xml:250 quests.xml:308
-#: quests.xml:328 quests.xml:338 quests.xml:346 quests.xml:385 quests.xml:406
-#: quests.xml:428 quests.xml:473 quests.xml:550 quests.xml:613 quests.xml:622
-#: quests.xml:631 quests.xml:649 quests.xml:667 quests.xml:676 quests.xml:696
-#: quests.xml:718 quests.xml:727
-msgid "Reward: Unknown."
+#: quests.xml:186 quests.xml:196 quests.xml:206 quests.xml:308 quests.xml:328
+#: quests.xml:338 quests.xml:346 quests.xml:385 quests.xml:406 quests.xml:428
+#: quests.xml:473 quests.xml:550 quests.xml:613 quests.xml:622 quests.xml:631
+#: quests.xml:649 quests.xml:667 quests.xml:676 quests.xml:696 quests.xml:718
+#: quests.xml:727
+msgid "Unknown."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2354,9 +2354,9 @@ msgid ""
 "talk to Julia."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:25 quests.xml:131 quests.xml:149
-msgid "Reward: Nothing."
+msgid "Nothing."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2376,14 +2376,14 @@ msgid ""
 "and then chat using the T key."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:37 quests.xml:47 quests.xml:59 quests.xml:69
-msgid "Quest giver: Magic Arpan."
+msgid "Magic Arpan"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:38 quests.xml:60 quests.xml:70
-msgid "Coordinates: La Johanne, Second Deck. (39,33)"
+msgid "La Johanne, Second Deck. (39,33)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2398,14 +2398,14 @@ msgid ""
 "the N key and then interact with it using the T key."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:48
-msgid "Coordinates: La Johanne, Second Deck. (41,37)"
+msgid "La Johanne, Second Deck. (41,37)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:49 quests.xml:61
-msgid "Reward: Smelly sailor clothes."
+msgid "Smelly sailor clothes."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2443,9 +2443,9 @@ msgid ""
 "feel at home."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:71
-msgid "Reward: A [Creased Shirt] and old [Creased Shorts]."
+msgid "A [Creased Shirt] and old [Creased Shorts]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2467,14 +2467,14 @@ msgid ""
 "so watch out!"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:83 quests.xml:95 quests.xml:105 quests.xml:548 quests.xml:557
-msgid "Quest Giver: Alige."
+msgid "Alige"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:84 quests.xml:96 quests.xml:106
-msgid "Coordinates: La Johanne, Second Deck. (33,31)"
+msgid "La Johanne, Second Deck. (33,31)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2511,9 +2511,9 @@ msgid ""
 "types of food. He may have something to give you in exchange."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:107
-msgid "Reward: A handful of [Piberries]."
+msgid "A handful of [Piberries]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2532,16 +2532,16 @@ msgstr ""
 msgid "Speak to him when you will have time to help him."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:119 quests.xml:129 quests.xml:137 quests.xml:147 quests.xml:157
 #: quests.xml:165
-msgid "Quest Giver: Peter."
+msgid "Peter"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:120 quests.xml:130 quests.xml:138 quests.xml:148 quests.xml:158
 #: quests.xml:166
-msgid "Coordinates: La Johanne, Second Deck. (60,35)"
+msgid "La Johanne, Second Deck. (60,35)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2561,9 +2561,9 @@ msgid ""
 "some gold for it."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:139 quests.xml:159 quests.xml:167
-msgid "Reward: 100 EXP, 1000 E."
+msgid "100 EXP, 1000 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2611,14 +2611,14 @@ msgid ""
 "the task."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:184 quests.xml:194 quests.xml:204 quests.xml:214 quests.xml:222
-msgid "Quest Giver: Nard."
+msgid "Nard"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:185 quests.xml:195 quests.xml:205
-msgid "Coordinates: La Johanne, Nard's Room. (25,26)"
+msgid "La Johanne, Nard's Room. (25,26)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2659,14 +2659,14 @@ msgid ""
 "one of Nard's crew members."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:215 quests.xml:223
-msgid "Coordinates: La Johanne, Nard's Room. (25,24)"
+msgid "La Johanne, Nard's Room. (25,24)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:216 quests.xml:224
-msgid "Reward: 50 EXP, [Bandana]."
+msgid "50 EXP, [Bandana]."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2691,14 +2691,14 @@ msgid ""
 "crew."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:235
-msgid "Coordinates: La Johanne, Second Deck. (50,24)"
+msgid "La Johanne, Second Deck. (50,24)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:236
-msgid "Reward: [Knife]."
+msgid "[Knife]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2718,14 +2718,19 @@ msgid ""
 "as soon as you can."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:248 quests.xml:260
-msgid "Quest Giver: Couwan."
+msgid "Couwan"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:249 quests.xml:307 quests.xml:315
-msgid "Coordinates: Drasil Island. (85,108)"
+msgid "Drasil Island. (85,108)"
+msgstr ""
+
+#. (itstool) path: quest/reward
+#: quests.xml:250
+msgid "Reward: Unknown."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2745,14 +2750,14 @@ msgstr ""
 msgid "He also warned you not to trust anyone."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:261
-msgid "Coordinates: Drasil Island. (89,36)"
+msgid "Drasil Island. (89,36)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:262
-msgid "Reward: 8 EXP, 10 E."
+msgid "8 EXP, 10 E."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2772,14 +2777,14 @@ msgstr ""
 msgid "The chest contains gold and an [Old Book]."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:273
-msgid "Coordinates: Drasil Island. (83,70)"
+msgid "Drasil Island. (83,70)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:274
-msgid "Reward: 100 E, [Old Book]."
+msgid "100 E, [Old Book]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2809,9 +2814,9 @@ msgid ""
 "sailors."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:306 quests.xml:314
-msgid "Quest Giver: Gugli."
+msgid "Gugli"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2821,9 +2826,9 @@ msgid ""
 "forget you!"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:316
-msgid "Reward: 40 EXP, 250 E."
+msgid "40 EXP, 250 E."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2839,16 +2844,16 @@ msgid ""
 "and 1 [Sea Drops] to prepare a [Poisoned Dish], for Julia."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:326 quests.xml:336 quests.xml:344 quests.xml:352 quests.xml:360
 #: quests.xml:368
-msgid "Quest Giver: Chef Gado."
+msgid "Chef Gado"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:327 quests.xml:337 quests.xml:345 quests.xml:353 quests.xml:361
 #: quests.xml:369
-msgid "Coordinates: La Johanne, Second Deck. (17,28)"
+msgid "La Johanne, Second Deck. (17,28)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2875,9 +2880,9 @@ msgstr ""
 msgid "You successfully poisoned Julia. Chef Gado finally had his revenge!"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:354
-msgid "Reward: 15 EXP, 200 E, [Bread]."
+msgid "15 EXP, 200 E, [Bread]."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2885,9 +2890,9 @@ msgstr ""
 msgid "You refused to accomplish Chef Gado's evil plan. Julia is now safe."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:362
-msgid "Reward: 15 EXP, 200 E."
+msgid "15 EXP, 200 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2897,9 +2902,9 @@ msgid ""
 "lieutenant of the ship."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:370
-msgid "Reward: 8 EXP, 100 E."
+msgid "8 EXP, 100 E."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2923,14 +2928,14 @@ msgid ""
 "You should probably go and check behind trees, they are great for hiding."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:383 quests.xml:393 quests.xml:404 quests.xml:413
-msgid "Quest Giver: Katja."
+msgid "Katja"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:384 quests.xml:394 quests.xml:405 quests.xml:414
-msgid "Coordinates: Artis. (164,44)"
+msgid "Artis. (164,44)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2950,9 +2955,9 @@ msgstr ""
 msgid "You decided to let him do so in exchange for a small reward."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:395
-msgid "Reward: 100 E."
+msgid "100 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -2975,9 +2980,9 @@ msgstr ""
 msgid "His sister was very happy and gave you an [Aquada] as a reward."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:415
-msgid "Reward: An [Aquada]."
+msgid "An [Aquada]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -2995,14 +3000,14 @@ msgstr ""
 msgid "She wants you to bring her [Croc Claw]s to get rid of spikes."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:426 quests.xml:434
-msgid "Quest Giver: Moon."
+msgid "Moon"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:427 quests.xml:435
-msgid "Coordinates: Artis, Moon's House. (70,78)"
+msgid "Artis, Moon's House. (70,78)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3010,9 +3015,9 @@ msgstr ""
 msgid "You helped Moon to get rid of urchin spikes from her foot."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:436
-msgid "Reward: 1500 EXP."
+msgid "1500 EXP."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3040,19 +3045,19 @@ msgstr ""
 msgid "When you catch it, hurry back to Salem."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:449 quests.xml:457
-msgid "Quest Giver: Salem."
+msgid "Salem"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:450 quests.xml:458
-msgid "Coordinates: Artis, Market. (57,118)"
+msgid "Artis, Market. (57,118)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:451 quests.xml:459
-msgid "Reward: 90% discount on piou."
+msgid "90% discount on piou."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3080,14 +3085,14 @@ msgstr ""
 msgid "You need to bring him 10 [Small Tentacles]."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:471 quests.xml:481
-msgid "Quest Giver: Eugene."
+msgid "Eugene"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:472 quests.xml:482
-msgid "Coordinates: Artis, Docks. (113,120)"
+msgid "Artis, Docks. (113,120)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3105,9 +3110,9 @@ msgstr ""
 msgid "You can use it to catch fish."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:483
-msgid "Reward: [Fishing Rod]."
+msgid "[Fishing Rod]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3134,19 +3139,19 @@ msgid ""
 "so you'll have to do a little digging to find the chest."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:496 quests.xml:505 quests.xml:514
-msgid "Quest Giver: Q'Onan."
+msgid "Q'Onan"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:497 quests.xml:506 quests.xml:515
-msgid "Coordinates: Artis, La Johanne. (186,107)"
+msgid "Artis, La Johanne. (186,107)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:498 quests.xml:507
-msgid "Reward: 2000 E."
+msgid "2000 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3171,9 +3176,9 @@ msgstr ""
 msgid "He said that he finally can pay back his debts."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:516
-msgid "Reward: 1800 E."
+msgid "1800 E."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3191,19 +3196,19 @@ msgstr ""
 msgid "Cuco drops them, in the locked room of La Johanne's Hold."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:527 quests.xml:536
-msgid "Quest Giver: Bacchus."
+msgid "Bacchus"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:528 quests.xml:537
-msgid "Coordinates: La Johanne, Hold. (31,30)"
+msgid "La Johanne, Hold. (31,30)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:529
-msgid "Reward: [Pumpkin Hat]."
+msgid "[Pumpkin Hat]."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3216,9 +3221,9 @@ msgstr ""
 msgid "The payment is 10 Halloween Candy."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:538
-msgid "Reward: chance to see the future."
+msgid "chance to see the future."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3232,9 +3237,9 @@ msgid ""
 "Alige was very scared of the Cuco. Now that it's killed, he should be okay."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:549
-msgid "Coordinates: La Johanne, Hold, Alige's Hideout. (38,22)"
+msgid "La Johanne, Hold, Alige's Hideout. (38,22)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3247,14 +3252,14 @@ msgstr ""
 msgid "For killing the scary Cuco, he gave me a [Barrel]."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:558
-msgid "Coordinates: Artis, Dream World. (71,132)"
+msgid "Artis, Dream World. (71,132)"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:559
-msgid "Reward: [Barrel]."
+msgid "[Barrel]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3272,14 +3277,14 @@ msgstr ""
 msgid "He is still offering his services."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:571 quests.xml:578 quests.xml:586
-msgid "Quest Giver: Rumly."
+msgid "Rumly"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:572 quests.xml:579 quests.xml:587
-msgid "Coordinates: Artis, Market Place. (35,125)"
+msgid "Artis, Market Place. (35,125)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3314,16 +3319,16 @@ msgstr ""
 msgid "Chelios is reachable at the Blacksmith Shop (95,109)."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:611 quests.xml:638 quests.xml:647 quests.xml:656 quests.xml:665
 #: quests.xml:674 quests.xml:683 quests.xml:694 quests.xml:702
-msgid "Quest Giver: Enora."
+msgid "Enora"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:612 quests.xml:639 quests.xml:648 quests.xml:657 quests.xml:666
 #: quests.xml:675 quests.xml:684 quests.xml:695 quests.xml:703
-msgid "Coordinates: Artis, Docks. (176,113)"
+msgid "Artis, Docks. (176,113)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3336,14 +3341,14 @@ msgstr ""
 msgid "You should look for Lloyd in the Merchant Hall (100,37)."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:620 quests.xml:629
-msgid "Quest Giver: Chelios."
+msgid "Chelios"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:621 quests.xml:630
-msgid "Coordinates: Artis, Blacksmith Shop. (95,109)"
+msgid "Artis, Blacksmith Shop. (95,109)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3366,9 +3371,9 @@ msgstr ""
 msgid "This task is done, you can now return it to Enora."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:640
-msgid "Reward: 60 EXP, 100 E."
+msgid "60 EXP, 100 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3386,9 +3391,9 @@ msgstr ""
 msgid "Resa gave you a cute [%Color% Artis Tank Top, Camel Cotton Dye]."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:658
-msgid "Reward: 40 EXP, 125 E."
+msgid "40 EXP, 125 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3424,9 +3429,9 @@ msgstr ""
 msgid "This task is done, you can now return them to Enora."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:685
-msgid "Reward: 80 EXP, 175 E."
+msgid "80 EXP, 175 E."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3458,16 +3463,16 @@ msgid ""
 "Fluffies."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:704
 msgid ""
-"Reward: [Training Gladius], [%Color% Artis Tank Top, Camel Cotton Dye], 5 "
+"[Training Gladius], [%Color% Artis Tank Top, Camel Cotton Dye], 5 "
 "[Pibberries Infusion]q"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:705
-msgid "Reward: 140 EXP, 500 E."
+msgid "140 EXP, 500 E."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3482,14 +3487,14 @@ msgid ""
 "Merchant Guild."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:716 quests.xml:746
-msgid "Quest Giver: Lloyd."
+msgid "Lloyd"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:717 quests.xml:747
-msgid "Coordinates: Artis, Merchant Guild. (101,37)"
+msgid "Artis, Merchant Guild. (101,37)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3502,14 +3507,14 @@ msgstr ""
 msgid "He will reward you for each fur you bring him."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/questgiver
 #: quests.xml:725 quests.xml:734
-msgid "Quest Giver: Fexil."
+msgid "Fexil"
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/coordinates
 #: quests.xml:726 quests.xml:735
-msgid "Coordinates: Artis, Market Place. (48,134)"
+msgid "Artis, Market Place. (48,134)"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3517,9 +3522,9 @@ msgstr ""
 msgid "He rewards you for each fur you bring him."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:736
-msgid "Reward: 15 per [Fluffy Fur]."
+msgid "15 per [Fluffy Fur]."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3537,9 +3542,9 @@ msgstr ""
 msgid "This Guild offers storage and bank services."
 msgstr ""
 
-#. (itstool) path: quest/text
+#. (itstool) path: quest/reward
 #: quests.xml:748
-msgid "Reward: Merchant Guild access."
+msgid "Merchant Guild access."
 msgstr ""
 
 #. (itstool) path: skills/set@name
