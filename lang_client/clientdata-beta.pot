@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-09 02:31+0300\n"
+"POT-Creation-Date: 2016-07-09 03:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2128,6 +2128,163 @@ msgstr ""
 #. (itstool) path: emote/sprite@name
 #: tmp/manaplus_emotes.xml:35
 msgid "Crying"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-0-0.tmx:9 ../../client-data/maps/000-0-1.tmx:9
+msgid "Sailor's Room"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-0.tmx:8
+msgid "Oceania"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-1.tmx:8
+msgid "Drasil Island"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-2-0.tmx:8 ../../client-data/maps/001-2-21.tmx:8
+msgid "First Deck"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-2-1.tmx:9 ../../client-data/maps/001-2-22.tmx:9
+msgid "Second Deck"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-2-2.tmx:9 ../../client-data/maps/001-2-23.tmx:9
+msgid "Hold"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-2-3.tmx:8 ../../client-data/maps/001-2-24.tmx:8
+msgid "Nard's Room"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/000-2-4.tmx:9
+msgid "Alige's Hiding Place"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-1.tmx:8
+msgid "Artis"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-0.tmx:8
+msgid "Light Armor Shop"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-10.tmx:8 ../../client-data/maps/001-2-11.tmx:8
+#: ../../client-data/maps/001-2-12.tmx:8 ../../client-data/maps/001-2-15.tmx:8
+#: ../../client-data/maps/001-2-1.tmx:8
+msgid "Noble House"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-13.tmx:8 ../../client-data/maps/001-2-29.tmx:8
+#: ../../client-data/maps/001-2-3.tmx:8 ../../client-data/maps/001-2-6.tmx:8
+msgid "First Floor"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-14.tmx:8
+msgid "Basement"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-16.tmx:8
+msgid "Harbourmaster Lodge"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-17.tmx:8 ../../client-data/maps/001-2-20.tmx:8
+msgid "Backroom"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-18.tmx:8
+msgid "Docks Warehouse"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-19.tmx:8
+msgid "Merchant Hall"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-25.tmx:8
+msgid "Storage Room"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-26.tmx:8
+msgid "Alchemy Lab"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-27.tmx:8
+msgid "Blacksmith Shop"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-28.tmx:9
+msgid "Red Plush Inn"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-2.tmx:8
+msgid "Moon's House"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-30.tmx:8
+msgid "Second Floor"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-31.tmx:8 ../../client-data/maps/001-2-32.tmx:8
+#: ../../client-data/maps/001-2-34.tmx:8 ../../client-data/maps/001-2-35.tmx:9
+#: ../../client-data/maps/001-2-36.tmx:9 ../../client-data/maps/001-2-37.tmx:8
+#: ../../client-data/maps/001-2-38.tmx:8 ../../client-data/maps/001-2-39.tmx:8
+#: ../../client-data/maps/001-2-40.tmx:9
+msgid "unnamed"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-33.tmx:8
+msgid "Legion of Aemil Headquarters"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-4.tmx:8
+msgid "Library"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-5.tmx:8
+msgid "Warehouse"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-7.tmx:8
+msgid "City Hall"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-8.tmx:8
+msgid "Left Wing"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/001-2-9.tmx:8
+msgid "Right Wing"
 msgstr ""
 
 #. (itstool) path: monsters/monster@name

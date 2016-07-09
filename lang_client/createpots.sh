@@ -32,7 +32,11 @@ its2 status-effects
 
 cd $DIR
 
+rm pot/map*.pot
+
 itstool -o pot/manaplus_emotes1.pot tmp/manaplus_emotes.xml
 itstool -o pot/deadmessages1.pot tmp/deadmessages.xml
+
+find ../../client-data/maps -type f -name "*.tmx" -exec ./processtmx.sh {} \;
 
 msgcat pot/*.pot > clientdata-beta.pot
