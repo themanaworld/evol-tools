@@ -316,8 +316,14 @@ def stripQuotes(data):
 def loadItemDb(dir):
     global itemNamesByName
     with open(dir + "/item_db.conf", "r") as f:
+        cnt = -1
         for line in f:
             line = line.strip()
+
+            idx = line.find("Name: \"")
+            if idx != 0 or line[len(line) - 1] != "\"":
+                continue
+            addStr(line[idx + 7: len(line) - 1], line, "item_db.conf", cnt, True)
             if line == "{":
                 itemId = ""
                 itemName = ""
