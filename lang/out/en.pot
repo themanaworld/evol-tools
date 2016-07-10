@@ -1105,6 +1105,12 @@ msgstr ""
 msgid "Acolyte"
 msgstr ""
 
+#. code: Name: "Acorn"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Acorn"
+msgstr ""
+
 #. code: lg("Actually Gugli asked me if I would help you bring him some of your boxes."), -,
 #: npc/000-1/gulukan.txt:49
 #, no-c-format
@@ -1650,6 +1656,18 @@ msgstr ""
 msgid "Appearance changed."
 msgstr ""
 
+#. code: Name: "Aquada"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Aquada"
+msgstr ""
+
+#. code: Name: "Aquada Box"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Aquada Box"
+msgstr ""
+
 #. code: 628: Arch Bishop
 #: conf/messages.conf:565
 msgid "Arch Bishop"
@@ -1777,10 +1795,28 @@ msgstr ""
 msgid "AreaTop"
 msgstr ""
 
+#. code: Name: "Armbands"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Armbands"
+msgstr ""
+
 #. code: 001-1,90,31,0	script	Artaxe	NPC_ARTAXE,{
 #: npc/001-1/artaxe.txt:6
 #, no-c-format
 msgid "Artaxe"
+msgstr ""
+
+#. code: Name: "Artis Backsword"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Artis Backsword"
+msgstr ""
+
+#. code: Name: "Artis Tank Top"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Artis Tank Top"
 msgstr ""
 
 #. code: mesq l("Artis is a very nice place; there are some hot chicks...");
@@ -1886,6 +1922,12 @@ msgstr ""
 #: npc/000-1/gugli.txt:66
 #, no-c-format
 msgid "At the moment, our crew is busy collecting @@s, @@s and @@s."
+msgstr ""
+
+#. code: Name: "Atropos Mixture"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Atropos Mixture"
 msgstr ""
 
 #. code: rif(.@get_look !=  4, l("Auburn brown")), 4,
@@ -2227,6 +2269,12 @@ msgstr ""
 msgid "Ban failed, it is not possible to ban this user."
 msgstr ""
 
+#. code: Name: "Bandana"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Bandana"
+msgstr ""
+
 #. code: 1483: Banking is disabled
 #: conf/messages.conf:1513
 msgid "Banking is disabled"
@@ -2241,6 +2289,12 @@ msgstr ""
 #: npc/items/croconut.txt:38
 #, no-c-format
 msgid "Bare Hands"
+msgstr ""
+
+#. code: Name: "Barrel"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Barrel"
 msgstr ""
 
 #. code: 1148: Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
@@ -2266,6 +2320,12 @@ msgstr ""
 #. code: 21: Base level raised.
 #: conf/messages.conf:48
 msgid "Base level raised."
+msgstr ""
+
+#. code: Name: "Bat Teeth"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Bat Teeth"
 msgstr ""
 
 #. code: 255: Battle configuration has been reloaded.
@@ -2361,6 +2421,12 @@ msgstr ""
 msgid "Billy Bons"
 msgstr ""
 
+#. code: Name: "Black Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Black Cotton Dye"
+msgstr ""
+
 #. code: l("Black iron... That is a very specific request that you have for me!"),
 #: npc/001-2-19/lloyd.txt:23
 #, no-c-format
@@ -2384,6 +2450,24 @@ msgstr ""
 #. code: 374: Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --
 #: conf/messages.conf:373
 msgid "Blue -- Player %s invites you to PVP duel (Use @accept/@reject) --"
+msgstr ""
+
+#. code: Name: "Blue Coral"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Blue Coral"
+msgstr ""
+
+#. code: Name: "Blue Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Blue Cotton Dye"
+msgstr ""
+
+#. code: Name: "Blue Gray Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Blue Gray Cotton Dye"
 msgstr ""
 
 #. code: mesn "Bobo";
@@ -2412,11 +2496,35 @@ msgstr ""
 msgid "Box"
 msgstr ""
 
+#. code: Name: "Bread"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Bread"
+msgstr ""
+
 #. code: l("Break the door."), L_Break,
 #: npc/001-2-23/doors.txt:48
 #: npc/000-2-2/doors.txt:48
 #, no-c-format
 msgid "Break the door."
+msgstr ""
+
+#. code: Name: "Brimmed Feather Hat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Brimmed Feather Hat"
+msgstr ""
+
+#. code: Name: "Brimmed Flower Hat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Brimmed Flower Hat"
+msgstr ""
+
+#. code: Name: "Brimmed Hat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Brimmed Hat"
 msgstr ""
 
 #. code: l("Bring it to me, and you will get your reward.");
@@ -2435,6 +2543,18 @@ msgstr ""
 #: npc/000-1/tibbo.txt:44
 #, no-c-format
 msgid "Bring this box to Gugli. He will be extremely happy!"
+msgstr ""
+
+#. code: Name: "Brown Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Brown Cotton Dye"
+msgstr ""
+
+#. code: Name: "Brown Trousers"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Brown Trousers"
 msgstr ""
 
 #. code: rif(.@get_look !=  16, l("Bun")), 16,
@@ -2711,6 +2831,12 @@ msgstr ""
 msgid "Calypsan#001-1"
 msgstr ""
 
+#. code: Name: "Camel Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Camel Cotton Dye"
+msgstr ""
+
 #. code: speech 4, l("Can I be of any help?");
 #: npc/001-1/chelios.txt:77
 #, no-c-format
@@ -2823,6 +2949,12 @@ msgstr ""
 #: npc/001-1/carmie.txt:9
 #, no-c-format
 msgid "Carmie#001-1"
+msgstr ""
+
+#. code: Name: "Carrot"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Carrot"
 msgstr ""
 
 #. code: 1392: Cart Added.
@@ -2959,6 +3091,12 @@ msgstr ""
 msgid "Cheers!"
 msgstr ""
 
+#. code: Name: "Cheese"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Cheese"
+msgstr ""
+
 #. code: 000-2-1,27,28,0	script	Chef Gado	NPC_CHEF_GADO,{
 #: npc/000-2-1/chefgado.txt:18
 #, no-c-format
@@ -3059,10 +3197,22 @@ msgstr ""
 msgid "Chill out I won't say anything."
 msgstr ""
 
+#. code: Name: "Chocolate Cashmere Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Chocolate Cashmere Dye"
+msgstr ""
+
 #. code: rif(.@get_look !=  21, l("Choppy")), 21,
 #: npc/functions/barber.txt:34
 #, no-c-format
 msgid "Choppy"
+msgstr ""
+
+#. code: Name: "Chorus of the Woods"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Chorus of the Woods"
 msgstr ""
 
 #. code: 574: Christmas
@@ -3097,6 +3247,12 @@ msgstr ""
 #. code: 130: Clone spawned.
 #: conf/messages.conf:146
 msgid "Clone spawned."
+msgstr ""
+
+#. code: Name: "Clotho Liquor"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Clotho Liquor"
 msgstr ""
 
 #. code: 1208: Clouds appeared.
@@ -3201,6 +3357,18 @@ msgstr ""
 msgid "Commands are disabled in this map."
 msgstr ""
 
+#. code: Name: "Common Carp"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Common Carp"
+msgstr ""
+
+#. code: Name: "Communication Theory"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Communication Theory"
+msgstr ""
+
 #. code: mesq l("Congrats, you are now part of the crew. Thanks again for your help.");
 #: npc/000-2-3/box.txt:86
 #, no-c-format
@@ -3237,10 +3405,22 @@ msgstr ""
 msgid "Cookies provide you strength, health and cuteness."
 msgstr ""
 
+#. code: Name: "Copper Armbands"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Copper Armbands"
+msgstr ""
+
 #. code: rif(.@get_look !=  6, l("Copper blonde")), 6,
 #: npc/functions/barber.txt:78
 #, no-c-format
 msgid "Copper blonde"
+msgstr ""
+
+#. code: Name: "Coral"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Coral"
 msgstr ""
 
 #. code: 1473: Costume '%s' removed.
@@ -3353,6 +3533,18 @@ msgstr ""
 msgid "Crafty"
 msgstr ""
 
+#. code: Name: "Creased Shirt"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Creased Shirt"
+msgstr ""
+
+#. code: Name: "Creased Shorts"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Creased Shorts"
+msgstr ""
+
 #. code: l("Creating a party has some advantages, it's a pretty good choice!"),
 #: npc/001-2-9/janus.txt:19
 #, no-c-format
@@ -3364,16 +3556,36 @@ msgstr ""
 msgid "Creator"
 msgstr ""
 
+#. code: Name: "Crimson Cashmere Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Crimson Cashmere Dye"
+msgstr ""
+
 #. code: Name: "Croc"
 #: mob_db.conf:284
 #, no-c-format
 msgid "Croc"
 msgstr ""
 
+#. code: Name: "Croc Claw"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Croc Claw"
+msgstr ""
+
+#. code: Name: "Croconut"
 #. code: 000-2-1,0,0,0	script	Croconut	NPC_HIDDEN,{
+#: item_db.conf:-1
 #: npc/items/croconut.txt:11
 #, no-c-format
 msgid "Croconut"
+msgstr ""
+
+#. code: Name: "Croconut Box"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Croconut Box"
 msgstr ""
 
 #. code: Name: "CroconutMob"
@@ -3402,6 +3614,12 @@ msgstr ""
 #. code: 176: Current amount of zeny changed.
 #: conf/messages.conf:184
 msgid "Current amount of zeny changed."
+msgstr ""
+
+#. code: Name: "Curshroom"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Curshroom"
 msgstr ""
 
 #. code: mesq l("DO YOU FEEL BETTER?!");
@@ -3454,6 +3672,12 @@ msgstr ""
 #. code: 624: Dark Collector
 #: conf/messages.conf:561
 msgid "Dark Collector"
+msgstr ""
+
+#. code: Name: "Dark Red Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Dark Red Cotton Dye"
 msgstr ""
 
 #. code: rif(.@get_look !=  2, l("Dark brown")), 2,
@@ -3520,6 +3744,12 @@ msgstr ""
 #. code: 860: Defeated by
 #: conf/messages.conf:617
 msgid "Defeated by"
+msgstr ""
+
+#. code: Name: "Delicious Cookie"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Delicious Cookie"
 msgstr ""
 
 #. code: .@q = select (l("Deposit."),
@@ -4084,6 +4314,12 @@ msgstr ""
 msgid "East"
 msgstr ""
 
+#. code: Name: "Easter Egg"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Easter Egg"
+msgstr ""
+
 #. code: 001-2-29,37,31,0	script	Edouard#001-2-29	NPC_EDOUARD,{
 #: npc/001-2-29/edouard.txt:7
 #, no-c-format
@@ -4109,6 +4345,12 @@ msgstr ""
 #. code: 311: Eleven Castles
 #: conf/messages.conf:312
 msgid "Eleven Castles"
+msgstr ""
+
+#. code: Name: "Elixir Of Life"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Elixir Of Life"
 msgstr ""
 
 #. code: mesn "Elmo";
@@ -4349,10 +4591,22 @@ msgstr ""
 msgid "Fake name must be at least two characters."
 msgstr ""
 
+#. code: Name: "Fancy Hat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fancy Hat"
+msgstr ""
+
 #. code: l("Farewell."),
 #: npc/functions/goodbye.txt:13
 #, no-c-format
 msgid "Farewell."
+msgstr ""
+
+#. code: Name: "Fates Potion"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fates Potion"
 msgstr ""
 
 #. code: l("Feel free to visit me another time");
@@ -4457,6 +4711,12 @@ msgstr ""
 msgid "Fireworks | "
 msgstr ""
 
+#. code: Name: "Fish Box"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fish Box"
+msgstr ""
+
 #. code: npctalk3 l("Fish is good for the brain!");
 #: npc/001-1/merlin.txt:34
 #, no-c-format
@@ -4467,6 +4727,12 @@ msgstr ""
 #: npc/001-1/merlin.txt:14
 #, no-c-format
 msgid "Fish, come and see my fish!"
+msgstr ""
+
+#. code: Name: "Fishing Rod"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fishing Rod"
 msgstr ""
 
 #. code: 305: Five Castles
@@ -4484,6 +4750,12 @@ msgstr ""
 #: mob_db.conf:946
 #, no-c-format
 msgid "Fluffy"
+msgstr ""
+
+#. code: Name: "Flufy Fur"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Flufy Fur"
 msgstr ""
 
 #. code: 1212: Fog hangs over.
@@ -4599,10 +4871,22 @@ msgstr ""
 msgid "Frostiana"
 msgstr ""
 
+#. code: Name: "Fungus"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fungus"
+msgstr ""
+
 #. code: mesq l("Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!");
 #: npc/000-1/panels.txt:17
 #, no-c-format
 msgid "Furthermore, unless you are planning to stick it out, you should also not even think about gaining experience by messing with those icky pink land jellies. The pink could stick on you, imagine the horror!"
+msgstr ""
+
+#. code: Name: "Fuschia Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Fuschia Cotton Dye"
 msgstr ""
 
 #. code: 254: GM command configuration has been reloaded.
@@ -4900,6 +5184,12 @@ msgstr ""
 msgid "Goodbye."
 msgstr ""
 
+#. code: Name: "Grass Carp"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Grass Carp"
+msgstr ""
+
 #. code: l("Great to see you! What can I do for you today?");
 #. code: mesq l("Great to see you! What can I do for you today?");
 #: npc/000-1/gugli.txt:29
@@ -4939,6 +5229,12 @@ msgstr ""
 #: npc/001-2-22/alige.txt:167
 #, no-c-format
 msgid "Great, what food do you have for me today?#1"
+msgstr ""
+
+#. code: Name: "Green Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Green Cotton Dye"
 msgstr ""
 
 #. code: mesq lg("Greetings traveler.");
@@ -5064,6 +5360,12 @@ msgstr ""
 #: npc/000-1/gugli.txt:243
 #, no-c-format
 msgid "GugliBarrierCheck"
+msgstr ""
+
+#. code: Name: "Guild Certification"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Guild Certification"
 msgstr ""
 
 #. code: 45: Guild level change failed.
@@ -5215,6 +5517,18 @@ msgstr ""
 #: npc/000-2-0/julia.txt:245
 #, no-c-format
 msgid "Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!"
+msgstr ""
+
+#. code: Name: "Half Croconut"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Half Croconut"
+msgstr ""
+
+#. code: Name: "Half Eggshell"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Half Eggshell"
 msgstr ""
 
 #. code: mesq l("Hard work always pays off!");
@@ -8029,6 +8343,18 @@ msgstr ""
 msgid "Invisible: On"
 msgstr ""
 
+#. code: Name: "Iron Armbands"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Iron Armbands"
+msgstr ""
+
+#. code: Name: "Iron Shovel"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Iron Shovel"
+msgstr ""
+
 #. code: l("Is it possible to go back to Drasil Island?"), L_Island,
 #: npc/001-2-21/julia.txt:25
 #, no-c-format
@@ -8518,6 +8844,12 @@ msgstr ""
 msgid "Job level raised."
 msgstr ""
 
+#. code: Name: "Johanne Key"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Johanne Key"
+msgstr ""
+
 #. code: 62: Judgement has passed.
 #: conf/messages.conf:83
 msgid "Judgement has passed."
@@ -8632,14 +8964,32 @@ msgstr ""
 msgid "Keep the sword and the jacket, you deserved them!"
 msgstr ""
 
+#. code: Name: "Khaki Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Khaki Cotton Dye"
+msgstr ""
+
 #. code: 292: Killer state reset.
 #: conf/messages.conf:290
 msgid "Killer state reset."
 msgstr ""
 
+#. code: Name: "Knife"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Knife"
+msgstr ""
+
 #. code: 557: Knight
 #: conf/messages.conf:490
 msgid "Knight"
+msgstr ""
+
+#. code: Name: "Lachesis Brew"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Lachesis Brew"
 msgstr ""
 
 #. code: rif(.@get_look !=  15, l("Lagoon blue")), 15,
@@ -8677,6 +9027,12 @@ msgstr ""
 msgid "Lean for example?"
 msgstr ""
 
+#. code: Name: "Leather Shield"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Leather Shield"
+msgstr ""
+
 #. code: l("Leave it"), -;
 #: npc/001-2-22/note.txt:14
 #, no-c-format
@@ -8696,6 +9052,12 @@ msgstr ""
 #. code: 1078: Leaves |
 #: conf/messages.conf:871
 msgid "Leaves | "
+msgstr ""
+
+#. code: Name: "Left Crafty Wing"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Left Crafty Wing"
 msgstr ""
 
 #. code: 000-2-1,47,32,0	script	LeftBarrierCheck	NPC_HIDDEN,0,2,{
@@ -8727,6 +9089,18 @@ msgstr ""
 #: npc/001-1/sign.txt:87
 #, no-c-format
 msgid "Legion of Aemil"
+msgstr ""
+
+#. code: Name: "Legion's Copper Armor"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Legion's Copper Armor"
+msgstr ""
+
+#. code: Name: "Legion's Training Shirt"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Legion's Training Shirt"
 msgstr ""
 
 #. code: 001-2-6,52,28,0	script	Leonard	NPC_LEONARD,{
@@ -8834,6 +9208,12 @@ msgstr ""
 msgid "Let's trade."
 msgstr ""
 
+#. code: Name: "Lettuce Leaf"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Lettuce Leaf"
+msgstr ""
+
 #. code: npctalkonce l("Library");
 #: npc/001-1/sign.txt:57
 #, no-c-format
@@ -8868,6 +9248,12 @@ msgstr ""
 #: npc/001-2-27/don.txt:23
 #, no-c-format
 msgid "Like, a defensive mythril card can be used on any mythril equipment, and it will improve the defense by 5% of the latter."
+msgstr ""
+
+#. code: Name: "Lime Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Lime Cotton Dye"
 msgstr ""
 
 #. code: Name: "Little Blub"
@@ -8988,6 +9374,12 @@ msgstr ""
 msgid "Lord Knight"
 msgstr ""
 
+#. code: Name: "Lousy Moccasins"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Lousy Moccasins"
+msgstr ""
+
 #. code: l("Lovely day, isn't it?");
 #: npc/001-2-28/jenna.txt:16
 #, no-c-format
@@ -9070,6 +9462,12 @@ msgstr ""
 msgid "Makes sense. Do you think we should inform the capt'n about it?"
 msgstr ""
 
+#. code: Name: "Manana"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Manana"
+msgstr ""
+
 #. code: Name: "Manana Tree"
 #: mob_db.conf:754
 #, no-c-format
@@ -9103,6 +9501,12 @@ msgstr ""
 #: npc/functions/marriage.txt:179
 #, no-c-format
 msgid "Marriage failed."
+msgstr ""
+
+#. code: Name: "Mauve Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Mauve Cotton Dye"
 msgstr ""
 
 #. code: 1267: Max HP: %d (%d~%d)
@@ -9248,6 +9652,12 @@ msgstr ""
 msgid "Minstrel T"
 msgstr ""
 
+#. code: Name: "Mint Cashmere Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Mint Cashmere Dye"
+msgstr ""
+
 #. code: 1252: Mob Search... %s %s
 #. code: 1220: Mob Search... %s %s
 #: conf/messages.conf:1112
@@ -9337,6 +9747,12 @@ msgstr ""
 msgid "Moooooooooooo!"
 msgstr ""
 
+#. code: Name: "Moss"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Moss"
+msgstr ""
+
 #. code: npctalk3 l("Mostly manuals and tutorials but you won't find out until you open one!");
 #: npc/001-2-4/robin.txt:18
 #, no-c-format
@@ -9371,6 +9787,12 @@ msgstr ""
 #: npc/functions/legiontalk.txt:25
 #, no-c-format
 msgid "Move kid."
+msgstr ""
+
+#. code: Name: "Mushroom Spores"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Mushroom Spores"
 msgstr ""
 
 #. code: mesq lg("My beauty, I was not always a sailor, you know, I was once an important individual!", "My friend, I was not always a sailor, you know, I was once an important individual!");
@@ -9607,6 +10029,12 @@ msgstr ""
 #: npc/000-0-1/narrator.txt:11
 #, no-c-format
 msgid "Narrator#000-0-1"
+msgstr ""
+
+#. code: Name: "Navy Blue Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Navy Blue Cotton Dye"
 msgstr ""
 
 #. code: rif(.@get_look !=  14, l("Navy blue")), 14,
@@ -10888,6 +11316,12 @@ msgstr ""
 msgid "Okay... Tell my sister I'll go home soon."
 msgstr ""
 
+#. code: Name: "Old Book"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Old Book"
+msgstr ""
+
 #. code: 1066: On
 #: conf/messages.conf:859
 msgid "On"
@@ -10944,6 +11378,12 @@ msgstr ""
 #: npc/001-2-9/janus.txt:46
 #, no-c-format
 msgid "Or do you want to keep your friendships and adventures in different groups?"
+msgstr ""
+
+#. code: Name: "Orange Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Orange Cotton Dye"
 msgstr ""
 
 #. code: mesn "Orc Voice";
@@ -11069,6 +11509,12 @@ msgstr ""
 msgid "PartyLock | "
 msgstr ""
 
+#. code: Name: "Pearl"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pearl"
+msgstr ""
+
 #. code: l("People started to steal from each other to survive. As cities grew, needs did too. Wars for fertile lands then rose."),
 #: npc/001-2-6/books.txt:153
 #, no-c-format
@@ -11133,6 +11579,18 @@ msgstr ""
 msgid "Pets are not allowed in Guild Wars."
 msgstr ""
 
+#. code: Name: "Pibberies Infusion"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pibberies Infusion"
+msgstr ""
+
+#. code: Name: "Piberries"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piberries"
+msgstr ""
+
 #. code: rif(.@get_look !=  10, l("Pigtails")), 10,
 #: npc/functions/barber.txt:23
 #, no-c-format
@@ -11145,6 +11603,18 @@ msgstr ""
 msgid "Pikpik"
 msgstr ""
 
+#. code: Name: "Pink Blobime"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pink Blobime"
+msgstr ""
+
+#. code: Name: "Pink Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pink Cotton Dye"
+msgstr ""
+
 #. code: rif(.@get_look !=  10, l("Pinky pink")), 10,
 #: npc/functions/barber.txt:82
 #, no-c-format
@@ -11155,6 +11625,36 @@ msgstr ""
 #: mob_db.conf:105
 #, no-c-format
 msgid "Piou"
+msgstr ""
+
+#. code: Name: "Piou Feathers"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piou Feathers"
+msgstr ""
+
+#. code: Name: "Piou Legs"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piou Legs"
+msgstr ""
+
+#. code: Name: "Piou Slayer"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piou Slayer"
+msgstr ""
+
+#. code: Name: "Piou and The Fluffy"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piou and The Fluffy"
+msgstr ""
+
+#. code: Name: "Piou egg"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Piou egg"
 msgstr ""
 
 #. code: Name: "Piousse"
@@ -11752,6 +12252,18 @@ msgstr ""
 msgid "Plush#001-2-28"
 msgstr ""
 
+#. code: Name: "Plushroom"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Plushroom"
+msgstr ""
+
+#. code: Name: "Plushroom Box"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Plushroom Box"
+msgstr ""
+
 #. code: Name: "Plushroom Field"
 #: mob_db.conf:510
 #, no-c-format
@@ -11762,6 +12274,18 @@ msgstr ""
 #: npc/001-1/rumly.txt:30
 #, no-c-format
 msgid "Plushrooms you say?"
+msgstr ""
+
+#. code: Name: "Poem about Poems"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Poem about Poems"
+msgstr ""
+
+#. code: Name: "Poisoned Dish"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Poisoned Dish"
 msgstr ""
 
 #. code: rif(.@get_look !=  6,  l("Pompadour")), 6,
@@ -11809,10 +12333,34 @@ msgstr ""
 msgid "Pull!"
 msgstr ""
 
+#. code: Name: "Pumpkin"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pumpkin"
+msgstr ""
+
+#. code: Name: "Pumpkin Hat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pumpkin Hat"
+msgstr ""
+
+#. code: Name: "Pumpkin Seeds"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pumpkin Seeds"
+msgstr ""
+
 #. code: Name: "Pumpkish"
 #: mob_db.conf:834
 #, no-c-format
 msgid "Pumpkish"
+msgstr ""
+
+#. code: Name: "Pumpkish Juice"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Pumpkish Juice"
 msgstr ""
 
 #. code: rif(.@get_look !=  23, l("Punk")), 23,
@@ -11825,6 +12373,18 @@ msgstr ""
 #: npc/functions/barber.txt:80
 #, no-c-format
 msgid "Pure platinum"
+msgstr ""
+
+#. code: Name: "Purple Blobime"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Purple Blobime"
+msgstr ""
+
+#. code: Name: "Purple Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Purple Cotton Dye"
 msgstr ""
 
 #. code: rif(.@get_look !=  13, l("Purple plum")), 13,
@@ -11952,6 +12512,18 @@ msgstr ""
 msgid "Ratto"
 msgstr ""
 
+#. code: Name: "Ratto Tail"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Ratto Tail"
+msgstr ""
+
+#. code: Name: "Ratto Teeth"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Ratto Teeth"
+msgstr ""
+
 #. code: 000-2-2,47,30,0	script	RattosControl	NPC_HIDDEN,{
 #: npc/000-2-2/ratto.txt:19
 #, no-c-format
@@ -11979,6 +12551,18 @@ msgstr ""
 #. code: 655: Rebellion
 #: conf/messages.conf:594
 msgid "Rebellion"
+msgstr ""
+
+#. code: Name: "Red Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Red Cotton Dye"
+msgstr ""
+
+#. code: Name: "Red Plush Wine"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Red Plush Wine"
 msgstr ""
 
 #. code: l("Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.");
@@ -12053,6 +12637,12 @@ msgstr ""
 #. code: 1356: Returning to normal font.
 #: conf/messages.conf:1340
 msgid "Returning to normal font."
+msgstr ""
+
+#. code: Name: "Right Crafty Wing"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Right Crafty Wing"
 msgstr ""
 
 #. code: mesq l("Right! Ours is an earthsea realm. You see, sailors are swift at their tasks when out of sight of land, but docked by this verdant jewel, they have it so good, they are just taking too much time bringing all the food back to the ship. Maybe you can help them.");
@@ -12139,6 +12729,12 @@ msgstr ""
 msgid "Sage"
 msgstr ""
 
+#. code: Name: "SailorShirt"
+#: item_db.conf:-1
+#, no-c-format
+msgid "SailorShirt"
+msgstr ""
+
 #. code: 000-0,23,20,0	script	Sailors	NPC_SAILORS,6,6,{
 #: npc/000-0/sailors.txt:9
 #, no-c-format
@@ -12181,6 +12777,12 @@ msgstr ""
 #. code: 100: Scripts have been reloaded.
 #: conf/messages.conf:115
 msgid "Scripts have been reloaded."
+msgstr ""
+
+#. code: Name: "Sea Drops"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Sea Drops"
 msgstr ""
 
 #. code: l("Sea water?! I will not help you with your evil plan!"), L_Quit,
@@ -12390,6 +12992,12 @@ msgstr ""
 msgid "She's on the upper level, yeye can't miss her. She's the only girl in this crew.#1"
 msgstr ""
 
+#. code: Name: "Shemagh"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Shemagh"
+msgstr ""
+
 #. code: mesq l("Shhht, don't say it that loud...");
 #: npc/000-2-1/chefgado.txt:143
 #, no-c-format
@@ -12522,6 +13130,12 @@ msgstr ""
 msgid "Sign#001-1-s-warehouse"
 msgstr ""
 
+#. code: Name: "Silver Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Silver Cotton Dye"
+msgstr ""
+
 #. code: rif(.@get_look !=  19, l("Silver Grey")), 19,
 #: npc/functions/barber.txt:91
 #, no-c-format
@@ -12607,6 +13221,12 @@ msgstr ""
 #. code: 132: Slave clone spawned.
 #: conf/messages.conf:148
 msgid "Slave clone spawned."
+msgstr ""
+
+#. code: Name: "Small Tentacles"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Small Tentacles"
 msgstr ""
 
 #. code: 586: Sniper
@@ -13013,6 +13633,12 @@ msgstr ""
 msgid "Spying on the %s party."
 msgstr ""
 
+#. code: Name: "Squichy Claws"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Squichy Claws"
+msgstr ""
+
 #. code: 591: Stalker
 #: conf/messages.conf:526
 msgid "Stalker"
@@ -13364,6 +13990,12 @@ msgstr ""
 msgid "Task is done."
 msgstr ""
 
+#. code: Name: "Teal Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Teal Cotton Dye"
+msgstr ""
+
 #. code: 1057: Teleport Flags:
 #: conf/messages.conf:850
 msgid "Teleport Flags: "
@@ -13378,6 +14010,12 @@ msgstr ""
 #. code: 310: Ten Castles
 #: conf/messages.conf:311
 msgid "Ten Castles"
+msgstr ""
+
+#. code: Name: "Tentacles"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Tentacles"
 msgstr ""
 
 #. code: 001-2-4,51,35,4	script	Terry	NPC_TERRY,{
@@ -14515,6 +15153,24 @@ msgstr ""
 msgid "Tortuga"
 msgstr ""
 
+#. code: Name: "Tortuga Shell"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Tortuga Shell"
+msgstr ""
+
+#. code: Name: "Tortuga Shell Fragment"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Tortuga Shell Fragment"
+msgstr ""
+
+#. code: Name: "Tortuga Tongue"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Tortuga Tongue"
+msgstr ""
+
 #. code: 334: Total Domination
 #: conf/messages.conf:336
 msgid "Total Domination"
@@ -14531,6 +15187,12 @@ msgstr ""
 #: npc/001-1/calypsan.txt:65
 #, no-c-format
 msgid "Trade"
+msgstr ""
+
+#. code: Name: "TrainingGladius"
+#: item_db.conf:-1
+#, no-c-format
+msgid "TrainingGladius"
 msgstr ""
 
 #. code: 1488: Transforming into monster is not allowed in Guild Wars.
@@ -14754,6 +15416,12 @@ msgstr ""
 msgid "Unlike other respawn points, an inn can fully restore your HP."
 msgstr ""
 
+#. code: Name: "Urchin Meat"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Urchin Meat"
+msgstr ""
+
 #. code: 900: Usage:
 #: conf/messages.conf:648
 msgid "Usage:"
@@ -14920,6 +15588,12 @@ msgstr ""
 #: npc/000-1/astapolos.txt:60
 #, no-c-format
 msgid "Usually I don't allow anyone to touch my boxes but..."
+msgstr ""
+
+#. code: Name: "V-neck Jumper"
+#: item_db.conf:-1
+#, no-c-format
+msgid "V-neck Jumper"
 msgstr ""
 
 #. code: l("Very good."),
@@ -16254,6 +16928,12 @@ msgstr ""
 msgid "Wizard"
 msgstr ""
 
+#. code: Name: "Wooden Sword"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Wooden Sword"
+msgstr ""
+
 #. code: l("Wow, it seems everyone knows my name!"), -,
 #: npc/000-1/gulukan.txt:28
 #, no-c-format
@@ -16320,6 +17000,12 @@ msgstr ""
 #: npc/000-2-1/chefgado.txt:48
 #, no-c-format
 msgid "Yeah, yeah, of course you don't..."
+msgstr ""
+
+#. code: Name: "Yellow Cotton Dye"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Yellow Cotton Dye"
 msgstr ""
 
 #. code: 1116: Yes
