@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-10 23:12+0300\n"
+"POT-Creation-Date: 2016-07-19 20:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1090,12 +1090,12 @@ msgstr ""
 
 #. (itstool) path: items/item@name
 #: items.xml:339
-msgid "Pibberries Infusion"
+msgid "Piberries Infusion"
 msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:339
-msgid "A potion made from pibberries."
+msgid "A potion made from piberries."
 msgstr ""
 
 #. (itstool) path: items/item@effect
@@ -1322,7 +1322,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:476
-msgid "Small feathers of innocent little piou."
+msgid "Small feathers of an innocent little piou."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1530,7 +1530,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:612
-msgid "An invasive specimen carved at festivals somewhere."
+msgid "An invasive specimen, sometimes carved during festivals."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1560,7 +1560,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:633
-msgid "Boneless appendage of invertebrates"
+msgid "Boneless appendage of invertebrates."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:640
-msgid "Fresh-water is often infested with these pests."
+msgid "Freshwater is often infested with these pests."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1580,7 +1580,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:647
-msgid "A smart fish; difficult to catch."
+msgid "A smart fish, very difficult to catch."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1671,7 +1671,8 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:747
-msgid "Good defense; worn by those with authority."
+msgid ""
+"This armor provides great protection. It is worn by those with authority."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -1851,7 +1852,7 @@ msgstr ""
 
 #. (itstool) path: items/item@description
 #: items.xml:1013
-msgid "A short combat-sword."
+msgid "A short sword made for close combat."
 msgstr ""
 
 #. (itstool) path: items/item@name
@@ -2480,8 +2481,8 @@ msgstr ""
 #. (itstool) path: quest/text
 #: quests.xml:12
 msgid ""
-"Speak to Julia, the shipkeeper of this ship. She is waiting for you on the "
-"first deck."
+"Speak to Julia, the keeper of this ship. She is waiting for you on the first "
+"deck."
 msgstr ""
 
 #. (itstool) path: quest/questgiver
@@ -2514,8 +2515,8 @@ msgstr ""
 #. (itstool) path: quest/text
 #: quests.xml:22
 msgid ""
-"Keep them in mind, but if you think you still need to hear them again, just "
-"talk to Julia."
+"Keep them in mind, but if you think you need to hear them again, just talk "
+"to Julia."
 msgstr ""
 
 #. (itstool) path: quest/reward
@@ -3131,7 +3132,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:403
-msgid "You should tell Katya about it."
+msgid "You should go tell Katja about it."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3201,7 +3202,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:447
-msgid "The piou is flying around the town, not far from the Market."
+msgid "The piou is flying around the town, not far from the market."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3453,7 +3454,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:577
-msgid "Rumly is waiting for you to bring him some [Plushroom]."
+msgid "Rumly is waiting for you to bring him some [Plushroom]s."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3463,7 +3464,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:585
-msgid "Bring him some [Plushroom] and he will be able to do it for you."
+msgid "Bring him some [Plushroom]s and he will be able to do it for you."
 msgstr ""
 
 #. (itstool) path: quest/name
@@ -3568,7 +3569,7 @@ msgstr ""
 #. (itstool) path: quest/text
 #: quests.xml:664
 msgid ""
-"Q'Pid is reachable at the Market Place, in the South-West area of Artis "
+"Q'Pid is reachable at the Market Place, in the south-west area of Artis "
 "(61,116)."
 msgstr ""
 
@@ -3585,7 +3586,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:681
-msgid "Ivan gave you some [Pibberries Infusion]."
+msgid "Ivan gave you some [Piberries Infusion]."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3617,7 +3618,7 @@ msgstr ""
 
 #. (itstool) path: quest/text
 #: quests.xml:693
-msgid "The hill is located on North-East of Artis (172,46)."
+msgid "The hill is located on north-east of Artis (172,46)."
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3630,8 +3631,8 @@ msgstr ""
 #. (itstool) path: quest/reward
 #: quests.xml:705
 msgid ""
-"[Training Gladius], [%Color% Artis Tank Top, Camel Cotton Dye], 5 "
-"[Pibberries Infusion]q"
+"[Training Gladius], [%Color% Artis Tank Top, Camel Cotton Dye], 5 [Piberries "
+"Infusion]s"
 msgstr ""
 
 #. (itstool) path: quest/reward
@@ -3693,7 +3694,7 @@ msgstr ""
 
 #. (itstool) path: quest/name
 #: quests.xml:743
-msgid "Worship Of Money"
+msgid "Worship of Money"
 msgstr ""
 
 #. (itstool) path: quest/text
@@ -3713,27 +3714,37 @@ msgstr ""
 
 #. (itstool) path: skills/set@name
 #. (itstool) path: set/skill@name
-#: skills.xml:6 skills.xml:7
+#: skills.xml:6 skills.xml:12
 msgid "Basic"
 msgstr ""
 
 #. (itstool) path: set/skill@description
-#: skills.xml:7
+#: skills.xml:12
 msgid "Allow do basic things."
 msgstr ""
 
 #. (itstool) path: set/skill@name
-#: skills.xml:17
+#: skills.xml:23
+msgid "Mass provoke"
+msgstr ""
+
+#. (itstool) path: set/skill@description
+#: skills.xml:23
+msgid "Allow provoke many monsters."
+msgstr ""
+
+#. (itstool) path: set/skill@name
+#: skills.xml:28
 msgid "Magic shield"
 msgstr ""
 
 #. (itstool) path: set/skill@description
-#: skills.xml:17
+#: skills.xml:28
 msgid "Allow protect from magic attacks."
 msgstr ""
 
 #. (itstool) path: skills/set@name
-#: skills.xml:19
+#: skills.xml:30
 msgid "Other"
 msgstr ""
 
@@ -3741,12 +3752,12 @@ msgstr ""
 #. (itstool) path: set/skill@name
 #. #-#-#-#-#  skillunits.pot (PACKAGE VERSION)  #-#-#-#-#
 #. (itstool) path: skillunits/skillunit@name
-#: skills.xml:24 skillunits.xml:19
+#: skills.xml:35 skillunits.xml:19
 msgid "Grafiti"
 msgstr ""
 
 #. (itstool) path: set/skill@description
-#: skills.xml:24
+#: skills.xml:35
 msgid "Draw text on ground."
 msgstr ""
 
