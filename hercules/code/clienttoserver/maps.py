@@ -34,6 +34,19 @@ def findFirstGid(tilesets, tile):
             break
     return found
 
+# 0 - walkable ground
+# 1 - non walkable wall
+# 2 - air allowed            shootable too
+# 3 - water allowed          water, shootable too
+# 4 - sit, walkable ground
+# 5 - none
+def convertTileType(tile):
+#    if tile == 4:
+#        tile = 0;
+    if tile > 128 or tile < 0:
+        tile = 1
+    return tile
+
 def recreateMapCache():
     destDir = "../../server-data/db/re/"
     srcDir = "../../client-data/maps/"
@@ -86,9 +99,7 @@ def recreateMapCache():
                                 tileType = 0
                             else:
                                 firstgid = findFirstGid(tilesets, tile)
-                                tileType = tile - firstgid;
-                            if tileType > 128 or tileType < 0:
-                                tileType = 1
+                                tileType = convertTileType(tile - firstgid);
                             tiles.append(tileType)
                     elif encoding == "csv":
                         binData = data.childNodes[0].data.strip()
@@ -102,7 +113,7 @@ def recreateMapCache():
                                         tileType = 0
                                     else:
                                         firstgid = findFirstGid(tilesets, tile)
-                                        tileType = tile - firstgid;
+                                        tileType = convertTileType(tile - firstgid);
                                     # tmx collision format
                                     # 0 - walkable ground
                                     # 1 - non walkable wall
