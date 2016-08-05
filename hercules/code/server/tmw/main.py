@@ -39,7 +39,8 @@ def serverTmwMain(isNew):
 def dbTmwMain():
     convertAccount()
     users = readAthena()
-    saveCharTable(users)
+#    saveCharTable(users)
+    saveCharTableCustom(users)
     saveCharRegNumDbTable(users)
     saveSkillTable(users)
     saveInventoryTable(users)
