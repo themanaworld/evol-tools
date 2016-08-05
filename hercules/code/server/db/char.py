@@ -26,12 +26,12 @@ def saveCharTable(users):
                 "{str},{agi},{vit},{INT},{dex},{luk},{max_hp},{hp},{max_sp}," +
                 "{sp},{status_point},{skill_point},{option},{karma},{manner}," +
                 "{party_id},{guild_id},{pet_id},{homun_id},{elemental_id}," +
-                "{hair},{hair_color},{clothes_color},{weapon},{shield}," +
+                "{hair},{hair_color},{clothes_color},{body},{weapon},{shield}," +
                 "{head_top},{head_mid},{head_bottom},{robe}," +
                 "'{last_map}',{last_x},{last_y},'{save_map}',{save_x},{save_y}," +
                 "{partner_id},{online},{father},{mother},{child},{fame}," +
                 "{rename},{delete_date},{slotchange},{char_opt},{font}," +
-                "{unban_time},{uniqueitem_counter},'{sex}')").format(
+                "{unban_time},{uniqueitem_counter},'{sex}',{hotkey_rowshift})").format(
                 char_id = user.char_id,
                 account_id = user.account_id,
                 char_num = user.char_num,
@@ -65,6 +65,7 @@ def saveCharTable(users):
                 hair = user.hair,
                 hair_color = user.hair_color,
                 clothes_color = user.clothes_color,
+                body = 0,
                 weapon = user.weapon,
                 shield = user.shield,
                 head_top = user.head_top,
@@ -90,7 +91,8 @@ def saveCharTable(users):
                 font = "0",
                 unban_time = "0",
                 uniqueitem_counter = len(user.inventory),
-                sex = "U"
+                sex = "U",
+                hotkey_rowshift = 0
             ))
         w.write("\n")
 
@@ -114,17 +116,17 @@ def saveCharTableCustom(users):
                 "{str},{agi},{vit},{INT},{dex},{luk},{max_hp},{hp},{max_sp}," +
                 "{sp},{status_point},{skill_point},{option},{karma},{manner}," +
                 "{party_id},{guild_id},{pet_id},{homun_id},{elemental_id}," +
-                "{hair},{hair_color},{clothes_color},{weapon},{shield}," +
+                "{hair},{hair_color},{clothes_color},{body},{weapon},{shield}," +
                 "{head_top},{head_mid},{head_bottom},{robe}," +
                 "'{last_map}',{last_x},{last_y},'{save_map}',{save_x},{save_y}," +
                 "{partner_id},{online},{father},{mother},{child},{fame}," +
                 "{rename},{delete_date},{slotchange},{char_opt},{font}," +
-                "{unban_time},{uniqueitem_counter},'{sex}')").format(
+                "{unban_time},{uniqueitem_counter},'{sex}',{hotkey_rowshift})").format(
                 char_id = user.char_id,
                 account_id = user.account_id,
                 char_num = user.char_num,
                 name = escapeSqlStr(user.char_name),
-                CLASS = user.char_class,
+                CLASS = 0,
                 base_level = user.base_level,
                 job_level = user.job_level,
                 base_exp = user.base_exp,
@@ -153,6 +155,7 @@ def saveCharTableCustom(users):
                 hair = user.hair,
                 hair_color = user.hair_color,
                 clothes_color = user.clothes_color,
+                body = 0,
                 weapon = user.weapon,
                 shield = user.shield,
                 head_top = user.head_top,
@@ -178,6 +181,7 @@ def saveCharTableCustom(users):
                 font = "0",
                 unban_time = "0",
                 uniqueitem_counter = len(user.inventory),
-                sex = "U"
+                sex = "U",
+                hotkey_rowshift = 0
             ))
         w.write("\n")
