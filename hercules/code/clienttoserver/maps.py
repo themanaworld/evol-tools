@@ -34,12 +34,23 @@ def findFirstGid(tilesets, tile):
             break
     return found
 
+# client
+# 0 - walkable ground
+# 1 - non walkable wall
+# 2 - air allowed            shootable too
+# 3 - water allowed          water, shootable too
+# 4 - sit, walkable ground
+# 5 - player walk not allowed
+# 6 - monster walk not allowed
+
+# server
 # 0 - walkable ground
 # 1 - non walkable wall
 # 2 - air allowed            shootable too
 # 3 - water allowed          water, shootable too
 # 4 - sit, walkable ground
 # 5 - none
+# 6 - monster walk not allowed
 def convertTileType(tile):
     if tile == 5:
         tile = 0;
