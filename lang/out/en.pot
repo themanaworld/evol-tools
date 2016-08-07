@@ -950,12 +950,16 @@ msgstr ""
 msgid "7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time."
 msgstr ""
 
+#. code: message strcharinfo(0), l("@@", .@color_name$);
 #. code: mes "Error: format string 'l(@@, )': " + l("@@", "");
 #. code: if (l("@@") != "@@")
 #. code: mes "Error: format string 'l(@@)': " + l("@@");
 #. code: if (l("@@", "") != "")
+#. code: message strcharinfo(0), l("@@", .@style_name$);
+#: npc/functions/barber.txt:21
 #: npc/test/test1.txt:37
 #: npc/test/test1.txt:36
+#: npc/functions/barber.txt:18
 #: npc/test/test1.txt:35
 #: npc/test/test1.txt:38
 #, no-c-format
@@ -984,7 +988,7 @@ msgstr ""
 
 #. code: mesq l("@@ is helping me.", $@RAT_SAILOR_HELPER$);
 #. code: mesq l("@@ is helping me.", $@ARTIS_RAT1_HELPER$);
-#: npc/000-2-1/peter.txt:244
+#: npc/000-2-1/peter.txt:248
 #: npc/001-2-22/peter.txt:244
 #, no-c-format
 msgid "@@ is helping me."
@@ -1504,6 +1508,12 @@ msgstr ""
 msgid "Amount?"
 msgstr ""
 
+#. code: npctalkonce l("An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei.");
+#: npc/001-2-4/robin.txt:50
+#, no-c-format
+msgid "An explorer left behind some incomplete manuscripts about the people and dangers in the land of Kaizei."
+msgstr ""
+
 #. code: 37: An invalid number was specified.
 #: conf/messages.conf:63
 msgid "An invalid number was specified."
@@ -1537,6 +1547,12 @@ msgstr ""
 #: npc/000-1/astapolos.txt:122
 #, no-c-format
 msgid "And now I'm a sailor, as you can see!"
+msgstr ""
+
+#. code: l("And so far, the Merchant Guild helped me find this appartment so I can't complain!"),
+#: npc/001-2-41/edouard.txt:98
+#, no-c-format
+msgid "And so far, the Merchant Guild helped me find this appartment so I can't complain!"
 msgstr ""
 
 #. code: l("And then what happened?");
@@ -1600,8 +1616,8 @@ msgid "Any contribution to the game (translations, graphics creation/edition, co
 msgstr ""
 
 #. code: l("Anything else?");
-#: npc/001-2-29/edouard.txt:49
-#: npc/001-2-29/edouard.txt:55
+#: npc/001-2-41/edouard.txt:145
+#: npc/001-2-41/edouard.txt:151
 #, no-c-format
 msgid "Anything else?"
 msgstr ""
@@ -1665,6 +1681,7 @@ msgid "Anyway, the last time I stole something I was almost caught."
 msgstr ""
 
 #. code: l("Anyway."),
+#: npc/001-2-41/edouard.txt:99
 #: npc/001-2-9/janus.txt:100
 #, no-c-format
 msgid "Anyway."
@@ -1832,6 +1849,24 @@ msgstr ""
 msgid "Armbands"
 msgstr ""
 
+#. code: Name: "Arrow 1"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Arrow 1"
+msgstr ""
+
+#. code: Name: "Arrow 2"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Arrow 2"
+msgstr ""
+
+#. code: Name: "Arrow 3"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Arrow 3"
+msgstr ""
+
 #. code: 001-1,90,31,0	script	Artaxe	NPC_ARTAXE,{
 #: npc/001-1/artaxe.txt:6
 #, no-c-format
@@ -1886,16 +1921,10 @@ msgstr ""
 msgid "As you may know, we are explorers on a long distance voyage, and our swashbuckling mariners need to store enough food to survive. You don't know how dangerous the sea life can be."
 msgstr ""
 
-#. code: l("As you want!"), 0,
-#: npc/functions/barber.txt:13
+#. code: .@idx = select(l("As you want!"),.@menustr$);
+#: npc/functions/barber.txt:46
 #, no-c-format
 msgid "As you want!"
-msgstr ""
-
-#. code: rif(.@get_look !=  1, l("Ash brown")), 1,
-#: npc/functions/barber.txt:73
-#, no-c-format
-msgid "Ash brown"
 msgstr ""
 
 #. code: l("Ask other merchants, they might know where he is.");
@@ -1959,12 +1988,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Atropos Mixture"
-msgstr ""
-
-#. code: rif(.@get_look !=  4, l("Auburn brown")), 4,
-#: npc/functions/barber.txt:76
-#, no-c-format
-msgid "Auburn brown"
 msgstr ""
 
 #. code: 1484: Auction is disabled
@@ -2289,12 +2312,6 @@ msgstr ""
 msgid "Bag#001-1"
 msgstr ""
 
-#. code: rif(.@get_look !=  1,  l("Bald")), 1,
-#: npc/functions/barber.txt:14
-#, no-c-format
-msgid "Bald"
-msgstr ""
-
 #. code: 1464: Ban failed, it is not possible to ban this user.
 #: conf/messages.conf:1481
 msgid "Ban failed, it is not possible to ban this user."
@@ -2527,10 +2544,16 @@ msgstr ""
 msgid "Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx"
 msgstr ""
 
-#. code: rif(.@get_look !=  2,  l("Bowl cut")), 2,
-#: npc/functions/barber.txt:15
+#. code: Name: "Bow 1"
+#: item_db.conf:-1
 #, no-c-format
-msgid "Bowl cut"
+msgid "Bow 1"
+msgstr ""
+
+#. code: Name: "Bow 2"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Bow 2"
 msgstr ""
 
 #. code: 000-2-3,25,24,0	script	Box	NPC_HAT_BOX,{
@@ -2598,18 +2621,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Brown Trousers"
-msgstr ""
-
-#. code: rif(.@get_look !=  16, l("Bun")), 16,
-#: npc/functions/barber.txt:29
-#, no-c-format
-msgid "Bun"
-msgstr ""
-
-#. code: rif(.@get_look !=  18, l("Bunches")), 18,
-#: npc/functions/barber.txt:31
-#, no-c-format
-msgid "Bunches"
 msgstr ""
 
 #. code: l("Bury."),
@@ -2786,12 +2797,6 @@ msgstr ""
 msgid "But you are welcome to reset your stats again if you bring me some more plushrooms!#1"
 msgstr ""
 
-#. code: l("But you decide to patiently wait.");
-#: npc/functions/fishing.txt:138
-#, no-c-format
-msgid "But you decide to patiently wait."
-msgstr ""
-
 #. code: mesq l("But you won't *hic* me this time...");
 #: npc/000-2-0/billybons.txt:36
 #, no-c-format
@@ -2898,14 +2903,14 @@ msgstr ""
 msgid "Can I read these rules again?"
 msgstr ""
 
-#. code: l("Can you do something with my color?"), 2,
-#: npc/001-2-29/edouard.txt:39
+#. code: l("Can you do something with my color?"), 3,
+#: npc/001-2-41/edouard.txt:132
 #, no-c-format
 msgid "Can you do something with my color?"
 msgstr ""
 
 #. code: npctalk3 l("Can you please go away?");
-#: npc/functions/legiontalk.txt:34
+#: npc/functions/legiontalk.txt:35
 #, no-c-format
 msgid "Can you please go away?"
 msgstr ""
@@ -2932,10 +2937,10 @@ msgstr ""
 msgid "Can't show boss mobs!"
 msgstr ""
 
-#. code: npctalk3 l("Can't talk right now, i'm on patrol duty.");
-#: npc/functions/legiontalk.txt:37
+#. code: npctalk3 l("Can't talk right now, I'm on patrol duty.");
+#: npc/functions/legiontalk.txt:38
 #, no-c-format
-msgid "Can't talk right now, i'm on patrol duty."
+msgid "Can't talk right now, I'm on patrol duty."
 msgstr ""
 
 #. code: l("Can't you remember anything at all? Or do you have some memories of your past?"),
@@ -3028,10 +3033,40 @@ msgstr ""
 msgid "Cat got your tongue?"
 msgstr ""
 
-#. code: rif(.@get_look !=  7,  l("Center parting")), 7,
-#: npc/functions/barber.txt:20
+#. code: 001-2-41,29,24,0	script	Chair#Chair1-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:27
 #, no-c-format
-msgid "Center parting"
+msgid "Chair#Chair1-001-2-41"
+msgstr ""
+
+#. code: 001-2-41,31,24,0	script	Chair#Chair2-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:37
+#, no-c-format
+msgid "Chair#Chair2-001-2-41"
+msgstr ""
+
+#. code: 001-2-41,35,27,0	script	Chair#Chair3-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:47
+#, no-c-format
+msgid "Chair#Chair3-001-2-41"
+msgstr ""
+
+#. code: 001-2-41,35,29,0	script	Chair#Chair4-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:57
+#, no-c-format
+msgid "Chair#Chair4-001-2-41"
+msgstr ""
+
+#. code: 001-2-41,35,35,0	script	Chair#Chair5-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:67
+#, no-c-format
+msgid "Chair#Chair5-001-2-41"
+msgstr ""
+
+#. code: 001-2-41,35,37,0	script	Chair#Chair6-001-2-41	NPC_NO_SPRITE,{
+#: npc/001-2-41/edouard.txt:77
+#, no-c-format
+msgid "Chair#Chair6-001-2-41"
 msgstr ""
 
 #. code: 589: Champion
@@ -3194,12 +3229,6 @@ msgstr ""
 msgid "Chelios... He is part of the blacksmith house, is he not?"
 msgstr ""
 
-#. code: rif(.@get_look !=  9, l("Cherry blossom")), 9,
-#: npc/functions/barber.txt:81
-#, no-c-format
-msgid "Cherry blossom"
-msgstr ""
-
 #. code: 1206: Cherry tree leaves have begun to fall.
 #: conf/messages.conf:1084
 msgid "Cherry tree leaves have begun to fall."
@@ -3244,12 +3273,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Chocolate Cashmere Dye"
-msgstr ""
-
-#. code: rif(.@get_look !=  21, l("Choppy")), 21,
-#: npc/functions/barber.txt:34
-#, no-c-format
-msgid "Choppy"
 msgstr ""
 
 #. code: Name: "Chorus of the Woods"
@@ -3327,12 +3350,6 @@ msgstr ""
 #: npc/001-1/calypsan.txt:23
 #, no-c-format
 msgid "Colorant is not the yeying color. Some wear out from light, others look great but inflict itai-itai, and others become spotty or wash-away."
-msgstr ""
-
-#. code: rif(.@get_look !=  3,  l("Combed back")), 3,
-#: npc/functions/barber.txt:16
-#, no-c-format
-msgid "Combed back"
 msgstr ""
 
 #. code: l("Come after a little while.");
@@ -3454,12 +3471,6 @@ msgstr ""
 msgid "Copper Armbands"
 msgstr ""
 
-#. code: rif(.@get_look !=  6, l("Copper blonde")), 6,
-#: npc/functions/barber.txt:78
-#, no-c-format
-msgid "Copper blonde"
-msgstr ""
-
 #. code: Name: "Coral"
 #: item_db.conf:-1
 #, no-c-format
@@ -3571,7 +3582,7 @@ msgid "Couwan hands you a box full of fish."
 msgstr ""
 
 #. code: Name: "Crafty"
-#: mob_db.conf:790
+#: mob_db.conf:793
 #, no-c-format
 msgid "Crafty"
 msgstr ""
@@ -3632,7 +3643,7 @@ msgid "Croconut Box"
 msgstr ""
 
 #. code: Name: "CroconutMob"
-#: mob_db.conf:623
+#: mob_db.conf:626
 #, no-c-format
 msgid "CroconutMob"
 msgstr ""
@@ -3649,7 +3660,7 @@ msgid "Crusader"
 msgstr ""
 
 #. code: Name: "Cuco"
-#: mob_db.conf:869
+#: mob_db.conf:872
 #, no-c-format
 msgid "Cuco"
 msgstr ""
@@ -3721,18 +3732,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Dark Red Cotton Dye"
-msgstr ""
-
-#. code: rif(.@get_look !=  2, l("Dark brown")), 2,
-#: npc/functions/barber.txt:74
-#, no-c-format
-msgid "Dark brown"
-msgstr ""
-
-#. code: rif(.@get_look !=  3, l("Dark copper")), 3,
-#: npc/functions/barber.txt:75
-#, no-c-format
-msgid "Dark copper"
 msgstr ""
 
 #. code: 000-1,89,95,0	script	Darlin	NPC_RAIJIN_MAN,{
@@ -3831,7 +3830,7 @@ msgid "Did you find my brother?"
 msgstr ""
 
 #. code: l("Did you say reward? I want it!"), L_BonusTask,
-#: npc/000-2-1/peter.txt:161
+#: npc/000-2-1/peter.txt:165
 #: npc/001-2-22/peter.txt:161
 #, no-c-format
 msgid "Did you say reward? I want it!"
@@ -3886,6 +3885,12 @@ msgstr ""
 msgid "Divorce error!"
 msgstr ""
 
+#. code: npctalk3 l("Do I look like a tree? I feel like one.");
+#: npc/functions/legiontalk.txt:13
+#, no-c-format
+msgid "Do I look like a tree? I feel like one."
+msgstr ""
+
 #. code: l("Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Jenna");
 #: npc/001-2-28/note.txt:19
 #, no-c-format
@@ -3905,8 +3910,8 @@ msgstr ""
 msgid "Do we have a deal?"
 msgstr ""
 
-#. code: l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
-#: npc/functions/legiontalk.txt:14
+#. code: //    l("Do you feel too weak even to do damage to this areas wishy-washy wildlife?"),
+#: npc/functions/legiontalk.txt:15
 #, no-c-format
 msgid "Do you feel too weak even to do damage to this areas wishy-washy wildlife?"
 msgstr ""
@@ -4148,7 +4153,7 @@ msgid "Don't belittle me, my work is deserving of the highest esteem."
 msgstr ""
 
 #. code: npctalk3 l("Don't distract me, I have to stay alert.");
-#: npc/functions/legiontalk.txt:28
+#: npc/functions/legiontalk.txt:29
 #, no-c-format
 msgid "Don't distract me, I have to stay alert."
 msgstr ""
@@ -4330,7 +4335,7 @@ msgid "Duel| You've left the duel."
 msgstr ""
 
 #. code: Name: "Dummy"
-#: mob_db.conf:911
+#: mob_db.conf:914
 #, no-c-format
 msgid "Dummy"
 msgstr ""
@@ -4394,10 +4399,10 @@ msgstr ""
 msgid "Easter Egg"
 msgstr ""
 
-#. code: 001-2-29,37,31,0	script	Edouard#001-2-29	NPC_EDOUARD,{
-#: npc/001-2-29/edouard.txt:7
+#. code: 001-2-41,30,29,0	script	Edouard#001-2-41	NPC_EDOUARD,{
+#: npc/001-2-41/edouard.txt:87
 #, no-c-format
-msgid "Edouard#001-2-29"
+msgid "Edouard#001-2-41"
 msgstr ""
 
 #. code: l("Ehm... He was really upset because of some past stories.");
@@ -4493,12 +4498,6 @@ msgstr ""
 msgid "Elven Voice"
 msgstr ""
 
-#. code: rif(.@get_look !=  4,  l("Emo")), 4,
-#: npc/functions/barber.txt:17
-#, no-c-format
-msgid "Emo"
-msgstr ""
-
 #. code: 1311: Enabled Mapflags in this map:
 #: conf/messages.conf:1273
 msgid "Enabled Mapflags in this map:"
@@ -4511,7 +4510,7 @@ msgid "Enjoy the fraternity and excitement of your future guild!"
 msgstr ""
 
 #. code: l("Enjoy your new style.");
-#: npc/001-2-29/edouard.txt:48
+#: npc/001-2-41/edouard.txt:144
 #, no-c-format
 msgid "Enjoy your new style."
 msgstr ""
@@ -4573,12 +4572,6 @@ msgstr ""
 #. code: 1036: Error reading groups.conf, reload failed.
 #: conf/messages.conf:827
 msgid "Error reading groups.conf, reload failed."
-msgstr ""
-
-#. code: rif(.@get_look !=  20, l("Esperia blue")), 20,
-#: npc/functions/barber.txt:92
-#, no-c-format
-msgid "Esperia blue"
 msgstr ""
 
 #. code: 001-1,113,120,0	script	Eugene	NPC_EUGENE,{
@@ -4684,7 +4677,7 @@ msgid "Fates Potion"
 msgstr ""
 
 #. code: l("Feel free to come visit me another time.");
-#: npc/001-2-29/edouard.txt:62
+#: npc/001-2-41/edouard.txt:158
 #, no-c-format
 msgid "Feel free to come visit me another time."
 msgstr ""
@@ -4764,12 +4757,6 @@ msgstr ""
 msgid "Fine... I was just going to give you some help..."
 msgstr ""
 
-#. code: rif(.@get_look !=  11, l("Fire red")), 11,
-#: npc/functions/barber.txt:83
-#, no-c-format
-msgid "Fire red"
-msgstr ""
-
 #. code: 1216: Fireworks are launched.
 #: conf/messages.conf:1104
 msgid "Fireworks are launched."
@@ -4814,14 +4801,8 @@ msgstr ""
 msgid "Five Castles"
 msgstr ""
 
-#. code: rif(.@get_look !=  27, l("Flat ponytail")), 27,
-#: npc/functions/barber.txt:40
-#, no-c-format
-msgid "Flat ponytail"
-msgstr ""
-
 #. code: Name: "Fluffy"
-#: mob_db.conf:946
+#: mob_db.conf:949
 #, no-c-format
 msgid "Fluffy"
 msgstr ""
@@ -4899,12 +4880,6 @@ msgstr ""
 #: npc/001-1/calypsan.txt:35
 #, no-c-format
 msgid "For what kind of tissue?"
-msgstr ""
-
-#. code: rif(.@get_look !=  18, l("Forest green")), 18,
-#: npc/functions/barber.txt:90
-#, no-c-format
-msgid "Forest green"
 msgstr ""
 
 #. code: 304: Four Castles
@@ -5085,15 +5060,9 @@ msgid "Give me back this dish, you dirty liar!#1"
 msgstr ""
 
 #. code: npctalk3 l("Give me some space.");
-#: npc/functions/legiontalk.txt:31
+#: npc/functions/legiontalk.txt:32
 #, no-c-format
 msgid "Give me some space."
-msgstr ""
-
-#. code: l("Give up."), 3;
-#: npc/functions/fishing.txt:97
-#, no-c-format
-msgid "Give up."
 msgstr ""
 
 #. code: mesq l("Go and grab one of them. A good knife will help with your hunting the creatures of this island.");
@@ -5137,12 +5106,6 @@ msgstr ""
 #: npc/001-1/qonan.txt:25
 #, no-c-format
 msgid "Go on."
-msgstr ""
-
-#. code: rif(.@get_look !=  7, l("Golden blonde")), 7,
-#: npc/functions/barber.txt:79
-#, no-c-format
-msgid "Golden blonde"
 msgstr ""
 
 #. code: mesq g(l("Good day miss."), l("Good day mister."));
@@ -5191,8 +5154,8 @@ msgstr ""
 #. code: mesq l("Good job!");
 #. code: mesq l("Good job!") + " " + l("Here's your reward!");
 #: npc/000-1/gugli.txt:120
-#: npc/000-2-1/peter.txt:304
 #: npc/001-2-22/peter.txt:304
+#: npc/000-2-1/peter.txt:308
 #, no-c-format
 msgid "Good job!"
 msgstr ""
@@ -5760,8 +5723,8 @@ msgstr ""
 #. code: mesq l("Hehe, hehe. Well, come back if you change your mind.");
 #: npc/001-2-22/peter.txt:119
 #: npc/000-2-1/peter.txt:119
+#: npc/000-2-1/peter.txt:176
 #: npc/001-2-22/peter.txt:172
-#: npc/000-2-1/peter.txt:172
 #: npc/001-2-22/peter.txt:149
 #: npc/000-2-1/peter.txt:149
 #, no-c-format
@@ -5825,13 +5788,13 @@ msgid "Hello yeye."
 msgstr ""
 
 #. code: lg("Hello, young lady.", "Hello, young man.");
-#: npc/001-2-29/edouard.txt:27
+#: npc/001-2-41/edouard.txt:117
 #, no-c-format
 msgid "Hello, young lady.#0"
 msgstr ""
 
 #. code: lg("Hello, young lady.", "Hello, young man.");
-#: npc/001-2-29/edouard.txt:27
+#: npc/001-2-41/edouard.txt:117
 #, no-c-format
 msgid "Hello, young man.#1"
 msgstr ""
@@ -5927,7 +5890,7 @@ msgstr ""
 
 #. code: mesq l("Good job!") + " " + l("Here's your reward!");
 #: npc/001-2-22/peter.txt:304
-#: npc/000-2-1/peter.txt:304
+#: npc/000-2-1/peter.txt:308
 #, no-c-format
 msgid "Here's your reward!"
 msgstr ""
@@ -6032,7 +5995,7 @@ msgstr ""
 
 #. code: mesq l("Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later.");
 #: npc/001-2-22/peter.txt:250
-#: npc/000-2-1/peter.txt:250
+#: npc/000-2-1/peter.txt:254
 #, no-c-format
 msgid "Hey! Be careful. You can't stay in this basement for so long, you're going to get sick. Come outside and take a break, maybe you can try again later."
 msgstr ""
@@ -6280,14 +6243,6 @@ msgstr ""
 msgid "Hm... Shhhh..."
 msgstr ""
 
-#. code: l("Hmm, I'm fine for now, thank you."), 29;
-#. code: l("Hmm, I'm fine for now, thank you."), 22;
-#: npc/functions/barber.txt:93
-#: npc/functions/barber.txt:42
-#, no-c-format
-msgid "Hmm, I'm fine for now, thank you."
-msgstr ""
-
 #. code: mesq l("Hmm... Let's see, take this one.");
 #: npc/000-1/ale.txt:34
 #, no-c-format
@@ -6324,12 +6279,6 @@ msgstr ""
 #: npc/001-1/cookiemaster.txt:88
 #, no-c-format
 msgid "Honestly, it's quite far-fetched according to me."
-msgstr ""
-
-#. code: rif(.@get_look !=  5, l("Honey brown")), 5,
-#: npc/functions/barber.txt:77
-#, no-c-format
-msgid "Honey brown"
 msgstr ""
 
 #. code: mesq l("How about I ask you to help the crew? It would mean that you're one of us and that you will be able to get one of these hats.");
@@ -6537,10 +6486,10 @@ msgstr ""
 msgid "I am an alchemist, I bear the name of Ivan."
 msgstr ""
 
-#. code: l("I am new in this town, just like you are."),
-#: npc/001-2-29/edouard.txt:16
+#. code: l("I am new in this town, just like you."),
+#: npc/001-2-41/edouard.txt:96
 #, no-c-format
-msgid "I am new in this town, just like you are."
+msgid "I am new in this town, just like you."
 msgstr ""
 
 #. code: l("I am not an expert of the first kind, but I know what I am talking about when it comes to improving equipment."),
@@ -6550,7 +6499,7 @@ msgid "I am not an expert of the first kind, but I know what I am talking about 
 msgstr ""
 
 #. code: l("I am not worried about rewards. I just want to help."), L_Task,
-#: npc/000-2-1/peter.txt:162
+#: npc/000-2-1/peter.txt:166
 #: npc/001-2-22/peter.txt:162
 #, no-c-format
 msgid "I am not worried about rewards. I just want to help."
@@ -6673,7 +6622,7 @@ msgid "I buried the chest somewhere on that hill. It was dark, so I don't rememb
 msgstr ""
 
 #. code: l("I came here, looking for a better life."),
-#: npc/001-2-29/edouard.txt:17
+#: npc/001-2-41/edouard.txt:97
 #, no-c-format
 msgid "I came here, looking for a better life."
 msgstr ""
@@ -6737,9 +6686,15 @@ msgid "I can't remember anything.#1"
 msgstr ""
 
 #. code: npctalk3 l("I can't stay here and talk all day. I have a job to do.");
-#: npc/functions/legiontalk.txt:43
+#: npc/functions/legiontalk.txt:44
 #, no-c-format
 msgid "I can't stay here and talk all day. I have a job to do."
+msgstr ""
+
+#. code: message strcharinfo(0), l("I can't use the shovel here.");
+#: npc/items/shovel.txt:137
+#, no-c-format
+msgid "I can't use the shovel here."
 msgstr ""
 
 #. code: l("I can't wait all day!"),
@@ -6852,10 +6807,10 @@ msgid "I don't know."
 msgstr ""
 
 #. code: mesq l("I don't need your help right now, come back later.");
-#: npc/000-2-1/peter.txt:327
 #: npc/001-2-22/peter.txt:327
+#: npc/000-2-1/peter.txt:331
 #: npc/001-2-22/peter.txt:242
-#: npc/000-2-1/peter.txt:242
+#: npc/000-2-1/peter.txt:246
 #, no-c-format
 msgid "I don't need your help right now, come back later."
 msgstr ""
@@ -7052,7 +7007,7 @@ msgid "I hope you don't mind that we used your raft to build this ramp."
 msgstr ""
 
 #. code: l("I hope you like this color.");
-#: npc/001-2-29/edouard.txt:54
+#: npc/001-2-41/edouard.txt:150
 #, no-c-format
 msgid "I hope you like this color."
 msgstr ""
@@ -7355,12 +7310,6 @@ msgstr ""
 #: npc/001-2-21/julia.txt:54
 #, no-c-format
 msgid "I speak Spanish."
-msgstr ""
-
-#. code: l("I still didn't find a cheap building to open my own business, so for now I will stay in this inn."),
-#: npc/001-2-29/edouard.txt:18
-#, no-c-format
-msgid "I still didn't find a cheap building to open my own business, so for now I will stay in this inn."
 msgstr ""
 
 #. code: mesq l("I still didn't find my brother...");
@@ -7703,8 +7652,8 @@ msgstr ""
 msgid "I'd like to catch one of them, but they fly away when I try."
 msgstr ""
 
-#. code: l("I'd like to get a different style."), 1,
-#: npc/001-2-29/edouard.txt:38
+#. code: l("I'd like to get a different style."), 2,
+#: npc/001-2-41/edouard.txt:131
 #, no-c-format
 msgid "I'd like to get a different style."
 msgstr ""
@@ -7752,10 +7701,10 @@ msgstr ""
 msgid "I'll share my berries with you if you help me."
 msgstr ""
 
-#. code: l("I'm a barber, you see. I can change your hair style or color to your liking.");
-#: npc/001-2-29/edouard.txt:19
+#. code: l("I'm a barber, you see. I can change your hairstyle or hair color to your current taste.");
+#: npc/001-2-41/edouard.txt:100
 #, no-c-format
-msgid "I'm a barber, you see. I can change your hair style or color to your liking."
+msgid "I'm a barber, you see. I can change your hairstyle or hair color to your current taste."
 msgstr ""
 
 #. code: lg("I'm a bit sick..."), -;
@@ -7771,7 +7720,7 @@ msgid "I'm a bit sick...#1"
 msgstr ""
 
 #. code: npctalk3 l("I'm a little busy right now.");
-#: npc/functions/legiontalk.txt:19
+#: npc/functions/legiontalk.txt:20
 #, no-c-format
 msgid "I'm a little busy right now."
 msgstr ""
@@ -7794,8 +7743,12 @@ msgstr ""
 msgid "I'm done."
 msgstr ""
 
-#. code: l("I'm fine for now, thank you."), 4;
-#: npc/001-2-29/edouard.txt:41
+#. code: l("I'm fine for now, thank you."), 5;
+#. code: .@menustr$ = l("Surprise me!") + ":" + .@menustr$ + l("I'm fine for now, thank you.");
+#. code: .@menustr$ = .@menustr$ + l("I'm fine for now, thank you.");
+#: npc/functions/barber.txt:85
+#: npc/001-2-41/edouard.txt:134
+#: npc/functions/barber.txt:44
 #, no-c-format
 msgid "I'm fine for now, thank you."
 msgstr ""
@@ -8230,12 +8183,6 @@ msgstr ""
 msgid "If you're looking for us there, most of us will be at the tavern of the Red Plush, at the bar counter, for Silvio's case..."
 msgstr ""
 
-#. code: rif(.@get_look !=  24, l("Imperial")), 24,
-#: npc/functions/barber.txt:37
-#, no-c-format
-msgid "Imperial"
-msgstr ""
-
 #. code: 149: Impossible to increase the number/value.
 #: conf/messages.conf:157
 msgid "Impossible to increase the number/value."
@@ -8287,12 +8234,6 @@ msgstr ""
 #: npc/000-2-1/alige.txt:69
 #, no-c-format
 msgid "Indeed, I am not.#1"
-msgstr ""
-
-#. code: rif(.@get_look !=  20, l("Infinitely long")), 20,
-#: npc/functions/barber.txt:33
-#, no-c-format
-msgid "Infinitely long"
 msgstr ""
 
 #. code: 148: Information sent to login-server via char-server.
@@ -8733,16 +8674,10 @@ msgstr ""
 msgid "It's been a while, girl!#0"
 msgstr ""
 
-#. code: lg("It's better than running around in circles doing nothing.");
+#. code: l("It's better than running around in circles doing nothing.");
 #: npc/001-1/elmo.txt:10
 #, no-c-format
-msgid "It's better than running around in circles doing nothing.#0"
-msgstr ""
-
-#. code: lg("It's better than running around in circles doing nothing.");
-#: npc/001-1/elmo.txt:10
-#, no-c-format
-msgid "It's better than running around in circles doing nothing.#1"
+msgid "It's better than running around in circles doing nothing."
 msgstr ""
 
 #. code: l("It's better to deal with the Merchant Guild than the old man, Don has this ability to hammer down your enthusiasm in sparkling fury!"),
@@ -9072,13 +9007,13 @@ msgid "Kaylo#001-2-27"
 msgstr ""
 
 #. code: npctalk3 lg("Keep moving girl.", "Keep moving boy.");
-#: npc/functions/legiontalk.txt:46
+#: npc/functions/legiontalk.txt:47
 #, no-c-format
 msgid "Keep moving boy.#1"
 msgstr ""
 
 #. code: npctalk3 lg("Keep moving girl.", "Keep moving boy.");
-#: npc/functions/legiontalk.txt:46
+#: npc/functions/legiontalk.txt:47
 #, no-c-format
 msgid "Keep moving girl.#0"
 msgstr ""
@@ -9115,12 +9050,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Lachesis Brew"
-msgstr ""
-
-#. code: rif(.@get_look !=  15, l("Lagoon blue")), 15,
-#: npc/functions/barber.txt:87
-#, no-c-format
-msgid "Lagoon blue"
 msgstr ""
 
 #. code: mesq lg("Last time I saw you, you were lost at sea on your raft.");
@@ -9351,12 +9280,6 @@ msgstr ""
 msgid "Light Armor Shop"
 msgstr ""
 
-#. code: rif(.@get_look !=  12, l("Light violet")), 12,
-#: npc/functions/barber.txt:84
-#, no-c-format
-msgid "Light violet"
-msgstr ""
-
 #. code: l("Like I promised, here is your share."),
 #: npc/001-1/qonan.txt:84
 #, no-c-format
@@ -9431,24 +9354,6 @@ msgstr ""
 #. code: 427: Login-server is offline. Impossible to %s the player '%.*s'.
 #: conf/messages.conf:420
 msgid "Login-server is offline. Impossible to %s the player '%.*s'."
-msgstr ""
-
-#. code: rif(.@get_look !=  11, l("Long and curly")), 11,
-#: npc/functions/barber.txt:24
-#, no-c-format
-msgid "Long and curly"
-msgstr ""
-
-#. code: rif(.@get_look !=  8,  l("Long and slick")), 8,
-#: npc/functions/barber.txt:21
-#, no-c-format
-msgid "Long and slick"
-msgstr ""
-
-#. code: rif(.@get_look !=  19, l("Long ponytail")), 19,
-#: npc/functions/barber.txt:32
-#, no-c-format
-msgid "Long ponytail"
 msgstr ""
 
 #. code: l("Look at your equipment, can you guess what material it is made from?"),
@@ -9600,15 +9505,9 @@ msgid "Manana"
 msgstr ""
 
 #. code: Name: "Manana Tree"
-#: mob_db.conf:754
+#: mob_db.conf:757
 #, no-c-format
 msgid "Manana Tree"
-msgstr ""
-
-#. code: rif(.@get_look !=  15, l("Mane")), 15,
-#: npc/functions/barber.txt:28
-#, no-c-format
-msgid "Mane"
 msgstr ""
 
 #. code: 1: Map not found.
@@ -9767,12 +9666,6 @@ msgstr ""
 msgid "Merlin"
 msgstr ""
 
-#. code: rif(.@get_look !=  26, l("Messy")), 26,
-#: npc/functions/barber.txt:39
-#, no-c-format
-msgid "Messy"
-msgstr ""
-
 #. code: 633: Minstrel
 #: conf/messages.conf:570
 msgid "Minstrel"
@@ -9806,12 +9699,6 @@ msgstr ""
 #: npc/001-1/_mobs.txt:33
 #, no-c-format
 msgid "Mobs#001-1"
-msgstr ""
-
-#. code: rif(.@get_look !=  5,  l("Mohawk")), 5,
-#: npc/functions/barber.txt:18
-#, no-c-format
-msgid "Mohawk"
 msgstr ""
 
 #. code: mesq l("Mommy sent me to find my brother Bobo.");
@@ -9914,12 +9801,6 @@ msgstr ""
 msgid "Mouboo#Artis3"
 msgstr ""
 
-#. code: npctalk3 l("Move kid.");
-#: npc/functions/legiontalk.txt:25
-#, no-c-format
-msgid "Move kid."
-msgstr ""
-
 #. code: Name: "Mushroom Spores"
 #: item_db.conf:-1
 #, no-c-format
@@ -9930,6 +9811,12 @@ msgstr ""
 #: npc/000-1/silvio.txt:33
 #, no-c-format
 msgid "My beauty, I was not always a sailor, you know, I was once an important individual!#0"
+msgstr ""
+
+#. code: npctalk3 l("My breath smells bad.");
+#: npc/functions/legiontalk.txt:26
+#, no-c-format
+msgid "My breath smells bad."
 msgstr ""
 
 #. code: mesq lg("My beauty, I was not always a sailor, you know, I was once an important individual!", "My friend, I was not always a sailor, you know, I was once an important individual!");
@@ -10162,12 +10049,6 @@ msgstr ""
 msgid "Navy Blue Cotton Dye"
 msgstr ""
 
-#. code: rif(.@get_look !=  14, l("Navy blue")), 14,
-#: npc/functions/barber.txt:86
-#, no-c-format
-msgid "Navy blue"
-msgstr ""
-
 #. code: l("Nevertheless, you can craft some cards that you can then attach to your equipment."),
 #: npc/001-2-0/resa.txt:21
 #, no-c-format
@@ -10342,7 +10223,7 @@ msgstr ""
 
 #. code: l("No problem, I can help you anyway."), L_Task,
 #: npc/001-2-22/peter.txt:167
-#: npc/000-2-1/peter.txt:167
+#: npc/000-2-1/peter.txt:171
 #, no-c-format
 msgid "No problem, I can help you anyway."
 msgstr ""
@@ -10644,7 +10525,7 @@ msgid "Not everybody has a kind mind. Scammers can be anywhere, even among us!"
 msgstr ""
 
 #. code: npctalk3 l("Not in the mood to chat.");
-#: npc/functions/legiontalk.txt:22
+#: npc/functions/legiontalk.txt:23
 #, no-c-format
 msgid "Not in the mood to chat."
 msgstr ""
@@ -10713,7 +10594,7 @@ msgid "Nothing"
 msgstr ""
 
 #. code: .@sel$ = .@sel$ + l("Nothing, I changed my mind.");
-#: npc/functions/fishing.txt:44
+#: npc/functions/fishing.txt:127
 #, no-c-format
 msgid "Nothing, I changed my mind."
 msgstr ""
@@ -10947,12 +10828,6 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#. code: rif(.@get_look !=  0, l("Off black")), 0,
-#: npc/functions/barber.txt:72
-#, no-c-format
-msgid "Off black"
-msgstr ""
-
 #. code: mesq l("Oh I see... Sailors are not able to do their job anymore, is it like that?!");
 #: npc/000-1/muller.txt:29
 #, no-c-format
@@ -11055,16 +10930,10 @@ msgstr ""
 msgid "Oh really? I'll put more food in the next box then."
 msgstr ""
 
-#. code: mesq lg("Oh right, I totally forgot about that, here you go.");
+#. code: mesq l("Oh right, I totally forgot about that, here you go.");
 #: npc/000-2-1/arpan.txt:210
 #, no-c-format
-msgid "Oh right, I totally forgot about that, here you go.#0"
-msgstr ""
-
-#. code: mesq lg("Oh right, I totally forgot about that, here you go.");
-#: npc/000-2-1/arpan.txt:210
-#, no-c-format
-msgid "Oh right, I totally forgot about that, here you go.#1"
+msgid "Oh right, I totally forgot about that, here you go."
 msgstr ""
 
 #. code: l("Oh sure I remember you."),
@@ -11169,8 +11038,8 @@ msgstr ""
 msgid "Oh, and Olga from the market place as well!"
 msgstr ""
 
-#. code: l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
-#: npc/functions/legiontalk.txt:16
+#. code: //    l("Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops.");
+#: npc/functions/legiontalk.txt:17
 #, no-c-format
 msgid "Oh, and a fruit may even fall for you if you are lucky! But stay alert to pick up your drops."
 msgstr ""
@@ -11417,14 +11286,14 @@ msgid "Okay, I'll be here, if you change your mind."
 msgstr ""
 
 #. code: lg("Okay, I'm ready to work!"), -,
-#: npc/000-2-1/peter.txt:183
+#: npc/000-2-1/peter.txt:187
 #: npc/001-2-22/peter.txt:183
 #, no-c-format
 msgid "Okay, I'm ready to work!#0"
 msgstr ""
 
 #. code: lg("Okay, I'm ready to work!"), -,
-#: npc/000-2-1/peter.txt:183
+#: npc/000-2-1/peter.txt:187
 #: npc/001-2-22/peter.txt:183
 #, no-c-format
 msgid "Okay, I'm ready to work!#1"
@@ -11437,8 +11306,8 @@ msgid "Okay, but there won't be any explosions."
 msgstr ""
 
 #. code: mesq l("Okay, you can start!");
-#: npc/000-2-1/peter.txt:202
 #: npc/001-2-22/peter.txt:202
+#: npc/000-2-1/peter.txt:206
 #, no-c-format
 msgid "Okay, you can start!"
 msgstr ""
@@ -11592,12 +11461,6 @@ msgstr ""
 msgid "Our only wish to eat a plush, so juicy sweet..."
 msgstr ""
 
-#. code: npctalk3 l("Out of my way.");
-#: npc/functions/legiontalk.txt:49
-#, no-c-format
-msgid "Out of my way."
-msgstr ""
-
 #. code: 904: Packet 0x%x length: %d
 #: conf/messages.conf:652
 msgid "Packet 0x%x length: %d"
@@ -11606,12 +11469,6 @@ msgstr ""
 #. code: 588: Paladin
 #: conf/messages.conf:522
 msgid "Paladin"
-msgstr ""
-
-#. code: rif(.@get_look !=  12, l("Parted")), 12,
-#: npc/functions/barber.txt:25
-#, no-c-format
-msgid "Parted"
 msgstr ""
 
 #. code: speech l("Partner not ready.");
@@ -11655,12 +11512,6 @@ msgstr ""
 #: npc/001-1/enora.txt:273
 #, no-c-format
 msgid "Perfect! I will wait for you here."
-msgstr ""
-
-#. code: rif(.@get_look !=  13, l("Perky ponytail")), 13,
-#: npc/functions/barber.txt:26
-#, no-c-format
-msgid "Perky ponytail"
 msgstr ""
 
 #. code: 185: Pet hunger changed.
@@ -11712,12 +11563,6 @@ msgstr ""
 msgid "Piberries Infusion"
 msgstr ""
 
-#. code: rif(.@get_look !=  10, l("Pigtails")), 10,
-#: npc/functions/barber.txt:23
-#, no-c-format
-msgid "Pigtails"
-msgstr ""
-
 #. code: Name: "Pikpik"
 #: mob_db.conf:587
 #, no-c-format
@@ -11734,12 +11579,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Pink Cotton Dye"
-msgstr ""
-
-#. code: rif(.@get_look !=  10, l("Pinky pink")), 10,
-#: npc/functions/barber.txt:82
-#, no-c-format
-msgid "Pinky pink"
 msgstr ""
 
 #. code: Name: "Piou"
@@ -12349,10 +12188,10 @@ msgstr ""
 msgid "Please specify a display name or monster name/id."
 msgstr ""
 
-#. code: mesq l("Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)");
+#. code: mesq l("Please take this @@ for your help.", getitemlink(Aquada)); // Need a different reward.
 #: npc/001-1/katja.txt:58
 #, no-c-format
-msgid "Please take this lollypop for your help. Mum says they are bad for my teeth anyway (FIXME)"
+msgid "Please take this @@ for your help."
 msgstr ""
 
 #. code: l("Please try to figure out what went wrong with this order and bring me these potions."),
@@ -12409,12 +12248,6 @@ msgstr ""
 msgid "Poisoned Dish"
 msgstr ""
 
-#. code: rif(.@get_look !=  6,  l("Pompadour")), 6,
-#: npc/functions/barber.txt:19
-#, no-c-format
-msgid "Pompadour"
-msgstr ""
-
 #. code: l("Poor Chelios, I don't envy him..."),
 #: npc/001-1/enora.txt:169
 #, no-c-format
@@ -12424,6 +12257,12 @@ msgstr ""
 #. code: 1178: Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
 #: conf/messages.conf:1037
 msgid "Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body"
+msgstr ""
+
+#. code: npctalk3 l("Practice! There are no secrets to becoming a warrior.");
+#: npc/functions/legiontalk.txt:56
+#, no-c-format
+msgid "Practice! There are no secrets to becoming a warrior."
 msgstr ""
 
 #. code: 558: Priest
@@ -12448,12 +12287,6 @@ msgstr ""
 msgid "Protect me, please..."
 msgstr ""
 
-#. code: l("Pull!"), 1,
-#: npc/functions/fishing.txt:95
-#, no-c-format
-msgid "Pull!"
-msgstr ""
-
 #. code: Name: "Pumpkin"
 #: item_db.conf:-1
 #, no-c-format
@@ -12473,7 +12306,7 @@ msgid "Pumpkin Seeds"
 msgstr ""
 
 #. code: Name: "Pumpkish"
-#: mob_db.conf:834
+#: mob_db.conf:837
 #, no-c-format
 msgid "Pumpkish"
 msgstr ""
@@ -12482,18 +12315,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Pumpkish Juice"
-msgstr ""
-
-#. code: rif(.@get_look !=  23, l("Punk")), 23,
-#: npc/functions/barber.txt:36
-#, no-c-format
-msgid "Punk"
-msgstr ""
-
-#. code: rif(.@get_look !=  8, l("Pure platinum")), 8,
-#: npc/functions/barber.txt:80
-#, no-c-format
-msgid "Pure platinum"
 msgstr ""
 
 #. code: Name: "Purple Blobime"
@@ -12506,12 +12327,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Purple Cotton Dye"
-msgstr ""
-
-#. code: rif(.@get_look !=  13, l("Purple plum")), 13,
-#: npc/functions/barber.txt:85
-#, no-c-format
-msgid "Purple plum"
 msgstr ""
 
 #. code: 1046: PvP Flags:
@@ -13137,18 +12952,6 @@ msgstr ""
 msgid "Shop is out of stock! Come again later!"
 msgstr ""
 
-#. code: rif(.@get_look !=  9,  l("Short and curly")), 9,
-#: npc/functions/barber.txt:22
-#, no-c-format
-msgid "Short and curly"
-msgstr ""
-
-#. code: rif(.@get_look !=  25, l("Side strand")), 25,
-#: npc/functions/barber.txt:38
-#, no-c-format
-msgid "Side strand"
-msgstr ""
-
 #. code: 001-1,161,72,0	script	Sign#001-1-s-alchemist	NPC_NO_SPRITE,{
 #: npc/001-1/sign.txt:156
 #, no-c-format
@@ -13255,12 +13058,6 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Silver Cotton Dye"
-msgstr ""
-
-#. code: rif(.@get_look !=  19, l("Silver grey")), 19,
-#: npc/functions/barber.txt:91
-#, no-c-format
-msgid "Silver grey"
 msgstr ""
 
 #. code: 000-1,86,99,0	script	Silvio	NPC_SILVIO,{
@@ -13415,6 +13212,12 @@ msgstr ""
 msgid "So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0"
 msgstr ""
 
+#. code: npctalk3 l("So you think you're tough? A warrior must also be loyal and patient.");
+#: npc/functions/legiontalk.txt:50
+#, no-c-format
+msgid "So you think you're tough? A warrior must also be loyal and patient."
+msgstr ""
+
 #. code: l("So you're under the control of a dictatorship? That's... reassuring!"), L_Control,
 #: npc/001-1/cookiemaster.txt:113
 #, no-c-format
@@ -13560,6 +13363,12 @@ msgstr ""
 msgid "Somebody is waiting for you outside!"
 msgstr ""
 
+#. code: l("Somebody took your place on this spot!"),
+#: npc/functions/fishing.txt:154
+#, no-c-format
+msgid "Somebody took your place on this spot!"
+msgstr ""
+
 #. code: l("Somebody tried to stroke the word fish and tried to replace it with sharkes.");
 #: npc/001-1/panels.txt:47
 #, no-c-format
@@ -13640,10 +13449,10 @@ msgid "Sorry! I forgot to introduce myself. My name is Arpan, but other sailors 
 msgstr ""
 
 #. code: l("Sorry, I am not in the mood for another fight with these rattos."), -;
-#: npc/000-2-1/peter.txt:163
 #: npc/001-2-22/peter.txt:168
-#: npc/000-2-1/peter.txt:168
+#: npc/000-2-1/peter.txt:172
 #: npc/001-2-22/peter.txt:163
+#: npc/000-2-1/peter.txt:167
 #, no-c-format
 msgid "Sorry, I am not in the mood for another fight with these rattos."
 msgstr ""
@@ -13736,18 +13545,6 @@ msgstr ""
 #: npc/001-1/rumly.txt:173
 #, no-c-format
 msgid "Spend it wisely this time."
-msgstr ""
-
-#. code: mes col(l("Splash!"), 9);
-#: npc/functions/fishing.txt:91
-#, no-c-format
-msgid "Splash!"
-msgstr ""
-
-#. code: rif(.@get_look !=  17, l("Spring green")), 17,
-#: npc/functions/barber.txt:89
-#, no-c-format
-msgid "Spring green"
 msgstr ""
 
 #. code: 104: Spying on the %s guild.
@@ -13972,8 +13769,8 @@ msgstr ""
 msgid "Surely. Take this box full of @@s."
 msgstr ""
 
-#. code: l("Surprise me!"), 21,
-#: npc/functions/barber.txt:71
+#. code: .@menustr$ = l("Surprise me!") + ":" + .@menustr$ + l("I'm fine for now, thank you.");
+#: npc/functions/barber.txt:85
 #, no-c-format
 msgid "Surprise me!"
 msgstr ""
@@ -14064,12 +13861,6 @@ msgstr ""
 #: npc/001-1/chelios.txt:38
 #, no-c-format
 msgid "Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill."
-msgstr ""
-
-#. code: rif(.@get_look !=  28, l("Tapered nape")), 28,
-#: npc/functions/barber.txt:41
-#, no-c-format
-msgid "Tapered nape"
 msgstr ""
 
 #. code: 001-1,68,79,0	script	Taree	NPC_ELVEN_MAN_MOUBOO_SHOP,{
@@ -14242,15 +14033,20 @@ msgstr ""
 msgid "Thank you. I'll wait here."
 msgstr ""
 
-#. code: mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.");
+#. code: mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal!");
 #: npc/000-2-1/peter.txt:156
+#, no-c-format
+msgid "Thanks again for helping me. Drats these rattos for infesting our fair vessal!"
+msgstr ""
+
+#. code: mesq l("Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination.");
 #: npc/001-2-22/peter.txt:156
 #, no-c-format
 msgid "Thanks again for helping me. Drats these rattos for infesting our fair vessal! They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control. Your help is very welcome indeed. Unfortunately, I can give you a reward only for the first extermination."
 msgstr ""
 
 #. code: mesq l("Thanks for helping me!");
-#: npc/000-2-1/peter.txt:313
+#: npc/000-2-1/peter.txt:317
 #: npc/001-2-22/peter.txt:313
 #, no-c-format
 msgid "Thanks for helping me!"
@@ -14435,18 +14231,6 @@ msgstr ""
 #: npc/000-1/sapartan.txt:62
 #, no-c-format
 msgid "The first thing you should do is to evaluate your enemy."
-msgstr ""
-
-#. code: l("The fish ate all your bait.");
-#: npc/functions/fishing.txt:131
-#, no-c-format
-msgid "The fish ate all your bait."
-msgstr ""
-
-#. code: l("The fish ate small part of your bait."),
-#: npc/functions/fishing.txt:137
-#, no-c-format
-msgid "The fish ate small part of your bait."
 msgstr ""
 
 #. code: 1211: The fog has gone.
@@ -14651,8 +14435,8 @@ msgstr ""
 msgid "Then I can give you some tips about fighting."
 msgstr ""
 
-#. code: l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
-#: npc/functions/legiontalk.txt:15
+#. code: //    l("Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."),
+#: npc/functions/legiontalk.txt:16
 #, no-c-format
 msgid "Then concentrate your anger upon the trees hereabouts, you will gain experience whilst leveling your sword skill on them."
 msgstr ""
@@ -14777,6 +14561,12 @@ msgstr ""
 msgid "There is no help for %c%s."
 msgstr ""
 
+#. code: npctalk3 l("There is no honor in fighting a weak opponent.");
+#: npc/functions/legiontalk.txt:59
+#, no-c-format
+msgid "There is no honor in fighting a weak opponent."
+msgstr ""
+
 #. code: 286: There's been no change in the setting.
 #: conf/messages.conf:284
 msgid "There's been no change in the setting."
@@ -14840,6 +14630,12 @@ msgstr ""
 #: npc/000-1/gulukan.txt:104
 #, no-c-format
 msgid "These yeye boxes are way too heavy to be carried alone onto the ship."
+msgstr ""
+
+#. code: mesq l("They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control.");
+#: npc/000-2-1/peter.txt:158
+#, no-c-format
+msgid "They are a permanent problem so I will always need your help to exterminate them in order to keep their number under control."
 msgstr ""
 
 #. code: mesq l("They are all around the island.");
@@ -14929,11 +14725,11 @@ msgstr ""
 msgid "This action can't be performed at the moment. Please try again later."
 msgstr ""
 
-#. code: l("This book resumes everything you should know about it, take it!");
+#. code: l("This book contains everything you should know about it, take it!");
 #: npc/001-2-9/janus.txt:101
 #: npc/001-2-9/janus.txt:84
 #, no-c-format
-msgid "This book resumes everything you should know about it, take it!"
+msgid "This book contains everything you should know about it, take it!"
 msgstr ""
 
 #. code: 294: This bound item cannot be stored there.
@@ -14955,6 +14751,18 @@ msgstr ""
 #: npc/000-2-0/doors.txt:63
 #, no-c-format
 msgid "This door is locked."
+msgstr ""
+
+#. code: narrator l("This fishing spot has just been used, give it a rest.");
+#: npc/functions/fishing.txt:107
+#, no-c-format
+msgid "This fishing spot has just been used, give it a rest."
+msgstr ""
+
+#. code: npctalkonce l("This fishing spot is already being used!");
+#: npc/functions/fishing.txt:23
+#, no-c-format
+msgid "This fishing spot is already being used!"
 msgstr ""
 
 #. code: npctalkonce l("This floor is reserved for quiet reading, don't speak too loud.");
@@ -15175,13 +14983,13 @@ msgid "Time of death : ^EE0000%s^000000"
 msgstr ""
 
 #. code: Name: "Tipiou"
-#: mob_db.conf:709
+#: mob_db.conf:712
 #, no-c-format
 msgid "Tipiou"
 msgstr ""
 
 #. code: Name: "Tipiu"
-#: mob_db.conf:663
+#: mob_db.conf:666
 #, no-c-format
 msgid "Tipiu"
 msgstr ""
@@ -15396,12 +15204,6 @@ msgstr ""
 #. code: 322: Twenty-Two Castles
 #: conf/messages.conf:323
 msgid "Twenty-Two Castles"
-msgstr ""
-
-#. code: rif(.@get_look !=  16, l("Twisted teal")), 16,
-#: npc/functions/barber.txt:88
-#, no-c-format
-msgid "Twisted teal"
 msgstr ""
 
 #. code: 302: Two Castles
@@ -15744,6 +15546,12 @@ msgstr ""
 msgid "Wait a minute, where's the cookie I gave you?"
 msgstr ""
 
+#. code: npctalk3 l("Wait for the bait to sink underwater.");
+#: npc/functions/fishing.txt:169
+#, no-c-format
+msgid "Wait for the bait to sink underwater."
+msgstr ""
+
 #. code: lg("Wait, are you one of those from the Legion of Aemil? I didn't do anything wrong, I promise!"),
 #: npc/001-1/rumly.txt:45
 #, no-c-format
@@ -15773,12 +15581,6 @@ msgstr ""
 #: npc/000-2-3/nard.txt:75
 #, no-c-format
 msgid "Wait, you never came here before?"
-msgstr ""
-
-#. code: l("Wait..."), 2,
-#: npc/functions/fishing.txt:96
-#, no-c-format
-msgid "Wait..."
 msgstr ""
 
 #. code: l("Wait... That's not a proper place for a chef, what are you doing there?"), L_Presentation,
@@ -15900,18 +15702,6 @@ msgstr ""
 msgid "Water, salt, spicy herbs and meat stuffed with my special surprise!"
 msgstr ""
 
-#. code: rif(.@get_look !=  14, l("Wave")), 14,
-#: npc/functions/barber.txt:27
-#, no-c-format
-msgid "Wave"
-msgstr ""
-
-#. code: rif(.@get_look !=  17, l("Wavy")), 17,
-#: npc/functions/barber.txt:30
-#, no-c-format
-msgid "Wavy"
-msgstr ""
-
 #. code: l("We also feature some services like a storage and a bank for members."),
 #: npc/001-2-19/lloyd.txt:56
 #, no-c-format
@@ -16014,10 +15804,10 @@ msgstr ""
 msgid "We need manpower on the island... Oh forgive me, women are also welcome, of course.#0"
 msgstr ""
 
-#. code: l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"),
+#. code: l("We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!"),
 #: npc/001-2-28/plush.txt:107
 #, no-c-format
-msgid "We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranted to be right as rain after a night here!"
+msgid "We offer a room for travelers passing by Artis, our beds are comfy and you can be guaranteed to be right as rain after a night here!"
 msgstr ""
 
 #. code: l("We offer party and guild certifications and we can also teach you how to use some basic communication skills."),
@@ -16508,7 +16298,7 @@ msgid "What happens when you try to think about it?"
 msgstr ""
 
 #. code: mesq l("What if I give you 1000 Esperin for that job, is it ok?");
-#: npc/000-2-1/peter.txt:179
+#: npc/000-2-1/peter.txt:183
 #: npc/001-2-22/peter.txt:179
 #, no-c-format
 msgid "What if I give you 1000 Esperin for that job, is it ok?"
@@ -16532,6 +16322,12 @@ msgstr ""
 #: npc/001-1/qpid.txt:55
 #, no-c-format
 msgid "What is growing and shrinking at the same time?"
+msgstr ""
+
+#. code: l("What is my current hairstyle and hair color?"), 1,
+#: npc/001-2-41/edouard.txt:130
+#, no-c-format
+msgid "What is my current hairstyle and hair color?"
 msgstr ""
 
 #. code: rif(.@q >= 1, l("What is this legion?")), 9,
@@ -16625,13 +16421,13 @@ msgid "What was your riddle?"
 msgstr ""
 
 #. code: l("What will be the bait for the fish?");
-#: npc/functions/fishing.txt:58
+#: npc/functions/fishing.txt:141
 #, no-c-format
 msgid "What will be the bait for the fish?"
 msgstr ""
 
 #. code: l("What would you like me to do?");
-#: npc/001-2-29/edouard.txt:33
+#: npc/001-2-41/edouard.txt:125
 #, no-c-format
 msgid "What would you like me to do?"
 msgstr ""
@@ -16660,10 +16456,10 @@ msgstr ""
 msgid "What yoiis should know:"
 msgstr ""
 
-#. code: npctalk3 l("What you looking at?!");
-#: npc/functions/legiontalk.txt:40
+#. code: npctalk3 l("What're you looking at?!");
+#: npc/functions/legiontalk.txt:41
 #, no-c-format
-msgid "What you looking at?!"
+msgid "What're you looking at?!"
 msgstr ""
 
 #. code: l("What's that food?"), L_Aquada;
@@ -16685,8 +16481,8 @@ msgstr ""
 msgid "What's wrong with your clothes?"
 msgstr ""
 
-#. code: l("What's your story again?"), 3,
-#: npc/001-2-29/edouard.txt:40
+#. code: l("What's your story again?"), 4,
+#: npc/001-2-41/edouard.txt:133
 #, no-c-format
 msgid "What's your story again?"
 msgstr ""
@@ -16704,7 +16500,7 @@ msgid "What? It's not a good reward?"
 msgstr ""
 
 #. code: l("What? This reward is too small!"), L_Quit;
-#: npc/000-2-1/peter.txt:184
+#: npc/000-2-1/peter.txt:188
 #: npc/001-2-22/peter.txt:184
 #, no-c-format
 msgid "What? This reward is too small!"
@@ -17007,12 +16803,6 @@ msgstr ""
 #: npc/000-2-0/julia.txt:215
 #, no-c-format
 msgid "Why? And who should you bring it back to?"
-msgstr ""
-
-#. code: rif(.@get_look !=  22, l("Wild")), 22,
-#: npc/functions/barber.txt:35
-#, no-c-format
-msgid "Wild"
 msgstr ""
 
 #. code: l("Wind and grass is nice and cool, so juicy sweet..."),
@@ -17615,10 +17405,10 @@ msgstr ""
 msgid "You are on a raft, adrift in the sea."
 msgstr ""
 
-#. code: l("You are on the human ressource wing of the Town Hall."),
+#. code: l("You are on the human resource wing of the Town Hall."),
 #: npc/001-2-9/janus.txt:72
 #, no-c-format
-msgid "You are on the human ressource wing of the Town Hall."
+msgid "You are on the human resource wing of the Town Hall."
 msgstr ""
 
 #. code: 155: You are unable to change your job.
@@ -17905,12 +17695,6 @@ msgstr ""
 msgid "You can't use commands while dead."
 msgstr ""
 
-#. code: narrator l("You can't use the shovel here.");
-#: npc/items/shovel.txt:137
-#, no-c-format
-msgid "You can't use the shovel here."
-msgstr ""
-
 #. code: 1482: You can't withdraw that much money
 #: conf/messages.conf:1512
 msgid "You can't withdraw that much money"
@@ -17961,8 +17745,8 @@ msgstr ""
 msgid "You cannot use this item while your storage is open"
 msgstr ""
 
-#. code: l("You caught a @@!", getitemname(.@fish_id));
-#: npc/functions/fishing.txt:113
+#. code: narrator l("You caught a @@!", getitemname(.@fish_id));
+#: npc/functions/fishing.txt:88
 #, no-c-format
 msgid "You caught a @@!"
 msgstr ""
@@ -18048,22 +17832,22 @@ msgstr ""
 msgid "You don't expect me to eat that, do you? Give me something else!"
 msgstr ""
 
-#. code: l("You don't have a @@.", getitemlink(FishingRod));
-#: npc/functions/fishing.txt:11
-#, no-c-format
-msgid "You don't have a @@."
-msgstr ""
-
 #. code: mesq l("You don't have any @@, are you mocking me?", getitemlink("CrocClaw"));
 #: npc/001-2-2/moon.txt:76
 #, no-c-format
 msgid "You don't have any @@, are you mocking me?"
 msgstr ""
 
-#. code: l("You don't have any food suitable for bait."),
-#: npc/functions/fishing.txt:52
+#. code: l("You don't have any @@.", getitemlink(FishingRod));
+#: npc/functions/fishing.txt:48
 #, no-c-format
-msgid "You don't have any food suitable for bait."
+msgid "You don't have any @@."
+msgstr ""
+
+#. code: l("You don't have any food to use as bait."),
+#: npc/functions/fishing.txt:135
+#, no-c-format
+msgid "You don't have any food to use as bait."
 msgstr ""
 
 #. code: l("You don't have enough @@s on you.", getitemlink(FluffyFur));
@@ -18372,8 +18156,8 @@ msgstr ""
 msgid "You lack some very basic skills..."
 msgstr ""
 
-#. code: l("You left your fishing spot!");
-#: npc/functions/fishing.txt:87
+#. code: narrator l("You left your fishing spot!");
+#: npc/functions/fishing.txt:74
 #, no-c-format
 msgid "You left your fishing spot!"
 msgstr ""
@@ -18447,7 +18231,7 @@ msgid "You need %s to mount!"
 msgstr ""
 
 #. code: l("You need at least one of these: ") + .@bait_names$;
-#: npc/functions/fishing.txt:53
+#: npc/functions/fishing.txt:136
 #, no-c-format
 msgid "You need at least one of these: "
 msgstr ""
@@ -18515,12 +18299,6 @@ msgstr ""
 msgid "You opened the @@ in two parts, but you crushed one of them."
 msgstr ""
 
-#. code: l("You patiently wait...");
-#: npc/functions/fishing.txt:74
-#, no-c-format
-msgid "You patiently wait..."
-msgstr ""
-
 #. code: mes col(l("You perfectly cut your @@ into two edible parts.", getitemlink(Croconut)), 9);
 #: npc/items/croconut.txt:67
 #, no-c-format
@@ -18539,10 +18317,16 @@ msgstr ""
 msgid "You probably don't have much business in this city as you don't remember who you are."
 msgstr ""
 
-#. code: l("You pulled too late and lost the bait.");
-#: npc/functions/fishing.txt:120
+#. code: narrator l("You pulled too late and lost a @@...", getitemname(.@fish_id));
+#: npc/functions/fishing.txt:95
 #, no-c-format
-msgid "You pulled too late and lost the bait."
+msgid "You pulled too late and lost a @@..."
+msgstr ""
+
+#. code: narrator l("You pulled too soon and lost the bait.");
+#: npc/functions/fishing.txt:60
+#, no-c-format
+msgid "You pulled too soon and lost the bait."
 msgstr ""
 
 #. code: message strcharinfo(0), l("You receive @@ E!", 200);
@@ -18556,7 +18340,7 @@ msgstr ""
 #: npc/000-2-0/julia.txt:264
 #: npc/000-1/gugli.txt:154
 #: npc/000-2-1/arpan.txt:203
-#: npc/000-2-1/peter.txt:307
+#: npc/000-2-1/peter.txt:311
 #, no-c-format
 msgid "You receive @@ E!"
 msgstr ""
@@ -18611,22 +18395,7 @@ msgid "You see a young elven girl, with a strong sense of pain in her face."
 msgstr ""
 
 #. code: narrator 4, l("You see some fish reflecting the sun on the surface of the water.");
-#: npc/001-1/wateranimation.txt:62
-#: npc/001-1/wateranimation.txt:128
-#: npc/001-1/wateranimation.txt:95
-#: npc/001-1/wateranimation.txt:150
-#: npc/001-1/wateranimation.txt:84
-#: npc/001-1/wateranimation.txt:172
-#: npc/001-1/wateranimation.txt:106
-#: npc/001-1/wateranimation.txt:18
-#: npc/001-1/wateranimation.txt:7
-#: npc/001-1/wateranimation.txt:73
-#: npc/001-1/wateranimation.txt:29
-#: npc/001-1/wateranimation.txt:117
-#: npc/001-1/wateranimation.txt:51
-#: npc/001-1/wateranimation.txt:161
-#: npc/001-1/wateranimation.txt:139
-#: npc/001-1/wateranimation.txt:40
+#: npc/functions/fishing.txt:31
 #, no-c-format
 msgid "You see some fish reflecting the sun on the surface of the water."
 msgstr ""
@@ -18846,8 +18615,8 @@ msgid "You take the clothes from the chest."
 msgstr ""
 
 #. code: l("You take your fishing rod and leave.");
-#: npc/functions/fishing.txt:146
-#: npc/functions/fishing.txt:64
+#: npc/functions/fishing.txt:147
+#: npc/functions/fishing.txt:155
 #, no-c-format
 msgid "You take your fishing rod and leave."
 msgstr ""
@@ -18874,12 +18643,6 @@ msgstr ""
 #: npc/000-2-0/billybons.txt:34
 #, no-c-format
 msgid "You tried to get rid of me, eeh? But surprise! I'm still here... *hic* Or there..."
-msgstr ""
-
-#. code: l("You use a @@ as bait.", getitemname(.@bait)),
-#: npc/functions/fishing.txt:73
-#, no-c-format
-msgid "You use a @@ as bait."
 msgstr ""
 
 #. code: l("You were gone so I thought you let me down."),
@@ -19347,6 +19110,12 @@ msgstr ""
 msgid "Your guild's storage has already been opened by another member, try again later."
 msgstr ""
 
+#. code: l("Your hairstyle is @@ and its color is @@.", .@style_name$, .@color_name$);
+#: npc/functions/barber.txt:25
+#, no-c-format
+msgid "Your hairstyle is @@ and its color is @@."
+msgstr ""
+
 #. code: mes col(l("Your hands are too weak, you did not succeed in opening this @@.", getitemlink(Croconut)), 9);
 #: npc/items/croconut.txt:55
 #, no-c-format
@@ -19363,6 +19132,12 @@ msgstr ""
 #: npc/000-1/panels.txt:9
 #, no-c-format
 msgid "Your heart quickens as your gaze focuses upon a small wooden panel, partly obscured under a layer of wind-blown sand."
+msgstr ""
+
+#. code: mesq l("Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only.");
+#: npc/000-2-1/peter.txt:160
+#, no-c-format
+msgid "Your help is very welcome indeed. Unfortunately, I can give you a reward for the first extermination only."
 msgstr ""
 
 #. code: 1255: Your homunculus doesn't evolve.
@@ -19530,6 +19305,12 @@ msgstr ""
 #. code: 1334: garment,
 #: conf/messages.conf:1314
 msgid "garment, "
+msgstr ""
+
+#. code: 001-2-29,37,31,0	script	hairstyle_config	NPC_HIDDEN,0,0,{
+#: npc/config/hairstyle_config.txt:3
+#, no-c-format
+msgid "hairstyle_config"
 msgstr ""
 
 #. code: 1335: left accessory,
