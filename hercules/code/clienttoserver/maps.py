@@ -41,8 +41,8 @@ def findFirstGid(tilesets, tile):
 # 4 - sit, walkable ground
 # 5 - none
 def convertTileType(tile):
-#    if tile == 4:
-#        tile = 0;
+    if tile == 5:
+        tile = 0;
     if tile > 128 or tile < 0:
         tile = 1
     return tile
