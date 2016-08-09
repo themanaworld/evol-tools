@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf ../../server-plugin/build/
-mkdir ../../server-plugin/build/
+rm -rf ../../server-code/src/evol/build/
+mkdir ../../server-code/src/evol/build/
 cd ../../server-code/
 make clean
