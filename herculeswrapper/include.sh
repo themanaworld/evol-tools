@@ -40,3 +40,46 @@ function server_logic {
         fi
     done
 }
+
+function stash_save {
+    STR=$(git diff --stat --color=always)
+    if [[ -n "${STR}" ]]; then
+        echo ${1}: git stash save "wrapper pull"
+        git stash save "wrapper pull"
+        export ${1}_saved="1"
+    else
+        export ${1}_saved="0"
+    fi
+}
+
+function stash_pop {
+    var="${1}_saved"
+    eval var=\$$var
+    if [[ "${var}" == "1" ]]; then
+        echo ${1}: git stash pop
+        git stash pop
+    fi
+}
+
+function pull_all {
+    stash_save "data"
+    cd ../server-code
+    stash_save "code"
+    cd src/evol
+    stash_save "plugin"
+    cd ../../../tools
+    stash_save "tools"
+    cd ..
+    ./pull.sh
+    cd server-data
+    stash_pop "data"
+    cd ../server-code
+    stash_pop "code"
+    cd src/evol
+    stash_pop "plugin"
+    cd ../../../tools
+    stash_pop "tools"
+    cd ..
+    ./status.sh
+    cd server-data
+}

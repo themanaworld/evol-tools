@@ -34,5 +34,12 @@ while [ 1 ] ; do
     103)
         echo "Restarting map server..."
         ;;
+    104)
+        echo "git pull..."
+        pull_all
+        echo "Restarting all servers..."
+        send_all_pipes "restart"
+        sleep 5s
+        ;;
     esac
 done
