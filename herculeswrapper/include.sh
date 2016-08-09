@@ -83,3 +83,10 @@ function pull_all {
     ./status.sh
     cd server-data
 }
+
+function build_all {
+    cd ../server-code
+    ./build.sh 2>err.txt
+    cat err.txt
+    cd ../server-data
+}

@@ -41,5 +41,13 @@ while [ 1 ] ; do
         send_all_pipes "restart"
         sleep 5s
         ;;
+    105)
+        echo "Build all servers"
+        sleep 5s
+        build_all
+        echo "Restarting all servers..."
+        send_all_pipes "restart"
+        sleep 5s
+        ;;
     esac
 done
