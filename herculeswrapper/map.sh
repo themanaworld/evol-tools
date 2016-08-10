@@ -58,5 +58,14 @@ while [ 1 ] ; do
         send_all_pipes "restart"
         sleep 5s
         ;;
+    107)
+        echo "git pull..."
+        pull_all
+        echo "Build all servers"
+        build_all
+        echo "Restarting all servers..."
+        send_all_pipes "restart"
+        sleep 5s
+        ;;
     esac
 done
