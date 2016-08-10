@@ -90,3 +90,9 @@ function build_all {
     cat err.txt
     cd ../server-data
 }
+
+function build_clean {
+    cd ../tools/localserver
+    ./clean.sh
+    cd ../../server-data
+}
