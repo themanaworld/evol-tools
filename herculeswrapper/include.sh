@@ -96,3 +96,10 @@ function build_clean {
     ./clean.sh
     cd ../../server-data
 }
+
+function build_plugin {
+    cd ../server-plugin
+    ./build.sh 2>err.txt
+    cat err.txt
+    cd ../server-data
+}
