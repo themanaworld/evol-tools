@@ -16,6 +16,10 @@ while [ 1 ] ; do
         echo "Returned 0. Probably ctrl+c"
         break
         ;;
+    1)
+        echo "Returned 1. Probably error in server"
+        break
+        ;;
     100)
         echo "Terminating server"
         send_all_pipes "exit"
