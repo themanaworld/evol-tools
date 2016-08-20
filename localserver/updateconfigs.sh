@@ -14,6 +14,7 @@ if [ "${VER}" -lt "1" ]; then
 fi
 
 if [ "${VER}" -lt "2" ]; then
+    rm ${CONFDIR}/conf/import/*.txt
     cp conf/* ${CONFDIR}/conf/import
     echo "2" >versions/confver
 fi
