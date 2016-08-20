@@ -11,5 +11,9 @@ fi
 if [ "${VER}" -lt "1" ]; then
     cp -f ${CONFDIR}/conf/channels.conf ${CONFDIR}/conf/channels.conf.bak
     cp -f ${CONFDIR}/conf/channels.conf.base ${CONFDIR}/conf/channels.conf
-    echo "1" >versions/confver
+fi
+
+if [ "${VER}" -lt "2" ]; then
+    cp conf/* ${CONFDIR}/conf/import
+    echo "2" >versions/confver
 fi
