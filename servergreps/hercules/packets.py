@@ -9,21 +9,34 @@ import re
 import sys
 
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
-serverpacketre = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
-    + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
+serverpacketre = re.compile(
+    "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+    "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
 serverpacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
-serverpacketre3 = re.compile("(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)"
-    + "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
+serverpacketre3 = re.compile(
+    "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+    "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
 serverpacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
-serverpacketLoginre = re.compile("([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
+serverpacketLoginre = re.compile(
+    "([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=" +
+    "([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
 serverpacketLoginOutre = re.compile("packet_id([ ]*)=([ ]*)(?P<name>[\w_]+);")
-protocolinre = re.compile("packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)")
+protocolinre = re.compile(
+    "packet[(](?P<name>[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)" +
+    ",([ ]*)(?P<len>[\w-]+),([ ]*)")
 protocolinverre = re.compile("^// (?P<ver>[0-9]+)$")
-protocoloutre = re.compile("packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+),([ ]*)(?P<len>[\w-]+),([ ]*)(?P<function>[0-9a-zA-Z_>-]+)[)];")
-clientpacketre = re.compile("(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+),(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
-lclifPacketre = re.compile("([ ]*)[{][ ]PACKET_ID_CA_(?P<name>[A-Z0-9_]+),([^,]+),([ ]*)[&](?P<function>[0-9a-zA-Z_>-]+)([ ]*)[}],")
+protocoloutre = re.compile(
+    "packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)," +
+    "([ ]*)(?P<len>[\w-]+),([ ]*)(?P<function>[0-9a-zA-Z_>-]+)[)];")
+clientpacketre = re.compile(
+    "(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+)" +
+    ",(?P<function>[0-9a-zA-Z_>-]+)(,|[)])")
+lclifPacketre = re.compile(
+    "([ ]*)[{][ ]PACKET_ID_CA_(?P<name>[A-Z0-9_]+),([^,]+)," +
+    "([ ]*)[&](?P<function>[0-9a-zA-Z_>-]+)([ ]*)[}],")
 packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
-namedPacketre = re.compile("((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=([ ]*)0x(?P<value>[0-9a-fA-F]+)")
+namedPacketre = re.compile(
+    "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=([ ]*)0x(?P<value>[0-9a-fA-F]+)")
 
 packetsSet = set()
 serverpacketsSorted = []
@@ -38,6 +51,7 @@ serverFunctionToId = dict()
 outMsgNameToId = dict()
 loginPacketNameToId = dict()
 
+
 def addServerPacket(data):
     if data in namedPackets:
         for val in namedPackets[data]:
@@ -45,9 +59,10 @@ def addServerPacket(data):
     else:
         packetsSet.add(data.lower())
 
+
 def collectServerPackets(parentDir):
     global itemNamesByName
-    files = os.listdir(parentDir) 
+    files = os.listdir(parentDir)
     for file1 in files:
         if file1[0] == ".":
             continue
@@ -72,7 +87,6 @@ def collectServerPackets(parentDir):
                             while len(data) < 4:
                                 data = "0" + data
                             loginPacketNameToId["PACKET_ID_" + str[1]] = data
-                            #addServerPacket(data)
                     m = serverpacketre.findall(line)
                     if len(m) == 0:
                         m = serverpacketre3.findall(line)
@@ -101,21 +115,23 @@ def collectServerPackets(parentDir):
                     m = serverpacketLoginOutre.findall(line)
                     if len(m) > 0:
                         for str in m:
-                            #print str
                             if str[2] in loginPacketNameToId:
                                 data = str[2]
                                 data = loginPacketNameToId[data]
                                 addServerPacket(data)
+
 
 def sortServerPackets():
     for packet in packetsSet:
         serverpacketsSorted.append(packet)
     serverpacketsSorted.sort()
 
+
 def sortClientPackets():
     for packet in clientPackets:
         clientpacketsSorted.append(packet)
     clientpacketsSorted.sort()
+
 
 def collectManaPlusInPackets(fileName, packetVersion):
     version = 0
@@ -133,8 +149,10 @@ def collectManaPlusInPackets(fileName, packetVersion):
                 packet = int(m.group("packet"), 16)
                 if packet > 0xb00 or packet == 0:
                     continue
-                clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), "nullptr")
+                clientPacketsManaPlus[m.group("packet").lower()] = \
+                    (m.group("name"), int(m.group("len")), "nullptr")
                 sizes[m.group("packet").lower()] = m.group("len")
+
 
 def collectManaPlusOutPackets(fileName, packetVersion):
     version = 0
@@ -152,10 +170,15 @@ def collectManaPlusOutPackets(fileName, packetVersion):
                 packet = int(m.group("packet"), 16)
                 if packet > 0xb00 or packet == 0:
                     continue
-                clientPacketsManaPlus[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
-                clientPacketsManaPlusClient[m.group("packet").lower()] = (m.group("name"), int(m.group("len")), m.group("function"))
-                outMsgNameToId[m.group("name").strip()] = m.group("packet").lower()
-                #print "{0} = {1}".format(m.group("name").strip(), m.group("packet").lower())
+                clientPacketsManaPlus[m.group("packet").lower()] = \
+                    (m.group("name"), int(m.group("len")), m.group("function"))
+                clientPacketsManaPlusClient[m.group("packet").lower()] = \
+                    (m.group("name"), int(m.group("len")), m.group("function"))
+                outMsgNameToId[m.group("name").strip()] = \
+                    m.group("packet").lower()
+                # print "{0} = {1}".format(
+                #    m.group("name").strip(), m.group("packet").lower())
+
 
 def collectServerInPackets(packetsH, lclifPackets):
     with open(packetsH, "r") as f:
@@ -165,9 +188,9 @@ def collectServerInPackets(packetsH, lclifPackets):
                 data = m.group("packet").lower()
                 while len(data) < 4:
                     data = "0" + data
-                clientPackets[data] = (int(m.group("len")), m.group("function"));
+                clientPackets[data] = \
+                    (int(m.group("len")), m.group("function"))
                 serverFunctionToId[m.group("function")] = data
-
     with open(lclifPackets, "r") as f:
         for line in f:
             m = lclifPacketre.search(line)
@@ -177,8 +200,9 @@ def collectServerInPackets(packetsH, lclifPackets):
                     print "Wrong login packet name: " + name
                     continue
                 data = loginPacketNameToId[name]
-                clientPackets[data] = (0, m.group("function"));
+                clientPackets[data] = (0, m.group("function"))
                 serverFunctionToId[m.group("function")] = data
+
 
 def collectManaPlusSizes(fileName):
     cnt = 0
@@ -203,13 +227,14 @@ def collectManaPlusSizes(fileName):
 #            s = s + "{0:>4},".format(sizes[f + d * 16])
 #        print s
 
+
 def collectManaPlusUsedPackets(fileName):
     with open(fileName, "r") as f:
         for line in f:
             m = packetNameClientre.search(line)
             if m is not None:
                 manaplusUsedPacketsSet.add(m.group("name"))
-                #print m.group("name")
+
 
 def collectServerNamedPackets(fileName):
     with open(fileName, "r") as f:
@@ -222,7 +247,7 @@ def collectServerNamedPackets(fileName):
                 while len(data) < 4:
                     data = "0" + data
                 namedPackets[m.group("name")].append(data)
-                #print "named: {0} = {1}".format(m.group("name"), m.group("value"))
+
 
 def processManaPlusCppFiles(parentDir):
     files = os.listdir(parentDir)
@@ -234,6 +259,7 @@ def processManaPlusCppFiles(parentDir):
             processManaPlusCppFiles(file2)
         elif file1[-4:] == ".cpp":
             collectManaPlusUsedPackets(file2)
+
 
 def printPackets(packetDir):
     with open(packetDir + "/serverpackets.txt", "w") as w:
@@ -327,7 +353,8 @@ def printPackets(packetDir):
                 packet1 = clientPacketsManaPlusClient[packet]
                 packet2 = clientPackets[packet]
                 if packet2[0] != 0:
-                    rev.append("{0:4} {1:33} {2:35} {3:4} vs {4:4}".format(packet,
+                    rev.append("{0:4} {1:33} {2:35} {3:4} vs {4:4}".format(
+                        packet,
                         packet1[0],
                         packet2[1],
                         packet1[1],
@@ -422,7 +449,7 @@ def printPackets(packetDir):
                             else:
                                 oldId = oldId + "," + str(packet)
 
-                    if found == False:
+                    if found is False:
                         w.write("Server code error: function {0} hidden in server code\n".format(
                             name))
                     else:
@@ -432,8 +459,9 @@ def printPackets(packetDir):
 
 
 def showHelp():
-    print("Usage: packets.py version");
+    print("Usage: packets.py version")
     exit(1)
+
 
 if len(sys.argv) != 2:
     showHelp()
@@ -443,7 +471,6 @@ packetDir = packetVersion
 while len(packetDir) < 8:
     packetDir = "0" + packetDir
 
-#srcPath = "../../../server-code/src/"
 srcPath = packetDir + "/src"
 namedPacketsPath = packetDir + "/src/packets_struct.h"
 manaplusPath = "../../../manaplus/src/"
@@ -453,13 +480,12 @@ serverLoginInPackets = packetDir + "/src/lclif.c"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
-collectServerNamedPackets(namedPacketsPath);
+collectServerNamedPackets(namedPacketsPath)
 collectServerPackets(srcPath)
 collectServerInPackets(serverInPacketsHPath, serverLoginInPackets)
 collectManaPlusInPackets(protocolPath + "in.inc", int(packetVersion))
 collectManaPlusOutPackets(protocolPath + "out.inc", int(packetVersion))
-#collectManaPlusSizes(packetsPath);
-processManaPlusCppFiles(eathenaPath);
+processManaPlusCppFiles(eathenaPath)
 sortClientPackets()
 sortServerPackets()
 printPackets(packetDir)
