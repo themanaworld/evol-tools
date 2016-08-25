@@ -251,7 +251,6 @@ def printPackets(packetDir):
             w.write("\n")
 
     funcDict = dict()
-    forRemove = []
     for packet in clientpacketsSorted:
         data = packet
         while data[0] == "0":
@@ -264,7 +263,7 @@ def printPackets(packetDir):
             if packet not in clientPackets:
                 w.write("Useless packet {0}.\n".format(packet))
 
-    manaplusFunc = set()
+#    manaplusFunc = set()
     rev = []
 
     with open(packetDir + "/clientpackets.txt", "w") as w:
