@@ -11,14 +11,14 @@ import sys
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
 class Reporter:
-    def reportManaplus(self, packetDir, hercules, manaplus):
-        with open(packetDir + "/serverpackets.txt", "w") as w:
-            for packet in hercules.serverpacketsSorted:
+    def reportManaplus(self, hercules, manaplus):
+        with open(self.packetDir + "/serverpackets.txt", "w") as w:
+            for packet in hercules.outPacketsSorted:
                 data = packet
                 while data[0] == "0":
                     data = data[1:]
-                if packet in manaplus.clientPacketsManaPlus:
-                    clientName = manaplus.clientPacketsManaPlus[packet][0]
+                if packet in manaplus.inPackets:
+                    clientName = manaplus.inPackets[packet][0]
     #                if clientName not in manaplus.manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
     #                    w.write("UNIMPLIMENTED ")
                     w.write(data + " client name: " + clientName)
@@ -27,62 +27,62 @@ class Reporter:
                 w.write("\n")
 
         funcDict = dict()
-        for packet in hercules.clientpacketsSorted:
+        for packet in hercules.inPacketsSorted:
             data = packet
             while data[0] == "0":
                 data = data[1:]
-            if packet in hercules.clientPackets:
-                funcDict[hercules.clientPackets[packet][1]] = packet
+            if packet in hercules.inPackets:
+                funcDict[hercules.inPackets[packet][1]] = packet
 
-        with open(packetDir + "/uselesspackets.txt", "w") as w:
-            for packet in manaplus.clientPacketsManaPlusClient:
-                if packet not in hercules.clientPackets:
+        with open(self.packetDir + "/uselesspackets.txt", "w") as w:
+            for packet in manaplus.outPackets:
+                if packet not in hercules.inPackets:
                     w.write("Useless packet {0}.\n".format(packet))
 
     #    manaplusFunc = set()
         rev = []
 
-        with open(packetDir + "/clientpackets.txt", "w") as w:
-            for packet in manaplus.clientPacketsManaPlusClient:
-                clientName = manaplus.clientPacketsManaPlusClient[packet][0]
+        with open(self.packetDir + "/clientpackets.txt", "w") as w:
+            for packet in manaplus.outPackets:
+                clientName = manaplus.outPackets[packet][0]
                 if clientName not in manaplus.manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
                     w.write("PSESENT BUT UNIMPLIMENTED {0}\n".format(clientName))
 
-    #        for packet in manaplus.clientPacketsManaPlusClient:
-    #            if packet in hercules.clientPackets:
-    #                manaplusFunc.add(hercules.clientPackets[packet][1])
+    #        for packet in manaplus.outPackets:
+    #            if packet in hercules.inPackets:
+    #                manaplusFunc.add(hercules.inPackets[packet][1])
     #        for func in funcDict:
     #            if func not in manaplusFunc:
     #                packet = funcDict[func]
-    #                rev.append("{0:4} {1:>4} {2}".format(packet, hercules.clientPackets[packet][0], hercules.clientPackets[packet][1]))
+    #                rev.append("{0:4} {1:>4} {2}".format(packet, hercules.inPackets[packet][0], hercules.inPackets[packet][1]))
 
             clientSet = set()
-            for packet in hercules.clientPackets:
-                clientSet.add(hercules.clientPackets[packet][1])
-            for packet in manaplus.clientPacketsManaPlusClient:
-                if packet in hercules.clientPackets and hercules.clientPackets[packet][1] in clientSet:
-                    if manaplus.clientPacketsManaPlusClient[packet][2] == hercules.clientPackets[packet][1]:
-                        clientSet.remove(hercules.clientPackets[packet][1])
+            for packet in hercules.inPackets:
+                clientSet.add(hercules.inPackets[packet][1])
+            for packet in manaplus.outPackets:
+                if packet in hercules.inPackets and hercules.inPackets[packet][1] in clientSet:
+                    if manaplus.outPackets[packet][2] == hercules.inPackets[packet][1]:
+                        clientSet.remove(hercules.inPackets[packet][1])
                     else:
-                        if manaplus.clientPacketsManaPlusClient[packet][2] in clientSet:
-                            clientSet.remove(manaplus.clientPacketsManaPlusClient[packet][2])
+                        if manaplus.outPackets[packet][2] in clientSet:
+                            clientSet.remove(manaplus.outPackets[packet][2])
 
             allPackets = set()
-            for packet in hercules.clientPackets:
+            for packet in hercules.inPackets:
                 allPackets.add(packet)
-            for packet in manaplus.clientPacketsManaPlusClient:
+            for packet in manaplus.outPackets:
                 allPackets.add(packet)
 
             for packet in clientSet:
                 rev.append("{0:4} {1:33} {2}".format("?", "UNIMPLIMENTED", packet))
 
             for packet in allPackets:
-                if packet not in manaplus.clientPacketsManaPlusClient:
+                if packet not in manaplus.outPackets:
                     continue
-                data = "{0:4} {1:33} ".format(packet, manaplus.clientPacketsManaPlusClient[packet][0])
-                if packet in hercules.clientPackets:
-                    if manaplus.clientPacketsManaPlusClient[packet][2] == hercules.clientPackets[packet][1]:
-                        data = data + hercules.clientPackets[packet][1]
+                data = "{0:4} {1:33} ".format(packet, manaplus.outPackets[packet][0])
+                if packet in hercules.inPackets:
+                    if manaplus.outPackets[packet][2] == hercules.inPackets[packet][1]:
+                        data = data + hercules.inPackets[packet][1]
                         rev.append(data)
                 else:
                     data = data + "?"
@@ -95,13 +95,13 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(packetDir + "/clientwrongpacketsizes.txt", "w") as w:
+        with open(self.packetDir + "/clientwrongpacketsizes.txt", "w") as w:
             for name in manaplus.outMsgNameToId:
                 packet = manaplus.outMsgNameToId[name]
-    #        for packet in manaplus.clientPacketsManaPlusClient:
-                if packet in hercules.clientPackets and manaplus.clientPacketsManaPlusClient[packet][1] != hercules.clientPackets[packet][0]:
-                    packet1 = manaplus.clientPacketsManaPlusClient[packet]
-                    packet2 = hercules.clientPackets[packet]
+    #        for packet in manaplus.outPackets:
+                if packet in hercules.inPackets and manaplus.outPackets[packet][1] != hercules.inPackets[packet][0]:
+                    packet1 = manaplus.outPackets[packet]
+                    packet2 = hercules.inPackets[packet]
                     if packet2[0] != 0:
                         rev.append("{0:4} {1:33} {2:35} {3:4} vs {4:4}".format(
                             packet,
@@ -116,16 +116,16 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(packetDir + "/clientbadpackets.txt", "w") as w:
+        with open(self.packetDir + "/clientbadpackets.txt", "w") as w:
             for name in manaplus.outMsgNameToId:
                 packet = manaplus.outMsgNameToId[name]
-    #        for packet in manaplus.clientPacketsManaPlusClient:
-                if packet in hercules.clientPackets:
-                    packet1 = manaplus.clientPacketsManaPlusClient[packet]
-                    packet2 = hercules.clientPackets[packet]
-                    if packet1[2] in hercules.serverFunctionToId:
-                        data = hercules.serverFunctionToId[packet1[2]]
-                        data2 = hercules.serverFunctionToId[packet2[1]]
+    #        for packet in manaplus.outPackets:
+                if packet in hercules.inPackets:
+                    packet1 = manaplus.outPackets[packet]
+                    packet2 = hercules.inPackets[packet]
+                    if packet1[2] in hercules.functionToId:
+                        data = hercules.functionToId[packet1[2]]
+                        data2 = hercules.functionToId[packet2[1]]
                         if data2 == packet:
                             if packet1[2] != packet2[1]:
                                 rev.append("{0:4} {1:33} client: {2:35} server: {3:35} Change id to {4}".format(packet,
@@ -152,13 +152,13 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(packetDir + "/clientpreferredpackets.txt", "w") as w:
-            with open(packetDir + "/clientbadpackets.txt", "a+") as w2:
+        with open(self.packetDir + "/clientpreferredpackets.txt", "w") as w:
+            with open(self.packetDir + "/clientbadpackets.txt", "a+") as w2:
                 for name in manaplus.outMsgNameToId:
                     packet = manaplus.outMsgNameToId[name]
-                    if packet in hercules.clientPackets:
-                        packet1 = manaplus.clientPacketsManaPlusClient[packet]
-                        packet2 = hercules.clientPackets[packet]
+                    if packet in hercules.inPackets:
+                        packet1 = manaplus.outPackets[packet]
+                        packet2 = hercules.inPackets[packet]
                         if packet1[0] != name:
                             # skip if same id used for other packet already
                             #print("{0}, {1}, {2}, {3}".format(name, packet, packet1, packet2))
@@ -166,16 +166,16 @@ class Reporter:
                                 name,
                                 packet1[2]))
                             continue
-                        if packet1[2] in hercules.serverFunctionToId:
-                            data = hercules.serverFunctionToId[packet1[2]]
-                            if packet1[2] == packet2[1] and hercules.serverFunctionToId[packet1[2]] != packet:
+                        if packet1[2] in hercules.functionToId:
+                            data = hercules.functionToId[packet1[2]]
+                            if packet1[2] == packet2[1] and hercules.functionToId[packet1[2]] != packet:
                                 rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
                                     data,
                                     packet1[0],
                                     packet1[2]))
                         else:
                             data = "unknown"
-                            if packet1[2] == packet2[1] and hercules.serverFunctionToId[packet1[2]] != packet:
+                            if packet1[2] == packet2[1] and hercules.functionToId[packet1[2]] != packet:
                                 rev.append("{0:4} -> {1:4}  {2:33} {3}".format(packet,
                                     data,
                                     packet1[0],
@@ -186,15 +186,15 @@ class Reporter:
                     w.write("\n")
 
 
-    def reportHercules(self, packetDir, hercules):
-        with open(packetDir + "/herculesissues.txt", "w") as w:
-                for name in hercules.serverFunctionToId:
-                    packet = hercules.serverFunctionToId[name]
-                    if name != hercules.clientPackets[packet][1]:
+    def reportHercules(self, hercules):
+        with open(self.packetDir + "/herculesissues.txt", "w") as w:
+                for name in hercules.functionToId:
+                    packet = hercules.functionToId[name]
+                    if name != hercules.inPackets[packet][1]:
                         found = False
                         oldId = ""
-                        for packet in hercules.clientPackets:
-                            if name == hercules.clientPackets[packet][1]:
+                        for packet in hercules.inPackets:
+                            if name == hercules.inPackets[packet][1]:
                                 found = True
                                 if oldId == "":
                                     oldId = str(packet)
@@ -213,24 +213,24 @@ class Reporter:
 class Hercules:
     namedPackets = dict()
     packetsSet = set()
-    serverpacketsSorted = []
-    clientpacketsSorted = []
-    clientPackets = dict()
-    serverFunctionToId = dict()
+    outPacketsSorted = []
+    inPacketsSorted = []
+    inPackets = dict()
+    functionToId = dict()
     loginPacketNameToId = dict()
 
     namedPacketre = re.compile(
         "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=" +
         "([ ]*)0x(?P<value>[0-9a-fA-F]+)")
-    serverpacketre = re.compile(
+    ourPacketre = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
-    serverpacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
-    serverpacketre3 = re.compile(
+    ourPacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
+    ourPacketre3 = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
-    serverpacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
-    serverpacketLoginre = re.compile(
+    ourPacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    outPacketLoginre = re.compile(
         "([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=" +
         "([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
     serverpacketLoginOutre = re.compile("packet_id([ ]*)=([ ]*)(?P<name>[\w_]+);")
@@ -241,7 +241,7 @@ class Hercules:
         "([ ]*)[{][ ]PACKET_ID_CA_(?P<name>[A-Z0-9_]+),([^,]+)," +
         "([ ]*)[&](?P<function>[0-9a-zA-Z_>-]+)([ ]*)[}],")
 
-    def collectServerNamedPackets(self, fileName):
+    def collectNamedPackets(self, fileName):
         with open(fileName, "r") as f:
             for line in f:
                 m = self.namedPacketre.search(line)
@@ -262,7 +262,7 @@ class Hercules:
             self.packetsSet.add(data.lower())
 
 
-    def collectServerPackets(self, parentDir):
+    def collectOutPackets(self, parentDir):
         files = os.listdir(parentDir)
         for file1 in files:
             if file1[0] == ".":
@@ -270,27 +270,27 @@ class Hercules:
             file2 = os.path.abspath(parentDir + os.path.sep + file1)
             if not os.path.isfile(file2):
                 if file2.find("/src/evol") <= 0:
-                    self.collectServerPackets(file2)
+                    self.collectOutPackets(file2)
             elif filt.search(file1):
                 with open(file2, "r") as f:
                     for line in f:
-                        m = self.serverpacketre4.findall(line)
+                        m = self.ourPacketre4.findall(line)
                         if len(m) > 0:
                             for str in m:
                                 data = str[2]
                                 while len(data) < 4:
                                     data = "0" + data
                                 self.addServerPacket(data)
-                        m = self.serverpacketLoginre.findall(line)
+                        m = self.outPacketLoginre.findall(line)
                         if len(m) > 0:
                             for str in m:
                                 data = str[4]
                                 while len(data) < 4:
                                     data = "0" + data
                                 self.loginPacketNameToId["PACKET_ID_" + str[1]] = data
-                        m = self.serverpacketre.findall(line)
+                        m = self.ourPacketre.findall(line)
                         if len(m) == 0:
-                            m = self.serverpacketre3.findall(line)
+                            m = self.ourPacketre3.findall(line)
                         if len(m) > 0:
                             for str in m:
                                 if str[9] == "0":
@@ -302,7 +302,7 @@ class Hercules:
                                     data = "0" + data
                                 self.addServerPacket(data)
 
-                        m = self.serverpacketre2.findall(line)
+                        m = self.ourPacketre2.findall(line)
                         if len(m) > 0:
                             for str in m:
                                 if str[2] == "0":
@@ -322,13 +322,13 @@ class Hercules:
                                     self.addServerPacket(data)
 
 
-    def sortServerPackets(self):
+    def sortOutPackets(self):
         for packet in self.packetsSet:
-            self.serverpacketsSorted.append(packet)
-        self.serverpacketsSorted.sort()
+            self.outPacketsSorted.append(packet)
+        self.outPacketsSorted.sort()
 
 
-    def collectServerInPackets(self, packetsH, lclifPackets):
+    def collectInPackets(self, packetsH, lclifPackets):
         with open(packetsH, "r") as f:
             for line in f:
                 m = self.clientpacketre.search(line)
@@ -336,9 +336,9 @@ class Hercules:
                     data = m.group("packet").lower()
                     while len(data) < 4:
                         data = "0" + data
-                    self.clientPackets[data] = \
+                    self.inPackets[data] = \
                         (int(m.group("len")), m.group("function"))
-                    self.serverFunctionToId[m.group("function")] = data
+                    self.functionToId[m.group("function")] = data
         with open(lclifPackets, "r") as f:
             for line in f:
                 m = self.lclifPacketre.search(line)
@@ -348,21 +348,21 @@ class Hercules:
                         print "Wrong login packet name: " + name
                         continue
                     data = self.loginPacketNameToId[name]
-                    self.clientPackets[data] = (0, m.group("function"))
-                    self.serverFunctionToId[m.group("function")] = data
+                    self.inPackets[data] = (0, m.group("function"))
+                    self.functionToId[m.group("function")] = data
 
 
-    def sortClientPackets(self):
-        for packet in self.clientPackets:
-            self.clientpacketsSorted.append(packet)
-        self.clientpacketsSorted.sort()
+    def sortInPackets(self):
+        for packet in self.inPackets:
+            self.inPacketsSorted.append(packet)
+        self.inPacketsSorted.sort()
 
 
 
 
 class ManaPlus:
-    clientPacketsManaPlus = dict()
-    clientPacketsManaPlusClient = dict()
+    inPackets = dict()
+    outPackets = dict()
     sizes = dict()
     manaplusUsedPacketsSet = set()
     outMsgNameToId = dict()
@@ -373,9 +373,9 @@ class ManaPlus:
     protocoloutre = re.compile(
         "packet[(](?P<name>CMSG_[A-Z0-9_]+),([ ]*)0x(?P<packet>[0-9a-fA-F]+)," +
         "([ ]*)(?P<len>[\w-]+),([ ]*)(?P<function>[0-9a-zA-Z_>-]+)[)];")
-    packetNameClientre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
+    packetOutNametre = re.compile("(?P<name>(S|C)MSG_[A-Z0-9_]+)")
 
-    def collectManaPlusInPackets(self, fileName, packetVersion):
+    def collectInPackets(self, fileName, packetVersion):
         version = 0
         with open(fileName, "r") as f:
             for line in f:
@@ -391,12 +391,12 @@ class ManaPlus:
                     packet = int(m.group("packet"), 16)
                     if packet > 0xb00 or packet == 0:
                         continue
-                    self.clientPacketsManaPlus[m.group("packet").lower()] = \
+                    self.inPackets[m.group("packet").lower()] = \
                         (m.group("name"), int(m.group("len")), "nullptr")
                     self.sizes[m.group("packet").lower()] = m.group("len")
 
 
-    def collectManaPlusOutPackets(self, fileName, packetVersion):
+    def collectOutPackets(self, fileName, packetVersion):
         version = 0
         with open(fileName, "r") as f:
             for line in f:
@@ -412,9 +412,9 @@ class ManaPlus:
                     packet = int(m.group("packet"), 16)
                     if packet > 0xb00 or packet == 0:
                         continue
-                    self.clientPacketsManaPlus[m.group("packet").lower()] = \
+                    self.inPackets[m.group("packet").lower()] = \
                         (m.group("name"), int(m.group("len")), m.group("function"))
-                    self.clientPacketsManaPlusClient[m.group("packet").lower()] = \
+                    self.outPackets[m.group("packet").lower()] = \
                         (m.group("name"), int(m.group("len")), m.group("function"))
                     self.outMsgNameToId[m.group("name").strip()] = \
                         m.group("packet").lower()
@@ -422,14 +422,14 @@ class ManaPlus:
                     #    m.group("name").strip(), m.group("packet").lower())
 
 
-    def processManaPlusCppFiles(self, parentDir):
+    def processCppFiles(self, parentDir):
         files = os.listdir(parentDir)
         for file1 in files:
             if file1[0] == ".":
                 continue
             file2 = os.path.abspath(parentDir + os.path.sep + file1)
             if not os.path.isfile(file2):
-                self.processManaPlusCppFiles(file2)
+                self.processCppFiles(file2)
             elif file1[-4:] == ".cpp":
                 self.collectManaPlusUsedPackets(file2)
 
@@ -437,7 +437,7 @@ class ManaPlus:
     def collectManaPlusUsedPackets(self, fileName):
         with open(fileName, "r") as f:
             for line in f:
-                m = self.packetNameClientre.search(line)
+                m = self.packetOutNametre.search(line)
                 if m is not None:
                     self.manaplusUsedPacketsSet.add(m.group("name"))
 
@@ -459,6 +459,7 @@ while len(packetDir) < 8:
 hercules = Hercules()
 manaplus = ManaPlus()
 reporter = Reporter()
+reporter.packetDir = packetDir;
 
 srcPath = packetDir + "/src"
 namedPacketsPath = packetDir + "/src/packets_struct.h"
@@ -469,13 +470,13 @@ serverLoginInPackets = packetDir + "/src/lclif.c"
 packetsPath = manaplusPath + "net/eathena/packetsin.inc"
 eathenaPath = manaplusPath + "net/eathena/"
 
-hercules.collectServerNamedPackets(namedPacketsPath)
-hercules.collectServerPackets(srcPath)
-hercules.collectServerInPackets(serverInPacketsHPath, serverLoginInPackets)
-manaplus.collectManaPlusInPackets(protocolPath + "in.inc", int(packetVersion))
-manaplus.collectManaPlusOutPackets(protocolPath + "out.inc", int(packetVersion))
-manaplus.processManaPlusCppFiles(eathenaPath)
-hercules.sortClientPackets()
-hercules.sortServerPackets()
-reporter.reportManaplus(packetDir, hercules, manaplus)
-reporter.reportHercules(packetDir, hercules)
+hercules.collectNamedPackets(namedPacketsPath)
+hercules.collectOutPackets(srcPath)
+hercules.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
+manaplus.collectInPackets(protocolPath + "in.inc", int(packetVersion))
+manaplus.collectOutPackets(protocolPath + "out.inc", int(packetVersion))
+manaplus.processCppFiles(eathenaPath)
+hercules.sortInPackets()
+hercules.sortOutPackets()
+reporter.reportManaplus(hercules, manaplus)
+reporter.reportHercules(hercules)
