@@ -6,7 +6,7 @@
 
 class Reporter:
     def reportManaplus(self, hercules, manaplus):
-        with open(self.packetDir + "/serverpackets.txt", "w") as w:
+        with open(self.packetDir + "/hercules_outpackets.txt", "w") as w:
             for packet in hercules.outPacketsSorted:
                 data = packet
                 while data[0] == "0":
@@ -28,7 +28,7 @@ class Reporter:
             if packet in hercules.inPackets:
                 funcDict[hercules.inPackets[packet][1]] = packet
 
-        with open(self.packetDir + "/uselesspackets.txt", "w") as w:
+        with open(self.packetDir + "/client_uselesspackets.txt", "w") as w:
             for packet in manaplus.outPackets:
                 if packet not in hercules.inPackets:
                     w.write("Useless packet {0}.\n".format(packet))
@@ -36,7 +36,7 @@ class Reporter:
     #    manaplusFunc = set()
         rev = []
 
-        with open(self.packetDir + "/clientpackets.txt", "w") as w:
+        with open(self.packetDir + "/client_packets.txt", "w") as w:
             for packet in manaplus.outPackets:
                 clientName = manaplus.outPackets[packet][0]
                 if clientName not in manaplus.manaplusUsedPacketsSet and clientName.find("_OUTDATED") <= 0:
@@ -89,7 +89,7 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(self.packetDir + "/clientwrongpacketsizes.txt", "w") as w:
+        with open(self.packetDir + "/client_wrongpacketsizes.txt", "w") as w:
             for name in manaplus.outMsgNameToId:
                 packet = manaplus.outMsgNameToId[name]
     #        for packet in manaplus.outPackets:
@@ -110,7 +110,7 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(self.packetDir + "/clientbadpackets.txt", "w") as w:
+        with open(self.packetDir + "/client_badpackets.txt", "w") as w:
             for name in manaplus.outMsgNameToId:
                 packet = manaplus.outMsgNameToId[name]
     #        for packet in manaplus.outPackets:
@@ -146,8 +146,8 @@ class Reporter:
                 w.write("\n")
 
         rev = []
-        with open(self.packetDir + "/clientpreferredpackets.txt", "w") as w:
-            with open(self.packetDir + "/clientbadpackets.txt", "a+") as w2:
+        with open(self.packetDir + "/client_preferredpackets.txt", "w") as w:
+            with open(self.packetDir + "/client_badpackets.txt", "a+") as w2:
                 for name in manaplus.outMsgNameToId:
                     packet = manaplus.outMsgNameToId[name]
                     if packet in hercules.inPackets:
@@ -181,7 +181,7 @@ class Reporter:
 
 
     def reportHercules(self, hercules):
-        with open(self.packetDir + "/herculesissues.txt", "w") as w:
+        with open(self.packetDir + "/hercules_issues.txt", "w") as w:
                 for name in hercules.functionToId:
                     packet = hercules.functionToId[name]
                     if name != hercules.inPackets[packet][1]:
