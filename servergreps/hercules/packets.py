@@ -12,6 +12,7 @@ from src.manaplus import ManaPlus
 from src.ragemu import Ragemu
 from src.rathena import Rathena
 from src.reporter import Reporter
+from src.threeceam import Threeceam
 
 
 def showHelp():
@@ -38,6 +39,9 @@ brathena.reportName = "brathena"
 ragemu = Ragemu()
 ragemu.dirName = "ragemu"
 ragemu.reportName = "ragemu"
+threeceam = Threeceam()
+threeceam.dirName = "3ceam"
+threeceam.reportName = "3ceam"
 
 manaplus = ManaPlus()
 reporter = Reporter()
@@ -51,6 +55,8 @@ brathena.prepareTempFiles("brathena", packetDir, packetVersion)
 brathena.processPackets(packetDir, packetVersion)
 ragemu.prepareTempFiles("ragemu", packetDir, packetVersion)
 ragemu.processPackets(packetDir, packetVersion)
+threeceam.prepareTempFiles("3ceam", packetDir, packetVersion)
+threeceam.processPackets(packetDir, packetVersion)
 
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
@@ -58,3 +64,4 @@ reporter.reportHercules(hercules)
 reporter.reportRathena(hercules, rathena)
 reporter.reportHerculesFork(hercules, brathena, "brAthena")
 reporter.reportHerculesFork(hercules, ragemu, "RagEmu")
+reporter.reportThreeceam(hercules, threeceam)

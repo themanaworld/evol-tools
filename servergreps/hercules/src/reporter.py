@@ -210,13 +210,20 @@ class Reporter:
                 if packet not in hercules.packetsSet:
                     w.write("Exists only in rAthena: " + packet + "\n")
 
+
     def reportHerculesFork(self, hercules, fork, name):
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_outpackets.txt", "w") as w:
             for packet in fork.outPacketsSorted:
                 if packet not in hercules.packetsSet:
                     w.write("Exists only in " + name + ": " + packet + "\n")
-
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
             for packet in fork.inPacketsSorted:
                 if packet not in hercules.inPackets:
                     w.write("Exists only in " + name + ": " + packet + "\n")
+
+
+    def reportThreeceam(self, hercules, threeceam):
+        with open(self.packetDir + "/" + hercules.reportName + "_" + threeceam.reportName + "_outpackets.txt", "w") as w:
+            for packet in threeceam.outPacketsSorted:
+                if packet not in hercules.packetsSet:
+                    w.write("Exists only in 3CeaM: " + packet + "\n")
