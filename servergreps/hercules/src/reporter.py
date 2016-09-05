@@ -202,3 +202,10 @@ class Reporter:
                             w.write("Server code warning: function {0} hidden in server code but can be used older packets definition {1}\n".format(
                                 name,
                                 oldId))
+
+
+    def reportRathena(self, hercules, rathena):
+        with open(self.packetDir + "/" + hercules.reportName + "_" + rathena.reportName + "_outpackets.txt", "w") as w:
+            for packet in rathena.outPacketsSorted:
+                if packet not in hercules.packetsSet:
+                    w.write("Exists only in rAthena: " + packet + "\n")

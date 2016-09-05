@@ -8,6 +8,7 @@ import sys
 
 from src.hercules import Hercules
 from src.manaplus import ManaPlus
+from src.rathena import Rathena
 from src.reporter import Reporter
 
 
@@ -26,12 +27,20 @@ packetVersion = sys.argv[3]
 hercules = Hercules()
 hercules.dirName = "hercules"
 hercules.reportName = "hercules"
+rathena = Rathena()
+rathena.dirName = "rathena"
+rathena.reportName = "rathena"
+
 manaplus = ManaPlus()
 reporter = Reporter()
 reporter.packetDir = packetDir;
 
 hercules.prepareTempFiles(codeDir, packetDir, packetVersion)
 hercules.processPackets(packetDir, packetVersion)
+rathena.prepareTempFiles("rathena", packetDir, packetVersion)
+rathena.processPackets(packetDir, packetVersion)
+
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
 reporter.reportHercules(hercules)
+reporter.reportRathena(hercules, rathena)
