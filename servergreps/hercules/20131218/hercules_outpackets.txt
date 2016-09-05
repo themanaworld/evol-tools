@@ -337,6 +337,7 @@ fb client name: SMSG_PARTY_INFO
 849 client name: SMSG_NPC_CASH_BUY
 84b client name: SMSG_ITEM_DROPPED
 8b3 client name: SMSG_SCRIPT_MESSAGE
+8b9 client name: SMSG_CHAR_PINCODE_STATUS
 8c0 client name: SMSG_NPC_CASH_TAB_PRICE_LIST
 8ca client name: SMSG_NPC_CASH_SCHEDULE
 8cf client name: SMSG_BEING_CHARM
@@ -379,43 +380,3 @@ a1a
 a1c
 a20
 a22
-2711
-2713
-2716
-2717
-2718
-2719
-2722
-2723
-2728
-272b
-272c
-272d
-272e
-2731
-2734
-2735
-2736
-2737
-2740
-2af9
-2afb
-2afd
-2b00
-2b03
-2b04
-2b06
-2b09
-2b0d
-2b0f
-2b12
-2b14
-2b1b
-2b1d
-2b1e
-2b20
-2b21
-2b22
-2b24
-2b25
-2b27

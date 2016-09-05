@@ -1,4 +1,3 @@
-Exists only in rAthena: 08b9
 Exists only in rAthena: 08e2
 Exists only in rAthena: 0979
 Exists only in rAthena: 0984
@@ -11,5 +10,3 @@ Exists only in rAthena: 09e6
 Exists only in rAthena: 09f7
 Exists only in rAthena: 0a0e
 Exists only in rAthena: 0a27
-Exists only in rAthena: 2712
-Exists only in rAthena: cmde
