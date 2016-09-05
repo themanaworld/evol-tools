@@ -160,10 +160,10 @@ class Hercules:
 
 
     def processPackets(self, packetDir, packetVersion):
-        namedPacketsPath = packetDir + "/src/hercules/packets_struct.h"
-        srcPath = packetDir + "/src/hercules"
-        serverInPacketsHPath = packetDir + "/src/hercules/packets.h"
-        serverLoginInPackets = packetDir + "/src/hercules/lclif.c"
+        namedPacketsPath = packetDir + "/src/" + self.dirName + "/packets_struct.h"
+        srcPath = packetDir + "/src/" + self.dirName
+        serverInPacketsHPath = packetDir + "/src/" + self.dirName + "/packets.h"
+        serverLoginInPackets = packetDir + "/src/" + self.dirName + "/lclif.c"
         self.collectNamedPackets(namedPacketsPath)
         self.collectOutPackets(srcPath)
         self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
@@ -173,11 +173,11 @@ class Hercules:
 
     def prepareTempFiles(self, codeDir, packetDir, packetVersion):
         proc = PreProc()
-        proc.init(packetDir + "/src/hercules")
+        proc.init(packetDir + "/src/" + self.dirName)
         proc.defines = "-DPACKETVER=" + packetVersion + " -DCOMMON_SOCKET_H -DWFIFOW\\(fd,pos\\)=WFIFOW\\(fd,pos\\) -DWBUFW\\(p,pos\\)=WBUFW\\(p,pos\\)"
         proc.includes = "-I../links/" + codeDir + "/src -I../links/" + codeDir + "/3rdparty"
         proc.inDir = "../links/" + codeDir + "/src/"
-        proc.outDir = packetDir + "/src/hercules/"
+        proc.outDir = packetDir + "/src/" + self.dirName + "/"
         proc.run("map", "packets_struct.h");
         proc.run("char", "char.c");
         proc.run("login", "login.c");

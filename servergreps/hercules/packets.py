@@ -24,6 +24,8 @@ packetDir = sys.argv[2]
 packetVersion = sys.argv[3]
 
 hercules = Hercules()
+hercules.dirName = "hercules"
+hercules.reportName = "hercules"
 manaplus = ManaPlus()
 reporter = Reporter()
 reporter.packetDir = packetDir;

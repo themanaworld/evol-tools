@@ -6,7 +6,7 @@
 
 class Reporter:
     def reportManaplus(self, hercules, manaplus):
-        with open(self.packetDir + "/hercules_outpackets.txt", "w") as w:
+        with open(self.packetDir + "/" + hercules.reportName + "_outpackets.txt", "w") as w:
             for packet in hercules.outPacketsSorted:
                 data = packet
                 while data[0] == "0":
@@ -181,7 +181,7 @@ class Reporter:
 
 
     def reportHercules(self, hercules):
-        with open(self.packetDir + "/hercules_issues.txt", "w") as w:
+        with open(self.packetDir + "/" + hercules.reportName + "_issues.txt", "w") as w:
                 for name in hercules.functionToId:
                     packet = hercules.functionToId[name]
                     if name != hercules.inPackets[packet][1]:
