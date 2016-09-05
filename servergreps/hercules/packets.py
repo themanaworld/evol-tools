@@ -12,23 +12,23 @@ from src.reporter import Reporter
 
 
 def showHelp():
-    print("Usage: packets.py version")
+    print("Usage: packets.py hercules dir version")
     exit(1)
 
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 4:
     showHelp()
 
-packetVersion = sys.argv[1]
-packetDir = packetVersion
-while len(packetDir) < 8:
-    packetDir = "0" + packetDir
+codeDir = sys.argv[1]
+packetDir = sys.argv[2]
+packetVersion = sys.argv[3]
 
 hercules = Hercules()
 manaplus = ManaPlus()
 reporter = Reporter()
 reporter.packetDir = packetDir;
 
+hercules.prepareTempFiles(codeDir, packetDir, packetVersion)
 hercules.processPackets(packetDir, packetVersion)
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)

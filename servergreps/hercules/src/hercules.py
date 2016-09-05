@@ -7,6 +7,8 @@
 import os
 import re
 
+from src.preproc import PreProc
+
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
 class Hercules:
@@ -167,3 +169,20 @@ class Hercules:
         self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
         self.sortInPackets()
         self.sortOutPackets()
+
+
+    def prepareTempFiles(self, codeDir, packetDir, packetVersion):
+        proc = PreProc()
+        proc.init(packetDir + "/src/hercules")
+        proc.defines = "-DPACKETVER=" + packetVersion + " -DCOMMON_SOCKET_H -DWFIFOW\\(fd,pos\\)=WFIFOW\\(fd,pos\\) -DWBUFW\\(p,pos\\)=WBUFW\\(p,pos\\)"
+        proc.includes = "-I../links/" + codeDir + "/src -I../links/" + codeDir + "/3rdparty"
+        proc.inDir = "../links/" + codeDir + "/src/"
+        proc.outDir = packetDir + "/src/hercules/"
+        proc.run("map", "packets_struct.h");
+        proc.run("char", "char.c");
+        proc.run("login", "login.c");
+        proc.run("map", "clif.c");
+        proc.run("login", "lclif.p.h");
+        proc.run("login", "lclif.c");
+        proc.defines = "-DPACKETVER=" + packetVersion + " -Dpacket\\(id,size,...\\)=packet\\(id,size,__VA_ARGS__\\)"
+        proc.run("map", "packets.h");

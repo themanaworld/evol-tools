@@ -1,26 +1,7 @@
 #!/bin/bash
 
-function preproc {
-    cpp -DPACKETVER=$3 \
-    -DCOMMON_SOCKET_H \
-    "-DWFIFOW(fd,pos)=WFIFOW(fd,pos)" \
-    "-DWBUFW(p,pos)=WBUFW(p,pos)" \
-    -I../links/$1/src -I../links/$1/3rdparty \
-    ../links/$1/src/$4/$5 \
-    $2/src/hercules/$5
-}
-
 function genpackets {
-    rm -rf "$2/src"
-    mkdir -p "$2/src/hercules"
-    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/$1/src/map/packets.h $2/src/hercules/packets.h
-    preproc $1 $2 $3 map packets_struct.h
-    preproc $1 $2 $3 char char.c
-    preproc $1 $2 $3 login login.c
-    preproc $1 $2 $3 map clif.c
-    preproc $1 $2 $3 login lclif.p.h
-    preproc $1 $2 $3 login lclif.c
-    ./packets.py $3
+    ./packets.py $1 $2 $3
 }
 
 genpackets hercules 00000000 0
