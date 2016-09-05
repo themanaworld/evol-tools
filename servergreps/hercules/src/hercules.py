@@ -180,6 +180,7 @@ class Hercules:
         proc.outDir = packetDir + "/src/" + self.dirName + "/"
         proc.run("map", "packets_struct.h");
         proc.run("char", "char.c");
+        proc.run("char", "pincode.c");
         proc.run("login", "login.c");
         proc.run("map", "clif.c");
         proc.run("login", "lclif.p.h");
