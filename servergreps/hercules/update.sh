@@ -7,14 +7,13 @@ function preproc {
     "-DWBUFW(p,pos)=WBUFW(p,pos)" \
     -I../links/$1/src -I../links/$1/3rdparty \
     ../links/$1/src/$4/$5 \
-    $2/src/$5
+    $2/src/hercules/$5
 }
 
 function genpackets {
-    if [ ! -d "$2/src" ]; then
-        mkdir -p "$2/src"
-    fi
-    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/$1/src/map/packets.h $2/src/packets.h
+    rm -rf "$2/src"
+    mkdir -p "$2/src/hercules"
+    cpp -DPACKETVER=$3 "-Dpacket(id,size,...)=packet(id,size,__VA_ARGS__)" ../links/$1/src/map/packets.h $2/src/hercules/packets.h
     preproc $1 $2 $3 map packets_struct.h
     preproc $1 $2 $3 char char.c
     preproc $1 $2 $3 login login.c

@@ -158,10 +158,10 @@ class Hercules:
 
 
     def processPackets(self, packetDir, packetVersion):
-        namedPacketsPath = packetDir + "/src/packets_struct.h"
-        srcPath = packetDir + "/src"
-        serverInPacketsHPath = packetDir + "/src/packets.h"
-        serverLoginInPackets = packetDir + "/src/lclif.c"
+        namedPacketsPath = packetDir + "/src/hercules/packets_struct.h"
+        srcPath = packetDir + "/src/hercules"
+        serverInPacketsHPath = packetDir + "/src/hercules/packets.h"
+        serverLoginInPackets = packetDir + "/src/hercules/lclif.c"
         self.collectNamedPackets(namedPacketsPath)
         self.collectOutPackets(srcPath)
         self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
