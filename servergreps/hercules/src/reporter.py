@@ -227,3 +227,10 @@ class Reporter:
             for packet in threeceam.outPacketsSorted:
                 if packet not in hercules.packetsSet:
                     w.write("Exists only in 3CeaM: " + packet + "\n")
+
+
+    def reportIdathena(self, hercules, idathena):
+        with open(self.packetDir + "/" + hercules.reportName + "_" + idathena.reportName + "_outpackets.txt", "w") as w:
+            for packet in idathena.outPacketsSorted:
+                if packet not in hercules.packetsSet:
+                    w.write("Exists only in idAthena: " + packet + "\n")

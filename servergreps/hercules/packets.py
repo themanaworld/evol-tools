@@ -8,6 +8,7 @@ import sys
 
 from src.brathena import Brathena
 from src.hercules import Hercules
+from src.idathena import Idathena
 from src.manaplus import ManaPlus
 from src.ragemu import Ragemu
 from src.rathena import Rathena
@@ -42,6 +43,9 @@ ragemu.reportName = "ragemu"
 threeceam = Threeceam()
 threeceam.dirName = "3ceam"
 threeceam.reportName = "3ceam"
+idathena = Idathena()
+idathena.dirName = "idathena"
+idathena.reportName = "idathena"
 
 manaplus = ManaPlus()
 reporter = Reporter()
@@ -57,6 +61,8 @@ ragemu.prepareTempFiles("ragemu", packetDir, packetVersion)
 ragemu.processPackets(packetDir, packetVersion)
 threeceam.prepareTempFiles("3ceam", packetDir, packetVersion)
 threeceam.processPackets(packetDir, packetVersion)
+idathena.prepareTempFiles("idathena", packetDir, packetVersion)
+idathena.processPackets(packetDir, packetVersion)
 
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
@@ -65,3 +71,4 @@ reporter.reportRathena(hercules, rathena)
 reporter.reportHerculesFork(hercules, brathena, "brAthena")
 reporter.reportHerculesFork(hercules, ragemu, "RagEmu")
 reporter.reportThreeceam(hercules, threeceam)
+reporter.reportIdathena(hercules, idathena)
