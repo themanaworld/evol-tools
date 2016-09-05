@@ -6,6 +6,7 @@
 
 import sys
 
+from src.brathena import Brathena
 from src.hercules import Hercules
 from src.manaplus import ManaPlus
 from src.rathena import Rathena
@@ -30,6 +31,9 @@ hercules.reportName = "hercules"
 rathena = Rathena()
 rathena.dirName = "rathena"
 rathena.reportName = "rathena"
+brathena = Brathena()
+brathena.dirName = "brathena"
+brathena.reportName = "brathena"
 
 manaplus = ManaPlus()
 reporter = Reporter()
@@ -39,8 +43,11 @@ hercules.prepareTempFiles(codeDir, packetDir, packetVersion)
 hercules.processPackets(packetDir, packetVersion)
 rathena.prepareTempFiles("rathena", packetDir, packetVersion)
 rathena.processPackets(packetDir, packetVersion)
+brathena.prepareTempFiles("brathena", packetDir, packetVersion)
+brathena.processPackets(packetDir, packetVersion)
 
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
 reporter.reportHercules(hercules)
 reporter.reportRathena(hercules, rathena)
+reporter.reportHerculesFork(hercules, brathena, "brAthena")
