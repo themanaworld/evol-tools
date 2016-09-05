@@ -58,8 +58,15 @@ class Hercules:
     def addServerPacket(self, data):
         if data in self.namedPackets:
             for val in self.namedPackets[data]:
+                if int(val, 16) > 4096:
+                    return
                 self.packetsSet.add(val)
         else:
+            try:
+                if int(data, 16) > 4096:
+                    return
+            except:
+                pass
             self.packetsSet.add(data.lower())
 
 
