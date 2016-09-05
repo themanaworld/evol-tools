@@ -29,22 +29,7 @@ manaplus = ManaPlus()
 reporter = Reporter()
 reporter.packetDir = packetDir;
 
-srcPath = packetDir + "/src"
-namedPacketsPath = packetDir + "/src/packets_struct.h"
-manaplusPath = "../../../manaplus/src/"
-protocolPath = manaplusPath + "net/eathena/packets"
-serverInPacketsHPath = packetDir + "/src/packets.h"
-serverLoginInPackets = packetDir + "/src/lclif.c"
-packetsPath = manaplusPath + "net/eathena/packetsin.inc"
-eathenaPath = manaplusPath + "net/eathena/"
-
-hercules.collectNamedPackets(namedPacketsPath)
-hercules.collectOutPackets(srcPath)
-hercules.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
-manaplus.collectInPackets(protocolPath + "in.inc", int(packetVersion))
-manaplus.collectOutPackets(protocolPath + "out.inc", int(packetVersion))
-manaplus.processCppFiles(eathenaPath)
-hercules.sortInPackets()
-hercules.sortOutPackets()
+hercules.processPackets(packetDir, packetVersion)
+manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
 reporter.reportHercules(hercules)

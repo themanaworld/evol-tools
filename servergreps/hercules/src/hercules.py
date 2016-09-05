@@ -155,3 +155,15 @@ class Hercules:
         for packet in self.inPackets:
             self.inPacketsSorted.append(packet)
         self.inPacketsSorted.sort()
+
+
+    def processPackets(self, packetDir, packetVersion):
+        namedPacketsPath = packetDir + "/src/packets_struct.h"
+        srcPath = packetDir + "/src"
+        serverInPacketsHPath = packetDir + "/src/packets.h"
+        serverLoginInPackets = packetDir + "/src/lclif.c"
+        self.collectNamedPackets(namedPacketsPath)
+        self.collectOutPackets(srcPath)
+        self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
+        self.sortInPackets()
+        self.sortOutPackets()

@@ -87,3 +87,11 @@ class ManaPlus:
                 m = self.packetOutNametre.search(line)
                 if m is not None:
                     self.manaplusUsedPacketsSet.add(m.group("name"))
+
+    def processPackets(self, packetVersion):
+        manaplusPath = "../../../manaplus/src/"
+        protocolPath = manaplusPath + "net/eathena/packets"
+        eathenaPath = manaplusPath + "net/eathena/"
+        self.collectInPackets(protocolPath + "in.inc", int(packetVersion))
+        self.collectOutPackets(protocolPath + "out.inc", int(packetVersion))
+        self.processCppFiles(eathenaPath)
