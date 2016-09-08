@@ -40,7 +40,7 @@ class ManaPlus:
                         continue
                     self.inPackets[m.group("packet").lower()] = \
                         (m.group("name"), int(m.group("len")), "nullptr")
-                    self.sizes[m.group("packet").lower()] = m.group("len")
+                    self.sizes[m.group("packet").lower()] = int(m.group("len"))
 
 
     def collectOutPackets(self, fileName, packetVersion):

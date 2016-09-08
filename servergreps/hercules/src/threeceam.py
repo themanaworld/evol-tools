@@ -33,6 +33,9 @@ class Threeceam:
     ourPacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
     ourPacketre5 = re.compile("int cmde([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
     ourPacketre6 = re.compile(" (packet|packet_num|PacketType|packet_type)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre7 = re.compile(
+        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+        "(count[*]p_len)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
     outPacketLoginre = re.compile(
         "([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=" +
         "([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
@@ -66,6 +69,10 @@ class Threeceam:
                     return
                 self.packetsSet.add(val)
         else:
+            if len(data) > 2 and data[:2] == "0x":
+                data = data[2:]
+                while len(data) < 4:
+                    data = "0" + data
             try:
                 if int(data, 16) > 4096:
                     return
@@ -104,6 +111,13 @@ class Threeceam:
                         if len(m) > 0:
                             for str in m:
                                 data = str[3]
+                                while len(data) < 4:
+                                    data = "0" + data
+                                self.addServerPacket(data)
+                        m = self.ourPacketre7.findall(line)
+                        if len(m) > 0:
+                            for str in m:
+                                data = str[9]
                                 while len(data) < 4:
                                     data = "0" + data
                                 self.addServerPacket(data)
