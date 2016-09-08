@@ -19,6 +19,8 @@ class Hercules:
     inPackets = dict()
     functionToId = dict()
     loginPacketNameToId = dict()
+    getLenPackets = set()
+    knownLenPackets = dict()
 
     namedPacketre = re.compile(
         "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=" +
@@ -41,6 +43,11 @@ class Hercules:
     lclifPacketre = re.compile(
         "([ ]*)[{][ ]PACKET_ID_CA_(?P<name>[A-Z0-9_]+),([^,]+)," +
         "([ ]*)[&](?P<function>[0-9a-zA-Z_>-]+)([ ]*)[}],")
+    packetLenre = re.compile(
+        "packet_db[\\[]0x(?P<packet>[0-9a-fA-F]+)[\\]].len")
+    clientpacketLenre = re.compile(
+        "(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+)" +
+        "[)]")
 
     def collectNamedPackets(self, fileName):
         with open(fileName, "r") as f:
@@ -128,7 +135,15 @@ class Hercules:
                                     data = str[2]
                                     data = self.loginPacketNameToId[data]
                                     self.addServerPacket(data)
-
+                        m = self.packetLenre.findall(line)
+                        if len(m) > 0:
+                            for str in m:
+                                data = str.lower()
+                                if len(data) > 2 and data[0:2] == "0x":
+                                    data = data[2:]
+                                while len(data) < 4:
+                                    data = "0" + data
+                                self.getLenPackets.add(data)
 
     def sortOutPackets(self):
         for packet in self.packetsSet:
@@ -147,6 +162,12 @@ class Hercules:
                     self.inPackets[data] = \
                         (int(m.group("len")), m.group("function"))
                     self.functionToId[m.group("function")] = data
+                m = self.clientpacketLenre.search(line)
+                if m is not None:
+                    data = m.group("packet").lower()
+                    while len(data) < 4:
+                        data = "0" + data
+                    self.knownLenPackets[data] = int(m.group("len"))
         with open(lclifPackets, "r") as f:
             for line in f:
                 m = self.lclifPacketre.search(line)
@@ -192,5 +213,5 @@ class Hercules:
         proc.run("map", "clif.c");
         proc.run("login", "lclif.p.h");
         proc.run("login", "lclif.c");
-        proc.defines = "-DPACKETVER=" + packetVersion + " -Dpacket\\(id,size,...\\)=packet\\(id,size,__VA_ARGS__\\)"
+        proc.defines = "-DPACKETVER=" + packetVersion + " -Dpacket\\(...\\)=packet\\(__VA_ARGS__\\)"
         proc.run("map", "packets.h");

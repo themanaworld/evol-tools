@@ -182,26 +182,30 @@ class Reporter:
 
     def reportHercules(self, hercules):
         with open(self.packetDir + "/" + hercules.reportName + "_issues.txt", "w") as w:
-                for name in hercules.functionToId:
-                    packet = hercules.functionToId[name]
-                    if name != hercules.inPackets[packet][1]:
-                        found = False
-                        oldId = ""
-                        for packet in hercules.inPackets:
-                            if name == hercules.inPackets[packet][1]:
-                                found = True
-                                if oldId == "":
-                                    oldId = str(packet)
-                                else:
-                                    oldId = oldId + "," + str(packet)
-
-                        if found is False:
-                            w.write("Server code error: function {0} hidden in server code\n".format(
-                                name))
-                        else:
-                            w.write("Server code warning: function {0} hidden in server code but can be used older packets definition {1}\n".format(
-                                name,
-                                oldId))
+            for name in hercules.functionToId:
+                packet = hercules.functionToId[name]
+                if name != hercules.inPackets[packet][1]:
+                    found = False
+                    oldId = ""
+                    for packet in hercules.inPackets:
+                        if name == hercules.inPackets[packet][1]:
+                            found = True
+                            if oldId == "":
+                                oldId = str(packet)
+                            else:
+                                oldId = oldId + "," + str(packet)
+                    if found is False:
+                        w.write("Server code error: function {0} hidden in server code\n".format(
+                            name))
+                    else:
+                        w.write("Server code warning: function {0} hidden in server code but can be used older packets definition {1}\n".format(
+                            name,
+                            oldId))
+        with open(self.packetDir + "/" + hercules.reportName + "_missing_sizes.txt", "w") as w:
+            for packet in hercules.getLenPackets:
+                if packet not in hercules.knownLenPackets:
+                    w.write("Missing length for packet {0}\n".format(
+                        packet))
 
 
     def reportRathena(self, hercules, rathena):
