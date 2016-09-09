@@ -1,0 +1,8 @@
+Exists only in Hercules: 0081
+Exists only in Hercules: 025d
+Exists only in Hercules: 0a02
+Exists only in Hercules: 0a1a
+Exists only in Hercules: 0a1c
+Exists only in Hercules: 0a20
+Exists only in Hercules: 0a22
+Exists only in Hercules: status_changetype

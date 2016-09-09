@@ -1,4 +1,3 @@
-j
 69 client name: SMSG_LOGIN_DATA
 6a client name: SMSG_LOGIN_ERROR
 6b client name: SMSG_CHAR_LOGIN
