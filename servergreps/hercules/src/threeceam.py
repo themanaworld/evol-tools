@@ -61,6 +61,8 @@ class Threeceam:
 
 
     def addServerPacket(self, data):
+        if data == "000j":
+            return
         if data == "cmde" or data == "packet" or data == "PacketType" or data == "packet_type" or data == "packet_num":
             return
         if data in self.namedPackets:

@@ -59,6 +59,8 @@ class Ragemu:
 
 
     def addServerPacket(self, data):
+        if data == "000j":
+            return
         if data in self.namedPackets:
             for val in self.namedPackets[data]:
                 if int(val, 16) > 4096:

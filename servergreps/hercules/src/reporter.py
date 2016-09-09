@@ -254,3 +254,29 @@ class Reporter:
             for packet in idathena.outPacketsSorted:
                 if packet not in hercules.packetsSet:
                     w.write("Exists only in idAthena: " + packet + "\n")
+
+    def reportServer(self, hercules, server):
+        with open(self.packetDir + "/" + hercules.reportName + "_" + server.dirName + "_outpackets.txt", "w") as w:
+            for packet in server.outPacketsSorted:
+                if packet not in hercules.outPacketsSorted:
+                    w.write("Exists only in " + server.dirName + ": " + packet + "\n")
+        with open(self.packetDir + "/" + hercules.reportName + "_" + server.dirName + "_inpackets.txt", "w") as w:
+            for packet in server.inPacketsSorted:
+                if packet not in hercules.inPacketsSorted:
+                    w.write("Exists only in " + server.dirName + ": " + packet + "\n")
+        with open(self.packetDir + "/" + server.dirName + "_" + hercules.reportName + "_outpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.outPacketsSorted:
+                if packet not in server.outPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Server include all hercules packets\n")
+        with open(self.packetDir + "/" + server.dirName + "_" + hercules.reportName + "_inpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.inPacketsSorted:
+                if packet not in server.inPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Server include all hercules packets\n")

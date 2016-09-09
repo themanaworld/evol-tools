@@ -60,6 +60,8 @@ class Idathena:
 
 
     def addServerPacket(self, data):
+        if data == "000j":
+            return
         if data == "cmde":
             return
         if data in self.namedPackets:
