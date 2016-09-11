@@ -168,6 +168,12 @@ msgstr ""
 msgid " MVP Items:"
 msgstr ""
 
+#. code: .@ret$ += l(" ago");
+#: npc/functions/time.txt:113
+#, no-c-format
+msgid " ago"
+msgstr ""
+
 #. code: 225:  and %d second
 #: conf/messages.conf:222
 msgid " and %d second"
@@ -537,6 +543,12 @@ msgstr ""
 msgid "*burp*"
 msgstr ""
 
+#. code: .@ret$ += .@diff > 0 ? ", " : l(", and ");
+#: npc/functions/time.txt:62
+#, no-c-format
+msgid ", and "
+msgstr ""
+
 #. code: 1409: - #%s ( %d users )
 #: conf/messages.conf:1427
 msgid "- #%s ( %d users )"
@@ -847,8 +859,8 @@ msgstr ""
 #. code: l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."),
 #. code: mesq col(l("1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."), 9);
 #: npc/001-2-21/note.txt:12
-#: npc/000-2-0/julia.txt:113
 #: npc/000-2-0/note.txt:12
+#: npc/000-2-0/julia.txt:194
 #: npc/001-2-28/note.txt:11
 #, no-c-format
 msgid "1. ##BDo not bot##b, this means you are not allowed to perform any AFK (away from keyboard) activity, apart from standing idle."
@@ -863,9 +875,9 @@ msgstr ""
 #. code: l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."),
 #. code: mesq col(l("2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."), 9);
 #: npc/000-2-0/note.txt:14
+#: npc/000-2-0/julia.txt:195
 #: npc/001-2-21/note.txt:14
 #: npc/001-2-28/note.txt:12
-#: npc/000-2-0/julia.txt:115
 #, no-c-format
 msgid "2. ##BDo not use offensive/rude language##b in the chats or in your character(s) name(s)."
 msgstr ""
@@ -880,8 +892,8 @@ msgstr ""
 #. code: mesq col(l("3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."), 9);
 #: npc/000-2-0/note.txt:16
 #: npc/001-2-28/note.txt:13
-#: npc/000-2-0/julia.txt:117
 #: npc/001-2-21/note.txt:16
+#: npc/000-2-0/julia.txt:196
 #, no-c-format
 msgid "3. ##BDo not spam/flood other players.##b This includes chat spam and spam by trade requests."
 msgstr ""
@@ -895,8 +907,8 @@ msgstr ""
 #. code: l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."),
 #. code: mesq col(l("4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."), 9);
 #: npc/001-2-28/note.txt:14
-#: npc/000-2-0/julia.txt:119
 #: npc/000-2-0/note.txt:18
+#: npc/000-2-0/julia.txt:197
 #: npc/001-2-21/note.txt:18
 #, no-c-format
 msgid "4. ##BSpeak only English in public areas.##b You can speak whatever language you want through whispers or whenever everyone in the area can speak said language."
@@ -923,7 +935,7 @@ msgstr ""
 #. code: mesq col(l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."), 9);
 #. code: l("5. ##BDo not beg others##b for money, items or favours of any kind. If you want to ask for something, do it politely and only once. Try not to annoy other players."),
 #: npc/001-2-28/note.txt:15
-#: npc/000-2-0/julia.txt:121
+#: npc/000-2-0/julia.txt:198
 #: npc/001-2-21/note.txt:20
 #: npc/000-2-0/note.txt:20
 #, no-c-format
@@ -934,7 +946,7 @@ msgstr ""
 #. code: mesq col(l("6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."), 9);
 #: npc/001-2-28/note.txt:16
 #: npc/001-2-21/note.txt:22
-#: npc/000-2-0/julia.txt:123
+#: npc/000-2-0/julia.txt:199
 #: npc/000-2-0/note.txt:22
 #, no-c-format
 msgid "6. ##BFollow the [@@http://wiki.evolonline.org/rules/esc|ESC@@]##b (Evol Social Convention)."
@@ -942,8 +954,9 @@ msgstr ""
 
 #. code: l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time."),
 #. code: mesq col(l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time."), 9);
+#. code: l("7. ##BDo not multibox.##b You are not allowed to engage in combat while controlling more than one character at a time.");
 #: npc/001-2-28/note.txt:17
-#: npc/000-2-0/julia.txt:125
+#: npc/000-2-0/julia.txt:200
 #: npc/000-2-0/note.txt:24
 #: npc/001-2-21/note.txt:24
 #, no-c-format
@@ -984,6 +997,12 @@ msgstr ""
 #: npc/functions/marriage.txt:244
 #, no-c-format
 msgid "@@ divorced!"
+msgstr ""
+
+#. code: .@ret$ = (.@options & 4) ? l("@@ from now", .@ret$) : l("in @@", .@ret$);
+#: npc/functions/time.txt:118
+#, no-c-format
+msgid "@@ from now"
 msgstr ""
 
 #. code: mesq l("@@ is helping me.", $@RAT_SAILOR_HELPER$);
@@ -1104,6 +1123,14 @@ msgstr ""
 msgid "Aboard stand sailors trying to communicate with you."
 msgstr ""
 
+#. code: menuimage("actions/abort", l("Abort")),
+#: npc/commands/debug.txt:23
+#: npc/commands/scheduled-broadcasts.txt:161
+#: npc/commands/debug-skill.txt:16
+#, no-c-format
+msgid "Abort"
+msgstr ""
+
 #. code: mesq l("About the Legion of Aemil in Esperia, I'm not sure about them, frankly.");
 #: npc/000-2-3/sailors.txt:28
 #, no-c-format
@@ -1163,6 +1190,12 @@ msgstr ""
 msgid "Actually, I was here to help you with those boxes. Can I bring one of them back to Gugli?#1"
 msgstr ""
 
+#. code: menuimage("actions/add", l("Add a new line")),
+#: npc/commands/motd.txt:141
+#, no-c-format
+msgid "Add a new line"
+msgstr ""
+
 #. code: l("Aemil is a magnificent world unknown to us all."),
 #: npc/001-2-6/books.txt:148
 #, no-c-format
@@ -1217,7 +1250,7 @@ msgid "Ah, seagulls. We are arriving."
 msgstr ""
 
 #. code: l("Ah, the locals like keeping them as pets.");
-#: npc/001-1/salem.txt:149
+#: npc/001-1/salem.txt:148
 #, no-c-format
 msgid "Ah, the locals like keeping them as pets."
 msgstr ""
@@ -1290,6 +1323,12 @@ msgstr ""
 #: npc/000-2-1/alige.txt:52
 #, no-c-format
 msgid "Alige"
+msgstr ""
+
+#. code: l("Alige asks for food"), 2,
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:17
+#, no-c-format
+msgid "Alige asks for food"
 msgstr ""
 
 #. code: 000-2-4,38,22,0	script	Alige#000-2-4	NPC_ALIGE_BARREL,2,2,{
@@ -1426,8 +1465,8 @@ msgstr ""
 msgid "Alright! Yoyone more box and it'll be good."
 msgstr ""
 
-#. code: menuint l("Alright, I'll take one."), 1,
-#: npc/001-1/salem.txt:20
+#. code: l("Alright, I'll take one."),
+#: npc/001-1/salem.txt:21
 #, no-c-format
 msgid "Alright, I'll take one."
 msgstr ""
@@ -1580,7 +1619,7 @@ msgid "And where can I find these potions?"
 msgstr ""
 
 #. code: l("And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"),
-#: npc/001-1/salem.txt:72
+#: npc/001-1/salem.txt:73
 #, no-c-format
 msgid "And with my piou. That's wonderful. I can only imagine how hard that little bugger was to catch!"
 msgstr ""
@@ -1685,6 +1724,31 @@ msgstr ""
 #: npc/001-2-9/janus.txt:100
 #, no-c-format
 msgid "Anyway."
+msgstr ""
+
+#. code: setnpcdialogtitle l("Appearance Debug");
+#: npc/commands/debug-look.txt:54
+#, no-c-format
+msgid "Appearance Debug"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Appearance Debug - Barber");
+#: npc/commands/debug-look.txt:22
+#: npc/commands/debug-look.txt:32
+#, no-c-format
+msgid "Appearance Debug - Barber"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Appearance Debug - Race");
+#: npc/commands/debug-look.txt:42
+#, no-c-format
+msgid "Appearance Debug - Race"
+msgstr ""
+
+#. code: //setnpcdialogtitle l("Appearance Debug - Sex Change");
+#: npc/commands/debug-look.txt:4
+#, no-c-format
+msgid "Appearance Debug - Sex Change"
 msgstr ""
 
 #. code: 36: Appearance changed.
@@ -1849,28 +1913,34 @@ msgstr ""
 msgid "Armbands"
 msgstr ""
 
-#. code: Name: "Arrow 1"
-#: item_db.conf:-1
+#. code: l("Arpan gave money"), 2;
+#: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:17
 #, no-c-format
-msgid "Arrow 1"
+msgid "Arpan gave money"
 msgstr ""
 
-#. code: Name: "Arrow 2"
-#: item_db.conf:-1
+#. code: l("Arpan is waiting for you"), 0,
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:15
 #, no-c-format
-msgid "Arrow 2"
+msgid "Arpan is waiting for you"
 msgstr ""
 
-#. code: Name: "Arrow 3"
-#: item_db.conf:-1
+#. code: l("Arpan told you to open the chest"), 1,
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:16
 #, no-c-format
-msgid "Arrow 3"
+msgid "Arpan told you to open the chest"
 msgstr ""
 
 #. code: 001-1,90,31,0	script	Artaxe	NPC_ARTAXE,{
 #: npc/001-1/artaxe.txt:6
 #, no-c-format
 msgid "Artaxe"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Artis");
+#: npc/commands/debug-quest.txt:66
+#, no-c-format
+msgid "Artis"
 msgstr ""
 
 #. code: Name: "Artis Backsword"
@@ -2445,10 +2515,10 @@ msgstr ""
 msgid "Before..."
 msgstr ""
 
-#. code: l("Behind me? It's the Blacksmith house, the most renowned throughout Andorra."),
+#. code: l("Behind me? It's the Blacksmith house, the most renowned throughout Aemil."),
 #: npc/001-1/chelios.txt:70
 #, no-c-format
-msgid "Behind me? It's the Blacksmith house, the most renowned throughout Andorra."
+msgid "Behind me? It's the Blacksmith house, the most renowned throughout Aemil."
 msgstr ""
 
 #. code: l("Besides, I need to be here to watch out for thieves while La Johanne is docked."),
@@ -2502,7 +2572,7 @@ msgid "Blacksmith"
 msgstr ""
 
 #. code: Name: "Blub"
-#: mob_db.conf:377
+#: mob_db.conf:385
 #, no-c-format
 msgid "Blub"
 msgstr ""
@@ -2542,18 +2612,6 @@ msgstr ""
 #. code: 1300: Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
 #: conf/messages.conf:1250
 msgid "Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx"
-msgstr ""
-
-#. code: Name: "Bow 1"
-#: item_db.conf:-1
-#, no-c-format
-msgid "Bow 1"
-msgstr ""
-
-#. code: Name: "Bow 2"
-#: item_db.conf:-1
-#, no-c-format
-msgid "Bow 2"
 msgstr ""
 
 #. code: 000-2-3,25,24,0	script	Box	NPC_HAT_BOX,{
@@ -2630,7 +2688,7 @@ msgid "Bury."
 msgstr ""
 
 #. code: mesq l("But I can't leave to catch it, so I'm asking you.");
-#: npc/001-1/salem.txt:165
+#: npc/001-1/salem.txt:164
 #, no-c-format
 msgid "But I can't leave to catch it, so I'm asking you."
 msgstr ""
@@ -2678,7 +2736,7 @@ msgid "But discovering new territories is probably the best thing that can happe
 msgstr ""
 
 #. code: mesq l("But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs.");
-#: npc/000-2-0/julia.txt:164
+#: npc/000-2-0/julia.txt:221
 #, no-c-format
 msgid "But for now, you can relax on the ship, or visit the island we're docked at! Its a small island, but a good place to get some exercise and stretch your legs."
 msgstr ""
@@ -2762,13 +2820,13 @@ msgid "But thank you anyway! I can refund him now!"
 msgstr ""
 
 #. code: lg("But the plushroom you brought was really awesome you know."),
-#: npc/001-1/rumly.txt:166
+#: npc/001-1/rumly.txt:168
 #, no-c-format
 msgid "But the plushroom you brought was really awesome you know.#0"
 msgstr ""
 
 #. code: lg("But the plushroom you brought was really awesome you know."),
-#: npc/001-1/rumly.txt:166
+#: npc/001-1/rumly.txt:168
 #, no-c-format
 msgid "But the plushroom you brought was really awesome you know.#1"
 msgstr ""
@@ -2786,13 +2844,13 @@ msgid "But who am I?"
 msgstr ""
 
 #. code: lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
-#: npc/001-1/rumly.txt:174
+#: npc/001-1/rumly.txt:176
 #, no-c-format
 msgid "But you are welcome to reset your stats again if you bring me some more plushrooms!#0"
 msgstr ""
 
 #. code: lg("But you are welcome to reset your stats again if you bring me some more plushrooms!");
-#: npc/001-1/rumly.txt:174
+#: npc/001-1/rumly.txt:176
 #, no-c-format
 msgid "But you are welcome to reset your stats again if you bring me some more plushrooms!#1"
 msgstr ""
@@ -2847,9 +2905,9 @@ msgstr ""
 msgid "Bye!"
 msgstr ""
 
-#. code: l("Bye."), 5;
 #. code: l("Bye.")))
-#: npc/001-2-19/lloyd.txt:253
+#. code: l("Bye.");
+#: npc/001-2-19/lloyd.txt:254
 #: npc/001-2-27/lydon.txt:13
 #, no-c-format
 msgid "Bye."
@@ -2897,13 +2955,25 @@ msgstr ""
 msgid "Can I read the rules again?"
 msgstr ""
 
-#. code: l("Can I read these rules again?"), L_Rules,
-#: npc/000-2-0/julia.txt:56
+#. code: l("Can I read these rules again?"),
+#: npc/000-2-0/julia.txt:275
 #, no-c-format
 msgid "Can I read these rules again?"
 msgstr ""
 
-#. code: l("Can you do something with my color?"), 3,
+#. code: l("Can create guild"), 3;
+#: npc/functions/quest-debug/031-General_Janus.txt:18
+#, no-c-format
+msgid "Can create guild"
+msgstr ""
+
+#. code: l("Can create party"), 2,
+#: npc/functions/quest-debug/031-General_Janus.txt:17
+#, no-c-format
+msgid "Can create party"
+msgstr ""
+
+#. code: l("Can you do something with my color?"),
 #: npc/001-2-41/edouard.txt:132
 #, no-c-format
 msgid "Can you do something with my color?"
@@ -2921,7 +2991,7 @@ msgstr ""
 msgid "Can you please go there and find him? He is probably hiding in one of those trees, like always."
 msgstr ""
 
-#. code: rif(.@visited >  0, l("Can you reset my stats please?")), 2,
+#. code: rif(.@visited >  0, l("Can you reset my stats please?")),
 #: npc/001-1/rumly.txt:32
 #, no-c-format
 msgid "Can you reset my stats please?"
@@ -3033,6 +3103,12 @@ msgstr ""
 msgid "Cat got your tongue?"
 msgstr ""
 
+#. code: l("Catching a piou"), ArtisQuests_CatchPiou,
+#: npc/commands/debug-quest.txt:75
+#, no-c-format
+msgid "Catching a piou"
+msgstr ""
+
 #. code: 001-2-41,29,24,0	script	Chair#Chair1-001-2-41	NPC_NO_SPRITE,{
 #: npc/001-2-41/edouard.txt:27
 #, no-c-format
@@ -3072,6 +3148,36 @@ msgstr ""
 #. code: 589: Champion
 #: conf/messages.conf:523
 msgid "Champion"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Change my appearance")),
+#: npc/commands/debug.txt:101
+#, no-c-format
+msgid "Change my appearance"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Change my level")),
+#: npc/commands/debug.txt:98
+#, no-c-format
+msgid "Change my level"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Change my quests")),
+#: npc/commands/debug.txt:102
+#, no-c-format
+msgid "Change my quests"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Change my skills")),
+#: npc/commands/debug.txt:100
+#, no-c-format
+msgid "Change my skills"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Change my stats")),
+#: npc/commands/debug.txt:99
+#, no-c-format
+msgid "Change my stats"
 msgstr ""
 
 #. code: lg("Changed your mind, uh?"),
@@ -3157,7 +3263,7 @@ msgstr ""
 msgid "Check my balance."
 msgstr ""
 
-#. code: l("Check out this one."), 1,
+#. code: l("Check out this one."),
 #: npc/001-2-2/moon.txt:144
 #, no-c-format
 msgid "Check out this one."
@@ -3203,6 +3309,18 @@ msgstr ""
 #: npc/001-2-19/lloyd.txt:30
 #, no-c-format
 msgid "Chelios asked me to get it."
+msgstr ""
+
+#. code: l("Chelios asks to visit Lloyd"), 2,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:17
+#, no-c-format
+msgid "Chelios asks to visit Lloyd"
+msgstr ""
+
+#. code: l("Chelios made sword"), 4,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:19
+#, no-c-format
+msgid "Chelios made sword"
 msgstr ""
 
 #. code: switch (select (l("Chelios managed to do excellent work."),
@@ -3275,6 +3393,12 @@ msgstr ""
 msgid "Chocolate Cashmere Dye"
 msgstr ""
 
+#. code: mes l("Choose desired quest state:");
+#: npc/functions/quest-debug/functions.txt:12
+#, no-c-format
+msgid "Choose desired quest state:"
+msgstr ""
+
 #. code: Name: "Chorus of the Woods"
 #: item_db.conf:-1
 #, no-c-format
@@ -3302,6 +3426,12 @@ msgstr ""
 #: npc/001-1/sign.txt:97
 #, no-c-format
 msgid "City Hall"
+msgstr ""
+
+#. code: dispbottom "##7<<##B @@help://test-server|" + col(l("Click here for instructions on how to use the test server."),6) + "@@ ##7>>";
+#: npc/commands/motd.txt:174
+#, no-c-format
+msgid "Click here for instructions on how to use the test server."
 msgstr ""
 
 #. code: mes col(l("Click on the NPCs (Non-Player Characters) around you to continue the introduction."), 9);
@@ -3371,19 +3501,19 @@ msgid "Come back later!"
 msgstr ""
 
 #. code: l("Come back soon, and bring @@s!", getitemlink(Plushroom));
-#: npc/001-1/rumly.txt:198
+#: npc/001-1/rumly.txt:192
 #, no-c-format
 msgid "Come back soon, and bring @@s!"
 msgstr ""
 
 #. code: lg("Come back when you will really need me. And bring more plushrooms with you!");
-#: npc/001-1/rumly.txt:167
+#: npc/001-1/rumly.txt:169
 #, no-c-format
 msgid "Come back when you will really need me. And bring more plushrooms with you!#0"
 msgstr ""
 
 #. code: lg("Come back when you will really need me. And bring more plushrooms with you!");
-#: npc/001-1/rumly.txt:167
+#: npc/001-1/rumly.txt:169
 #, no-c-format
 msgid "Come back when you will really need me. And bring more plushrooms with you!#1"
 msgstr ""
@@ -3429,6 +3559,45 @@ msgstr ""
 msgid "Communication Theory"
 msgstr ""
 
+#. code: l("Completed"), 3;
+#. code: l("Completed"), 2;
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:18
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:18
+#: npc/functions/quest-debug/000-ShipQuests_Julia.txt:17
+#, no-c-format
+msgid "Completed"
+msgstr ""
+
+#. code: l("Completed Gugli's task"), 2,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:22
+#, no-c-format
+msgid "Completed Gugli's task"
+msgstr ""
+
+#. code: l("Completed, Gado wins"), 4,
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:19
+#, no-c-format
+msgid "Completed, Gado wins"
+msgstr ""
+
+#. code: l("Completed, Julia wins"), 6;
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:21
+#, no-c-format
+msgid "Completed, Julia wins"
+msgstr ""
+
+#. code: l("Completed, Julia wins (returned poison)"), 5,
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:20
+#, no-c-format
+msgid "Completed, Julia wins (returned poison)"
+msgstr ""
+
+#. code: l("Completed, got reward"), 11;
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:26
+#, no-c-format
+msgid "Completed, got reward"
+msgstr ""
+
 #. code: mesq l("Congrats, you are now part of the crew. Thanks again for your help.");
 #: npc/000-2-3/box.txt:86
 #, no-c-format
@@ -3445,6 +3614,12 @@ msgstr ""
 #: npc/001-1/cookiemaster.txt:12
 #, no-c-format
 msgid "Cookie Master"
+msgstr ""
+
+#. code: l("Cookies"), General_Cookies,
+#: npc/commands/debug-quest.txt:102
+#, no-c-format
+msgid "Cookies"
 msgstr ""
 
 #. code: mesq l("Cookies are a source of life.");
@@ -3501,13 +3676,13 @@ msgid "Cotton, cashmere, leather, ..."
 msgstr ""
 
 #. code: mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
-#: npc/000-2-0/julia.txt:69
+#: npc/000-2-0/julia.txt:320
 #, no-c-format
 msgid "Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#0"
 msgstr ""
 
 #. code: mesq lg("Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.");
-#: npc/000-2-0/julia.txt:69
+#: npc/000-2-0/julia.txt:320
 #, no-c-format
 msgid "Could I ask you what your native language is? A sailor told me you're russian, but another one told me you're french... I'm a bit lost. I will register you on the ship boarding list just after that.#1"
 msgstr ""
@@ -3518,7 +3693,7 @@ msgstr ""
 msgid "Could I lodge here for a while?"
 msgstr ""
 
-#. code: l("Could you bleach my clothes?"), 1,
+#. code: l("Could you bleach my clothes?"),
 #: npc/001-2-12/oscar.txt:116
 #, no-c-format
 msgid "Could you bleach my clothes?"
@@ -3536,9 +3711,10 @@ msgstr ""
 msgid "Could you do a small favor for me?"
 msgstr ""
 
+#. code: l("Could you explain to me where I am?"),
 #. code: l("Could you explain to me where I am?"), L_WhereIam,
-#: npc/000-2-0/julia.txt:54
 #: npc/001-2-21/julia.txt:26
+#: npc/000-2-0/julia.txt:273
 #, no-c-format
 msgid "Could you explain to me where I am?"
 msgstr ""
@@ -3568,6 +3744,12 @@ msgstr ""
 msgid "Couwan"
 msgstr ""
 
+#. code: l("Couwan asks to deliver box"), 1,
+#: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:16
+#, no-c-format
+msgid "Couwan asks to deliver box"
+msgstr ""
+
 #. code: rif(getq(ShipQuests_Couwan) == 1, l("Couwan gave me this box, it is for you.")), L_Couwan,
 #: npc/000-1/gugli.txt:95
 #: npc/000-1/gugli.txt:103
@@ -3582,7 +3764,7 @@ msgid "Couwan hands you a box full of fish."
 msgstr ""
 
 #. code: Name: "Crafty"
-#: mob_db.conf:793
+#: mob_db.conf:801
 #, no-c-format
 msgid "Crafty"
 msgstr ""
@@ -3617,13 +3799,17 @@ msgid "Crimson Cashmere Dye"
 msgstr ""
 
 #. code: Name: "Croc"
-#: mob_db.conf:284
+#: mob_db.conf:292
 #, no-c-format
 msgid "Croc"
 msgstr ""
 
+#. code: l("Moon needs @@", l("Croc Claw")), 1,
 #. code: Name: "Croc Claw"
+#. code: l("Found @@, got exp", l("Croc Claw")), 2;
 #: item_db.conf:-1
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:16
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:17
 #, no-c-format
 msgid "Croc Claw"
 msgstr ""
@@ -3643,13 +3829,13 @@ msgid "Croconut Box"
 msgstr ""
 
 #. code: Name: "CroconutMob"
-#: mob_db.conf:626
+#: mob_db.conf:634
 #, no-c-format
 msgid "CroconutMob"
 msgstr ""
 
 #. code: Name: "Crocotree"
-#: mob_db.conf:474
+#: mob_db.conf:482
 #, no-c-format
 msgid "Crocotree"
 msgstr ""
@@ -3660,7 +3846,7 @@ msgid "Crusader"
 msgstr ""
 
 #. code: Name: "Cuco"
-#: mob_db.conf:872
+#: mob_db.conf:880
 #, no-c-format
 msgid "Cuco"
 msgstr ""
@@ -3783,6 +3969,44 @@ msgstr ""
 msgid "Death Knight"
 msgstr ""
 
+#. code: setnpcdialogtitle l("Debug");
+#. code: l("Debug");
+#: npc/commands/super-menu.txt:21
+#: npc/commands/debug.txt:93
+#, no-c-format
+msgid "Debug"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Debug - Change level");
+#: npc/commands/debug.txt:39
+#, no-c-format
+msgid "Debug - Change level"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Debug - Change stats");
+#: npc/commands/debug.txt:64
+#, no-c-format
+msgid "Debug - Change stats"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Debug - Reset");
+#: npc/commands/debug.txt:20
+#, no-c-format
+msgid "Debug - Reset"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Debug Gado quest")), -2,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:24
+#, no-c-format
+msgid "Debug Gado quest"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Debug Gugli quest")), -1,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:21
+#, no-c-format
+msgid "Debug Gugli quest"
+msgstr ""
+
 #. code: 860: Defeated by
 #: conf/messages.conf:617
 msgid "Defeated by"
@@ -3792,6 +4016,12 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Delicious Cookie"
+msgstr ""
+
+#. code: l("Delivered box, got reward"), 2;
+#: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:17
+#, no-c-format
+msgid "Delivered box, got reward"
 msgstr ""
 
 #. code: .@q = select (l("Deposit."),
@@ -3854,6 +4084,18 @@ msgstr ""
 msgid "Dig."
 msgstr ""
 
+#. code: menuimage("actions/toggle", (.@d ? l("Enable") : l("Disable"))),
+#: npc/commands/motd.txt:140
+#, no-c-format
+msgid "Disable"
+msgstr ""
+
+#. code: menuimage("actions/cancel", l("Discard")),
+#: npc/commands/scheduled-broadcasts.txt:101
+#, no-c-format
+msgid "Discard"
+msgstr ""
+
 #. code: 408: Disconnecting to perform change-sex request...
 #: conf/messages.conf:402
 msgid "Disconnecting to perform change-sex request..."
@@ -3904,6 +4146,12 @@ msgstr ""
 msgid "Do not give the password of your room to anybody! Keep it secret and try not to use the same one in any other room in the future. - Julia"
 msgstr ""
 
+#. code: .@menustr$ = menuimage("actions/abort", l("Do nothing")) + ":";
+#: npc/functions/quest-debug/functions.txt:15
+#, no-c-format
+msgid "Do nothing"
+msgstr ""
+
 #. code: l("Do we have a deal?");
 #: npc/001-1/fexil.txt:21
 #, no-c-format
@@ -3924,16 +4172,16 @@ msgstr ""
 
 #. code: mesq l("Do you have any other questions for me?");
 #. code: l("Do you have any other questions for me?");
+#: npc/000-2-0/julia.txt:58
 #: npc/001-2-21/julia.txt:136
-#: npc/000-2-0/julia.txt:278
-#: npc/000-2-0/julia.txt:287
+#: npc/000-2-0/julia.txt:256
+#: npc/000-2-0/julia.txt:135
+#: npc/000-2-0/julia.txt:223
+#: npc/000-2-0/julia.txt:180
 #: npc/001-2-21/julia.txt:146
 #: npc/001-2-21/julia.txt:71
-#: npc/000-2-0/julia.txt:190
-#: npc/000-2-0/julia.txt:141
 #: npc/001-2-21/julia.txt:87
 #: npc/001-2-21/julia.txt:113
-#: npc/000-2-0/julia.txt:166
 #: npc/001-2-21/julia.txt:127
 #, no-c-format
 msgid "Do you have any other questions for me?"
@@ -3983,7 +4231,7 @@ msgstr ""
 msgid "Do you know where the hill is?"
 msgstr ""
 
-#. code: l("Do you live here alone?"), 2,
+#. code: l("Do you live here alone?"),
 #: npc/001-2-12/oscar.txt:117
 #, no-c-format
 msgid "Do you live here alone?"
@@ -4003,7 +4251,7 @@ msgstr ""
 msgid "Do you need help with something?"
 msgstr ""
 
-#. code: rif(.@fexil == 2, l("Do you still need help?")), 2,
+#. code: rif(.@fexil == 2, l("Do you still need help?")),
 #. code: .@q = select (l("Do you still need help?"),
 #: npc/001-1/enora.txt:218
 #: npc/001-1/fexil.txt:80
@@ -4097,8 +4345,42 @@ msgstr ""
 msgid "Does anyone know a good place to hang out in Esperia? - M. Arpan"
 msgstr ""
 
-#. code: l("Does the guild has any work for me right now?"), 4,
-#: npc/001-2-19/lloyd.txt:252
+#. code: l("Does not have the quest"), 0,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:15
+#: npc/functions/quest-debug/026-General_Rumly.txt:15
+#: npc/functions/quest-debug/018-General_Cookies.txt:15
+#: npc/functions/quest-debug/031-General_Janus.txt:15
+#: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:15
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:15
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:15
+#: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:15
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:19
+#: npc/functions/quest-debug/007-ShipQuests_Door.txt:15
+#: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:15
+#: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:15
+#: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:15
+#: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:15
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:15
+#: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:15
+#: npc/functions/quest-debug/010-ShipQuests_Ale.txt:15
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:15
+#: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:15
+#: npc/functions/quest-debug/005-ShipQuests_Knife.txt:15
+#: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:15
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:15
+#: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:15
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:15
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:15
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:15
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:23
+#: npc/functions/quest-debug/000-ShipQuests_Julia.txt:15
+#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:15
+#, no-c-format
+msgid "Does not have the quest"
+msgstr ""
+
+#. code: l("Does the guild has any work for me right now?"),
+#: npc/001-2-19/lloyd.txt:253
 #, no-c-format
 msgid "Does the guild has any work for me right now?"
 msgstr ""
@@ -4110,7 +4392,7 @@ msgid "Does your mind go all fuzzy or does it feel like your head is going to ex
 msgstr ""
 
 #. code: mesq l("Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne.");
-#: npc/000-2-0/julia.txt:247
+#: npc/000-2-0/julia.txt:76
 #, no-c-format
 msgid "Doesn't he like the way I'm taking care of his ship? Everything is clean and tidy with me, rightful lieutenant of La Johanne."
 msgstr ""
@@ -4220,7 +4502,7 @@ msgid "Don't you recognize the great city of Artis?"
 msgstr ""
 
 #. code: mesq l("Don't you try to cheat an old merchant! You don't have enough money, you need @@ E.", .@price);
-#: npc/001-1/salem.txt:29
+#: npc/001-1/salem.txt:30
 #, no-c-format
 msgid "Don't you try to cheat an old merchant! You don't have enough money, you need @@ E."
 msgstr ""
@@ -4229,6 +4511,12 @@ msgstr ""
 #: npc/000-2-1/chefgado.txt:134
 #, no-c-format
 msgid "Done. Here, take it! Now, here is the plan. Go talk to her and offer our beautiful lady a bite of her arrogance!"
+msgstr ""
+
+#. code: l("Door"), ShipQuests_Door,
+#: npc/commands/debug-quest.txt:47
+#, no-c-format
+msgid "Door"
 msgstr ""
 
 #. code: 000-2-2,48,29,0	script	DoorUpwards	NPC_HIDDEN,0,0,{
@@ -4335,7 +4623,7 @@ msgid "Duel| You've left the duel."
 msgstr ""
 
 #. code: Name: "Dummy"
-#: mob_db.conf:914
+#: mob_db.conf:922
 #, no-c-format
 msgid "Dummy"
 msgstr ""
@@ -4406,7 +4694,7 @@ msgid "Edouard#001-2-41"
 msgstr ""
 
 #. code: l("Ehm... He was really upset because of some past stories.");
-#: npc/000-2-0/julia.txt:219
+#: npc/000-2-0/julia.txt:111
 #, no-c-format
 msgid "Ehm... He was really upset because of some past stories."
 msgstr ""
@@ -4462,6 +4750,12 @@ msgstr ""
 msgid "Elmo brought reports to me about some frictions between my old and new lieutenants. You probably already met Julia and Chef Gado."
 msgstr ""
 
+#. code: l("Elmo told about money"), 1,
+#: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:16
+#, no-c-format
+msgid "Elmo told about money"
+msgstr ""
+
 #. code: mesq l("Elmo told me what Nard said, congrats!");
 #: npc/000-1/gugli.txt:226
 #, no-c-format
@@ -4498,9 +4792,21 @@ msgstr ""
 msgid "Elven Voice"
 msgstr ""
 
+#. code: menuimage("actions/toggle", (.@d ? l("Enable") : l("Disable"))),
+#: npc/commands/motd.txt:140
+#, no-c-format
+msgid "Enable"
+msgstr ""
+
 #. code: 1311: Enabled Mapflags in this map:
 #: conf/messages.conf:1273
 msgid "Enabled Mapflags in this map:"
+msgstr ""
+
+#. code: mes l("Enabled: @@", (.@d ? l("no") : l("yes")));
+#: npc/commands/motd.txt:136
+#, no-c-format
+msgid "Enabled: @@"
 msgstr ""
 
 #. code: speech 5, l("Enjoy the fraternity and excitement of your future guild!");
@@ -4515,6 +4821,30 @@ msgstr ""
 msgid "Enjoy your new style."
 msgstr ""
 
+#. code: l("Enora asks to kill fluffys"), 10,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:25
+#, no-c-format
+msgid "Enora asks to kill fluffys"
+msgstr ""
+
+#. code: l("Enora asks to visit Chelios"), 1,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:16
+#, no-c-format
+msgid "Enora asks to visit Chelios"
+msgstr ""
+
+#. code: l("Enora asks to visit Q'Pid"), 7,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:22
+#, no-c-format
+msgid "Enora asks to visit Q'Pid"
+msgstr ""
+
+#. code: l("Enora asks to visit Resa"), 5,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:20
+#, no-c-format
+msgid "Enora asks to visit Resa"
+msgstr ""
+
 #. code: narrator 4, l("Enora is carefully inspecting the sword.");
 #: npc/001-1/enora.txt:177
 #, no-c-format
@@ -4527,7 +4857,7 @@ msgstr ""
 msgid "Enora needs them."
 msgstr ""
 
-#. code: rif (.@enora == 7, l("Enora wants her potions.")), 0,
+#. code: rif (.@enora == 7, l("Enora wants her potions.")),
 #: npc/001-1/qpid.txt:174
 #, no-c-format
 msgid "Enora wants her potions."
@@ -4550,6 +4880,24 @@ msgstr ""
 #: npc/000-2-3/nard.txt:230
 #, no-c-format
 msgid "Enough of this island?"
+msgstr ""
+
+#. code: mes l("Enter desired skill level:");
+#: npc/commands/debug-skill.txt:6
+#, no-c-format
+msgid "Enter desired skill level:"
+msgstr ""
+
+#. code: mes l("Enter line number:");
+#: npc/commands/motd.txt:89
+#, no-c-format
+msgid "Enter line number:"
+msgstr ""
+
+#. code: mes l("Enter new line:");
+#: npc/commands/motd.txt:74
+#, no-c-format
+msgid "Enter new line:"
 msgstr ""
 
 #. code: l("Enter the amount that you want to deposit.");
@@ -4580,6 +4928,60 @@ msgstr ""
 msgid "Eugene"
 msgstr ""
 
+#. code: l("Eugene needs tentacles"), 1,
+#: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:16
+#, no-c-format
+msgid "Eugene needs tentacles"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Event Management");
+#: npc/commands/event.txt:2
+#, no-c-format
+msgid "Event Management"
+msgstr ""
+
+#. code: rif(.@gid >= 4, l("Event management")),
+#: npc/commands/super-menu.txt:20
+#, no-c-format
+msgid "Event management"
+msgstr ""
+
+#. code: l("Every 1 hour"), 1,
+#: npc/commands/scheduled-broadcasts.txt:24
+#, no-c-format
+msgid "Every 1 hour"
+msgstr ""
+
+#. code: l("Every 12 hours"), 12,
+#: npc/commands/scheduled-broadcasts.txt:28
+#, no-c-format
+msgid "Every 12 hours"
+msgstr ""
+
+#. code: l("Every 24 hours"), 24,
+#: npc/commands/scheduled-broadcasts.txt:29
+#, no-c-format
+msgid "Every 24 hours"
+msgstr ""
+
+#. code: l("Every 3 hours"), 3,
+#: npc/commands/scheduled-broadcasts.txt:25
+#, no-c-format
+msgid "Every 3 hours"
+msgstr ""
+
+#. code: l("Every 5 hours"), 5,
+#: npc/commands/scheduled-broadcasts.txt:26
+#, no-c-format
+msgid "Every 5 hours"
+msgstr ""
+
+#. code: l("Every 6 hours"), 6,
+#: npc/commands/scheduled-broadcasts.txt:27
+#, no-c-format
+msgid "Every 6 hours"
+msgstr ""
+
 #. code: 128: Evil clone spawned.
 #: conf/messages.conf:144
 msgid "Evil clone spawned."
@@ -4595,6 +4997,14 @@ msgstr ""
 #: npc/000-1/astapolos.txt:41
 #, no-c-format
 msgid "Exactly. Even our task is ridiculous. Why should we collect food down here if we have plenty of those tasty and soft rattos inside our ship, waiting just to be hunted and cooked?"
+msgstr ""
+
+#. code: mes l("Example:");
+#: npc/commands/debug.txt:44
+#: npc/commands/debug.txt:54
+#: npc/commands/debug.txt:74
+#, no-c-format
+msgid "Example:"
 msgstr ""
 
 #. code: l("Excellent!"),
@@ -4682,10 +5092,28 @@ msgstr ""
 msgid "Feel free to come visit me another time."
 msgstr ""
 
+#. code: //    l("Female"), G_FEMALE,
+#: npc/commands/debug-look.txt:9
+#, no-c-format
+msgid "Female"
+msgstr ""
+
 #. code: 000-1,83,98,0	script	Fexil	NPC_ELVEN_MAN_TRADER,{
 #: npc/000-1/fexil.txt:6
 #, no-c-format
 msgid "Fexil"
+msgstr ""
+
+#. code: l("Fexil needs help"), 2,
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:17
+#, no-c-format
+msgid "Fexil needs help"
+msgstr ""
+
+#. code: l("Fexil wants to buy fur"), 3;
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:18
+#, no-c-format
+msgid "Fexil wants to buy fur"
 msgstr ""
 
 #. code: 001-1,47,134,0	script	Fexil#001-1	NPC_ELVEN_MAN_TRADER,{
@@ -4772,6 +5200,12 @@ msgstr ""
 msgid "Fireworks | "
 msgstr ""
 
+#. code: l("First encounter"), 1,
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:16
+#, no-c-format
+msgid "First encounter"
+msgstr ""
+
 #. code: Name: "Fish Box"
 #: item_db.conf:-1
 #, no-c-format
@@ -4802,7 +5236,7 @@ msgid "Five Castles"
 msgstr ""
 
 #. code: Name: "Fluffy"
-#: mob_db.conf:949
+#: mob_db.conf:957
 #, no-c-format
 msgid "Fluffy"
 msgstr ""
@@ -4882,6 +5316,24 @@ msgstr ""
 msgid "For what kind of tissue?"
 msgstr ""
 
+#. code: l("Found @@, got exp", l("Croc Claw")), 2;
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:17
+#, no-c-format
+msgid "Found @@, got exp"
+msgstr ""
+
+#. code: l("Found bobo, didn't tell Katja"), 2,
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:17
+#, no-c-format
+msgid "Found bobo, didn't tell Katja"
+msgstr ""
+
+#. code: l("Found the chest"), 2,
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:17
+#, no-c-format
+msgid "Found the chest"
+msgstr ""
+
 #. code: 304: Four Castles
 #: conf/messages.conf:305
 msgid "Four Castles"
@@ -4915,7 +5367,7 @@ msgid "From what I heard, my brother Gugli needs the help of as many people as p
 msgstr ""
 
 #. code: Name: "Frostiana"
-#: mob_db.conf:547
+#: mob_db.conf:555
 #, no-c-format
 msgid "Frostiana"
 msgstr ""
@@ -4950,7 +5402,7 @@ msgid "GOOD!"
 msgstr ""
 
 #. code: mesq l("Gado! That coward lives in the past, I will ask Nard to punish him, again!");
-#: npc/000-2-0/julia.txt:223
+#: npc/000-2-0/julia.txt:115
 #, no-c-format
 msgid "Gado! That coward lives in the past, I will ask Nard to punish him, again!"
 msgstr ""
@@ -4983,6 +5435,12 @@ msgstr ""
 #. code: 1318: Gained zeny will not be shown.
 #: conf/messages.conf:1284
 msgid "Gained zeny will not be shown."
+msgstr ""
+
+#. code: l("Game introduction"), 0,
+#: npc/functions/quest-debug/028-General_Narrator.txt:15
+#, no-c-format
+msgid "Game introduction"
 msgstr ""
 
 #. code: 238: Game time: A day cycle has a normal duration of %s.
@@ -5023,6 +5481,32 @@ msgstr ""
 #. code: 622: Gangsi
 #: conf/messages.conf:559
 msgid "Gangsi"
+msgstr ""
+
+#. code: l("Gave @@ to Rumly", l("Plushroom")), 3;
+#: npc/functions/quest-debug/026-General_Rumly.txt:18
+#, no-c-format
+msgid "Gave @@ to Rumly"
+msgstr ""
+
+#. code: l("Gave tentacles, got reward"), 2;
+#: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:17
+#, no-c-format
+msgid "Gave tentacles, got reward"
+msgstr ""
+
+#. code: l("Gave to Q'Onan, got reward"), 3;
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:18
+#, no-c-format
+msgid "Gave to Q'Onan, got reward"
+msgstr ""
+
+#. code: mes l("Gender") + ": " + Sex;
+#. code: menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
+#: npc/commands/debug-look.txt:68
+#: npc/commands/debug-look.txt:59
+#, no-c-format
+msgid "Gender"
 msgstr ""
 
 #. code: 636: Genetic
@@ -5076,6 +5560,17 @@ msgstr ""
 #: npc/001-2-23/doors.txt:49
 #, no-c-format
 msgid "Go away."
+msgstr ""
+
+#. code: menuimage("actions/back", l("Go back")), -1,
+#. code: menuimage("actions/back", l("Go back"));
+#: npc/commands/debug-quest.txt:72
+#: npc/commands/debug-quest.txt:39
+#: npc/commands/debug-quest.txt:101
+#: npc/functions/quest-debug/functions.txt:6
+#: npc/commands/debug-quest.txt:13
+#, no-c-format
+msgid "Go back"
 msgstr ""
 
 #. code: npctalk3 l("Go fly a kite.");
@@ -5140,7 +5635,7 @@ msgid "Good day to you."
 msgstr ""
 
 #. code: l("Good day, my friend, come closer, come closer!");
-#: npc/001-1/salem.txt:103
+#: npc/001-1/salem.txt:104
 #, no-c-format
 msgid "Good day, my friend, come closer, come closer!"
 msgstr ""
@@ -5167,7 +5662,7 @@ msgid "Good look."
 msgstr ""
 
 #. code: mesq l("Good luck!");
-#: npc/001-1/salem.txt:199
+#: npc/001-1/salem.txt:194
 #, no-c-format
 msgid "Good luck!"
 msgstr ""
@@ -5221,6 +5716,53 @@ msgstr ""
 msgid "Goodbye."
 msgstr ""
 
+#. code: l("Got a cookie"), 1;
+#: npc/functions/quest-debug/018-General_Cookies.txt:16
+#, no-c-format
+msgid "Got a cookie"
+msgstr ""
+
+#. code: l("Got no reward"), 3,
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:19
+#, no-c-format
+msgid "Got no reward"
+msgstr ""
+
+#. code: l("Got poison from Gado"), 2,
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:17
+#, no-c-format
+msgid "Got poison from Gado"
+msgstr ""
+
+#. code: l("Got reward from gugli"), 2;
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:27
+#, no-c-format
+msgid "Got reward from gugli"
+msgstr ""
+
+#. code: l("Got the knife"), 1;
+#: npc/functions/quest-debug/005-ShipQuests_Knife.txt:16
+#, no-c-format
+msgid "Got the knife"
+msgstr ""
+
+#. code: l("Got the package"), 1;
+#: npc/functions/quest-debug/010-ShipQuests_Ale.txt:16
+#: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:16
+#: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:16
+#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:16
+#: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:16
+#: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:16
+#, no-c-format
+msgid "Got the package"
+msgstr ""
+
+#. code: l("Got the quest"), 1,
+#: npc/functions/quest-debug/000-ShipQuests_Julia.txt:16
+#, no-c-format
+msgid "Got the quest"
+msgstr ""
+
 #. code: Name: "Grass Carp"
 #: item_db.conf:-1
 #, no-c-format
@@ -5249,7 +5791,7 @@ msgid "Great! Can't wait for some tasty mushrooms!"
 msgstr ""
 
 #. code: l("Great, and as I promised, I give you a 90% discount on the @@ of your choice.", getitemlink (PiouEgg));
-#: npc/001-1/salem.txt:73
+#: npc/001-1/salem.txt:74
 #, no-c-format
 msgid "Great, and as I promised, I give you a 90% discount on the @@ of your choice."
 msgstr ""
@@ -5335,6 +5877,12 @@ msgstr ""
 msgid "Gugli"
 msgstr ""
 
+#. code: l("Gugli (main quest)"), ShipQuests_Gugli,
+#: npc/commands/debug-quest.txt:14
+#, no-c-format
+msgid "Gugli (main quest)"
+msgstr ""
+
 #. code: rif(.@gugli == 1, lg("Gugli asked me to help the sailors to gather food. Do you know where I can find them?")), L_Sailors,
 #: npc/000-1/maxe.txt:27
 #, no-c-format
@@ -5357,6 +5905,12 @@ msgstr ""
 #: npc/000-1/tibbo.txt:36
 #, no-c-format
 msgid "Gugli asked me to help you carrying one of these boxes you are filling.#1"
+msgstr ""
+
+#. code: l("Gugli asks to collect packages"), 1,
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:24
+#, no-c-format
+msgid "Gugli asks to collect packages"
 msgstr ""
 
 #. code: l("Gugli mentioned six sailors. What about the others?"), -;
@@ -5541,9 +6095,27 @@ msgid "Hack on trade: character '%s' (account: %d) try to trade more items that 
 msgstr ""
 
 #. code: mesq l("Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!");
-#: npc/000-2-0/julia.txt:245
+#: npc/000-2-0/julia.txt:74
 #, no-c-format
 msgid "Hahaha! All sailors aboard this ship are always drunk... Well... Except... Wait, what?! Nard told you?!"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Hair color")),
+#. code: mes l("Hair color") + ": " + getlook (LOOK_HAIR_COLOR);
+#: npc/commands/debug-look.txt:70
+#: npc/commands/debug-look.txt:33
+#: npc/commands/debug-look.txt:61
+#, no-c-format
+msgid "Hair color"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Hair style")),
+#. code: mes l("Hair style") + ": " + getlook (LOOK_HAIR);
+#: npc/commands/debug-look.txt:69
+#: npc/commands/debug-look.txt:23
+#: npc/commands/debug-look.txt:60
+#, no-c-format
+msgid "Hair style"
 msgstr ""
 
 #. code: Name: "Half Croconut"
@@ -5599,7 +6171,7 @@ msgstr ""
 msgid "Have you collected all the ingredients for my recipe? The special one too?"
 msgstr ""
 
-#. code: rif(.@fexil == 1, l("Have you seen Fexil?")), 0,
+#. code: rif(.@fexil == 1, l("Have you seen Fexil?")),
 #: npc/001-1/calypsan.txt:64
 #, no-c-format
 msgid "Have you seen Fexil?"
@@ -5714,6 +6286,12 @@ msgstr ""
 msgid "Hear me *hic* well, what ever, whatididever you will *hic* said ab... uhm... out what?! You saw there, the Legion of Aemil won't let it get public."
 msgstr ""
 
+#. code: l("Heard conversation"), 1;
+#: npc/functions/quest-debug/007-ShipQuests_Door.txt:16
+#, no-c-format
+msgid "Heard conversation"
+msgstr ""
+
 #. code: mesq l("I hope that answers your question.") + " " + l("Hehe!");
 #: npc/000-1/astapolos.txt:111
 #, no-c-format
@@ -5768,14 +6346,14 @@ msgid "Hel... What?! Wait!"
 msgstr ""
 
 #. code: mesq lg("Hello dear!");
-#: npc/000-2-0/julia.txt:36
+#: npc/000-2-0/julia.txt:296
 #: npc/001-2-21/julia.txt:11
 #, no-c-format
 msgid "Hello dear!#0"
 msgstr ""
 
 #. code: mesq lg("Hello dear!");
-#: npc/000-2-0/julia.txt:36
+#: npc/000-2-0/julia.txt:296
 #: npc/001-2-21/julia.txt:11
 #, no-c-format
 msgid "Hello dear!#1"
@@ -5870,13 +6448,13 @@ msgid "Here it is, clean like a whistle!"
 msgstr ""
 
 #. code: mesq l("Here they are.");
-#: npc/000-2-0/julia.txt:107
+#: npc/000-2-0/julia.txt:189
 #, no-c-format
 msgid "Here they are."
 msgstr ""
 
 #. code: mesq l("Here you go, everything is fixed.");
-#: npc/000-2-0/julia.txt:275
+#: npc/000-2-0/julia.txt:132
 #: npc/001-2-21/julia.txt:124
 #, no-c-format
 msgid "Here you go, everything is fixed."
@@ -5895,13 +6473,13 @@ msgstr ""
 msgid "Here's your reward!"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
+#. code: rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")),
 #: npc/001-1/rumly.txt:142
 #, no-c-format
 msgid "Here, take as many as you need, I have plenty!#0"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")), 0,
+#. code: rif(countitem(Plushroom) >= .@plush_count, lg("Here, take as many as you need, I have plenty!")),
 #: npc/001-1/rumly.txt:142
 #, no-c-format
 msgid "Here, take as many as you need, I have plenty!#1"
@@ -6139,7 +6717,7 @@ msgid "Hi, my name is Moon. This morning I went for a walk on the beach."
 msgstr ""
 
 #. code: mesq l("Hi, nice to see you!");
-#: npc/000-2-0/julia.txt:63
+#: npc/000-2-0/julia.txt:314
 #, no-c-format
 msgid "Hi, nice to see you!"
 msgstr ""
@@ -6250,7 +6828,7 @@ msgid "Hmm... Let's see, take this one."
 msgstr ""
 
 #. code: mesq l("Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*");
-#: npc/000-2-0/julia.txt:206
+#: npc/000-2-0/julia.txt:48
 #, no-c-format
 msgid "Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... *cough*, *burp*... Damn Gado... *cough*"
 msgstr ""
@@ -6317,9 +6895,9 @@ msgstr ""
 msgid "How can I get one of these cookies?"
 msgstr ""
 
-#. code: l("How can I improve my equipment?"), 2,
+#. code: l("How can I improve my equipment?"),
 #. code: switch (.@q = select (l("How can I improve my equipment?"),
-#: npc/001-2-0/resa.txt:49
+#: npc/001-2-0/resa.txt:50
 #: npc/001-2-27/don.txt:66
 #, no-c-format
 msgid "How can I improve my equipment?"
@@ -6331,13 +6909,13 @@ msgstr ""
 msgid "How could you... We said we wouldn't talk about that again!"
 msgstr ""
 
-#. code: l("How do these dyes work?"), 2,
+#. code: l("How do these dyes work?"),
 #: npc/001-1/calypsan.txt:66
 #, no-c-format
 msgid "How do these dyes work?"
 msgstr ""
 
-#. code: l("How do you do your potions?"), 3,
+#. code: l("How do you do your potions?"),
 #: npc/001-1/qpid.txt:177
 #, no-c-format
 msgid "How do you do your potions?"
@@ -6361,7 +6939,7 @@ msgstr ""
 msgid "How long will you stay here?"
 msgstr ""
 
-#. code: rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")), 4,
+#. code: rif(.@q >= 10, l("How many Fluffies did I kill on the hill?")),
 #: npc/001-1/enora.txt:376
 #, no-c-format
 msgid "How many Fluffies did I kill on the hill?"
@@ -6530,13 +7108,13 @@ msgid "I am sure that I can run with one of them on my shoulder.#1"
 msgstr ""
 
 #. code: lg("I am sure that you will change your mind.");
-#: npc/001-1/rumly.txt:209
+#: npc/001-1/rumly.txt:203
 #, no-c-format
 msgid "I am sure that you will change your mind.#0"
 msgstr ""
 
 #. code: lg("I am sure that you will change your mind.");
-#: npc/001-1/rumly.txt:209
+#: npc/001-1/rumly.txt:203
 #, no-c-format
 msgid "I am sure that you will change your mind.#1"
 msgstr ""
@@ -6627,18 +7205,18 @@ msgstr ""
 msgid "I came here, looking for a better life."
 msgstr ""
 
-#. code: menuint rif (.@enora == 5, lg("I came to retrieve a package for Enora.")), 0,
-#. code: menuint rif (.@enora == 1, lg("I came to retrieve a package for Enora.")), 1,
-#: npc/001-1/chelios.txt:83
-#: npc/001-2-0/resa.txt:47
+#. code: rif (.@enora == 1, lg("I came to retrieve a package for Enora.")),
+#. code: rif (.@enora == 5, lg("I came to retrieve a package for Enora.")),
+#: npc/001-2-0/resa.txt:48
+#: npc/001-1/chelios.txt:84
 #, no-c-format
 msgid "I came to retrieve a package for Enora.#0"
 msgstr ""
 
-#. code: menuint rif (.@enora == 5, lg("I came to retrieve a package for Enora.")), 0,
-#. code: menuint rif (.@enora == 1, lg("I came to retrieve a package for Enora.")), 1,
-#: npc/001-1/chelios.txt:83
-#: npc/001-2-0/resa.txt:47
+#. code: rif (.@enora == 1, lg("I came to retrieve a package for Enora.")),
+#. code: rif (.@enora == 5, lg("I came to retrieve a package for Enora.")),
+#: npc/001-2-0/resa.txt:48
+#: npc/001-1/chelios.txt:84
 #, no-c-format
 msgid "I came to retrieve a package for Enora.#1"
 msgstr ""
@@ -6709,13 +7287,13 @@ msgstr ""
 msgid "I cannot find the words to express my gratitude for your hard work."
 msgstr ""
 
-#. code: l("I changed my mind."), 2;
-#: npc/001-1/salem.txt:21
+#. code: l("I changed my mind.");
+#: npc/001-1/salem.txt:22
 #, no-c-format
 msgid "I changed my mind."
 msgstr ""
 
-#. code: rif(.@q >= 10, l("I cleaned up the hill.")), 3,
+#. code: rif(.@q >= 10, l("I cleaned up the hill.")),
 #: npc/001-1/enora.txt:375
 #, no-c-format
 msgid "I cleaned up the hill."
@@ -6758,13 +7336,13 @@ msgstr ""
 msgid "I don't have anything good for you today."
 msgstr ""
 
-#. code: rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")), 1,
+#. code: rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")),
 #: npc/001-1/rumly.txt:143
 #, no-c-format
 msgid "I don't have enough plushrooms...#0"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")), 1,
+#. code: rif(countitem(Plushroom) > 0 && countitem(Plushroom) < .@plush_count, lg("I don't have enough plushrooms...")),
 #: npc/001-1/rumly.txt:143
 #, no-c-format
 msgid "I don't have enough plushrooms...#1"
@@ -6815,7 +7393,7 @@ msgstr ""
 msgid "I don't need your help right now, come back later."
 msgstr ""
 
-#. code: l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."), 2,
+#. code: l("I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."),
 #: npc/001-1/salem.txt:172
 #, no-c-format
 msgid "I don't really have time to go chasing pious, let me just buy one at the regular price (30000 E)."
@@ -6839,14 +7417,14 @@ msgstr ""
 msgid "I don't want to be part of this joke."
 msgstr ""
 
-#. code: l("I don't want to buy a piou right now."), 3;
+#. code: l("I don't want to buy a piou right now.");
 #: npc/001-1/salem.txt:173
 #, no-c-format
 msgid "I don't want to buy a piou right now."
 msgstr ""
 
 #. code: .@s$ = l("I don't want to change my language, sorry.");
-#: npc/000-2-0/julia.txt:44
+#: npc/000-2-0/julia.txt:304
 #: npc/001-2-21/julia.txt:16
 #, no-c-format
 msgid "I don't want to change my language, sorry."
@@ -6865,7 +7443,7 @@ msgid "I feel ok.#1"
 msgstr ""
 
 #. code: mesq l("I give tasks to every single sailor, all day long. That should make him happy!");
-#: npc/000-2-0/julia.txt:249
+#: npc/000-2-0/julia.txt:78
 #, no-c-format
 msgid "I give tasks to every single sailor, all day long. That should make him happy!"
 msgstr ""
@@ -6907,8 +7485,8 @@ msgstr ""
 msgid "I have a lot of work here, so I don't even have time to go to the town."
 msgstr ""
 
-#. code: rif(.@q2 == 2 && countitem(PoisonedDish), l("I have brought you a tasty present for your delicate mouth.")), L_PoisonJulia,
-#: npc/000-2-0/julia.txt:51
+#. code: rif(.@q2 == 2 && countitem(PoisonedDish), l("I have brought you a tasty present for your delicate mouth.")),
+#: npc/000-2-0/julia.txt:270
 #, no-c-format
 msgid "I have brought you a tasty present for your delicate mouth."
 msgstr ""
@@ -6938,7 +7516,7 @@ msgstr ""
 msgid "I have some food for you."
 msgstr ""
 
-#. code: rif(.@fexil > 2 && countitem(FluffyFur) > 0, l("I have some fur for you.")), 3,
+#. code: rif(.@fexil > 2 && countitem(FluffyFur) > 0, l("I have some fur for you.")),
 #: npc/001-1/fexil.txt:81
 #, no-c-format
 msgid "I have some fur for you."
@@ -6950,26 +7528,26 @@ msgstr ""
 msgid "I have some spare one, take them, and tell Enora that any fees are paid!"
 msgstr ""
 
-#. code: lg("I have to go, sorry."), 3;
+#. code: lg("I have to go, sorry.");
 #: npc/001-1/rumly.txt:145
 #, no-c-format
 msgid "I have to go, sorry.#0"
 msgstr ""
 
-#. code: lg("I have to go, sorry."), 3;
+#. code: lg("I have to go, sorry.");
 #: npc/001-1/rumly.txt:145
 #, no-c-format
 msgid "I have to go, sorry.#1"
 msgstr ""
 
-#. code: rif (.@enora == 3, l("I have your black iron.")), 2,
-#: npc/001-1/chelios.txt:84
+#. code: rif (.@enora == 3, l("I have your black iron.")),
+#: npc/001-1/chelios.txt:85
 #, no-c-format
 msgid "I have your black iron."
 msgstr ""
 
-#. code: rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")), 1,
-#. code: rif(.@q == 8 && countitem(PiberriesInfusion) >= 5, l("I have your package.")), 2,
+#. code: rif(.@q == 4 || .@q == 6 || .@q == 9, l("I have your package.")),
+#. code: rif(.@q == 8 && countitem(PiberriesInfusion) >= 5, l("I have your package.")),
 #: npc/001-1/enora.txt:373
 #: npc/001-1/enora.txt:374
 #, no-c-format
@@ -6982,8 +7560,8 @@ msgstr ""
 msgid "I have your pass from the Merchant Guild."
 msgstr ""
 
-#. code: rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")), L_Rumors,
-#: npc/000-2-0/julia.txt:49
+#. code: rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")),
+#: npc/000-2-0/julia.txt:268
 #, no-c-format
 msgid "I heard rumors about some old hostilities between you and Gado. Are they true?"
 msgstr ""
@@ -7042,7 +7620,7 @@ msgstr ""
 msgid "I know that you are just starting to feel better, but I'd like to give you a special task."
 msgstr ""
 
-#. code: l("I like money! Consider it done."), 0,
+#. code: l("I like money! Consider it done."),
 #: npc/001-1/qonan.txt:47
 #, no-c-format
 msgid "I like money! Consider it done."
@@ -7054,16 +7632,18 @@ msgstr ""
 msgid "I love peace and quiet, that's a good choice."
 msgstr ""
 
+#. code: lg("I made a mistake, I would like to change my language."),
 #. code: lg("I made a mistake, I would like to change my language."), L_ChooseLang,
 #: npc/001-2-21/julia.txt:24
-#: npc/000-2-0/julia.txt:53
+#: npc/000-2-0/julia.txt:272
 #, no-c-format
 msgid "I made a mistake, I would like to change my language.#0"
 msgstr ""
 
+#. code: lg("I made a mistake, I would like to change my language."),
 #. code: lg("I made a mistake, I would like to change my language."), L_ChooseLang,
 #: npc/001-2-21/julia.txt:24
-#: npc/000-2-0/julia.txt:53
+#: npc/000-2-0/julia.txt:272
 #, no-c-format
 msgid "I made a mistake, I would like to change my language.#1"
 msgstr ""
@@ -7229,84 +7809,95 @@ msgstr ""
 msgid "I see. Warn the other sailors about this. But if she's part of the Legion of Aemil, then she's also our friend and ally.#0"
 msgstr ""
 
-#. code: l("I should put more effort into this."), 2,
+#. code: l("I should put more effort into this."),
 #: npc/001-2-2/moon.txt:145
 #, no-c-format
 msgid "I should put more effort into this."
 msgstr ""
 
+#. code: menuimage("flags/ca", l("I speak Catalan.") + " (Català)"),
 #. code: menuimage("flags/ca", l("I speak Catalan.") + " (Català)"), -,
-#: npc/000-2-0/julia.txt:91
 #: npc/001-2-21/julia.txt:61
+#: npc/000-2-0/julia.txt:158
 #, no-c-format
 msgid "I speak Catalan."
 msgstr ""
 
 #. code: menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"), -,
+#. code: menuimage("flags/nl_BE", l("I speak Dutch.") + " (Nederlands)"),
 #: npc/001-2-21/julia.txt:60
-#: npc/000-2-0/julia.txt:90
+#: npc/000-2-0/julia.txt:157
 #, no-c-format
 msgid "I speak Dutch."
 msgstr ""
 
 #. code: menuimage("flags/en", l("I speak English.") + " (English)"), -,
+#. code: menuimage("flags/en", l("I speak English.") + " (English)"),
 #: npc/001-2-21/julia.txt:51
-#: npc/000-2-0/julia.txt:81
+#: npc/000-2-0/julia.txt:148
 #, no-c-format
 msgid "I speak English."
 msgstr ""
 
 #. code: menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"), -,
-#: npc/000-2-0/julia.txt:87
+#. code: menuimage("flags/vls", l("I speak Flemish.") + " (Vlaams)"),
+#: npc/000-2-0/julia.txt:154
 #: npc/001-2-21/julia.txt:57
 #, no-c-format
 msgid "I speak Flemish."
 msgstr ""
 
+#. code: menuimage("flags/fr", l("I speak French.") + " (Français)"),
 #. code: menuimage("flags/fr", l("I speak French.") + " (Français)"), -,
-#: npc/000-2-0/julia.txt:82
+#: npc/000-2-0/julia.txt:149
 #: npc/001-2-21/julia.txt:52
 #, no-c-format
 msgid "I speak French."
 msgstr ""
 
+#. code: menuimage("flags/de", l("I speak German.") + " (Deutsch)"),
 #. code: menuimage("flags/de", l("I speak German.") + " (Deutsch)"), -,
+#: npc/000-2-0/julia.txt:153
 #: npc/001-2-21/julia.txt:56
-#: npc/000-2-0/julia.txt:86
 #, no-c-format
 msgid "I speak German."
 msgstr ""
 
+#. code: menuimage("flags/it", l("I speak Italian.") + " (Italiano)"),
 #. code: menuimage("flags/it", l("I speak Italian.") + " (Italiano)"), -,
 #: npc/001-2-21/julia.txt:59
-#: npc/000-2-0/julia.txt:89
+#: npc/000-2-0/julia.txt:156
 #, no-c-format
 msgid "I speak Italian."
 msgstr ""
 
+#. code: menuimage("flags/pl", l("I speak Polish.") + " (Polski)"),
 #. code: menuimage("flags/pl", l("I speak Polish.") + " (Polski)"), -,
 #: npc/001-2-21/julia.txt:58
-#: npc/000-2-0/julia.txt:88
+#: npc/000-2-0/julia.txt:155
 #, no-c-format
 msgid "I speak Polish."
 msgstr ""
 
+#. code: menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"),
 #. code: menuimage("flags/pt_BR", l("I speak Portuguese.") + " (Português)"), -,
-#: npc/000-2-0/julia.txt:85
 #: npc/001-2-21/julia.txt:55
+#: npc/000-2-0/julia.txt:152
 #, no-c-format
 msgid "I speak Portuguese."
 msgstr ""
 
+#. code: menuimage("flags/ru", l("I speak Russian.") + " (Русский)"),
 #. code: menuimage("flags/ru", l("I speak Russian.") + " (Русский)"), -,
-#: npc/000-2-0/julia.txt:83
 #: npc/001-2-21/julia.txt:53
+#: npc/000-2-0/julia.txt:150
 #, no-c-format
 msgid "I speak Russian."
 msgstr ""
 
 #. code: menuimage("flags/es", l("I speak Spanish.") + " (Español)"), -,
-#: npc/000-2-0/julia.txt:84
+#. code: menuimage("flags/es", l("I speak Spanish.") + " (Español)"),
+#: npc/000-2-0/julia.txt:151
 #: npc/001-2-21/julia.txt:54
 #, no-c-format
 msgid "I speak Spanish."
@@ -7324,13 +7915,13 @@ msgstr ""
 msgid "I swear, I do not eat so much."
 msgstr ""
 
-#. code: rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")), 1,
+#. code: rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")),
 #: npc/001-1/rumly.txt:67
 #, no-c-format
 msgid "I think I have enough plushrooms on me.#0"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")), 1,
+#. code: rif(countitem(Plushroom) >= .@plush_count, lg("I think I have enough plushrooms on me.")),
 #: npc/001-1/rumly.txt:67
 #, no-c-format
 msgid "I think I have enough plushrooms on me.#1"
@@ -7352,7 +7943,7 @@ msgid "I think I'll be done soon, since I almost have a box full of @@s!"
 msgstr ""
 
 #. code: mesq l("I think I'm done with that now. Do you have any questions?");
-#: npc/000-2-0/julia.txt:133
+#: npc/000-2-0/julia.txt:207
 #, no-c-format
 msgid "I think I'm done with that now. Do you have any questions?"
 msgstr ""
@@ -7370,7 +7961,7 @@ msgid "I think that I'm still a bit sick."
 msgstr ""
 
 #. code: l("I think that I've seen this weakling wandering around the beach south from here this morning.");
-#: npc/001-1/salem.txt:137
+#: npc/001-1/salem.txt:138
 #, no-c-format
 msgid "I think that I've seen this weakling wandering around the beach south from here this morning."
 msgstr ""
@@ -7423,7 +8014,7 @@ msgstr ""
 msgid "I want to divorce."
 msgstr ""
 
-#. code: l("I want to make my own dyes."), 3,
+#. code: l("I want to make my own dyes."),
 #: npc/001-1/calypsan.txt:67
 #, no-c-format
 msgid "I want to make my own dyes."
@@ -7537,7 +8128,7 @@ msgstr ""
 msgid "I will."
 msgstr ""
 
-#. code: l("I wish I could remember something..."), 10,
+#. code: l("I wish I could remember something..."),
 #: npc/001-1/enora.txt:382
 #, no-c-format
 msgid "I wish I could remember something..."
@@ -7597,20 +8188,20 @@ msgstr ""
 msgid "I would like to come back home when the days are better."
 msgstr ""
 
-#. code: rif (getq (General_Janus) == 2, l("I would like to create a guild.")), 2,
-#: npc/001-2-9/janus.txt:136
+#. code: rif (getq (General_Janus) == 2, l("I would like to create a guild.")),
+#: npc/001-2-9/janus.txt:137
 #, no-c-format
 msgid "I would like to create a guild."
 msgstr ""
 
-#. code: menuint rif (getq (General_Janus) == 1, l("I would like to create a party.")), 1,
-#: npc/001-2-9/janus.txt:135
+#. code: rif (getq (General_Janus) == 1, l("I would like to create a party.")),
+#: npc/001-2-9/janus.txt:136
 #, no-c-format
 msgid "I would like to create a party."
 msgstr ""
 
-#. code: l("I would like to deposit some money."), 2,
-#: npc/001-2-19/lloyd.txt:250
+#. code: l("I would like to deposit some money."),
+#: npc/001-2-19/lloyd.txt:251
 #, no-c-format
 msgid "I would like to deposit some money."
 msgstr ""
@@ -7621,8 +8212,8 @@ msgstr ""
 msgid "I would like to stay here a bit more."
 msgstr ""
 
-#. code: l("I would like to store some items."), 1,
-#: npc/001-2-19/lloyd.txt:249
+#. code: l("I would like to store some items."),
+#: npc/001-2-19/lloyd.txt:250
 #, no-c-format
 msgid "I would like to store some items."
 msgstr ""
@@ -7639,8 +8230,8 @@ msgstr ""
 msgid "I'M CALLED, @@!"
 msgstr ""
 
-#. code: rif(.@q != 0, l("I'd like to buy a piou.")), 2,
-#: npc/001-1/salem.txt:112
+#. code: rif(.@q != 0, l("I'd like to buy a piou.")),
+#: npc/001-1/salem.txt:113
 #, no-c-format
 msgid "I'd like to buy a piou."
 msgstr ""
@@ -7652,7 +8243,7 @@ msgstr ""
 msgid "I'd like to catch one of them, but they fly away when I try."
 msgstr ""
 
-#. code: l("I'd like to get a different style."), 2,
+#. code: l("I'd like to get a different style."),
 #: npc/001-2-41/edouard.txt:131
 #, no-c-format
 msgid "I'd like to get a different style."
@@ -7743,9 +8334,9 @@ msgstr ""
 msgid "I'm done."
 msgstr ""
 
-#. code: l("I'm fine for now, thank you."), 5;
 #. code: .@menustr$ = l("Surprise me!") + ":" + .@menustr$ + l("I'm fine for now, thank you.");
 #. code: .@menustr$ = .@menustr$ + l("I'm fine for now, thank you.");
+#. code: l("I'm fine for now, thank you.");
 #: npc/functions/barber.txt:85
 #: npc/001-2-41/edouard.txt:134
 #: npc/functions/barber.txt:44
@@ -7754,19 +8345,19 @@ msgid "I'm fine for now, thank you."
 msgstr ""
 
 #. code: mesq lg("I'm glad to see you're okay.");
-#: npc/000-2-0/julia.txt:67
+#: npc/000-2-0/julia.txt:318
 #, no-c-format
 msgid "I'm glad to see you're okay.#0"
 msgstr ""
 
 #. code: mesq lg("I'm glad to see you're okay.");
-#: npc/000-2-0/julia.txt:67
+#: npc/000-2-0/julia.txt:318
 #, no-c-format
 msgid "I'm glad to see you're okay.#1"
 msgstr ""
 
 #. code: mesq l("I'm glad you're on my side.");
-#: npc/000-2-0/julia.txt:258
+#: npc/000-2-0/julia.txt:93
 #, no-c-format
 msgid "I'm glad you're on my side."
 msgstr ""
@@ -7783,8 +8374,8 @@ msgstr ""
 msgid "I'm looking for Gugli, where is he?"
 msgstr ""
 
-#. code: rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")), 3,
-#: npc/001-1/salem.txt:113
+#. code: rif(.@fexil == 1, l("I'm looking for somebody named Fexil.")),
+#: npc/001-1/salem.txt:114
 #, no-c-format
 msgid "I'm looking for somebody named Fexil."
 msgstr ""
@@ -7842,7 +8433,7 @@ msgstr ""
 msgid "I'm not that numb eeh *hic* what did ever yous disco... ...vered there, the Legion of Aemil won't get me!"
 msgstr ""
 
-#. code: rif (.@q == 1, l("I'm on my way! I will bring it back to you.")), 1,
+#. code: rif (.@q == 1, l("I'm on my way! I will bring it back to you.")),
 #: npc/001-1/salem.txt:171
 #, no-c-format
 msgid "I'm on my way! I will bring it back to you."
@@ -7854,8 +8445,8 @@ msgstr ""
 msgid "I'm really excited, this place reminds me of an ancient mythical tree, you might know what I'm talking about..."
 msgstr ""
 
-#. code: menuint rif (.@enora == 2, l("I'm searching some black iron ingots.")), 0,
-#: npc/001-2-19/lloyd.txt:248
+#. code: rif (.@enora == 2, l("I'm searching some black iron ingots.")),
+#: npc/001-2-19/lloyd.txt:249
 #, no-c-format
 msgid "I'm searching some black iron ingots."
 msgstr ""
@@ -7905,8 +8496,8 @@ msgstr ""
 #. code: rif(getq(ShipQuests_Ale) == 1 && (getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -;
 #. code: rif(getq(ShipQuests_Gulukan) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -;
 #. code: rif(getq(ShipQuests_QMuller) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
-#. code: rif(getq(ShipQuests_Astapolos) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
 #. code: rif(getq(ShipQuests_Tibbo) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0), l("I'm still busy, I need to find the other sailors.")), -,
+#. code: rif(getq(ShipQuests_Astapolos) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_Jalad) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
 #. code: rif(getq(ShipQuests_Jalad) == 1 && (getq(ShipQuests_Ale) == 0 || getq(ShipQuests_Astapolos) == 0 || getq(ShipQuests_Gulukan) == 0 || getq(ShipQuests_QMuller) == 0 || getq(ShipQuests_Tibbo) == 0), l("I'm still busy, I need to find the other sailors.")), -,
 #: npc/000-1/tibbo.txt:63
 #: npc/000-1/muller.txt:65
@@ -7949,7 +8540,7 @@ msgid "I'm sure that you already knew the answer, didn't you?"
 msgstr ""
 
 #. code: mesq l("I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board.");
-#: npc/000-2-0/julia.txt:105
+#: npc/000-2-0/julia.txt:187
 #, no-c-format
 msgid "I'm sure that you've got some questions for me, feel free to ask them, but first I need to tell you the rules of proper social conduct on board."
 msgstr ""
@@ -8009,8 +8600,8 @@ msgid "I've seen him at the southern part of the island, check around."
 msgstr ""
 
 #. code: mesq l("I've seen him at the top of the island.");
-#: npc/000-1/muller.txt:91
 #: npc/000-1/tibbo.txt:84
+#: npc/000-1/muller.txt:91
 #, no-c-format
 msgid "I've seen him at the top of the island."
 msgstr ""
@@ -8076,7 +8667,7 @@ msgid "If you are registered somewhere else you will loose that reservation.#1"
 msgstr ""
 
 #. code: mesq l("If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou.");
-#: npc/001-1/salem.txt:167
+#: npc/001-1/salem.txt:166
 #, no-c-format
 msgid "If you catch the escaped piou and bring it back, I will give you a 90% discount on a piou."
 msgstr ""
@@ -8147,6 +8738,12 @@ msgstr ""
 msgid "If you see weird things here and there, or things that just shouldn't be, or even in your minds eye, things that you would like to see..."
 msgstr ""
 
+#. code: mes l("If you simply wish to get 99 in all stats:");
+#: npc/commands/debug.txt:80
+#, no-c-format
+msgid "If you simply wish to get 99 in all stats:"
+msgstr ""
+
 #. code: l("If you wake up at the inn after a harsh battle, you will find yourself revitalized in an instant unlike other places where you can rest.");
 #: npc/001-2-28/plush.txt:108
 #, no-c-format
@@ -8172,9 +8769,15 @@ msgid "If you want to be rewarded, help us in making this world a better place.#
 msgstr ""
 
 #. code: mesq l("If you want to read this page again, there is a copy up on the left wall.");
-#: npc/000-2-0/julia.txt:131
+#: npc/000-2-0/julia.txt:205
 #, no-c-format
 msgid "If you want to read this page again, there is a copy up on the left wall."
+msgstr ""
+
+#. code: mes l("If you wish to reset your stats:");
+#: npc/commands/debug.txt:84
+#, no-c-format
+msgid "If you wish to reset your stats:"
 msgstr ""
 
 #. code: mesq l("If you're looking for us there, most of us will be at the tavern of the Red Plush, at the bar counter, for Silvio's case...");
@@ -8194,8 +8797,8 @@ msgstr ""
 msgid "In Artis they really do mythologise people when they die."
 msgstr ""
 
-#. code: l("In fact, everything seems to work perfectly under your guidance. Nard has made the right choice."), -;
-#: npc/000-2-0/julia.txt:254
+#. code: l("In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.");
+#: npc/000-2-0/julia.txt:83
 #, no-c-format
 msgid "In fact, everything seems to work perfectly under your guidance. Nard has made the right choice."
 msgstr ""
@@ -8282,6 +8885,21 @@ msgstr ""
 #: npc/000-1/darlin.txt:113
 #, no-c-format
 msgid "Interesting... I'll leave you to your task then!"
+msgstr ""
+
+#. code: mes l("Interval: (none, only sent on login)");
+#: npc/commands/scheduled-broadcasts.txt:95
+#: npc/commands/scheduled-broadcasts.txt:153
+#, no-c-format
+msgid "Interval: (none, only sent on login)"
+msgstr ""
+
+#. code: mes l("Interval: every @@ hour(s)", $@SCHED_Opt[1]);
+#. code: mes l("Interval: every @@ hour(s)", .@int);
+#: npc/commands/scheduled-broadcasts.txt:89
+#: npc/commands/scheduled-broadcasts.txt:148
+#, no-c-format
+msgid "Interval: every @@ hour(s)"
 msgstr ""
 
 #. code: 1257: Invalid Homunculus ID.
@@ -8528,7 +9146,7 @@ msgid "It seems that we are close to an island, we should take a look at the upp
 msgstr ""
 
 #. code: l("It seems that you have no status points to reset!"),
-#: npc/001-1/rumly.txt:165
+#: npc/001-1/rumly.txt:167
 #, no-c-format
 msgid "It seems that you have no status points to reset!"
 msgstr ""
@@ -8742,7 +9360,7 @@ msgid "It's so hard to find the motivation..."
 msgstr ""
 
 #. code: mesq l("It's still too young to fly too far away, so it just circles nearby.");
-#: npc/001-1/salem.txt:163
+#: npc/001-1/salem.txt:162
 #, no-c-format
 msgid "It's still too young to fly too far away, so it just circles nearby."
 msgstr ""
@@ -8829,6 +9447,12 @@ msgstr ""
 #: npc/001-2-26/ivan.txt:6
 #, no-c-format
 msgid "Ivan"
+msgstr ""
+
+#. code: l("Ivan gave package"), 9,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:24
+#, no-c-format
+msgid "Ivan gave package"
 msgstr ""
 
 #. code: narrator 1, l("Ivan grumbles and resumes his work.");
@@ -8978,7 +9602,7 @@ msgid "Just leave me alone."
 msgstr ""
 
 #. code: l("Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course.");
-#: npc/001-1/salem.txt:104
+#: npc/001-1/salem.txt:105
 #, no-c-format
 msgid "Just look at my goods for sale! Fresh fruits and vegetables were shipped only this morning. And for reasonable price, of course."
 msgstr ""
@@ -8992,6 +9616,18 @@ msgstr ""
 #. code: 653: Kagerou
 #: conf/messages.conf:592
 msgid "Kagerou"
+msgstr ""
+
+#. code: l("Katja asked for help"), 1,
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:16
+#, no-c-format
+msgid "Katja asked for help"
+msgstr ""
+
+#. code: l("Katja gave reward"), 4;
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:19
+#, no-c-format
+msgid "Katja gave reward"
 msgstr ""
 
 #. code: 001-1,164,44,0	script	Katja#001-1	NPC_RAIJIN_GIRL,{
@@ -9030,12 +9666,20 @@ msgstr ""
 msgid "Khaki Cotton Dye"
 msgstr ""
 
+#. code: l("Killed rattos"), 2,
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:18
+#, no-c-format
+msgid "Killed rattos"
+msgstr ""
+
 #. code: 292: Killer state reset.
 #: conf/messages.conf:290
 msgid "Killer state reset."
 msgstr ""
 
+#. code: l("Knife"), ShipQuests_Knife,
 #. code: Name: "Knife"
+#: npc/commands/debug-quest.txt:45
 #: item_db.conf:-1
 #, no-c-format
 msgid "Knife"
@@ -9062,6 +9706,12 @@ msgstr ""
 #: npc/000-1/sapartan.txt:16
 #, no-c-format
 msgid "Last time I saw you, you were lost at sea on your raft.#1"
+msgstr ""
+
+#. code: l("Lazy Brother"), ArtisQuests_LazyBrother,
+#: npc/commands/debug-quest.txt:73
+#, no-c-format
+msgid "Lazy Brother"
 msgstr ""
 
 #. code: 284: Leadership transferred.
@@ -9171,7 +9821,7 @@ msgstr ""
 
 #. code: mesq l("Let me check into it...");
 #: npc/001-2-21/julia.txt:121
-#: npc/000-2-0/julia.txt:272
+#: npc/000-2-0/julia.txt:129
 #, no-c-format
 msgid "Let me check into it..."
 msgstr ""
@@ -9225,8 +9875,8 @@ msgid "Let's go to Artis."
 msgstr ""
 
 #. code: l("Let's make a trade."),
-#: npc/001-2-27/kaylo.txt:11
 #: npc/001-2-27/lydon.txt:11
+#: npc/001-2-27/kaylo.txt:11
 #, no-c-format
 msgid "Let's make a trade."
 msgstr ""
@@ -9238,13 +9888,13 @@ msgid "Let's not keep her waiting."
 msgstr ""
 
 #. code: l("Let's say the person who told me about that is well respected on this ship and never drunk.");
-#: npc/000-2-0/julia.txt:241
+#: npc/000-2-0/julia.txt:70
 #, no-c-format
 msgid "Let's say the person who told me about that is well respected on this ship and never drunk."
 msgstr ""
 
 #. code: l("Let's see... @@ of your status points have just been reset!", StatusPoint - .@wasSP),
-#: npc/001-1/rumly.txt:172
+#: npc/001-1/rumly.txt:174
 #, no-c-format
 msgid "Let's see... @@ of your status points have just been reset!"
 msgstr ""
@@ -9256,8 +9906,8 @@ msgstr ""
 msgid "Let's set sail then!"
 msgstr ""
 
-#. code: l("Let's trade."), 1,
-#: npc/001-1/salem.txt:111
+#. code: l("Let's trade."),
+#: npc/001-1/salem.txt:112
 #, no-c-format
 msgid "Let's trade."
 msgstr ""
@@ -9310,8 +9960,14 @@ msgstr ""
 msgid "Lime Cotton Dye"
 msgstr ""
 
+#. code: mes l("Line @@ has been removed.", .@l);
+#: npc/commands/motd.txt:47
+#, no-c-format
+msgid "Line @@ has been removed."
+msgstr ""
+
 #. code: Name: "Little Blub"
-#: mob_db.conf:329
+#: mob_db.conf:337
 #, no-c-format
 msgid "Little Blub"
 msgstr ""
@@ -9320,6 +9976,18 @@ msgstr ""
 #: npc/000-1/maxe.txt:20
 #, no-c-format
 msgid "Living inside a ship is great, but we sometimes need some fresh air."
+msgstr ""
+
+#. code: l("Lloyd gave package"), 3,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:18
+#, no-c-format
+msgid "Lloyd gave package"
+msgstr ""
+
+#. code: l("Lloyd gave pass"), 1,
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:16
+#, no-c-format
+msgid "Lloyd gave pass"
 msgstr ""
 
 #. code: l("Lloyd is searching something in his book.");
@@ -9375,8 +10043,8 @@ msgid "Look how splendid this landscape is!"
 msgstr ""
 
 #. code: l("Look who is back..."),
-#: npc/001-1/salem.txt:95
-#: npc/001-1/salem.txt:71
+#: npc/001-1/salem.txt:96
+#: npc/001-1/salem.txt:72
 #, no-c-format
 msgid "Look who is back..."
 msgstr ""
@@ -9410,6 +10078,12 @@ msgstr ""
 msgid "Lord Knight"
 msgstr ""
 
+#. code: l("Lost the riddle"), 8,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:23
+#, no-c-format
+msgid "Lost the riddle"
+msgstr ""
+
 #. code: Name: "Lousy Moccasins"
 #: item_db.conf:-1
 #, no-c-format
@@ -9420,6 +10094,12 @@ msgstr ""
 #: npc/001-2-28/jenna.txt:16
 #, no-c-format
 msgid "Lovely day, isn't it?"
+msgstr ""
+
+#. code: rif(.@v > 0, menuimage("actions/lower", l("Lower this skill"))),
+#: npc/commands/debug-skill.txt:19
+#, no-c-format
+msgid "Lower this skill"
 msgstr ""
 
 #. code: 001-2-33,34,33,0	script	Lozerk	NPC_DEMON_MALE_SWORD,{
@@ -9463,6 +10143,18 @@ msgstr ""
 msgid "M... Maybe?"
 msgstr ""
 
+#. code: l("MOTD"),
+#: npc/commands/super-menu.txt:19
+#, no-c-format
+msgid "MOTD"
+msgstr ""
+
+#. code: setnpcdialogtitle l("MOTD Config");
+#: npc/commands/motd.txt:120
+#, no-c-format
+msgid "MOTD Config"
+msgstr ""
+
 #. code: 1240: MVP Monster: '%s'/'%s'/'%s' (%d)
 #: conf/messages.conf:1154
 msgid "MVP Monster: '%s'/'%s'/'%s' (%d)"
@@ -9498,6 +10190,12 @@ msgstr ""
 msgid "Makes sense. Do you think we should inform the capt'n about it?"
 msgstr ""
 
+#. code: //    l("Male"), G_MALE,
+#: npc/commands/debug-look.txt:8
+#, no-c-format
+msgid "Male"
+msgstr ""
+
 #. code: Name: "Manana"
 #: item_db.conf:-1
 #, no-c-format
@@ -9505,9 +10203,15 @@ msgid "Manana"
 msgstr ""
 
 #. code: Name: "Manana Tree"
-#: mob_db.conf:757
+#: mob_db.conf:765
 #, no-c-format
 msgid "Manana Tree"
+msgstr ""
+
+#. code: rif(.@a, menuimage("actions/test", l("Manually trigger the current broadcast"))),
+#: npc/commands/scheduled-broadcasts.txt:162
+#, no-c-format
+msgid "Manually trigger the current broadcast"
 msgstr ""
 
 #. code: 1: Map not found.
@@ -9666,6 +10370,12 @@ msgstr ""
 msgid "Merlin"
 msgstr ""
 
+#. code: mes l("Message:");
+#: npc/commands/scheduled-broadcasts.txt:83
+#, no-c-format
+msgid "Message:"
+msgstr ""
+
 #. code: 633: Minstrel
 #: conf/messages.conf:570
 msgid "Minstrel"
@@ -9701,6 +10411,24 @@ msgstr ""
 msgid "Mobs#001-1"
 msgstr ""
 
+#. code: menuimage("actions/back", l("Modify another line")),
+#: npc/commands/motd.txt:98
+#, no-c-format
+msgid "Modify another line"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Modify this line")),
+#: npc/commands/motd.txt:100
+#, no-c-format
+msgid "Modify this line"
+msgstr ""
+
+#. code: rif(.@size, menuimage("actions/manage", l("Modify, move, or remove a line"))),
+#: npc/commands/motd.txt:142
+#, no-c-format
+msgid "Modify, move, or remove a line"
+msgstr ""
+
 #. code: mesq l("Mommy sent me to find my brother Bobo.");
 #: npc/001-1/katja.txt:93
 #, no-c-format
@@ -9711,6 +10439,24 @@ msgstr ""
 #: npc/001-2-11/mona.txt:11
 #, no-c-format
 msgid "Mona"
+msgstr ""
+
+#. code: l("Mona's dad"), ArtisQuests_MonaDad;
+#: npc/commands/debug-quest.txt:81
+#, no-c-format
+msgid "Mona's dad"
+msgstr ""
+
+#. code: l("Mona's dad is missing"), 1;
+#: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:16
+#, no-c-format
+msgid "Mona's dad is missing"
+msgstr ""
+
+#. code: l("Money"), ShipQuests_ArpanMoney,
+#: npc/commands/debug-quest.txt:46
+#, no-c-format
+msgid "Money"
 msgstr ""
 
 #. code: 564: Monk
@@ -9739,6 +10485,12 @@ msgstr ""
 #: npc/001-1/taree.txt:8
 #, no-c-format
 msgid "Moo!"
+msgstr ""
+
+#. code: l("Moon needs @@", l("Croc Claw")), 1,
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:16
+#, no-c-format
+msgid "Moon needs @@"
 msgstr ""
 
 #. code: 001-2-2,33,32,0	script	Moon#001-2-2	NPC_ELVEN_FEMALE,3,3,{
@@ -9801,6 +10553,18 @@ msgstr ""
 msgid "Mouboo#Artis3"
 msgstr ""
 
+#. code: rif(.@n < .@max, menuimage("actions/lower", l("Move this line down"))),
+#: npc/commands/motd.txt:102
+#, no-c-format
+msgid "Move this line down"
+msgstr ""
+
+#. code: rif(.@n > 0, menuimage("actions/raise", l("Move this line up"))),
+#: npc/commands/motd.txt:101
+#, no-c-format
+msgid "Move this line up"
+msgstr ""
+
 #. code: Name: "Mushroom Spores"
 #: item_db.conf:-1
 #, no-c-format
@@ -9851,7 +10615,7 @@ msgid "My name is Astapolos. Q'Muller and I joined Nard's crew a few years ago w
 msgstr ""
 
 #. code: mesq l("My name is Julia, it is me who took care of you after we found you in the sea.");
-#: npc/000-2-0/julia.txt:65
+#: npc/000-2-0/julia.txt:316
 #, no-c-format
 msgid "My name is Julia, it is me who took care of you after we found you in the sea."
 msgstr ""
@@ -9868,7 +10632,7 @@ msgstr ""
 msgid "My name is Q'Onan, I'm a member of Nard's crew."
 msgstr ""
 
-#. code: l("My stats are too good, I won't need it."), 3;
+#. code: l("My stats are too good, I won't need it.");
 #: npc/001-1/rumly.txt:69
 #, no-c-format
 msgid "My stats are too good, I won't need it."
@@ -9971,6 +10735,20 @@ msgstr ""
 msgid "Nard and his crew are taking us to the city of Artis."
 msgstr ""
 
+#. code: l("Nard asks to help crew"), 1,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:20
+#, no-c-format
+msgid "Nard asks to help crew"
+msgstr ""
+
+#. code: l("Nard asks to solve conflict"), 1,
+#. code: l("Nard asks to solve conflict"), 3,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:23
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:16
+#, no-c-format
+msgid "Nard asks to solve conflict"
+msgstr ""
+
 #. code: mes col(l("Nard looks surprised and stops you."), 9);
 #: npc/000-2-3/box.txt:47
 #, no-c-format
@@ -9985,6 +10763,7 @@ msgstr ""
 
 #. code: mesn "Narrator";
 #. code: mesn l("Narrator");
+#. code: l("Narrator"), General_Narrator,
 #: npc/000-1/silvio.txt:132
 #: npc/000-2-2/doors.txt:40
 #: npc/000-1/panels.txt:8
@@ -10017,7 +10796,6 @@ msgstr ""
 #: npc/000-2-1/arpan.txt:178
 #: npc/items/croconut.txt:42
 #: npc/000-2-0/note.txt:9
-#: npc/000-2-0/julia.txt:110
 #: npc/001-1/trees.txt:81
 #: npc/000-2-1/knife.txt:34
 #: npc/000-2-2/doors.txt:19
@@ -10032,6 +10810,7 @@ msgstr ""
 #: npc/000-2-0/billybons.txt:86
 #: npc/000-2-0/doors.txt:62
 #: npc/items/croconut.txt:28
+#: npc/commands/debug-quest.txt:104
 #: npc/001-2-22/knife.txt:16
 #, no-c-format
 msgid "Narrator"
@@ -10047,6 +10826,12 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Navy Blue Cotton Dye"
+msgstr ""
+
+#. code: l("Never (only on login)"), 0;
+#: npc/commands/scheduled-broadcasts.txt:30
+#, no-c-format
+msgid "Never (only on login)"
 msgstr ""
 
 #. code: l("Nevertheless, you can craft some cards that you can then attach to your equipment."),
@@ -10080,6 +10865,18 @@ msgstr ""
 #. code: 1158: New warp NPC '%s' created.
 #: conf/messages.conf:999
 msgid "New warp NPC '%s' created."
+msgstr ""
+
+#. code: mes l("Next broadcast: (never)");
+#: npc/commands/scheduled-broadcasts.txt:154
+#, no-c-format
+msgid "Next broadcast: (never)"
+msgstr ""
+
+#. code: mes l("Next broadcast: @@", FuzzyTimeFromMs(.@next));
+#: npc/commands/scheduled-broadcasts.txt:149
+#, no-c-format
+msgid "Next broadcast: @@"
 msgstr ""
 
 #. code: npctalk3 l("Nice day to you.");
@@ -10123,10 +10920,12 @@ msgstr ""
 msgid "Ninja"
 msgstr ""
 
-#. code: 1117: No
 #. code: menuaction(l("No")));
-#: conf/messages.conf:910
+#. code: l("No"),
+#. code: 1117: No
+#: npc/commands/scheduled-broadcasts.txt:64
 #: npc/functions/main.txt:175
+#: conf/messages.conf:910
 #, no-c-format
 msgid "No"
 msgstr ""
@@ -10236,7 +11035,8 @@ msgstr ""
 
 #. code: mesq l("No problem, do you have any other questions for me?");
 #: npc/001-2-21/julia.txt:39
-#: npc/000-2-0/julia.txt:149
+#: npc/000-2-0/julia.txt:166
+#: npc/000-2-0/julia.txt:245
 #, no-c-format
 msgid "No problem, do you have any other questions for me?"
 msgstr ""
@@ -10297,8 +11097,9 @@ msgid "No, and I gotta go, see you."
 msgstr ""
 
 #. code: l("No, none."), L_Quit;
+#. code: if (select(l("Yes, I do."), l("No, none.")) == 1) {
 #: npc/001-2-21/julia.txt:34
-#: npc/000-2-0/julia.txt:155
+#: npc/000-2-0/julia.txt:37
 #, no-c-format
 msgid "No, none."
 msgstr ""
@@ -10324,7 +11125,7 @@ msgstr ""
 msgid "No."
 msgstr ""
 
-#. code: l("No. Sorry."), 4;
+#. code: l("No. Sorry.");
 #: npc/001-1/fexil.txt:82
 #, no-c-format
 msgid "No. Sorry."
@@ -10454,6 +11255,12 @@ msgstr ""
 #: npc/000-1/gulukan.txt:129
 #, no-c-format
 msgid "Nobody."
+msgstr ""
+
+#. code: //    l("Non-binary"), G_OTHER;
+#: npc/commands/debug-look.txt:10
+#, no-c-format
+msgid "Non-binary"
 msgstr ""
 
 #. code: 917: None
@@ -10605,31 +11412,30 @@ msgstr ""
 msgid "Nothing, just hanging around."
 msgstr ""
 
-#. code: l("Nothing, sorry."), L_NoChanges;
 #. code: l("Nothing, sorry."), -;
 #. code: l("Nothing, sorry.");
 #. code: l("Nothing, sorry."), L_Quit;
 #: npc/001-2-21/julia.txt:104
-#: npc/000-2-0/julia.txt:57
+#: npc/000-2-0/julia.txt:276
+#: npc/000-2-0/julia.txt:241
 #: npc/001-2-21/julia.txt:29
-#: npc/000-2-0/julia.txt:183
 #: npc/000-2-1/arpan.txt:155
 #, no-c-format
 msgid "Nothing, sorry."
 msgstr ""
 
+#. code: rif(.@q != 0, l("Nothing."));
 #. code: l("Nothing."), L_Quit;
 #. code: l("Nothing.")))
-#. code: rif(.@q != 0, l("Nothing.")), 11;
 #. code: l("Nothing."));
 #: npc/001-2-28/plush.txt:97
 #: npc/items/shovel.txt:148
 #: npc/001-2-27/don.txt:70
+#: npc/001-2-6/christopher.txt:27
 #: npc/001-2-6/leonard.txt:29
 #: npc/000-2-3/box.txt:31
 #: npc/001-1/enora.txt:383
 #: npc/001-2-4/robin.txt:14
-#: npc/001-2-6/christopher.txt:27
 #, no-c-format
 msgid "Nothing."
 msgstr ""
@@ -10664,7 +11470,7 @@ msgid "Now move!"
 msgstr ""
 
 #. code: l("Now stand still... It should not take much time...");
-#: npc/001-1/rumly.txt:154
+#: npc/001-1/rumly.txt:156
 #, no-c-format
 msgid "Now stand still... It should not take much time..."
 msgstr ""
@@ -10739,7 +11545,7 @@ msgstr ""
 msgid "OH, LOOK THERE!"
 msgstr ""
 
-#. code: l("OK, let's trade."), 1,
+#. code: l("OK, let's trade."),
 #: npc/001-1/fexil.txt:79
 #, no-c-format
 msgid "OK, let's trade."
@@ -10775,7 +11581,7 @@ msgid "Of course!"
 msgstr ""
 
 #. code: mesq l("Of course! Tell me which language you speak and I will change the note on the ship board list.");
-#: npc/000-2-0/julia.txt:77
+#: npc/000-2-0/julia.txt:144
 #: npc/001-2-21/julia.txt:47
 #, no-c-format
 msgid "Of course! Tell me which language you speak and I will change the note on the ship board list."
@@ -10800,7 +11606,7 @@ msgid "Of course, so why do I still see open sea from the porthole?"
 msgstr ""
 
 #. code: mesq l("Of course, they are on the left wall, go have a look at them.");
-#: npc/000-2-0/julia.txt:188
+#: npc/000-2-0/julia.txt:254
 #, no-c-format
 msgid "Of course, they are on the left wall, go have a look at them."
 msgstr ""
@@ -10826,6 +11632,12 @@ msgstr ""
 #. code: 1067: Off
 #: conf/messages.conf:860
 msgid "Off"
+msgstr ""
+
+#. code: l("Official crew member"), 5,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:26
+#, no-c-format
+msgid "Official crew member"
 msgstr ""
 
 #. code: mesq l("Oh I see... Sailors are not able to do their job anymore, is it like that?!");
@@ -10876,13 +11688,13 @@ msgstr ""
 msgid "Oh look, there's a piou behind you!"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")), 2,
+#. code: rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")),
 #: npc/001-1/rumly.txt:144
 #, no-c-format
 msgid "Oh no, I don't have any plushroom on me right now.#0"
 msgstr ""
 
-#. code: rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")), 2,
+#. code: rif(countitem(Plushroom) == 0, lg("Oh no, I don't have any plushroom on me right now.")),
 #: npc/001-1/rumly.txt:144
 #, no-c-format
 msgid "Oh no, I don't have any plushroom on me right now.#1"
@@ -11027,7 +11839,7 @@ msgid "Oh, I was going to ask you if you wanted to help the crew search for some
 msgstr ""
 
 #. code: mesq l("Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future.");
-#: npc/000-2-0/julia.txt:129
+#: npc/000-2-0/julia.txt:203
 #, no-c-format
 msgid "Oh, and I almost forgot! Do not give the password of your room to anybody! I am the only one who has the other key and I won't ask for yours so keep it secret and try not to use the same password for any other room in the future."
 msgstr ""
@@ -11058,7 +11870,7 @@ msgstr ""
 
 #. code: mesq l("Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?");
 #: npc/001-2-21/julia.txt:99
-#: npc/000-2-0/julia.txt:178
+#: npc/000-2-0/julia.txt:236
 #, no-c-format
 msgid "Oh, and there was this inscription on your raft. It represents the Legion of Aemil, the largest and biggest guild of the whole new world. Does that make you remember anything, anything at all?"
 msgstr ""
@@ -11248,7 +12060,7 @@ msgstr ""
 
 #. code: mesq l("Ok, done.");
 #: npc/001-2-21/julia.txt:69
-#: npc/000-2-0/julia.txt:99
+#: npc/000-2-0/julia.txt:175
 #, no-c-format
 msgid "Ok, done."
 msgstr ""
@@ -11324,6 +12136,12 @@ msgstr ""
 msgid "Old Book"
 msgstr ""
 
+#. code: mes l("Old line:");
+#: npc/commands/motd.txt:69
+#, no-c-format
+msgid "Old line:"
+msgstr ""
+
 #. code: 1066: On
 #: conf/messages.conf:859
 msgid "On"
@@ -11348,7 +12166,7 @@ msgid "One Castle"
 msgstr ""
 
 #. code: mesq l("One of these little boogers started flying early, and escaped from me.");
-#: npc/001-1/salem.txt:161
+#: npc/001-1/salem.txt:160
 #, no-c-format
 msgid "One of these little boogers started flying early, and escaped from me."
 msgstr ""
@@ -11363,6 +12181,12 @@ msgstr ""
 #: npc/001-1/enora.txt:298
 #, no-c-format
 msgid "Only one more Fluffy to kill and it's done!"
+msgstr ""
+
+#. code: l("Opened treasure chest"), 1;
+#: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:16
+#, no-c-format
+msgid "Opened treasure chest"
 msgstr ""
 
 #. code: 9: Options changed.
@@ -11392,6 +12216,16 @@ msgstr ""
 #: npc/001-2-12/oscar.txt:6
 #, no-c-format
 msgid "Oscar#001-2-12"
+msgstr ""
+
+#. code: l("Other"),
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Other");
+#. code: mes l("This menu gives access to quest debug menus for @@ quests.", strtolower(l("Other")));
+#: npc/commands/debug-quest.txt:96
+#: npc/commands/debug-quest.txt:95
+#: npc/commands/debug-quest.txt:126
+#, no-c-format
+msgid "Other"
 msgstr ""
 
 #. code: 1301: Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
@@ -11540,6 +12374,30 @@ msgstr ""
 msgid "Peter"
 msgstr ""
 
+#. code: l("Peter asks to kill rattos"), 1,
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:17
+#, no-c-format
+msgid "Peter asks to kill rattos"
+msgstr ""
+
+#. code: l("Peter asks to kill rattos again"), 4,
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:20
+#, no-c-format
+msgid "Peter asks to kill rattos again"
+msgstr ""
+
+#. code: l("Peter gave reward"), 5;
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:21
+#, no-c-format
+msgid "Peter gave reward"
+msgstr ""
+
+#. code: l("Peter needs help"), 6,
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:16
+#, no-c-format
+msgid "Peter needs help"
+msgstr ""
+
 #. code: 001-2-22,70,35,0	script	Peter#001-2-22	NPC_RATTO_SAILOR,{
 #: npc/001-2-22/peter.txt:91
 #, no-c-format
@@ -11564,7 +12422,7 @@ msgid "Piberries Infusion"
 msgstr ""
 
 #. code: Name: "Pikpik"
-#: mob_db.conf:587
+#: mob_db.conf:595
 #, no-c-format
 msgid "Pikpik"
 msgstr ""
@@ -11582,7 +12440,7 @@ msgid "Pink Cotton Dye"
 msgstr ""
 
 #. code: Name: "Piou"
-#: mob_db.conf:105
+#: mob_db.conf:110
 #, no-c-format
 msgid "Piou"
 msgstr ""
@@ -11618,7 +12476,7 @@ msgid "Piou egg"
 msgstr ""
 
 #. code: Name: "Piousse"
-#: mob_db.conf:147
+#: mob_db.conf:152
 #, no-c-format
 msgid "Piousse"
 msgstr ""
@@ -11697,6 +12555,12 @@ msgstr ""
 #: npc/001-2-2/moon.txt:114
 #, no-c-format
 msgid "Please bring me @@s so I can pull out these spikes from my foot."
+msgstr ""
+
+#. code: //mes l("Please choose the desired gender:");
+#: npc/commands/debug-look.txt:5
+#, no-c-format
+msgid "Please choose the desired gender:"
 msgstr ""
 
 #. code: l("Please come back anytime!");
@@ -12154,6 +13018,36 @@ msgstr ""
 msgid "Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>)."
 msgstr ""
 
+#. code: mes l("Please enter the desired color") + " (0-255)";
+#: npc/commands/debug-look.txt:35
+#, no-c-format
+msgid "Please enter the desired color"
+msgstr ""
+
+#. code: mes l("Please enter the desired race") + " (0-32767)";
+#: npc/commands/debug-look.txt:45
+#, no-c-format
+msgid "Please enter the desired race"
+msgstr ""
+
+#. code: mes l("Please enter the desired style") + " (1-255)";
+#: npc/commands/debug-look.txt:25
+#, no-c-format
+msgid "Please enter the desired style"
+msgstr ""
+
+#. code: mes l("Please enter the message:");
+#: npc/commands/scheduled-broadcasts.txt:6
+#, no-c-format
+msgid "Please enter the message:"
+msgstr ""
+
+#. code: mes l("Please enter the new line.");
+#: npc/commands/motd.txt:30
+#, no-c-format
+msgid "Please enter the new line."
+msgstr ""
+
 #. code: 1151: Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
 #: conf/messages.conf:986
 msgid "Please enter two e-mail addresses (usage: @email <current@email> <new@email>)."
@@ -12181,6 +13075,27 @@ msgstr ""
 #: npc/001-1/enora.txt:269
 #, no-c-format
 msgid "Please guide me."
+msgstr ""
+
+#. code: mes l("Please select a category:");
+#: npc/commands/debug-quest.txt:121
+#, no-c-format
+msgid "Please select a category:"
+msgstr ""
+
+#. code: mes l("Please select a quest:");
+#: npc/commands/debug-quest.txt:36
+#: npc/commands/debug-quest.txt:10
+#: npc/commands/debug-quest.txt:69
+#: npc/commands/debug-quest.txt:98
+#, no-c-format
+msgid "Please select a quest:"
+msgstr ""
+
+#. code: mes l("Please select the interval:");
+#: npc/commands/scheduled-broadcasts.txt:21
+#, no-c-format
+msgid "Please select the interval:"
 msgstr ""
 
 #. code: 80: Please specify a display name or monster name/id.
@@ -12212,8 +13127,12 @@ msgstr ""
 msgid "Plush#001-2-28"
 msgstr ""
 
+#. code: l("Gave @@ to Rumly", l("Plushroom")), 3;
+#. code: l("Rumly wants @@", l("Plushroom")), 2,
 #. code: Name: "Plushroom"
 #: item_db.conf:-1
+#: npc/functions/quest-debug/026-General_Rumly.txt:17
+#: npc/functions/quest-debug/026-General_Rumly.txt:18
 #, no-c-format
 msgid "Plushroom"
 msgstr ""
@@ -12225,12 +13144,12 @@ msgid "Plushroom Box"
 msgstr ""
 
 #. code: Name: "Plushroom Field"
-#: mob_db.conf:510
+#: mob_db.conf:518
 #, no-c-format
 msgid "Plushroom Field"
 msgstr ""
 
-#. code: l("Plushrooms you say?"), 0,
+#. code: l("Plushrooms you say?"),
 #: npc/001-1/rumly.txt:30
 #, no-c-format
 msgid "Plushrooms you say?"
@@ -12246,6 +13165,12 @@ msgstr ""
 #: item_db.conf:-1
 #, no-c-format
 msgid "Poisoned Dish"
+msgstr ""
+
+#. code: l("Poisoned Julia"), 3,
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:18
+#, no-c-format
+msgid "Poisoned Julia"
 msgstr ""
 
 #. code: l("Poor Chelios, I don't envy him..."),
@@ -12281,6 +13206,18 @@ msgstr ""
 msgid "Professor"
 msgstr ""
 
+#. code: l("Prologue"),
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Prologue") + " - Gugli";
+#. code: mes l("This menu gives access to quest debug menus for @@ quests.", l("Prologue"));
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Prologue");
+#: npc/commands/debug-quest.txt:34
+#: npc/commands/debug-quest.txt:7
+#: npc/commands/debug-quest.txt:33
+#: npc/commands/debug-quest.txt:124
+#, no-c-format
+msgid "Prologue"
+msgstr ""
+
 #. code: npctalk3 l("Protect me, please...");
 #: npc/000-2-4/alige.txt:6
 #, no-c-format
@@ -12306,7 +13243,7 @@ msgid "Pumpkin Seeds"
 msgstr ""
 
 #. code: Name: "Pumpkish"
-#: mob_db.conf:837
+#: mob_db.conf:845
 #, no-c-format
 msgid "Pumpkish"
 msgstr ""
@@ -12382,6 +13319,12 @@ msgstr ""
 msgid "Q'Muller."
 msgstr ""
 
+#. code: l("Q'Onan asks to find chest"), 1,
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:16
+#, no-c-format
+msgid "Q'Onan asks to find chest"
+msgstr ""
+
 #. code: 000-0-0,29,28,0	script	Q'Onan#000-0-0	NPC_ORC_SAILOR,{
 #: npc/000-0-0/q'onan.txt:7
 #, no-c-format
@@ -12411,25 +13354,167 @@ msgstr ""
 msgid "Quest database has been reloaded."
 msgstr ""
 
-#. code: menuaction(l("Quit")), 4;
-#. code: menuaction(l("Quit")), 5;
-#. code: menuaction(l("Quit")), 3;
-#: npc/001-2-9/janus.txt:139
+#. code: setnpcdialogtitle l("Quest debug");
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Other");
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Prologue");
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Prologue") + " - Gugli";
+#. code: setnpcdialogtitle l("Quest debug") + " - " + l("Artis");
+#: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:8
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:8
+#: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:8
+#: npc/functions/quest-debug/010-ShipQuests_Ale.txt:8
+#: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:8
+#: npc/functions/quest-debug/005-ShipQuests_Knife.txt:8
+#: npc/functions/quest-debug/031-General_Janus.txt:8
+#: npc/functions/quest-debug/028-General_Narrator.txt:8
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:8
+#: npc/commands/debug-quest.txt:33
+#: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:8
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:8
+#: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:8
+#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:8
+#: npc/functions/quest-debug/000-ShipQuests_Julia.txt:8
+#: npc/commands/debug-quest.txt:66
+#: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:8
+#: npc/functions/quest-debug/026-General_Rumly.txt:8
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:8
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:8
+#: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:8
+#: npc/commands/debug-quest.txt:95
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:8
+#: npc/functions/quest-debug/007-ShipQuests_Door.txt:8
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:8
+#: npc/functions/quest-debug/018-General_Cookies.txt:8
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:8
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:8
+#: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:8
+#: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:8
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:8
+#: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:8
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:8
+#: npc/commands/debug-quest.txt:118
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:8
+#: npc/commands/debug-quest.txt:7
+#, no-c-format
+msgid "Quest debug"
+msgstr ""
+
+#. code: mes l("Quest state: @@", getq(ArtisQuests_Enora));
+#. code: mes l("Quest state: @@", getq(General_Cookies));
+#. code: mes l("Quest state: @@", getq(General_Narrator));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_QOnan));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Gulukan));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_Fishman));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Door));
+#. code: mes l("Quest state: @@", getq(ShipQuests_ArpanMoney));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_Fexil));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_CatchPiou));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Alige));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Arpan));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Nard));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_Lloyd));
+#. code: mes l("Quest state: @@", getq(ShipQuests_ChefGado));
+#. code: mes l("Quest state: @@", getq(ShipQuests_QMuller));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_MonaDad));
+#. code: mes l("Quest state: @@", getq(General_Rumly));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_LazyBrother));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Gugli));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Ale));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Knife));
+#. code: mes l("Quest state: @@", getq(ShipQuests_TreasureChest));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Peter));
+#. code: mes l("Quest state: @@", getq(General_Janus));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Astapolos));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Julia));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Jalad));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Couwan));
+#. code: mes l("Quest state: @@", getq(ArtisQuests_Urchin));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Tibbo));
+#: npc/functions/quest-debug/026-General_Rumly.txt:11
+#: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:11
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:11
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:11
+#: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:11
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:11
+#: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:11
+#: npc/functions/quest-debug/007-ShipQuests_Door.txt:11
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:11
+#: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:11
+#: npc/functions/quest-debug/018-General_Cookies.txt:11
+#: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:11
+#: npc/functions/quest-debug/010-ShipQuests_Ale.txt:11
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:11
+#: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:11
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:11
+#: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:11
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:11
+#: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:11
+#: npc/functions/quest-debug/005-ShipQuests_Knife.txt:11
+#: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:11
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:11
+#: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:11
+#: npc/functions/quest-debug/028-General_Narrator.txt:11
+#: npc/functions/quest-debug/031-General_Janus.txt:11
+#: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:11
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:11
+#: npc/functions/quest-debug/000-ShipQuests_Julia.txt:11
+#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:11
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:11
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:11
+#, no-c-format
+msgid "Quest state: @@"
+msgstr ""
+
+#. code: menuaction(l("Quit"));
 #: npc/001-1/calypsan.txt:68
-#: npc/001-1/salem.txt:114
-#: npc/001-2-26/ivan.txt:63
-#: npc/001-2-0/resa.txt:50
+#: npc/001-1/salem.txt:115
+#: npc/001-2-0/resa.txt:51
+#: npc/001-1/chelios.txt:88
+#: npc/001-2-9/janus.txt:140
 #: npc/001-2-12/oscar.txt:118
+#: npc/001-2-26/ivan.txt:64
 #: npc/001-1/qpid.txt:179
-#: npc/001-1/chelios.txt:87
 #, no-c-format
 msgid "Quit"
+msgstr ""
+
+#. code: mes l("Race") + ": " + Class;
+#. code: menuimage("actions/edit", l("Race")),
+#: npc/commands/debug-look.txt:43
+#: npc/commands/debug-look.txt:62
+#: npc/commands/debug-look.txt:71
+#, no-c-format
+msgid "Race"
 msgstr ""
 
 #. code: mesn "Raijin Voice";
 #: npc/000-0/sailors.txt:46
 #, no-c-format
 msgid "Raijin Voice"
+msgstr ""
+
+#. code: rif(.@v < 10, menuimage("actions/raise", l("Raise this skill"))),
+#: npc/commands/debug-skill.txt:18
+#, no-c-format
+msgid "Raise this skill"
+msgstr ""
+
+#. code: mes "    " + l("Raises your Int by 50");
+#: npc/commands/debug.txt:76
+#, no-c-format
+msgid "Raises your Int by 50"
+msgstr ""
+
+#. code: mes "    " + l("Raises your base level by 50");
+#: npc/commands/debug.txt:46
+#, no-c-format
+msgid "Raises your base level by 50"
+msgstr ""
+
+#. code: mes "    " + l("Raises your job level by 50");
+#: npc/commands/debug.txt:56
+#, no-c-format
+msgid "Raises your job level by 50"
 msgstr ""
 
 #. code: 627: Ranger
@@ -12443,7 +13528,7 @@ msgid "Ranger T"
 msgstr ""
 
 #. code: Name: "Ratto"
-#: mob_db.conf:238
+#: mob_db.conf:246
 #, no-c-format
 msgid "Ratto"
 msgstr ""
@@ -12501,6 +13586,30 @@ msgstr ""
 msgid "Red Plush Wine"
 msgstr ""
 
+#. code: mes "    " + l("Reduces your Int by 50");
+#: npc/commands/debug.txt:78
+#, no-c-format
+msgid "Reduces your Int by 50"
+msgstr ""
+
+#. code: mes "    " + l("Reduces your base level by 50");
+#: npc/commands/debug.txt:48
+#, no-c-format
+msgid "Reduces your base level by 50"
+msgstr ""
+
+#. code: mes "    " + l("Reduces your job level by 50");
+#: npc/commands/debug.txt:58
+#, no-c-format
+msgid "Reduces your job level by 50"
+msgstr ""
+
+#. code: l("Registered"), 1;
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:16
+#, no-c-format
+msgid "Registered"
+msgstr ""
+
 #. code: l("Registration is open for everybody, but newcomers need to pay a fee for all of the paperwork.");
 #: npc/001-2-19/lloyd.txt:57
 #, no-c-format
@@ -12517,6 +13626,18 @@ msgstr ""
 #: npc/001-1/katja.txt:42
 #, no-c-format
 msgid "Remind me, what should I do?"
+msgstr ""
+
+#. code: menuimage("actions/remove", l("Remove this line")),
+#: npc/commands/motd.txt:99
+#, no-c-format
+msgid "Remove this line"
+msgstr ""
+
+#. code: rif(.@v > 0, menuimage("actions/remove", l("Remove this skill"))),
+#: npc/commands/debug-skill.txt:17
+#, no-c-format
+msgid "Remove this skill"
 msgstr ""
 
 #. code: 411: Removed %d Kafra points. Total %d points.
@@ -12544,10 +13665,40 @@ msgstr ""
 msgid "Removed item: '%s'/'%s' {%d} from your autolootitem list."
 msgstr ""
 
+#. code: mes l("Repeat how many times?");
+#: npc/commands/scheduled-broadcasts.txt:41
+#, no-c-format
+msgid "Repeat how many times?"
+msgstr ""
+
+#. code: mes l("Repeat: @@ times", .@max ? .@max : "∞");
+#: npc/commands/scheduled-broadcasts.txt:90
+#, no-c-format
+msgid "Repeat: @@ times"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Gender") + " [" + l("Requires logout") + "]"),
+#: npc/commands/debug-look.txt:68
+#, no-c-format
+msgid "Requires logout"
+msgstr ""
+
 #. code: 001-2-0,37,28,0	script	Resa	NPC_ELVEN_FEMALE_ARMOR_SHOP,{
 #: npc/001-2-0/resa.txt:16
 #, no-c-format
 msgid "Resa"
+msgstr ""
+
+#. code: l("Resa gave package"), 6,
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:21
+#, no-c-format
+msgid "Resa gave package"
+msgstr ""
+
+#. code: menuimage("actions/reset", l("Reset")),
+#: npc/commands/debug.txt:103
+#, no-c-format
+msgid "Reset"
 msgstr ""
 
 #. code: 1324: Reset 'Feeling' maps.
@@ -12555,9 +13706,72 @@ msgstr ""
 msgid "Reset 'Feeling' maps."
 msgstr ""
 
+#. code: menuimage("actions/nuke", l("Reset EVERYTHING")),
+#: npc/commands/debug.txt:25
+#, no-c-format
+msgid "Reset EVERYTHING"
+msgstr ""
+
+#. code: dispbottom l("Reset done!");
+#: npc/commands/debug.txt:6
+#, no-c-format
+msgid "Reset done!"
+msgstr ""
+
+#. code: menuimage("actions/reset", l("Reset stats, skills, level")),
+#: npc/commands/debug.txt:24
+#, no-c-format
+msgid "Reset stats, skills, level"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Reset subquests")), -1,
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:25
+#, no-c-format
+msgid "Reset subquests"
+msgstr ""
+
 #. code: 1089: Reset |
 #: conf/messages.conf:882
 msgid "Reset | "
+msgstr ""
+
+#. code: rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu"))), -1;
+#. code: rif(getarg(0,0), menuimage("actions/back", l("Return to Debug menu")));
+#. code: menuimage("actions/back", l("Return to Debug menu"));
+#: npc/commands/debug-look.txt:72
+#: npc/commands/debug-quest.txt:127
+#: npc/commands/debug.txt:26
+#: npc/commands/debug-skill.txt:52
+#, no-c-format
+msgid "Return to Debug menu"
+msgstr ""
+
+#. code: menuimage("actions/home", l("Return to Super Menu"));
+#. code: rif(getarg(0,0), menuimage("actions/home", l("Return to Super Menu")));
+#: npc/commands/debug.txt:104
+#: npc/commands/event.txt:10
+#: npc/commands/scheduled-broadcasts.txt:165
+#: npc/commands/motd.txt:144
+#, no-c-format
+msgid "Return to Super Menu"
+msgstr ""
+
+#. code: menuimage("actions/home", l("Return to main menu"));
+#: npc/commands/motd.txt:103
+#, no-c-format
+msgid "Return to main menu"
+msgstr ""
+
+#. code: menuimage("actions/back", l("Return to skill debug menu"));
+#: npc/commands/debug-skill.txt:21
+#, no-c-format
+msgid "Return to skill debug menu"
+msgstr ""
+
+#. code: l("Returned piou to Salem"), 2;
+#: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:17
+#, no-c-format
+msgid "Returned piou to Salem"
 msgstr ""
 
 #. code: 1306: Returned to normal state.
@@ -12632,6 +13846,18 @@ msgstr ""
 msgid "Rumly is hiding behind the tree."
 msgstr ""
 
+#. code: l("Rumly needs your help"), 1,
+#: npc/functions/quest-debug/026-General_Rumly.txt:16
+#, no-c-format
+msgid "Rumly needs your help"
+msgstr ""
+
+#. code: l("Rumly wants @@", l("Plushroom")), 2,
+#: npc/functions/quest-debug/026-General_Rumly.txt:17
+#, no-c-format
+msgid "Rumly wants @@"
+msgstr ""
+
 #. code: 001-1,35,125,0	script	Rumly#001-1	NPC_RUMLY,{
 #: npc/001-1/rumly.txt:16
 #, no-c-format
@@ -12682,6 +13908,12 @@ msgstr ""
 msgid "Sakura | "
 msgstr ""
 
+#. code: l("Salem asks to catch piou"), 1,
+#: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:16
+#, no-c-format
+msgid "Salem asks to catch piou"
+msgstr ""
+
 #. code: 001-1,57,118,0	script	Salem#001-1	NPC_SALEM,{
 #: npc/001-1/salem.txt:14
 #, no-c-format
@@ -12698,6 +13930,20 @@ msgstr ""
 #: npc/000-1/sapartan.txt:7
 #, no-c-format
 msgid "Sapartan"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Scheduled broadcasts");
+#. code: l("Scheduled broadcasts"),
+#: npc/commands/super-menu.txt:18
+#: npc/commands/scheduled-broadcasts.txt:134
+#, no-c-format
+msgid "Scheduled broadcasts"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Scheduled broadcasts - Create new");
+#: npc/commands/scheduled-broadcasts.txt:73
+#, no-c-format
+msgid "Scheduled broadcasts - Create new"
 msgstr ""
 
 #. code: 261: Script could not be loaded.
@@ -12753,7 +13999,7 @@ msgid "See you later!"
 msgstr ""
 
 #. code: speech 1, l("See you next time!");
-#: npc/001-1/salem.txt:88
+#: npc/001-1/salem.txt:89
 #, no-c-format
 msgid "See you next time!"
 msgstr ""
@@ -12799,9 +14045,57 @@ msgid "Seems I've helped everyone here. I don't know what to do now!"
 msgstr ""
 
 #. code: mesq l("Seems yummy! Let me taste it!");
-#: npc/000-2-0/julia.txt:204
+#: npc/000-2-0/julia.txt:46
 #, no-c-format
 msgid "Seems yummy! Let me taste it!"
+msgstr ""
+
+#. code: l("Send 10 times"), 10,
+#: npc/commands/scheduled-broadcasts.txt:48
+#, no-c-format
+msgid "Send 10 times"
+msgstr ""
+
+#. code: l("Send 2 times"), 2,
+#: npc/commands/scheduled-broadcasts.txt:45
+#, no-c-format
+msgid "Send 2 times"
+msgstr ""
+
+#. code: l("Send 20 times"), 20,
+#: npc/commands/scheduled-broadcasts.txt:49
+#, no-c-format
+msgid "Send 20 times"
+msgstr ""
+
+#. code: l("Send 3 times"), 3,
+#: npc/commands/scheduled-broadcasts.txt:46
+#, no-c-format
+msgid "Send 3 times"
+msgstr ""
+
+#. code: l("Send 5 times"), 5,
+#: npc/commands/scheduled-broadcasts.txt:47
+#, no-c-format
+msgid "Send 5 times"
+msgstr ""
+
+#. code: l("Send indefinitely"), 0;
+#: npc/commands/scheduled-broadcasts.txt:50
+#, no-c-format
+msgid "Send indefinitely"
+msgstr ""
+
+#. code: l("Send only once"), 1,
+#: npc/commands/scheduled-broadcasts.txt:44
+#, no-c-format
+msgid "Send only once"
+msgstr ""
+
+#. code: mes l("Send this message also on login?");
+#: npc/commands/scheduled-broadcasts.txt:61
+#, no-c-format
+msgid "Send this message also on login?"
 msgstr ""
 
 #. code: 88: Sending request to login server...
@@ -12809,9 +14103,29 @@ msgstr ""
 msgid "Sending request to login server..."
 msgstr ""
 
+#. code: mes l("Sent on login: @@", .@login ? l("yes") : l("no"));
+#. code: mes l("Sent on login: @@", ($@SCHED_Opt[0] ? l("yes") : l("no")));
+#: npc/commands/scheduled-broadcasts.txt:144
+#: npc/commands/scheduled-broadcasts.txt:91
+#, no-c-format
+msgid "Sent on login: @@"
+msgstr ""
+
+#. code: mes l("Sent on login: yes");
+#: npc/commands/scheduled-broadcasts.txt:96
+#, no-c-format
+msgid "Sent on login: yes"
+msgstr ""
+
 #. code: 258: Sent packet 0x%x (%d)
 #: conf/messages.conf:255
 msgid "Sent packet 0x%x (%d)"
+msgstr ""
+
+#. code: mes l("Sent: @@ times out of @@", $@SCHED_Opt[2], ($@SCHED_Opt[3] ? $@SCHED_Opt[3] : "∞"));
+#: npc/commands/scheduled-broadcasts.txt:156
+#, no-c-format
+msgid "Sent: @@ times out of @@"
 msgstr ""
 
 #. code: 001-2-32,27,27,0	script	Serena	NPC_SERENA,{
@@ -12847,9 +14161,33 @@ msgstr ""
 msgid "Server time (normal time): %A, %B %d %Y %X."
 msgstr ""
 
+#. code: rif(!(.@a), menuimage("actions/add", l("Set a new broadcast"))),
+#: npc/commands/scheduled-broadcasts.txt:164
+#, no-c-format
+msgid "Set a new broadcast"
+msgstr ""
+
 #. code: 1233: Set battle_config as requested.
 #: conf/messages.conf:1139
 msgid "Set battle_config as requested."
+msgstr ""
+
+#. code: .@menustr$ += menuimage("actions/nuke", l("Set state manually"));
+#: npc/functions/quest-debug/functions.txt:33
+#, no-c-format
+msgid "Set state manually"
+msgstr ""
+
+#. code: menuimage("actions/manage", l("Set subquests as completed")), -2,
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:26
+#, no-c-format
+msgid "Set subquests as completed"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Set the level manually")),
+#: npc/commands/debug-skill.txt:20
+#, no-c-format
+msgid "Set the level manually"
 msgstr ""
 
 #. code: 307: Seven Castles
@@ -12904,7 +14242,7 @@ msgstr ""
 msgid "She said she will accept me when pious will have teeth. It's just a matter of time, you see?"
 msgstr ""
 
-#. code: rif(.@q == 0, l("She told me that you had some tasks for me.")), 0,
+#. code: rif(.@q == 0, l("She told me that you had some tasks for me.")),
 #: npc/001-1/enora.txt:372
 #, no-c-format
 msgid "She told me that you had some tasks for me."
@@ -13111,6 +14449,18 @@ msgstr ""
 msgid "Size change applied."
 msgstr ""
 
+#. code: setnpcdialogtitle l("Skill Debug");
+#: npc/commands/debug-skill.txt:37
+#, no-c-format
+msgid "Skill Debug"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Skill Debug - Modify Skill");
+#: npc/commands/debug-skill.txt:12
+#, no-c-format
+msgid "Skill Debug - Modify Skill"
+msgstr ""
+
 #. code: 99: Skill database has been reloaded.
 #: conf/messages.conf:114
 msgid "Skill database has been reloaded."
@@ -13212,10 +14562,16 @@ msgstr ""
 msgid "So that's why we wanted to warn you, maybe she comes from that guild, as that sign was on her raft.#0"
 msgstr ""
 
-#. code: npctalk3 l("So you think you're tough? A warrior must also be loyal and patient.");
+#. code: npctalk3 lg("So you think you're tough? A warrior must also be loyal and patient.");
 #: npc/functions/legiontalk.txt:50
 #, no-c-format
-msgid "So you think you're tough? A warrior must also be loyal and patient."
+msgid "So you think you're tough? A warrior must also be loyal and patient.#0"
+msgstr ""
+
+#. code: npctalk3 lg("So you think you're tough? A warrior must also be loyal and patient.");
+#: npc/functions/legiontalk.txt:50
+#, no-c-format
+msgid "So you think you're tough? A warrior must also be loyal and patient.#1"
 msgstr ""
 
 #. code: l("So you're under the control of a dictatorship? That's... reassuring!"), L_Control,
@@ -13280,7 +14636,7 @@ msgid "So, what was I saying?"
 msgstr ""
 
 #. code: l("So, where is my piou? You should not keep an old man waiting. Go and catch it like you said you would.");
-#: npc/001-1/salem.txt:96
+#: npc/001-1/salem.txt:97
 #, no-c-format
 msgid "So, where is my piou? You should not keep an old man waiting. Go and catch it like you said you would."
 msgstr ""
@@ -13313,6 +14669,12 @@ msgstr ""
 #: npc/001-1/enora.txt:101
 #, no-c-format
 msgid "So? You haven't exploded yet! Are you getting anything?"
+msgstr ""
+
+#. code: l("Solved conflict"), 4,
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:25
+#, no-c-format
+msgid "Solved conflict"
 msgstr ""
 
 #. code: mes col(l("Some Bandanas and Sailor Hats are inside this box."), 9);
@@ -13382,14 +14744,14 @@ msgid "Somehow you don't feel good about your deed."
 msgstr ""
 
 #. code: l("Something else?");
-#: npc/001-2-19/lloyd.txt:289
+#: npc/001-2-19/lloyd.txt:288
 #, no-c-format
 msgid "Something else?"
 msgstr ""
 
-#. code: rif(getskilllv(NV_BASIC) < 6, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
+#. code: rif(getskilllv(NV_BASIC) < 6, l("Something is wrong with me, I can't smile nor sit.")),
 #. code: rif(getskilllv(1) != 9, l("Something is wrong with me, I can't smile nor sit.")), L_BasicSkill,
-#: npc/000-2-0/julia.txt:52
+#: npc/000-2-0/julia.txt:271
 #: npc/001-2-21/julia.txt:22
 #, no-c-format
 msgid "Something is wrong with me, I can't smile nor sit."
@@ -13475,10 +14837,9 @@ msgstr ""
 msgid "Sorry, I'm doing other things at the moment."
 msgstr ""
 
-#. code: l("Sorry, but I can't tell you anything about that."), L_NoChanges,
 #. code: l("Sorry, but I can't tell you anything about that."),
+#: npc/000-2-0/julia.txt:240
 #: npc/001-2-21/julia.txt:103
-#: npc/000-2-0/julia.txt:182
 #, no-c-format
 msgid "Sorry, but I can't tell you anything about that."
 msgstr ""
@@ -13499,13 +14860,13 @@ msgstr ""
 msgid "Soul Linker"
 msgstr ""
 
-#. code: l("Sounds good!"), 0,
+#. code: l("Sounds good!"),
 #: npc/001-1/rumly.txt:66
 #, no-c-format
 msgid "Sounds good!"
 msgstr ""
 
-#. code: menuint rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")), 0,
+#. code: rif (.@q == 0, l("Sounds like a good deal to me. I'll do it.")),
 #: npc/001-1/salem.txt:170
 #, no-c-format
 msgid "Sounds like a good deal to me. I'll do it."
@@ -13542,7 +14903,7 @@ msgid "Speed returned to normal."
 msgstr ""
 
 #. code: l("Spend it wisely this time."),
-#: npc/001-1/rumly.txt:173
+#: npc/001-1/rumly.txt:175
 #, no-c-format
 msgid "Spend it wisely this time."
 msgstr ""
@@ -13571,6 +14932,24 @@ msgstr ""
 #. code: 617: Star Gladiator
 #: conf/messages.conf:554
 msgid "Star Gladiator"
+msgstr ""
+
+#. code: menuimage("actions/test", l("Start broadcasting")),
+#: npc/commands/scheduled-broadcasts.txt:103
+#, no-c-format
+msgid "Start broadcasting"
+msgstr ""
+
+#. code: menuimage("actions/test", l("Start broadcasting, and make an extra broadcast right now"));
+#: npc/commands/scheduled-broadcasts.txt:104
+#, no-c-format
+msgid "Start broadcasting, and make an extra broadcast right now"
+msgstr ""
+
+#. code: menuimage("actions/edit", l("Start over")),
+#: npc/commands/scheduled-broadcasts.txt:102
+#, no-c-format
+msgid "Start over"
 msgstr ""
 
 #. code: 42: Stat changed.
@@ -13604,6 +14983,12 @@ msgstr ""
 #: npc/001-2-2/moon.txt:117
 #, no-c-format
 msgid "Stay here, I will be back as soon as I have some."
+msgstr ""
+
+#. code: rif(.@a, menuimage("actions/remove", l("Stop broadcasting"))),
+#: npc/commands/scheduled-broadcasts.txt:163
+#, no-c-format
+msgid "Stop broadcasting"
 msgstr ""
 
 #. code: mesq l("Stop disturbing me, I already re-read that part twice because of you!");
@@ -13713,6 +15098,13 @@ msgstr ""
 msgid "Stupid yeye..."
 msgstr ""
 
+#. code: mes l("Subquests:");
+#: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:13
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:13
+#, no-c-format
+msgid "Subquests:"
+msgstr ""
+
 #. code: 621: Summer
 #: conf/messages.conf:558
 msgid "Summer"
@@ -13721,6 +15113,12 @@ msgstr ""
 #. code: 615: Super Baby
 #: conf/messages.conf:552
 msgid "Super Baby"
+msgstr ""
+
+#. code: setnpcdialogtitle l("Super Menu");
+#: npc/commands/super-menu.txt:12
+#, no-c-format
+msgid "Super Menu"
 msgstr ""
 
 #. code: 571: Super Novice
@@ -13828,13 +15226,13 @@ msgid "Take these coins in exchange and be careful."
 msgstr ""
 
 #. code: mesq l("Take this money as a reward for your nice words.");
-#: npc/000-2-0/julia.txt:260
+#: npc/000-2-0/julia.txt:95
 #, no-c-format
 msgid "Take this money as a reward for your nice words."
 msgstr ""
 
 #. code: mesq l("Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!");
-#: npc/000-2-0/julia.txt:225
+#: npc/000-2-0/julia.txt:117
 #, no-c-format
 msgid "Take this money for your wise choice. But do not try it again. The open sea has been merciful with you once... Do not further tempt the fates!"
 msgstr ""
@@ -13863,6 +15261,18 @@ msgstr ""
 msgid "Talk with Lloyd the Banker in the Merchant Guild, it's a big building at the northern part of Artis, at the top of the small hill."
 msgstr ""
 
+#. code: l("Talked to Janus"), 1,
+#: npc/functions/quest-debug/031-General_Janus.txt:16
+#, no-c-format
+msgid "Talked to Janus"
+msgstr ""
+
+#. code: l("Talked to narrator"), 6;
+#: npc/functions/quest-debug/004-ShipQuests_Nard.txt:27
+#, no-c-format
+msgid "Talked to narrator"
+msgstr ""
+
 #. code: 001-1,68,79,0	script	Taree	NPC_ELVEN_MAN_MOUBOO_SHOP,{
 #: npc/001-1/taree.txt:6
 #, no-c-format
@@ -13886,12 +15296,12 @@ msgid "Tarlan"
 msgstr ""
 
 #. code: rif(getq(ShipQuests_Gugli) > 1, l("Task is done.")), L_TaskDone,
-#: npc/000-1/muller.txt:64
+#: npc/000-1/tibbo.txt:62
 #: npc/000-1/jalad.txt:62
 #: npc/000-1/astapolos.txt:80
 #: npc/000-1/gulukan.txt:115
 #: npc/000-1/ale.txt:52
-#: npc/000-1/tibbo.txt:62
+#: npc/000-1/muller.txt:64
 #, no-c-format
 msgid "Task is done."
 msgstr ""
@@ -13936,6 +15346,12 @@ msgstr ""
 #: npc/001-2-4/terry.txt:6
 #, no-c-format
 msgid "Terry"
+msgstr ""
+
+#. code: rif(.@size, menuimage("actions/test", l("Test MOTD"))),
+#: npc/commands/motd.txt:143
+#, no-c-format
+msgid "Test MOTD"
 msgstr ""
 
 #. code: mesq l("Thank you again for your help!");
@@ -14022,7 +15438,7 @@ msgid "Thank you, sir, for your kind words. I am feeling better now."
 msgstr ""
 
 #. code: l("Thank you."),
-#: npc/001-1/rumly.txt:153
+#: npc/001-1/rumly.txt:155
 #, no-c-format
 msgid "Thank you."
 msgstr ""
@@ -14125,8 +15541,8 @@ msgstr ""
 msgid "The @@ is a one time item, you can use it as many times as you want, but you can only have one!"
 msgstr ""
 
-#. code: menuint rif(.@enora == 8, l("The Legion needs some potions.")), 1,
-#: npc/001-2-26/ivan.txt:61
+#. code: rif(.@enora == 8, l("The Legion needs some potions.")),
+#: npc/001-2-26/ivan.txt:62
 #, no-c-format
 msgid "The Legion needs some potions."
 msgstr ""
@@ -14296,7 +15712,7 @@ msgid "The light armor shop is ran by Resa, she is part of the Merchant Guild of
 msgstr ""
 
 #. code: mesq l("The little piou is flying nearby, all you need is to catch it and bring back to me.");
-#: npc/001-1/salem.txt:195
+#: npc/001-1/salem.txt:190
 #, no-c-format
 msgid "The little piou is flying nearby, all you need is to catch it and bring back to me."
 msgstr ""
@@ -14310,6 +15726,12 @@ msgstr ""
 #: npc/001-1/enora.txt:54
 #, no-c-format
 msgid "The market is located at the south-east of Artis, it is known as Merchant Guild's exhibit."
+msgstr ""
+
+#. code: mes l("The message cannot be empty");
+#: npc/commands/scheduled-broadcasts.txt:14
+#, no-c-format
+msgid "The message cannot be empty"
 msgstr ""
 
 #. code: npctalkonce l("The miracle is this: the more we share, the more we have.");
@@ -14424,7 +15846,7 @@ msgid "Their leaders then came to the conclusion that an alliance was the only w
 msgstr ""
 
 #. code: mesq l("Their price is usually high, but you know what? I have a bargain offer for you.");
-#: npc/001-1/salem.txt:157
+#: npc/001-1/salem.txt:156
 #, no-c-format
 msgid "Their price is usually high, but you know what? I have a bargain offer for you."
 msgstr ""
@@ -14477,7 +15899,7 @@ msgid "There are no items to appraise."
 msgstr ""
 
 #. code: l("There are no open task for you right now.");
-#: npc/001-2-19/lloyd.txt:276
+#: npc/001-2-19/lloyd.txt:277
 #, no-c-format
 msgid "There are no open task for you right now."
 msgstr ""
@@ -14536,10 +15958,10 @@ msgstr ""
 
 #. code: mes col(l("There is a paper with some rules written on it."), 9);
 #. code: l("There is a paper with some rules written on it."),
-#: npc/000-2-0/julia.txt:111
 #: npc/001-2-21/note.txt:10
 #: npc/000-2-0/note.txt:10
 #: npc/001-2-28/note.txt:10
+#: npc/000-2-0/julia.txt:193
 #, no-c-format
 msgid "There is a paper with some rules written on it."
 msgstr ""
@@ -14554,6 +15976,12 @@ msgstr ""
 #: npc/001-1/rumly.txt:60
 #, no-c-format
 msgid "There is an unknown side effect to these plushrooms, they can free you from your past mistakes."
+msgstr ""
+
+#. code: mes l("There is no event available right now.");
+#: npc/commands/event.txt:5
+#, no-c-format
+msgid "There is no event available right now."
 msgstr ""
 
 #. code: 988: There is no help for %c%s.
@@ -14615,7 +16043,7 @@ msgid "These heavy boxes are killing me, I can't feel my arms anymore!"
 msgstr ""
 
 #. code: mesq l("These little pious here can't fly. At least that's what I thought.");
-#: npc/001-1/salem.txt:159
+#: npc/001-1/salem.txt:158
 #, no-c-format
 msgid "These little pious here can't fly. At least that's what I thought."
 msgstr ""
@@ -14859,6 +16287,70 @@ msgstr ""
 msgid "This kind of talk should be taken with a grain of salt, but I agree and admit that I too am skeptical, so keep an eye on him.#1"
 msgstr ""
 
+#. code: mes l("This menu allows you to change your skills.");
+#: npc/commands/debug-skill.txt:38
+#, no-c-format
+msgid "This menu allows you to change your skills."
+msgstr ""
+
+#. code: mes l("This menu allows you to customize your appearance.");
+#: npc/commands/debug-look.txt:55
+#, no-c-format
+msgid "This menu allows you to customize your appearance."
+msgstr ""
+
+#. code: mes l("This menu allows you to manage events and gives access to event-related tools.");
+#: npc/commands/event.txt:3
+#, no-c-format
+msgid "This menu allows you to manage events and gives access to event-related tools."
+msgstr ""
+
+#. code: mes l("This menu allows you to modify the generic message that is sent to players when they log in.");
+#: npc/commands/motd.txt:121
+#, no-c-format
+msgid "This menu allows you to modify the generic message that is sent to players when they log in."
+msgstr ""
+
+#. code: mes l("This menu allows you to modify your account data.");
+#: npc/commands/debug.txt:94
+#, no-c-format
+msgid "This menu allows you to modify your account data."
+msgstr ""
+
+#. code: mes l("This menu allows you to set the scheduled broadcast that is sent to all players at a specific interval.");
+#: npc/commands/scheduled-broadcasts.txt:135
+#, no-c-format
+msgid "This menu allows you to set the scheduled broadcast that is sent to all players at a specific interval."
+msgstr ""
+
+#. code: mes l("This menu contains all options available to you, based on your access privileges.");
+#: npc/commands/super-menu.txt:13
+#, no-c-format
+msgid "This menu contains all options available to you, based on your access privileges."
+msgstr ""
+
+#. code: mes l("This menu gives access to all quest debug menus.");
+#: npc/commands/debug-quest.txt:119
+#, no-c-format
+msgid "This menu gives access to all quest debug menus."
+msgstr ""
+
+#. code: mes l("This menu gives access to quest debug menus for @@ quest subquests.", "Gugli");
+#: npc/commands/debug-quest.txt:8
+#, no-c-format
+msgid "This menu gives access to quest debug menus for @@ quest subquests."
+msgstr ""
+
+#. code: mes l("This menu gives access to quest debug menus for @@ quests.", "Artis");
+#. code: mes l("This menu gives access to quest debug menus for @@ quests.", l("Prologue"));
+#. code: mes l("This menu gives access to quest debug menus for @@ quests.", strtolower(l("Other")));
+#: npc/commands/debug-quest.txt:34
+#: npc/commands/debug-quest.txt:96
+#: npc/commands/debug-quest.txt:67
+#, no-c-format
+msgid "This menu gives access to quest debug menus for @@ quests."
+msgstr ""
+
 #. code: 1290: This monster does not spawn normally.
 #: conf/messages.conf:1232
 msgid "This monster does not spawn normally."
@@ -14983,13 +16475,13 @@ msgid "Time of death : ^EE0000%s^000000"
 msgstr ""
 
 #. code: Name: "Tipiou"
-#: mob_db.conf:712
+#: mob_db.conf:720
 #, no-c-format
 msgid "Tipiou"
 msgstr ""
 
 #. code: Name: "Tipiu"
-#: mob_db.conf:666
+#: mob_db.conf:674
 #, no-c-format
 msgid "Tipiu"
 msgstr ""
@@ -15011,6 +16503,24 @@ msgstr ""
 msgid "To be honest, no, never."
 msgstr ""
 
+#. code: mes l("To change your base level, use this command:");
+#: npc/commands/debug.txt:40
+#, no-c-format
+msgid "To change your base level, use this command:"
+msgstr ""
+
+#. code: mes l("To change your job level, use this command:");
+#: npc/commands/debug.txt:50
+#, no-c-format
+msgid "To change your job level, use this command:"
+msgstr ""
+
+#. code: mes l("To change your stats, use these commands:");
+#: npc/commands/debug.txt:65
+#, no-c-format
+msgid "To change your stats, use these commands:"
+msgstr ""
+
 #. code: mes col(l("To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client."), 9);
 #: npc/000-2-1/knife.txt:35
 #: npc/000-2-1/arpan.txt:227
@@ -15030,6 +16540,12 @@ msgstr ""
 #: npc/001-2-34/doors.txt:6
 #, no-c-format
 msgid "ToTrainingRoom#001-2-34"
+msgstr ""
+
+#. code: l("Told bobo to go home"), 3,
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:18
+#, no-c-format
+msgid "Told bobo to go home"
 msgstr ""
 
 #. code: 856: Tomb
@@ -15056,20 +16572,20 @@ msgstr ""
 msgid "Too bad... Come back when you'll have some nice food for me. Growl... grumble... grumble."
 msgstr ""
 
-#. code: l("Too risky, I might end up in jail. Do it yourself."), 1;
+#. code: l("Too risky, I might end up in jail. Do it yourself.");
 #: npc/001-1/qonan.txt:48
 #, no-c-format
 msgid "Too risky, I might end up in jail. Do it yourself."
 msgstr ""
 
 #. code: Name: "Toppy Blub"
-#: mob_db.conf:426
+#: mob_db.conf:434
 #, no-c-format
 msgid "Toppy Blub"
 msgstr ""
 
 #. code: Name: "Tortuga"
-#: mob_db.conf:189
+#: mob_db.conf:194
 #, no-c-format
 msgid "Tortuga"
 msgstr ""
@@ -15102,12 +16618,18 @@ msgstr ""
 msgid "Town Map"
 msgstr ""
 
-#. code: menuaction(l("Trade")), 1,
-#: npc/001-2-0/resa.txt:48
+#. code: menuaction(l("Trade")),
 #: npc/001-1/qpid.txt:175
+#: npc/001-2-0/resa.txt:49
 #: npc/001-1/calypsan.txt:65
 #, no-c-format
 msgid "Trade"
+msgstr ""
+
+#. code: Name: "Training Arrow"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Training Arrow"
 msgstr ""
 
 #. code: Name: "TrainingGladius"
@@ -15119,6 +16641,12 @@ msgstr ""
 #. code: 1488: Transforming into monster is not allowed in Guild Wars.
 #: conf/messages.conf:1523
 msgid "Transforming into monster is not allowed in Guild Wars."
+msgstr ""
+
+#. code: l("Treasure Chest"), ShipQuests_TreasureChest,
+#: npc/commands/debug-quest.txt:49
+#, no-c-format
+msgid "Treasure Chest"
 msgstr ""
 
 #. code: mesn "Tritan Voice";
@@ -15331,6 +16859,12 @@ msgstr ""
 msgid "Unlike other respawn points, an inn can fully restore your HP."
 msgstr ""
 
+#. code: l("Urchin"), ArtisQuests_Urchin,
+#: npc/commands/debug-quest.txt:74
+#, no-c-format
+msgid "Urchin"
+msgstr ""
+
 #. code: Name: "Urchin Meat"
 #: item_db.conf:-1
 #, no-c-format
@@ -15523,6 +17057,12 @@ msgstr ""
 msgid "Very nice, indeed!"
 msgstr ""
 
+#. code: l("Visited Artis at least once"), 1;
+#: npc/functions/quest-debug/028-General_Narrator.txt:16
+#, no-c-format
+msgid "Visited Artis at least once"
+msgstr ""
+
 #. code: 1271: Vit: %d (%d~%d)
 #: conf/messages.conf:1205
 msgid "Vit: %d (%d~%d)"
@@ -15710,7 +17250,7 @@ msgstr ""
 
 #. code: l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!");
 #. code: l("We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"),
-#: npc/000-2-0/julia.txt:286
+#: npc/000-2-0/julia.txt:57
 #: npc/000-2-1/arpan.txt:251
 #, no-c-format
 msgid "We are at half a day from our final destination, by the time that you wake up I'm sure that we will be there!"
@@ -15823,13 +17363,13 @@ msgid "We sell a brimmed hat, you can craft a feather card and attach it to this
 msgstr ""
 
 #. code: mesq l("We should be there in a few days, once we arrive, I will warn the Legion of Aemil about what happened, I'm sure they can help.");
-#: npc/000-2-0/julia.txt:162
+#: npc/000-2-0/julia.txt:219
 #, no-c-format
 msgid "We should be there in a few days, once we arrive, I will warn the Legion of Aemil about what happened, I'm sure they can help."
 msgstr ""
 
 #. code: mesq l("We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft.");
-#: npc/000-2-0/julia.txt:174
+#: npc/000-2-0/julia.txt:232
 #, no-c-format
 msgid "We thought that you could help us understand this, all we know is that we found you cast in the sea, adrift on your raft."
 msgstr ""
@@ -15876,7 +17416,7 @@ msgstr ""
 msgid "We will be yaying there in a few days, so we will drop you off there."
 msgstr ""
 
-#. code: l("We will talk about it later."), 2,
+#. code: l("We will talk about it later."),
 #: npc/001-1/rumly.txt:68
 #, no-c-format
 msgid "We will talk about it later."
@@ -16047,8 +17587,8 @@ msgstr ""
 msgid "Well, thanks for the box. But... He was supposed to bring it back to me himself. I never asked him to give it to you!"
 msgstr ""
 
-#. code: l("Well... I don't think it is the best way to rule a ship. Think about it."), L_Quit,
-#: npc/000-2-0/julia.txt:253
+#. code: l("Well... I don't think it is the best way to rule a ship. Think about it."),
+#: npc/000-2-0/julia.txt:82
 #, no-c-format
 msgid "Well... I don't think it is the best way to rule a ship. Think about it."
 msgstr ""
@@ -16059,8 +17599,8 @@ msgstr ""
 msgid "Well... I've only killed some little pious in the ship, that's all."
 msgstr ""
 
-#. code: rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")), L_Regret,
-#: npc/000-2-0/julia.txt:50
+#. code: rif(.@q2 == 2 && countitem(PoisonedDish), l("Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen.")),
+#: npc/000-2-0/julia.txt:269
 #, no-c-format
 msgid "Well... No wait, I have something for you but you shouldn't eat it... I'm taking it back to the kitchen."
 msgstr ""
@@ -16101,8 +17641,8 @@ msgstr ""
 msgid "What about my story?"
 msgstr ""
 
-#. code: l("What about those pious? They look so cute."), 0,
-#: npc/001-1/salem.txt:110
+#. code: l("What about those pious? They look so cute."),
+#: npc/001-1/salem.txt:111
 #, no-c-format
 msgid "What about those pious? They look so cute."
 msgstr ""
@@ -16158,7 +17698,7 @@ msgstr ""
 msgid "What are you looking for?"
 msgstr ""
 
-#. code: l("What are you reading?"), 4,
+#. code: l("What are you reading?"),
 #: npc/001-1/qpid.txt:178
 #, no-c-format
 msgid "What are you reading?"
@@ -16191,10 +17731,10 @@ msgstr ""
 msgid "What can I do for you?"
 msgstr ""
 
-#. code: rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")), L_GotoSleep,
+#. code: rif(.@q3 == 5 && .@q4 < 1, l("What can I do now?")),
 #. code: rif(.@q_nard == 5 && getq(General_Narrator) < 1, l("What can I do now?")), L_GotoSleep,
 #: npc/000-2-1/arpan.txt:147
-#: npc/000-2-0/julia.txt:48
+#: npc/000-2-0/julia.txt:267
 #, no-c-format
 msgid "What can I do now?"
 msgstr ""
@@ -16237,6 +17777,18 @@ msgstr ""
 msgid "What do you think?"
 msgstr ""
 
+#. code: mes l("What do you want to access?");
+#: npc/commands/super-menu.txt:15
+#, no-c-format
+msgid "What do you want to access?"
+msgstr ""
+
+#. code: mes l("What do you want to change?");
+#: npc/commands/debug-look.txt:66
+#, no-c-format
+msgid "What do you want to change?"
+msgstr ""
+
 #. code: mesq l("What do you want to do with it?");
 #: npc/001-2-22/note.txt:10
 #, no-c-format
@@ -16244,16 +17796,24 @@ msgid "What do you want to do with it?"
 msgstr ""
 
 #. code: mes col(l("What do you want to do?"), 9);
-#: npc/000-2-2/doors.txt:43
+#. code: mes l("What do you want to do?");
 #: npc/001-2-23/doors.txt:43
+#: npc/commands/debug.txt:96
+#: npc/000-2-2/doors.txt:43
 #, no-c-format
 msgid "What do you want to do?"
+msgstr ""
+
+#. code: mes l("What do you want to reset?");
+#: npc/commands/debug.txt:21
+#, no-c-format
+msgid "What do you want to reset?"
 msgstr ""
 
 #. code: mesq l("What do you want today?");
 #. code: l("What do you want today?");
 #: npc/001-2-21/julia.txt:13
-#: npc/000-2-0/julia.txt:38
+#: npc/000-2-0/julia.txt:298
 #: npc/001-2-19/lloyd.txt:242
 #, no-c-format
 msgid "What do you want today?"
@@ -16285,7 +17845,8 @@ msgid "What exactly is your real job?"
 msgstr ""
 
 #. code: l("What happened to me?"), L_What,
-#: npc/000-2-0/julia.txt:55
+#. code: l("What happened to me?"),
+#: npc/000-2-0/julia.txt:274
 #: npc/001-2-21/julia.txt:27
 #, no-c-format
 msgid "What happened to me?"
@@ -16324,13 +17885,13 @@ msgstr ""
 msgid "What is growing and shrinking at the same time?"
 msgstr ""
 
-#. code: l("What is my current hairstyle and hair color?"), 1,
+#. code: l("What is my current hairstyle and hair color?"),
 #: npc/001-2-41/edouard.txt:130
 #, no-c-format
 msgid "What is my current hairstyle and hair color?"
 msgstr ""
 
-#. code: rif(.@q >= 1, l("What is this legion?")), 9,
+#. code: rif(.@q >= 1, l("What is this legion?")),
 #. code: l("What is this legion?"));
 #: npc/001-1/enora.txt:219
 #: npc/001-1/enora.txt:381
@@ -16338,14 +17899,14 @@ msgstr ""
 msgid "What is this \"legion\"?"
 msgstr ""
 
-#. code: l("What is this building?"), 4,
-#: npc/001-1/chelios.txt:86
+#. code: l("What is this building?"),
+#: npc/001-1/chelios.txt:87
 #, no-c-format
 msgid "What is this building?"
 msgstr ""
 
-#. code: l("What is this guild for?"), 3,
-#: npc/001-2-19/lloyd.txt:251
+#. code: l("What is this guild for?"),
+#: npc/001-2-19/lloyd.txt:252
 #, no-c-format
 msgid "What is this guild for?"
 msgstr ""
@@ -16389,9 +17950,8 @@ msgid "What kinds of books are there here?"
 msgstr ""
 
 #. code: l("What service do you offer?"),
-#. code: l("What service do you offer?"), 3,
 #: npc/001-2-28/plush.txt:95
-#: npc/001-2-9/janus.txt:137
+#: npc/001-2-9/janus.txt:138
 #, no-c-format
 msgid "What service do you offer?"
 msgstr ""
@@ -16414,7 +17974,7 @@ msgstr ""
 msgid "What should I do, again?"
 msgstr ""
 
-#. code: rif (.@enora > 7, l("What was your riddle?")), 2,
+#. code: rif (.@enora > 7, l("What was your riddle?")),
 #: npc/001-1/qpid.txt:176
 #, no-c-format
 msgid "What was your riddle?"
@@ -16481,7 +18041,7 @@ msgstr ""
 msgid "What's wrong with your clothes?"
 msgstr ""
 
-#. code: l("What's your story again?"), 4,
+#. code: l("What's your story again?"),
 #: npc/001-2-41/edouard.txt:133
 #, no-c-format
 msgid "What's your story again?"
@@ -16568,7 +18128,7 @@ msgstr ""
 msgid "Where can I find a half croconut?"
 msgstr ""
 
-#. code: l("Where can I find some Croc Claws?"), 3;
+#. code: l("Where can I find some Croc Claws?");
 #: npc/001-2-2/moon.txt:146
 #, no-c-format
 msgid "Where can I find some Croc Claws?"
@@ -16587,8 +18147,8 @@ msgstr ""
 msgid "Where can I find your crew?"
 msgstr ""
 
-#. code: rif (.@enora >= 2, l("Where is the Merchant Guild?")), 3,
-#: npc/001-1/chelios.txt:85
+#. code: rif (.@enora >= 2, l("Where is the Merchant Guild?")),
+#: npc/001-1/chelios.txt:86
 #, no-c-format
 msgid "Where is the Merchant Guild?"
 msgstr ""
@@ -16601,19 +18161,19 @@ msgstr ""
 msgid "Where is the damn salt?! Give me the salt, I know you have it!"
 msgstr ""
 
-#. code: rif(.@q >= 10, l("Where is the hill?")), 8,
+#. code: rif(.@q >= 10, l("Where is the hill?")),
 #: npc/001-1/enora.txt:380
 #, no-c-format
 msgid "Where is the hill?"
 msgstr ""
 
-#. code: rif(.@q >= 5, l("Where is the light armor shop?")), 6,
+#. code: rif(.@q >= 5, l("Where is the light armor shop?")),
 #: npc/001-1/enora.txt:378
 #, no-c-format
 msgid "Where is the light armor shop?"
 msgstr ""
 
-#. code: rif(.@q >= 7, l("Where is the market?")), 7,
+#. code: rif(.@q >= 7, l("Where is the market?")),
 #: npc/001-1/enora.txt:379
 #, no-c-format
 msgid "Where is the market?"
@@ -16635,6 +18195,12 @@ msgstr ""
 #: npc/items/croconut.txt:29
 #, no-c-format
 msgid "Which of your weapons do you want to use in order to cut this @@?"
+msgstr ""
+
+#. code: mes l("Which skill do you wish to change?");
+#: npc/commands/debug-skill.txt:47
+#, no-c-format
+msgid "Which skill do you wish to change?"
 msgstr ""
 
 #. code: mesq l("While Jalad and Ale like to work together, as they use to do on the ship, last time I've seen them, they were near the big lake, north from here.");
@@ -16670,19 +18236,19 @@ msgstr ""
 msgid "Who are you looking for?"
 msgstr ""
 
-#. code: l("Who are you?"), 1,
+#. code: l("Who are you?"),
 #. code: l("Who are you?"), L_Who,
 #. code: l("Who are you?"), L_Who;
-#. code: rif(.@enora >= 8, l("Who are you?")), 2,
-#: npc/000-2-1/arpan.txt:150
-#: npc/001-2-26/ivan.txt:62
+#. code: rif(.@enora >= 8, l("Who are you?")),
+#: npc/001-2-26/ivan.txt:63
 #: npc/001-1/rumly.txt:31
 #: npc/000-1/astapolos.txt:83
+#: npc/000-2-1/arpan.txt:150
 #, no-c-format
 msgid "Who are you?"
 msgstr ""
 
-#. code: rif(.@q >= 1, l("Who is Don?")), 5,
+#. code: rif(.@q >= 1, l("Who is Don?")),
 #: npc/001-1/enora.txt:377
 #, no-c-format
 msgid "Who is Don?"
@@ -16800,7 +18366,7 @@ msgid "Why?"
 msgstr ""
 
 #. code: mesq l("Why? And who should you bring it back to?");
-#: npc/000-2-0/julia.txt:215
+#: npc/000-2-0/julia.txt:107
 #, no-c-format
 msgid "Why? And who should you bring it back to?"
 msgstr ""
@@ -16824,7 +18390,7 @@ msgid "With my old fishing rod you can catch something every day."
 msgstr ""
 
 #. code: l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
-#: npc/001-1/salem.txt:150
+#: npc/001-1/salem.txt:149
 #, no-c-format
 msgid "With proper training, a piou can become a good friend and faithful companion in your adventures."
 msgstr ""
@@ -16849,6 +18415,12 @@ msgstr ""
 #. code: 559: Wizard
 #: conf/messages.conf:492
 msgid "Wizard"
+msgstr ""
+
+#. code: Name: "Wooden Bow"
+#: item_db.conf:-1
+#, no-c-format
+msgid "Wooden Bow"
 msgstr ""
 
 #. code: Name: "Wooden Sword"
@@ -16933,8 +18505,10 @@ msgstr ""
 
 #. code: 1116: Yes
 #. code: return select (menuaction(l("Yes")),
-#: conf/messages.conf:909
+#. code: l("Yes");
 #: npc/functions/main.txt:174
+#: conf/messages.conf:909
+#: npc/commands/scheduled-broadcasts.txt:65
 #, no-c-format
 msgid "Yes"
 msgstr ""
@@ -17002,8 +18576,9 @@ msgid "Yes, I am sure.#1"
 msgstr ""
 
 #. code: l("Yes, I do."), L_Menu,
+#. code: if (select(l("Yes, I do."), l("No, none.")) == 1) {
 #: npc/001-2-21/julia.txt:33
-#: npc/000-2-0/julia.txt:154
+#: npc/000-2-0/julia.txt:37
 #, no-c-format
 msgid "Yes, I do."
 msgstr ""
@@ -17213,7 +18788,7 @@ msgid "You already did enough for us, do you want to follow Nard's advice and ge
 msgstr ""
 
 #. code: l("You already did enough for us, follow Nard's advice and get some rest."),
-#: npc/000-2-0/julia.txt:285
+#: npc/000-2-0/julia.txt:56
 #, no-c-format
 msgid "You already did enough for us, follow Nard's advice and get some rest."
 msgstr ""
@@ -17416,13 +18991,13 @@ msgstr ""
 msgid "You are unable to change your job."
 msgstr ""
 
-#. code: lg("You are weird, I have to go sorry."), 3;
+#. code: lg("You are weird, I have to go sorry.");
 #: npc/001-1/rumly.txt:33
 #, no-c-format
 msgid "You are weird, I have to go sorry.#0"
 msgstr ""
 
-#. code: lg("You are weird, I have to go sorry."), 3;
+#. code: lg("You are weird, I have to go sorry.");
 #: npc/001-1/rumly.txt:33
 #, no-c-format
 msgid "You are weird, I have to go sorry.#1"
@@ -17632,7 +19207,7 @@ msgid "You can't add a party bound item to a character without party!"
 msgstr ""
 
 #. code: mesq l("You can't carry another @@? What a shame.", PiouEgg);
-#: npc/001-1/salem.txt:36
+#: npc/001-1/salem.txt:37
 #, no-c-format
 msgid "You can't carry another @@? What a shame."
 msgstr ""
@@ -17814,6 +19389,12 @@ msgstr ""
 msgid "You do not have enough Esperin on yourself."
 msgstr ""
 
+#. code: dispbottom l("You do not have the required access privileges to use the Super Menu.");
+#: npc/commands/super-menu.txt:43
+#, no-c-format
+msgid "You do not have the required access privileges to use the Super Menu."
+msgstr ""
+
 #. code: 1391: You do not possess a cart to be removed
 #: conf/messages.conf:1391
 msgid "You do not possess a cart to be removed"
@@ -17867,7 +19448,7 @@ msgid "You don't have enough money, bring @@ E."
 msgstr ""
 
 #. code: mesq l("You don't have enough room in your backpack for a @@. Go stow some of your junk and come back.", PiouEgg);
-#: npc/001-1/salem.txt:44
+#: npc/001-1/salem.txt:45
 #, no-c-format
 msgid "You don't have enough room in your backpack for a @@. Go stow some of your junk and come back."
 msgstr ""
@@ -18299,6 +19880,12 @@ msgstr ""
 msgid "You opened the @@ in two parts, but you crushed one of them."
 msgstr ""
 
+#. code: l("You opened the chest"), 2,
+#: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:17
+#, no-c-format
+msgid "You opened the chest"
+msgstr ""
+
 #. code: mes col(l("You perfectly cut your @@ into two edible parts.", getitemlink(Croconut)), 9);
 #: npc/items/croconut.txt:67
 #, no-c-format
@@ -18334,10 +19921,10 @@ msgstr ""
 #. code: message strcharinfo(0), l("You receive @@ E!", 1000);
 #. code: message strcharinfo(0), l("You receive @@ E!", 10);
 #: npc/001-2-22/peter.txt:307
-#: npc/000-2-1/chefgado.txt:163
-#: npc/000-2-0/julia.txt:229
 #: npc/000-2-1/arpan.txt:216
-#: npc/000-2-0/julia.txt:264
+#: npc/000-2-1/chefgado.txt:163
+#: npc/000-2-0/julia.txt:121
+#: npc/000-2-0/julia.txt:99
 #: npc/000-1/gugli.txt:154
 #: npc/000-2-1/arpan.txt:203
 #: npc/000-2-1/peter.txt:311
@@ -18543,7 +20130,7 @@ msgid "You should walk to the north."
 msgstr ""
 
 #. code: mesq l("You shouldn't believe every tale drunken sailors tell you.");
-#: npc/000-2-0/julia.txt:237
+#: npc/000-2-0/julia.txt:66
 #, no-c-format
 msgid "You shouldn't believe every tale drunken sailors tell you."
 msgstr ""
@@ -18573,7 +20160,7 @@ msgid "You still got a few days before we arrive at the port, maybe you can lear
 msgstr ""
 
 #. code: l("You still have a 90% discount on one piou.");
-#: npc/001-1/salem.txt:129
+#: npc/001-1/salem.txt:130
 #, no-c-format
 msgid "You still have a 90% discount on one piou."
 msgstr ""
@@ -18603,7 +20190,7 @@ msgid "You stupid, she's english, look at the shape of her head.#0"
 msgstr ""
 
 #. code: mesq l("You take good care of your piou. Remember to feed it every day.");
-#: npc/001-1/salem.txt:52
+#: npc/001-1/salem.txt:53
 #, no-c-format
 msgid "You take good care of your piou. Remember to feed it every day."
 msgstr ""
@@ -18652,14 +20239,14 @@ msgid "You were gone so I thought you let me down."
 msgstr ""
 
 #. code: mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
-#: npc/000-2-0/julia.txt:176
+#: npc/000-2-0/julia.txt:234
 #: npc/001-2-21/julia.txt:97
 #, no-c-format
 msgid "You were in bad shape, you should be happy we found you before the sea killed you.#0"
 msgstr ""
 
 #. code: mesq lg("You were in bad shape, you should be happy we found you before the sea killed you.");
-#: npc/000-2-0/julia.txt:176
+#: npc/000-2-0/julia.txt:234
 #: npc/001-2-21/julia.txt:97
 #, no-c-format
 msgid "You were in bad shape, you should be happy we found you before the sea killed you.#1"
@@ -18853,7 +20440,7 @@ msgid "You're on La Johanne, a merchant ship."
 msgstr ""
 
 #. code: mesq l("You're on a ship, we're on our way to the commercial capital of Artis.");
-#: npc/000-2-0/julia.txt:160
+#: npc/000-2-0/julia.txt:217
 #, no-c-format
 msgid "You're on a ship, we're on our way to the commercial capital of Artis."
 msgstr ""
@@ -19156,8 +20743,8 @@ msgstr ""
 msgid "Your mind is set? You will loose the color dye during this process."
 msgstr ""
 
-#. code: l("Your name is Ianus or Janus?"), 4,
-#: npc/001-2-9/janus.txt:138
+#. code: l("Your name is Ianus or Janus?"),
+#: npc/001-2-9/janus.txt:139
 #, no-c-format
 msgid "Your name is Ianus or Janus?"
 msgstr ""
@@ -19259,6 +20846,14 @@ msgstr ""
 msgid "a quiet place,"
 msgstr ""
 
+#. code: .@ret$ += .@diff > 0 ? ", " : (.@s >= 2 ? ", " : " ") + l("and ");
+#: npc/functions/time.txt:76
+#: npc/functions/time.txt:104
+#: npc/functions/time.txt:90
+#, no-c-format
+msgid "and "
+msgstr ""
+
 #. code: 429: ban
 #: conf/messages.conf:422
 msgid "ban"
@@ -19297,9 +20892,53 @@ msgstr ""
 msgid "data @@ @@ @@ data"
 msgstr ""
 
+#. code: .@unit_day$ = l("day");
+#: npc/functions/time.txt:31
+#, no-c-format
+msgid "day"
+msgstr ""
+
+#. code: .@unit_days$ = l("days");
+#: npc/functions/time.txt:32
+#, no-c-format
+msgid "days"
+msgstr ""
+
+#. code: rif(debug, menuaction(l("debug"))),
+#: npc/000-2-0/julia.txt:266
+#, no-c-format
+msgid "debug"
+msgstr ""
+
+#. code: mes "    " + col("@str <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@agi <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@dex <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@vit <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@jlvl <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@blvl <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@luk <" + l("delta") + ">", 3);
+#. code: mes "    " + col("@int <" + l("delta") + ">", 3);
+#: npc/commands/debug.txt:67
+#: npc/commands/debug.txt:68
+#: npc/commands/debug.txt:69
+#: npc/commands/debug.txt:70
+#: npc/commands/debug.txt:72
+#: npc/commands/debug.txt:71
+#: npc/commands/debug.txt:42
+#: npc/commands/debug.txt:52
+#, no-c-format
+msgid "delta"
+msgstr ""
+
 #. code: 1340: feet,
 #: conf/messages.conf:1320
 msgid "feet, "
+msgstr ""
+
+#. code: "Eugene (" + l("fisherman") + ")", ArtisQuests_Fishman,
+#: npc/commands/debug-quest.txt:76
+#, no-c-format
+msgid "fisherman"
 msgstr ""
 
 #. code: 1334: garment,
@@ -19313,6 +20952,24 @@ msgstr ""
 msgid "hairstyle_config"
 msgstr ""
 
+#. code: .@unit_hour$ = l("hour");
+#: npc/functions/time.txt:27
+#, no-c-format
+msgid "hour"
+msgstr ""
+
+#. code: .@unit_hours$ = l("hours");
+#: npc/functions/time.txt:28
+#, no-c-format
+msgid "hours"
+msgstr ""
+
+#. code: .@ret$ = (.@options & 4) ? l("@@ from now", .@ret$) : l("in @@", .@ret$);
+#: npc/functions/time.txt:118
+#, no-c-format
+msgid "in @@"
+msgstr ""
+
 #. code: 1335: left accessory,
 #: conf/messages.conf:1315
 msgid "left accessory, "
@@ -19321,6 +20978,14 @@ msgstr ""
 #. code: 1338: left hand,
 #: conf/messages.conf:1318
 msgid "left hand, "
+msgstr ""
+
+#. code: mes l("line @@: @@", .@i, $MOTD_Messages$[.@i]);
+#. code: mes l("line @@: @@", .@n, $MOTD_Messages$[.@n]);
+#: npc/commands/motd.txt:128
+#: npc/commands/motd.txt:95
+#, no-c-format
+msgid "line @@: @@"
 msgstr ""
 
 #. code: 1342: lower head,
@@ -19352,6 +21017,40 @@ msgstr ""
 #. code: 1345: mid head,
 #: conf/messages.conf:1325
 msgid "mid head, "
+msgstr ""
+
+#. code: .@unit_minute$ = l("minute");
+#: npc/functions/time.txt:23
+#, no-c-format
+msgid "minute"
+msgstr ""
+
+#. code: .@unit_minutes$ = l("minutes");
+#: npc/functions/time.txt:24
+#, no-c-format
+msgid "minutes"
+msgstr ""
+
+#. code: mes l("Enabled: @@", (.@d ? l("no") : l("yes")));
+#. code: mes l("Sent on login: @@", .@login ? l("yes") : l("no"));
+#. code: mes l("Sent on login: @@", ($@SCHED_Opt[0] ? l("yes") : l("no")));
+#: npc/commands/scheduled-broadcasts.txt:91
+#: npc/commands/scheduled-broadcasts.txt:144
+#: npc/commands/motd.txt:136
+#, no-c-format
+msgid "no"
+msgstr ""
+
+#. code: mes "(" + l("no active MOTD") + ")";
+#: npc/commands/motd.txt:132
+#, no-c-format
+msgid "no active MOTD"
+msgstr ""
+
+#. code: mes .@a ? $@SCHED_Msg$ : "(" + l("no active broadcast") +")";
+#: npc/commands/scheduled-broadcasts.txt:140
+#, no-c-format
+msgid "no active broadcast"
 msgstr ""
 
 #. code: test,10,10,0	script	npc1	NPC_TEST1,3,3,{
@@ -19425,6 +21124,18 @@ msgstr ""
 msgid "right hand, "
 msgstr ""
 
+#. code: .@unit_second$ = l("second");
+#: npc/functions/time.txt:19
+#, no-c-format
+msgid "second"
+msgstr ""
+
+#. code: .@unit_seconds$ = l("seconds");
+#: npc/functions/time.txt:20
+#, no-c-format
+msgid "seconds"
+msgstr ""
+
 #. code: 1164: skill %d: %s (%s)
 #: conf/messages.conf:1011
 msgid "skill %d: %s (%s)"
@@ -19472,6 +21183,28 @@ msgstr ""
 #. code: 1451: value '%d' for option '%s' is out of range (limit is 0-10)
 #: conf/messages.conf:1468
 msgid "value '%d' for option '%s' is out of range (limit is 0-10)"
+msgstr ""
+
+#. code: .@unit_year$ = l("year");
+#: npc/functions/time.txt:35
+#, no-c-format
+msgid "year"
+msgstr ""
+
+#. code: .@unit_years$ = l("years");
+#: npc/functions/time.txt:36
+#, no-c-format
+msgid "years"
+msgstr ""
+
+#. code: mes l("Enabled: @@", (.@d ? l("no") : l("yes")));
+#. code: mes l("Sent on login: @@", .@login ? l("yes") : l("no"));
+#. code: mes l("Sent on login: @@", ($@SCHED_Opt[0] ? l("yes") : l("no")));
+#: npc/commands/scheduled-broadcasts.txt:91
+#: npc/commands/scheduled-broadcasts.txt:144
+#: npc/commands/motd.txt:136
+#, no-c-format
+msgid "yes"
 msgstr ""
 
 #. code: 346: | Guild: '%s'
