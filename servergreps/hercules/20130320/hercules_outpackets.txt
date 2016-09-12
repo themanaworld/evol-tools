@@ -144,6 +144,7 @@ fb client name: SMSG_PARTY_INFO
 191 client name: SMSG_CHAT_TALKIE_BOX
 192 client name: SMSG_ADMIN_SET_TILE_TYPE
 194 client name: SMSG_SOLVE_CHAR_NAME
+195 client name: SMSG_PLAYER_GUILD_PARTY_INFO
 196 client name: SMSG_BEING_STATUS_CHANGE
 199 client name: SMSG_PVP_MAP_MODE
 19a client name: SMSG_PVP_SET
@@ -329,6 +330,7 @@ fb client name: SMSG_PARTY_INFO
 82d client name: SMSG_CHAR_LOGIN2
 836 client name: SMSG_SEARCHSTORE_SEARCH_ACK
 837 client name: SMSG_SEARCHSTORE_SEARCH_FAILED
+839 client name: SMSG_GUILD_EXPULSION
 83a client name: SMSG_SEARCHSTORE_OPEN
 83d client name: SMSG_SEARCHSTORE_CLICK_ACK
 83e client name: SMSG_LOGIN_ERROR2
@@ -348,6 +350,7 @@ fb client name: SMSG_PARTY_INFO
 8d9 client name: SMSG_BATTLE_JOINED
 8db client name: SMSG_BATTLE_NOTICE_DELETE
 8df client name: SMSG_BATTLE_BEGINS
+8e2 client name: CMSG_NAVIGATE_TO
 908 client name: SMSG_PLAYER_FAVORITE_ITEM
 90f client name: SMSG_BEING_SPAWN
 914 client name: SMSG_BEING_MOVE
@@ -374,7 +377,6 @@ fb client name: SMSG_PARTY_INFO
 9a6
 9a8
 9aa
-a02
 a1a
 a1c
 a20

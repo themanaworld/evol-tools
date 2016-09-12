@@ -1,3 +1,1 @@
-0113 CMSG_ITEM_PICKUP                  clif->pUseSkillToPos                   9 vs   25
 0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23
-0288 CMSG_NPC_CASH_SHOP_BUY            clif->pcashshop_buy                   -1 vs   10

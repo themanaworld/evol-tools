@@ -1,5 +1,3 @@
 0815 CMSG_BUYINGSTORE_CLOSE            hidden by clif->pTakeItem
 0817 CMSG_BUYINGSTORE_OPEN             hidden by clif->pTickSend
-0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
-0113 CMSG_SKILL_USE_BEING              hidden by clif->pTakeItem
 0838 CMSG_SEARCHSTORE_NEXT_PAGE        hidden by clif->pSolveCharName

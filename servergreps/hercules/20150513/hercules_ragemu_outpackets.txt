@@ -1,2 +1,6 @@
-Exists only in RagEmu: 08e2
+Exists only in RagEmu: 011a
+Exists only in RagEmu: 0137
+Exists only in RagEmu: 022e
+Exists only in RagEmu: 02e0
+Exists only in RagEmu: 081b
 Exists only in RagEmu: 09c1

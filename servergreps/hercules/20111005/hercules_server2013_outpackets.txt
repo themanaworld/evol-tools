@@ -43,7 +43,6 @@ Exists only in server2013: 0164
 Exists only in server2013: 0176
 Exists only in server2013: 0182
 Exists only in server2013: 0185
-Exists only in server2013: 0195
 Exists only in server2013: 01b8
 Exists only in server2013: 01be
 Exists only in server2013: 01c1
@@ -157,7 +156,6 @@ Exists only in server2013: 0820
 Exists only in server2013: 0821
 Exists only in server2013: 0823
 Exists only in server2013: 0826
-Exists only in server2013: 0839
 Exists only in server2013: 083e
 Exists only in server2013: 083f
 Exists only in server2013: 0847
@@ -222,6 +220,7 @@ Exists only in server2013: 08c8
 Exists only in server2013: 08cb
 Exists only in server2013: 08cd
 Exists only in server2013: 08ce
+Exists only in server2013: 08cf
 Exists only in server2013: 08d0
 Exists only in server2013: 08d1
 Exists only in server2013: 08d3
@@ -251,6 +250,7 @@ Exists only in server2013: 0903
 Exists only in server2013: 0904
 Exists only in server2013: 0905
 Exists only in server2013: 0906
+Exists only in server2013: 0908
 Exists only in server2013: 0909
 Exists only in server2013: 090b
 Exists only in server2013: 090c

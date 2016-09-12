@@ -2,8 +2,8 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_HASH_CHECK
 PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_KEY
 PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER3
-PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_PCBANG
 PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_SSO
+PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER_PCBANG
 PSESENT BUT UNIMPLIMENTED CMSG_PARTY_CREATE2
 PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0061 CMSG_CHAR_PASSWORD_CHANGE         ?
@@ -15,10 +15,14 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 007d CMSG_MAP_LOADED                   clif->pLoadEndAck
 0085 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0089 CMSG_MAP_PING                     clif->pTickSend
+008c CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
 0090 CMSG_NPC_TALK                     clif->pNpcClicked
 0094 CMSG_MOVE_TO_STORAGE              clif->pMoveToKafra
 0096 CMSG_CHAT_WHISPER                 clif->pWisMessage
 0099 CMSG_ADMIN_ANNOUNCE               clif->pBroadcast
+00a2 CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName
+00a7 CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
+00a9 CMSG_PLAYER_EQUIP                 clif->pEquipItem
 00ab CMSG_PLAYER_UNEQUIP               clif->pUnequipItem
 00b2 CMSG_PLAYER_RESTART               clif->pRestart
 00b8 CMSG_NPC_LIST_CHOICE              clif->pNpcSelectMenu
@@ -48,6 +52,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 00ef CMSG_TRADE_OK                     clif->pTradeCommit
 00f3 CMSG_CHAT_MESSAGE                 clif->pGlobalMessage
 00f5 CMSG_ITEM_PICKUP                  clif->pTakeItem
+00f7 CMSG_MOVE_FROM_STORAGE            clif->pMoveFromKafra
 00f9 CMSG_PARTY_CREATE                 clif->pCreateParty
 00fc CMSG_PARTY_INVITE                 clif->pPartyInvite
 00ff CMSG_PARTY_INVITED                clif->pReplyPartyInvite
@@ -56,6 +61,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0103 CMSG_PARTY_KICK                   clif->pRemovePartyMember
 0108 CMSG_PARTY_MESSAGE                clif->pPartyMessage
 0112 CMSG_SKILL_LEVELUP_REQUEST        clif->pSkillUp
+0113 CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 0116 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0118 CMSG_PLAYER_STOP_ATTACK           clif->pStopAttack
 011b CMSG_SKILL_USE_MAP                clif->pUseSkillMap
@@ -142,7 +148,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0233 CMSG_HOMMERC_ATTACK               clif->pHomAttack
 0234 CMSG_HOMMERC_MOVE_TO_MASTER       clif->pHomMoveToMaster
 0237 CMSG_PK_RANKS                     clif->pRankingPk
-0238 CMSG_FRIENDS_ADD_PLAYER           ?
 023b CMSG_SKILL_USE_POSITION           clif->pUseSkillToPos
 023f CMSG_MAIL_REFRESH_INBOX           clif->pMail_refreshinbox
 0241 CMSG_MAIL_READ_MESSAGE            clif->pMail_read
@@ -205,10 +210,8 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0825 CMSG_LOGIN_REGISTER_SSO           lclif->p->parse_CA_SSO_LOGIN_REQ
 0835 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 0838 CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
-083a CMSG_PLAYER_CHANGE_DEST           ?
 083b CMSG_SEARCHSTORE_CLOSE            clif->pCloseSearchStoreInfo
 083c CMSG_SKILL_USE_BEING              clif->pUseSkillToId
-083e CMSG_SEARCHSTORE_CLICK            ?
 0844 CMSG_NPC_CASH_SHOP_OPEN           clif->pCashShopOpen
 0846 CMSG_NPC_CASH_SHOP_REQUEST_TAB    clif->pCashShopReqTab
 084a CMSG_NPC_CASH_SHOP_CLOSE          clif->pCashShopClose
@@ -301,8 +304,10 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 0933 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0934 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
 0937 CMSG_NAME_REQUEST                 clif->pGetCharNameRequest
+093a CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 093b CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
 093d CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
+093e CMSG_SEARCHSTORE_CLICK            clif->pSearchStoreInfoListItemClick
 093f CMSG_PLAYER_CHANGE_DEST           clif->pWalkToXY
 0940 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage
 0941 CMSG_SEARCHSTORE_NEXT_PAGE        clif->pSearchStoreInfoNextPage

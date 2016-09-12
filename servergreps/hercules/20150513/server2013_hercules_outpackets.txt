@@ -4,9 +4,13 @@ Exists only in Hercules: 09a6
 Exists only in Hercules: 09a8
 Exists only in Hercules: 09aa
 Exists only in Hercules: 09ca
+Exists only in Hercules: 09cb
 Exists only in Hercules: 09d5
 Exists only in Hercules: 09d7
 Exists only in Hercules: 09df
+Exists only in Hercules: 09e5
+Exists only in Hercules: 09e6
+Exists only in Hercules: 09f7
 Exists only in Hercules: 09fd
 Exists only in Hercules: 09fe
 Exists only in Hercules: 09ff
@@ -17,6 +21,7 @@ Exists only in Hercules: 0a0a
 Exists only in Hercules: 0a0b
 Exists only in Hercules: 0a0c
 Exists only in Hercules: 0a0d
+Exists only in Hercules: 0a0e
 Exists only in Hercules: 0a0f
 Exists only in Hercules: 0a10
 Exists only in Hercules: 0a18
@@ -24,5 +29,6 @@ Exists only in Hercules: 0a1a
 Exists only in Hercules: 0a1c
 Exists only in Hercules: 0a20
 Exists only in Hercules: 0a22
+Exists only in Hercules: 0a27
 Exists only in Hercules: 0a28
 Exists only in Hercules: 0a2d

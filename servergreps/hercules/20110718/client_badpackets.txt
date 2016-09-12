@@ -1,2 +1,0 @@
-0089 CMSG_PLAYER_CHANGE_ACT            hidden by clif->pTickSend
-0113 CMSG_SKILL_USE_BEING              hidden by clif->pTakeItem

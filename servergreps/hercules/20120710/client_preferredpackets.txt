@@ -1,0 +1,1 @@
+0368 -> 0886  CMSG_SOLVE_CHAR_NAME              clif->pSolveCharName

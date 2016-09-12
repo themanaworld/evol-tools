@@ -1,1 +1,0 @@
-0886 CMSG_SOLVE_CHAR_NAME              hidden by clif->pReqCloseBuyingStore
