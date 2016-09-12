@@ -5,9 +5,6 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
-
 def convertMobDb():
     srcFile = "oldserverdata/db/mob_db.txt"
     dstFile = "newserverdata/db/re/mob_db.txt"

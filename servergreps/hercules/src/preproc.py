@@ -5,8 +5,6 @@
 # Author: Andrei Karas (4144)
 
 import os
-import re
-import sys
 import shutil
 
 class PreProc:

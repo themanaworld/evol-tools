@@ -3,11 +3,11 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+import os
 import re
 
-from code.configutils import *
-from code.fileutils import *
-from code.stringutils import *
+from code.configutils import writeStartScript, writeEndScript, writeIntField, writeStrField
+from code.fileutils import readFile
 
 def getItemDbFile(srcDir):
     files = os.listdir(srcDir)

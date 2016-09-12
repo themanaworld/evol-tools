@@ -6,8 +6,8 @@
 
 import sys
 
-from code.server.evol.main import *
-from code.server.tmw.main import *
+from code.server.evol.main import dbEvolMain
+from code.server.tmw.main import dbTmwMain
 
 def showHelp():
     print "Usage: ./convert_db.py evol"

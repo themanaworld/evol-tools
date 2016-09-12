@@ -6,8 +6,8 @@
 import re
 from sets import Set
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import makeDir, readFile, saveFile
+from code.stringutils import stripQuotes2, strToXml
 
 def prepStat(val, text):
     if val != "0" and val != "":
@@ -38,35 +38,35 @@ def convertItems():
             rows = stripQuotes2(rows)
             itemId = rows[0]
             name = rows[1]
-            name2 = rows[2]
+#            name2 = rows[2]
             itemType = rows[3]
-            priceBuy = rows[4]
-            priceSell = rows[5]
+#            priceBuy = rows[4]
+#            priceSell = rows[5]
             weight = rows[6]
             atk = rows[7]
             matk = rows[8]
             defense = rows[9]
             attackRange = rows[10]
-            slots = rows[11]
-            equipJobs = rows[12]
-            equipUpper = rows[12]
-            equipGender = rows[14]
+#            slots = rows[11]
+#            equipJobs = rows[12]
+#            equipUpper = rows[12]
+#            equipGender = rows[14]
             equipLocations = rows[15]
-            weaponLevel = rows[16]
-            equipLevelMin = rows[17]
-            equipLevelMax = rows[18]
-            refinable = rows[19]
+#            weaponLevel = rows[16]
+#            equipLevelMin = rows[17]
+#            equipLevelMax = rows[18]
+#            refinable = rows[19]
             view = rows[20]
-            bindOnEquip = rows[21]
-            buyInStore = rows[22]
+#            bindOnEquip = rows[21]
+#            buyInStore = rows[22]
             delay = rows[23]
-            tradeFlag = rows[24]
-            tradeGroup = rows[25]
-            nouseFlag = rows[26]
-            nouseGroup = rows[27]
-            stackAmount = rows[28]
-            stackFlag = rows[29]
-            sprite = rows[30]
+#            tradeFlag = rows[24]
+#            tradeGroup = rows[25]
+#            nouseFlag = rows[26]
+#            nouseGroup = rows[27]
+#            stackAmount = rows[28]
+#            stackFlag = rows[29]
+#            sprite = rows[30]
 
             name = name.replace("\\'", "'")
             image = ""

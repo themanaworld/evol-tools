@@ -5,9 +5,9 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
-from code.server.dbitem import *
+from code.fileutils import readFile
+from code.stringutils import stripNewLine
+from code.server.dbitem import Item
 
 def convertStorage():
     srcFile = "olddb/storage.txt"
@@ -33,7 +33,7 @@ def convertStorage():
 
                 tmp = comaSplit.split(rows[0])
                 accountId = tmp[0]
-                storage_amount = tmp[1]
+#                storage_amount = tmp[1]
 
                 data = spaceSplit.split(rows[1])
                 for itemStr in data:

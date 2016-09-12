@@ -4,10 +4,6 @@
 # Author: Andrei Karas (4144)
 
 import re
-from sets import Set
-
-from code.fileutils import *
-from code.stringutils import *
 
 comaSplit = re.compile(",")
 equalSplit = re.compile("=")

@@ -5,8 +5,8 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import makeDir, readFile, saveFile
+from code.stringutils import strToXml, stripQuotes
 
 def convertQuests():
     print "quests disabled for now"

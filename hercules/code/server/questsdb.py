@@ -3,16 +3,11 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-import re
-from sets import Set
-
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import readFile
 
 def convertQuestsDb():
     srcFile = "oldserverdata/db/questvars.txt"
     dstFile = "newserverdata/db/quest_db.txt"
-    fieldsSplit = re.compile(",")
     quests = dict()
     with open(srcFile, "r") as r:
         with open(dstFile, "w") as w:

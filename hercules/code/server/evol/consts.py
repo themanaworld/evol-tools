@@ -5,9 +5,6 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
-
 def convertConsts(quests):
     dstFile = "newserverdata/db/const.txt"
     fieldsSplit = re.compile("\t+")

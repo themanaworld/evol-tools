@@ -99,7 +99,7 @@ def collectMessages(messagesDir):
             idx = line.find(": ")
             if idx < 1:
                 continue
-            msgId = line[:idx]
+#            msgId = line[:idx]
             msgStr = line[idx + 2:]
             if msgStr[-1:] == "\n":
                 msgStr = msgStr[:-1]

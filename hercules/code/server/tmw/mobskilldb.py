@@ -5,8 +5,7 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import readFile
 
 def convertMobSkillDb():
     srcFile = "oldserverdata/world/map/db/mob_skill_db.txt"

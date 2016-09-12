@@ -5,8 +5,8 @@
 
 import zlib
 
-from code.fileutils import *
-from code.tileutils import *
+from code.fileutils import readInt16, readInt32, makeDir, copyFile, readFile, readMapName, saveFile, readData
+from code.tileutils import getTileData, getTile
 
 def covertToTmx(f, mapsCount):
     destDir = "clientdata/"

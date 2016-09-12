@@ -5,9 +5,8 @@
 
 import re
 
-from code.configutils import *
-from code.fileutils import *
-from code.stringutils import *
+from code.configutils import writeIntField, writeStartBlock, writeEndBlock, writeStartScript, writeEndScript, writeStrField, writeSubField
+from code.fileutils import readFile
 
 def convertItemDb():
     srcFile = "oldserverdata/db/item_db.txt"

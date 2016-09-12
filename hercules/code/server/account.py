@@ -5,8 +5,8 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import readFile
+from code.stringutils import stripNewLine, escapeSqlStr
 
 def convertSex(sex):
     if sex == "M" or sex == "F" or sex == "S":

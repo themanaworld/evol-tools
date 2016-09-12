@@ -4,21 +4,9 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-import array
-import base64
-import gzip
 import os
 import re
-import datetime
-import xml
-import csv
-import ogg.vorbis
-import StringIO
 import sys
-import zlib
-import struct
-import shutil
-from sets import Set
 
 defStart = "#if PACKETVER >= "
 defEnd = "#endif"

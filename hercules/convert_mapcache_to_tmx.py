@@ -6,8 +6,8 @@
 
 import os
 
-from code.fileutils import *
-from code.servertoclient.maps import *
+from code.fileutils import readInt32, readInt16
+from code.servertoclient.maps import covertToTmx
 
 def runFunction(path):
     with open(path, "rb") as f:

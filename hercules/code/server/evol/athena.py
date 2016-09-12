@@ -5,11 +5,10 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
-from code.server.dbitem import *
-from code.server.dbskill import *
-from code.server.dbuser import *
+from code.stringutils import stripNewLine, removeGat
+from code.server.dbitem import Item
+from code.server.dbskill import Skill, skills
+from code.server.dbuser import User
 
 comaSplit = re.compile(",")
 spaceSplit = re.compile(" ")

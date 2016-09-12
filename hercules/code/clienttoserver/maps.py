@@ -11,7 +11,7 @@ import struct
 import StringIO
 from xml.dom import minidom
 
-from code.fileutils import *
+from code.fileutils import makeDir, writeInt16, writeInt32, writeMapName, writeData
 
 def getTmxFiles(srcDir):
     names = []
@@ -150,7 +150,7 @@ def recreateMapCache():
                         print "map format not supported: " + fileName
                         continue
 
-                    comp = zlib.compressobj()
+                    #comp = zlib.compressobj()
                     binData = struct.pack(str(len(tiles))+"B", *tiles)
                     binData = zlib.compress(binData)
                     idx = fileName.rfind("/") + 1

@@ -14,7 +14,7 @@ def getTileData(mapData, x, y, sx):
 
 def getTile(data):
     normal = 0
-    collison = 0
+    collision = 0
     if data == 0:    # 000 normal walkable
         normal = 1
         collision = 5

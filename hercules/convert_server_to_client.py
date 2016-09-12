@@ -4,16 +4,16 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.servertoclient.homunculuses import *
-from code.servertoclient.items import *
-from code.servertoclient.luas import *
-from code.servertoclient.mercenaries import *
-from code.servertoclient.monsters import *
-from code.servertoclient.npcs import *
-from code.servertoclient.pets import *
-from code.servertoclient.quests import *
-from code.servertoclient.skills import *
-from code.servertoclient.sprites import *
+from code.servertoclient.homunculuses import convertHomunculuses
+from code.servertoclient.items import convertItems
+from code.servertoclient.luas import convertLuas
+from code.servertoclient.mercenaries import convertMercenaries
+from code.servertoclient.monsters import convertMonsters
+from code.servertoclient.npcs import convertNpcsNonFree
+from code.servertoclient.pets import convertPets
+from code.servertoclient.quests import convertQuests
+from code.servertoclient.skills import convertSkillsToXml
+from code.servertoclient.sprites import convertSpritesNonFree
 
 # non free data
 idtofile = convertLuas()

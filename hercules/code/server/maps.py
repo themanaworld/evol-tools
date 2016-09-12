@@ -3,9 +3,11 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+import array
+import struct
 import zlib
 
-from code.fileutils import *
+from code.fileutils import readMapName, readInt16, readInt32, readData, makeDir
 
 def listMapCache(f, mapsCount):
     print "Known maps:"

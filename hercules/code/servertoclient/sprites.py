@@ -3,13 +3,11 @@
 # Copyright (C) 2015  Evol Online
 # Author: Andrei Karas (4144)
 
+import array
 import os
 from PIL import Image
-from PIL import ImageDraw
-from sets import Set
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import readInt8, readInt16, readInt32, makeDir, readFile, saveFile, skipData, readData, findFileIn
 
 class ActClass:
     pass
@@ -48,7 +46,7 @@ def readIndexedRLEImage(f, spr):
         image.data = data
 
         compressSize = readInt16(f)
-        uncompressedSize = image.width * image.height
+        #uncompressedSize = image.width * image.height
         #print "uncompressed size=" + str(uncompressedSize)
         #print "compressed size=" + str(compressSize)
 
@@ -160,7 +158,7 @@ def saveSpriteImage(act, spr, spriteDir, spriteName):
         anim = act.animations[animN]
         for spriteN in range(0, anim.nsprites):
             sprite = anim.sprites[spriteN]
-            key = []
+#            key = []
 #            for frameN in range(0, sprite.nframes):
 #                frame = sprite.frames[frameN]
 #                idf = frame.frameIndex
@@ -254,7 +252,7 @@ def extractSpriteAnimData(act, spr, actIndex, direction):
 
     anim = act.animations[actIndex]
     for spriteN in range(0, anim.nsprites):
-        sprite = anim.sprites[spriteN]
+        #sprite = anim.sprites[spriteN]
         #for frameN in range(0, sprite.nframes):
             #frame = sprite.frames[frameN]
             #frm = frame.frameIndex

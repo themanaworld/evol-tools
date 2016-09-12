@@ -3,11 +3,12 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-import re, math
+import math
+import os
+import re
 
-from code.configutils import *
-from code.fileutils import *
-from code.stringutils import *
+from code.configutils import isHaveData, writeCondField2, writeStartBlock, writeEndBlock, writeIntField, writeStrField, writeFieldArr, writeIntField2, writeFieldList, writeSubField
+from code.fileutils import readFile
 
 def getMobDbFile(srcDir):
     files = os.listdir(srcDir)

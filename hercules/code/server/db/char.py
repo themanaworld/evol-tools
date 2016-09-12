@@ -3,8 +3,8 @@
 # Copyright (C) 2015  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import readFile
+from code.stringutils import escapeSqlStr
 
 def saveCharTable(users):
     dstFile = "newdb/char.sql"

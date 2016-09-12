@@ -6,9 +6,8 @@
 
 import sys
 
-from code.serverutils import *
-from code.server.evol.main import *
-from code.server.tmw.main import *
+from code.server.evol.main import serverEvolMain
+from code.server.tmw.main import serverTmwMain
 
 def showHelp():
     print "Usage: ./convert_server.py evol"

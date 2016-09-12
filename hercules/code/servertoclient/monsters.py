@@ -4,12 +4,9 @@
 # Author: Andrei Karas (4144)
 
 import re
-from sets import Set
 
-from code.fileutils import *
-from code.stringutils import *
-
-from code.servertoclient.sprites import *
+from code.fileutils import makeDir, readFile, saveFile
+from code.stringutils import strToXml, stripQuotes
 
 def convertMonsters(isNonFree = False, idtofile = None):
     destDir = "clientdata/"
@@ -21,7 +18,6 @@ def convertMonsters(isNonFree = False, idtofile = None):
     tpl = readFile(templatesDir + "monster.tpl")
     monsters = readFile(templatesDir + "monsters.xml")
     data = ""
-    ids = Set()
 
     with open(monstersDbFile, "r") as f:
         for line in f:

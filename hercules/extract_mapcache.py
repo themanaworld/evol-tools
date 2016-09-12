@@ -6,8 +6,8 @@
 
 import os
 
-from code.fileutils import *
-from code.server.maps import *
+from code.fileutils import readInt16, readInt32
+from code.server.maps import extractMaps
 
 
 def runFunction(path):

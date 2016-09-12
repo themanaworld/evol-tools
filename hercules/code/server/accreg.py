@@ -5,9 +5,8 @@
 
 import re
 
-from code.fileutils import *
-from code.stringutils import *
-from code.server.dbitem import *
+from code.fileutils import readFile
+from code.stringutils import stripNewLine
 
 def convertAccReg():
     srcFile = "olddb/accreg.txt"

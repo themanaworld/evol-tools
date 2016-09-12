@@ -4,7 +4,6 @@
 # Copyright (C) 2015-2016  Evol Online
 # Author: Andrei Karas (4144)
 
-import os
 import re
 
 class Server:

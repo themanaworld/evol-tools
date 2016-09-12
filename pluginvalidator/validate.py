@@ -118,7 +118,7 @@ def decodeTypes(funcs):
     for f in funcs:
         #print "{0}: {1}".format(f, funcs[f])
         fstr = funcs[f]
-        idx = fstr.find("(")
+#        idx = fstr.find("(")
         fstr = fstr[fstr.find("(") + 1 : fstr.rfind(")")]
         parts = comaSplit.split(fstr)
         lst = []
@@ -214,7 +214,7 @@ def processServer(name1, name2):
     session.plugDecls = decodeTypes(session.plugDecls)
     #print session.plugDecls
 
-    pluginfunctions = session.decls
+#    pluginfunctions = session.decls
     session.func = extractFuncFuncions
     session.funcList = funcToPlug
     session.altList = plugToFunc

@@ -3,7 +3,7 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
-from code.fileutils import *
+from code.fileutils import removeAllFiles, makeDir
 
 def cleanServerData():
     removeAllFiles("newserverdata")

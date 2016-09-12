@@ -5,7 +5,7 @@
 
 import re
 
-from code.fileutils import *
+from code.fileutils import makeDir, readFile, saveFile
 
 def convertHomunculuses():
     destDir = "clientdata/"

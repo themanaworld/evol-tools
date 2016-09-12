@@ -3,10 +3,11 @@
 # Copyright (C) 2014  Evol Online
 # Author: Andrei Karas (4144)
 
+import os
 import re
 
-from code.fileutils import *
-from code.stringutils import *
+from code.fileutils import makeDir
+from code.stringutils import stripWindows, stripNewLine
 
 mapsConfFile = "newserverdata/conf/maps.conf"
 if os.path.isfile(mapsConfFile):
