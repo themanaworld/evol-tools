@@ -32,7 +32,7 @@ class Hercules:
     ourPacketre3 = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
-    ourPacketre4 = re.compile("int cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre4 = re.compile(" cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
     ourPacketre5 = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(count[*]p_len)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
