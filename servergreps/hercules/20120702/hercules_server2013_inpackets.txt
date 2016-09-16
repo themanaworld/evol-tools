@@ -1,7 +1,4 @@
-Exists only in server2013: 0065
-Exists only in server2013: 0066
 Exists only in server2013: 0067
-Exists only in server2013: 0068
 Exists only in server2013: 0082
 Exists only in server2013: 00ad
 Exists only in server2013: 00ba
@@ -17,7 +14,6 @@ Exists only in server2013: 01ca
 Exists only in server2013: 01cb
 Exists only in server2013: 01e3
 Exists only in server2013: 01e5
-Exists only in server2013: 01fb
 Exists only in server2013: 020b
 Exists only in server2013: 020c
 Exists only in server2013: 0228
@@ -31,8 +27,6 @@ Exists only in server2013: 0279
 Exists only in server2013: 027f
 Exists only in server2013: 0286
 Exists only in server2013: 028c
-Exists only in server2013: 028d
-Exists only in server2013: 028f
 Exists only in server2013: 02a0
 Exists only in server2013: 02a1
 Exists only in server2013: 02a4
@@ -65,16 +59,11 @@ Exists only in server2013: 07d3
 Exists only in server2013: 07d4
 Exists only in server2013: 07dc
 Exists only in server2013: 07de
-Exists only in server2013: 07e5
-Exists only in server2013: 07e7
 Exists only in server2013: 07ea
 Exists only in server2013: 07ee
 Exists only in server2013: 07f0
 Exists only in server2013: 080c
 Exists only in server2013: 0822
-Exists only in server2013: 0827
-Exists only in server2013: 0829
-Exists only in server2013: 082b
 Exists only in server2013: 0841
 Exists only in server2013: 084c
 Exists only in server2013: 084d
@@ -99,16 +88,11 @@ Exists only in server2013: 08a9
 Exists only in server2013: 08ac
 Exists only in server2013: 08b0
 Exists only in server2013: 08b5
-Exists only in server2013: 08b8
-Exists only in server2013: 08ba
 Exists only in server2013: 08bc
-Exists only in server2013: 08be
 Exists only in server2013: 08c1
 Exists only in server2013: 08c2
 Exists only in server2013: 08c3
-Exists only in server2013: 08c5
 Exists only in server2013: 08cc
-Exists only in server2013: 08d4
 Exists only in server2013: 08dd
 Exists only in server2013: 08ef
 Exists only in server2013: 08f0
@@ -116,7 +100,6 @@ Exists only in server2013: 08f1
 Exists only in server2013: 08f4
 Exists only in server2013: 08f7
 Exists only in server2013: 08f9
-Exists only in server2013: 08fc
 Exists only in server2013: 08fd
 Exists only in server2013: 0910
 Exists only in server2013: 0912
@@ -154,7 +137,6 @@ Exists only in server2013: 0966
 Exists only in server2013: 0967
 Exists only in server2013: 0968
 Exists only in server2013: 0969
-Exists only in server2013: 0970
 Exists only in server2013: 0978
 Exists only in server2013: 097c
 Exists only in server2013: 0980
@@ -164,4 +146,3 @@ Exists only in server2013: 098d
 Exists only in server2013: 098f
 Exists only in server2013: 0998
 Exists only in server2013: 099c
-Exists only in server2013: 09a1

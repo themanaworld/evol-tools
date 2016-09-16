@@ -1,3 +1,4 @@
+Exists only in Hercules: 0187
 Exists only in Hercules: 085a
 Exists only in Hercules: 085b
 Exists only in Hercules: 085c
@@ -77,3 +78,4 @@ Exists only in Hercules: 0a1f
 Exists only in Hercules: 0a21
 Exists only in Hercules: 0a2e
 Exists only in Hercules: 0a35
+Exists only in Hercules: 0a39

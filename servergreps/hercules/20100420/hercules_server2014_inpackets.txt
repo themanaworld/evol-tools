@@ -1,7 +1,3 @@
-Exists only in server2014: 0065
-Exists only in server2014: 0066
-Exists only in server2014: 0067
-Exists only in server2014: 0068
 Exists only in server2014: 0082
 Exists only in server2014: 00ad
 Exists only in server2014: 00ba
@@ -17,7 +13,6 @@ Exists only in server2014: 01ca
 Exists only in server2014: 01cb
 Exists only in server2014: 01e3
 Exists only in server2014: 01e5
-Exists only in server2014: 01fb
 Exists only in server2014: 020b
 Exists only in server2014: 020c
 Exists only in server2014: 0228
@@ -32,8 +27,6 @@ Exists only in server2014: 027f
 Exists only in server2014: 0281
 Exists only in server2014: 0286
 Exists only in server2014: 028c
-Exists only in server2014: 028d
-Exists only in server2014: 028f
 Exists only in server2014: 02a0
 Exists only in server2014: 02a1
 Exists only in server2014: 02a4
@@ -77,17 +70,12 @@ Exists only in server2014: 07d3
 Exists only in server2014: 07d4
 Exists only in server2014: 07dc
 Exists only in server2014: 07de
-Exists only in server2014: 07e5
-Exists only in server2014: 07e7
 Exists only in server2014: 07ea
 Exists only in server2014: 07ec
 Exists only in server2014: 07ee
 Exists only in server2014: 07f0
 Exists only in server2014: 080c
 Exists only in server2014: 0822
-Exists only in server2014: 0827
-Exists only in server2014: 0829
-Exists only in server2014: 082b
 Exists only in server2014: 0835
 Exists only in server2014: 0838
 Exists only in server2014: 083b
@@ -150,17 +138,12 @@ Exists only in server2014: 08ac
 Exists only in server2014: 08ad
 Exists only in server2014: 08b0
 Exists only in server2014: 08b5
-Exists only in server2014: 08b8
-Exists only in server2014: 08ba
 Exists only in server2014: 08bc
-Exists only in server2014: 08be
 Exists only in server2014: 08c1
 Exists only in server2014: 08c2
 Exists only in server2014: 08c3
-Exists only in server2014: 08c5
 Exists only in server2014: 08c9
 Exists only in server2014: 08cc
-Exists only in server2014: 08d4
 Exists only in server2014: 08d7
 Exists only in server2014: 08da
 Exists only in server2014: 08dd
@@ -177,7 +160,6 @@ Exists only in server2014: 08f5
 Exists only in server2014: 08f7
 Exists only in server2014: 08f9
 Exists only in server2014: 08fb
-Exists only in server2014: 08fc
 Exists only in server2014: 08fd
 Exists only in server2014: 0907
 Exists only in server2014: 090a
@@ -236,7 +218,6 @@ Exists only in server2014: 098d
 Exists only in server2014: 098f
 Exists only in server2014: 0998
 Exists only in server2014: 099c
-Exists only in server2014: 09a1
 Exists only in server2014: 09a3
 Exists only in server2014: 09a7
 Exists only in server2014: 09a9

@@ -1,1 +1,1 @@
-Server include all hercules packets
+Exists only in Hercules: 0187
