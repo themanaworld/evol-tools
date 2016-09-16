@@ -8,6 +8,7 @@ import os
 import re
 
 from src.preproc import PreProc
+from src.utils import Utils
 
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
@@ -186,6 +187,12 @@ class Idathena:
                     self.functionToId[m.group("function")] = data
 
 
+    def collectCharInPackets(self, charFilePackets):
+        for packets in Utils.enumCasePackets(charFilePackets, "int char_parse_char(int fd)"):
+            self.inPackets[packets[1]] = (0, packets[0])
+            self.functionToId[packets[0]] = packets[1]
+
+
     def sortInPackets(self):
         for packet in self.inPackets:
             self.inPacketsSorted.append(packet)
@@ -197,9 +204,11 @@ class Idathena:
         srcPath = packetDir + "/src/" + self.dirName
 #        serverInPacketsHPath = packetDir + "/src/" + self.dirName + "/packets.h"
 #        serverLoginInPackets = packetDir + "/src/" + self.dirName + "/lclif.c"
+#        serverCharPackets = packetDir + "/src/" + self.dirName + "/char.c"
 #        self.collectNamedPackets(namedPacketsPath)
         self.collectOutPackets(srcPath)
 #        self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
+#        self.collectCharInPackets(serverCharPackets);
 #        self.sortInPackets()
         self.sortOutPackets()
 

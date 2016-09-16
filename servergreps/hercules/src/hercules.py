@@ -8,6 +8,7 @@ import os
 import re
 
 from src.preproc import PreProc
+from src.utils import Utils
 
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
@@ -51,9 +52,6 @@ class Hercules:
     clientpacketLenre = re.compile(
         "(\t*)packet[(]0x(?P<packet>[0-9a-fA-F]+),(?P<len>[\w-]+)" +
         "[)]")
-    casere = re.compile("^case 0x(?P<packet>[0-9a-fA-F]+)[:]")
-    charParseFunctionre = re.compile(
-        "(?P<function>chr->[0-9a-zA-Z_>-]+)([(]|[ ][(])");
 
     def collectNamedPackets(self, fileName):
         with open(fileName, "r") as f:
@@ -201,39 +199,10 @@ class Hercules:
 
 
     def collectCharInPackets(self, charFilePackets):
-        startCode = "int char_parse_char(int fd)\n"
-        endCode = "}\n"
-        breakCode = "break;"
-        with open(charFilePackets, "r") as f:
-            for line in f:
-                if line == startCode:
-                    packets = []
-                    for line in f:
-                        line = line.strip()
-                        m = self.casere.search(line)
-                        if m is not None:
-                            data = m.group("packet").lower()
-                            while len(data) < 4:
-                                data = "0" + data
-                            if int(data, 16) < 4096:
-                                packets.append(data)
-                        if line == breakCode:
-                            packets = []
-                        if line == endCode:
-                            break
-                        if len(packets) > 0:
-                            m = self.charParseFunctionre.search(line)
-                            if m is not None:
-                                func = m.group("function")
-                                if len(packets) > 1:
-                                    for packet in packets:
-                                        fname = func + "_" + str(packet)
-                                        self.inPackets[packet] = (0, fname)
-                                        self.functionToId[fname] = packet
-                                else:
-                                    self.inPackets[packets[0]] = (0, func)
-                                    self.functionToId[func] = packets[0]
-                    break
+        for packets in Utils.enumCasePackets(charFilePackets, "int char_parse_char(int fd)"):
+            self.inPackets[packets[1]] = (0, packets[0])
+            self.functionToId[packets[0]] = packets[1]
+
 
     def sortInPackets(self):
         for packet in self.inPackets:

@@ -8,6 +8,7 @@ import os
 import re
 
 from src.preproc import PreProc
+from src.utils import Utils
 
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
@@ -165,6 +166,12 @@ class Brathena:
                     self.functionToId[m.group("function")] = data
 
 
+    def collectCharInPackets(self, charFilePackets):
+        for packets in Utils.enumCasePackets(charFilePackets, "int char_parse_char(int fd)"):
+            self.inPackets[packets[1]] = (0, packets[0])
+            self.functionToId[packets[0]] = packets[1]
+
+
     def sortInPackets(self):
         for packet in self.inPackets:
             self.inPacketsSorted.append(packet)
@@ -175,9 +182,11 @@ class Brathena:
         namedPacketsPath = packetDir + "/src/" + self.dirName + "/packets_struct.h"
         srcPath = packetDir + "/src/" + self.dirName
         serverInPacketsHPath = packetDir + "/src/" + self.dirName + "/packets.h"
+        serverCharPackets = packetDir + "/src/" + self.dirName + "/char.c"
         self.collectNamedPackets(namedPacketsPath)
         self.collectOutPackets(srcPath)
         self.collectInPackets(serverInPacketsHPath)
+        self.collectCharInPackets(serverCharPackets);
         self.sortInPackets()
         self.sortOutPackets()
 
