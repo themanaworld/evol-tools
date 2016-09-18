@@ -20,6 +20,7 @@ class Threeceam:
     inPackets = dict()
     functionToId = dict()
     loginPacketNameToId = dict()
+    getLenPackets = set()
 
     namedPacketre = re.compile(
         "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=" +
@@ -47,6 +48,8 @@ class Threeceam:
     lclifPacketre = re.compile(
         "([ ]*)[{][ ]PACKET_ID_CA_(?P<name>[A-Z0-9_]+),([^,]+)," +
         "([ ]*)[&](?P<function>[0-9a-zA-Z_>-]+)([ ]*)[}],")
+    packetLenre = re.compile(
+        "packet_db[\\[]0[\\]][\\[]0x(?P<packet>[0-9a-fA-F]+)[\\]].len")
 
     def collectNamedPackets(self, fileName):
         with open(fileName, "r") as f:
@@ -144,7 +147,6 @@ class Threeceam:
                                 while len(data) < 4:
                                     data = "0" + data
                                 self.addServerPacket(data)
-
                         m = self.ourPacketre2.findall(line)
                         if len(m) > 0:
                             for str in m:
@@ -163,6 +165,15 @@ class Threeceam:
                                     data = str[2]
                                     data = self.loginPacketNameToId[data]
                                     self.addServerPacket(data)
+                        m = self.packetLenre.findall(line)
+                        if len(m) > 0:
+                            for str in m:
+                                data = str.lower()
+                                if len(data) > 2 and data[0:2] == "0x":
+                                    data = data[2:]
+                                while len(data) < 4:
+                                    data = "0" + data
+                                self.getLenPackets.add(data)
 
 
     def sortOutPackets(self):
