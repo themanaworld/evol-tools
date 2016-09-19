@@ -64,7 +64,6 @@ class Utils:
 
     @staticmethod
     def getOutPackets(line, server):
-        packets = []
         m = Utils.ourPacketre4.findall(line)
         if len(m) > 0:
             for str in m:
