@@ -17,12 +17,15 @@ class Utils:
     ourPacketre3 = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
-    ourPacketre4 = re.compile(" cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre4 = re.compile(" cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)(;|,)")
     ourPacketre5 = re.compile(
         "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
         "(count[*]p_len)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
     ourPacketre6 = re.compile("int cmde([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
-    ourPacketre7 = re.compile(" (packet|packet_num|PacketType|packet_type)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre7 = re.compile(" (packet|packet_num|PacketType|packet_type|header)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre8 = re.compile(
+        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+        "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)([a-zA-Z]+)[?]0x(?P<packet1>[0-9a-fA-F]+)([ ]*)[:]([ ]*)0x(?P<packet2>[0-9a-fA-F]+)([ ]*)[;]")
 
     @staticmethod
     def enumCasePackets(fileName, startCode):
@@ -111,6 +114,17 @@ class Utils:
         if len(m) > 0:
             for str in m:
                 data = str[3]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre8.findall(line)
+        if len(m) > 0:
+            for str in m:
+                data = str[10]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+                data = str[13]
                 while len(data) < 4:
                     data = "0" + data
                 server.addServerPacket(data)
