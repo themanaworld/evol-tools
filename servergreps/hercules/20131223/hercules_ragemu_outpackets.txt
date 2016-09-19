@@ -1,3 +1,3 @@
 Exists only in RagEmu: 011a
 Exists only in RagEmu: 09c1
-Exists only in RagEmu: 0a02
+Exists only in RagEmu, but missing packet size: 0a02

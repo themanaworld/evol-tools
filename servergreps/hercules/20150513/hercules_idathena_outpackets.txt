@@ -14,6 +14,7 @@ Exists only in idAthena: 081b
 Exists only in idAthena: 0856
 Exists only in idAthena: 0979
 Exists only in idAthena: 0984
+Exists only in idAthena: 0990
 Exists only in idAthena: 0992
 Exists only in idAthena: 0994
 Exists only in idAthena: 0996

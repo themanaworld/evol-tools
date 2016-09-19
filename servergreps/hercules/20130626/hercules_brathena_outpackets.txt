@@ -1,1 +1,1 @@
-Exists only in brAthena: 0a02
+Exists only in brAthena, but missing packet size: 0a02

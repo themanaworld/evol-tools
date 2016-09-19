@@ -265,6 +265,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 08fc CMSG_CHAR_CHECK_RENAME            chr->parse_char_rename_char
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
+0916 CMSG_GUILD_INVITE2                clif->pGuildInvite2
 0922 CMSG_BUYINGSTORE_SELL             clif->pReqTradeBuyingStore
 0925 CMSG_PLAYER_CHANGE_DIR            clif->pChangeDir
 0926 CMSG_HOMUNCULUS_MENU              clif->pHomMenu
@@ -312,7 +313,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_LOGIN_REGISTER2
 ?    UNIMPLIMENTED                     clif->pGMRecall2
 ?    UNIMPLIMENTED                     clif->pGMRemove2
 ?    UNIMPLIMENTED                     clif->pGM_Monster_Item
-?    UNIMPLIMENTED                     clif->pGuildInvite2
 ?    UNIMPLIMENTED                     clif->pItemListWindowSelected
 ?    UNIMPLIMENTED                     clif->pPartyBookingDeleteReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingRegisterReq

@@ -1,5 +1,7 @@
+Exists only in rAthena: 011f
 Exists only in rAthena: 083e
 Exists only in rAthena: 08cf
+Exists only in rAthena: 08d1
 Exists only in rAthena: 0908
 Exists only in rAthena: 0979
 Exists only in rAthena: 09a0

@@ -275,6 +275,7 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 08fc CMSG_CHAR_CHECK_RENAME            chr->parse_char_rename_char
 0907 CMSG_PLAYER_FAVORITE_ITEM         clif->pMoveItem
 090a CMSG_BATTLE_CHECK_STATE           clif->pBGQueueCheckState
+0916 CMSG_GUILD_INVITE2                clif->pGuildInvite2
 0917 CMSG_PLAYER_INVENTORY_DROP        clif->pDropItem
 0918 CMSG_SEARCHSTORE_SEARCH           clif->pSearchStoreInfo
 0919 CMSG_MAP_SERVER_CONNECT           clif->pWantToConnection
@@ -355,7 +356,6 @@ PSESENT BUT UNIMPLIMENTED CMSG_PARTY_INVITED
 ?    UNIMPLIMENTED                     clif->pGMRecall2
 ?    UNIMPLIMENTED                     clif->pGMRemove2
 ?    UNIMPLIMENTED                     clif->pGM_Monster_Item
-?    UNIMPLIMENTED                     clif->pGuildInvite2
 ?    UNIMPLIMENTED                     clif->pItemListWindowSelected
 ?    UNIMPLIMENTED                     clif->pPartyBookingDeleteReq
 ?    UNIMPLIMENTED                     clif->pPartyBookingRegisterReq
