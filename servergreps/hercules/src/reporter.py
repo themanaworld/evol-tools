@@ -235,7 +235,10 @@ class Reporter:
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_outpackets.txt", "w") as w:
             for packet in fork.outPacketsSorted:
                 if packet not in hercules.packetsSet:
-                    w.write("Exists only in " + name + ": " + packet + "\n")
+                    if packet in fork.getLenPackets and packet not in fork.knownLenPackets:
+                        w.write("Exists only in " + name + ", but missing packet size: " + packet + "\n")
+                    else:
+                        w.write("Exists only in " + name + ": " + packet + "\n")
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
             for packet in fork.inPacketsSorted:
                 if packet not in hercules.inPackets:
