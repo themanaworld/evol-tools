@@ -10,6 +10,19 @@ class Utils:
     casere = re.compile("^case 0x(?P<packet>[0-9a-fA-F]+)[:]")
     charParseFunctionre = re.compile(
         "(?P<function>chr->[0-9a-zA-Z_>-]+)([(]|[ ][(])");
+    ourPacketre = re.compile(
+        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+        "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
+    ourPacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
+    ourPacketre3 = re.compile(
+        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+        "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
+    ourPacketre4 = re.compile(" cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre5 = re.compile(
+        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
+        "(count[*]p_len)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
+    ourPacketre6 = re.compile("int cmde([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
+    ourPacketre7 = re.compile(" (packet|packet_num|PacketType|packet_type)([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
 
     @staticmethod
     def enumCasePackets(fileName, startCode):
@@ -44,3 +57,60 @@ class Utils:
                                 else:
                                     yield (func, packets[0])
                     break
+
+
+    @staticmethod
+    def getOutPackets(line, server):
+        packets = []
+        m = Utils.ourPacketre4.findall(line)
+        if len(m) > 0:
+            for str in m:
+                data = str[2]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre5.findall(line)
+        if len(m) > 0:
+            for str in m:
+                data = str[9]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre.findall(line)
+        if len(m) == 0:
+            m = Utils.ourPacketre3.findall(line)
+        if len(m) > 0:
+            for str in m:
+                if str[9] == "0":
+                    continue
+                data = str[9]
+                if data == "cmd":
+                    continue
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre2.findall(line)
+        if len(m) > 0:
+            for str in m:
+                if str[2] == "0":
+                    continue
+                data = str[2]
+                if len(data) > 2 and data[0:2] == "0x":
+                    data = data[2:]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre6.findall(line)
+        if len(m) > 0:
+            for str in m:
+                data = str[2]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)
+        m = Utils.ourPacketre7.findall(line)
+        if len(m) > 0:
+            for str in m:
+                data = str[3]
+                while len(data) < 4:
+                    data = "0" + data
+                server.addServerPacket(data)

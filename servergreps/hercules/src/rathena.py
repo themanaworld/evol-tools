@@ -25,18 +25,6 @@ class Rathena:
     namedPacketre = re.compile(
         "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=" +
         "([ ]*)0x(?P<value>[0-9a-fA-F]+)")
-    ourPacketre = re.compile(
-        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
-        "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+)([ ]*)[;]")
-    ourPacketre2 = re.compile("PacketType([ ]*)=([ ]*)(?P<name>[\w_]+);")
-    ourPacketre3 = re.compile(
-        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
-        "(?P<offset>0)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
-    ourPacketre4 = re.compile(" cmd([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
-    ourPacketre5 = re.compile("int cmde([ ]*)=([ ]*)0x(?P<packet>[0-9a-fA-F]+);")
-    ourPacketre6 = re.compile(
-        "(WFIFOW|WBUFW)([ ]*)[(]([ ]*)([\w>_-]+),([ ]*)" +
-        "(count[*]p_len)([ ]*)[)]([ ]*)=([ ]*)(?P<packet>[0-9\w]+)([ ]*)[;]")
     outPacketLoginre = re.compile(
         "([ ]*)PACKET_ID_(?P<name>[A-Z0-9_]+)([ ]*)=" +
         "([ ]*)0x(?P<packet>[0-9a-fA-F]+),")
@@ -98,27 +86,7 @@ class Rathena:
             elif filt.search(file1):
                 with open(file2, "r") as f:
                     for line in f:
-                        m = self.ourPacketre4.findall(line)
-                        if len(m) > 0:
-                            for str in m:
-                                data = str[2]
-                                while len(data) < 4:
-                                    data = "0" + data
-                                self.addServerPacket(data)
-                        m = self.ourPacketre5.findall(line)
-                        if len(m) > 0:
-                            for str in m:
-                                data = str[2]
-                                while len(data) < 4:
-                                    data = "0" + data
-                                self.addServerPacket(data)
-                        m = self.ourPacketre6.findall(line)
-                        if len(m) > 0:
-                            for str in m:
-                                data = str[9]
-                                while len(data) < 4:
-                                    data = "0" + data
-                                self.addServerPacket(data)
+                        Utils.getOutPackets(line, self)
                         m = self.outPacketLoginre.findall(line)
                         if len(m) > 0:
                             for str in m:
@@ -126,30 +94,6 @@ class Rathena:
                                 while len(data) < 4:
                                     data = "0" + data
                                 self.loginPacketNameToId["PACKET_ID_" + str[1]] = data
-                        m = self.ourPacketre.findall(line)
-                        if len(m) == 0:
-                            m = self.ourPacketre3.findall(line)
-                        if len(m) > 0:
-                            for str in m:
-                                if str[9] == "0":
-                                    continue
-                                data = str[9]
-                                if data == "cmd":
-                                    continue
-                                while len(data) < 4:
-                                    data = "0" + data
-                                self.addServerPacket(data)
-                        m = self.ourPacketre2.findall(line)
-                        if len(m) > 0:
-                            for str in m:
-                                if str[2] == "0":
-                                    continue
-                                data = str[2]
-                                if len(data) > 2 and data[0:2] == "0x":
-                                    data = data[2:]
-                                while len(data) < 4:
-                                    data = "0" + data
-                                self.addServerPacket(data)
                         m = self.serverpacketLoginOutre.findall(line)
                         if len(m) > 0:
                             for str in m:
