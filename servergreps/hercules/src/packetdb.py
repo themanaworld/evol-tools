@@ -233,7 +233,7 @@ class PacketDb:
         'bankcheck': 'clif->pBankCheck',
         'bankopen': 'clif->pBankOpen',
         'bankclose': 'clif->pBankClose',
-        'dull': 'clif->dull',
+        'dull': 'clif->pDull',
         'npcshopclosed': 'clif->pNPCShopClosed',
         'npcmarketpurchase': 'clif->pNPCMarketPurchase',
         'npcmarketclosed': 'clif->pNPCMarketClosed',

@@ -240,9 +240,29 @@ class Reporter:
                     else:
                         w.write("Exists only in " + name + ": " + packet + "\n")
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
+            for func in hercules.functionToId:
+                packet = hercules.functionToId[func]
+                if packet in hercules.inPackets:
+                    if func not in fork.functionToId:
+                        continue
+                    forkPacket = fork.functionToId[func]
+                    if packet != forkPacket:
+                        w.write("Wrong preffered packet for function {0}: {1} vs {2}\n".format(
+                            func,
+                            packet,
+                            forkPacket))
             for packet in fork.inPacketsSorted:
                 if packet not in hercules.inPackets:
                     w.write("Exists only in " + name + ": " + packet + " " + fork.inPackets[packet][1] + "\n")
+            for packet in fork.inPacketsSorted:
+                if packet in hercules.inPackets:
+                    herculesFunction = hercules.inPackets[packet][1]
+                    forkFunction = fork.inPackets[packet][1]
+                    if herculesFunction != forkFunction and (hercules.functionToId[herculesFunction] == packet or fork.functionToId[forkFunction] == packet):
+                        w.write("Wrong function name for packet {0}: {1} vs {2}\n".format(
+                            packet,
+                            herculesFunction,
+                            forkFunction))
 
 
     def reportServer(self, hercules, server):
