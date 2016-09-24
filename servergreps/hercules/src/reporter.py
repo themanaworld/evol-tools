@@ -242,7 +242,7 @@ class Reporter:
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
             for packet in fork.inPacketsSorted:
                 if packet not in hercules.inPackets:
-                    w.write("Exists only in " + name + ": " + packet + "\n")
+                    w.write("Exists only in " + name + ": " + packet + " " + fork.inPackets[packet][1] + "\n")
 
 
     def reportServer(self, hercules, server):
