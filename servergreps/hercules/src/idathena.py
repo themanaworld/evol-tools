@@ -7,6 +7,7 @@
 import os
 import re
 
+from src.packetdb import PacketDb
 from src.preproc import PreProc
 from src.utils import Utils
 
@@ -21,6 +22,7 @@ class Idathena:
     functionToId = dict()
     loginPacketNameToId = dict()
     getLenPackets = set()
+    knownLenPackets = dict()
 
     namedPacketre = re.compile(
         "((\t|[ ])*)(?P<name>[\w0-9_]+)([ ]*)=" +
@@ -154,17 +156,18 @@ class Idathena:
         self.inPacketsSorted.sort()
 
 
-    def processPackets(self, packetDir, packetVersion):
+    def processPackets(self, codeDir, packetDir, packetVersion):
 #        namedPacketsPath = packetDir + "/src/" + self.dirName + "/packets_struct.h"
         srcPath = packetDir + "/src/" + self.dirName
+        packetsDbPath = "../links/" + codeDir + "/db/packet_db.txt"
 #        serverInPacketsHPath = packetDir + "/src/" + self.dirName + "/packets.h"
 #        serverLoginInPackets = packetDir + "/src/" + self.dirName + "/lclif.c"
 #        serverCharPackets = packetDir + "/src/" + self.dirName + "/char.c"
 #        self.collectNamedPackets(namedPacketsPath)
         self.collectOutPackets(srcPath)
-#        self.collectInPackets(serverInPacketsHPath, serverLoginInPackets)
+        PacketDb.getInPackets(packetsDbPath, packetVersion, self)
 #        self.collectCharInPackets(serverCharPackets);
-#        self.sortInPackets()
+        self.sortInPackets()
         self.sortOutPackets()
 
 
