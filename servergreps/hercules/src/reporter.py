@@ -239,6 +239,14 @@ class Reporter:
                         w.write("Exists only in " + name + ", but missing packet size: " + packet + "\n")
                     else:
                         w.write("Exists only in " + name + ": " + packet + "\n")
+            for packet in fork.outPacketsSorted:
+                if packet not in hercules.packetsSet:
+                    if packet in fork.getLenPackets and packet in fork.knownLenPackets and \
+                    packet in hercules.getLenPackets and packet in hercules.knownLenPackets:
+                        w.write("Different packet size for packet {0}: {1} vs {2}\n",
+                            packet,
+                            hercules.knownLenPackets[packet],
+                            fork.knownLenPackets[packet])
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
             for func in hercules.functionToId:
                 packet = hercules.functionToId[func]
@@ -246,7 +254,7 @@ class Reporter:
                     if func not in fork.functionToId:
                         continue
                     forkPacket = fork.functionToId[func]
-                    if packet != forkPacket:
+                    if packet != forkPacket and func != "clif->pDull":
                         w.write("Wrong preffered packet for function {0}: {1} vs {2}\n".format(
                             func,
                             packet,
@@ -257,12 +265,21 @@ class Reporter:
             for packet in fork.inPacketsSorted:
                 if packet in hercules.inPackets:
                     herculesFunction = hercules.inPackets[packet][1]
+                    herculesLen = hercules.inPackets[packet][0]
                     forkFunction = fork.inPackets[packet][1]
-                    if herculesFunction != forkFunction and (hercules.functionToId[herculesFunction] == packet or fork.functionToId[forkFunction] == packet):
-                        w.write("Wrong function name for packet {0}: {1} vs {2}\n".format(
+                    forkLen = fork.inPackets[packet][0]
+                    if herculesFunction != forkFunction:
+                        if hercules.functionToId[herculesFunction] == packet or fork.functionToId[forkFunction] == packet:
+                            w.write("Wrong function name for packet {0}: {1} vs {2}\n".format(
+                                packet,
+                                herculesFunction,
+                                forkFunction))
+                    elif herculesLen != forkLen:
+                        w.write("Different packet size for packet {0} {1}: {2} vs {3}\n".format(
                             packet,
                             herculesFunction,
-                            forkFunction))
+                            herculesLen,
+                            forkLen))
 
 
     def reportServer(self, hercules, server):
