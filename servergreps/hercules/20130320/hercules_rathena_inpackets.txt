@@ -1,0 +1,13 @@
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pSearchStoreInfoNextPage: 092e vs 0835
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in rAthena: 012f clif->pOpenVending
+Exists only in rAthena: 08ef clif->pDull
+Exists only in rAthena: 08f1 clif->pDull
+Exists only in rAthena: 0978 reqworldinfo
+Different packet size for packet 0879 clif->pPartyBookingRegisterReq: 18 vs 41
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq
+Different packet size for packet 091d clif->pPartyBookingRegisterReq: 18 vs 41

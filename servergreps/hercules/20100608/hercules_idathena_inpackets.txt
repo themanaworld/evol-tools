@@ -1,0 +1,1 @@
+Exists only in idAthena: 012f clif->pOpenVending

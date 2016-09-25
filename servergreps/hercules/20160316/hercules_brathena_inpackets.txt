@@ -1,2 +1,29 @@
-Exists only in brAthena: 0970
-Exists only in brAthena: 0a25
+Wrong preffered packet for function clif->pFriendsListAdd: 023b vs 07ec
+Wrong preffered packet for function clif->pWantToConnection: 022d vs 0360
+Wrong preffered packet for function clif->pStoragePassword: 0922 vs 0940
+Wrong preffered packet for function clif->pItemListWindowSelected: 0281 vs 093a
+Wrong preffered packet for function clif->pMoveToKafra: 07ec vs 088b
+Wrong preffered packet for function clif->pTakeItem: 07e4 vs 0964
+Wrong preffered packet for function clif->pHomMenu: 0361 vs 088d
+Wrong preffered packet for function clif->pReqOpenBuyingStore: 0815 vs 023b
+Wrong preffered packet for function clif->pReqTradeBuyingStore: 0811 vs 0815
+Wrong preffered packet for function clif->pTickSend: 035f vs 0886
+Wrong preffered packet for function clif->pPartyInvite2: 0802 vs 08a5
+Wrong preffered packet for function chr->parse_char_create_new_char: 0a39 vs 0970
+Wrong preffered packet for function clif->pDropItem: 0362 vs 0437
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 0365 vs 0811
+Wrong preffered packet for function clif->pGetCharNameRequest: 096a vs 0887
+Wrong preffered packet for function clif->pWalkToXY: 0437 vs 0363
+Wrong preffered packet for function clif->pChangeDir: 0202 vs 0928
+Wrong preffered packet for function clif->pReqClickBuyingStore: 0360 vs 0436
+Exists only in brAthena: 0970 chr->parse_char_create_new_char
+Exists only in brAthena: 0a25 clif->pDull
+Wrong function name for packet 023b: clif->pFriendsListAdd vs clif->pReqOpenBuyingStore
+Wrong function name for packet 0360: clif->pReqClickBuyingStore vs clif->pWantToConnection
+Wrong function name for packet 0436: clif->pSearchStoreInfoListItemClick vs clif->pReqClickBuyingStore
+Wrong function name for packet 0437: clif->pWalkToXY vs clif->pDropItem
+Wrong function name for packet 07ec: clif->pMoveToKafra vs clif->pFriendsListAdd
+Wrong function name for packet 0811: clif->pReqTradeBuyingStore vs clif->pPartyBookingRegisterReq
+Wrong function name for packet 0815: clif->pReqOpenBuyingStore vs clif->pReqTradeBuyingStore
+Wrong function name for packet 088b: clif->pGetCharNameRequest vs clif->pMoveToKafra
+Wrong function name for packet 0922: clif->pStoragePassword vs clif->pReqTradeBuyingStore

@@ -1,0 +1,168 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 0202 vs 0365
+Wrong preffered packet for function clif->pWantToConnection: 0072 vs 0878
+Wrong preffered packet for function clif->pUseItem: 00a7 vs 0439
+Wrong preffered packet for function clif->pGlobalMessage: 008c vs 00f3
+Wrong preffered packet for function clif->pMoveToKafra: 00f3 vs 0926
+Wrong preffered packet for function clif->pTakeItem: 009f vs 0869
+Wrong preffered packet for function clif->pEquipItem: 00a9 vs 0998
+Wrong preffered packet for function clif->pUseSkillToPosMoreInfo: 0190 vs 0366
+Wrong preffered packet for function clif->pTickSend: 007e vs 035f
+Wrong preffered packet for function clif->pMoveFromKafra: 00f5 vs 086a
+Wrong preffered packet for function clif->pSolveCharName: 0193 vs 0368
+Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
+Wrong preffered packet for function clif->pCloseKafra: 00f7 vs 0193
+Wrong preffered packet for function clif->pUseSkillToId: 0113 vs 083c
+Wrong preffered packet for function clif->pDropItem: 00a2 vs 093c
+Wrong preffered packet for function clif->pUseSkillToPos: 0116 vs 0438
+Wrong preffered packet for function clif->pGetCharNameRequest: 0094 vs 096a
+Wrong preffered packet for function clif->pPartyChangeOption: 0102 vs 07d7
+Wrong preffered packet for function clif->pWalkToXY: 0085 vs 0437
+Wrong preffered packet for function clif->pChangeDir: 009b vs 0933
+Wrong preffered packet for function clif->pActionRequest: 0089 vs 0369
+Exists only in 3CeaM: 020f clif->pPVPInfo
+Exists only in 3CeaM: 0212 clif->pGMRc
+Exists only in 3CeaM: 0213 clif->pCheck
+Exists only in 3CeaM: 0217 clif->pBlacksmith
+Exists only in 3CeaM: 0218 clif->pAlchemist
+Exists only in 3CeaM: 021d clif->pLessEffect
+Exists only in 3CeaM: 0222 clif->pWeaponRefine
+Exists only in 3CeaM: 0225 clif->pTaekwon
+Exists only in 3CeaM: 022d clif->pWantToConnection
+Exists only in 3CeaM: 0231 clif->pChangeHomunculusName
+Exists only in 3CeaM: 0232 clif->pHomMoveTo
+Exists only in 3CeaM: 0233 clif->pHomAttack
+Exists only in 3CeaM: 0234 clif->pHomMoveToMaster
+Exists only in 3CeaM: 0237 clif->pRankingPk
+Exists only in 3CeaM: 023b clif->pFriendsListAdd
+Exists only in 3CeaM: 0254 clif->pFeelSaveOk
+Exists only in 3CeaM: 025b clif->pCooking
+Exists only in 3CeaM: 0281 clif->pItemListWindowSelected
+Exists only in 3CeaM: 0292 clif->pAutoRevive
+Exists only in 3CeaM: 02b6 clif->pquestStateAck
+Exists only in 3CeaM: 02ba clif->pHotkey
+Exists only in 3CeaM: 02c4 clif->pPartyInvite2
+Exists only in 3CeaM: 02c7 clif->pReplyPartyInvite2
+Exists only in 3CeaM: 02d6 clif->pViewPlayerEquip
+Exists only in 3CeaM: 02d8 clif->pEquipTick
+Exists only in 3CeaM: 02db clif->pBattleChat
+Exists only in 3CeaM: 02f1 clif->pProgressbar
+Exists only in 3CeaM: 035f clif->pTickSend
+Exists only in 3CeaM: 0360 clif->pReqClickBuyingStore
+Exists only in 3CeaM: 0361 clif->pHomMenu
+Exists only in 3CeaM: 0362 clif->pDropItem
+Exists only in 3CeaM: 0363 clif->pWantToConnection
+Exists only in 3CeaM: 0364 clif->pMoveFromKafra
+Exists only in 3CeaM: 0365 clif->pFriendsListAdd
+Exists only in 3CeaM: 0366 clif->pUseSkillToPosMoreInfo
+Exists only in 3CeaM: 0367 clif->pUseSkillToPosMoreInfo
+Exists only in 3CeaM: 0368 clif->pSolveCharName
+Exists only in 3CeaM: 0369 clif->pActionRequest
+Exists only in 3CeaM: 0436 clif->pDropItem
+Exists only in 3CeaM: 0437 clif->pWalkToXY
+Exists only in 3CeaM: 0438 clif->pUseSkillToPos
+Exists only in 3CeaM: 0439 clif->pUseItem
+Exists only in 3CeaM: 0443 clif->pSkillSelectMenu
+Exists only in 3CeaM: 07d7 clif->pPartyChangeOption
+Exists only in 3CeaM: 07da clif->pPartyChangeLeader
+Exists only in 3CeaM: 07e4 clif->pTakeItem
+Exists only in 3CeaM: 07ec clif->pMoveToKafra
+Exists only in 3CeaM: 07f5 clif->pGMReqAccountName
+Exists only in 3CeaM: 0801 clif->pPurchaseReq2
+Exists only in 3CeaM: 0802 clif->pPartyInvite2
+Exists only in 3CeaM: 0804 clif->pPartyBookingSearchReq
+Exists only in 3CeaM: 0806 clif->pPartyBookingDeleteReq
+Exists only in 3CeaM: 0808 clif->pPartyBookingUpdateReq
+Exists only in 3CeaM: 0811 clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 0815 clif->pReqOpenBuyingStore
+Exists only in 3CeaM: 0817 clif->pReqCloseBuyingStore
+Exists only in 3CeaM: 0819 clif->pSearchStoreInfo
+Exists only in 3CeaM: 0835 clif->pSearchStoreInfoNextPage
+Exists only in 3CeaM: 0838 clif->pSearchStoreInfoListItemClick
+Exists only in 3CeaM: 083b clif->pCloseSearchStoreInfo
+Exists only in 3CeaM: 083c clif->pUseSkillToId
+Exists only in 3CeaM: 0842 clif->pGMRecall2
+Exists only in 3CeaM: 0843 clif->pGMRemove2
+Exists only in 3CeaM: 0844 clif->pCashShopOpen
+Exists only in 3CeaM: 0846 clif->pCashShopReqTab
+Exists only in 3CeaM: 084a clif->pCashShopClose
+Exists only in 3CeaM: 0860 clif->pStoragePassword
+Exists only in 3CeaM: 0864 clif->pMoveFromKafra
+Exists only in 3CeaM: 0869 clif->pTakeItem
+Exists only in 3CeaM: 086a clif->pMoveFromKafra
+Exists only in 3CeaM: 086c clif->pMoveToKafra
+Exists only in 3CeaM: 0871 clif->pChangeDir
+Exists only in 3CeaM: 0872 clif->pStoragePassword
+Exists only in 3CeaM: 0878 clif->pWantToConnection
+Exists only in 3CeaM: 0879 clif->pMoveToKafra
+Exists only in 3CeaM: 0883 clif->pPartyInvite2
+Exists only in 3CeaM: 0884 clif->pSolveCharName
+Exists only in 3CeaM: 0885 clif->pDropItem
+Exists only in 3CeaM: 0886 clif->pTickSend
+Exists only in 3CeaM: 0887 clif->pReqOpenBuyingStore
+Exists only in 3CeaM: 0889 clif->pGetCharNameRequest
+Exists only in 3CeaM: 088c clif->pReqClickBuyingStore
+Exists only in 3CeaM: 0891 clif->pDropItem
+Exists only in 3CeaM: 0892 clif->pWalkToXY
+Exists only in 3CeaM: 0893 clif->pTakeItem
+Exists only in 3CeaM: 0895 clif->pPartyInvite2
+Exists only in 3CeaM: 0896 clif->pItemListWindowSelected
+Exists only in 3CeaM: 0898 clif->pGetCharNameRequest
+Exists only in 3CeaM: 0899 clif->pTickSend
+Exists only in 3CeaM: 089a clif->pHomMenu
+Exists only in 3CeaM: 089c clif->pFriendsListAdd
+Exists only in 3CeaM: 089d clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 089e clif->pHomMenu
+Exists only in 3CeaM: 08a1 clif->pUseSkillToId
+Exists only in 3CeaM: 08a4 clif->pStoragePassword
+Exists only in 3CeaM: 08a6 clif->pMoveFromKafra
+Exists only in 3CeaM: 08a8 clif->pFriendsListAdd
+Exists only in 3CeaM: 08a9 clif->pReqCloseBuyingStore
+Exists only in 3CeaM: 08ad clif->pUseSkillToPos
+Exists only in 3CeaM: 08c9 clif->pCashShopSchedule
+Exists only in 3CeaM: 08d7 clif->pBGQueueRegister
+Exists only in 3CeaM: 08e5 clif->pPartyBookingRegisterReq
+Exists only in 3CeaM: 08e7 clif->pPartyBookingSearchReq
+Exists only in 3CeaM: 08e9 clif->pPartyBookingDeleteReq
+Exists only in 3CeaM: 08eb clif->pPartyBookingUpdateReq
+Exists only in 3CeaM: 08ef clif->pDull
+Exists only in 3CeaM: 08f1 clif->pDull
+Exists only in 3CeaM: 08f5 clif->pDull
+Exists only in 3CeaM: 08fb clif->pDull
+Exists only in 3CeaM: 0907 clif->pMoveItem
+Exists only in 3CeaM: 091c clif->pPartyInvite2
+Exists only in 3CeaM: 0923 clif->pStoragePassword
+Exists only in 3CeaM: 0924 clif->pChangeDir
+Exists only in 3CeaM: 0926 clif->pMoveToKafra
+Exists only in 3CeaM: 0927 clif->pPartyBookingRegisterReq
+Exists only in 3CeaM: 0933 clif->pChangeDir
+Exists only in 3CeaM: 0938 clif->pTakeItem
+Exists only in 3CeaM: 093c clif->pDropItem
+Exists only in 3CeaM: 0945 clif->pItemListWindowSelected
+Exists only in 3CeaM: 094a clif->pPartyInvite2
+Exists only in 3CeaM: 094b clif->pWantToConnection
+Exists only in 3CeaM: 0958 clif->pTakeItem
+Exists only in 3CeaM: 0960 clif->pItemListWindowSelected
+Exists only in 3CeaM: 0961 clif->pStoragePassword
+Exists only in 3CeaM: 096a clif->pGetCharNameRequest
+Exists only in 3CeaM: 097c clif->pRankingPk
+Exists only in 3CeaM: 0998 clif->pEquipItem
+Wrong function name for packet 0072: clif->pWantToConnection vs clif->pUseSkillToId
+Wrong function name for packet 007e: clif->pTickSend vs clif->pUseSkillToPosMoreInfo
+Wrong function name for packet 0085: clif->pWalkToXY vs clif->pChangeDir
+Wrong function name for packet 0089: clif->pActionRequest vs clif->pTickSend
+Wrong function name for packet 008c: clif->pGlobalMessage vs clif->pGetCharNameRequest
+Wrong function name for packet 0094: clif->pGetCharNameRequest vs clif->pMoveToKafra
+Wrong function name for packet 009b: clif->pChangeDir vs clif->pWantToConnection
+Wrong function name for packet 009f: clif->pTakeItem vs clif->pUseItem
+Wrong function name for packet 00a2: clif->pDropItem vs clif->pSolveCharName
+Wrong function name for packet 00a7: clif->pUseItem vs clif->pWalkToXY
+Wrong function name for packet 00f3: clif->pMoveToKafra vs clif->pGlobalMessage
+Wrong function name for packet 00f5: clif->pMoveFromKafra vs clif->pTakeItem
+Wrong function name for packet 00f7: clif->pCloseKafra vs clif->pMoveFromKafra
+Wrong function name for packet 0113: clif->pUseSkillToId vs clif->pUseSkillToPos
+Wrong function name for packet 0116: clif->pUseSkillToPos vs clif->pDropItem
+Wrong function name for packet 0190: clif->pUseSkillToPosMoreInfo vs clif->pActionRequest
+Wrong function name for packet 0193: clif->pSolveCharName vs clif->pCloseKafra
+Different packet size for packet 01fd clif->pRepairItem: 4 vs 15
+Wrong function name for packet 0202: clif->pFriendsListAdd vs clif->pChangeDir
+Different packet size for packet 0208 clif->pFriendsListReply: 11 vs 14

@@ -2,7 +2,7 @@ Exists only in idAthena: 011f
 Exists only in idAthena: 043e
 Exists only in idAthena: 0856
 Exists only in idAthena: 08d1
-Exists only in idAthena: 0979
+Exists only in idAthena, but missing packet size: 0979
 Exists only in idAthena: 0984
 Exists only in idAthena: 09a0
 Exists only in idAthena: 09b7

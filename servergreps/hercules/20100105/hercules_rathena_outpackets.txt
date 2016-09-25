@@ -1,18 +1,18 @@
-Exists only in rAthena: 0810
-Exists only in rAthena: 0812
-Exists only in rAthena: 0814
-Exists only in rAthena: 0816
-Exists only in rAthena: 081a
-Exists only in rAthena: 081c
-Exists only in rAthena: 0824
-Exists only in rAthena: 0837
-Exists only in rAthena: 083a
-Exists only in rAthena: 083d
+Exists only in rAthena, but missing packet size: 0810
+Exists only in rAthena, but missing packet size: 0812
+Exists only in rAthena, but missing packet size: 0814
+Exists only in rAthena, but missing packet size: 0816
+Exists only in rAthena, but missing packet size: 081a
+Exists only in rAthena, but missing packet size: 081c
+Exists only in rAthena, but missing packet size: 0824
+Exists only in rAthena, but missing packet size: 0837
+Exists only in rAthena, but missing packet size: 083a
+Exists only in rAthena, but missing packet size: 083d
 Exists only in rAthena: 083e
-Exists only in rAthena: 08cf
-Exists only in rAthena: 08d2
-Exists only in rAthena: 0908
-Exists only in rAthena: 0979
+Exists only in rAthena, but missing packet size: 08cf
+Exists only in rAthena, but missing packet size: 08d2
+Exists only in rAthena, but missing packet size: 0908
+Exists only in rAthena, but missing packet size: 0979
 Exists only in rAthena: 09a0
 Exists only in rAthena: 09b7
 Exists only in rAthena: 09b9

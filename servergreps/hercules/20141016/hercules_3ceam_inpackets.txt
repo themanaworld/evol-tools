@@ -1,0 +1,22 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 094b vs 023b
+Wrong preffered packet for function clif->pWantToConnection: 086e vs 022d
+Wrong preffered packet for function clif->pStoragePassword: 0936 vs 08a4
+Wrong preffered packet for function clif->pHomMenu: 0364 vs 0361
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pMoveFromKafra: 022d vs 0364
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
+Wrong preffered packet for function clif->pChangeDir: 0967 vs 0202
+Wrong preffered packet for function clif->pRankingPk: 0237 vs 097c
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in 3CeaM: 089d clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 08ef clif->pDull
+Exists only in 3CeaM: 08f1 clif->pDull
+Wrong function name for packet 022d: clif->pMoveFromKafra vs clif->pWantToConnection
+Wrong function name for packet 0364: clif->pHomMenu vs clif->pMoveFromKafra
+Wrong function name for packet 07f5: clif->pGMFullStrip vs clif->pGMReqAccountName
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq
+Wrong function name for packet 094b: clif->pFriendsListAdd vs clif->pWantToConnection
+Wrong function name for packet 097c: clif->pRanklist vs clif->pRankingPk

@@ -1,0 +1,20 @@
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 091d vs 08e5
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in 3CeaM: 07ec clif->pSearchStoreInfo
+Exists only in 3CeaM: 088c clif->pReqClickBuyingStore
+Exists only in 3CeaM: 0895 clif->pPartyInvite2
+Exists only in 3CeaM: 0896 clif->pChangeDir
+Exists only in 3CeaM: 089d clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 08a4 clif->pMoveToKafra
+Exists only in 3CeaM: 08a9 clif->pReqCloseBuyingStore
+Exists only in 3CeaM: 08e5 clif->pPartyBookingRegisterReq
+Exists only in 3CeaM: 08ef clif->pDull
+Exists only in 3CeaM: 08f1 clif->pDull
+Different packet size for packet 023b clif->pStoragePassword: 36 vs 24
+Wrong function name for packet 07f5: clif->pGMFullStrip vs clif->pGMReqAccountName
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq

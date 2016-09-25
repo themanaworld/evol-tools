@@ -1,1 +1,1 @@
-Exists only in brAthena: 0a25
+Exists only in brAthena: 0a25 clif->pDull

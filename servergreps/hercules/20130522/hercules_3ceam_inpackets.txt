@@ -1,0 +1,56 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 0362 vs 089c
+Wrong preffered packet for function clif->pWantToConnection: 08a9 vs 094b
+Wrong preffered packet for function clif->pStoragePassword: 088e vs 0961
+Wrong preffered packet for function clif->pItemListWindowSelected: 086a vs 0945
+Wrong preffered packet for function clif->pMoveToKafra: 08a3 vs 086c
+Wrong preffered packet for function clif->pTakeItem: 095e vs 0938
+Wrong preffered packet for function clif->pHomMenu: 0926 vs 0885
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pEquipItem: 0998 vs 00a9
+Wrong preffered packet for function clif->pReqOpenBuyingStore: 0874 vs 0815
+Wrong preffered packet for function clif->pReqTradeBuyingStore: 0952 vs 0811
+Wrong preffered packet for function clif->pUseSkillToPosMoreInfo: 0964 vs 0366
+Wrong preffered packet for function clif->pReqCloseBuyingStore: 086e vs 0817
+Wrong preffered packet for function clif->pTickSend: 07ec vs 0886
+Wrong preffered packet for function clif->pMoveFromKafra: 087e vs 08a6
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pPartyInvite2: 0950 vs 091c
+Wrong preffered packet for function clif->pSolveCharName: 0369 vs 0884
+Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
+Wrong preffered packet for function clif->pSearchStoreInfoListItemClick: 093e vs 0838
+Wrong preffered packet for function clif->pUseSkillToId: 095c vs 083c
+Wrong preffered packet for function clif->pDropItem: 089c vs 0891
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 089b vs 08e5
+Wrong preffered packet for function clif->pUseSkillToPos: 0811 vs 0438
+Wrong preffered packet for function clif->pGetCharNameRequest: 08a6 vs 0889
+Wrong preffered packet for function clif->pSearchStoreInfoNextPage: 08aa vs 0835
+Wrong preffered packet for function clif->pWalkToXY: 0360 vs 0437
+Wrong preffered packet for function clif->pChangeDir: 0925 vs 0871
+Wrong preffered packet for function clif->pSearchStoreInfo: 095b vs 0819
+Wrong preffered packet for function clif->pReqClickBuyingStore: 0368 vs 0360
+Wrong preffered packet for function clif->pActionRequest: 08a2 vs 0369
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in 3CeaM: 088c clif->pReqClickBuyingStore
+Exists only in 3CeaM: 0895 clif->pPartyInvite2
+Exists only in 3CeaM: 0896 clif->pChangeDir
+Exists only in 3CeaM: 089d clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 08a4 clif->pMoveToKafra
+Exists only in 3CeaM: 08ef clif->pDull
+Exists only in 3CeaM: 08f1 clif->pDull
+Wrong function name for packet 0360: clif->pWalkToXY vs clif->pReqClickBuyingStore
+Wrong function name for packet 0362: clif->pFriendsListAdd vs clif->pMoveFromKafra
+Wrong function name for packet 0368: clif->pReqClickBuyingStore vs clif->pSolveCharName
+Wrong function name for packet 0369: clif->pSolveCharName vs clif->pActionRequest
+Wrong function name for packet 07ec: clif->pTickSend vs clif->pSearchStoreInfo
+Wrong function name for packet 07f5: clif->pGMFullStrip vs clif->pGMReqAccountName
+Wrong function name for packet 0811: clif->pUseSkillToPos vs clif->pReqTradeBuyingStore
+Wrong function name for packet 0886: clif->pReqCloseBuyingStore vs clif->pTickSend
+Wrong function name for packet 0889: clif->pUseSkillToPosMoreInfo vs clif->pGetCharNameRequest
+Wrong function name for packet 089c: clif->pDropItem vs clif->pFriendsListAdd
+Wrong function name for packet 08a6: clif->pGetCharNameRequest vs clif->pMoveFromKafra
+Wrong function name for packet 08a9: clif->pWantToConnection vs clif->pReqCloseBuyingStore
+Wrong function name for packet 08e5: clif->pPartyRecruitRegisterReq vs clif->pPartyBookingRegisterReq
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq
+Wrong function name for packet 0938: clif->pReqOpenBuyingStore vs clif->pTakeItem

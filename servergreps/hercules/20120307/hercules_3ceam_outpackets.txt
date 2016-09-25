@@ -6,8 +6,8 @@ Exists only in 3CeaM: 01e2
 Exists only in 3CeaM: 0856
 Exists only in 3CeaM: 0857
 Exists only in 3CeaM: 0858
-Exists only in 3CeaM: 08cf
-Exists only in 3CeaM: 097e
+Exists only in 3CeaM, but missing packet size: 08cf
+Exists only in 3CeaM, but missing packet size: 097e
 Exists only in 3CeaM: 0991
 Exists only in 3CeaM: 0992
 Exists only in 3CeaM: 0993
@@ -15,10 +15,10 @@ Exists only in 3CeaM: 0994
 Exists only in 3CeaM: 0995
 Exists only in 3CeaM: 0996
 Exists only in 3CeaM: 0997
-Exists only in 3CeaM: 099b
-Exists only in 3CeaM: 09c1
+Exists only in 3CeaM, but missing packet size: 099b
+Exists only in 3CeaM, but missing packet size: 09c1
 Exists only in 3CeaM: 09db
 Exists only in 3CeaM: 09dc
 Exists only in 3CeaM: 09dd
-Exists only in 3CeaM: 0a02
+Exists only in 3CeaM, but missing packet size: 0a02
 Exists only in 3CeaM: 0a28

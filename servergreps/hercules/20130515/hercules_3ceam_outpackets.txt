@@ -16,10 +16,10 @@ Exists only in 3CeaM: 0856
 Exists only in 3CeaM: 0857
 Exists only in 3CeaM: 0858
 Exists only in 3CeaM: 0859
-Exists only in 3CeaM: 097e
-Exists only in 3CeaM: 09c1
+Exists only in 3CeaM, but missing packet size: 097e
+Exists only in 3CeaM, but missing packet size: 09c1
 Exists only in 3CeaM: 09db
 Exists only in 3CeaM: 09dc
 Exists only in 3CeaM: 09dd
-Exists only in 3CeaM: 0a02
+Exists only in 3CeaM, but missing packet size: 0a02
 Exists only in 3CeaM: 0a28

@@ -1,5 +1,5 @@
 Exists only in rAthena: 08d1
-Exists only in rAthena: 0979
+Exists only in rAthena, but missing packet size: 0979
 Exists only in rAthena: 0984
 Exists only in rAthena: 099f
 Exists only in rAthena: 09a0

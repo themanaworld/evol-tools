@@ -1,0 +1,29 @@
+Wrong preffered packet for function clif->pPartyInvite: 00fc vs 0802
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in rAthena: 012f clif->pOpenVending
+Exists only in rAthena: 086b clif->pSearchStoreInfo
+Exists only in rAthena: 0880 clif->pStoragePassword
+Exists only in rAthena: 08ef clif->pDull
+Exists only in rAthena: 08f1 clif->pDull
+Exists only in rAthena: 0978 reqworldinfo
+Exists only in rAthena: 09b4 clif->pDull
+Exists only in rAthena: 09e9 clif->pDull
+Exists only in rAthena: 09ea clif->pDull
+Exists only in rAthena: 09ec clif->pDull
+Exists only in rAthena: 09ee clif->pDull
+Exists only in rAthena: 09ef clif->pDull
+Exists only in rAthena: 09f1 clif->pDull
+Exists only in rAthena: 09f3 clif->pDull
+Exists only in rAthena: 09f5 clif->pDull
+Exists only in rAthena: 09fb clif->pDull
+Exists only in rAthena: 0a03 clif->pDull
+Exists only in rAthena: 0a04 clif->pDull
+Exists only in rAthena: 0a06 clif->pDull
+Exists only in rAthena: 0a08 clif->pDull
+Exists only in rAthena: 0a13 clif->pDull
+Exists only in rAthena: 0a25 clif->pDull
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq

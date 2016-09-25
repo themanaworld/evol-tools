@@ -1,0 +1,40 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 08a8 vs 023b
+Wrong preffered packet for function clif->pWantToConnection: 0363 vs 022d
+Wrong preffered packet for function clif->pStoragePassword: 0923 vs 08a4
+Wrong preffered packet for function clif->pItemListWindowSelected: 0960 vs 0281
+Wrong preffered packet for function clif->pMoveToKafra: 0879 vs 07ec
+Wrong preffered packet for function clif->pTakeItem: 0958 vs 07e4
+Wrong preffered packet for function clif->pHomMenu: 0817 vs 0361
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pReqCloseBuyingStore: 022d vs 0817
+Wrong preffered packet for function clif->pMoveFromKafra: 0864 vs 0364
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pPartyInvite2: 094a vs 0802
+Wrong preffered packet for function clif->pDropItem: 0885 vs 0362
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 0883 vs 0365
+Wrong preffered packet for function clif->pChangeDir: 0924 vs 0202
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in idAthena: 012f clif->pOpenVending
+Exists only in idAthena: 086b clif->pSearchStoreInfo
+Exists only in idAthena: 0880 clif->pStoragePassword
+Exists only in idAthena: 08ef clif->pDull
+Exists only in idAthena: 08f1 clif->pDull
+Exists only in idAthena: 0978 reqworldinfo
+Exists only in idAthena: 09b4 clif->pDull
+Wrong function name for packet 022d: clif->pReqCloseBuyingStore vs clif->pWantToConnection
+Wrong function name for packet 023b: clif->pUseSkillToPos vs clif->pFriendsListAdd
+Wrong function name for packet 0363: clif->pWantToConnection vs clif->pSearchStoreInfoNextPage
+Wrong function name for packet 0364: clif->pHomMenu vs clif->pMoveFromKafra
+Wrong function name for packet 0817: clif->pHomMenu vs clif->pReqCloseBuyingStore
+Wrong function name for packet 0864: clif->pMoveFromKafra vs clif->pStoragePassword
+Wrong function name for packet 0879: clif->pMoveToKafra vs clif->pPartyBookingRegisterReq
+Wrong function name for packet 0883: clif->pPartyBookingRegisterReq vs clif->pStoragePassword
+Wrong function name for packet 0885: clif->pDropItem vs clif->pMoveToKafra
+Wrong function name for packet 08a8: clif->pFriendsListAdd vs clif->pPartyInvite2
+Wrong function name for packet 08d7: clif->pBGQueueRegister vs clif->pDull
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq
+Wrong function name for packet 094a: clif->pPartyInvite2 vs clif->pHomMenu
+Wrong function name for packet 0958: clif->pTakeItem vs clif->pGetCharNameRequest
+Wrong function name for packet 0960: clif->pItemListWindowSelected vs clif->pSearchStoreInfoListItemClick

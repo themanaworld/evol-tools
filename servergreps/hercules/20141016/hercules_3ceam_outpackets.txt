@@ -6,5 +6,5 @@ Exists only in 3CeaM: 0137
 Exists only in 3CeaM: 01e2
 Exists only in 3CeaM: 081b
 Exists only in 3CeaM: 09c1
-Exists only in 3CeaM: 0a02
+Exists only in 3CeaM, but missing packet size: 0a02
 Exists only in 3CeaM: 0a28

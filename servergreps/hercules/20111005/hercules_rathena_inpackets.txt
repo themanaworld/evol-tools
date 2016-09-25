@@ -1,0 +1,33 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 0202 vs 0436
+Wrong preffered packet for function clif->pWantToConnection: 0436 vs 083c
+Wrong preffered packet for function clif->pStoragePassword: 023b vs 0281
+Wrong preffered packet for function clif->pItemListWindowSelected: 07e4 vs 0811
+Wrong preffered packet for function clif->pHomMenu: 022d vs 0898
+Wrong preffered packet for function clif->pReqOpenBuyingStore: 0811 vs 0835
+Wrong preffered packet for function clif->pReqTradeBuyingStore: 0819 vs 089e
+Wrong preffered packet for function clif->pReqCloseBuyingStore: 0815 vs 089b
+Wrong preffered packet for function clif->pPartyInvite2: 02c4 vs 088d
+Wrong preffered packet for function clif->pSearchStoreInfoListItemClick: 083c vs 08a2
+Wrong preffered packet for function clif->pUseSkillToId: 0438 vs 02c4
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 0802 vs 08a5
+Wrong preffered packet for function clif->pSearchStoreInfoNextPage: 0838 vs 088b
+Wrong preffered packet for function clif->pSearchStoreInfo: 0835 vs 08ab
+Wrong preffered packet for function clif->pReqClickBuyingStore: 0817 vs 08a1
+Wrong preffered packet for function clif->pActionRequest: 0437 vs 08aa
+Exists only in rAthena: 012f clif->pOpenVending
+Exists only in rAthena: 0281 clif->pStoragePassword
+Exists only in rAthena: 088b clif->pSearchStoreInfoNextPage
+Exists only in rAthena: 088d clif->pPartyInvite2
+Exists only in rAthena: 0898 clif->pHomMenu
+Exists only in rAthena: 089b clif->pReqCloseBuyingStore
+Exists only in rAthena: 089e clif->pReqTradeBuyingStore
+Exists only in rAthena: 08a1 clif->pReqClickBuyingStore
+Exists only in rAthena: 08a2 clif->pSearchStoreInfoListItemClick
+Exists only in rAthena: 08a5 clif->pPartyBookingRegisterReq
+Exists only in rAthena: 08aa clif->pActionRequest
+Exists only in rAthena: 08ab clif->pSearchStoreInfo
+Wrong function name for packet 02c4: clif->pPartyInvite2 vs clif->pUseSkillToId
+Wrong function name for packet 0436: clif->pWantToConnection vs clif->pFriendsListAdd
+Wrong function name for packet 0811: clif->pReqOpenBuyingStore vs clif->pItemListWindowSelected
+Wrong function name for packet 0835: clif->pSearchStoreInfo vs clif->pReqOpenBuyingStore
+Wrong function name for packet 083c: clif->pSearchStoreInfoListItemClick vs clif->pWantToConnection

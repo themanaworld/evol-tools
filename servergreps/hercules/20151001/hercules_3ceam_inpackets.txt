@@ -1,0 +1,30 @@
+Wrong preffered packet for function clif->pFriendsListAdd: 023b vs 08a8
+Wrong preffered packet for function clif->pWantToConnection: 022d vs 0363
+Wrong preffered packet for function clif->pStoragePassword: 0860 vs 0923
+Wrong preffered packet for function clif->pItemListWindowSelected: 0281 vs 0960
+Wrong preffered packet for function clif->pMoveToKafra: 07ec vs 0879
+Wrong preffered packet for function clif->pTakeItem: 07e4 vs 0958
+Wrong preffered packet for function clif->pHomMenu: 0361 vs 0817
+Wrong preffered packet for function clif->pPartyBookingDeleteReq: 0806 vs 08e9
+Wrong preffered packet for function clif->pReqCloseBuyingStore: 0817 vs 022d
+Wrong preffered packet for function clif->pMoveFromKafra: 0364 vs 0864
+Wrong preffered packet for function clif->pPartyBookingUpdateReq: 0808 vs 08eb
+Wrong preffered packet for function clif->pPartyInvite2: 0802 vs 094a
+Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
+Wrong preffered packet for function clif->pDropItem: 0362 vs 0885
+Wrong preffered packet for function clif->pPartyBookingRegisterReq: 0365 vs 0883
+Wrong preffered packet for function clif->pChangeDir: 0202 vs 0924
+Wrong preffered packet for function clif->pRankingPk: 0237 vs 097c
+Wrong preffered packet for function clif->pPartyBookingSearchReq: 0804 vs 08e7
+Exists only in 3CeaM: 089d clif->pReqTradeBuyingStore
+Exists only in 3CeaM: 08ef clif->pDull
+Exists only in 3CeaM: 08f1 clif->pDull
+Wrong function name for packet 022d: clif->pWantToConnection vs clif->pReqCloseBuyingStore
+Wrong function name for packet 07f5: clif->pGMFullStrip vs clif->pGMReqAccountName
+Wrong function name for packet 0817: clif->pReqCloseBuyingStore vs clif->pHomMenu
+Wrong function name for packet 08e7: clif->pPartyRecruitSearchReq vs clif->pPartyBookingSearchReq
+Wrong function name for packet 08e9: clif->pPartyRecruitDeleteReq vs clif->pPartyBookingDeleteReq
+Wrong function name for packet 08eb: clif->pPartyRecruitUpdateReq vs clif->pPartyBookingUpdateReq
+Wrong function name for packet 0924: clif->pPartyInvite2 vs clif->pChangeDir
+Wrong function name for packet 0960: clif->pHomMenu vs clif->pItemListWindowSelected
+Wrong function name for packet 097c: clif->pRanklist vs clif->pRankingPk
