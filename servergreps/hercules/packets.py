@@ -14,6 +14,7 @@ from src.ragemu import Ragemu
 from src.rathena import Rathena
 from src.reporter import Reporter
 from src.server import Server
+from src.tables import Tables
 from src.threeceam import Threeceam
 
 
@@ -49,6 +50,9 @@ idathena.dirName = "idathena"
 idathena.reportName = "idathena"
 server2013 = Server()
 server2014 = Server()
+tables = Tables()
+tables.dirName = "tables"
+tables.reportName = "tables"
 
 manaplus = ManaPlus()
 reporter = Reporter()
@@ -68,6 +72,7 @@ idathena.prepareTempFiles("idathena", packetDir, packetVersion)
 idathena.processPackets("idathena", packetDir, packetVersion)
 server2013.processPackets("server2013")
 server2014.processPackets("server2014")
+tables.processPackets("tables", packetDir, packetVersion)
 
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
@@ -79,3 +84,4 @@ reporter.reportHerculesFork(hercules, threeceam, "3CeaM")
 reporter.reportHerculesFork(hercules, idathena, "idAthena")
 reporter.reportServer(hercules, server2013)
 reporter.reportServer(hercules, server2014)
+reporter.reportTables(hercules, tables)

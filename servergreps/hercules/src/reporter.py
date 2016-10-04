@@ -241,12 +241,13 @@ class Reporter:
                         w.write("Exists only in " + name + ": " + packet + "\n")
             for packet in fork.outPacketsSorted:
                 if packet not in hercules.packetsSet:
+                    # incomplete code?
                     if packet in fork.getLenPackets and packet in fork.knownLenPackets and \
                     packet in hercules.getLenPackets and packet in hercules.knownLenPackets:
-                        w.write("Different packet size for packet {0}: {1} vs {2}\n",
+                        w.write("Different packet size for packet {0}: {1} vs {2}\n".format(
                             packet,
                             hercules.knownLenPackets[packet],
-                            fork.knownLenPackets[packet])
+                            fork.knownLenPackets[packet]))
         with open(self.packetDir + "/" + hercules.reportName + "_" + fork.reportName + "_inpackets.txt", "w") as w:
             for func in hercules.functionToId:
                 packet = hercules.functionToId[func]
@@ -307,3 +308,27 @@ class Reporter:
                     w.write("Exists only in Hercules: " + packet + "\n");
             if fail == False:
                 w.write("Server include all hercules packets\n")
+
+
+    def reportTables(self, hercules, tables):
+        if len(tables.inPacketsSorted) == 0:
+            return
+        with open(self.packetDir + "/" + hercules.reportName + "_" + tables.dirName + "_inpackets.txt", "w") as w:
+            for packet in tables.inPacketsSorted:
+                if packet not in hercules.inPacketsSorted:
+                    w.write("Exists only in " + tables.dirName + ": " + packet + "\n")
+            for packet in tables.inPacketsSorted:
+                if packet in hercules.inPacketsSorted and packet in tables.inPackets and packet in hercules.knownLenPackets:
+                    if hercules.knownLenPackets[packet] != tables.knownLenPackets[packet]:
+                        w.write("Different packet size for packet {0}: {1} vs {2}\n".format(
+                            packet,
+                            hercules.knownLenPackets[packet],
+                            tables.knownLenPackets[packet]))
+        with open(self.packetDir + "/" + tables.dirName + "_" + hercules.reportName + "_inpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.inPacketsSorted:
+                if packet not in tables.inPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Table include all hercules packets\n")
