@@ -315,7 +315,7 @@ class Reporter:
             return
         with open(self.packetDir + "/" + hercules.reportName + "_" + tables.dirName + "_inpackets.txt", "w") as w:
             for packet in tables.inPacketsSorted:
-                if packet not in hercules.inPacketsSorted:
+                if packet not in hercules.inPacketsSorted and packet not in hercules.outPacketsSorted:
                     w.write("Exists only in " + tables.dirName + ": " + packet + "\n")
             for packet in tables.inPacketsSorted:
                 if packet in hercules.inPacketsSorted and packet in tables.inPackets and packet in hercules.knownLenPackets:
@@ -332,3 +332,11 @@ class Reporter:
                     w.write("Exists only in Hercules: " + packet + "\n");
             if fail == False:
                 w.write("Table include all hercules packets\n")
+        with open(self.packetDir + "/" + tables.dirName + "_" + hercules.reportName + "_outpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.outPacketsSorted:
+                if packet not in tables.inPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Server include all hercules packets\n")
