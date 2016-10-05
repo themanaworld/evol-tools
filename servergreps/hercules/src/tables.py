@@ -7,10 +7,6 @@
 import re
 import os
 
-from src.packetdb import PacketDb
-from src.preproc import PreProc
-from src.utils import Utils
-
 filt = re.compile(".+[.](c|h)", re.IGNORECASE)
 
 class Tables:
