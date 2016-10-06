@@ -1,5 +1,6 @@
+Exists only in Hercules: 020f
+Exists only in Hercules: 08d4
 Exists only in Hercules: 08fc
-Exists only in Hercules: 090a
 Exists only in Hercules: 096e
 Exists only in Hercules: 0974
 Exists only in Hercules: 09a1
