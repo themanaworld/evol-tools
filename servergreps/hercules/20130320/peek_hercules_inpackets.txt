@@ -1,0 +1,2 @@
+Exists only in Hercules: 020f
+Wrong function name for packet 0890: clif->pDull // CZ_GANGSI_RANK vs clif->pChangeDir

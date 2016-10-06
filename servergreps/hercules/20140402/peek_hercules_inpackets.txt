@@ -1,0 +1,9 @@
+Exists only in Hercules: 020f
+Exists only in Hercules: 08e5
+Exists only in Hercules: 08e7
+Exists only in Hercules: 08e9
+Exists only in Hercules: 08eb
+Exists only in Hercules: 08f5
+Exists only in Hercules: 08fb
+Wrong function name for packet 088c: clif->pDull // CZ_GANGSI_RANK vs clif->pChangeDir
+Wrong function name for packet 094c: clif->pDull // CZ_JOIN_BATTLE_FIELD vs clif->pReqCloseBuyingStore

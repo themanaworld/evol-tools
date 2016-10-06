@@ -1,0 +1,26 @@
+Exists only in Hercules: 020f
+Exists only in Hercules: 08e5
+Exists only in Hercules: 08e7
+Exists only in Hercules: 08e9
+Exists only in Hercules: 08eb
+Exists only in Hercules: 08f5
+Exists only in Hercules: 08fb
+Wrong function name for packet 023b: clif->pReqCloseBuyingStore vs clif->pFriendsListAdd
+Wrong function name for packet 0437: clif->pDull // CZ_JOIN_BATTLE_FIELD vs clif->pWalkToXY
+Wrong function name for packet 085a: clif->pPartyBookingRegisterReq vs clif->pReqCloseBuyingStore
+Wrong function name for packet 085e: clif->pMoveFromKafra vs clif->pUseSkillToPosMoreInfo
+Wrong function name for packet 086a: clif->pReqOpenBuyingStore vs clif->pItemListWindowSelected
+Wrong function name for packet 0874: clif->pHomMenu vs clif->pPartyBookingRegisterReq
+Wrong function name for packet 0876: clif->pActionRequest vs clif->pWalkToXY
+Wrong function name for packet 0890: clif->pSearchStoreInfoNextPage vs clif->pSearchStoreInfoListItemClick
+Wrong function name for packet 0891: clif->pDropItem vs clif->pReqTradeBuyingStore
+Wrong function name for packet 0893: clif->pWantToConnection vs clif->pMoveToKafra
+Wrong function name for packet 089c: clif->pUseSkillToPos vs clif->pDropItem
+Wrong function name for packet 08ab: clif->pDull // CZ_GANGSI_RANK vs clif->pFriendsListAdd
+Wrong function name for packet 0921: clif->pUseSkillToPosMoreInfo vs clif->pMoveToKafra
+Wrong function name for packet 092e: clif->pItemListWindowSelected vs clif->pSearchStoreInfoNextPage
+Wrong function name for packet 094a: clif->pTakeItem vs clif->pHomMenu
+Wrong function name for packet 0953: clif->pWalkToXY vs clif->pFriendsListAdd
+Wrong function name for packet 0956: clif->pSearchStoreInfoListItemClick vs clif->pStoragePassword
+Wrong function name for packet 0958: clif->pUseSkillToId vs clif->pItemListWindowSelected
+Wrong function name for packet 095c: clif->pReqTradeBuyingStore vs clif->pUseSkillToId

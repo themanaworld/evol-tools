@@ -1,0 +1,8 @@
+Exists only in Hercules: 020f
+Exists only in Hercules: 08e5
+Exists only in Hercules: 08e7
+Exists only in Hercules: 08e9
+Exists only in Hercules: 08eb
+Exists only in Hercules: 08f5
+Exists only in Hercules: 08fb
+Wrong function name for packet 08ab: clif->pDull // CZ_GANGSI_RANK vs clif->pFriendsListAdd

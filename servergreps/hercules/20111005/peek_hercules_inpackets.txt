@@ -1,0 +1,17 @@
+Exists only in Hercules: 08fc
+Exists only in Hercules: 090a
+Exists only in Hercules: 096e
+Exists only in Hercules: 0974
+Exists only in Hercules: 09a1
+Wrong function name for packet 0064: clif->pChangeDir vs lclif->p->parse_CA_LOGIN
+Wrong function name for packet 0065: clif->pReqTradeBuyingStore vs chr->parse_char_connect
+Wrong function name for packet 0066: clif->pReqClickBuyingStore vs chr->parse_char_select
+Wrong function name for packet 0067: clif->pReqCloseBuyingStore vs chr->parse_char_create_new_char
+Wrong function name for packet 0068: clif->pDull // CZ_GANGSI_RANK vs chr->parse_char_delete_char_0068
+Wrong function name for packet 0187: clif->pActionRequest vs chr->parse_char_ping
+Wrong function name for packet 01db: clif->pMoveToKafra vs lclif->p->parse_CA_REQ_HASH
+Wrong function name for packet 01dd: clif->pUseSkillToPos vs lclif->p->parse_CA_LOGIN2
+Wrong function name for packet 01fa: clif->pUseSkillToPosMoreInfo vs lclif->p->parse_CA_LOGIN3
+Wrong function name for packet 01fb: clif->pFriendsListAdd vs chr->parse_char_delete_char_01fb
+Wrong function name for packet 0200: clif->pSearchStoreInfoListItemClick vs lclif->p->parse_CA_CONNECT_INFO_CHANGED
+Wrong function name for packet 0204: clif->pGetCharNameRequest vs lclif->p->parse_CA_EXE_HASHCHECK
