@@ -340,3 +340,45 @@ class Reporter:
                     w.write("Exists only in Hercules: " + packet + "\n");
             if fail == False:
                 w.write("Server include all hercules packets\n")
+
+
+    def reportPeek(self, hercules, peek):
+        if len(peek.inPacketsSorted) == 0:
+            return
+        with open(self.packetDir + "/" + hercules.reportName + "_" + peek.dirName + "_inpackets.txt", "w") as w:
+            for packet in peek.inPacketsSorted:
+                if packet not in hercules.inPacketsSorted and packet not in hercules.outPacketsSorted:
+                    w.write("Exists only in " + peek.dirName + ": " + packet + "\n")
+            for packet in peek.inPacketsSorted:
+                if packet in hercules.inPacketsSorted and packet in peek.inPackets and packet in hercules.knownLenPackets:
+                    if hercules.knownLenPackets[packet] != peek.knownLenPackets[packet]:
+                        w.write("Different packet size for packet {0}: {1} vs {2}\n".format(
+                            packet,
+                            hercules.knownLenPackets[packet],
+                            peek.knownLenPackets[packet]))
+        with open(self.packetDir + "/" + peek.dirName + "_" + hercules.reportName + "_inpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.inPacketsSorted:
+                if packet not in peek.inPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Table include all hercules packets\n")
+            for packet in hercules.inPacketsSorted:
+                if packet in peek.inPackets:
+                    peekFunction = peek.inPackets[packet][1]
+                    if peekFunction != "":
+                        herculesFunction = hercules.inPackets[packet][1]
+                        if peekFunction != herculesFunction:
+                            w.write("Wrong function name for packet {0}: {1} vs {2}\n".format(
+                                packet,
+                                peekFunction,
+                                herculesFunction))
+        with open(self.packetDir + "/" + peek.dirName + "_" + hercules.reportName + "_outpackets.txt", "w") as w:
+            fail = False
+            for packet in hercules.outPacketsSorted:
+                if packet not in peek.inPackets:
+                    fail = True
+                    w.write("Exists only in Hercules: " + packet + "\n");
+            if fail == False:
+                w.write("Server include all hercules packets\n")

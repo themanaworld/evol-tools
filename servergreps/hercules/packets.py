@@ -10,6 +10,7 @@ from src.brathena import Brathena
 from src.hercules import Hercules
 from src.idathena import Idathena
 from src.manaplus import ManaPlus
+from src.peek import Peek
 from src.ragemu import Ragemu
 from src.rathena import Rathena
 from src.reporter import Reporter
@@ -53,6 +54,9 @@ server2014 = Server()
 tables = Tables()
 tables.dirName = "tables"
 tables.reportName = "tables"
+peek = Peek()
+peek.dirName = "peek";
+peek.reportName = "peek"
 
 manaplus = ManaPlus()
 reporter = Reporter()
@@ -73,6 +77,7 @@ idathena.processPackets("idathena", packetDir, packetVersion)
 server2013.processPackets("server2013")
 server2014.processPackets("server2014")
 tables.processPackets("tables", packetDir, packetVersion)
+peek.processPackets("peek", packetDir, packetVersion)
 
 manaplus.processPackets(packetVersion);
 reporter.reportManaplus(hercules, manaplus)
@@ -85,3 +90,4 @@ reporter.reportHerculesFork(hercules, idathena, "idAthena")
 reporter.reportServer(hercules, server2013)
 reporter.reportServer(hercules, server2014)
 reporter.reportTables(hercules, tables)
+reporter.reportPeek(hercules, peek)
