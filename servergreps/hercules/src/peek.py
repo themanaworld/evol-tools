@@ -5,13 +5,15 @@
 # Author: Andrei Karas (4144)
 
 import configparser
-import re
 import os
 
 class Peek:
     inPacketsSorted = []
     inPackets = dict()
     knownLenPackets = dict()
+
+#    staticMap = {
+#    }
 
     shuffleMap = {
         '0': 'clif->pActionRequest',

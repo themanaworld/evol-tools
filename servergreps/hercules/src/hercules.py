@@ -18,6 +18,8 @@ class Hercules:
     outPacketsSorted = []
     inPacketsSorted = []
     inPackets = dict()
+    inMapPacketsSorted = []
+    inMapPackets = dict()
     functionToId = dict()
     loginPacketNameToId = dict()
     getLenPackets = set()
@@ -129,6 +131,7 @@ class Hercules:
                         data = "0" + data
                     self.inPackets[data] = \
                         (int(m.group("len")), m.group("function"))
+                    self.inMapPackets[data] = self.inPackets[data]
                     self.functionToId[m.group("function")] = data
                 m = self.clientpacketLenre.search(line)
                 if m is not None:
@@ -159,6 +162,9 @@ class Hercules:
         for packet in self.inPackets:
             self.inPacketsSorted.append(packet)
         self.inPacketsSorted.sort()
+        for packet in self.inMapPackets:
+            self.inMapPacketsSorted.append(packet)
+        self.inMapPacketsSorted.sort()
 
 
     def processPackets(self, packetDir, packetVersion):

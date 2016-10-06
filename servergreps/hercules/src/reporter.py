@@ -364,11 +364,11 @@ class Reporter:
                     w.write("Exists only in Hercules: " + packet + "\n");
             if fail == False:
                 w.write("Table include all hercules packets\n")
-            for packet in hercules.inPacketsSorted:
+            for packet in hercules.inMapPacketsSorted:
                 if packet in peek.inPackets:
                     peekFunction = peek.inPackets[packet][1]
                     if peekFunction != "":
-                        herculesFunction = hercules.inPackets[packet][1]
+                        herculesFunction = hercules.inMapPackets[packet][1]
                         if peekFunction != herculesFunction:
                             w.write("Wrong function name for packet {0}: {1} vs {2}\n".format(
                                 packet,
