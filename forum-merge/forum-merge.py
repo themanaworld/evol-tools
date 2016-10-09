@@ -1,12 +1,12 @@
 #!/usr/bin/python
 import MySQLdb
-
+  
 
 #written by rein of tmw/evol
 
 #credit to bruder torgen of phpbb.com. for his black magic sql statements. 
 #https://www.phpbb.com/community/viewtopic.php?f=65&t=1917165
-
+#hope it runs smooth as it does for me
 
 
 
