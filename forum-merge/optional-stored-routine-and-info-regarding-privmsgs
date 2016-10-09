@@ -1,0 +1,84 @@
+
+this segment into the merge script 
+
+#---------------------------------privmsgs-----------------------------------------------------------------
+
+print "counting attach_id"
+cursor.execute("SELECT max( msg_id ) FROM phpbb_privmsgs;")
+data = cursor.fetchone()
+maxmsg=data
+print "maxmsg : %s " % maxmsg
+
+#make all user folders to inbox
+cursor.execute("update phpbb_privmsgs_to_2 set folder_id = 0 where folder_id > 0;")
+# remove the auto increment attribute and primary key index
+cursor.execute("ALTER TABLE phpbb_privmsgs_2 CHANGE `msg_id` `msg_id` MEDIUMINT( 8 ) UNSIGNED NOT NULL;")
+cursor.execute("alter table phpbb_privmsgs_2 drop primary key;")
+cursor.execute("update phpbb_privmsgs_2 set msg_id = msg_id + %s;" % maxmsg)
+
+#delete auto increment
+cursor.execute("ALTER TABLE phpbb_privmsgs_to_2 CHANGE `msg_id` `msg_id` MEDIUMINT( 8 ) UNSIGNED NOT NULL;") 
+#increase ids
+cursor.execute("update phpbb_privmsgs_to_2 set msg_id = msg_id + %s;" % maxmsg)
+
+cursor.execute("CREATE TABLE phpbb_privmsgs_3 (msg_id MEDIUMINT( 8 ),to_address TEXT,bcc_address TEXT);") 
+
+
+
+
+##CALL STORED PROCEEDURE HERE 
+
+
+
+
+cursor.execute("update phpbb_privmsgs_2, phpbb_privmsgs_3 set phpbb_privmsgs_2.to_address = phpbb_privmsgs_3.to_address where phpbb_privmsgs_2.msg_id = phpbb_privmsgs_3.msg_id;")
+
+#merge
+cursor.execute("INSERT INTO phpbb_privmsgs (msg_id, root_level, author_id, icon_id, author_ip, message_time, enable_bbcode, enable_smilies, enable_magic_url, enable_sig, message_subject, message_text, message_edit_reason, message_edit_user, message_attachment, bbcode_bitfield, bbcode_uid, message_edit_time, message_edit_count, to_address, bcc_address) select msg_id, root_level, author_id, icon_id, author_ip, message_time, enable_bbcode, enable_smilies, enable_magic_url, enable_sig, message_subject, message_text, message_edit_reason, message_edit_user, message_attachment, bbcode_bitfield, bbcode_uid, message_edit_time, message_edit_count, to_address, bcc_address from phpbb_privmsgs_2;")
+
+cursor.execute("INSERT INTO phpbb_privmsgs_to (msg_id, user_id, author_id, pm_deleted, pm_new, pm_unread, pm_replied, pm_marked, pm_forwarded, folder_id) select msg_id, user_id, author_id, pm_deleted, pm_new, pm_unread, pm_replied, pm_marked, pm_forwarded, folder_id from phpbb_privmsgs_to_2;")
+
+
+
+
+
+
+
+
+this stored proceedure into mysql
+
+replace 133 with maxuser from script
+
+
+
+
+
+
+delimiter ;;
+CREATE PROCEDURE msgto()
+BEGIN
+  DECLARE userid MEDIUMINT(8);
+  DECLARE useridold MEDIUMINT(8);
+  DECLARE done INT DEFAULT 0;
+  DECLARE myid MEDIUMINT(8);
+  DECLARE touser int;
+  DECLARE toadr text;
+  DECLARE bccadr text;
+  declare cur1 cursor for select msg_id, to_address, bcc_address from phpbb_privmsgs_2;
+  open cur1;
+  repeat
+    fetch cur1 into myid, toadr, bccadr;
+    if instr(toadr,':') = 0 and instr(toadr,'u_') = 1 THEN
+      set touser=convert(right(toadr,length(toadr)-2), UNSIGNED);
+      set touser=touser + 133;
+      set useridold=0;
+      select user_id, user_id_old into userid, useridold from phpbb_users_2
+        where user_id_old=touser;
+      if useridold >=1 then
+       set touser=userid;
+      end if;
+    end if;
+    insert into phpbb_privmsgs_3 values (myid, concat('u_', convert(touser, char)), bccadr);
+  UNTIL done END REPEAT;
+  close cur1;
+end;;
