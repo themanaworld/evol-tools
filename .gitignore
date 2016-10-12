@@ -41,3 +41,6 @@ dyecmd/src/cmake_install.cmake
 
 # testxml
 testxml/errors.txt
+
+# gitlab merger
+herculeswrapper/herc-map-wrapper-config
