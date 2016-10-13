@@ -1,0 +1,70 @@
+## config for herc-map-wrapper
+
+echo "Copy this file to herc-map-wrapper-config" >&2
+echo "Then You need to either set the oauth secret" >&2
+echo "or use a hard-coded list instead of list_issues" >&2
+echo "Both github and gitlab methods are included.">&2
+echo "Make sure to comment out the method that isn't used" >&2
+echo "Update the <repo ids> with the ID number for gitlab" >&2
+echo "or the repo name if github i.e. themanaworld/server-data" >&2
+echo "Then, delete these lines" >&2
+exit 1
+
+server_data=../../server-data
+client_data=../client-data
+tmw_tools=../tools
+
+#gitlab
+list_issues()
+{
+python -c '
+
+# replace this with one of your oauth keys from github (no permissions needed)
+oauth = "01234567890123456789"
+
+import requests
+issues = requests.get("https://gitlab.com/api/v3/projects/%d/merge_requests" % '$1', params={"state": "opened"}, headers={"PRIVATE-TOKEN": "%s" % oauth, "Accept": "application/vnd.gitlab.v3+json"})
+issues.raise_for_status()
+for issue in issues.json():
+    if "test" in issue["labels"]:
+        print(issue["iid"])
+' | sort -n
+}
+
+#github
+list_issues()
+{
+python -c '
+
+# replace this with one of your oauth keys from github (no permissions needed)
+oauth = "0123456789abcdef0123456789abcdef01234567"
+
+import requests
+issues = requests.get("https://api.github.com/search/issues", params={"q": "repo:'$1' type:pr state:open label:test"}, headers={"Authorization": "token %s" % oauth, "Accept": "application/vnd.github.v3+json"})
+issues.raise_for_status()
+for issue in issues.json["items"]:
+    print(issue["number"])
+' | sort -n
+}
+
+
+server_main_branch=origin/master
+
+server_extra_branches=(
+    $(list_issues <repo id> | sed 's|^|origin/merge-requests/|;')
+)
+
+client_main_branch=origin/master
+
+client_extra_branches=(
+    $(list_issues <repo id> | sed 's|^|origin/merge-requests/|;')
+)
+unset list_issues
+
+motd=../server-data/npc/commands/motd-debug-text.txt
+
+expected_life=60
+trouble_sleep=60
+normal_sleep=5
+
+ulimit -c unlimited
