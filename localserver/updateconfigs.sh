@@ -18,3 +18,8 @@ if [ "${VER}" -lt "2" ]; then
     cp conf/* ${CONFDIR}/conf/import
     echo "2" >versions/confver
 fi
+
+if [ "${VER}" -lt "3" ]; then
+    cp conf/constants.conf ${CONFDIR}/conf/import/
+    echo "3" >versions/confver
+fi
