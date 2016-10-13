@@ -23,3 +23,8 @@ if [ "${VER}" -lt "3" ]; then
     cp conf/constants.conf ${CONFDIR}/conf/import/
     echo "3" >versions/confver
 fi
+
+if [ "${VER}" -lt "4" ]; then
+    cp -f npc/motd-* ${CONFDIR}/npc/commands/
+    echo "4" >versions/confver
+fi
