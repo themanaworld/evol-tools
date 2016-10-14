@@ -19,7 +19,7 @@ from code.server.evol.mobdb import convertMobDb
 from code.server.evol.mobskilldb import convertMobSkillDb
 from code.server.evol.npcs import createMainScript, convertNpcs
 from code.server.questsdb import convertQuestsDb
-from code.serverutils import cleanServerData
+from code.server.utils import cleanServerData
 
 def serverEvolMain():
     cleanServerData()

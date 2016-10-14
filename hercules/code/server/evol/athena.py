@@ -7,7 +7,7 @@ import re
 
 from code.stringutils import stripNewLine, removeGat
 from code.server.dbitem import Item
-from code.server.dbskill import Skill, skills
+from code.server.dbskill import Skill
 from code.server.dbuser import User
 
 comaSplit = re.compile(",")
@@ -89,7 +89,7 @@ def parseVars(line, data):
 
     rows = spaceSplit.split(data)
     if len(rows) < 1:
-        return skills
+        return variables
 
     for data2 in rows:
         if data2 == "":

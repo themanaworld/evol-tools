@@ -20,7 +20,7 @@ from code.server.tmw.itemdb import convertItemDb
 from code.server.tmw.mobdb import convertMobDb
 from code.server.tmw.mobskilldb import convertMobSkillDb
 from code.server.tmw.npcs import createMainScript, convertNpcs
-from code.serverutils import cleanServerData
+from code.server.utils import cleanServerData
 
 def serverTmwMain(isNew):
     try:
