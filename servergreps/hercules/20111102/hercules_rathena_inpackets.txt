@@ -1,5 +1,0 @@
-Wrong preffered packet for function clif->pWantToConnection: 0835 vs 083c
-Wrong preffered packet for function clif->pTickSend: 0899 vs 0817
-Wrong preffered packet for function clif->pWalkToXY: 0892 vs 0364
-Exists only in rAthena: 012f clif->pOpenVending
-Wrong function name for packet 0835: clif->pWantToConnection vs clif->pReqOpenBuyingStore

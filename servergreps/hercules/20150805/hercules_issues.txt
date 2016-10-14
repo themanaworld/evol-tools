@@ -1,1 +1,0 @@
-Server code warning: function clif->pPartyRecruitRegisterReq hidden in server code but can be used older packets definition 08e5

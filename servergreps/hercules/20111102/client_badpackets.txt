@@ -1,1 +1,0 @@
-0835 CMSG_BUYINGSTORE_CREATE           client: clif->pReqOpenBuyingStore           server: clif->pWantToConnection             Change id to 0835

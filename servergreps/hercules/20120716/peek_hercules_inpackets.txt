@@ -1,6 +1,0 @@
-Exists only in Hercules: 09a1
-Wrong function name for packet 0363: clif->pDull // CZ_JOIN_BATTLE_FIELD vs clif->pWantToConnection
-Wrong function name for packet 0436: clif->pDull // CZ_GANGSI_RANK vs clif->pFriendsListAdd
-Wrong function name for packet 0811: clif->pReqTradeBuyingStore vs clif->pSearchStoreInfo
-Wrong function name for packet 0819: clif->pSearchStoreInfo vs clif->pStoragePassword
-Wrong function name for packet 089f: clif->pStoragePassword vs clif->pTakeItem

@@ -1,3 +1,0 @@
-Useless packet 0970.
-Useless packet 0067.
-Useless packet 0061.

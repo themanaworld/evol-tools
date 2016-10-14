@@ -1,2 +1,0 @@
-01fd CMSG_NPC_REPAIR                   clif->pRepairItem                     15 vs    4
-0208 CMSG_FRIENDS_REQUEST_ACK          clif->pFriendsListReply               14 vs   11

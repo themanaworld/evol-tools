@@ -1,3 +1,0 @@
-Server code error: function clif->pReqCloseBuyingStore hidden in server code
-Server code error: function clif->pSearchStoreInfoNextPage hidden in server code
-Server code error: function clif->pReqClickBuyingStore hidden in server code

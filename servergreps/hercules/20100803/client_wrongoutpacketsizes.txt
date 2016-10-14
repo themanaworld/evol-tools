@@ -1,1 +1,0 @@
-0190 CMSG_SKILL_USE_POSITION_MORE      clif->pActionRequest                  90 vs   23

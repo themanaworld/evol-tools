@@ -1,2 +1,0 @@
-Server code warning: function clif->pSolveCharName hidden in server code but can be used older packets definition 00a2,0884,0368
-Server code warning: function clif->pPartyRecruitRegisterReq hidden in server code but can be used older packets definition 08e5

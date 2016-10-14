@@ -1,3 +1,0 @@
-Wrong preffered packet for function chr->parse_char_create_new_char: 0a39 vs 0970
-Exists only in brAthena: 0970 chr->parse_char_create_new_char
-Exists only in brAthena: 0a25 clif->pDull

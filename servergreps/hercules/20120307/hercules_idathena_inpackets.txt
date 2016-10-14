@@ -1,2 +1,0 @@
-Exists only in idAthena: 012f clif->pOpenVending
-Different packet size for packet 0365 clif->pPartyBookingRegisterReq: 18 vs 41

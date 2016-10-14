@@ -1,3 +1,0 @@
-Exists only in brAthena, but missing packet size: 08cf
-Exists only in brAthena, but missing packet size: 0908
-Exists only in brAthena, but missing packet size: 0a02

@@ -1,1 +1,0 @@
-0835 CMSG_BUYINGSTORE_CREATE           clif->pWantToConnection               -1 vs   19

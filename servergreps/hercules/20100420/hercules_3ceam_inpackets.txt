@@ -1,3 +1,0 @@
-Wrong preffered packet for function clif->pGMReqAccountName: 01df vs 07f5
-Different packet size for packet 023b clif->pStoragePassword: 36 vs 24
-Wrong function name for packet 07f5: clif->pGMFullStrip vs clif->pGMReqAccountName

@@ -1,9 +1,0 @@
-Exists only in idAthena: 011f
-Exists only in idAthena, but missing packet size: 08cf
-Exists only in idAthena, but missing packet size: 08d2
-Exists only in idAthena, but missing packet size: 0908
-Exists only in idAthena, but missing packet size: 0979
-Exists only in idAthena: 09a0
-Exists only in idAthena: 09b7
-Exists only in idAthena: 09b9
-Exists only in idAthena: 09c1

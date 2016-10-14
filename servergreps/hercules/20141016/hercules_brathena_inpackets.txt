@@ -1,2 +1,0 @@
-Exists only in brAthena: 0878 clif->pTakeItem
-Exists only in brAthena: 0924 clif->pGetCharNameRequest
