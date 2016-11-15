@@ -8,4 +8,4 @@ else
     export MANAPLUS="manaplus"
 fi
 
-${MANAPLUS} -d ../../client-data evol.manaplus
+${MANAPLUS} -u -d ../../client-data evol.manaplus
