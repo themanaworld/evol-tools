@@ -1,0 +1,29 @@
+For use this Hercule filetype and snippet, follow this 3 steps.
+
+First:
+Modify filetypes_extensions.conf. On Linux systems,
+this file is located at ~/.config/geany/filetypes_extensions.conf.
+If the file does not exist, copy the file
+filetypes_extensions.conf in your folder and skip this step.
+
+Once the file has been opened, add the below code to the file.
+
+(NOTE: “…” represents existing data in the file.)
+---------------------------------
+| [Extensions]                  |
+| ...                           |
+| Hercule=*.txt;                |
+| ...                           |
+|                               |
+| [Groups]                      |
+| ...                           |
+| Misc=...;Hercule;             |
+| ...                           |
+---------------------------------
+
+Second:
+Then add the file filetypes.Hercule.conf into your folder ~/.config/geany/filedefs/
+
+Third:
+Open the file snippets.conf and copy the [Hercule] sections
+at the end of your snippets file in ~/.config/geany/snippets.conf.
