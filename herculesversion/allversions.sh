@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function gendiff {
     ./packetversion.py "${1}" "${2}" > "${1}_${2}.txt"

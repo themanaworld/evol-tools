@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function its {
     itstool -o ../tools/lang_client/pot/$1.pot $1.xml

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export VER=$(cat versions/sqlver 2>/dev/null)
 export SQLDIR="../../server-data/sql-files/upgrades"

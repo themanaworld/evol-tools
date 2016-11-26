@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright (C) 2011-2012  Evol Online
 # Author: Andrei Karas (4144)

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export MANAPLUS="../../manaplus/src/manaplus"
 if [ -f "$MANAPLUS" ]; then
