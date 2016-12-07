@@ -83,6 +83,7 @@ function pull_all {
     cd ../
     ./status.sh
     cd server-data
+    make maps
 }
 
 function build_all {
