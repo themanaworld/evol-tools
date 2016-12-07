@@ -54,6 +54,8 @@ CLIENT_MAPS = 'maps'
 SERVER_WLK = 'data'
 SERVER_NPCS = 'npc'
 MOB_DB_CONF = 'db/re/mob_db.conf'
+MAP_CONF = 'conf/map/maps.conf'
+MAP_DB_CONF = 'db/map_index.txt'
 NPC_MOBS = '_mobs.txt'
 NPC_SAVES = '_savepoints.txt'
 NPC_WARPS = '_warps.txt'
@@ -385,6 +387,10 @@ def main(argv):
     npc_master = []
     map_basenames = []
 
+    map_conf = open(posixpath.join(server_data,MAP_CONF), 'w')
+    map_db = open(posixpath.join(server_data,MAP_DB_CONF), 'w')
+    map_conf.write("map_removed: (\n)\nmap_list: (\n")
+    map_count = 1
     for arg in os.listdir(tmx_dir):
         base, ext = posixpath.splitext(arg)
 
@@ -402,6 +408,11 @@ def main(argv):
             if os.path.isfile(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS)):
                 npc_master.append('@include "%s"\n' % posixpath.join(SERVER_NPCS, base, NPC_IMPORTS))
 
+            
+            map_db.write('%s %d\n' % (arg.split('.')[0], map_count))
+            map_conf.write('    "%s",\n' % (arg.split('.')[0]))
+            map_count += 1
+    map_conf.write(")\n")
     with open(posixpath.join(npc_dir, NPC_MASTER_IMPORTS), 'w') as out:
         out.write('// %s\n\n' % MESSAGE)
         npc_master.sort()
