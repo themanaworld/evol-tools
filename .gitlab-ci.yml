@@ -23,6 +23,8 @@ success:
   - echo "do nothing"
   image: debian:stable
   when: on_success
+  variables:
+    GIT_STRATEGY: none
 
 failure:
   stage: failure
@@ -30,3 +32,5 @@ failure:
   - echo "do nothing"
   image: debian:stable
   when: on_failure
+  variables:
+    GIT_STRATEGY: none
