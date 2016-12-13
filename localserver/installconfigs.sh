@@ -6,7 +6,6 @@ export NPC="$SD/npc"
 
 mkdir $CONF
 cp conf/* $CONF
-cp -f conf/inter_conf.txt $CONF
 cp -f ${SD}/conf/channels.conf.base ${SD}/conf/channels.conf
 cp -f npc/motd-* ${NPC}/commands/
 mkdir versions
