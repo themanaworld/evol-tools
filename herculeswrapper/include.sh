@@ -229,7 +229,7 @@ function git_merge {
         source ../tools/herculeswrapper/herc-map-wrapper-config
 
         run test -f $motd
-        echo -e 'function\tscript\tMOTD_debug_text\t{\n    setarray $Debug_Messages$,' > $motd
+        echo -e 'function\tscript\tMOTD_debug_text\t{\n    setarray $@Debug_Messages$[0],' > $motd
         run git fetch --all
         run git reset --hard $server_main_branch
         info 'commit=$(' git rev-parse --verify -q $server_main_branch ')'
