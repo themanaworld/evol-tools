@@ -99,17 +99,12 @@ class Warp(Object):
         'dest_map',
         'dest_x',
         'dest_y',
-    ) + other_warp_fields
-
-class AniWarp(Object):
-    __slots__ = (
-        'dest_map',
-        'dest_x',
-        'dest_y',
         'npc_id', 
         'trigger_x',
         'trigger_y',
     ) + other_warp_fields
+    def __init__(self):
+        self.npc_id = 'WARP'
 
 class ContentHandler(xml.sax.ContentHandler):
     __slots__ = (
@@ -238,12 +233,6 @@ class ContentHandler(xml.sax.ContentHandler):
                     y += h/2
                     w -= 1
                     h -= 1
-                elif obj_type == 'ani_warp':
-                    self.object = AniWarp()
-                    x += w/2
-                    y += h/2
-                    w -= 1
-                    h -= 1
                 else:
                     if obj_type not in other_object_types:
                         print('Unknown object type:', obj_type, file=sys.stderr)
@@ -313,26 +302,27 @@ class ContentHandler(xml.sax.ContentHandler):
                 )
                 self.save_cnt = True
             elif isinstance(obj, Warp):
-                obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                y_offset = int(self.heightmap[((obj.y * self.width) + obj.x)])/2
-                self.warps.write(
-                    SEPARATOR.join([
-                        '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y + y_offset)),
-                        'warp\t',
-                        '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
-                    ])
-                )
-                self.warp_cnt = True
-            elif isinstance(obj, AniWarp):
-                obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                self.warps.write(
-                    SEPARATOR.join([
-                        '%s,%d,%d,0\tscript\t%s_h\tNPC_HIDDEN,0,0,{\n' % (self.base, obj.x, obj.y, obj_name),
-                        'OnTouch:\n    warp "%s", %d, %d;\nclose;\n\nOnUnTouch:\n    doevent "%s::OnUnTouch";\n}\n' % (obj.dest_map, obj.dest_x, obj.dest_y, obj_name),
-                        '%s,%d,%d,0\tscript\t%s\t%s,%d,%d,{\n    close;\nOnTouch:\n    doorTouch;\n\nOnUnTouch:\n    doorUnTouch;\n\nOnTimer340:\n    doorTimer;\n\nOnInit:\n    doorInit;\n}\n\n' % (self.base, obj.x, obj.y, obj_name, obj.npc_id, obj.trigger_x, obj.trigger_y),
-                    ])
-                )
-                self.warp_cnt = True
+                if (obj.npc_id == u'WARP'):
+                    obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
+                    y_offset = int(self.heightmap[((obj.y * self.width) + obj.x)])/2
+                    self.warps.write(
+                        SEPARATOR.join([
+                            '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y + y_offset)),
+                            'warp\t',
+                            '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
+                        ])
+                    )
+                    self.warp_cnt = True
+                else:
+                    obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
+                    self.warps.write(
+                        SEPARATOR.join([
+                            '%s,%d,%d,0\tscript\t%s_h\tNPC_HIDDEN,0,0,{\n' % (self.base, obj.x, obj.y, obj_name),
+                            'OnTouch:\n    warp "%s", %d, %d;\nclose;\n\nOnUnTouch:\n    doevent "%s::OnUnTouch";\n}\n' % (obj.dest_map, obj.dest_x, obj.dest_y, obj_name),
+                            '%s,%d,%d,0\tscript\t%s\t%s,%d,%d,{\n    close;\nOnTouch:\n    doorTouch;\n\nOnUnTouch:\n    doorUnTouch;\n\nOnTimer340:\n    doorTimer;\n\nOnInit:\n    doorInit;\n}\n\n' % (self.base, obj.x, obj.y, obj_name, obj.npc_id, obj.trigger_x, obj.trigger_y),
+                        ])
+                    )
+                    self.warp_cnt = True
 
         if name == u'data':
             if self.state is State.DATA:
