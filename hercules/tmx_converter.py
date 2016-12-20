@@ -313,7 +313,7 @@ class ContentHandler(xml.sax.ContentHandler):
                         ])
                     )
                     self.warp_cnt = True
-                else:
+                elif (not obj.npc_id == u'SCRIPT'):
                     obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
                     self.warps.write(
                         SEPARATOR.join([
