@@ -487,12 +487,6 @@ msgstr ""
 msgid "'That', as you call it, is a @@. There are plenty on this island!"
 msgstr ""
 
-#. code: l("'k hoar ui wel... (Vlaams)"),
-#: npc/functions/asklanguage.txt:19
-#, no-c-format
-msgid "'k hoar ui wel... (Vlaams)"
-msgstr ""
-
 #. code: 344: (%s)
 #: conf/messages.conf:342
 msgid "(%s) "
@@ -2910,10 +2904,10 @@ msgstr ""
 msgid "But... If she has amnesia like Julia said... We don't need to worry about her. At least not yet.#0"
 msgstr ""
 
-#. code: l("By the way, I am Lozerk. Lieutenant Lozerk.");
+#. code: l("By the way, I'm Lozerk. Lieutenant Lozerk.");
 #: npc/001-2-33/lozerk.txt:26
 #, no-c-format
-msgid "By the way, I am Lozerk. Lieutenant Lozerk."
+msgid "By the way, I'm Lozerk. Lieutenant Lozerk."
 msgstr ""
 
 #. code: l("By the way, did you ever talk with Don?"),
@@ -4955,10 +4949,10 @@ msgstr ""
 msgid "Enora needs them."
 msgstr ""
 
-#. code: rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here")),
+#. code: rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here.")),
 #: npc/001-2-33/lozerk.txt:101
 #, no-c-format
-msgid "Enora sent me here"
+msgid "Enora sent me here."
 msgstr ""
 
 #. code: rif (.@enora == 7, l("Enora wants her potions.")),
@@ -5024,18 +5018,6 @@ msgstr ""
 #. code: 1036: Error reading groups.conf, reload failed.
 #: conf/messages.conf:828
 msgid "Error reading groups.conf, reload failed."
-msgstr ""
-
-#. code: l("Et escolto (Català)"),
-#: npc/functions/asklanguage.txt:23
-#, no-c-format
-msgid "Et escolto (Català)"
-msgstr ""
-
-#. code: l("Eu te ouço... (Português)"),
-#: npc/functions/asklanguage.txt:17
-#, no-c-format
-msgid "Eu te ouço... (Português)"
 msgstr ""
 
 #. code: 001-1,113,120,0	script	Eugene	NPC_EUGENE,{
@@ -7738,12 +7720,6 @@ msgstr ""
 msgid "I have your pass from the Merchant Guild."
 msgstr ""
 
-#. code: setarray .@messages$[0], l("I hear you... (English)"),
-#: npc/functions/asklanguage.txt:13
-#, no-c-format
-msgid "I hear you... (English)"
-msgstr ""
-
 #. code: rif(.@q3 == 3 && .@q2 == 0, l("I heard rumors about some old hostilities between you and Gado. Are they true?")),
 #: npc/000-2-0/julia.txt:244
 #, no-c-format
@@ -8828,16 +8804,10 @@ msgstr ""
 msgid "Ianus is from the Legion of Aemil, don't compare me to this brigand."
 msgstr ""
 
-#. code: l("Ich höre euch... (Deutsch)"),
-#: npc/functions/asklanguage.txt:18
-#, no-c-format
-msgid "Ich höre euch... (Deutsch)"
-msgstr ""
-
-#. code: l("If Enora thinks this is the right place for you, then she's probably be right. She's a lieutenant of the Legion, you know?"),
+#. code: l("If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"),
 #: npc/001-2-33/lozerk.txt:24
 #, no-c-format
-msgid "If Enora thinks this is the right place for you, then she's probably be right. She's a lieutenant of the Legion, you know?"
+msgid "If Enora thinks this is the right place for you, then she's probably be right. Did you know she's a lieutenant of the Legion?"
 msgstr ""
 
 #. code: l("If Enora wants her sword now, I need to ask for your help.");
@@ -9018,12 +8988,6 @@ msgstr ""
 #: npc/000-1/lean.txt:37
 #, no-c-format
 msgid "If you're looking for us there, most of us will be at the tavern of the Red Plush, at the bar counter, for Silvio's case..."
-msgstr ""
-
-#. code: l("Ik kan je horen... (Nederlands)"),
-#: npc/functions/asklanguage.txt:22
-#, no-c-format
-msgid "Ik kan je horen... (Nederlands)"
 msgstr ""
 
 #. code: 149: Impossible to increase the number/value.
@@ -9742,12 +9706,6 @@ msgstr ""
 msgid "Janus!"
 msgstr ""
 
-#. code: l("Je vous entends... (Français)"),
-#: npc/functions/asklanguage.txt:14
-#, no-c-format
-msgid "Je vous entends... (Français)"
-msgstr ""
-
 #. code: 001-2-28,52,32,0	script	Jenna#001-2-28	NPC_RAIJIN_FEMALE_WAITRESS,1,1,{
 #: npc/001-2-28/jenna.txt:6
 #, no-c-format
@@ -10307,10 +10265,16 @@ msgstr ""
 msgid "Look who is back..."
 msgstr ""
 
-#. code: mesq l("Look who we have here, did you come for a training session?");
+#. code: mesq lg("Look who we have here, did you come for a training session?");
 #: npc/001-2-34/samantha.txt:8
 #, no-c-format
-msgid "Look who we have here, did you come for a training session?"
+msgid "Look who we have here, did you come for a training session?#0"
+msgstr ""
+
+#. code: mesq lg("Look who we have here, did you come for a training session?");
+#: npc/001-2-34/samantha.txt:8
+#, no-c-format
+msgid "Look who we have here, did you come for a training session?#1"
 msgstr ""
 
 #. code: mesq l("Look, here he is!");
@@ -10638,12 +10602,6 @@ msgstr ""
 #: npc/commands/scheduled-broadcasts.txt:83
 #, no-c-format
 msgid "Message:"
-msgstr ""
-
-#. code: l("Mi aŭdas vin... (Angle)");
-#: npc/functions/asklanguage.txt:24
-#, no-c-format
-msgid "Mi aŭdas vin... (Angle)"
 msgstr ""
 
 #. code: 633: Minstrel
@@ -12233,16 +12191,28 @@ msgstr ""
 msgid "Oh, wait a second..."
 msgstr ""
 
-#. code: l("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
+#. code: lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
 #: npc/001-2-33/lozerk.txt:29
 #, no-c-format
-msgid "Oh, you are that person! You were stranded in the seas for a while, right? You look like it."
+msgid "Oh, you are that person! You were stranded in the seas for a while, right? You look like it.#0"
 msgstr ""
 
-#. code: l("Oh, you were sent by Enora!"),
+#. code: lg("Oh, you are that person! You were stranded in the seas for a while, right? You look like it."),
+#: npc/001-2-33/lozerk.txt:29
+#, no-c-format
+msgid "Oh, you are that person! You were stranded in the seas for a while, right? You look like it.#1"
+msgstr ""
+
+#. code: lg("Oh, you were sent by Enora!"),
 #: npc/001-2-33/lozerk.txt:23
 #, no-c-format
-msgid "Oh, you were sent by Enora!"
+msgid "Oh, you were sent by Enora!#0"
+msgstr ""
+
+#. code: lg("Oh, you were sent by Enora!"),
+#: npc/001-2-33/lozerk.txt:23
+#, no-c-format
+msgid "Oh, you were sent by Enora!#1"
 msgstr ""
 
 #. code: l("Oh..."),
@@ -15569,12 +15539,6 @@ msgstr ""
 msgid "Swordsman"
 msgstr ""
 
-#. code: l("Słyszę cię... (Polski)"),
-#: npc/functions/asklanguage.txt:20
-#, no-c-format
-msgid "Słyszę cię... (Polski)"
-msgstr ""
-
 #. code: mesq strtoupper(strcharinfo(0)) + "? " + l("THAT'S A NICE NAME!");
 #: npc/000-1/darlin.txt:77
 #, no-c-format
@@ -15707,12 +15671,6 @@ msgstr ""
 #: npc/000-1/muller.txt:64
 #, no-c-format
 msgid "Task is done."
-msgstr ""
-
-#. code: l("Te oigo... (Español)"),
-#: npc/functions/asklanguage.txt:16
-#, no-c-format
-msgid "Te oigo... (Español)"
 msgstr ""
 
 #. code: Name: "Teal Cotton Dye"
@@ -17577,12 +17535,6 @@ msgstr ""
 #: npc/000-1/couwan.txt:40
 #, no-c-format
 msgid "Very nice, indeed!"
-msgstr ""
-
-#. code: l("Vi sento... (Italiano)"),
-#: npc/functions/asklanguage.txt:21
-#, no-c-format
-msgid "Vi sento... (Italiano)"
 msgstr ""
 
 #. code: l("Visited Artis at least once"), 1;
@@ -21535,78 +21487,6 @@ msgstr ""
 msgid "fisherman"
 msgstr ""
 
-#. code: l("flags/ca"),
-#: npc/functions/asklanguage.txt:54
-#, no-c-format
-msgid "flags/ca"
-msgstr ""
-
-#. code: l("flags/de"),
-#: npc/functions/asklanguage.txt:49
-#, no-c-format
-msgid "flags/de"
-msgstr ""
-
-#. code: setarray .@flags$[0],    l("flags/en"),
-#: npc/functions/asklanguage.txt:44
-#, no-c-format
-msgid "flags/en"
-msgstr ""
-
-#. code: l("flags/eo");
-#: npc/functions/asklanguage.txt:55
-#, no-c-format
-msgid "flags/eo"
-msgstr ""
-
-#. code: l("flags/es"),
-#: npc/functions/asklanguage.txt:47
-#, no-c-format
-msgid "flags/es"
-msgstr ""
-
-#. code: l("flags/fr"),
-#: npc/functions/asklanguage.txt:45
-#, no-c-format
-msgid "flags/fr"
-msgstr ""
-
-#. code: l("flags/it"),
-#: npc/functions/asklanguage.txt:52
-#, no-c-format
-msgid "flags/it"
-msgstr ""
-
-#. code: l("flags/nl_BE"),
-#: npc/functions/asklanguage.txt:53
-#, no-c-format
-msgid "flags/nl_BE"
-msgstr ""
-
-#. code: l("flags/pl"),
-#: npc/functions/asklanguage.txt:51
-#, no-c-format
-msgid "flags/pl"
-msgstr ""
-
-#. code: l("flags/pt_BR"),
-#: npc/functions/asklanguage.txt:48
-#, no-c-format
-msgid "flags/pt_BR"
-msgstr ""
-
-#. code: l("flags/ru"),
-#: npc/functions/asklanguage.txt:46
-#, no-c-format
-msgid "flags/ru"
-msgstr ""
-
-#. code: l("flags/vls"),
-#: npc/functions/asklanguage.txt:50
-#, no-c-format
-msgid "flags/vls"
-msgstr ""
-
 #. code: 1334: garment,
 #: conf/messages.conf:1315
 msgid "garment, "
@@ -21897,12 +21777,6 @@ msgstr ""
 #. code: 345: | Party: '%s'
 #: conf/messages.conf:343
 msgid "| Party: '%s' "
-msgstr ""
-
-#. code: l("Да я вас слышу... (Русский)"),
-#: npc/functions/asklanguage.txt:15
-#, no-c-format
-msgid "Да я вас слышу... (Русский)"
 msgstr ""
 
 #. code: npctalkonce l("← Exit");
