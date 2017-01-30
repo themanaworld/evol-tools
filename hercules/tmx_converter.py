@@ -4,6 +4,7 @@
 ##    tmx_converter.py - Extract walkmap, warp, and spawn information from maps.
 ##
 ##    Copyright © 2012 Ben Longbons <b.r.longbons@gmail.com>
+##    Copyright © 2016-2017 The Mana World Developers
 ##
 ##    This file is part of The Mana World
 ##
@@ -381,7 +382,7 @@ def main(argv):
     map_db = open(posixpath.join(server_data,MAP_DB_CONF), 'w')
     map_conf.write("map_removed: (\n)\nmap_list: (\n")
     map_count = 1
-    for arg in os.listdir(tmx_dir):
+    for arg in sorted(os.listdir(tmx_dir)):
         base, ext = posixpath.splitext(arg)
 
         if ext == '.tmx':
