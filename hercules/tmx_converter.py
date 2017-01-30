@@ -207,21 +207,25 @@ class ContentHandler(xml.sax.ContentHandler):
         elif self.state is State.FINAL:
             if name == u'object':
                 obj_type = attr[u'type'].lower()
-                x = int(attr[u'x']) / TILESIZE;
-                y = int(attr[u'y']) / TILESIZE;
-                w = int(attr.get(u'width', 0)) / TILESIZE;
-                h = int(attr.get(u'height', 0)) / TILESIZE;
+                x = int(int(attr[u'x']) / TILESIZE);
+                y = int(int(attr[u'y']) / TILESIZE);
+                w = int(int(attr.get(u'width', 0)) / TILESIZE);
+                h = int(int(attr.get(u'height', 0)) / TILESIZE);
                 # I'm not sure exactly what the w/h shrinking is for,
                 # I just copied it out of the old converter.
                 # I know that the x += w/2 is to get centers, though.
                 if obj_type == 'spawn':
                     self.object = Mob()
-                    if w > 1:
-                        w -= 1
-                    if h > 1:
-                        h -= 1
-                    x += w/2
-                    y += h/2
+                    w =  int((w - 1) / 2)
+                    h =  int((h - 1) / 2)
+                    if w < 0:
+                        w = 0
+                    else:
+                        x += w
+                    if h < 0:
+                        h = 0
+                    else:
+                        y += h
                 elif obj_type == 'save':
                     self.object = Save()
                     x += w/2
