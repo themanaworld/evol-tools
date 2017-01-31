@@ -253,6 +253,19 @@ function git_merge {
         do
             try_merge $branch
         done
+
+        run cd $evol_music
+
+        run git fetch --all
+        run git reset --hard $music_main_branch
+        info 'commit=$(' git rev-parse --verify -q $music_main_branch ')'
+        commit=$(git rev-parse --verify -q $music_main_branch)
+        info2 music base $music_main_branch $commit >> $motd
+        for branch in ${music_extra_branches[@]}
+        do
+            try_merge $branch
+        done
+
         echo '"End of Commits";' >> $motd
         echo -e '    return;\n}' >> $motd
 

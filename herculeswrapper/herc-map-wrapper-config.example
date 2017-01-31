@@ -12,6 +12,7 @@ exit 1
 
 server_data=../../server-data
 client_data=../client-data
+evol_music=../music
 tmw_tools=../tools
 
 #gitlab
@@ -57,6 +58,12 @@ server_extra_branches=(
 client_main_branch=origin/master
 
 client_extra_branches=(
+    $(list_issues <repo id> | sed 's|^|origin/merge-requests/|;')
+)
+
+music_main_branch=origin/master
+
+music_extra_branches=(
     $(list_issues <repo id> | sed 's|^|origin/merge-requests/|;')
 )
 unset list_issues
