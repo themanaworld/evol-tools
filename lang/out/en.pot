@@ -9,17 +9,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. code: 915:       BLvl: %d | Job: %s (Lvl: %d)
-#: conf/messages.conf:674
+#: conf/messages.conf:677
 msgid "      BLvl: %d | Job: %s (Lvl: %d)"
 msgstr ""
 
 #. code: 916:       Party: '%s' | Guild: '%s'
-#: conf/messages.conf:675
+#: conf/messages.conf:678
 msgid "      Party: '%s' | Guild: '%s'"
 msgstr ""
 
 #. code: 1115:    Users: %d/%d | Password: %s | Public: %s
-#: conf/messages.conf:909
+#: conf/messages.conf:912
 msgid "   Users: %d/%d | Password: %s | Public: %s"
 msgstr ""
 
@@ -29,47 +29,47 @@ msgid "  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4> <b
 msgstr ""
 
 #. code: 985:   <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>).
-#: conf/messages.conf:706
+#: conf/messages.conf:709
 msgid "  <identify_flag> <refine> <attribute> <card1> <card2> <card3> <card4>)."
 msgstr ""
 
 #. code: 902:   @send <packet hex number> {<value>}*
-#: conf/messages.conf:651
+#: conf/messages.conf:654
 msgid "  @send <packet hex number> {<value>}*"
 msgstr ""
 
 #. code: 901:   @send len <packet hex number>
-#: conf/messages.conf:650
+#: conf/messages.conf:653
 msgid "  @send len <packet hex number>"
 msgstr ""
 
 #. code: 903:   Value: <type=B(default),W,L><number> or S<length>"<string>"
-#: conf/messages.conf:652
+#: conf/messages.conf:655
 msgid "  Value: <type=B(default),W,L><number> or S<length>\"<string>\""
 msgstr ""
 
 #. code: 1281:  - Available in shops only.
-#: conf/messages.conf:1220
+#: conf/messages.conf:1223
 msgid " - Available in shops only."
 msgstr ""
 
 #. code: 1287:  - Common mobs with highest drop chance (only max %d are listed):
-#: conf/messages.conf:1228
+#: conf/messages.conf:1231
 msgid " - Common mobs with highest drop chance (only max %d are listed):"
 msgstr ""
 
 #. code: 1286:  - Item is not dropped by any mobs.
-#: conf/messages.conf:1227
+#: conf/messages.conf:1230
 msgid " - Item is not dropped by any mobs."
 msgstr ""
 
 #. code: 1282:  - Maximal monsters drop chance: %02.02f%%
-#: conf/messages.conf:1221
+#: conf/messages.conf:1224
 msgid " - Maximal monsters drop chance: %02.02f%%"
 msgstr ""
 
 #. code: 1283:  - Monsters don't drop this item.
-#: conf/messages.conf:1222
+#: conf/messages.conf:1225
 msgid " - Monsters don't drop this item."
 msgstr ""
 
@@ -99,27 +99,27 @@ msgid " -- Player %s invites %s to duel --"
 msgstr ""
 
 #. code: 1352:  -> (card(s):
-#: conf/messages.conf:1333
+#: conf/messages.conf:1336
 msgid " -> (card(s): "
 msgstr ""
 
 #. code: 1350:  -> (crafted item, creator id: %u, star crumbs %d, element %d)
-#: conf/messages.conf:1331
+#: conf/messages.conf:1334
 msgid " -> (crafted item, creator id: %u, star crumbs %d, element %d)"
 msgstr ""
 
 #. code: 1348:  -> (pet egg, pet id: %u, named)
-#: conf/messages.conf:1329
+#: conf/messages.conf:1332
 msgid " -> (pet egg, pet id: %u, named)"
 msgstr ""
 
 #. code: 1349:  -> (pet egg, pet id: %u, unnamed)
-#: conf/messages.conf:1330
+#: conf/messages.conf:1333
 msgid " -> (pet egg, pet id: %u, unnamed)"
 msgstr ""
 
 #. code: 1351:  -> (produced item, creator id: %u)
-#: conf/messages.conf:1332
+#: conf/messages.conf:1335
 msgid " -> (produced item, creator id: %u)"
 msgstr ""
 
@@ -134,37 +134,37 @@ msgid " <- Player %s has left the duel --"
 msgstr ""
 
 #. code: 1244:  ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-#: conf/messages.conf:1159
+#: conf/messages.conf:1162
 msgid " ATK:%d~%d  Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)"
 msgstr ""
 
 #. code: 1291:  ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)
-#: conf/messages.conf:1236
+#: conf/messages.conf:1239
 msgid " ATK:%d~%d MATK:%d~%d Range:%d~%d~%d  Size:%s  Race: %s  Element: %s (Lv:%d)"
 msgstr ""
 
 #. code: 1243:  DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d
-#: conf/messages.conf:1158
+#: conf/messages.conf:1161
 msgid " DEF:%d  MDEF:%d  STR:%d  AGI:%d  VIT:%d  INT:%d  DEX:%d  LUK:%d"
 msgstr ""
 
 #. code: 1245:  Drops:
-#: conf/messages.conf:1160
+#: conf/messages.conf:1163
 msgid " Drops:"
 msgstr ""
 
 #. code: 1242:  Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d
-#: conf/messages.conf:1157
+#: conf/messages.conf:1160
 msgid " Lv:%d  HP:%d  Base EXP:%u  Job EXP:%u  HIT:%d  FLEE:%d"
 msgstr ""
 
 #. code: 1247:  MVP Bonus EXP:%u
-#: conf/messages.conf:1162
+#: conf/messages.conf:1165
 msgid " MVP Bonus EXP:%u"
 msgstr ""
 
 #. code: 1248:  MVP Items:
-#: conf/messages.conf:1163
+#: conf/messages.conf:1166
 msgid " MVP Items:"
 msgstr ""
 
@@ -185,18 +185,18 @@ msgid " and %d seconds"
 msgstr ""
 
 #. code: 1333:  | equipped:
-#: conf/messages.conf:1314
+#: conf/messages.conf:1317
 msgid " | equipped: "
 msgstr ""
 
 #. code: l("@@, I like this name!", strcharinfo(0)),
-#: npc/001-2-19/lloyd.txt:71
+#: npc/001-2-19/lloyd.txt:76
 #, no-c-format
 msgid "\"@@\", I like this name!"
 msgstr ""
 
 #. code: 1197: "@alootid reset" will clear your autolootitem list.
-#: conf/messages.conf:1069
+#: conf/messages.conf:1072
 msgid "\"@alootid reset\" will clear your autolootitem list."
 msgstr ""
 
@@ -236,7 +236,7 @@ msgid "%d hours"
 msgstr ""
 
 #. code: 1354: %d item(s) found in %d %s slots.
-#: conf/messages.conf:1335
+#: conf/messages.conf:1338
 msgid "%d item(s) found in %d %s slots."
 msgstr ""
 
@@ -291,52 +291,52 @@ msgid "%d results found."
 msgstr ""
 
 #. code: 1001: %d: Body Armor
-#: conf/messages.conf:739
+#: conf/messages.conf:742
 msgid "%d: Body Armor"
 msgstr ""
 
 #. code: 999: %d: Garment
-#: conf/messages.conf:737
+#: conf/messages.conf:740
 msgid "%d: Garment"
 msgstr ""
 
 #. code: 1000: %d: Left Accessory
-#: conf/messages.conf:738
+#: conf/messages.conf:741
 msgid "%d: Left Accessory"
 msgstr ""
 
 #. code: 1002: %d: Left Hand
-#: conf/messages.conf:740
+#: conf/messages.conf:743
 msgid "%d: Left Hand"
 msgstr ""
 
 #. code: 997: %d: Lower Headgear
-#: conf/messages.conf:735
+#: conf/messages.conf:738
 msgid "%d: Lower Headgear"
 msgstr ""
 
 #. code: 1006: %d: Mid Headgear
-#: conf/messages.conf:744
+#: conf/messages.conf:747
 msgid "%d: Mid Headgear"
 msgstr ""
 
 #. code: 1004: %d: Right Accessory
-#: conf/messages.conf:742
+#: conf/messages.conf:745
 msgid "%d: Right Accessory"
 msgstr ""
 
 #. code: 998: %d: Right Hand
-#: conf/messages.conf:736
+#: conf/messages.conf:739
 msgid "%d: Right Hand"
 msgstr ""
 
 #. code: 1003: %d: Shoes
-#: conf/messages.conf:741
+#: conf/messages.conf:744
 msgid "%d: Shoes"
 msgstr ""
 
 #. code: 1005: %d: Top Headgear
-#: conf/messages.conf:743
+#: conf/messages.conf:746
 msgid "%d: Top Headgear"
 msgstr ""
 
@@ -346,12 +346,12 @@ msgid "%s :Main: %s"
 msgstr ""
 
 #. code: 1376: %s data type is not supported :%u
-#: conf/messages.conf:1367
+#: conf/messages.conf:1370
 msgid "%s data type is not supported :%u"
 msgstr ""
 
 #. code: 1404: %s failed
-#: conf/messages.conf:1423
+#: conf/messages.conf:1426
 msgid "%s failed"
 msgstr ""
 
@@ -361,7 +361,7 @@ msgid "%s failed."
 msgstr ""
 
 #. code: 1389: %s failed. Player not found.
-#: conf/messages.conf:1388
+#: conf/messages.conf:1391
 msgid "%s failed. Player not found."
 msgstr ""
 
@@ -381,7 +381,7 @@ msgid "%s is Unknown Command."
 msgstr ""
 
 #. code: 1375: %s is empty
-#: conf/messages.conf:1366
+#: conf/messages.conf:1369
 msgid "%s is empty"
 msgstr ""
 
@@ -391,22 +391,22 @@ msgid "%s recalled!"
 msgstr ""
 
 #. code: 1295: %s revision '%s' (src) / '%s' (scripts)
-#: conf/messages.conf:1242
+#: conf/messages.conf:1245
 msgid "%s revision '%s' (src) / '%s' (scripts)"
 msgstr ""
 
 #. code: 1289: %s spawns in:
-#: conf/messages.conf:1232
+#: conf/messages.conf:1235
 msgid "%s spawns in:"
 msgstr ""
 
 #. code: 1373: %s value is now :%d
-#: conf/messages.conf:1364
+#: conf/messages.conf:1367
 msgid "%s value is now :%d"
 msgstr ""
 
 #. code: 1374: %s value is now :%s
-#: conf/messages.conf:1365
+#: conf/messages.conf:1368
 msgid "%s value is now :%s"
 msgstr ""
 
@@ -416,17 +416,17 @@ msgid "%s: %d"
 msgstr ""
 
 #. code: 1401: '%s' Channel is password protected (usage: %s <#channel_name> <password>)
-#: conf/messages.conf:1412
+#: conf/messages.conf:1415
 msgid "'%s' Channel is password protected (usage: %s <#channel_name> <password>)"
 msgstr ""
 
 #. code: 1176: '%s' and his/her partner are now divorced.
-#: conf/messages.conf:1034
+#: conf/messages.conf:1037
 msgid "'%s' and his/her partner are now divorced."
 msgstr ""
 
 #. code: 1413: '%s' channel color updated to '%s'
-#: conf/messages.conf:1432
+#: conf/messages.conf:1435
 msgid "'%s' channel color updated to '%s' "
 msgstr ""
 
@@ -436,22 +436,22 @@ msgid "'%s' got %s's %s (chance: %0.02f%%)"
 msgstr ""
 
 #. code: 1447: '%s' is not a known channel option
-#: conf/messages.conf:1465
+#: conf/messages.conf:1468
 msgid "'%s' is not a known channel option"
 msgstr ""
 
 #. code: 1469: '%s' is not a known costume
-#: conf/messages.conf:1489
+#: conf/messages.conf:1492
 msgid "'%s' is not a known costume"
 msgstr ""
 
 #. code: 1380: '%s' is not a known permission.
-#: conf/messages.conf:1375
+#: conf/messages.conf:1378
 msgid "'%s' is not a known permission."
 msgstr ""
 
 #. code: 1175: '%s' is not married.
-#: conf/messages.conf:1033
+#: conf/messages.conf:1036
 msgid "'%s' is not married."
 msgstr ""
 
@@ -498,7 +498,7 @@ msgid "(@request): %s"
 msgstr ""
 
 #. code: 912: (CID:%d/AID:%d)
-#: conf/messages.conf:669
+#: conf/messages.conf:672
 msgid "(CID:%d/AID:%d) "
 msgstr ""
 
@@ -550,17 +550,17 @@ msgid ", and "
 msgstr ""
 
 #. code: 1409: - #%s ( %d users )
-#: conf/messages.conf:1428
+#: conf/messages.conf:1431
 msgid "- #%s ( %d users )"
 msgstr ""
 
 #. code: 1444: - %s
-#: conf/messages.conf:1462
+#: conf/messages.conf:1465
 msgid "- %s"
 msgstr ""
 
 #. code: 1445: - %s (%d)
-#: conf/messages.conf:1463
+#: conf/messages.conf:1466
 msgid "- %s (%d)"
 msgstr ""
 
@@ -587,7 +587,7 @@ msgid "- Astapolos"
 msgstr ""
 
 #. code: 1472: - Available Costumes
-#: conf/messages.conf:1492
+#: conf/messages.conf:1495
 msgid "- Available Costumes"
 msgstr ""
 
@@ -616,199 +616,199 @@ msgid "- Tibbo"
 msgstr ""
 
 #. code: 1463: - adds or removes <option name> with <option value> to <channel name> channel
-#: conf/messages.conf:1481
+#: conf/messages.conf:1484
 msgid "- adds or removes <option name> with <option value> to <channel name> channel"
 msgstr ""
 
 #. code: 1457: - bans <character name> from <channel name> channel
-#: conf/messages.conf:1475
+#: conf/messages.conf:1478
 msgid "- bans <character name> from <channel name> channel"
 msgstr ""
 
 #. code: 1428: - binds your global chat to <channel name>, making anything you type in global be sent to the channel
-#: conf/messages.conf:1447
+#: conf/messages.conf:1450
 msgid "- binds your global chat to <channel name>, making anything you type in global be sent to the channel"
 msgstr ""
 
 #. code: 1422: - changes <channel name> color to <color name>
-#: conf/messages.conf:1441
+#: conf/messages.conf:1444
 msgid "- changes <channel name> color to <color name>"
 msgstr ""
 
 #. code: 1416: - creates a new channel
-#: conf/messages.conf:1435
+#: conf/messages.conf:1438
 msgid "- creates a new channel"
 msgstr ""
 
 #. code: 1424: - leaves <channel name>
-#: conf/messages.conf:1443
+#: conf/messages.conf:1446
 msgid "- leaves <channel name>"
 msgstr ""
 
 #. code: 1459: - lists all banned characters from <channel name> channel
-#: conf/messages.conf:1477
+#: conf/messages.conf:1480
 msgid "- lists all banned characters from <channel name> channel"
 msgstr ""
 
 #. code: 1420: - lists colors available to select for custom channels
-#: conf/messages.conf:1439
+#: conf/messages.conf:1442
 msgid "- lists colors available to select for custom channels"
 msgstr ""
 
 #. code: 1418: - lists public channels
-#: conf/messages.conf:1437
+#: conf/messages.conf:1440
 msgid "- lists public channels"
 msgstr ""
 
 #. code: 1461: - unbans <character name> from <channel name> channel
-#: conf/messages.conf:1479
+#: conf/messages.conf:1482
 msgid "- unbans <character name> from <channel name> channel"
 msgstr ""
 
 #. code: 1468: - unbans everyone from <channel name>
-#: conf/messages.conf:1486
+#: conf/messages.conf:1489
 msgid "- unbans everyone from <channel name>"
 msgstr ""
 
 #. code: 1430: - unbinds your global chat from its attached channel (if binded)
-#: conf/messages.conf:1449
+#: conf/messages.conf:1452
 msgid "- unbinds your global chat from its attached channel (if binded)"
 msgstr ""
 
 #. code: 1471: -- %s
-#: conf/messages.conf:1491
+#: conf/messages.conf:1494
 msgid "-- %s"
 msgstr ""
 
 #. code: 1456: -- %s ban <channel name> <character name>
-#: conf/messages.conf:1474
+#: conf/messages.conf:1477
 msgid "-- %s ban <channel name> <character name>"
 msgstr ""
 
 #. code: 1458: -- %s banlist <channel name>
-#: conf/messages.conf:1476
+#: conf/messages.conf:1479
 msgid "-- %s banlist <channel name>"
 msgstr ""
 
 #. code: 1427: -- %s bindto <channel name>
-#: conf/messages.conf:1446
+#: conf/messages.conf:1449
 msgid "-- %s bindto <channel name>"
 msgstr ""
 
 #. code: 1415: -- %s create <channel name> <channel password>
-#: conf/messages.conf:1434
+#: conf/messages.conf:1437
 msgid "-- %s create <channel name> <channel password>"
 msgstr ""
 
 #. code: 1423: -- %s leave <channel name>
-#: conf/messages.conf:1442
+#: conf/messages.conf:1445
 msgid "-- %s leave <channel name>"
 msgstr ""
 
 #. code: 1417: -- %s list
-#: conf/messages.conf:1436
+#: conf/messages.conf:1439
 msgid "-- %s list"
 msgstr ""
 
 #. code: 1419: -- %s list colors
-#: conf/messages.conf:1438
+#: conf/messages.conf:1441
 msgid "-- %s list colors"
 msgstr ""
 
 #. code: 1421: -- %s setcolor <channel name> <color name>
-#: conf/messages.conf:1440
+#: conf/messages.conf:1443
 msgid "-- %s setcolor <channel name> <color name>"
 msgstr ""
 
 #. code: 1462: -- %s setopt <channel name> <option name> <option value>
-#: conf/messages.conf:1480
+#: conf/messages.conf:1483
 msgid "-- %s setopt <channel name> <option name> <option value>"
 msgstr ""
 
 #. code: 1460: -- %s unban <channel name> <character name>
-#: conf/messages.conf:1478
+#: conf/messages.conf:1481
 msgid "-- %s unban <channel name> <character name>"
 msgstr ""
 
 #. code: 1467: -- %s unbanall <channel name>
-#: conf/messages.conf:1485
+#: conf/messages.conf:1488
 msgid "-- %s unbanall <channel name>"
 msgstr ""
 
 #. code: 1429: -- %s unbind
-#: conf/messages.conf:1448
+#: conf/messages.conf:1451
 msgid "-- %s unbind"
 msgstr ""
 
 #. code: 1443: -- '%s' ban list
-#: conf/messages.conf:1461
+#: conf/messages.conf:1464
 msgid "-- '%s' ban list"
 msgstr ""
 
 #. code: 1448: -- Available options
-#: conf/messages.conf:1466
+#: conf/messages.conf:1469
 msgid "-- Available options"
 msgstr ""
 
 #. code: 1398: -- Displaying first %d partial matches
-#: conf/messages.conf:1407
+#: conf/messages.conf:1410
 msgid "-- Displaying first %d partial matches"
 msgstr ""
 
 #. code: 1379: -- Permission List
-#: conf/messages.conf:1374
+#: conf/messages.conf:1377
 msgid "-- Permission List"
 msgstr ""
 
 #. code: 1410: -- Public Channels
-#: conf/messages.conf:1429
+#: conf/messages.conf:1432
 msgid "-- Public Channels"
 msgstr ""
 
 #. code: 1383: -- User '%s' Permissions
-#: conf/messages.conf:1378
+#: conf/messages.conf:1381
 msgid "-- User '%s' Permissions"
 msgstr ""
 
 #. code: 1414: --- Available options:
-#: conf/messages.conf:1433
+#: conf/messages.conf:1436
 msgid "--- Available options:"
 msgstr ""
 
 #. code: 1113: ----- Chats in Map -----
-#: conf/messages.conf:907
+#: conf/messages.conf:910
 msgid "----- Chats in Map -----"
 msgstr ""
 
 #. code: 1100: ----- NPCs in Map -----
-#: conf/messages.conf:894
+#: conf/messages.conf:897
 msgid "----- NPCs in Map -----"
 msgstr ""
 
 #. code: 1098: ----- Players in Map -----
-#: conf/messages.conf:892
+#: conf/messages.conf:895
 msgid "----- Players in Map -----"
 msgstr ""
 
 #. code: 1332: ------ %s items list of '%s' ------
-#: conf/messages.conf:1313
+#: conf/messages.conf:1316
 msgid "------ %s items list of '%s' ------"
 msgstr ""
 
 #. code: 1041: ------ Map Flags ------
-#: conf/messages.conf:835
+#: conf/messages.conf:838
 msgid "------ Map Flags ------"
 msgstr ""
 
 #. code: 1039: ------ Map Info ------
-#: conf/messages.conf:833
+#: conf/messages.conf:836
 msgid "------ Map Info ------"
 msgstr ""
 
 #. code: l("...");
 #. code: l("..."),
-#: npc/001-2-19/lloyd.txt:25
 #: npc/001-2-12/oscar.txt:93
+#: npc/001-2-19/lloyd.txt:26
 #: npc/000-0-1/narrator.txt:20
 #: npc/000-0-1/narrator.txt:22
 #: npc/001-2-12/oscar.txt:98
@@ -1078,7 +1078,7 @@ msgid "A-hoy matey!"
 msgstr ""
 
 #. code: 1263: ATK: %d - MATK: %d~%d
-#: conf/messages.conf:1196
+#: conf/messages.conf:1199
 msgid "ATK: %d - MATK: %d~%d"
 msgstr ""
 
@@ -1204,7 +1204,7 @@ msgid "After choosing your weapon, you also need to know how to use it."
 msgstr ""
 
 #. code: l("After that, stay still and be patient, but also alert!");
-#: npc/001-2-4/books.txt:71
+#: npc/001-2-4/books.txt:73
 #, no-c-format
 msgid "After that, stay still and be patient, but also alert!"
 msgstr ""
@@ -1216,7 +1216,7 @@ msgid "After this small overview of Artis, what do you think of our city?"
 msgstr ""
 
 #. code: 1270: Agi: %d (%d~%d)
-#: conf/messages.conf:1205
+#: conf/messages.conf:1208
 msgid "Agi: %d (%d~%d)"
 msgstr ""
 
@@ -1350,7 +1350,7 @@ msgid "All characters recalled!"
 msgstr ""
 
 #. code: 1221: All dropped items have been cleaned up.
-#: conf/messages.conf:1116
+#: conf/messages.conf:1119
 msgid "All dropped items have been cleaned up."
 msgstr ""
 
@@ -1360,7 +1360,7 @@ msgid "All items have been repaired."
 msgstr ""
 
 #. code: 1162: All items stored.
-#: conf/messages.conf:1008
+#: conf/messages.conf:1011
 msgid "All items stored."
 msgstr ""
 
@@ -1378,6 +1378,13 @@ msgstr ""
 #: npc/000-0/sailors.txt:21
 #, no-c-format
 msgid "All of a sudden, you hear voices from above."
+msgstr ""
+
+#. code: l("All of my money."), -2,
+#: npc/functions/bank.txt:42
+#: npc/functions/bank.txt:93
+#, no-c-format
+msgid "All of my money."
 msgstr ""
 
 #. code: 20: All of your items have been removed.
@@ -1429,17 +1436,17 @@ msgid "All your... Fresh ingredients are ready to be cooked."
 msgstr ""
 
 #. code: 877: Alliances cannot be broken during Guild Wars!
-#: conf/messages.conf:637
+#: conf/messages.conf:640
 msgid "Alliances cannot be broken during Guild Wars!"
 msgstr ""
 
 #. code: 876: Alliances cannot be made during Guild Wars!
-#: conf/messages.conf:636
+#: conf/messages.conf:639
 msgid "Alliances cannot be made during Guild Wars!"
 msgstr ""
 
 #. code: 1088: AllowKS |
-#: conf/messages.conf:882
+#: conf/messages.conf:885
 msgid "AllowKS | "
 msgstr ""
 
@@ -1450,7 +1457,7 @@ msgid "Almost got it!"
 msgstr ""
 
 #. code: 1361: Already using this font.
-#: conf/messages.conf:1346
+#: conf/messages.conf:1349
 msgid "Already using this font."
 msgstr ""
 
@@ -1515,12 +1522,12 @@ msgid "Also, we took your yayed clothes, as they were... Yeyeye... In a bad shap
 msgstr ""
 
 #. code: 1210: Alternative clouds appeared.
-#: conf/messages.conf:1093
+#: conf/messages.conf:1096
 msgid "Alternative clouds appeared."
 msgstr ""
 
 #. code: 1209: Alternative clouds have disappeared.
-#: conf/messages.conf:1092
+#: conf/messages.conf:1095
 msgid "Alternative clouds have disappeared."
 msgstr ""
 
@@ -1560,7 +1567,7 @@ msgid "And I bet you don't know who is in charge of monitoring the security of t
 msgstr ""
 
 #. code: l("And I have no mention of a so called @@ on it!", strcharinfo(0));
-#: npc/001-2-19/lloyd.txt:83
+#: npc/001-2-19/lloyd.txt:88
 #, no-c-format
 msgid "And I have no mention of a so called \"@@\" on it!"
 msgstr ""
@@ -1681,7 +1688,7 @@ msgid "Anyway, can I help you in any way?"
 msgstr ""
 
 #. code: l("Anyway, he forgot his permit when he left the building."),
-#: npc/001-2-19/lloyd.txt:131
+#: npc/001-2-19/lloyd.txt:136
 #, no-c-format
 msgid "Anyway, he forgot his permit when he left the building."
 msgstr ""
@@ -1999,7 +2006,7 @@ msgid "As you want!"
 msgstr ""
 
 #. code: l("Ask other merchants, they might know where he is.");
-#: npc/001-2-19/lloyd.txt:150
+#: npc/001-2-19/lloyd.txt:155
 #, no-c-format
 msgid "Ask other merchants, they might know where he is."
 msgstr ""
@@ -2062,27 +2069,27 @@ msgid "Atropos Mixture"
 msgstr ""
 
 #. code: 1484: Auction is disabled
-#: conf/messages.conf:1517
+#: conf/messages.conf:1520
 msgid "Auction is disabled"
 msgstr ""
 
 #. code: 1188: Autoloot is now off.
-#: conf/messages.conf:1058
+#: conf/messages.conf:1061
 msgid "Autoloot is now off."
 msgstr ""
 
 #. code: 1492: Autolooting item type: '%s'
-#: conf/messages.conf:1532
+#: conf/messages.conf:1535
 msgid "Autolooting item type: '%s'"
 msgstr ""
 
 #. code: 1192: Autolooting item: '%s'/'%s' {%d}
-#: conf/messages.conf:1064
+#: conf/messages.conf:1067
 msgid "Autolooting item: '%s'/'%s' {%d}"
 msgstr ""
 
 #. code: 1187: Autolooting items with drop rates of %0.02f%% and below.
-#: conf/messages.conf:1057
+#: conf/messages.conf:1060
 msgid "Autolooting items with drop rates of %0.02f%% and below."
 msgstr ""
 
@@ -2127,27 +2134,27 @@ msgid "Autorejecting is deactivated."
 msgstr ""
 
 #. code: 1044: Autotrade Disabled
-#: conf/messages.conf:838
+#: conf/messages.conf:841
 msgid "Autotrade Disabled"
 msgstr ""
 
 #. code: 1043: Autotrade Enabled
-#: conf/messages.conf:837
+#: conf/messages.conf:840
 msgid "Autotrade Enabled"
 msgstr ""
 
 #. code: 1179: Autotrade is not allowed in this map.
-#: conf/messages.conf:1041
+#: conf/messages.conf:1044
 msgid "Autotrade is not allowed in this map."
 msgstr ""
 
 #. code: 1315: Available Flags:
-#: conf/messages.conf:1278
+#: conf/messages.conf:1281
 msgid "Available Flags:"
 msgstr ""
 
 #. code: 990: Available aliases:
-#: conf/messages.conf:717
+#: conf/messages.conf:720
 msgid "Available aliases:"
 msgstr ""
 
@@ -2378,7 +2385,7 @@ msgid "Bag#001-1"
 msgstr ""
 
 #. code: 1464: Ban failed, it is not possible to ban this user.
-#: conf/messages.conf:1482
+#: conf/messages.conf:1485
 msgid "Ban failed, it is not possible to ban this user."
 msgstr ""
 
@@ -2389,7 +2396,7 @@ msgid "Bandana"
 msgstr ""
 
 #. code: 1483: Banking is disabled
-#: conf/messages.conf:1514
+#: conf/messages.conf:1517
 msgid "Banking is disabled"
 msgstr ""
 
@@ -2417,7 +2424,7 @@ msgid "Barrel"
 msgstr ""
 
 #. code: 1148: Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)
-#: conf/messages.conf:978
+#: conf/messages.conf:981
 msgid "Base Level: %d (%.3f%%) | Job Level: %d (%.3f%%)"
 msgstr ""
 
@@ -2453,7 +2460,7 @@ msgid "Battle configuration has been reloaded."
 msgstr ""
 
 #. code: 1045: Battlegrounds ON
-#: conf/messages.conf:839
+#: conf/messages.conf:842
 msgid "Battlegrounds ON"
 msgstr ""
 
@@ -2494,7 +2501,7 @@ msgid "Because of the dense foliage, you need to go up close to the trees so you
 msgstr ""
 
 #. code: 1033: Because you are not authorized to warp from some maps, %d player(s) have not been recalled.
-#: conf/messages.conf:819
+#: conf/messages.conf:822
 msgid "Because you are not authorized to warp from some maps, %d player(s) have not been recalled."
 msgstr ""
 
@@ -2565,7 +2572,7 @@ msgid "Black Cotton Dye"
 msgstr ""
 
 #. code: l("Black iron... That is a very specific request that you have for me!"),
-#: npc/001-2-19/lloyd.txt:23
+#: npc/001-2-19/lloyd.txt:24
 #, no-c-format
 msgid "Black iron... That is a very specific request that you have for me!"
 msgstr ""
@@ -2617,7 +2624,7 @@ msgid "Bobo"
 msgstr ""
 
 #. code: 1300: Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
-#: conf/messages.conf:1251
+#: conf/messages.conf:1254
 msgid "Boss Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx"
 msgstr ""
 
@@ -2939,7 +2946,7 @@ msgstr ""
 #. code: l("Bye.")))
 #. code: l("Bye.");
 #: npc/001-2-27/lydon.txt:13
-#: npc/001-2-19/lloyd.txt:255
+#: npc/001-2-19/lloyd.txt:188
 #, no-c-format
 msgid "Bye."
 msgstr ""
@@ -3029,12 +3036,12 @@ msgid "Can you reset my stats please?"
 msgstr ""
 
 #. code: 865: Can't create chat rooms in this area.
-#: conf/messages.conf:625
+#: conf/messages.conf:628
 msgid "Can't create chat rooms in this area."
 msgstr ""
 
 #. code: 1251: Can't show boss mobs!
-#: conf/messages.conf:1168
+#: conf/messages.conf:1171
 msgid "Can't show boss mobs!"
 msgstr ""
 
@@ -3072,12 +3079,12 @@ msgid "Cannot mount while in disguise."
 msgstr ""
 
 #. code: 875: Cannot send mails too fast!!
-#: conf/messages.conf:635
+#: conf/messages.conf:638
 msgid "Cannot send mails too fast!!"
 msgstr ""
 
 #. code: 1486: Cannot transform into monster while in disguise.
-#: conf/messages.conf:1522
+#: conf/messages.conf:1525
 msgid "Cannot transform into monster while in disguise."
 msgstr ""
 
@@ -3107,12 +3114,12 @@ msgid "Carrot"
 msgstr ""
 
 #. code: 1392: Cart Added.
-#: conf/messages.conf:1393
+#: conf/messages.conf:1396
 msgid "Cart Added."
 msgstr ""
 
 #. code: 1489: Cash Shop is disabled in this map
-#: conf/messages.conf:1527
+#: conf/messages.conf:1530
 msgid "Cash Shop is disabled in this map"
 msgstr ""
 
@@ -3254,27 +3261,27 @@ msgid "Changed your mind, uh?#1"
 msgstr ""
 
 #. code: 1439: Channel '%s' has no banned players
-#: conf/messages.conf:1457
+#: conf/messages.conf:1460
 msgid "Channel '%s' has no banned players"
 msgstr ""
 
 #. code: 1407: Channel '%s' is not available
-#: conf/messages.conf:1426
+#: conf/messages.conf:1429
 msgid "Channel '%s' is not available"
 msgstr ""
 
 #. code: 1406: Channel length must be between 3 and %d
-#: conf/messages.conf:1425
+#: conf/messages.conf:1428
 msgid "Channel length must be between 3 and %d"
 msgstr ""
 
 #. code: 1405: Channel name must start with a '#'
-#: conf/messages.conf:1424
+#: conf/messages.conf:1427
 msgid "Channel name must start with a '#'"
 msgstr ""
 
 #. code: 1408: Channel password may not contain spaces
-#: conf/messages.conf:1427
+#: conf/messages.conf:1430
 msgid "Channel password may not contain spaces"
 msgstr ""
 
@@ -3284,12 +3291,12 @@ msgid "Char-server has been asked to %s the character '%.*s'."
 msgstr ""
 
 #. code: 1487: Character cannot be disguised while in monster form.
-#: conf/messages.conf:1523
+#: conf/messages.conf:1526
 msgid "Character cannot be disguised while in monster form."
 msgstr ""
 
 #. code: 1144: Character cannot be disguised while mounted.
-#: conf/messages.conf:966
+#: conf/messages.conf:969
 msgid "Character cannot be disguised while mounted."
 msgstr ""
 
@@ -3309,19 +3316,13 @@ msgid "Character not found."
 msgstr ""
 
 #. code: 1388: Charcommand failed (usage: %c<command> <char name> <parameters>).
-#: conf/messages.conf:1387
+#: conf/messages.conf:1390
 msgid "Charcommand failed (usage: %c<command> <char name> <parameters>)."
 msgstr ""
 
 #. code: 1114: Chat: %s | Player: %s | Location: %d %d
-#: conf/messages.conf:908
+#: conf/messages.conf:911
 msgid "Chat: %s | Player: %s | Location: %d %d"
-msgstr ""
-
-#. code: l("Check my balance."),
-#: npc/001-2-19/lloyd.txt:168
-#, no-c-format
-msgid "Check my balance."
 msgstr ""
 
 #. code: l("Check out this one."),
@@ -3367,7 +3368,7 @@ msgid "Chelios"
 msgstr ""
 
 #. code: l("Chelios asked me to get it.")))
-#: npc/001-2-19/lloyd.txt:31
+#: npc/001-2-19/lloyd.txt:32
 #, no-c-format
 msgid "Chelios asked me to get it."
 msgstr ""
@@ -3403,18 +3404,18 @@ msgid "Chelios, his apprentice, practices outside, mostly."
 msgstr ""
 
 #. code: l("Chelios... He is part of the Blacksmith House, is he not?"),
-#: npc/001-2-19/lloyd.txt:41
+#: npc/001-2-19/lloyd.txt:42
 #, no-c-format
 msgid "Chelios... He is part of the Blacksmith House, is he not?"
 msgstr ""
 
 #. code: 1206: Cherry tree leaves have begun to fall.
-#: conf/messages.conf:1085
+#: conf/messages.conf:1088
 msgid "Cherry tree leaves have begun to fall."
 msgstr ""
 
 #. code: 1205: Cherry tree leaves no longer fall.
-#: conf/messages.conf:1084
+#: conf/messages.conf:1087
 msgid "Cherry tree leaves no longer fall."
 msgstr ""
 
@@ -3519,22 +3520,22 @@ msgid "Clotho Liquor"
 msgstr ""
 
 #. code: 1208: Clouds appeared.
-#: conf/messages.conf:1089
+#: conf/messages.conf:1092
 msgid "Clouds appeared."
 msgstr ""
 
 #. code: 1207: Clouds have disappeared.
-#: conf/messages.conf:1088
+#: conf/messages.conf:1091
 msgid "Clouds have disappeared."
 msgstr ""
 
 #. code: 1075: Clouds |
-#: conf/messages.conf:869
+#: conf/messages.conf:872
 msgid "Clouds | "
 msgstr ""
 
 #. code: 1076: Clouds2 |
-#: conf/messages.conf:870
+#: conf/messages.conf:873
 msgid "Clouds2 | "
 msgstr ""
 
@@ -3683,6 +3684,11 @@ msgstr ""
 msgid "Congratulations!"
 msgstr ""
 
+#. code: 855: Congratulations! You are the MVP! Your reward EXP Points are %u !!
+#: conf/messages.conf:614
+msgid "Congratulations! You are the MVP! Your reward EXP Points are %u !!"
+msgstr ""
+
 #. code: 001-1,39,38,0	script	Cookie Master	NPC_COOKIE_MASTER,{
 #: npc/001-1/cookiemaster.txt:12
 #, no-c-format
@@ -3726,7 +3732,7 @@ msgid "Coral"
 msgstr ""
 
 #. code: 1473: Costume '%s' removed.
-#: conf/messages.conf:1493
+#: conf/messages.conf:1496
 msgid "Costume '%s' removed."
 msgstr ""
 
@@ -3773,7 +3779,7 @@ msgid "Could you bleach my clothes?"
 msgstr ""
 
 #. code: l("Could you bring it to him?");
-#: npc/001-2-19/lloyd.txt:132
+#: npc/001-2-19/lloyd.txt:137
 #, no-c-format
 msgid "Could you bring it to him?"
 msgstr ""
@@ -4033,7 +4039,7 @@ msgid "Deal?"
 msgstr ""
 
 #. code: 1479: Dear angel, can you hear my voice?
-#: conf/messages.conf:1508
+#: conf/messages.conf:1511
 msgid "Dear angel, can you hear my voice?"
 msgstr ""
 
@@ -4100,7 +4106,7 @@ msgid "Debug Narrator"
 msgstr ""
 
 #. code: 860: Defeated by
-#: conf/messages.conf:618
+#: conf/messages.conf:621
 msgid "Defeated by"
 msgstr ""
 
@@ -4116,8 +4122,8 @@ msgstr ""
 msgid "Delivered box, got reward"
 msgstr ""
 
-#. code: .@q = select (l("Deposit."),
-#: npc/001-2-19/lloyd.txt:166
+#. code: rif(Zeny > 0, l("Deposit.")),
+#: npc/functions/bank.txt:22
 #, no-c-format
 msgid "Deposit."
 msgstr ""
@@ -4135,7 +4141,7 @@ msgid "Devis#001-1"
 msgstr ""
 
 #. code: 1273: Dex: %d (%d~%d)
-#: conf/messages.conf:1208
+#: conf/messages.conf:1211
 msgid "Dex: %d (%d~%d)"
 msgstr ""
 
@@ -4209,7 +4215,7 @@ msgid "Displaying first %d out of %d matches"
 msgstr ""
 
 #. code: 1080: Displays Night |
-#: conf/messages.conf:874
+#: conf/messages.conf:877
 msgid "Displays Night | "
 msgstr ""
 
@@ -4441,7 +4447,6 @@ msgstr ""
 #: npc/functions/quest-debug/031-General_Janus.txt:15
 #: npc/functions/quest-debug/026-General_Rumly.txt:15
 #: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:15
-#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:15
 #: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:15
 #: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:15
 #: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:15
@@ -4453,8 +4458,9 @@ msgstr ""
 #: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:15
 #: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:15
 #: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:15
-#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:15
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:15
 #: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:15
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:15
 #: npc/functions/quest-debug/010-ShipQuests_Ale.txt:15
 #: npc/functions/quest-debug/002-ShipQuests_Alige.txt:15
 #: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:15
@@ -4463,8 +4469,8 @@ msgstr ""
 #: npc/functions/quest-debug/018-General_Cookies.txt:15
 #: npc/functions/quest-debug/003-ShipQuests_Peter.txt:15
 #: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:15
-#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:15
-#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:15
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:15
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:15
 #: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:15
 #: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:23
 #: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:15
@@ -4473,7 +4479,7 @@ msgid "Does not have the quest"
 msgstr ""
 
 #. code: l("Does the guild has any work for me right now?"),
-#: npc/001-2-19/lloyd.txt:254
+#: npc/001-2-19/lloyd.txt:187
 #, no-c-format
 msgid "Does the guild has any work for me right now?"
 msgstr ""
@@ -4548,6 +4554,12 @@ msgstr ""
 #: npc/001-1/panels.txt:10
 #, no-c-format
 msgid "Don't fall!"
+msgstr ""
+
+#. code: l("Don't forget to come as close as possible to these spots!");
+#: npc/001-2-4/books.txt:67
+#, no-c-format
+msgid "Don't forget to come as close as possible to these spots!"
 msgstr ""
 
 #. code: lg("Don't get too excited about it...")))
@@ -4647,7 +4659,7 @@ msgid "Duel| Can't use %s in duel."
 msgstr ""
 
 #. code: 863: Duel| Can't use this item in duel.
-#: conf/messages.conf:623
+#: conf/messages.conf:626
 msgid "Duel| Can't use this item in duel."
 msgstr ""
 
@@ -4732,12 +4744,6 @@ msgstr ""
 msgid "Dummy"
 msgstr ""
 
-#. code: mes l("During the next few days, we will finally reach Artis.");
-#: npc/001-2-22/note.txt:20
-#, no-c-format
-msgid "During the next few days, we will finally reach Artis."
-msgstr ""
-
 #. code: mesq lg("Duty calls me, *hic*, see you later, honey.", "Duty calls me, *hic*, see you later, dude.");
 #: npc/000-1/silvio.txt:92
 #, no-c-format
@@ -4769,13 +4775,13 @@ msgid "Each piece of equipment has a predefined slot number."
 msgstr ""
 
 #. code: l("Earlier today there was this young seller named Fexil that passed by here."),
-#: npc/001-2-19/lloyd.txt:129
+#: npc/001-2-19/lloyd.txt:134
 #, no-c-format
 msgid "Earlier today there was this young seller named Fexil that passed by here."
 msgstr ""
 
 #. code: 1107: East
-#: conf/messages.conf:901
+#: conf/messages.conf:904
 msgid "East"
 msgstr ""
 
@@ -4891,7 +4897,7 @@ msgid "Enable"
 msgstr ""
 
 #. code: 1311: Enabled Mapflags in this map:
-#: conf/messages.conf:1274
+#: conf/messages.conf:1277
 msgid "Enabled Mapflags in this map:"
 msgstr ""
 
@@ -4949,10 +4955,16 @@ msgstr ""
 msgid "Enora needs them."
 msgstr ""
 
-#. code: rif((.@legion_progress == 0) && (.@enora == 11), l("Enora sent me here.")),
+#. code: rif((.@legion_progress == 0) && (.@enora == 11), lg("Enora sent me here.")),
 #: npc/001-2-33/lozerk.txt:101
 #, no-c-format
-msgid "Enora sent me here."
+msgid "Enora sent me here.#0"
+msgstr ""
+
+#. code: rif((.@legion_progress == 0) && (.@enora == 11), lg("Enora sent me here.")),
+#: npc/001-2-33/lozerk.txt:101
+#, no-c-format
+msgid "Enora sent me here.#1"
 msgstr ""
 
 #. code: rif (.@enora == 7, l("Enora wants her potions.")),
@@ -4998,25 +5010,13 @@ msgstr ""
 msgid "Enter new line:"
 msgstr ""
 
-#. code: l("Enter the amount that you want to deposit.");
-#: npc/001-2-19/lloyd.txt:174
-#, no-c-format
-msgid "Enter the amount that you want to deposit."
-msgstr ""
-
-#. code: l("Enter the amount that you want to withdraw.");
-#: npc/001-2-19/lloyd.txt:199
-#, no-c-format
-msgid "Enter the amount that you want to withdraw."
-msgstr ""
-
 #. code: 1037: Error reading atcommand.conf, reload failed.
-#: conf/messages.conf:829
+#: conf/messages.conf:832
 msgid "Error reading atcommand.conf, reload failed."
 msgstr ""
 
 #. code: 1036: Error reading groups.conf, reload failed.
-#: conf/messages.conf:828
+#: conf/messages.conf:831
 msgid "Error reading groups.conf, reload failed."
 msgstr ""
 
@@ -5146,7 +5146,7 @@ msgid "Expanded Super Novice"
 msgstr ""
 
 #. code: 1298: Experience rates: Base %.2fx / Job %.2fx
-#: conf/messages.conf:1249
+#: conf/messages.conf:1252
 msgid "Experience rates: Base %.2fx / Job %.2fx"
 msgstr ""
 
@@ -5157,12 +5157,12 @@ msgid "FINE, BYE!"
 msgstr ""
 
 #. code: 1310: Fake name enabled.
-#: conf/messages.conf:1271
+#: conf/messages.conf:1274
 msgid "Fake name enabled."
 msgstr ""
 
 #. code: 1309: Fake name must be at least two characters.
-#: conf/messages.conf:1270
+#: conf/messages.conf:1273
 msgid "Fake name must be at least two characters."
 msgstr ""
 
@@ -5232,12 +5232,12 @@ msgid "FightNPCName"
 msgstr ""
 
 #. code: 1387: File not found.
-#: conf/messages.conf:1384
+#: conf/messages.conf:1387
 msgid "File not found."
 msgstr ""
 
 #. code: 1386: File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
-#: conf/messages.conf:1383
+#: conf/messages.conf:1386
 msgid "File unloaded. Be aware that mapflags and monsters spawned directly are not removed."
 msgstr ""
 
@@ -5271,12 +5271,6 @@ msgstr ""
 msgid "Fine, tell me, who are these all important friends of yours?"
 msgstr ""
 
-#. code: l("Fine, what do you want to do with your money?");
-#: npc/001-2-19/lloyd.txt:162
-#, no-c-format
-msgid "Fine, what do you want to do with your money?"
-msgstr ""
-
 #. code: l("Fine."),
 #: npc/000-2-1/arpan.txt:250
 #, no-c-format
@@ -5302,17 +5296,17 @@ msgid "Finished battle"
 msgstr ""
 
 #. code: 1216: Fireworks are launched.
-#: conf/messages.conf:1105
+#: conf/messages.conf:1108
 msgid "Fireworks are launched."
 msgstr ""
 
 #. code: 1215: Fireworks have ended.
-#: conf/messages.conf:1104
+#: conf/messages.conf:1107
 msgid "Fireworks have ended."
 msgstr ""
 
 #. code: 1077: Fireworks |
-#: conf/messages.conf:871
+#: conf/messages.conf:874
 msgid "Fireworks | "
 msgstr ""
 
@@ -5352,7 +5346,7 @@ msgstr ""
 msgid "Fishing Rod"
 msgstr ""
 
-#. code: l("Fishing next to shallow water is not going to work well, because fishes seldom go there.");
+#. code: l("Fishing next to shallow water is not going to work well, because fishes seldom go there."),
 #: npc/001-2-4/books.txt:65
 #, no-c-format
 msgid "Fishing next to shallow water is not going to work well, because fishes seldom go there."
@@ -5376,22 +5370,22 @@ msgid "Fluffy Fur"
 msgstr ""
 
 #. code: 1212: Fog hangs over.
-#: conf/messages.conf:1097
+#: conf/messages.conf:1100
 msgid "Fog hangs over."
 msgstr ""
 
 #. code: 1073: Fog |
-#: conf/messages.conf:867
+#: conf/messages.conf:870
 msgid "Fog | "
 msgstr ""
 
 #. code: 1159: Follow mode OFF.
-#: conf/messages.conf:1003
+#: conf/messages.conf:1006
 msgid "Follow mode OFF."
 msgstr ""
 
 #. code: 1160: Follow mode ON.
-#: conf/messages.conf:1004
+#: conf/messages.conf:1007
 msgid "Follow mode ON."
 msgstr ""
 
@@ -5416,7 +5410,7 @@ msgid "Following these lines are some other writings on this paper."
 msgstr ""
 
 #. code: 1360: Font changed.
-#: conf/messages.conf:1345
+#: conf/messages.conf:1348
 msgid "Font changed."
 msgstr ""
 
@@ -5427,7 +5421,7 @@ msgid "Fool! Just come back here when you'll be done with our little... 'Secret 
 msgstr ""
 
 #. code: 1466: For '%s' you need the amount of seconds (from 0 to 10)
-#: conf/messages.conf:1484
+#: conf/messages.conf:1487
 msgid "For '%s' you need the amount of seconds (from 0 to 10)"
 msgstr ""
 
@@ -5484,12 +5478,12 @@ msgid "Fresh from the sea and cheap!"
 msgstr ""
 
 #. code: 871: Friend already exists.
-#: conf/messages.conf:631
+#: conf/messages.conf:634
 msgid "Friend already exists."
 msgstr ""
 
 #. code: 874: Friend removed.
-#: conf/messages.conf:634
+#: conf/messages.conf:637
 msgid "Friend removed."
 msgstr ""
 
@@ -5551,22 +5545,22 @@ msgid "Gained %d cash points. Total %d points."
 msgstr ""
 
 #. code: 1317: Gained exp is now shown.
-#: conf/messages.conf:1282
+#: conf/messages.conf:1285
 msgid "Gained exp is now shown."
 msgstr ""
 
 #. code: 1316: Gained exp will not be shown.
-#: conf/messages.conf:1281
+#: conf/messages.conf:1284
 msgid "Gained exp will not be shown."
 msgstr ""
 
 #. code: 1319: Gained zeny is now shown.
-#: conf/messages.conf:1286
+#: conf/messages.conf:1289
 msgid "Gained zeny is now shown."
 msgstr ""
 
 #. code: 1318: Gained zeny will not be shown.
-#: conf/messages.conf:1285
+#: conf/messages.conf:1288
 msgid "Gained zeny will not be shown."
 msgstr ""
 
@@ -5976,7 +5970,7 @@ msgid "Greetings traveler.#1"
 msgstr ""
 
 #. code: 1228: Group changed successfully.
-#: conf/messages.conf:1131
+#: conf/messages.conf:1134
 msgid "Group changed successfully."
 msgstr ""
 
@@ -6110,12 +6104,12 @@ msgid "Guild modification is disabled in this map."
 msgstr ""
 
 #. code: 920: Guild storage opened.
-#: conf/messages.conf:685
+#: conf/messages.conf:688
 msgid "Guild storage opened."
 msgstr ""
 
 #. code: 1097: GuildLock |
-#: conf/messages.conf:891
+#: conf/messages.conf:894
 msgid "GuildLock | "
 msgstr ""
 
@@ -6152,22 +6146,22 @@ msgid "Gunslinger"
 msgstr ""
 
 #. code: 1055: GvG Castle |
-#: conf/messages.conf:849
+#: conf/messages.conf:852
 msgid "GvG Castle | "
 msgstr ""
 
 #. code: 1054: GvG Dungeon |
-#: conf/messages.conf:848
+#: conf/messages.conf:851
 msgid "GvG Dungeon | "
 msgstr ""
 
 #. code: 1052: GvG Flags:
-#: conf/messages.conf:846
+#: conf/messages.conf:849
 msgid "GvG Flags: "
 msgstr ""
 
 #. code: 1053: GvG ON |
-#: conf/messages.conf:847
+#: conf/messages.conf:850
 msgid "GvG ON | "
 msgstr ""
 
@@ -6230,7 +6224,7 @@ msgid "HP, SP recovered."
 msgstr ""
 
 #. code: 1262: HP: %d/%d - SP: %d/%d
-#: conf/messages.conf:1195
+#: conf/messages.conf:1198
 msgid "HP: %d/%d - SP: %d/%d"
 msgstr ""
 
@@ -6288,7 +6282,7 @@ msgid "Harpy-lady?"
 msgstr ""
 
 #. code: 858: Has met its demise
-#: conf/messages.conf:616
+#: conf/messages.conf:619
 msgid "Has met its demise"
 msgstr ""
 
@@ -6329,7 +6323,7 @@ msgid "Have you seen anything dangerous?"
 msgstr ""
 
 #. code: l("He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city..."),
-#: npc/001-2-19/lloyd.txt:130
+#: npc/001-2-19/lloyd.txt:135
 #, no-c-format
 msgid "He asked to lend some money and a place to open his store, I think that he asked for a place on the merchant squares on the south-west of the city..."
 msgstr ""
@@ -6535,12 +6529,12 @@ msgid "Hello... Do I know you?"
 msgstr ""
 
 #. code: 989: Help for command %c%s:
-#: conf/messages.conf:716
+#: conf/messages.conf:719
 msgid "Help for command %c%s:"
 msgstr ""
 
 #. code: 1481: Help me out~ Please~ T_T
-#: conf/messages.conf:1510
+#: conf/messages.conf:1513
 msgid "Help me out~ Please~ T_T"
 msgstr ""
 
@@ -6550,13 +6544,8 @@ msgstr ""
 msgid "Help me!"
 msgstr ""
 
-#. code: l("Her shop is in the west side of the city, between the Legion building and the library.");
-#: npc/001-1/enora.txt:47
-#, no-c-format
-msgid "Her shop is in the west side of the city, between the Legion building and the library."
-msgstr ""
-
 #. code: l("Her shop is on the west side of the city, between the Legion building and the library.");
+#: npc/001-1/enora.txt:47
 #: npc/001-1/enora.txt:198
 #, no-c-format
 msgid "Her shop is on the west side of the city, between the Legion building and the library."
@@ -6569,7 +6558,7 @@ msgid "Her sword... I'm having some trouble finishing it."
 msgstr ""
 
 #. code: 1296: Hercules %d-bit for %s
-#: conf/messages.conf:1243
+#: conf/messages.conf:1246
 msgid "Hercules %d-bit for %s"
 msgstr ""
 
@@ -6996,22 +6985,22 @@ msgid "Hmmm, hm... *cough*, *cough*, *burp*, *cough*. What... What is that?!... 
 msgstr ""
 
 #. code: 1266: Homunculus growth stats (Lv %d %s):
-#: conf/messages.conf:1201
+#: conf/messages.conf:1204
 msgid "Homunculus growth stats (Lv %d %s):"
 msgstr ""
 
 #. code: 1478: Homunculus reached its maximum level of '%d'
-#: conf/messages.conf:1505
+#: conf/messages.conf:1508
 msgid "Homunculus reached its maximum level of '%d'"
 msgstr ""
 
 #. code: 1275: Homunculus stats altered.
-#: conf/messages.conf:1212
+#: conf/messages.conf:1215
 msgid "Homunculus stats altered."
 msgstr ""
 
 #. code: 1261: Homunculus stats:
-#: conf/messages.conf:1194
+#: conf/messages.conf:1197
 msgid "Homunculus stats:"
 msgstr ""
 
@@ -7084,7 +7073,7 @@ msgid "How do you do your potions?"
 msgstr ""
 
 #. code: if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
-#: npc/001-2-19/lloyd.txt:79
+#: npc/001-2-19/lloyd.txt:84
 #, no-c-format
 msgid "How do you know?"
 msgstr ""
@@ -7111,6 +7100,18 @@ msgstr ""
 #: npc/001-2-26/ivan.txt:18
 #, no-c-format
 msgid "How many? What kind? I can produce two dozen boxes per day."
+msgstr ""
+
+#. code: l("How much do you want to deposit?");
+#: npc/functions/bank.txt:30
+#, no-c-format
+msgid "How much do you want to deposit?"
+msgstr ""
+
+#. code: l("How much do you want to withdraw?");
+#: npc/functions/bank.txt:81
+#, no-c-format
+msgid "How much do you want to withdraw?"
 msgstr ""
 
 #. code: l("How rude! What is the reason behind your malice?"), L_Rude,
@@ -7146,7 +7147,7 @@ msgid "Human Voice"
 msgstr ""
 
 #. code: 1264: Hungry: %d - Intimacy: %u
-#: conf/messages.conf:1197
+#: conf/messages.conf:1200
 msgid "Hungry: %d - Intimacy: %u"
 msgstr ""
 
@@ -7216,7 +7217,7 @@ msgid "I also heard you lost all your memories? That's a shame."
 msgstr ""
 
 #. code: 1480: I am %s Super Novice~
-#: conf/messages.conf:1509
+#: conf/messages.conf:1512
 msgid "I am %s Super Novice~"
 msgstr ""
 
@@ -7450,7 +7451,10 @@ msgid "I cannot find the words to express my gratitude for your hard work."
 msgstr ""
 
 #. code: l("I changed my mind.");
+#. code: l("I changed my mind."), -3;
+#: npc/functions/bank.txt:94
 #: npc/001-1/salem.txt:22
+#: npc/functions/bank.txt:43
 #, no-c-format
 msgid "I changed my mind."
 msgstr ""
@@ -7517,7 +7521,7 @@ msgid "I don't have much time right now."
 msgstr ""
 
 #. code: l("I don't have the time now.")))
-#: npc/001-2-19/lloyd.txt:102
+#: npc/001-2-19/lloyd.txt:107
 #, no-c-format
 msgid "I don't have the time now."
 msgstr ""
@@ -7529,7 +7533,7 @@ msgid "I don't have the time sorry."
 msgstr ""
 
 #. code: l("I don't have the time."));
-#: npc/001-2-19/lloyd.txt:139
+#: npc/001-2-19/lloyd.txt:144
 #, no-c-format
 msgid "I don't have the time."
 msgstr ""
@@ -7769,7 +7773,7 @@ msgid "I just want to live my life in peace."
 msgstr ""
 
 #. code: l("I knew it!");
-#: npc/001-2-19/lloyd.txt:88
+#: npc/001-2-19/lloyd.txt:93
 #, no-c-format
 msgid "I knew it!"
 msgstr ""
@@ -7839,7 +7843,7 @@ msgid "I need more Croc Claws."
 msgstr ""
 
 #. code: l("I need more information first."),
-#: npc/001-2-19/lloyd.txt:138
+#: npc/001-2-19/lloyd.txt:143
 #, no-c-format
 msgid "I need more information first."
 msgstr ""
@@ -7946,7 +7950,7 @@ msgid "I see it's not so easy to get rid of these rattos. Do you want to try aga
 msgstr ""
 
 #. code: l("I see."),
-#: npc/001-2-19/lloyd.txt:76
+#: npc/001-2-19/lloyd.txt:81
 #, no-c-format
 msgid "I see."
 msgstr ""
@@ -7979,78 +7983,6 @@ msgstr ""
 #: npc/001-2-2/moon.txt:145
 #, no-c-format
 msgid "I should put more effort into this."
-msgstr ""
-
-#. code: l("I speak Catalan."),
-#: npc/functions/asklanguage.txt:37
-#, no-c-format
-msgid "I speak Catalan."
-msgstr ""
-
-#. code: l("I speak Dutch."),
-#: npc/functions/asklanguage.txt:36
-#, no-c-format
-msgid "I speak Dutch."
-msgstr ""
-
-#. code: setarray .@messages$[0], l("I speak English."),
-#: npc/functions/asklanguage.txt:27
-#, no-c-format
-msgid "I speak English."
-msgstr ""
-
-#. code: l("I speak Esperanto.");
-#: npc/functions/asklanguage.txt:38
-#, no-c-format
-msgid "I speak Esperanto."
-msgstr ""
-
-#. code: l("I speak Flemish."),
-#: npc/functions/asklanguage.txt:33
-#, no-c-format
-msgid "I speak Flemish."
-msgstr ""
-
-#. code: l("I speak French."),
-#: npc/functions/asklanguage.txt:28
-#, no-c-format
-msgid "I speak French."
-msgstr ""
-
-#. code: l("I speak German."),
-#: npc/functions/asklanguage.txt:32
-#, no-c-format
-msgid "I speak German."
-msgstr ""
-
-#. code: l("I speak Italian."),
-#: npc/functions/asklanguage.txt:35
-#, no-c-format
-msgid "I speak Italian."
-msgstr ""
-
-#. code: l("I speak Polish."),
-#: npc/functions/asklanguage.txt:34
-#, no-c-format
-msgid "I speak Polish."
-msgstr ""
-
-#. code: l("I speak Portuguese."),
-#: npc/functions/asklanguage.txt:31
-#, no-c-format
-msgid "I speak Portuguese."
-msgstr ""
-
-#. code: l("I speak Russian."),
-#: npc/functions/asklanguage.txt:29
-#, no-c-format
-msgid "I speak Russian."
-msgstr ""
-
-#. code: l("I speak Spanish."),
-#: npc/functions/asklanguage.txt:30
-#, no-c-format
-msgid "I speak Spanish."
 msgstr ""
 
 #. code: mesq l("I still didn't find my brother...");
@@ -8207,7 +8139,7 @@ msgid "I will buy all of the fur that you will bring me at a good price, let's s
 msgstr ""
 
 #. code: l("I will close an eye for once, but only because it's your first time asking for something!"),
-#: npc/001-2-19/lloyd.txt:43
+#: npc/001-2-19/lloyd.txt:44
 #, no-c-format
 msgid "I will close an eye for once, but only because it's your first time asking for something!"
 msgstr ""
@@ -8350,10 +8282,10 @@ msgstr ""
 msgid "I would like to create a party."
 msgstr ""
 
-#. code: l("I would like to deposit some money."),
-#: npc/001-2-19/lloyd.txt:252
+#. code: l("I would like to perform money transactions."),
+#: npc/001-2-19/lloyd.txt:185
 #, no-c-format
-msgid "I would like to deposit some money."
+msgid "I would like to perform money transactions."
 msgstr ""
 
 #. code: l("I would like to stay here a bit more.")))
@@ -8363,13 +8295,13 @@ msgid "I would like to stay here a bit more."
 msgstr ""
 
 #. code: l("I would like to store some items."),
-#: npc/001-2-19/lloyd.txt:251
+#: npc/001-2-19/lloyd.txt:184
 #, no-c-format
 msgid "I would like to store some items."
 msgstr ""
 
 #. code: l("I wrote your name on the book, you are now free to use the storage and bank services.");
-#: npc/001-2-19/lloyd.txt:116
+#: npc/001-2-19/lloyd.txt:121
 #, no-c-format
 msgid "I wrote your name on the book, you are now free to use the storage and bank services."
 msgstr ""
@@ -8502,8 +8434,8 @@ msgstr ""
 msgid "I'm done with my training.#1"
 msgstr ""
 
-#. code: l("I'm done."));
-#: npc/001-2-19/lloyd.txt:169
+#. code: l("I'm done.");
+#: npc/functions/bank.txt:24
 #, no-c-format
 msgid "I'm done."
 msgstr ""
@@ -8549,7 +8481,7 @@ msgid "I'm looking for Gugli, where is he?"
 msgstr ""
 
 #. code: rif (.@enora == 2, l("I'm looking for some black iron ingots.")),
-#: npc/001-2-19/lloyd.txt:250
+#: npc/001-2-19/lloyd.txt:183
 #, no-c-format
 msgid "I'm looking for some black iron ingots."
 msgstr ""
@@ -8907,7 +8839,7 @@ msgid "If you need somebody to craft a weapon or a plate from diagrams I am the 
 msgstr ""
 
 #. code: l("If you need something in the future, do not hesitate to pass by here, our stock is full of boxes collecting dust.");
-#: npc/001-2-19/lloyd.txt:36
+#: npc/001-2-19/lloyd.txt:37
 #, no-c-format
 msgid "If you need something in the future, do not hesitate to pass by here, our stock is full of boxes collecting dust."
 msgstr ""
@@ -9001,6 +8933,12 @@ msgstr ""
 msgid "In Artis they really do mythologize people when they die."
 msgstr ""
 
+#. code: mes l("In a couple of days, we will finally reach Artis.");
+#: npc/001-2-22/note.txt:20
+#, no-c-format
+msgid "In a couple of days, we will finally reach Artis."
+msgstr ""
+
 #. code: l("In fact, everything seems to work perfectly under your guidance. Nard has made the right choice.");
 #: npc/000-2-0/julia.txt:83
 #, no-c-format
@@ -9056,12 +8994,12 @@ msgid "Inn"
 msgstr ""
 
 #. code: 1372: Instance variables may not be used with @set.
-#: conf/messages.conf:1363
+#: conf/messages.conf:1366
 msgid "Instance variables may not be used with @set."
 msgstr ""
 
 #. code: 1272: Int: %d (%d~%d)
-#: conf/messages.conf:1207
+#: conf/messages.conf:1210
 msgid "Int: %d (%d~%d)"
 msgstr ""
 
@@ -9113,7 +9051,7 @@ msgid "Introduce yourself instead of poking me around. I almost fell from the la
 msgstr ""
 
 #. code: 1257: Invalid Homunculus ID.
-#: conf/messages.conf:1182
+#: conf/messages.conf:1185
 msgid "Invalid Homunculus ID."
 msgstr ""
 
@@ -9128,7 +9066,7 @@ msgid "Invalid bound type. Valid types are - 1:Account 2:Guild 3:Party 4:Charact
 msgstr ""
 
 #. code: 982: Invalid color.
-#: conf/messages.conf:699
+#: conf/messages.conf:702
 msgid "Invalid color."
 msgstr ""
 
@@ -9143,12 +9081,12 @@ msgid "Invalid e-mail. If your email hasn't been set, use a@a.com."
 msgstr ""
 
 #. code: 1314: Invalid flag name or flag.
-#: conf/messages.conf:1277
+#: conf/messages.conf:1280
 msgid "Invalid flag name or flag."
 msgstr ""
 
 #. code: 1359: Invalid font. Use a value from 0 to 9.
-#: conf/messages.conf:1344
+#: conf/messages.conf:1347
 msgid "Invalid font. Use a value from 0 to 9."
 msgstr ""
 
@@ -9163,12 +9101,12 @@ msgid "Invalid location number, or name."
 msgstr ""
 
 #. code: 1219: Invalid mob ID %s!
-#: conf/messages.conf:1112
+#: conf/messages.conf:1115
 msgid "Invalid mob ID %s!"
 msgstr ""
 
 #. code: 1250: Invalid mob id %s!
-#: conf/messages.conf:1167
+#: conf/messages.conf:1170
 msgid "Invalid mob id %s!"
 msgstr ""
 
@@ -9203,7 +9141,7 @@ msgid "Invalid time for ban command."
 msgstr ""
 
 #. code: 1136: Invalid time for jail command.
-#: conf/messages.conf:954
+#: conf/messages.conf:957
 msgid "Invalid time for jail command."
 msgstr ""
 
@@ -9260,13 +9198,13 @@ msgid "Is there a reward?"
 msgstr ""
 
 #. code: lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
-#: npc/001-2-19/lloyd.txt:27
+#: npc/001-2-19/lloyd.txt:28
 #, no-c-format
 msgid "Is this for you or somebody else? Because you need to be registered to obtain these materials.#0"
 msgstr ""
 
 #. code: lg("Is this for you or somebody else? Because you need to be registered to obtain these materials.");
-#: npc/001-2-19/lloyd.txt:27
+#: npc/001-2-19/lloyd.txt:28
 #, no-c-format
 msgid "Is this for you or somebody else? Because you need to be registered to obtain these materials.#1"
 msgstr ""
@@ -9290,7 +9228,7 @@ msgid "It has been some days now since I asked her for a box of @@s, but she has
 msgstr ""
 
 #. code: 1204: It has started to snow.
-#: conf/messages.conf:1081
+#: conf/messages.conf:1084
 msgid "It has started to snow."
 msgstr ""
 
@@ -9600,7 +9538,7 @@ msgid "It's where every merchant ship end their road and we won't be an exceptio
 msgstr ""
 
 #. code: 1477: Item cannot be opened when inventory is full
-#: conf/messages.conf:1502
+#: conf/messages.conf:1505
 msgid "Item cannot be opened when inventory is full"
 msgstr ""
 
@@ -9615,27 +9553,27 @@ msgid "Item database has been reloaded."
 msgstr ""
 
 #. code: 1189: Item not found.
-#: conf/messages.conf:1061
+#: conf/messages.conf:1064
 msgid "Item not found."
 msgstr ""
 
 #. code: 1491: Item type not found.
-#: conf/messages.conf:1531
+#: conf/messages.conf:1534
 msgid "Item type not found."
 msgstr ""
 
 #. code: 1496: Item types on your autoloottype list:
-#: conf/messages.conf:1536
+#: conf/messages.conf:1539
 msgid "Item types on your autoloottype list:"
 msgstr ""
 
 #. code: 1277: Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s
-#: conf/messages.conf:1216
+#: conf/messages.conf:1219
 msgid "Item: '%s'/'%s'[%d] (%d) Type: %s | Extra Effect: %s"
 msgstr ""
 
 #. code: 1285: Item: '%s'[%d]
-#: conf/messages.conf:1226
+#: conf/messages.conf:1229
 msgid "Item: '%s'[%d]"
 msgstr ""
 
@@ -9649,7 +9587,7 @@ msgid "Items have different effects. Some will heal you, some can be used as wea
 msgstr ""
 
 #. code: 1199: Items on your autolootitem list:
-#: conf/messages.conf:1071
+#: conf/messages.conf:1074
 msgid "Items on your autolootitem list:"
 msgstr ""
 
@@ -9960,17 +9898,17 @@ msgid "Leave it."
 msgstr ""
 
 #. code: 1213: Leaves have stopped falling.
-#: conf/messages.conf:1100
+#: conf/messages.conf:1103
 msgid "Leaves have stopped falling."
 msgstr ""
 
 #. code: 1214: Leaves started falling.
-#: conf/messages.conf:1101
+#: conf/messages.conf:1104
 msgid "Leaves started falling."
 msgstr ""
 
 #. code: 1078: Leaves |
-#: conf/messages.conf:872
+#: conf/messages.conf:875
 msgid "Leaves | "
 msgstr ""
 
@@ -10030,7 +9968,7 @@ msgid "Leonard"
 msgstr ""
 
 #. code: l("Let me check in my inventory book..."),
-#: npc/001-2-19/lloyd.txt:24
+#: npc/001-2-19/lloyd.txt:25
 #, no-c-format
 msgid "Let me check in my inventory book..."
 msgstr ""
@@ -10049,7 +9987,7 @@ msgid "Let me check my cookie list..."
 msgstr ""
 
 #. code: l("Let me explain to you what the Merchant Guild is for.");
-#: npc/001-2-19/lloyd.txt:92
+#: npc/001-2-19/lloyd.txt:97
 #, no-c-format
 msgid "Let me explain to you what the Merchant Guild is for."
 msgstr ""
@@ -10207,7 +10145,7 @@ msgid "Lloyd gave pass"
 msgstr ""
 
 #. code: l("Lloyd is searching something in his book.");
-#: npc/001-2-19/lloyd.txt:74
+#: npc/001-2-19/lloyd.txt:79
 #, no-c-format
 msgid "Lloyd is searching something in his book."
 msgstr ""
@@ -10219,7 +10157,7 @@ msgid "Lloyd still owes me, but beware of those money-grabbers, or they might se
 msgstr ""
 
 #. code: 001-2-19,31,25,0	script	Lloyd the Banker	NPC_LLOYD,{
-#: npc/001-2-19/lloyd.txt:19
+#: npc/001-2-19/lloyd.txt:20
 #, no-c-format
 msgid "Lloyd the Banker"
 msgstr ""
@@ -10349,7 +10287,7 @@ msgid "Luckily the beach is nearby, and somehow I made my way home."
 msgstr ""
 
 #. code: 1274: Luk: %d (%d~%d)
-#: conf/messages.conf:1209
+#: conf/messages.conf:1212
 msgid "Luk: %d (%d~%d)"
 msgstr ""
 
@@ -10378,7 +10316,7 @@ msgid "MOTD Config"
 msgstr ""
 
 #. code: 1240: MVP Monster: '%s'/'%s'/'%s' (%d)
-#: conf/messages.conf:1155
+#: conf/messages.conf:1158
 msgid "MVP Monster: '%s'/'%s'/'%s' (%d)"
 msgstr ""
 
@@ -10407,7 +10345,7 @@ msgid "Magician"
 msgstr ""
 
 #. code: l("Make sure to put on a bait after you click, though!"),
-#: npc/001-2-4/books.txt:70
+#: npc/001-2-4/books.txt:72
 #, no-c-format
 msgid "Make sure to put on a bait after you click, though!"
 msgstr ""
@@ -10448,7 +10386,7 @@ msgid "Map not found."
 msgstr ""
 
 #. code: 1040: Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d
-#: conf/messages.conf:834
+#: conf/messages.conf:837
 msgid "Map: %s (Zone:%s) | Players: %d | NPCs: %d | Chats: %d | Vendings: %d"
 msgstr ""
 
@@ -10472,12 +10410,12 @@ msgid "Mauve Cotton Dye"
 msgstr ""
 
 #. code: 1267: Max HP: %d (%d~%d)
-#: conf/messages.conf:1202
+#: conf/messages.conf:1205
 msgid "Max HP: %d (%d~%d)"
 msgstr ""
 
 #. code: 1268: Max SP: %d (%d~%d)
-#: conf/messages.conf:1203
+#: conf/messages.conf:1206
 msgid "Max SP: %d (%d~%d)"
 msgstr ""
 
@@ -10620,10 +10558,10 @@ msgstr ""
 msgid "Mint Cashmere Dye"
 msgstr ""
 
-#. code: 1220: Mob Search... %s %s
 #. code: 1252: Mob Search... %s %s
-#: conf/messages.conf:1169
-#: conf/messages.conf:1113
+#. code: 1220: Mob Search... %s %s
+#: conf/messages.conf:1116
+#: conf/messages.conf:1172
 msgid "Mob Search... %s %s"
 msgstr ""
 
@@ -10693,7 +10631,7 @@ msgid "Monk"
 msgstr ""
 
 #. code: 1059: Monster NoTeleport |
-#: conf/messages.conf:853
+#: conf/messages.conf:856
 msgid "Monster NoTeleport | "
 msgstr ""
 
@@ -10703,7 +10641,7 @@ msgid "Monster database has been reloaded."
 msgstr ""
 
 #. code: 1241: Monster: '%s'/'%s'/'%s' (%d)
-#: conf/messages.conf:1156
+#: conf/messages.conf:1159
 msgid "Monster: '%s'/'%s'/'%s' (%d)"
 msgstr ""
 
@@ -10830,7 +10768,7 @@ msgid "My friends are... Well, you know... The creators."
 msgstr ""
 
 #. code: selectd (l("My name is @@...", strcharinfo(0)));
-#: npc/001-2-19/lloyd.txt:68
+#: npc/001-2-19/lloyd.txt:73
 #, no-c-format
 msgid "My name is @@..."
 msgstr ""
@@ -10855,7 +10793,7 @@ msgid "My name is Julia, it is me who took care of you after we found you in the
 msgstr ""
 
 #. code: l("My name is Lloyd, I am a representative of the Merchant Guild of Artis.");
-#: npc/001-2-19/lloyd.txt:66
+#: npc/001-2-19/lloyd.txt:71
 #, no-c-format
 msgid "My name is Lloyd, I am a representative of the Merchant Guild of Artis."
 msgstr ""
@@ -10879,22 +10817,22 @@ msgid "NOTHING ELSE OTHER THAN SHARKS AND AN ODD LIGHT!"
 msgstr ""
 
 #. code: 1362: NOTICE: If you crash with mount your LUA is outdated.
-#: conf/messages.conf:1349
+#: conf/messages.conf:1352
 msgid "NOTICE: If you crash with mount your LUA is outdated."
 msgstr ""
 
 #. code: 1111: NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d
-#: conf/messages.conf:905
+#: conf/messages.conf:908
 msgid "NPC %d: %s | Direction: %s | Sprite: %d | Location: %d %d"
 msgstr ""
 
 #. code: 1112: NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d
-#: conf/messages.conf:906
+#: conf/messages.conf:909
 msgid "NPC %d: %s::%s | Direction: %s | Sprite: %d | Location: %d %d "
 msgstr ""
 
 #. code: 1280: NPC Buy:%dz, Sell:%dz | Weight: %.1f
-#: conf/messages.conf:1219
+#: conf/messages.conf:1222
 msgid "NPC Buy:%dz, Sell:%dz | Weight: %.1f "
 msgstr ""
 
@@ -10909,17 +10847,17 @@ msgid "NPC Enabled."
 msgstr ""
 
 #. code: 1154: NPC is not in this map.
-#: conf/messages.conf:994
+#: conf/messages.conf:997
 msgid "NPC is not in this map."
 msgstr ""
 
 #. code: 1155: NPC moved.
-#: conf/messages.conf:995
+#: conf/messages.conf:998
 msgid "NPC moved."
 msgstr ""
 
 #. code: 1371: NPC variables may not be used with @set.
-#: conf/messages.conf:1362
+#: conf/messages.conf:1365
 msgid "NPC variables may not be used with @set."
 msgstr ""
 
@@ -10930,7 +10868,7 @@ msgid "Nalkri#001-1"
 msgstr ""
 
 #. code: 872: Name not found in list.
-#: conf/messages.conf:632
+#: conf/messages.conf:635
 msgid "Name not found in list."
 msgstr ""
 
@@ -10940,12 +10878,12 @@ msgid "Name: %s "
 msgstr ""
 
 #. code: 913: Name: %s (GM)
-#: conf/messages.conf:672
+#: conf/messages.conf:675
 msgid "Name: %s (GM)"
 msgstr ""
 
 #. code: 914: Name: %s (GM:%d) | Location: %s %d %d
-#: conf/messages.conf:673
+#: conf/messages.conf:676
 msgid "Name: %s (GM:%d) | Location: %s %d %d"
 msgstr ""
 
@@ -11000,7 +10938,6 @@ msgstr ""
 #. code: l("Narrator"), General_Narrator,
 #: npc/000-1/silvio.txt:132
 #: npc/000-2-2/doors.txt:40
-#: npc/functions/main.txt:107
 #: npc/000-1/panels.txt:8
 #: npc/001-2-2/moon.txt:133
 #: npc/001-1/flyingpiou.txt:75
@@ -11022,6 +10959,7 @@ msgstr ""
 #: npc/items/croconut.txt:15
 #: npc/001-2-23/doors.txt:57
 #: npc/000-2-1/dan.txt:78
+#: npc/functions/main.txt:112
 #: npc/000-2-0/doors.txt:41
 #: npc/001-2-22/alige.txt:304
 #: npc/commands/debug-quest.txt:105
@@ -11088,7 +11026,7 @@ msgid "New e-mail must be different from the current e-mail address."
 msgstr ""
 
 #. code: 1158: New warp NPC '%s' created.
-#: conf/messages.conf:1000
+#: conf/messages.conf:1003
 msgid "New warp NPC '%s' created."
 msgstr ""
 
@@ -11126,7 +11064,7 @@ msgid "Night mode is already enabled."
 msgstr ""
 
 #. code: 1050: NightmareDrop |
-#: conf/messages.conf:844
+#: conf/messages.conf:847
 msgid "NightmareDrop | "
 msgstr ""
 
@@ -11148,15 +11086,15 @@ msgstr ""
 #. code: menuaction(l("No")));
 #. code: l("No"),
 #. code: 1117: No
-#: npc/functions/main.txt:178
 #: npc/commands/scheduled-broadcasts.txt:64
-#: conf/messages.conf:911
+#: conf/messages.conf:914
+#: npc/functions/main.txt:183
 #, no-c-format
 msgid "No"
 msgstr ""
 
 #. code: 1065: No Exp Penalty: %s | No Zeny Penalty: %s
-#: conf/messages.conf:859
+#: conf/messages.conf:862
 msgid "No Exp Penalty: %s | No Zeny Penalty: %s"
 msgstr ""
 
@@ -11166,17 +11104,17 @@ msgid "No GM found."
 msgstr ""
 
 #. code: 1068: No Save (Return to last Save Point)
-#: conf/messages.conf:862
+#: conf/messages.conf:865
 msgid "No Save (Return to last Save Point)"
 msgstr ""
 
 #. code: 1070: No Save, Save Point: %s,%d,%d
-#: conf/messages.conf:864
+#: conf/messages.conf:867
 msgid "No Save, Save Point: %s,%d,%d"
 msgstr ""
 
 #. code: 1069: No Save, Save Point: %s,Random
-#: conf/messages.conf:863
+#: conf/messages.conf:866
 msgid "No Save, Save Point: %s,Random"
 msgstr ""
 
@@ -11199,7 +11137,7 @@ msgid "No cookie for you!"
 msgstr ""
 
 #. code: 1353: No item found in this player's %s.
-#: conf/messages.conf:1334
+#: conf/messages.conf:1337
 msgid "No item found in this player's %s."
 msgstr ""
 
@@ -11253,7 +11191,7 @@ msgid "No problem, I can help you anyway."
 msgstr ""
 
 #. code: l("No problem, come back later if you changed your mind!");
-#: npc/001-2-19/lloyd.txt:154
+#: npc/001-2-19/lloyd.txt:159
 #, no-c-format
 msgid "No problem, come back later if you changed your mind!"
 msgstr ""
@@ -11356,104 +11294,104 @@ msgid "No. Sorry."
 msgstr ""
 
 #. code: 1092: NoBaseEXP |
-#: conf/messages.conf:886
+#: conf/messages.conf:889
 msgid "NoBaseEXP | "
 msgstr ""
 
 #. code: 1082: NoBranch |
-#: conf/messages.conf:876
+#: conf/messages.conf:879
 msgid "NoBranch | "
 msgstr ""
 
 #. code: 1051: NoCalcRank |
-#: conf/messages.conf:845
+#: conf/messages.conf:848
 msgid "NoCalcRank | "
 msgstr ""
 
 #. code: 1091: NoCommand |
-#: conf/messages.conf:885
+#: conf/messages.conf:888
 msgid "NoCommand | "
 msgstr ""
 
 #. code: 1085: NoDrop |
-#: conf/messages.conf:879
+#: conf/messages.conf:882
 msgid "NoDrop | "
 msgstr ""
 
 #. code: 1048: NoGuild |
-#: conf/messages.conf:842
+#: conf/messages.conf:845
 msgid "NoGuild | "
 msgstr ""
 
 #. code: 1087: NoIcewall |
-#: conf/messages.conf:881
+#: conf/messages.conf:884
 msgid "NoIcewall | "
 msgstr ""
 
 #. code: 1093: NoJobEXP |
-#: conf/messages.conf:887
+#: conf/messages.conf:890
 msgid "NoJobEXP | "
 msgstr ""
 
 #. code: 1095: NoMVPLoot |
-#: conf/messages.conf:889
+#: conf/messages.conf:892
 msgid "NoMVPLoot | "
 msgstr ""
 
 #. code: 1064: NoMemo |
-#: conf/messages.conf:858
+#: conf/messages.conf:861
 msgid "NoMemo | "
 msgstr ""
 
 #. code: 1094: NoMobLoot |
-#: conf/messages.conf:888
+#: conf/messages.conf:891
 msgid "NoMobLoot | "
 msgstr ""
 
 #. code: 1049: NoParty |
 #. code: 1056: NoParty |
-#: conf/messages.conf:843
-#: conf/messages.conf:850
+#: conf/messages.conf:853
+#: conf/messages.conf:846
 msgid "NoParty | "
 msgstr ""
 
 #. code: 1062: NoReturn |
-#: conf/messages.conf:856
+#: conf/messages.conf:859
 msgid "NoReturn | "
 msgstr ""
 
 #. code: 1086: NoSkill |
-#: conf/messages.conf:880
+#: conf/messages.conf:883
 msgid "NoSkill | "
 msgstr ""
 
 #. code: 1058: NoTeleport |
-#: conf/messages.conf:852
+#: conf/messages.conf:855
 msgid "NoTeleport | "
 msgstr ""
 
 #. code: 1083: NoTrade |
-#: conf/messages.conf:877
+#: conf/messages.conf:880
 msgid "NoTrade | "
 msgstr ""
 
 #. code: 1084: NoVending |
-#: conf/messages.conf:878
+#: conf/messages.conf:881
 msgid "NoVending | "
 msgstr ""
 
 #. code: 1079: NoViewID |
-#: conf/messages.conf:873
+#: conf/messages.conf:876
 msgid "NoViewID | "
 msgstr ""
 
 #. code: 1060: NoWarp |
-#: conf/messages.conf:854
+#: conf/messages.conf:857
 msgid "NoWarp | "
 msgstr ""
 
 #. code: 1061: NoWarpTo |
-#: conf/messages.conf:855
+#: conf/messages.conf:858
 msgid "NoWarpTo | "
 msgstr ""
 
@@ -11489,8 +11427,8 @@ msgstr ""
 
 #. code: 917: None
 #. code: 1278: None
-#: conf/messages.conf:676
-#: conf/messages.conf:1217
+#: conf/messages.conf:1220
+#: conf/messages.conf:679
 msgid "None"
 msgstr ""
 
@@ -11512,34 +11450,34 @@ msgid "Nope, there are no secrets hidden within the ship's hull. Some sailors sw
 msgstr ""
 
 #. code: 1299: Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx
-#: conf/messages.conf:1250
+#: conf/messages.conf:1253
 msgid "Normal Drop Rates: Common %.2fx / Healing %.2fx / Usable %.2fx / Equipment %.2fx / Card %.2fx"
 msgstr ""
 
 #. code: 1101: North
 #. code: 1109: North
-#: conf/messages.conf:895
-#: conf/messages.conf:903
+#: conf/messages.conf:906
+#: conf/messages.conf:898
 msgid "North"
 msgstr ""
 
 #. code: 1108: North East
-#: conf/messages.conf:902
+#: conf/messages.conf:905
 msgid "North East"
 msgstr ""
 
 #. code: 1102: North West
-#: conf/messages.conf:896
+#: conf/messages.conf:899
 msgid "North West"
 msgstr ""
 
 #. code: 907: Not a hexadecimal digit:
-#: conf/messages.conf:656
+#: conf/messages.conf:659
 msgid "Not a hexadecimal digit:"
 msgstr ""
 
 #. code: 906: Not a string:
-#: conf/messages.conf:655
+#: conf/messages.conf:658
 msgid "Not a string:"
 msgstr ""
 
@@ -11603,7 +11541,7 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
-#. code: 001-2-22,22,33,0	script	Note#001-2-22	NPC_NO_SPRITE,{
+#. code: 001-2-22,31,31,0	script	Note#001-2-22	NPC_DAN_NOTE,{
 #: npc/001-2-22/note.txt:6
 #, no-c-format
 msgid "Note#001-2-22"
@@ -11710,7 +11648,7 @@ msgid "Now that I think about it, they are the only shops that are independent i
 msgstr ""
 
 #. code: l("Now that you bring up that topic, that reminds me of something..."),
-#: npc/001-2-19/lloyd.txt:128
+#: npc/001-2-19/lloyd.txt:133
 #, no-c-format
 msgid "Now that you bring up that topic, that reminds me of something..."
 msgstr ""
@@ -11863,7 +11801,7 @@ msgid "Of the two of them, who has 'good' on their side?"
 msgstr ""
 
 #. code: 1067: Off
-#: conf/messages.conf:861
+#: conf/messages.conf:864
 msgid "Off"
 msgstr ""
 
@@ -12138,7 +12076,7 @@ msgid "Oh, he's still alive!#1"
 msgstr ""
 
 #. code: l("Oh, it is simple. I have on this book the names of every citizen of Artis and its surroundings."),
-#: npc/001-2-19/lloyd.txt:82
+#: npc/001-2-19/lloyd.txt:87
 #, no-c-format
 msgid "Oh, it is simple. I have on this book the names of every citizen of Artis and its surroundings."
 msgstr ""
@@ -12186,7 +12124,7 @@ msgid "Oh, the little..."
 msgstr ""
 
 #. code: l("Oh, wait a second...");
-#: npc/001-2-19/lloyd.txt:72
+#: npc/001-2-19/lloyd.txt:77
 #, no-c-format
 msgid "Oh, wait a second..."
 msgstr ""
@@ -12303,7 +12241,7 @@ msgid "Ok, I think she's waking up, go see her.#0"
 msgstr ""
 
 #. code: l("Ok, I will bring it to him."),
-#: npc/001-2-19/lloyd.txt:137
+#: npc/001-2-19/lloyd.txt:142
 #, no-c-format
 msgid "Ok, I will bring it to him."
 msgstr ""
@@ -12405,7 +12343,7 @@ msgid "Old line:"
 msgstr ""
 
 #. code: 1066: On
-#: conf/messages.conf:860
+#: conf/messages.conf:863
 msgid "On"
 msgstr ""
 
@@ -12491,14 +12429,14 @@ msgid "Other"
 msgstr ""
 
 #. code: 1301: Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx
-#: conf/messages.conf:1252
+#: conf/messages.conf:1255
 msgid "Other Drop Rates: MvP %.2fx / Card-Based %.2fx / Treasure %.2fx"
 msgstr ""
 
 #. code: 1090: Other Flags:
 #. code: 1081: Other Flags:
-#: conf/messages.conf:875
-#: conf/messages.conf:884
+#: conf/messages.conf:878
+#: conf/messages.conf:887
 msgid "Other Flags: "
 msgstr ""
 
@@ -12513,6 +12451,13 @@ msgstr ""
 #: npc/001-2-21/note.txt:19
 #, no-c-format
 msgid "Other things are written but are not legible anymore."
+msgstr ""
+
+#. code: l("Other."), -1,
+#: npc/functions/bank.txt:33
+#: npc/functions/bank.txt:84
+#, no-c-format
+msgid "Other."
 msgstr ""
 
 #. code: setarray .messages$[0], l("Ouch!"), l("It hurts so bad!"),
@@ -12570,7 +12515,7 @@ msgid "Ow-oh!"
 msgstr ""
 
 #. code: 904: Packet 0x%x length: %d
-#: conf/messages.conf:653
+#: conf/messages.conf:656
 msgid "Packet 0x%x length: %d"
 msgstr ""
 
@@ -12591,7 +12536,7 @@ msgid "Party modification is disabled in this map."
 msgstr ""
 
 #. code: 1096: PartyLock |
-#: conf/messages.conf:890
+#: conf/messages.conf:893
 msgid "PartyLock | "
 msgstr ""
 
@@ -12605,7 +12550,7 @@ msgstr ""
 #. code: l("Perfect!"),
 #: npc/000-1/astapolos.txt:151
 #: npc/000-1/jalad.txt:121
-#: npc/001-2-19/lloyd.txt:115
+#: npc/001-2-19/lloyd.txt:120
 #, no-c-format
 msgid "Perfect!"
 msgstr ""
@@ -12673,7 +12618,7 @@ msgid "Peter#001-2-22"
 msgstr ""
 
 #. code: 866: Pets are not allowed in Guild Wars.
-#: conf/messages.conf:626
+#: conf/messages.conf:629
 msgid "Pets are not allowed in Guild Wars."
 msgstr ""
 
@@ -12750,32 +12695,32 @@ msgid "Piousse"
 msgstr ""
 
 #. code: 1099: Player '%s' (session #%d) | Location: %d,%d
-#: conf/messages.conf:893
+#: conf/messages.conf:896
 msgid "Player '%s' (session #%d) | Location: %d,%d"
 msgstr ""
 
 #. code: 1437: Player '%s' has now been banned from the '%s' channel
-#: conf/messages.conf:1455
+#: conf/messages.conf:1458
 msgid "Player '%s' has now been banned from the '%s' channel"
 msgstr ""
 
 #. code: 1441: Player '%s' has now been unbanned from the '%s' channel
-#: conf/messages.conf:1459
+#: conf/messages.conf:1462
 msgid "Player '%s' has now been unbanned from the '%s' channel"
 msgstr ""
 
 #. code: 1465: Player '%s' is already banned from this channel
-#: conf/messages.conf:1483
+#: conf/messages.conf:1486
 msgid "Player '%s' is already banned from this channel"
 msgstr ""
 
 #. code: 1440: Player '%s' is not banned from this channel
-#: conf/messages.conf:1458
+#: conf/messages.conf:1461
 msgid "Player '%s' is not banned from this channel"
 msgstr ""
 
 #. code: 1434: Player '%s' was not found
-#: conf/messages.conf:1453
+#: conf/messages.conf:1456
 msgid "Player '%s' was not found"
 msgstr ""
 
@@ -12790,17 +12735,17 @@ msgid "Player has been nuked!"
 msgstr ""
 
 #. code: 1235: Player is not muted.
-#: conf/messages.conf:1144
+#: conf/messages.conf:1147
 msgid "Player is not muted."
 msgstr ""
 
 #. code: 1168: Player is using %s skill tree (%d basic points).
-#: conf/messages.conf:1022
+#: conf/messages.conf:1025
 msgid "Player is using %s skill tree (%d basic points)."
 msgstr ""
 
 #. code: 1170: Player requires level %d of skill %s.
-#: conf/messages.conf:1024
+#: conf/messages.conf:1027
 msgid "Player requires level %d of skill %s."
 msgstr ""
 
@@ -12810,7 +12755,7 @@ msgid "Player unjailed."
 msgstr ""
 
 #. code: 1236: Player unmuted.
-#: conf/messages.conf:1145
+#: conf/messages.conf:1148
 msgid "Player unmuted."
 msgstr ""
 
@@ -12851,127 +12796,127 @@ msgid "Please don't touch these hats, they are for crew members only."
 msgstr ""
 
 #. code: 1143: Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>).
-#: conf/messages.conf:965
+#: conf/messages.conf:968
 msgid "Please enter a Monster/NPC name/ID (usage: @disguise <name/ID>)."
 msgstr ""
 
 #. code: 1145: Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>).
-#: conf/messages.conf:969
+#: conf/messages.conf:972
 msgid "Please enter a Monster/NPC name/ID (usage: @disguiseall <name/ID>)."
 msgstr ""
 
 #. code: 1130: Please enter a NPC name (usage: @enablenpc <NPC_name>).
-#: conf/messages.conf:936
+#: conf/messages.conf:939
 msgid "Please enter a NPC name (usage: @enablenpc <NPC_name>)."
 msgstr ""
 
 #. code: 1131: Please enter a NPC name (usage: @hidenpc <NPC_name>).
-#: conf/messages.conf:939
+#: conf/messages.conf:942
 msgid "Please enter a NPC name (usage: @hidenpc <NPC_name>)."
 msgstr ""
 
 #. code: 1133: Please enter a NPC name (usage: @npcoff <NPC_name>).
-#: conf/messages.conf:945
+#: conf/messages.conf:948
 msgid "Please enter a NPC name (usage: @npcoff <NPC_name>)."
 msgstr ""
 
 #. code: 1129: Please enter a NPC name (usage: @tonpc <NPC_name>).
-#: conf/messages.conf:933
+#: conf/messages.conf:936
 msgid "Please enter a NPC name (usage: @tonpc <NPC_name>)."
 msgstr ""
 
 #. code: 992: Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>).
-#: conf/messages.conf:723
+#: conf/messages.conf:726
 msgid "Please enter a clothes color (usage: @dye/@ccolor <clothes color: %d-%d>)."
 msgstr ""
 
 #. code: 1030: Please enter a guild name (usage: @guild <guild_name>).
-#: conf/messages.conf:812
+#: conf/messages.conf:815
 msgid "Please enter a guild name (usage: @guild <guild_name>)."
 msgstr ""
 
 #. code: 1034: Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>).
-#: conf/messages.conf:822
+#: conf/messages.conf:825
 msgid "Please enter a guild name/ID (usage: @guildrecall <guild_name/ID>)."
 msgstr ""
 
 #. code: 1126: Please enter a guild name/ID (usage: @guildspy <guild_name/ID>).
-#: conf/messages.conf:924
+#: conf/messages.conf:927
 msgid "Please enter a guild name/ID (usage: @guildspy <guild_name/ID>)."
 msgstr ""
 
 #. code: 994: Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>).
-#: conf/messages.conf:729
+#: conf/messages.conf:732
 msgid "Please enter a hair color (usage: @haircolor/@hcolor <hair color: %d-%d>)."
 msgstr ""
 
 #. code: 993: Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>).
-#: conf/messages.conf:726
+#: conf/messages.conf:729
 msgid "Please enter a hair style (usage: @hairstyle/@hstyle <hair ID: %d-%d>)."
 msgstr ""
 
 #. code: 1256: Please enter a homunculus ID (usage: @makehomun <homunculus id>).
-#: conf/messages.conf:1181
+#: conf/messages.conf:1184
 msgid "Please enter a homunculus ID (usage: @makehomun <homunculus id>)."
 msgstr ""
 
 #. code: 1259: Please enter a hunger value (usage: @homhungry <hunger value [0-100]>).
-#: conf/messages.conf:1188
+#: conf/messages.conf:1191
 msgid "Please enter a hunger value (usage: @homhungry <hunger value [0-100]>)."
 msgstr ""
 
 #. code: 1253: Please enter a level adjustment (usage: @homlevel <number of levels>).
-#: conf/messages.conf:1172
+#: conf/messages.conf:1175
 msgid "Please enter a level adjustment (usage: @homlevel <number of levels>)."
 msgstr ""
 
 #. code: 987: Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>).
-#: conf/messages.conf:712
+#: conf/messages.conf:715
 msgid "Please enter a level adjustment (usage: @joblvup/@jlevel/@joblvlup <number of levels>)."
 msgstr ""
 
 #. code: 986: Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>).
-#: conf/messages.conf:709
+#: conf/messages.conf:712
 msgid "Please enter a level adjustment (usage: @lvup/@blevel/@baselvlup <number of levels>)."
 msgstr ""
 
 #. code: 909: Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>).
-#: conf/messages.conf:660
+#: conf/messages.conf:663
 msgid "Please enter a map (usage: @warp/@rura/@mapmove <mapname> <x> <y>)."
 msgstr ""
 
 #. code: 1149: Please enter a message (usage: @broadcast <message>).
-#: conf/messages.conf:981
+#: conf/messages.conf:984
 msgid "Please enter a message (usage: @broadcast <message>)."
 msgstr ""
 
 #. code: 1260: Please enter a message (usage: @homtalk <message>).
-#: conf/messages.conf:1191
+#: conf/messages.conf:1194
 msgid "Please enter a message (usage: @homtalk <message>)."
 msgstr ""
 
 #. code: 980: Please enter a message (usage: @kami <message>).
-#: conf/messages.conf:697
+#: conf/messages.conf:700
 msgid "Please enter a message (usage: @kami <message>)."
 msgstr ""
 
 #. code: 1150: Please enter a message (usage: @localbroadcast <message>).
-#: conf/messages.conf:984
+#: conf/messages.conf:987
 msgid "Please enter a message (usage: @localbroadcast <message>)."
 msgstr ""
 
 #. code: 1302: Please enter a message (usage: @me <message>).
-#: conf/messages.conf:1255
+#: conf/messages.conf:1258
 msgid "Please enter a message (usage: @me <message>)."
 msgstr ""
 
 #. code: 1224: Please enter a message (usage: @pettalk <message>).
-#: conf/messages.conf:1123
+#: conf/messages.conf:1126
 msgid "Please enter a message (usage: @pettalk <message>)."
 msgstr ""
 
 #. code: 1146: Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>).
-#: conf/messages.conf:972
+#: conf/messages.conf:975
 msgid "Please enter a mob name/ID and guild name/ID (usage: @disguiseguild <mob name/ID>, <guild name/ID>)."
 msgstr ""
 
@@ -12981,190 +12926,188 @@ msgid "Please enter a mob name/id (usage: @showmobs <mob name/id>)"
 msgstr ""
 
 #. code: 1218: Please enter a monster name (usage: @mobsearch <monster name>).
-#: conf/messages.conf:1111
+#: conf/messages.conf:1114
 msgid "Please enter a monster name (usage: @mobsearch <monster name>)."
 msgstr ""
 
 #. code: 1225: Please enter a monster name (usage: @summon <monster name> {duration}).
-#: conf/messages.conf:1126
+#: conf/messages.conf:1129
 msgid "Please enter a monster name (usage: @summon <monster name> {duration})."
 msgstr ""
 
 #. code: 1239: Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>).
-#: conf/messages.conf:1154
+#: conf/messages.conf:1157
 msgid "Please enter a monster name/ID (usage: @mobinfo <monster_name_or_monster_ID>)."
 msgstr ""
 
 #. code: 1288: Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
-#: conf/messages.conf:1231
+#: conf/messages.conf:1234
 msgid "Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>)."
 msgstr ""
 
 #. code: 1015: Please enter a monster/egg name/ID (usage: @makeegg <pet>).
-#: conf/messages.conf:771
+#: conf/messages.conf:774
 msgid "Please enter a monster/egg name/ID (usage: @makeegg <pet>)."
 msgstr ""
 
 #. code: 1011: Please enter a number (usage: @skpoint <number of points>).
-#: conf/messages.conf:759
+#: conf/messages.conf:762
 msgid "Please enter a number (usage: @skpoint <number of points>)."
 msgstr ""
 
 #. code: 1010: Please enter a number (usage: @stpoint <number of points>).
-#: conf/messages.conf:756
+#: conf/messages.conf:759
 msgid "Please enter a number (usage: @stpoint <number of points>)."
 msgstr ""
 
 #. code: 1029: Please enter a party name (usage: @party <party_name>).
-#: conf/messages.conf:809
+#: conf/messages.conf:812
 msgid "Please enter a party name (usage: @party <party_name>)."
 msgstr ""
 
 #. code: 1035: Please enter a party name/ID (usage: @partyrecall <party_name/ID>).
-#: conf/messages.conf:825
+#: conf/messages.conf:828
 msgid "Please enter a party name/ID (usage: @partyrecall <party_name/ID>)."
 msgstr ""
 
 #. code: 1127: Please enter a party name/ID (usage: @partyspy <party_name/ID>).
-#: conf/messages.conf:927
+#: conf/messages.conf:930
 msgid "Please enter a party name/ID (usage: @partyspy <party_name/ID>)."
 msgstr ""
 
 #. code: 1021: Please enter a player name (usage: @block <char name>).
-#: conf/messages.conf:787
+#: conf/messages.conf:790
 msgid "Please enter a player name (usage: @block <char name>)."
 msgstr ""
 
 #. code: 1134: Please enter a player name (usage: @jail <char_name>).
-#: conf/messages.conf:948
+#: conf/messages.conf:951
 msgid "Please enter a player name (usage: @jail <char_name>)."
 msgstr ""
 
 #. code: 911: Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>).
-#: conf/messages.conf:666
+#: conf/messages.conf:669
 msgid "Please enter a player name (usage: @jumpto/@warpto/@goto <char name/ID>)."
 msgstr ""
 
 #. code: 1026: Please enter a player name (usage: @kick <char name/ID>).
-#: conf/messages.conf:800
+#: conf/messages.conf:803
 msgid "Please enter a player name (usage: @kick <char name/ID>)."
 msgstr ""
 
 #. code: 1128: Please enter a player name (usage: @nuke <char name>).
-#: conf/messages.conf:930
+#: conf/messages.conf:933
 msgid "Please enter a player name (usage: @nuke <char name>)."
 msgstr ""
 
 #. code: 1018: Please enter a player name (usage: @recall <char name/ID>).
-#: conf/messages.conf:780
+#: conf/messages.conf:783
 msgid "Please enter a player name (usage: @recall <char name/ID>)."
 msgstr ""
 
 #. code: 1230: Please enter a player name (usage: @trade <char name>).
-#: conf/messages.conf:1135
+#: conf/messages.conf:1138
 msgid "Please enter a player name (usage: @trade <char name>)."
 msgstr ""
 
 #. code: 1025: Please enter a player name (usage: @unban <char name>).
-#: conf/messages.conf:797
+#: conf/messages.conf:800
 msgid "Please enter a player name (usage: @unban <char name>)."
 msgstr ""
 
 #. code: 1024: Please enter a player name (usage: @unblock <char name>).
-#: conf/messages.conf:794
+#: conf/messages.conf:797
 msgid "Please enter a player name (usage: @unblock <char name>)."
 msgstr ""
 
 #. code: 1135: Please enter a player name (usage: @unjail/@discharge <char_name>).
-#: conf/messages.conf:951
+#: conf/messages.conf:954
 msgid "Please enter a player name (usage: @unjail/@discharge <char_name>)."
 msgstr ""
 
 #. code: 1234: Please enter a player name (usage: @unmute <char name>).
-#: conf/messages.conf:1143
+#: conf/messages.conf:1146
 msgid "Please enter a player name (usage: @unmute <char name>)."
 msgstr ""
 
 #. code: 910: Please enter a player name (usage: @where <char name>).
-#: conf/messages.conf:663
+#: conf/messages.conf:666
 msgid "Please enter a player name (usage: @where <char name>)."
 msgstr ""
 
 #. code: 996: Please enter a position and an amount (usage: @refine <equip position> <+/- amount>).
-#: conf/messages.conf:734
+#: conf/messages.conf:737
 msgid "Please enter a position and an amount (usage: @refine <equip position> <+/- amount>)."
 msgstr ""
 
 #. code: 1027: Please enter a quest skill ID.
-#: conf/messages.conf:803
+#: conf/messages.conf:806
 msgid "Please enter a quest skill ID."
 msgstr ""
 
 #. code: 1132: Please enter a script file name (usage: @loadnpc <file name>).
-#: conf/messages.conf:942
+#: conf/messages.conf:945
 msgid "Please enter a script file name (usage: @loadnpc <file name>)."
 msgstr ""
 
 #. code: 1163: Please enter a skill name to look up (usage: @skillid <skill name>).
-#: conf/messages.conf:1011
+#: conf/messages.conf:1014
 msgid "Please enter a skill name to look up (usage: @skillid <skill name>)."
 msgstr ""
 
 #. code: 1217: Please enter a sound filename (usage: @sound <filename>).
-#: conf/messages.conf:1108
+#: conf/messages.conf:1111
 msgid "Please enter a sound filename (usage: @sound <filename>)."
 msgstr ""
 
 #. code: 918: Please enter a speed value (usage: @speed <%d-%d>).
-#: conf/messages.conf:679
+#: conf/messages.conf:682
 msgid "Please enter a speed value (usage: @speed <%d-%d>)."
 msgstr ""
 
 #. code: 1009: Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}}).
-#: conf/messages.conf:753
+#: conf/messages.conf:756
 msgid "Please enter a status type/flag (usage: @displaystatus <status type> <flag> <tick> {<val1> {<val2> {<val3>}}})."
 msgstr ""
 
 #. code: 1297: Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>).
-#: conf/messages.conf:1246
+#: conf/messages.conf:1249
 msgid "Please enter a time in minutes (usage: @mutearea/@stfu <time in minutes>)."
 msgstr ""
 
 #. code: l("Please enter a valid amount.");
-#: npc/001-2-19/lloyd.txt:181
-#: npc/001-2-19/lloyd.txt:206
 #: npc/001-1/fexil.txt:106
 #, no-c-format
 msgid "Please enter a valid amount."
 msgstr ""
 
 #. code: 1014: Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>).
-#: conf/messages.conf:768
+#: conf/messages.conf:771
 msgid "Please enter a valid level (usage: @guildlvup/@guildlvlup <# of levels>)."
 msgstr ""
 
 #. code: 1017: Please enter a valid number (usage: @pethungry <0-100>).
-#: conf/messages.conf:777
+#: conf/messages.conf:780
 msgid "Please enter a valid number (usage: @pethungry <0-100>)."
 msgstr ""
 
 #. code: 1008: Please enter a valid position (usage: @memo <memo_position:%d-%d>).
-#: conf/messages.conf:750
+#: conf/messages.conf:753
 msgid "Please enter a valid position (usage: @memo <memo_position:%d-%d>)."
 msgstr ""
 
 #. code: 1016: Please enter a valid value (usage: @petfriendly <0-1000>).
-#: conf/messages.conf:774
+#: conf/messages.conf:777
 msgid "Please enter a valid value (usage: @petfriendly <0-1000>)."
 msgstr ""
 
 #. code: 1013: Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>).
-#: conf/messages.conf:765
+#: conf/messages.conf:768
 msgid "Please enter a valid value (usage: @str/@agi/@vit/@int/@dex/@luk <+/-adjustment>)."
 msgstr ""
 
 #. code: 984: Please enter all parameters (usage: @item2 <item name/ID> <quantity>).
-#: conf/messages.conf:705
+#: conf/messages.conf:708
 msgid "Please enter all parameters (usage: @item2 <item name/ID> <quantity>)."
 msgstr ""
 
@@ -13174,32 +13117,32 @@ msgid "Please enter all parameters (usage: @itembound2 <item name/ID> <quantity>
 msgstr ""
 
 #. code: 1028: Please enter an amount (usage: @spiritball <number: 0-%d>).
-#: conf/messages.conf:806
+#: conf/messages.conf:809
 msgid "Please enter an amount (usage: @spiritball <number: 0-%d>)."
 msgstr ""
 
 #. code: 1012: Please enter an amount (usage: @zeny <amount>).
-#: conf/messages.conf:762
+#: conf/messages.conf:765
 msgid "Please enter an amount (usage: @zeny <amount>)."
 msgstr ""
 
 #. code: 1322: Please enter an amount.
-#: conf/messages.conf:1293
+#: conf/messages.conf:1296
 msgid "Please enter an amount."
 msgstr ""
 
 #. code: 1152: Please enter an effect number (usage: @effect <effect number>).
-#: conf/messages.conf:990
+#: conf/messages.conf:993
 msgid "Please enter an effect number (usage: @effect <effect number>)."
 msgstr ""
 
 #. code: 1258: Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>).
-#: conf/messages.conf:1185
+#: conf/messages.conf:1188
 msgid "Please enter an intimacy value (usage: @homfriendly <intimacy value [0-1000]>)."
 msgstr ""
 
 #. code: 983: Please enter an item name or ID (usage: @item <item name/ID> <quantity>).
-#: conf/messages.conf:702
+#: conf/messages.conf:705
 msgid "Please enter an item name or ID (usage: @item <item name/ID> <quantity>)."
 msgstr ""
 
@@ -13209,64 +13152,64 @@ msgid "Please enter an item name or ID (usage: @itembound <item name/ID> <quanti
 msgstr ""
 
 #. code: 1276: Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>).
-#: conf/messages.conf:1215
+#: conf/messages.conf:1218
 msgid "Please enter an item name/ID (usage: @ii/@iteminfo <item name/ID>)."
 msgstr ""
 
 #. code: 1355: Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>).
-#: conf/messages.conf:1338
+#: conf/messages.conf:1341
 msgid "Please enter an item name/ID, a quantity, and a player name (usage: #delitem <player> <item_name_or_ID> <quantity>)."
 msgstr ""
 
 #. code: 1007: Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>).
-#: conf/messages.conf:747
+#: conf/messages.conf:750
 msgid "Please enter at least one item name/ID (usage: @produce <equip name/ID> <element> <# of very's>)."
 msgstr ""
 
 #. code: 921: Please enter at least one option.
-#: conf/messages.conf:688
+#: conf/messages.conf:691
 msgid "Please enter at least one option."
 msgstr ""
 
 #. code: 1118: Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
 #. code: 1038: Please enter at least one valid list number (usage: @mapinfo <0-3> <map>).
-#: conf/messages.conf:832
-#: conf/messages.conf:912
+#: conf/messages.conf:915
+#: conf/messages.conf:835
 msgid "Please enter at least one valid list number (usage: @mapinfo <0-3> <map>)."
 msgstr ""
 
 #. code: 991: Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
-#: conf/messages.conf:720
+#: conf/messages.conf:723
 msgid "Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>)."
 msgstr ""
 
 #. code: 1022: Please enter ban time and a player name (usage: @ban <time> <char name>).
-#: conf/messages.conf:790
+#: conf/messages.conf:793
 msgid "Please enter ban time and a player name (usage: @ban <time> <char name>)."
 msgstr ""
 
 #. code: 981: Please enter color and message (usage: @kamic <color> <message>).
-#: conf/messages.conf:698
+#: conf/messages.conf:701
 msgid "Please enter color and message (usage: @kamic <color> <message>)."
 msgstr ""
 
 #. code: 1304: Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>).
-#: conf/messages.conf:1261
+#: conf/messages.conf:1264
 msgid "Please enter guild name/ID (usage: @sizeguild <size> <guild name/ID>)."
 msgstr ""
 
 #. code: 1147: Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>).
-#: conf/messages.conf:975
+#: conf/messages.conf:978
 msgid "Please enter guild name/ID (usage: @undisguiseguild <guild name/ID>)."
 msgstr ""
 
 #. code: 1284: Please enter item name/ID (usage: @whodrops <item name/ID>).
-#: conf/messages.conf:1225
+#: conf/messages.conf:1228
 msgid "Please enter item name/ID (usage: @whodrops <item name/ID>)."
 msgstr ""
 
 #. code: 1031: Please enter part of an item name (usage: @idsearch <part_of_item_name>).
-#: conf/messages.conf:815
+#: conf/messages.conf:818
 msgid "Please enter part of an item name (usage: @idsearch <part_of_item_name>)."
 msgstr ""
 
@@ -13277,12 +13220,12 @@ msgid "Please enter the combat zone on the left."
 msgstr ""
 
 #. code: 1222: Please enter the correct parameters (usage: @npctalk <npc name>, <message>).
-#: conf/messages.conf:1119
+#: conf/messages.conf:1122
 msgid "Please enter the correct parameters (usage: @npctalk <npc name>, <message>)."
 msgstr ""
 
 #. code: 1223: Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>).
-#: conf/messages.conf:1120
+#: conf/messages.conf:1123
 msgid "Please enter the correct parameters (usage: @npctalkc <color> <npc name>, <message>)."
 msgstr ""
 
@@ -13317,7 +13260,7 @@ msgid "Please enter the new line."
 msgstr ""
 
 #. code: 1151: Please enter two e-mail addresses (usage: @email <current@email> <new@email>).
-#: conf/messages.conf:987
+#: conf/messages.conf:990
 msgid "Please enter two e-mail addresses (usage: @email <current@email> <new@email>)."
 msgstr ""
 
@@ -13460,7 +13403,7 @@ msgid "Poor Chelios, I don't envy him..."
 msgstr ""
 
 #. code: 1178: Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body
-#: conf/messages.conf:1038
+#: conf/messages.conf:1041
 msgid "Position: 1:Top 2:Middle 3:Bottom 4:Weapon 5:Shield 6:Shoes 7:Robe 8:Body"
 msgstr ""
 
@@ -13547,7 +13490,7 @@ msgid "Purple Cotton Dye"
 msgstr ""
 
 #. code: 1046: PvP Flags:
-#: conf/messages.conf:840
+#: conf/messages.conf:843
 msgid "PvP Flags: "
 msgstr ""
 
@@ -13572,7 +13515,7 @@ msgid "PvP is already On."
 msgstr ""
 
 #. code: 1047: Pvp ON |
-#: conf/messages.conf:841
+#: conf/messages.conf:844
 msgid "Pvp ON | "
 msgstr ""
 
@@ -13630,7 +13573,7 @@ msgid "Q'Pid#001-1"
 msgstr ""
 
 #. code: 1377: Quest database has been reloaded.
-#: conf/messages.conf:1370
+#: conf/messages.conf:1373
 msgid "Quest database has been reloaded."
 msgstr ""
 
@@ -13644,12 +13587,14 @@ msgstr ""
 #: npc/functions/quest-debug/031-General_Janus.txt:8
 #: npc/functions/quest-debug/010-ShipQuests_Ale.txt:8
 #: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:8
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:8
 #: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:8
 #: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:8
 #: npc/functions/quest-debug/028-General_Narrator.txt:8
-#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:8
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:8
 #: npc/functions/quest-debug/033-Artis_Legion_Progress.txt:9
 #: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:8
+#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:8
 #: npc/commands/debug-quest.txt:33
 #: npc/functions/quest-debug/004-ShipQuests_Nard.txt:8
 #: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:8
@@ -13659,21 +13604,19 @@ msgstr ""
 #: npc/commands/debug-quest.txt:66
 #: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:8
 #: npc/functions/quest-debug/026-General_Rumly.txt:8
-#: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:8
+#: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:8
 #: npc/commands/debug-quest.txt:96
-#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:8
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:8
 #: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:8
 #: npc/functions/quest-debug/003-ShipQuests_Peter.txt:8
 #: npc/functions/quest-debug/007-ShipQuests_Door.txt:8
 #: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:8
 #: npc/functions/quest-debug/018-General_Cookies.txt:8
-#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:8
+#: npc/functions/quest-debug/002-ShipQuests_Alige.txt:8
 #: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:8
 #: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:8
 #: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:8
 #: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:8
-#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:8
-#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:8
 #: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:8
 #: npc/commands/debug-quest.txt:7
 #, no-c-format
@@ -13681,12 +13624,11 @@ msgid "Quest debug"
 msgstr ""
 
 #. code: mes l("Quest state: @@", getq(ArtisQuests_Enora));
-#. code: mes l("Quest state: @@", getq(General_Cookies));
 #. code: mes l("Quest state: @@", getq(General_Narrator));
 #. code: mes l("Quest state: @@", getq(ArtisQuests_Fishman));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Gulukan));
-#. code: mes l("Quest state: @@", getq(ShipQuests_Tibbo));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Door));
+#. code: mes l("Quest state: @@", getq(General_Cookies));
 #. code: mes l("Quest state: @@", getq(ShipQuests_ArpanMoney));
 #. code: mes l("Quest state: @@", getq(ArtisQuests_Fexil));
 #. code: mes l("Quest state: @@", getq(ArtisQuests_CatchPiou));
@@ -13697,13 +13639,14 @@ msgstr ""
 #. code: mes l("Quest state: @@", getq(ArtisQuests_Lloyd));
 #. code: mes l("Quest state: @@", getq(General_Rumly));
 #. code: mes l("Quest state: @@", getq(ArtisQuests_LazyBrother));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Peter));
 #. code: mes l("Quest state: @@", getq(Artis_Legion_Progress));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Gugli));
 #. code: mes l("Quest state: @@", getq(ArtisQuests_MonaDad));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Ale));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Knife));
 #. code: mes l("Quest state: @@", getq(ShipQuests_TreasureChest));
-#. code: mes l("Quest state: @@", getq(ShipQuests_Peter));
+#. code: mes l("Quest state: @@", getq(ShipQuests_Tibbo));
 #. code: mes l("Quest state: @@", getq(General_Janus));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Astapolos));
 #. code: mes l("Quest state: @@", getq(ShipQuests_Julia));
@@ -13715,34 +13658,34 @@ msgstr ""
 #: npc/functions/quest-debug/026-General_Rumly.txt:11
 #: npc/functions/quest-debug/017-ShipQuests_ChefGado.txt:11
 #: npc/functions/quest-debug/016-ShipQuests_Gugli.txt:11
-#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:11
+#: npc/functions/quest-debug/007-ShipQuests_Door.txt:11
+#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:11
 #: npc/functions/quest-debug/031-General_Janus.txt:11
 #: npc/functions/quest-debug/009-ShipQuests_TreasureChest.txt:11
-#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:11
+#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:11
 #: npc/functions/quest-debug/032-ArtisQuests_MonaDad.txt:11
-#: npc/functions/quest-debug/007-ShipQuests_Door.txt:11
 #: npc/functions/quest-debug/020-ArtisQuests_Urchin.txt:11
 #: npc/functions/quest-debug/013-ShipQuests_Jalad.txt:11
+#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:11
 #: npc/functions/quest-debug/018-General_Cookies.txt:11
 #: npc/functions/quest-debug/021-ArtisQuests_CatchPiou.txt:11
 #: npc/functions/quest-debug/010-ShipQuests_Ale.txt:11
 #: npc/functions/quest-debug/004-ShipQuests_Nard.txt:11
 #: npc/functions/quest-debug/022-ArtisQuests_Fishman.txt:11
 #: npc/functions/quest-debug/001-ShipQuests_Arpan.txt:11
-#: npc/functions/quest-debug/029-ArtisQuests_Fexil.txt:11
 #: npc/functions/quest-debug/006-ShipQuests_ArpanMoney.txt:11
 #: npc/functions/quest-debug/019-ArtisQuests_LazyBrother.txt:11
 #: npc/functions/quest-debug/008-ShipQuests_Couwan.txt:11
 #: npc/functions/quest-debug/005-ShipQuests_Knife.txt:11
 #: npc/functions/quest-debug/012-ShipQuests_Gulukan.txt:11
-#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:11
 #: npc/functions/quest-debug/015-ShipQuests_Tibbo.txt:11
 #: npc/functions/quest-debug/028-General_Narrator.txt:11
 #: npc/functions/quest-debug/011-ShipQuests_Astapolos.txt:11
+#: npc/functions/quest-debug/003-ShipQuests_Peter.txt:11
 #: npc/functions/quest-debug/002-ShipQuests_Alige.txt:11
 #: npc/functions/quest-debug/000-ShipQuests_Julia.txt:11
-#: npc/functions/quest-debug/014-ShipQuests_QMuller.txt:11
-#: npc/functions/quest-debug/027-ArtisQuests_Enora.txt:11
+#: npc/functions/quest-debug/030-ArtisQuests_Lloyd.txt:11
+#: npc/functions/quest-debug/023-ArtisQuests_QOnan.txt:11
 #: npc/functions/quest-debug/033-Artis_Legion_Progress.txt:12
 #, no-c-format
 msgid "Quest state: @@"
@@ -13895,7 +13838,7 @@ msgid "Registered"
 msgstr ""
 
 #. code: l("Registration is open to everybody, but newcomers need to pay a fee for all of the paperwork.");
-#: npc/001-2-19/lloyd.txt:58
+#: npc/001-2-19/lloyd.txt:59
 #, no-c-format
 msgid "Registration is open to everybody, but newcomers need to pay a fee for all of the paperwork."
 msgstr ""
@@ -13941,17 +13884,17 @@ msgid "Removed %d cash points. Total %d points."
 msgstr ""
 
 #. code: 1442: Removed all bans from the '%s' channel
-#: conf/messages.conf:1460
+#: conf/messages.conf:1463
 msgid "Removed all bans from the '%s' channel"
 msgstr ""
 
 #. code: 1494: Removed item type: '%s' from your autoloottype list.
-#: conf/messages.conf:1534
+#: conf/messages.conf:1537
 msgid "Removed item type: '%s' from your autoloottype list."
 msgstr ""
 
 #. code: 1194: Removed item: '%s'/'%s' {%d} from your autolootitem list.
-#: conf/messages.conf:1066
+#: conf/messages.conf:1069
 msgid "Removed item: '%s'/'%s' {%d} from your autolootitem list."
 msgstr ""
 
@@ -13998,7 +13941,7 @@ msgid "Reset"
 msgstr ""
 
 #. code: 1324: Reset 'Feeling' maps.
-#: conf/messages.conf:1299
+#: conf/messages.conf:1302
 msgid "Reset 'Feeling' maps."
 msgstr ""
 
@@ -14027,7 +13970,7 @@ msgid "Reset subquests"
 msgstr ""
 
 #. code: 1089: Reset |
-#: conf/messages.conf:883
+#: conf/messages.conf:886
 msgid "Reset | "
 msgstr ""
 
@@ -14071,17 +14014,17 @@ msgid "Returned piou to Salem"
 msgstr ""
 
 #. code: 1306: Returned to normal state.
-#: conf/messages.conf:1265
+#: conf/messages.conf:1268
 msgid "Returned to normal state."
 msgstr ""
 
 #. code: 1307: Returned to real name.
-#: conf/messages.conf:1268
+#: conf/messages.conf:1271
 msgid "Returned to real name."
 msgstr ""
 
 #. code: 1356: Returning to normal font.
-#: conf/messages.conf:1341
+#: conf/messages.conf:1344
 msgid "Returning to normal font."
 msgstr ""
 
@@ -14200,7 +14143,7 @@ msgid "Sailors"
 msgstr ""
 
 #. code: 1074: Sakura |
-#: conf/messages.conf:868
+#: conf/messages.conf:871
 msgid "Sakura | "
 msgstr ""
 
@@ -14482,7 +14425,7 @@ msgid "Set a new broadcast"
 msgstr ""
 
 #. code: 1233: Set battle_config as requested.
-#: conf/messages.conf:1140
+#: conf/messages.conf:1143
 msgid "Set battle_config as requested."
 msgstr ""
 
@@ -14600,12 +14543,12 @@ msgid "Shht shht!"
 msgstr ""
 
 #. code: 881: Shop is out of stock! Come again later!
-#: conf/messages.conf:641
+#: conf/messages.conf:644
 msgid "Shop is out of stock! Come again later!"
 msgstr ""
 
 #. code: l("Should you be too quick or wait too long, you will most likely fail.");
-#: npc/001-2-4/books.txt:76
+#: npc/001-2-4/books.txt:78
 #, no-c-format
 msgid "Should you be too quick or wait too long, you will most likely fail."
 msgstr ""
@@ -14749,7 +14692,7 @@ msgid "Simply contact them, by forum or wispers or irc. When you are helpful and
 msgstr ""
 
 #. code: l("Since Don settled in Artis he and his band refused to register to the Merchant Guild."),
-#: npc/001-2-19/lloyd.txt:42
+#: npc/001-2-19/lloyd.txt:43
 #, no-c-format
 msgid "Since Don settled in Artis he and his band refused to register to the Merchant Guild."
 msgstr ""
@@ -14771,7 +14714,7 @@ msgid "Sixteen Castles"
 msgstr ""
 
 #. code: 1303: Size change applied.
-#: conf/messages.conf:1258
+#: conf/messages.conf:1261
 msgid "Size change applied."
 msgstr ""
 
@@ -14793,12 +14736,12 @@ msgid "Skill database has been reloaded."
 msgstr ""
 
 #. code: 1321: Skill delay failures are now shown.
-#: conf/messages.conf:1290
+#: conf/messages.conf:1293
 msgid "Skill delay failures are now shown."
 msgstr ""
 
 #. code: 1320: Skill delay failures will not be shown.
-#: conf/messages.conf:1289
+#: conf/messages.conf:1292
 msgid "Skill delay failures will not be shown."
 msgstr ""
 
@@ -14829,12 +14772,12 @@ msgid "Sniper"
 msgstr ""
 
 #. code: 1203: Snow has stopped falling.
-#: conf/messages.conf:1080
+#: conf/messages.conf:1083
 msgid "Snow has stopped falling."
 msgstr ""
 
 #. code: 1072: Snow |
-#: conf/messages.conf:866
+#: conf/messages.conf:869
 msgid "Snow | "
 msgstr ""
 
@@ -15100,7 +15043,7 @@ msgid "Somehow you don't feel good about your deed."
 msgstr ""
 
 #. code: l("Something else?");
-#: npc/001-2-19/lloyd.txt:289
+#: npc/001-2-19/lloyd.txt:222
 #, no-c-format
 msgid "Something else?"
 msgstr ""
@@ -15114,7 +15057,7 @@ msgid "Something is wrong with me, I can't smile nor sit."
 msgstr ""
 
 #. code: l("Sometimes a good merchant needs to reach out first. It's on the house, give Chelios my regards!");
-#: npc/001-2-19/lloyd.txt:44
+#: npc/001-2-19/lloyd.txt:45
 #, no-c-format
 msgid "Sometimes a good merchant needs to reach out first. It's on the house, give Chelios my regards!"
 msgstr ""
@@ -15229,22 +15172,22 @@ msgid "Sounds like a good deal to me. I'll do it."
 msgstr ""
 
 #. code: 1105: South
-#: conf/messages.conf:899
+#: conf/messages.conf:902
 msgid "South"
 msgstr ""
 
 #. code: 1106: South East
-#: conf/messages.conf:900
+#: conf/messages.conf:903
 msgid "South East"
 msgstr ""
 
 #. code: 1104: South West
-#: conf/messages.conf:898
+#: conf/messages.conf:901
 msgid "South West"
 msgstr ""
 
 #. code: 1227: Specified group does not exist.
-#: conf/messages.conf:1130
+#: conf/messages.conf:1133
 msgid "Specified group does not exist."
 msgstr ""
 
@@ -15314,7 +15257,7 @@ msgid "Stat changed."
 msgstr ""
 
 #. code: 1265: Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d
-#: conf/messages.conf:1198
+#: conf/messages.conf:1201
 msgid "Stats: Str %d / Agi %d / Vit %d / Int %d / Dex %d / Luk %d"
 msgstr ""
 
@@ -15372,7 +15315,7 @@ msgid "Stop it!"
 msgstr ""
 
 #. code: 919: Storage opened.
-#: conf/messages.conf:682
+#: conf/messages.conf:685
 msgid "Storage opened."
 msgstr ""
 
@@ -15437,7 +15380,7 @@ msgid "Store#Weapon001-2-27"
 msgstr ""
 
 #. code: 1269: Str: %d (%d~%d)
-#: conf/messages.conf:1204
+#: conf/messages.conf:1207
 msgid "Str: %d (%d~%d)"
 msgstr ""
 
@@ -15647,7 +15590,7 @@ msgid "Taree"
 msgstr ""
 
 #. code: 1184: Target character must be online and be a guild member.
-#: conf/messages.conf:1048
+#: conf/messages.conf:1051
 msgid "Target character must be online and be a guild member."
 msgstr ""
 
@@ -15680,7 +15623,7 @@ msgid "Teal Cotton Dye"
 msgstr ""
 
 #. code: 1057: Teleport Flags:
-#: conf/messages.conf:851
+#: conf/messages.conf:854
 msgid "Teleport Flags: "
 msgstr ""
 
@@ -15740,7 +15683,7 @@ msgid "Thank you for this commission, Chelios is as good as Don when it comes to
 msgstr ""
 
 #. code: l("Thank you for this!");
-#: npc/001-2-19/lloyd.txt:144
+#: npc/001-2-19/lloyd.txt:149
 #, no-c-format
 msgid "Thank you for this!"
 msgstr ""
@@ -15974,6 +15917,12 @@ msgstr ""
 msgid "The answer is a single word, without conjugation."
 msgstr ""
 
+#. code: l("The bank and item storage is shared between all characters within a same account."),
+#: npc/001-2-19/lloyd.txt:62
+#, no-c-format
+msgid "The bank and item storage is shared between all characters within a same account."
+msgstr ""
+
 #. code: mesq l("The best, the wonderful, the most choice cookie among all others, the...");
 #: npc/001-1/cookiemaster.txt:231
 #, no-c-format
@@ -16035,7 +15984,7 @@ msgid "The fear to see her sleeping on this quiet and lonely bed is becoming mor
 msgstr ""
 
 #. code: l("The fee is of @@ E. So, do you want to register?", .@price);
-#: npc/001-2-19/lloyd.txt:99
+#: npc/001-2-19/lloyd.txt:104
 #, no-c-format
 msgid "The fee is of @@ E. So, do you want to register?"
 msgstr ""
@@ -16053,7 +16002,7 @@ msgid "The first thing you should do is to evaluate your enemy."
 msgstr ""
 
 #. code: 1211: The fog has gone.
-#: conf/messages.conf:1096
+#: conf/messages.conf:1099
 msgid "The fog has gone."
 msgstr ""
 
@@ -16082,7 +16031,7 @@ msgid "The group found the support of Tulimshar's merchant lords and was given s
 msgstr ""
 
 #. code: l("The guild is in charge of the commerce regularization throughout Artis and its surroundings."),
-#: npc/001-2-19/lloyd.txt:55
+#: npc/001-2-19/lloyd.txt:56
 #, no-c-format
 msgid "The guild is in charge of the commerce regularization throughout Artis and its surroundings."
 msgstr ""
@@ -16121,7 +16070,7 @@ msgid "The little piou is flying nearby, all you need is to catch it and bring b
 msgstr ""
 
 #. code: 1125: The mapserver has spy command support disabled.
-#: conf/messages.conf:923
+#: conf/messages.conf:926
 msgid "The mapserver has spy command support disabled."
 msgstr ""
 
@@ -16196,12 +16145,12 @@ msgid "The player '%.*s' doesn't exist."
 msgstr ""
 
 #. code: 1169: The player cannot use that skill.
-#: conf/messages.conf:1023
+#: conf/messages.conf:1026
 msgid "The player cannot use that skill."
 msgstr ""
 
 #. code: 1171: The player meets all the requirements for that skill.
-#: conf/messages.conf:1025
+#: conf/messages.conf:1028
 msgid "The player meets all the requirements for that skill."
 msgstr ""
 
@@ -16256,7 +16205,7 @@ msgid "The travel was fine for you? It was terrible for me, I was sea-sick."
 msgstr ""
 
 #. code: 1174: The two cannot wed because one is either a baby or already married.
-#: conf/messages.conf:1030
+#: conf/messages.conf:1033
 msgid "The two cannot wed because one is either a baby or already married."
 msgstr ""
 
@@ -16321,12 +16270,12 @@ msgid "There are few groups of these @@s all around this island. Just pick some 
 msgstr ""
 
 #. code: 1238: There are no items to appraise.
-#: conf/messages.conf:1151
+#: conf/messages.conf:1154
 msgid "There are no items to appraise."
 msgstr ""
 
 #. code: l("There are no tasks for you right now.");
-#: npc/001-2-19/lloyd.txt:278
+#: npc/001-2-19/lloyd.txt:211
 #, no-c-format
 msgid "There are no tasks for you right now."
 msgstr ""
@@ -16411,7 +16360,7 @@ msgid "There is no event available right now."
 msgstr ""
 
 #. code: 988: There is no help for %c%s.
-#: conf/messages.conf:715
+#: conf/messages.conf:718
 msgid "There is no help for %c%s."
 msgstr ""
 
@@ -16517,7 +16466,7 @@ msgid "They are fresh, they are good!"
 msgstr ""
 
 #. code: 1173: They are married... wish them well.
-#: conf/messages.conf:1029
+#: conf/messages.conf:1032
 msgid "They are married... wish them well."
 msgstr ""
 
@@ -16539,10 +16488,10 @@ msgstr ""
 msgid "They sailed from Hurnscald to Tulimshar and then Nivalis, the last permanent settlements of humans."
 msgstr ""
 
-#. code: l("They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before.."),
+#. code: l("They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before."),
 #: npc/001-2-6/books.txt:148
 #, no-c-format
-msgid "They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before.."
+msgid "They sailed past the Clear Sea and towards the Long Ocean which nobody had explored before."
 msgstr ""
 
 #. code: mesq l("They shouldn't be too far from each other.");
@@ -16593,7 +16542,7 @@ msgid "This NPC doesn't exist."
 msgstr ""
 
 #. code: 873: This action can't be performed at the moment. Please try again later.
-#: conf/messages.conf:633
+#: conf/messages.conf:636
 msgid "This action can't be performed at the moment. Please try again later."
 msgstr ""
 
@@ -16604,10 +16553,10 @@ msgstr ""
 msgid "This book contains everything you should know about it, take it!"
 msgstr ""
 
-#. code: l("This book outlines the laws of every city and holding in Gasaron"),
+#. code: l("This book outlines the laws of every city and holding in Gasaron."),
 #: npc/functions/game-rules.txt:30
 #, no-c-format
-msgid "This book outlines the laws of every city and holding in Gasaron"
+msgid "This book outlines the laws of every city and holding in Gasaron."
 msgstr ""
 
 #. code: 294: This bound item cannot be stored there.
@@ -16693,7 +16642,7 @@ msgid "This is an @@, a light blue sea fruit. They're highly desired in the arch
 msgstr ""
 
 #. code: l("This is for my own use."),
-#: npc/001-2-19/lloyd.txt:30
+#: npc/001-2-19/lloyd.txt:31
 #, no-c-format
 msgid "This is for my own use."
 msgstr ""
@@ -16711,7 +16660,7 @@ msgid "This is where the bravest of warriors come together to put their skills t
 msgstr ""
 
 #. code: l("This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"),
-#: npc/001-2-19/lloyd.txt:35
+#: npc/001-2-19/lloyd.txt:36
 #, no-c-format
 msgid "This is your first time asking for something, you won't pay this time, take it as a sign of good faith!"
 msgstr ""
@@ -16814,17 +16763,17 @@ msgid "This menu gives access to quest debug menus for @@ quests."
 msgstr ""
 
 #. code: 1290: This monster does not spawn normally.
-#: conf/messages.conf:1233
+#: conf/messages.conf:1236
 msgid "This monster does not spawn normally."
 msgstr ""
 
 #. code: 1249: This monster has no MVP prizes.
-#: conf/messages.conf:1164
+#: conf/messages.conf:1167
 msgid "This monster has no MVP prizes."
 msgstr ""
 
 #. code: 1246: This monster has no drops.
-#: conf/messages.conf:1161
+#: conf/messages.conf:1164
 msgid "This monster has no drops."
 msgstr ""
 
@@ -16878,7 +16827,7 @@ msgid "This player is not in jail."
 msgstr ""
 
 #. code: 1138: This player is now
-#: conf/messages.conf:956
+#: conf/messages.conf:959
 msgid "This player is now"
 msgstr ""
 
@@ -16926,7 +16875,7 @@ msgid "Tibbo."
 msgstr ""
 
 #. code: 859: Time of death : ^EE0000%s^000000
-#: conf/messages.conf:617
+#: conf/messages.conf:620
 msgid "Time of death : ^EE0000%s^000000"
 msgstr ""
 
@@ -16943,7 +16892,7 @@ msgid "Tipiu"
 msgstr ""
 
 #. code: 1196: To add an item to the list, use "@alootid +<item name or ID>". To remove an item, use "@alootid -<item name or ID>".
-#: conf/messages.conf:1068
+#: conf/messages.conf:1071
 msgid "To add an item to the list, use \"@alootid +<item name or ID>\". To remove an item, use \"@alootid -<item name or ID>\"."
 msgstr ""
 
@@ -16983,6 +16932,12 @@ msgstr ""
 msgid "To get started with fishing, you'll need two things: a fishing rod and a bait."
 msgstr ""
 
+#. code: l("To move between characters that are on different accounts, you have to use the Trade function.");
+#: npc/001-2-19/lloyd.txt:64
+#, no-c-format
+msgid "To move between characters that are on different accounts, you have to use the Trade function."
+msgstr ""
+
 #. code: mes col(l("To open your inventory, use the F3 key or use your mouse to select it in the above menu in your client."), 9);
 #: npc/000-2-1/knife.txt:35
 #: npc/000-2-1/arpan.txt:227
@@ -16993,7 +16948,7 @@ msgid "To open your inventory, use the F3 key or use your mouse to select it in 
 msgstr ""
 
 #. code: l("To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges."),
-#: npc/001-2-4/books.txt:75
+#: npc/001-2-4/books.txt:77
 #, no-c-format
 msgid "To successfully catch a fish, you need to pull up your hook by clicking it, right after it submerges."
 msgstr ""
@@ -17023,7 +16978,7 @@ msgid "Told bobo to go home"
 msgstr ""
 
 #. code: 856: Tomb
-#: conf/messages.conf:614
+#: conf/messages.conf:617
 msgid "Tomb"
 msgstr ""
 
@@ -17083,7 +17038,7 @@ msgid "Tortuga Tongue"
 msgstr ""
 
 #. code: l("Toss the hook into deep water by clicking on where you want to cast it."),
-#: npc/001-2-4/books.txt:69
+#: npc/001-2-4/books.txt:71
 #, no-c-format
 msgid "Toss the hook into deep water by clicking on where you want to cast it."
 msgstr ""
@@ -17094,7 +17049,7 @@ msgid "Total Domination"
 msgstr ""
 
 #. code: 1042: Town Map
-#: conf/messages.conf:836
+#: conf/messages.conf:839
 msgid "Town Map"
 msgstr ""
 
@@ -17119,7 +17074,7 @@ msgid "TrainingGladius"
 msgstr ""
 
 #. code: 1488: Transforming into monster is not allowed in Guild Wars.
-#: conf/messages.conf:1524
+#: conf/messages.conf:1527
 msgid "Transforming into monster is not allowed in Guild Wars."
 msgstr ""
 
@@ -17220,7 +17175,7 @@ msgid "Two Castles"
 msgstr ""
 
 #. code: 1313: Type "@mapflag available" to list the available mapflags.
-#: conf/messages.conf:1276
+#: conf/messages.conf:1279
 msgid "Type \"@mapflag available\" to list the available mapflags."
 msgstr ""
 
@@ -17283,23 +17238,23 @@ msgstr ""
 
 #. code: 1110: Unknown
 #. code: 15: Unknown
-#: conf/messages.conf:904
+#: conf/messages.conf:907
 #: conf/messages.conf:42
 msgid "Unknown"
 msgstr ""
 
 #. code: 1390: Unknown Cart (usage: %s <0-%d>).
-#: conf/messages.conf:1391
+#: conf/messages.conf:1394
 msgid "Unknown Cart (usage: %s <0-%d>)."
 msgstr ""
 
 #. code: 1400: Unknown Channel '%s' (usage: %s <#channel_name>)
-#: conf/messages.conf:1411
+#: conf/messages.conf:1414
 msgid "Unknown Channel '%s' (usage: %s <#channel_name>)"
 msgstr ""
 
 #. code: 1399: Unknown Channel (usage: %s <#channel_name>)
-#: conf/messages.conf:1410
+#: conf/messages.conf:1413
 msgid "Unknown Channel (usage: %s <#channel_name>)"
 msgstr ""
 
@@ -17309,27 +17264,27 @@ msgid "Unknown Job"
 msgstr ""
 
 #. code: 1232: Unknown battle_config flag.
-#: conf/messages.conf:1139
+#: conf/messages.conf:1142
 msgid "Unknown battle_config flag."
 msgstr ""
 
 #. code: 1411: Unknown color '%s'
-#: conf/messages.conf:1430
+#: conf/messages.conf:1433
 msgid "Unknown color '%s'"
 msgstr ""
 
 #. code: 1157: Unknown map '%s'.
-#: conf/messages.conf:999
+#: conf/messages.conf:1002
 msgid "Unknown map '%s'."
 msgstr ""
 
 #. code: 905: Unknown packet: 0x%x
-#: conf/messages.conf:654
+#: conf/messages.conf:657
 msgid "Unknown packet: 0x%x"
 msgstr ""
 
 #. code: 908: Unknown type of value in:
-#: conf/messages.conf:657
+#: conf/messages.conf:660
 msgid "Unknown type of value in:"
 msgstr ""
 
@@ -17352,52 +17307,52 @@ msgid "Urchin Meat"
 msgstr ""
 
 #. code: 900: Usage:
-#: conf/messages.conf:649
+#: conf/messages.conf:652
 msgid "Usage:"
 msgstr ""
 
 #. code: 1312: Usage: "@mapflag monster_noteleport 1" (0=Off | 1=On)
-#: conf/messages.conf:1275
+#: conf/messages.conf:1278
 msgid "Usage: \"@mapflag monster_noteleport 1\" (0=Off | 1=On)"
 msgstr ""
 
 #. code: 1378: Usage: %s <permission_name>
-#: conf/messages.conf:1373
+#: conf/messages.conf:1376
 msgid "Usage: %s <permission_name>"
 msgstr ""
 
 #. code: 1365: Usage: @accinfo/@accountinfo <account_id/char name>
-#: conf/messages.conf:1354
+#: conf/messages.conf:1357
 msgid "Usage: @accinfo/@accountinfo <account_id/char name>"
 msgstr ""
 
 #. code: 1156: Usage: @addwarp <mapname> <X> <Y> <npc name>
-#: conf/messages.conf:998
+#: conf/messages.conf:1001
 msgid "Usage: @addwarp <mapname> <X> <Y> <npc name>"
 msgstr ""
 
 #. code: 1226: Usage: @adjgroup <group_id>
-#: conf/messages.conf:1129
+#: conf/messages.conf:1132
 msgid "Usage: @adjgroup <group_id>"
 msgstr ""
 
 #. code: 1183: Usage: @changegm <guild_member_name>
-#: conf/messages.conf:1047
+#: conf/messages.conf:1050
 msgid "Usage: @changegm <guild_member_name>"
 msgstr ""
 
 #. code: 1185: Usage: @changeleader <party_member_name>
-#: conf/messages.conf:1051
+#: conf/messages.conf:1054
 msgid "Usage: @changeleader <party_member_name>"
 msgstr ""
 
 #. code: 1177: Usage: @changelook {<position>} <view id>
-#: conf/messages.conf:1037
+#: conf/messages.conf:1040
 msgid "Usage: @changelook {<position>} <view id>"
 msgstr ""
 
 #. code: 1166: Usage: @displayskill <skill ID> {<skill level>}
-#: conf/messages.conf:1018
+#: conf/messages.conf:1021
 msgid "Usage: @displayskill <skill ID> {<skill level>}"
 msgstr ""
 
@@ -17407,27 +17362,27 @@ msgid "Usage: @jailfor <time> <character name>"
 msgstr ""
 
 #. code: 1172: Usage: @marry <char name>
-#: conf/messages.conf:1028
+#: conf/messages.conf:1031
 msgid "Usage: @marry <char name>"
 msgstr ""
 
 #. code: 1237: Usage: @mute <time> <char name>
-#: conf/messages.conf:1148
+#: conf/messages.conf:1151
 msgid "Usage: @mute <time> <char name>"
 msgstr ""
 
 #. code: 1329: Usage: @noks <self|party|guild>
-#: conf/messages.conf:1306
+#: conf/messages.conf:1309
 msgid "Usage: @noks <self|party|guild>"
 msgstr ""
 
 #. code: 1153: Usage: @npcmove <X> <Y> <npc_name>
-#: conf/messages.conf:993
+#: conf/messages.conf:996
 msgid "Usage: @npcmove <X> <Y> <npc_name>"
 msgstr ""
 
 #. code: 1186: Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>
-#: conf/messages.conf:1054
+#: conf/messages.conf:1057
 msgid "Usage: @partyoption <pickup share: yes/no> <item distribution: yes/no>"
 msgstr ""
 
@@ -17437,52 +17392,52 @@ msgid "Usage: @request <petition/message to online GMs>."
 msgstr ""
 
 #. code: 1367: Usage: @set <variable name> <value>
-#: conf/messages.conf:1358
+#: conf/messages.conf:1361
 msgid "Usage: @set <variable name> <value>"
 msgstr ""
 
 #. code: 1231: Usage: @setbattleflag <flag> <value>
-#: conf/messages.conf:1138
+#: conf/messages.conf:1141
 msgid "Usage: @setbattleflag <flag> <value>"
 msgstr ""
 
 #. code: 1167: Usage: @skilltree <skill ID> <target>
-#: conf/messages.conf:1021
+#: conf/messages.conf:1024
 msgid "Usage: @skilltree <skill ID> <target>"
 msgstr ""
 
 #. code: 1385: Usage: @unloadnpcfile <file name>
-#: conf/messages.conf:1382
+#: conf/messages.conf:1385
 msgid "Usage: @unloadnpcfile <file name>"
 msgstr ""
 
 #. code: 1165: Usage: @useskill <skill ID> <skill level> <target>
-#: conf/messages.conf:1015
+#: conf/messages.conf:1018
 msgid "Usage: @useskill <skill ID> <skill level> <target>"
 msgstr ""
 
 #. code: 1368: Usage: ex. "@set PoringCharVar 50"
-#: conf/messages.conf:1359
+#: conf/messages.conf:1362
 msgid "Usage: ex. \"@set PoringCharVar 50\""
 msgstr ""
 
 #. code: 1369: Usage: ex. "@set PoringCharVarSTR$ Super Duper String"
-#: conf/messages.conf:1360
+#: conf/messages.conf:1363
 msgid "Usage: ex. \"@set PoringCharVarSTR$ Super Duper String\""
 msgstr ""
 
 #. code: 1370: Usage: ex. "@set PoringCharVarSTR$" outputs its value, Super Duper String.
-#: conf/messages.conf:1361
+#: conf/messages.conf:1364
 msgid "Usage: ex. \"@set PoringCharVarSTR$\" outputs its value, Super Duper String."
 msgstr ""
 
 #. code: 1358: Use 0 or no parameter to return to normal font.
-#: conf/messages.conf:1343
+#: conf/messages.conf:1346
 msgid "Use 0 or no parameter to return to normal font."
 msgstr ""
 
 #. code: 1357: Use @font <1-9> to change your message font.
-#: conf/messages.conf:1342
+#: conf/messages.conf:1345
 msgid "Use @font <1-9> to change your message font."
 msgstr ""
 
@@ -17499,17 +17454,17 @@ msgid "Used %d Kafra points and %d cash points. %d Kafra and %d cash points rema
 msgstr ""
 
 #. code: 1381: User '%s' already possesses the '%s' permission.
-#: conf/messages.conf:1376
+#: conf/messages.conf:1379
 msgid "User '%s' already possesses the '%s' permission."
 msgstr ""
 
 #. code: 1382: User '%s' doesn't possess the '%s' permission.
-#: conf/messages.conf:1377
+#: conf/messages.conf:1380
 msgid "User '%s' doesn't possess the '%s' permission."
 msgstr ""
 
 #. code: 1384: User '%s' permissions updated successfully. The changes are temporary.
-#: conf/messages.conf:1379
+#: conf/messages.conf:1382
 msgid "User '%s' permissions updated successfully. The changes are temporary."
 msgstr ""
 
@@ -17544,7 +17499,7 @@ msgid "Visited Artis at least once"
 msgstr ""
 
 #. code: 1271: Vit: %d (%d~%d)
-#: conf/messages.conf:1206
+#: conf/messages.conf:1209
 msgid "Vit: %d (%d~%d)"
 msgstr ""
 
@@ -17729,7 +17684,7 @@ msgid "Water, salt, spicy herbs and meat stuffed with my special surprise!"
 msgstr ""
 
 #. code: l("We also feature some services like a storage and a bank for members."),
-#: npc/001-2-19/lloyd.txt:57
+#: npc/001-2-19/lloyd.txt:58
 #, no-c-format
 msgid "We also feature some services like a storage and a bank for members."
 msgstr ""
@@ -17921,7 +17876,7 @@ msgid "We're soon leaving that island, please return to your cabine."
 msgstr ""
 
 #. code: 1071: Weather Flags:
-#: conf/messages.conf:865
+#: conf/messages.conf:868
 msgid "Weather Flags: "
 msgstr ""
 
@@ -17959,8 +17914,14 @@ msgstr ""
 msgid "Welcome to our inn!"
 msgstr ""
 
+#. code: l("Welcome to the Legion of Aemil's building in Artis!");
+#: npc/001-2-33/lozerk.txt:94
+#, no-c-format
+msgid "Welcome to the Legion of Aemil's building in Artis!"
+msgstr ""
+
 #. code: l("Welcome to the Merchant Guild of Artis!"),
-#: npc/001-2-19/lloyd.txt:242
+#: npc/001-2-19/lloyd.txt:175
 #, no-c-format
 msgid "Welcome to the Merchant Guild of Artis!"
 msgstr ""
@@ -17971,14 +17932,8 @@ msgstr ""
 msgid "Welcome to the Red Plush inn!"
 msgstr ""
 
-#. code: l("Welcome to the the Legion of Aemil's building in Artis!");
-#: npc/001-2-33/lozerk.txt:94
-#, no-c-format
-msgid "Welcome to the the Legion of Aemil's building in Artis!"
-msgstr ""
-
 #. code: l("Welcome!"),
-#: npc/001-2-19/lloyd.txt:65
+#: npc/001-2-19/lloyd.txt:70
 #, no-c-format
 msgid "Welcome!"
 msgstr ""
@@ -18104,7 +18059,7 @@ msgid "Well... No wait, I have something for you but you shouldn't eat it... I'm
 msgstr ""
 
 #. code: 1103: West
-#: conf/messages.conf:897
+#: conf/messages.conf:900
 msgid "West"
 msgstr ""
 
@@ -18304,6 +18259,13 @@ msgstr ""
 msgid "What do you want to do with it?"
 msgstr ""
 
+#. code: l("What do you want to do with your money?");
+#: npc/functions/bank.txt:13
+#: npc/functions/bank.txt:18
+#, no-c-format
+msgid "What do you want to do with your money?"
+msgstr ""
+
 #. code: mes col(l("What do you want to do?"), 9);
 #. code: mes l("What do you want to do?");
 #: npc/001-2-23/doors.txt:43
@@ -18322,7 +18284,7 @@ msgstr ""
 #. code: mesq l("What do you want today?");
 #. code: l("What do you want today?");
 #: npc/001-2-21/julia.txt:13
-#: npc/001-2-19/lloyd.txt:243
+#: npc/001-2-19/lloyd.txt:176
 #: npc/000-2-0/julia.txt:273
 #, no-c-format
 msgid "What do you want today?"
@@ -18415,7 +18377,7 @@ msgid "What is this building?"
 msgstr ""
 
 #. code: l("What is this guild for?"),
-#: npc/001-2-19/lloyd.txt:253
+#: npc/001-2-19/lloyd.txt:186
 #, no-c-format
 msgid "What is this guild for?"
 msgstr ""
@@ -18892,6 +18854,12 @@ msgstr ""
 msgid "With hunger, thirst, and sleep as your only companions, you have the disturbing realization that you can't remember anything of your former life or identity."
 msgstr ""
 
+#. code: l("With it, you can safely move items and funds between your characters."),
+#: npc/001-2-19/lloyd.txt:63
+#, no-c-format
+msgid "With it, you can safely move items and funds between your characters."
+msgstr ""
+
 #. code: l("With proper training, a piou can become a good friend and faithful companion in your adventures.");
 #: npc/001-1/salem.txt:149
 #, no-c-format
@@ -18899,18 +18867,18 @@ msgid "With proper training, a piou can become a good friend and faithful compan
 msgstr ""
 
 #. code: 1279: With script
-#: conf/messages.conf:1218
+#: conf/messages.conf:1221
 msgid "With script"
 msgstr ""
 
 #. code: l("With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses."),
-#: npc/001-2-19/lloyd.txt:56
+#: npc/001-2-19/lloyd.txt:57
 #, no-c-format
 msgid "With the help of the town hall and the Legion of Aemil we organize some auction and we help local merchants to launch their businesses."
 msgstr ""
 
-#. code: l("Withdraw."),
-#: npc/001-2-19/lloyd.txt:167
+#. code: rif(#MerchantBank > 0, l("Withdraw.")),
+#: npc/functions/bank.txt:23
 #, no-c-format
 msgid "Withdraw."
 msgstr ""
@@ -19009,8 +18977,8 @@ msgstr ""
 #. code: 1116: Yes
 #. code: return select (menuaction(l("Yes")),
 #. code: l("Yes");
-#: npc/functions/main.txt:177
-#: conf/messages.conf:910
+#: npc/functions/main.txt:182
+#: conf/messages.conf:913
 #: npc/commands/scheduled-broadcasts.txt:65
 #, no-c-format
 msgid "Yes"
@@ -19024,7 +18992,7 @@ msgstr ""
 
 #. code: if (selectd (l("How do you know?"), l("Yes I am.")) == 1)
 #. code: switch (select (l("Yes I am."),
-#: npc/001-2-19/lloyd.txt:79
+#: npc/001-2-19/lloyd.txt:84
 #: npc/001-1/fexil.txt:55
 #, no-c-format
 msgid "Yes I am."
@@ -19093,7 +19061,7 @@ msgid "Yes, I feel strong enough for dangerous combats!"
 msgstr ""
 
 #. code: l("Yes, I have some! 5x Black Iron Ingots"),
-#: npc/001-2-19/lloyd.txt:26
+#: npc/001-2-19/lloyd.txt:27
 #, no-c-format
 msgid "Yes, I have some! \"5x Black Iron Ingots\""
 msgstr ""
@@ -19136,12 +19104,12 @@ msgstr ""
 #. code: l("Yes."), L_GiveFood,
 #: npc/001-2-22/knife.txt:21
 #: npc/001-2-22/alige.txt:282
-#: npc/001-2-19/lloyd.txt:101
 #: npc/items/croconut.txt:20
 #: npc/000-2-1/alige.txt:278
 #: npc/001-2-23/doors.txt:24
 #: npc/000-2-2/doors.txt:24
 #: npc/000-2-1/arpan.txt:246
+#: npc/001-2-19/lloyd.txt:106
 #: npc/000-2-1/knife.txt:21
 #, no-c-format
 msgid "Yes."
@@ -19330,7 +19298,7 @@ msgid "You already took a @@, please put this one back in the box."
 msgstr ""
 
 #. code: 1476: You are already mounting something else
-#: conf/messages.conf:1499
+#: conf/messages.conf:1502
 msgid "You are already mounting something else"
 msgstr ""
 
@@ -19383,13 +19351,13 @@ msgid "You are just sitting on the shadow of your store."
 msgstr ""
 
 #. code: lg("You are new around here, right?");
-#: npc/001-2-19/lloyd.txt:77
+#: npc/001-2-19/lloyd.txt:82
 #, no-c-format
 msgid "You are new around here, right?#0"
 msgstr ""
 
 #. code: lg("You are new around here, right?");
-#: npc/001-2-19/lloyd.txt:77
+#: npc/001-2-19/lloyd.txt:82
 #, no-c-format
 msgid "You are new around here, right?#1"
 msgstr ""
@@ -19400,12 +19368,12 @@ msgid "You are no longer killable."
 msgstr ""
 
 #. code: 878: You are no longer the Guild Master.
-#: conf/messages.conf:638
+#: conf/messages.conf:641
 msgid "You are no longer the Guild Master."
 msgstr ""
 
 #. code: 1023: You are not allowed to reduce the length of a ban.
-#: conf/messages.conf:791
+#: conf/messages.conf:794
 msgid "You are not allowed to reduce the length of a ban."
 msgstr ""
 
@@ -19415,17 +19383,17 @@ msgid "You are not authorized to warp from your current map."
 msgstr ""
 
 #. code: 1019: You are not authorized to warp someone to this map.
-#: conf/messages.conf:781
+#: conf/messages.conf:784
 msgid "You are not authorized to warp someone to this map."
 msgstr ""
 
 #. code: 1032: You are not authorized to warp someone to your current map.
-#: conf/messages.conf:818
+#: conf/messages.conf:821
 msgid "You are not authorized to warp someone to your current map."
 msgstr ""
 
 #. code: 1020: You are not authorized to warp this player from their map.
-#: conf/messages.conf:784
+#: conf/messages.conf:787
 msgid "You are not authorized to warp this player from their map."
 msgstr ""
 
@@ -19445,12 +19413,12 @@ msgid "You are not in a guild."
 msgstr ""
 
 #. code: 1139: You are not in jail.
-#: conf/messages.conf:959
+#: conf/messages.conf:962
 msgid "You are not in jail."
 msgstr ""
 
 #. code: 1137: You are now
-#: conf/messages.conf:955
+#: conf/messages.conf:958
 msgid "You are now"
 msgstr ""
 
@@ -19461,7 +19429,7 @@ msgid "You are now divorced!"
 msgstr ""
 
 #. code: 1305: You are now immune to attacks.
-#: conf/messages.conf:1264
+#: conf/messages.conf:1267
 msgid "You are now immune to attacks."
 msgstr ""
 
@@ -19513,7 +19481,7 @@ msgid "You bored me, see you later."
 msgstr ""
 
 #. code: 869: You broke the target's weapon.
-#: conf/messages.conf:629
+#: conf/messages.conf:632
 msgid "You broke the target's weapon."
 msgstr ""
 
@@ -19583,6 +19551,12 @@ msgstr ""
 msgid "You can drag and drop an item to the NPC window or select an item through your inventory."
 msgstr ""
 
+#. code: l("You can easily identify fishing spots, small bubbles and fishes are visible from the surface."),
+#: npc/001-2-4/books.txt:66
+#, no-c-format
+msgid "You can easily identify fishing spots, small bubbles and fishes are visible from the surface."
+msgstr ""
+
 #. code: mesq l("You can easily see if a monster is easy to kill or just impossible to defeat. Do not try against creatures that are way more powerful than you... You'd be risking your life for nothing.");
 #: npc/000-1/sapartan.txt:64
 #, no-c-format
@@ -19621,7 +19595,7 @@ msgid "You can go upstairs and choose a different room if you want."
 msgstr ""
 
 #. code: 1195: You can have %d items on your autolootitem list.
-#: conf/messages.conf:1067
+#: conf/messages.conf:1070
 msgid "You can have %d items on your autolootitem list."
 msgstr ""
 
@@ -19632,7 +19606,7 @@ msgid "You can keep your current party as it is, while leading or being part of 
 msgstr ""
 
 #. code: 923: You can not change to this job by command.
-#: conf/messages.conf:693
+#: conf/messages.conf:696
 msgid "You can not change to this job by command."
 msgstr ""
 
@@ -19712,12 +19686,12 @@ msgid "You can yaye some @@s by hitting these crocotrees."
 msgstr ""
 
 #. code: 1499: You can't add a guild bound item to a character without guild!
-#: conf/messages.conf:1541
+#: conf/messages.conf:1544
 msgid "You can't add a guild bound item to a character without guild!"
 msgstr ""
 
 #. code: 1498: You can't add a party bound item to a character without party!
-#: conf/messages.conf:1540
+#: conf/messages.conf:1543
 msgid "You can't add a party bound item to a character without party!"
 msgstr ""
 
@@ -19750,7 +19724,7 @@ msgid "You can't go there!"
 msgstr ""
 
 #. code: 870: You can't leave battleground guilds.
-#: conf/messages.conf:630
+#: conf/messages.conf:633
 msgid "You can't leave battleground guilds."
 msgstr ""
 
@@ -19775,22 +19749,22 @@ msgid "You can't trade in this map"
 msgstr ""
 
 #. code: 1393: You can't use commands while dead.
-#: conf/messages.conf:1396
+#: conf/messages.conf:1399
 msgid "You can't use commands while dead."
 msgstr ""
 
 #. code: 1482: You can't withdraw that much money
-#: conf/messages.conf:1513
+#: conf/messages.conf:1516
 msgid "You can't withdraw that much money"
 msgstr ""
 
 #. code: 1180: You cannot autotrade when dead.
-#: conf/messages.conf:1042
+#: conf/messages.conf:1045
 msgid "You cannot autotrade when dead."
 msgstr ""
 
 #. code: 1182: You cannot change guild leaders in this map.
-#: conf/messages.conf:1046
+#: conf/messages.conf:1049
 msgid "You cannot change guild leaders in this map."
 msgstr ""
 
@@ -19810,22 +19784,22 @@ msgid "You cannot increase that stat anymore."
 msgstr ""
 
 #. code: 1438: You cannot join the '%s' channel because you've been banned from it
-#: conf/messages.conf:1456
+#: conf/messages.conf:1459
 msgid "You cannot join the '%s' channel because you've been banned from it"
 msgstr ""
 
 #. code: 864: You cannot use this command when dead.
-#: conf/messages.conf:624
+#: conf/messages.conf:627
 msgid "You cannot use this command when dead."
 msgstr ""
 
 #. code: 1474: You cannot use this item while sitting
-#: conf/messages.conf:1496
+#: conf/messages.conf:1499
 msgid "You cannot use this item while sitting"
 msgstr ""
 
 #. code: 1475: You cannot use this item while your storage is open
-#: conf/messages.conf:1497
+#: conf/messages.conf:1500
 msgid "You cannot use this item while your storage is open"
 msgstr ""
 
@@ -19872,14 +19846,14 @@ msgid "You could start by talking to Gugli. He always has tasks for people willi
 msgstr ""
 
 #. code: 1161: You currently cannot open your storage.
-#: conf/messages.conf:1007
+#: conf/messages.conf:1010
 msgid "You currently cannot open your storage."
 msgstr ""
 
-#. code: l("You currently have @@ on your bank account.", #MerchantBank);
-#: npc/001-2-19/lloyd.txt:224
+#. code: l("You currently have @@ Esperin on your bank account.",
+#: npc/functions/bank.txt:11
 #, no-c-format
-msgid "You currently have @@ on your bank account."
+msgid "You currently have @@ Esperin on your bank account."
 msgstr ""
 
 #. code: switch (select(l("You do not give me much options."), l("The elder ran away from you.")))
@@ -19889,23 +19863,23 @@ msgid "You do not give me much options."
 msgstr ""
 
 #. code: 1396: You do not have a cart to be cleaned.
-#: conf/messages.conf:1403
+#: conf/messages.conf:1406
 msgid "You do not have a cart to be cleaned."
 msgstr ""
 
 #. code: 1254: You do not have a homunculus.
-#: conf/messages.conf:1175
+#: conf/messages.conf:1178
 msgid "You do not have a homunculus."
 msgstr ""
 
 #. code: l("You do not have enough Esperin on your bank account.");
-#: npc/001-2-19/lloyd.txt:212
+#: npc/functions/bank.txt:110
 #, no-c-format
 msgid "You do not have enough Esperin on your bank account."
 msgstr ""
 
 #. code: l("You do not have enough Esperin on yourself.");
-#: npc/001-2-19/lloyd.txt:187
+#: npc/functions/bank.txt:59
 #, no-c-format
 msgid "You do not have enough Esperin on yourself."
 msgstr ""
@@ -19917,12 +19891,12 @@ msgid "You do not have the required access privileges to use the Super Menu."
 msgstr ""
 
 #. code: 1391: You do not possess a cart to be removed
-#: conf/messages.conf:1392
+#: conf/messages.conf:1395
 msgid "You do not possess a cart to be removed"
 msgstr ""
 
 #. code: l("You do not seem to have enough money, come back later!");
-#: npc/001-2-19/lloyd.txt:108
+#: npc/001-2-19/lloyd.txt:113
 #, no-c-format
 msgid "You do not seem to have enough money, come back later!"
 msgstr ""
@@ -20057,7 +20031,7 @@ msgid "You have an awful case of amnesia."
 msgstr ""
 
 #. code: 879: You have become the Guild Master!
-#: conf/messages.conf:639
+#: conf/messages.conf:642
 msgid "You have become the Guild Master!"
 msgstr ""
 
@@ -20067,17 +20041,17 @@ msgid "You have been jailed by a GM."
 msgstr ""
 
 #. code: 1141: You have been jailed for an unknown amount of time.
-#: conf/messages.conf:961
+#: conf/messages.conf:964
 msgid "You have been jailed for an unknown amount of time."
 msgstr ""
 
 #. code: 1140: You have been jailed indefinitely.
-#: conf/messages.conf:960
+#: conf/messages.conf:963
 msgid "You have been jailed indefinitely."
 msgstr ""
 
 #. code: 880: You have been recovered!
-#: conf/messages.conf:640
+#: conf/messages.conf:643
 msgid "You have been recovered!"
 msgstr ""
 
@@ -20109,22 +20083,22 @@ msgid "You have mounted a Peco Peco."
 msgstr ""
 
 #. code: 1119: You have mounted your Dragon.
-#: conf/messages.conf:915
+#: conf/messages.conf:918
 msgid "You have mounted your Dragon."
 msgstr ""
 
 #. code: 1123: You have mounted your Mado Gear.
-#: conf/messages.conf:919
+#: conf/messages.conf:922
 msgid "You have mounted your Mado Gear."
 msgstr ""
 
 #. code: 1121: You have mounted your Warg.
-#: conf/messages.conf:917
+#: conf/messages.conf:920
 msgid "You have mounted your Warg."
 msgstr ""
 
 #. code: 1363: You have mounted.
-#: conf/messages.conf:1350
+#: conf/messages.conf:1353
 msgid "You have mounted."
 msgstr ""
 
@@ -20135,12 +20109,12 @@ msgid "You have put your finger on it, I am not."
 msgstr ""
 
 #. code: 1120: You have released your Dragon.
-#: conf/messages.conf:916
+#: conf/messages.conf:919
 msgid "You have released your Dragon."
 msgstr ""
 
 #. code: 1124: You have released your Mado Gear.
-#: conf/messages.conf:920
+#: conf/messages.conf:923
 msgid "You have released your Mado Gear."
 msgstr ""
 
@@ -20150,12 +20124,12 @@ msgid "You have released your Peco Peco."
 msgstr ""
 
 #. code: 1122: You have released your Warg.
-#: conf/messages.conf:918
+#: conf/messages.conf:921
 msgid "You have released your Warg."
 msgstr ""
 
 #. code: 1364: You have released your mount.
-#: conf/messages.conf:1351
+#: conf/messages.conf:1354
 msgid "You have released your mount."
 msgstr ""
 
@@ -20300,14 +20274,14 @@ msgstr ""
 msgid "You look nice, do you want to help me?"
 msgstr ""
 
-#. code: l("You made a cash deposit of @@ E.", .@amount);
-#: npc/001-2-19/lloyd.txt:194
+#. code: l("You made a cash deposit of @@ E.", format_number(.@deposit));
+#: npc/functions/bank.txt:74
 #, no-c-format
 msgid "You made a cash deposit of @@ E."
 msgstr ""
 
 #. code: 1366: You may search partial name by making use of '%' in the search, ex. "@accinfo %Mario%" lists all characters whose name contains "Mario".
-#: conf/messages.conf:1355
+#: conf/messages.conf:1358
 msgid "You may search partial name by making use of '%' in the search, ex. \"@accinfo %Mario%\" lists all characters whose name contains \"Mario\"."
 msgstr ""
 
@@ -20324,12 +20298,12 @@ msgid "You missunderstood, it's 5 potions."
 msgstr ""
 
 #. code: 1308: You must enter a name.
-#: conf/messages.conf:1269
+#: conf/messages.conf:1272
 msgid "You must enter a name."
 msgstr ""
 
 #. code: 1323: You must enter a player name or ID.
-#: conf/messages.conf:1296
+#: conf/messages.conf:1299
 msgid "You must enter a player name or ID."
 msgstr ""
 
@@ -20339,7 +20313,7 @@ msgid "You need %s to mount!"
 msgstr ""
 
 #. code: 1181: You need to be a Guild Master to use this command.
-#: conf/messages.conf:1045
+#: conf/messages.conf:1048
 msgid "You need to be a Guild Master to use this command."
 msgstr ""
 
@@ -20361,7 +20335,7 @@ msgid "You need to cross the crocojungle heading north."
 msgstr ""
 
 #. code: 1446: You need to input a option
-#: conf/messages.conf:1464
+#: conf/messages.conf:1467
 msgid "You need to input a option"
 msgstr ""
 
@@ -20626,7 +20600,7 @@ msgid "You should know this, an item like this can't be bleached."
 msgstr ""
 
 #. code: l("You should look for a seller named Fexil around the merchant square."),
-#: npc/001-2-19/lloyd.txt:149
+#: npc/001-2-19/lloyd.txt:154
 #, no-c-format
 msgid "You should look for a seller named Fexil around the merchant square."
 msgstr ""
@@ -20816,7 +20790,7 @@ msgid "You will find a wooden sign near a crossroad. He is a few steps on the le
 msgstr ""
 
 #. code: 1142: You will remain
-#: conf/messages.conf:962
+#: conf/messages.conf:965
 msgid "You will remain"
 msgstr ""
 
@@ -20838,10 +20812,10 @@ msgstr ""
 msgid "You wipe off enough of the sand to manage to read the message written on this crude piece of wood."
 msgstr ""
 
-#. code: l("You withdrawn a total of @@ E.", .@amount);
-#: npc/001-2-19/lloyd.txt:219
+#. code: l("You withdrew a total of @@ E.", format_number(.@withdrawal));
+#: npc/functions/bank.txt:125
 #, no-c-format
-msgid "You withdrawn a total of @@ E."
+msgid "You withdrew a total of @@ E."
 msgstr ""
 
 #. code: mesq l("You yoiis should walk to the north.");
@@ -20863,22 +20837,22 @@ msgid "You'll want your fishing rod to be flexible but solid."
 msgstr ""
 
 #. code: 1490: You're already autolooting this item type.
-#: conf/messages.conf:1530
+#: conf/messages.conf:1533
 msgid "You're already autolooting this item type."
 msgstr ""
 
 #. code: 1190: You're already autolooting this item.
-#: conf/messages.conf:1062
+#: conf/messages.conf:1065
 msgid "You're already autolooting this item."
 msgstr ""
 
 #. code: 1436: You're already in the '%s' channel
-#: conf/messages.conf:1419
+#: conf/messages.conf:1422
 msgid "You're already in the '%s' channel"
 msgstr ""
 
 #. code: 1470: You're already with a '%s' costume, type '@costume' to remove it.
-#: conf/messages.conf:1490
+#: conf/messages.conf:1493
 msgid "You're already with a '%s' costume, type '@costume' to remove it."
 msgstr ""
 
@@ -20889,12 +20863,12 @@ msgid "You're confusing me with someone else."
 msgstr ""
 
 #. code: 1493: You're currently not autolooting this item type.
-#: conf/messages.conf:1533
+#: conf/messages.conf:1536
 msgid "You're currently not autolooting this item type."
 msgstr ""
 
 #. code: 1193: You're currently not autolooting this item.
-#: conf/messages.conf:1065
+#: conf/messages.conf:1068
 msgid "You're currently not autolooting this item."
 msgstr ""
 
@@ -20923,12 +20897,12 @@ msgid "You're lucky that I'm a generous person, here's another one."
 msgstr ""
 
 #. code: 1294: You're not allowed to talk on this channel
-#: conf/messages.conf:1420
+#: conf/messages.conf:1423
 msgid "You're not allowed to talk on this channel"
 msgstr ""
 
 #. code: 867: You're not dead.
-#: conf/messages.conf:627
+#: conf/messages.conf:630
 msgid "You're not dead."
 msgstr ""
 
@@ -20943,12 +20917,12 @@ msgid "You're not in a guild."
 msgstr ""
 
 #. code: 1402: You're not in that channel, type '@join <#channel_name>'
-#: conf/messages.conf:1417
+#: conf/messages.conf:1420
 msgid "You're not in that channel, type '@join <#channel_name>'"
 msgstr ""
 
 #. code: 1425: You're not part of the '%s' channel
-#: conf/messages.conf:1444
+#: conf/messages.conf:1447
 msgid "You're not part of the '%s' channel"
 msgstr ""
 
@@ -20958,17 +20932,17 @@ msgid "You're not the master of your guild."
 msgstr ""
 
 #. code: 1412: You're not the owner of channel '%s'
-#: conf/messages.conf:1431
+#: conf/messages.conf:1434
 msgid "You're not the owner of channel '%s'"
 msgstr ""
 
 #. code: 1435: You're now in the '#%s' channel for '%s'
-#: conf/messages.conf:1418
+#: conf/messages.conf:1421
 msgid "You're now in the '#%s' channel for '%s'"
 msgstr ""
 
 #. code: 1403: You're now in the '%s' channel
-#: conf/messages.conf:1414
+#: conf/messages.conf:1417
 msgid "You're now in the '%s' channel"
 msgstr ""
 
@@ -21021,12 +20995,12 @@ msgid "You're right, it's about you.#0"
 msgstr ""
 
 #. code: 1455: You're talking too fast!
-#: conf/messages.conf:1473
+#: conf/messages.conf:1476
 msgid "You're talking too fast!"
 msgstr ""
 
 #. code: 862: You're too close to a NPC, you must be at least %d cells away from any NPC.
-#: conf/messages.conf:622
+#: conf/messages.conf:625
 msgid "You're too close to a NPC, you must be at least %d cells away from any NPC."
 msgstr ""
 
@@ -21052,7 +21026,7 @@ msgid "You've died."
 msgstr ""
 
 #. code: 1426: You've left the '%s' channel
-#: conf/messages.conf:1445
+#: conf/messages.conf:1448
 msgid "You've left the '%s' channel"
 msgstr ""
 
@@ -21150,27 +21124,27 @@ msgid "Your account time limit is: %d-%m-%Y %H:%M:%S."
 msgstr ""
 
 #. code: 1200: Your autolootitem list has been reset.
-#: conf/messages.conf:1072
+#: conf/messages.conf:1075
 msgid "Your autolootitem list has been reset."
 msgstr ""
 
 #. code: 1198: Your autolootitem list is empty.
-#: conf/messages.conf:1070
+#: conf/messages.conf:1073
 msgid "Your autolootitem list is empty."
 msgstr ""
 
 #. code: 1191: Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>.
-#: conf/messages.conf:1063
+#: conf/messages.conf:1066
 msgid "Your autolootitem list is full. Remove some items first with @autolootid -<item name or ID>."
 msgstr ""
 
 #. code: 1497: Your autoloottype list has been reset.
-#: conf/messages.conf:1537
+#: conf/messages.conf:1540
 msgid "Your autoloottype list has been reset."
 msgstr ""
 
 #. code: 1495: Your autoloottype list is empty.
-#: conf/messages.conf:1535
+#: conf/messages.conf:1538
 msgid "Your autoloottype list is empty."
 msgstr ""
 
@@ -21187,7 +21161,7 @@ msgid "Your brain liquified to match the level of a piou! It's the Legion of Gas
 msgstr ""
 
 #. code: 1397: Your cart was cleaned.
-#: conf/messages.conf:1404
+#: conf/messages.conf:1407
 msgid "Your cart was cleaned."
 msgstr ""
 
@@ -21197,7 +21171,7 @@ msgid "Your class can't mount!"
 msgstr ""
 
 #. code: 868: Your current memo positions are:
-#: conf/messages.conf:628
+#: conf/messages.conf:631
 msgid "Your current memo positions are:"
 msgstr ""
 
@@ -21207,32 +21181,32 @@ msgid "Your effect has changed."
 msgstr ""
 
 #. code: 1433: Your global chat is no longer bound to the '#%s' channel
-#: conf/messages.conf:1452
+#: conf/messages.conf:1455
 msgid "Your global chat is no longer bound to the '#%s' channel"
 msgstr ""
 
 #. code: 1432: Your global chat is not bound to any channel
-#: conf/messages.conf:1451
+#: conf/messages.conf:1454
 msgid "Your global chat is not bound to any channel"
 msgstr ""
 
 #. code: 1431: Your global chat is now bound to the '%s' channel
-#: conf/messages.conf:1450
+#: conf/messages.conf:1453
 msgid "Your global chat is now bound to the '%s' channel"
 msgstr ""
 
 #. code: 1229: Your group has been changed.
-#: conf/messages.conf:1132
+#: conf/messages.conf:1135
 msgid "Your group has been changed."
 msgstr ""
 
 #. code: 1395: Your guild storage was cleaned.
-#: conf/messages.conf:1400
+#: conf/messages.conf:1403
 msgid "Your guild storage was cleaned."
 msgstr ""
 
 #. code: 1201: Your guild's storage has already been opened by another member, try again later.
-#: conf/messages.conf:1075
+#: conf/messages.conf:1078
 msgid "Your guild's storage has already been opened by another member, try again later."
 msgstr ""
 
@@ -21267,7 +21241,7 @@ msgid "Your help is very welcome indeed. Unfortunately, I can give you a reward 
 msgstr ""
 
 #. code: 1255: Your homunculus doesn't evolve.
-#: conf/messages.conf:1178
+#: conf/messages.conf:1181
 msgid "Your homunculus doesn't evolve."
 msgstr ""
 
@@ -21317,7 +21291,7 @@ msgid "Your sister sent me to find you. Your mother is worried.#1"
 msgstr ""
 
 #. code: 1394: Your storage was cleaned.
-#: conf/messages.conf:1399
+#: conf/messages.conf:1402
 msgid "Your storage was cleaned."
 msgstr ""
 
@@ -21334,42 +21308,42 @@ msgid "Zzzzzzzzz..."
 msgstr ""
 
 #. code: 1328: [ K.S Protection Active - Option: Guild ]
-#: conf/messages.conf:1305
+#: conf/messages.conf:1308
 msgid "[ K.S Protection Active - Option: Guild ]"
 msgstr ""
 
 #. code: 1326: [ K.S Protection Active - Option: Party ]
-#: conf/messages.conf:1303
+#: conf/messages.conf:1306
 msgid "[ K.S Protection Active - Option: Party ]"
 msgstr ""
 
 #. code: 1327: [ K.S Protection Active - Option: Self ]
-#: conf/messages.conf:1304
+#: conf/messages.conf:1307
 msgid "[ K.S Protection Active - Option: Self ]"
 msgstr ""
 
 #. code: 1325: [ K.S Protection Inactive ]
-#: conf/messages.conf:1302
+#: conf/messages.conf:1305
 msgid "[ K.S Protection Inactive ]"
 msgstr ""
 
 #. code: 1330: [ Map K.S Protection Active ]
-#: conf/messages.conf:1309
+#: conf/messages.conf:1312
 msgid "[ Map K.S Protection Active ]"
 msgstr ""
 
 #. code: 1331: [ Map K.S Protection Inactive ]
-#: conf/messages.conf:1310
+#: conf/messages.conf:1313
 msgid "[ Map K.S Protection Inactive ]"
 msgstr ""
 
 #. code: 857: [ ^EE0000%s^000000 ]
-#: conf/messages.conf:615
+#: conf/messages.conf:618
 msgid "[ ^EE0000%s^000000 ]"
 msgstr ""
 
 #. code: 861: [^EE0000%s^000000]
-#: conf/messages.conf:619
+#: conf/messages.conf:622
 msgid "[^EE0000%s^000000]"
 msgstr ""
 
@@ -21411,12 +21385,12 @@ msgid "block"
 msgstr ""
 
 #. code: 1336: body/armor,
-#: conf/messages.conf:1317
+#: conf/messages.conf:1320
 msgid "body/armor, "
 msgstr ""
 
 #. code: 1339: both hands,
-#: conf/messages.conf:1320
+#: conf/messages.conf:1323
 msgid "both hands, "
 msgstr ""
 
@@ -21426,7 +21400,7 @@ msgid "change the sex of"
 msgstr ""
 
 #. code: import: conf/import/msg_conf.txt
-#: conf/messages.conf:1544
+#: conf/messages.conf:1547
 msgid "conf/import/msg_conf.txt"
 msgstr ""
 
@@ -21477,7 +21451,7 @@ msgid "delta"
 msgstr ""
 
 #. code: 1340: feet,
-#: conf/messages.conf:1321
+#: conf/messages.conf:1324
 msgid "feet, "
 msgstr ""
 
@@ -21488,7 +21462,7 @@ msgid "fisherman"
 msgstr ""
 
 #. code: 1334: garment,
-#: conf/messages.conf:1315
+#: conf/messages.conf:1318
 msgid "garment, "
 msgstr ""
 
@@ -21517,12 +21491,12 @@ msgid "in @@"
 msgstr ""
 
 #. code: 1335: left accessory,
-#: conf/messages.conf:1316
+#: conf/messages.conf:1319
 msgid "left accessory, "
 msgstr ""
 
 #. code: 1338: left hand,
-#: conf/messages.conf:1319
+#: conf/messages.conf:1322
 msgid "left hand, "
 msgstr ""
 
@@ -21541,22 +21515,22 @@ msgid "line @@: @@"
 msgstr ""
 
 #. code: 1342: lower head,
-#: conf/messages.conf:1323
+#: conf/messages.conf:1326
 msgid "lower head, "
 msgstr ""
 
 #. code: 1346: lower/mid head,
-#: conf/messages.conf:1327
+#: conf/messages.conf:1330
 msgid "lower/mid head, "
 msgstr ""
 
 #. code: 1347: lower/mid/top head,
-#: conf/messages.conf:1328
+#: conf/messages.conf:1331
 msgid "lower/mid/top head, "
 msgstr ""
 
 #. code: 1344: lower/top head,
-#: conf/messages.conf:1325
+#: conf/messages.conf:1328
 msgid "lower/top head, "
 msgstr ""
 
@@ -21567,7 +21541,7 @@ msgid "marriage1"
 msgstr ""
 
 #. code: 1345: mid head,
-#: conf/messages.conf:1326
+#: conf/messages.conf:1329
 msgid "mid head, "
 msgstr ""
 
@@ -21641,38 +21615,44 @@ msgstr ""
 msgid "npc5"
 msgstr ""
 
+#. code: test,30,10,0	trader	npc6	NPC_SHOP_BAG_TEST,{
+#: npc/test/npc6.txt:6
+#, no-c-format
+msgid "npc6"
+msgstr ""
+
 #. code: 1449: option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'
-#: conf/messages.conf:1467
+#: conf/messages.conf:1470
 msgid "option '%s' is already enabled, if you'd like to disable it type '@channel opt %s 0'"
 msgstr ""
 
 #. code: 1454: option '%s' is not enabled on channel '%s'
-#: conf/messages.conf:1472
+#: conf/messages.conf:1475
 msgid "option '%s' is not enabled on channel '%s'"
 msgstr ""
 
 #. code: 1453: option '%s' is now disabled for channel '%s'
-#: conf/messages.conf:1471
+#: conf/messages.conf:1474
 msgid "option '%s' is now disabled for channel '%s'"
 msgstr ""
 
 #. code: 1450: option '%s' is now enabled for channel '%s'
-#: conf/messages.conf:1468
+#: conf/messages.conf:1471
 msgid "option '%s' is now enabled for channel '%s'"
 msgstr ""
 
 #. code: 1452: option '%s' is now enabled for channel '%s' with %d seconds
-#: conf/messages.conf:1470
+#: conf/messages.conf:1473
 msgid "option '%s' is now enabled for channel '%s' with %d seconds"
 msgstr ""
 
 #. code: 1341: right accessory,
-#: conf/messages.conf:1322
+#: conf/messages.conf:1325
 msgid "right accessory, "
 msgstr ""
 
 #. code: 1337: right hand,
-#: conf/messages.conf:1318
+#: conf/messages.conf:1321
 msgid "right hand, "
 msgstr ""
 
@@ -21689,7 +21669,7 @@ msgid "seconds"
 msgstr ""
 
 #. code: 1164: skill %d: %s (%s)
-#: conf/messages.conf:1012
+#: conf/messages.conf:1015
 msgid "skill %d: %s (%s)"
 msgstr ""
 
@@ -21718,7 +21698,7 @@ msgid "test2"
 msgstr ""
 
 #. code: 1343: top head,
-#: conf/messages.conf:1324
+#: conf/messages.conf:1327
 msgid "top head, "
 msgstr ""
 
@@ -21733,7 +21713,7 @@ msgid "unblock"
 msgstr ""
 
 #. code: 1451: value '%d' for option '%s' is out of range (limit is 0-10)
-#: conf/messages.conf:1469
+#: conf/messages.conf:1472
 msgid "value '%d' for option '%s' is out of range (limit is 0-10)"
 msgstr ""
 
