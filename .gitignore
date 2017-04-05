@@ -26,6 +26,7 @@ lang/new
 # lang client
 lang_client/tmp
 lang_client/pot
+lang_client/dict
 
 # tx
 tx
