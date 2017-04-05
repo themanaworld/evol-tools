@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-04-05 00:52+0300\n"
+"POT-Creation-Date: 2017-04-06 01:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,35 +16,50 @@ msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:7
-msgid "bye"
+msgid "hi"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:8
-msgid "follow me"
+msgid "goodbye"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:9
-msgid "follow"
+msgid "bye"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:10
-msgid "stop"
+msgid "follow me"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:11
-msgid "help"
+msgid "follow"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:12
-msgid "go away"
+msgid "stop"
 msgstr ""
 
 #. (itstool) path: texts/text
 #: texts.xml:13
+msgid "help"
+msgstr ""
+
+#. (itstool) path: texts/text
+#: texts.xml:14
+msgid "i need help"
+msgstr ""
+
+#. (itstool) path: texts/text
+#: texts.xml:15
+msgid "go away"
+msgstr ""
+
+#. (itstool) path: texts/text
+#: texts.xml:16
 msgid "bot"
 msgstr ""
