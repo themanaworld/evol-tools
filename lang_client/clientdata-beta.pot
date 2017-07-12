@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-04-06 01:39+0300\n"
+"POT-Creation-Date: 2017-07-12 23:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -369,6 +369,26 @@ msgstr ""
 #. (itstool) path: emote/sprite@name
 #: emotes.xml:19
 msgid "Blah"
+msgstr ""
+
+#. (itstool) path: groups/group@name
+#: groups.xml:13
+msgid "GM"
+msgstr ""
+
+#. (itstool) path: groups/group@longName
+#: groups.xml:13
+msgid "Game master"
+msgstr ""
+
+#. (itstool) path: groups/group@name
+#: groups.xml:18
+msgid "Admin"
+msgstr ""
+
+#. (itstool) path: groups/group@longName
+#: groups.xml:18
+msgid "Administrator"
 msgstr ""
 
 #. (itstool) path: homunculuses/homunculus@name
@@ -2337,6 +2357,11 @@ msgstr ""
 #. (itstool) path: properties/property@value
 #: ../../client-data/maps/001-2-9.tmx:8
 msgid "Right Wing"
+msgstr ""
+
+#. (itstool) path: properties/property@value
+#: ../../client-data/maps/008-1.tmx:8
+msgid "Hurnscald"
 msgstr ""
 
 #. (itstool) path: properties/property@value
