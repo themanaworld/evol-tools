@@ -18,6 +18,7 @@ cd ../../client-data
 #its2 avatars
 its2 deadmessages
 its2 emotes
+its2 groups
 its2 homunculuses
 its2 itemcolors
 its2 itemfields
