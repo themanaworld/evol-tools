@@ -83,6 +83,7 @@ def readGroup(groups, f):
     fields = dict()
     commands = dict()
     permissions = dict()
+    inherit = set()
     for line in readLine(f):
         if line == "}" or line == "},":
             groups.nameToId[fields["name"]] = fields["id"]
