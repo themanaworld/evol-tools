@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export DIR="$(pwd)"
 export VER=$(cat versions/sqlver 2>/dev/null)

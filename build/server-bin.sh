@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export LOCALDIR="../server-local/bin"
 cd ../../server-code

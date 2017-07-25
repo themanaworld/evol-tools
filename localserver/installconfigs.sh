@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export SD="../../server-data"
 export CONF="$SD/conf/import"

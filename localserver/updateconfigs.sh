@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export VER=$(cat versions/confver 2>/dev/null)
 export CONFDIR="../../server-data/"

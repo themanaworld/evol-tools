@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export PIPE=./log/mappipe.tmp
 export LOGIN_PIPE=./log/loginpipe.tmp

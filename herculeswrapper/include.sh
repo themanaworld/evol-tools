@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function create_pipe {
     trap "rm -f $PIPE" EXIT
