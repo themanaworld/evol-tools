@@ -8,5 +8,11 @@ Copyright (C) 2010-2016 Evol Online -->
     <its:translateRule selector="//item/@useButton" translate="yes"/>
     <its:translateRule selector="//item/@useButton2" translate="yes"/>
     <its:translateRule selector="//item/@effect" translate="yes"/>
+    <its:translateRule selector="//item/inventory/menu/@name1" translate="yes"/>
+    <its:translateRule selector="//item/inventory/menu/@name2" translate="yes"/>
+    <its:translateRule selector="//item/storage/menu/@name1" translate="yes"/>
+    <its:translateRule selector="//item/storage/menu/@name2" translate="yes"/>
+    <its:translateRule selector="//item/cart/menu/@name1" translate="yes"/>
+    <its:translateRule selector="//item/cart/menu/@name2" translate="yes"/>
     <its:translateRule selector="//*" translate="no"/>
 </its:rules>
