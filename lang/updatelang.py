@@ -39,8 +39,47 @@ def addStr(text, comment, fileName, lineNum, addNoC):
     if addNoC == True:
         strComments[text].add("#, no-c-format\n")
 
-def collectScriptStrings(parentDir, relativeDir):
+def collectScriptFileStrings(codeFile, file2):
     global itemNamesByName
+    with open(file2, "r") as f:
+        cnt = -1
+        for line in f:
+            cnt = cnt + 1
+            line = line.replace("\\\"", "\a");
+            m = strre1.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    addStr(str, line, codeFile, cnt, True)
+            m = strre4.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    addStr(str + "#0", line, codeFile, cnt, True)
+                    addStr(str + "#1", line, codeFile, cnt, True)
+            m = strre2.search(line)
+            if m is not None and m.group("str")[0] != "#":
+                addStr(m.group("str"), line, codeFile, cnt, True)
+            m = strre3.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    if str.lower() in itemNamesByName:
+                        addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
+            m = strre5.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    if str.lower() in itemNamesByName:
+                        addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
+            m = strre6.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    addStr(str, line, codeFile, cnt, True)
+            m = strre7.findall(line)
+            if len(m) > 0:
+                for str in m:
+                    addStr(str[0] + "#0", line, codeFile, cnt, True)
+                    addStr(str[2] + "#1", line, codeFile, cnt, True)
+
+
+def collectScriptStrings(parentDir, relativeDir):
     files = os.listdir(parentDir) 
     for file1 in files:
         if file1[0] == ".":
@@ -51,42 +90,7 @@ def collectScriptStrings(parentDir, relativeDir):
             collectScriptStrings(file2, relativeDir2)
         elif filt.search(file1):
             codeFile = relativeDir + os.path.sep + file1
-            with open(file2, "r") as f:
-                cnt = -1
-                for line in f:
-                    cnt = cnt + 1
-                    line = line.replace("\\\"", "\a");
-                    m = strre1.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            addStr(str, line, codeFile, cnt, True)
-                    m = strre4.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            addStr(str + "#0", line, codeFile, cnt, True)
-                            addStr(str + "#1", line, codeFile, cnt, True)
-                    m = strre2.search(line)
-                    if m is not None and m.group("str")[0] != "#":
-                        addStr(m.group("str"), line, codeFile, cnt, True)
-                    m = strre3.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
-                    m = strre5.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            if str.lower() in itemNamesByName:
-                                addStr(itemNamesByName[str.lower()], line, codeFile, cnt, True)
-                    m = strre6.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            addStr(str, line, codeFile, cnt, True)
-                    m = strre7.findall(line)
-                    if len(m) > 0:
-                        for str in m:
-                            addStr(str[0] + "#0", line, codeFile, cnt, True)
-                            addStr(str[2] + "#1", line, codeFile, cnt, True)
+            collectScriptFileStrings(codeFile, file2)
 
 
 def collectMessages(messagesDir):
@@ -377,6 +381,7 @@ rootPath = "../../server-data/"
 loadItemDb(rootPath + "db/re")
 loadMobNames(rootPath + "db/re")
 collectScriptStrings(rootPath + "/npc", "npc")
+collectScriptFileStrings("db/re/item_db.conf", rootPath + "/db/re/item_db.conf")
 collectMessages(rootPath + "/conf/messages.conf")
 loadFiles(rootPath + "/langs")
 addMissingLines()
