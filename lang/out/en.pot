@@ -12713,6 +12713,12 @@ msgstr ""
 msgid "Piousse"
 msgstr ""
 
+#. code: dispbottom(l("Planting not implemented."));
+#: db/re/item_db.conf:155
+#, no-c-format
+msgid "Planting not implemented."
+msgstr ""
+
 #. code: 1099: Player '%s' (session #%d) | Location: %d,%d
 #: conf/messages.conf:893
 msgid "Player '%s' (session #%d) | Location: %d,%d"
