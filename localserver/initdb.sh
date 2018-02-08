@@ -22,5 +22,5 @@ $CMD <logs.sql
 
 if [[ -z "${VER}" ]]; then
     mkdir ${DIR}/versions
-    echo "10" >${DIR}/versions/sqlver
+    echo "11" >${DIR}/versions/sqlver
 fi
