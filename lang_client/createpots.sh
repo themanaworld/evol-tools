@@ -16,6 +16,7 @@ DIR=`pwd`
 cd ../../client-data
 
 #its2 avatars
+its2 clans
 its2 deadmessages
 its2 emotes
 its2 groups
