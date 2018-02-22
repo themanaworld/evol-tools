@@ -70,6 +70,10 @@ def makeDir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+def removeDir(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)
+
 def removeAllFiles(path):
     if os.path.exists(path):
         shutil.rmtree(path)
