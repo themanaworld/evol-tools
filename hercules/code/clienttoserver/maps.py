@@ -5,7 +5,7 @@
 
 import array
 import csv
-import md5
+import hashlib
 import os
 import zlib
 import struct
@@ -74,7 +74,6 @@ def recreateMap(names):
     tmxName = names[0]
     mCaheName = destDir + names[1][:-3] + "mcache"
     with open(mCaheName, "wb") as w:
-        print (tmxName, mCaheName)
         dom = minidom.parse(tmxName)
         root = dom.documentElement
         tilesets = []
@@ -156,7 +155,7 @@ def recreateMap(names):
                 binData = struct.pack(str(len(tiles))+"B", *tiles)
                 binData = zlib.compress(binData)
                 writeInt16(w, 1)
-                writeData(w, md5.new(binData).digest())  # 16 bytes
+                writeData(w, hashlib.md5(binData).digest())  # 16 bytes
                 writeInt16(w, width)
                 writeInt16(w, height)
                 writeInt32(w, len(binData))
