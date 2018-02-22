@@ -12,7 +12,7 @@ import struct
 import StringIO
 from xml.dom import minidom
 
-from code.fileutils import makeDir, writeInt16, writeInt32, writeMapName, writeData, removeDir
+from code.fileutils import makeDir, writeInt16, writeInt32, writeData, removeDir
 
 def getTmxFiles(srcDir):
     names = []
