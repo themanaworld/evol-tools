@@ -75,6 +75,7 @@ class Object(object):
         'name',
         'x', 'y',
         'w', 'h',
+        'ignore',
     )
 class Mob(Object):
     __slots__ = (
@@ -100,7 +101,7 @@ class Warp(Object):
         'dest_map',
         'dest_x',
         'dest_y',
-        'npc_id', 
+        'npc_id',
         'trigger_x',
         'trigger_y',
     ) + other_warp_fields
@@ -118,7 +119,7 @@ class ContentHandler(xml.sax.ContentHandler):
         'width',    # width of the height layer
         'height',   # height of the height layer
 	'firstgid', # first gid of height layer
-        'heightmap',# height map 
+        'heightmap',# height map
         'base',     # base name of current map
         'npc_dir',  # world/map/npc/<base>
         'mobs',     # open file to _mobs.txt
@@ -271,6 +272,8 @@ class ContentHandler(xml.sax.ContentHandler):
             print('</%s>' % name)
 
         if name == u'object':
+            if hasattr(self.object, 'ignore'):
+                return;
             obj = self.object
             if isinstance(obj, Mob):
                 mob_id = obj.monster_id
@@ -403,7 +406,7 @@ def main(argv):
             if os.path.isfile(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS)):
                 npc_master.append('@include "%s"\n' % posixpath.join(SERVER_NPCS, base, NPC_IMPORTS))
 
-            
+
             map_db.write('%s %d\n' % (arg.split('.')[0], map_count))
             map_conf.write('    "%s",\n' % (arg.split('.')[0]))
             map_count += 1
