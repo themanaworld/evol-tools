@@ -62,6 +62,7 @@ NPC_SAVES = '_savepoints.txt'
 NPC_WARPS = '_warps.txt'
 NPC_IMPORTS = '_import.txt'
 NPC_MASTER_IMPORTS = NPC_IMPORTS
+NPC_MASTER_ANCHORS = '_anchors.txt'
 
 class State(object):
     pass
@@ -96,6 +97,10 @@ class Save(Object):
         'inn',
     )
 
+class Anchor(Object):
+    __slots__ = (
+    )
+
 class Warp(Object):
     __slots__ = (
         'dest_map',
@@ -110,26 +115,27 @@ class Warp(Object):
 
 class ContentHandler(xml.sax.ContentHandler):
     __slots__ = (
-        'locator',  # keeps track of location in document
-        'state',    # state of height info
-        'tilesets', # first gid of each tileset
-        'buffer',   # characters within a section
-        'encoding', # encoding of layer data
-        'compression', # compression of layer data
-        'width',    # width of the height layer
-        'height',   # height of the height layer
-	'firstgid', # first gid of height layer
-        'heightmap',# height map
-        'base',     # base name of current map
-        'npc_dir',  # world/map/npc/<base>
-        'mobs',     # open file to _mobs.txt
-        'warps',    # open file to _warps.txt
-        'imports',  # open file to _import.txt
-        'name',     # name property of the current map
-        'object',   # stores properties of the latest <object> tag
-        'mob_ids',  # set of all mob types that spawn here
+        'locator',       # keeps track of location in document
+        'state',         # state of height info
+        'tilesets',      # first gid of each tileset
+        'buffer',        # characters within a section
+        'encoding',      # encoding of layer data
+        'compression',   # compression of layer data
+        'width',         # width of the height layer
+        'height',        # height of the height layer
+        'firstgid',      # first gid of height layer
+        'heightmap',     # height map
+        'base',          # base name of current map
+        'npc_dir',       # world/map/npc/<base>
+        'mobs',          # open file to _mobs.txt
+        'warps',         # open file to _warps.txt
+        'imports',       # open file to _import.txt
+        'name',          # name property of the current map
+        'object',        # stores properties of the latest <object> tag
+        'mob_ids',       # set of all mob types that spawn here
+        'anchor_master', # list of all anchors
     )
-    def __init__(self, npc_dir, mobs, saves, warps, imports):
+    def __init__(self, npc_dir, mobs, saves, warps, imports, anchor_master):
         xml.sax.ContentHandler.__init__(self)
         self.locator = None
         self.state = State.INITIAL
@@ -147,6 +153,7 @@ class ContentHandler(xml.sax.ContentHandler):
         self.saves = saves
         self.warps = warps
         self.imports = imports
+        self.anchor_master = anchor_master
         self.object = None
         self.mob_ids = set()
         self.mob_cnt = False
@@ -233,6 +240,12 @@ class ContentHandler(xml.sax.ContentHandler):
                     y += h/2
                     w -= 2
                     h -= 2
+                elif obj_type == 'anchor':
+                    self.object = Anchor()
+                    x += w/2
+                    y += h/2
+                    w -= 2
+                    h -= 2
                 elif obj_type == 'warp':
                     self.object = Warp()
                     x += w/2
@@ -309,6 +322,8 @@ class ContentHandler(xml.sax.ContentHandler):
                     ])
                 )
                 self.save_cnt = True
+            elif isinstance(obj, Anchor):
+                self.anchor_master.append('    htput(.ht, "%s", "%s %d %d");\n' % (obj.name.upper(), self.base, obj.x, obj.y))
             elif isinstance(obj, Warp):
                 if (obj.npc_id == u'WARP'):
                     obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
@@ -383,6 +398,7 @@ def main(argv):
                     continue
 
     npc_master = []
+    anchor_master = []
     map_basenames = []
 
     map_conf = open(posixpath.join(server_data,MAP_CONF), 'w')
@@ -402,7 +418,7 @@ def main(argv):
                 with open(posixpath.join(main.this_map_npc_dir, NPC_SAVES), 'w') as saves:
                     with open(posixpath.join(main.this_map_npc_dir, NPC_WARPS), 'w') as warps:
                         with open(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS), 'w') as imports:
-                            xml.sax.parse(tmx, ContentHandler(main.this_map_npc_dir, mobs, saves, warps, imports))
+                            xml.sax.parse(tmx, ContentHandler(main.this_map_npc_dir, mobs, saves, warps, imports, anchor_master))
             if os.path.isfile(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS)):
                 npc_master.append('@include "%s"\n' % posixpath.join(SERVER_NPCS, base, NPC_IMPORTS))
 
@@ -411,11 +427,21 @@ def main(argv):
             map_conf.write('    "%s",\n' % (arg.split('.')[0]))
             map_count += 1
     map_conf.write(")\n")
+    with open(posixpath.join(npc_dir, NPC_MASTER_ANCHORS), 'w') as out:
+        out.write('// %s\n\n' % MESSAGE)
+        out.write('-\tscript\t__anchors__\t32767,{\n')
+        out.write('OnInit:\n')
+        out.write('    .ht = htnew();\n');
+        anchor_master.sort()
+        for line in anchor_master:
+            out.write(line)
+        out.write('}\n')
     with open(posixpath.join(npc_dir, NPC_MASTER_IMPORTS), 'w') as out:
         out.write('// %s\n\n' % MESSAGE)
         npc_master.sort()
         for line in npc_master:
             out.write(line)
+        out.write('"%s",\n' % posixpath.join(SERVER_NPCS, NPC_MASTER_ANCHORS));
 
 if __name__ == '__main__':
     main(sys.argv)
