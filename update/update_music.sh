@@ -4,9 +4,10 @@
 # Author: Andrei Karas (4144)
 
 dir=`pwd`
+CC=${CC:=gcc}
 
 rm adler32
-gcc -lz adler32.c -o adler32
+$CC -lz adler32.c -o adler32
 
 mkdir files
 mkdir upload
