@@ -119,8 +119,6 @@ class ContentHandler(xml.sax.ContentHandler):
         'state',         # state of height info
         'tilesets',      # first gid of each tileset
         'buffer',        # characters within a section
-        'encoding',      # encoding of layer data
-        'compression',   # compression of layer data
         'width',         # width of the height layer
         'height',        # height of the height layer
         'firstgid',      # first gid of height layer
@@ -141,8 +139,6 @@ class ContentHandler(xml.sax.ContentHandler):
         self.state = State.INITIAL
         self.tilesets = set([0]) # consider the null tile as its own tileset
         self.buffer = bytearray()
-        self.encoding = None
-        self.compression = None
         self.width = None
         self.height = None
         self.firstgid = 0
@@ -160,6 +156,8 @@ class ContentHandler(xml.sax.ContentHandler):
         self.save_cnt = False
         self.warp_cnt = False
         self.name = None
+        self.layer_name = u''
+        self.layers = set()
 
     def setDocumentLocator(self, loc):
         self.locator = loc
@@ -202,21 +200,40 @@ class ContentHandler(xml.sax.ContentHandler):
                   if attr[u'name'] == u'Height Numbers':
                     self.firstgid = int(attr[u'firstgid'])
 
-            if name == u'layer' and attr[u'name'].lower().startswith(u'height'):
+            if name == u'layer':
                 self.width = int(attr[u'width'])
                 self.height = int(attr[u'height'])
+                self.layers.add(attr[u'name'].lower())
+                self.layer_name = attr[u'name'].lower()
                 self.state = State.LAYER
         elif self.state is State.LAYER:
-            if name == u'data':
-                if attr.get(u'encoding','') not in (u'', u'csv'):
-                    print('Bad encoding:', attr.get(u'encoding',''))
-                    return
-                self.encoding = attr.get(u'encoding','')
-                if attr.get(u'compression','') not in (u'', u'none'):
-                    print('Bad compression:', attr.get(u'compression',''))
-                    return
-                self.compression = attr.get(u'compression','')
-                self.state = State.DATA
+            if name == u'layer':
+                self.layers.add(attr[u'name'].lower())
+                self.layer_name = attr[u'name'].lower()
+            elif name == u'data':
+                if self.layer_name.startswith(u'height'):
+                    if attr.get(u'encoding','') not in (u'', u'csv'):
+                        print('Bad encoding:', attr.get(u'encoding',''))
+                        return
+                    if attr.get(u'compression','') not in (u'', u'none'):
+                        print('Bad compression:', attr.get(u'compression',''))
+                        return
+                    self.state = State.DATA
+            elif name == u'properties' or name == u'property':
+                pass
+            else:
+                self.state = State.FINAL
+                if not u'collision' in self.layers:
+                    print("\n\nERROR: missing Collision layer on map %s." % (self.base))
+                    raise AttributeError('collision')
+                if not u'fringe' in self.layers:
+                    print("\n\nERROR: missing Fringe layer on map %s." % (self.base))
+                    raise AttributeError('fringe')
+                for layer in self.layers:
+                    if layer.startswith(u'height'):
+                        return
+                print("\n\nERROR: missing Heights layer on map %s." % (self.base))
+                raise AttributeError('heights')
         elif self.state is State.FINAL:
             if self.name is None:
                 print("\n\nERROR: missing property on map %s: name is mandatory on a map." % (self.base))
@@ -364,13 +381,12 @@ class ContentHandler(xml.sax.ContentHandler):
 
         if name == u'data':
             if self.state is State.DATA:
-                if self.encoding == u'csv':
-                  for x in self.buffer.split(','):
+                for x in self.buffer.split(','):
                     if int(x) > 0:
-                      self.heightmap += str((int(x) - int(self.firstgid)) + 1)
+                        self.heightmap += str((int(x) - int(self.firstgid)) + 1)
                     else:
-                      self.heightmap += str(x)
-                self.state = State.FINAL
+                        self.heightmap += str(x)
+                self.state = State.LAYER
 
     def endDocument(self):
         if not self.mob_cnt:
