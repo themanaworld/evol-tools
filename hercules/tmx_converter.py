@@ -213,11 +213,11 @@ class ContentHandler(xml.sax.ContentHandler):
             elif name == u'data':
                 if self.layer_name.startswith(u'height'):
                     if attr.get(u'encoding','') not in (u'', u'csv'):
-                        print('Bad encoding:', attr.get(u'encoding',''))
-                        return
+                        print("\n\nERROR: bad encoding on map %s: encoding must be CSV, but %s was used." % (self.base, attr.get(u'encoding','')))
+                        raise SyntaxError('encoding')
                     if attr.get(u'compression','') not in (u'', u'none'):
-                        print('Bad compression:', attr.get(u'compression',''))
-                        return
+                        print("\n\nERROR: bad compression on map %s: compression must be disabled, but %s was used." % (self.base, attr.get(u'compression','')))
+                        raise SyntaxError('compression')
                     self.state = State.DATA
             elif name == u'properties' or name == u'property':
                 pass
@@ -280,7 +280,7 @@ class ContentHandler(xml.sax.ContentHandler):
                     h -= 1
                 else:
                     if obj_type not in other_object_types:
-                        print('Unknown object type:', obj_type, file=sys.stderr)
+                        print('\n\nWarning: unknown object type \"%s\" on map %s.' % (obj_type, self.base), file=sys.stderr)
                     self.object = None
                     return
                 obj = self.object
@@ -325,10 +325,10 @@ class ContentHandler(xml.sax.ContentHandler):
                         try:
                             name = mob_names[mob_id]
                         except KeyError:
-                            print('Warning: unknown mob ID: %d (%s)' % (mob_id, obj.name))
+                            print('\n\nWarning: unknown mob ID %d (%s) on map %s.' % (mob_id, obj.name, self.base))
                         else:
                             if name != obj.name:
-                                print('Warning: wrong mob name: %s (!= %s)' % (obj.name, name))
+                                print('\n\nWarning: wrong mob name on map %s: %s (!= %s)' % (self.base, obj.name, name))
                                 obj.name = name
                     self.mob_ids.add(mob_id)
                     if obj.script:
