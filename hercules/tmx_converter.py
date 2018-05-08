@@ -30,7 +30,7 @@ import posixpath
 import xml.sax
 
 dump_all = False # wall of text
-check_mobs = False # mob_db.txt
+check_mobs = True # mob_db.txt
 
 # lower case versions of everything except 'spawn' and 'warp'
 other_object_types = set([
@@ -192,7 +192,7 @@ class ContentHandler(xml.sax.ContentHandler):
                     self.warps.write('// Map %s: %s warps\n' % (self.base, self.name))
                 elif attr[u'name'] == u'ignore':
                     print("\n\nIgnore flag detected on map %s. Skipping..." % self.base)
-                    raise Exception
+                    raise Exception('ignore')
 
             if name == u'tileset':
                 self.tilesets.add(int(attr[u'firstgid']))
@@ -326,6 +326,8 @@ class ContentHandler(xml.sax.ContentHandler):
                             name = mob_names[mob_id]
                         except KeyError:
                             print('\n\nWarning: unknown mob ID %d (%s) on map %s.' % (mob_id, obj.name, self.base))
+                            # TODO: make it find the id by itself
+                            return
                         else:
                             if name != obj.name:
                                 print('\n\nWarning: wrong mob name on map %s: %s (!= %s)' % (self.base, obj.name, name))
@@ -423,10 +425,17 @@ def main(argv):
         mob_names = {}
         with open(posixpath.join(server_data, MOB_DB_CONF)) as mob_db:
             for line in mob_db:
-                if not line.strip():
+                line = line.strip()
+                if not line:
                     continue
-                if line.startswith('//'):
+                elif line.startswith('//'):
                     continue
+                elif line.endswith(')'):
+                    continue # the template on top of the file
+                elif line.startswith('Id:'):
+                    current_id = int(line[4:].strip())
+                elif line.startswith('Name:'):
+                    mob_names[current_id] = line[7:-1].strip()
 
     npc_master = []
     anchor_master = []
@@ -458,8 +467,8 @@ def main(argv):
                 map_db.write('%s %d\n' % (arg.split('.')[0], map_count))
                 map_conf.write('    "%s",\n' % (arg.split('.')[0]))
                 map_count += 1
-            except Exception:
-                if 'CI' in os.environ:
+            except Exception, e:
+                if 'CI' in os.environ and e != 'ignore':
                     raise # re-raise to make CI jobs fail
                 else:
                     print("map %s has been ignored." % base)
