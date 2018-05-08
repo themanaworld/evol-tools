@@ -35,15 +35,11 @@ check_mobs = True # mob_db.txt
 # lower case versions of everything except 'spawn' and 'warp'
 other_object_types = set([
     'particle_effect',
-    'npc', # not interpreted by client
-    'script', # for ManaServ
-    'fixme', # flag for things that didn't have a type before
     'music',
 ])
 
-# Somebody has put ManaServ fields in our data!
 other_spawn_fields = (
-    'spawn_rate',
+    'monster_id',
 )
 other_warp_fields = (
 )
@@ -80,7 +76,6 @@ class Object(object):
     )
 class Mob(Object):
     __slots__ = (
-        'monster_id',
         'max_beings',
         'spawn',
         'death',
@@ -320,14 +315,20 @@ class ContentHandler(xml.sax.ContentHandler):
             obj = self.object
             try:
                 if isinstance(obj, Mob):
+                    if not hasattr(obj, 'monster_id'):
+                        obj.monster_id = 0
                     mob_id = obj.monster_id
                     if check_mobs:
                         try:
                             name = mob_names[mob_id]
                         except KeyError:
-                            print('\n\nWarning: unknown mob ID %d (%s) on map %s.' % (mob_id, obj.name, self.base))
-                            # TODO: make it find the id by itself
-                            return
+                            for mid, mn in mob_names.iteritems():
+                                if mn == obj.name:
+                                    mob_id = mid
+                                    name = obj.name
+                            if mob_id == obj.monster_id:
+                                print('\n\nWarning: unknown mob ID %d (%s) on map %s.' % (mob_id, obj.name, self.base))
+                                return
                         else:
                             if name != obj.name:
                                 print('\n\nWarning: wrong mob name on map %s: %s (!= %s)' % (self.base, obj.name, name))
