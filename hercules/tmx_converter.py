@@ -4,7 +4,7 @@
 ##    tmx_converter.py - Extract walkmap, warp, and spawn information from maps.
 ##
 ##    Copyright © 2012 Ben Longbons <b.r.longbons@gmail.com>
-##    Copyright © 2016-2017 The Mana World Developers
+##    Copyright © 2016-2018 The Mana World Developers
 ##
 ##    This file is part of The Mana World
 ##
@@ -159,6 +159,7 @@ class ContentHandler(xml.sax.ContentHandler):
         self.mob_cnt = False
         self.save_cnt = False
         self.warp_cnt = False
+        self.name = None
 
     def setDocumentLocator(self, loc):
         self.locator = loc
@@ -182,14 +183,18 @@ class ContentHandler(xml.sax.ContentHandler):
                 print('<%s>' % name)
 
         if self.state is State.INITIAL:
-            if name == u'property' and attr[u'name'].lower() == u'name':
-                self.name = attr[u'value']
-                self.mobs.write('// %s\n' % MESSAGE)
-                self.mobs.write('// Map %s: %s mobs\n' % (self.base, self.name))
-                self.saves.write('// %s\n' % MESSAGE)
-                self.saves.write('// Map %s: %s saves\n' % (self.base, self.name))
-                self.warps.write('// %s\n' % MESSAGE)
-                self.warps.write('// Map %s: %s warps\n' % (self.base, self.name))
+            if name == u'property':
+                if (attr[u'name'] == u'name'):
+                    self.name = attr[u'value']
+                    self.mobs.write('// %s\n' % MESSAGE)
+                    self.mobs.write('// Map %s: %s mobs\n' % (self.base, self.name))
+                    self.saves.write('// %s\n' % MESSAGE)
+                    self.saves.write('// Map %s: %s saves\n' % (self.base, self.name))
+                    self.warps.write('// %s\n' % MESSAGE)
+                    self.warps.write('// Map %s: %s warps\n' % (self.base, self.name))
+                elif attr[u'name'] == u'ignore':
+                    print("\n\nIgnore flag detected on map %s. Skipping..." % self.base)
+                    raise Exception
 
             if name == u'tileset':
                 self.tilesets.add(int(attr[u'firstgid']))
@@ -213,12 +218,16 @@ class ContentHandler(xml.sax.ContentHandler):
                 self.compression = attr.get(u'compression','')
                 self.state = State.DATA
         elif self.state is State.FINAL:
+            if self.name is None:
+                print("\n\nERROR: missing property on map %s: name is mandatory on a map." % (self.base))
+                raise AttributeError('name')
+
             if name == u'object':
                 obj_type = attr[u'type'].lower()
-                x = int(int(attr[u'x']) / TILESIZE);
-                y = int(int(attr[u'y']) / TILESIZE);
-                w = int(int(attr.get(u'width', 0)) / TILESIZE);
-                h = int(int(attr.get(u'height', 0)) / TILESIZE);
+                x = int(int(attr[u'x']) / TILESIZE)
+                y = int(int(attr[u'y']) / TILESIZE)
+                w = int(int(attr.get(u'width', 0)) / TILESIZE)
+                h = int(int(attr.get(u'height', 0)) / TILESIZE)
                 # I'm not sure exactly what the w/h shrinking is for,
                 # I just copied it out of the old converter.
                 # I know that the x += w/2 is to get centers, though.
@@ -275,7 +284,11 @@ class ContentHandler(xml.sax.ContentHandler):
                     value = int(value)
                 except ValueError:
                     pass
-                setattr(obj, key, value)
+                try:
+                    setattr(obj, key, value)
+                except AttributeError:
+                    print("\n\nERROR: extraneous property on object \"%s\": %s is not allowed on a %s object." % (obj.name, key, obj.__class__.__name__.lower()))
+                    raise
 
     def add_warp_line(self, line):
         self.warps.write(line)
@@ -286,66 +299,68 @@ class ContentHandler(xml.sax.ContentHandler):
 
         if name == u'object':
             if hasattr(self.object, 'ignore'):
-                return;
+                return
             obj = self.object
-            if isinstance(obj, Mob):
-                mob_id = obj.monster_id
-                if mob_id < 1000:
-                    mob_id += 1002
-                if check_mobs:
-                    try:
-                        name = mob_names[mob_id]
-                    except KeyError:
-                        print('Warning: unknown mob ID: %d (%s)' % (mob_id, obj.name))
-                    else:
-                        if name != obj.name:
-                            print('Warning: wrong mob name: %s (!= %s)' % (obj.name, name))
-                            obj.name = name
-                self.mob_ids.add(mob_id)
-                if obj.script:
-                    obj.script = ",%s" % (obj.script)
-                self.mobs.write(
-                    SEPARATOR.join([
-                        '%s,%d,%d,%d,%d\t' % (self.base, obj.x, obj.y, obj.w, obj.h),
-                        'monster\t',
-                        obj.name,
-                        '\t%d,%d,%d,%d%s\n' % (mob_id, obj.max_beings, obj.spawn, obj.death, obj.script),
-                    ])
-                )
-                self.mob_cnt = True
-            elif isinstance(obj, Save):
-                obj_name = "%s_%s_%s" % (self.base, obj.x, obj.y)
-                self.saves.write(
-                    SEPARATOR.join([
-                        '%s,%d,%d,0\tscript\t#save_%s\tNPC_SAVE_POINT,{\n' % (self.base, obj.x, obj.y, obj_name),
-                        '    savepointparticle .map$, .x, .y, %s;\n    close;\n\nOnInit:\n    .distance = 2;\n    .sex = G_OTHER;\n    end;\n}\n' % (obj.inn),
-                    ])
-                )
-                self.save_cnt = True
-            elif isinstance(obj, Anchor):
-                self.anchor_master.append('    htput(.ht, "%s", "%s %d %d");\n' % (obj.name.upper(), self.base, obj.x, obj.y))
-            elif isinstance(obj, Warp):
-                if (obj.npc_id == u'WARP'):
-                    obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                    y_offset = int(self.heightmap[((obj.y * self.width) + obj.x)])/2
-                    self.warps.write(
+            try:
+                if isinstance(obj, Mob):
+                    mob_id = obj.monster_id
+                    if check_mobs:
+                        try:
+                            name = mob_names[mob_id]
+                        except KeyError:
+                            print('Warning: unknown mob ID: %d (%s)' % (mob_id, obj.name))
+                        else:
+                            if name != obj.name:
+                                print('Warning: wrong mob name: %s (!= %s)' % (obj.name, name))
+                                obj.name = name
+                    self.mob_ids.add(mob_id)
+                    if obj.script:
+                        obj.script = ",%s" % (obj.script)
+                    self.mobs.write(
                         SEPARATOR.join([
-                            '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y + y_offset)),
-                            'warp\t',
-                            '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
+                            '%s,%d,%d,%d,%d\t' % (self.base, obj.x, obj.y, obj.w, obj.h),
+                            'monster\t',
+                            obj.name,
+                            '\t%d,%d,%d,%d%s\n' % (mob_id, obj.max_beings, obj.spawn, obj.death, obj.script),
                         ])
                     )
-                    self.warp_cnt = True
-                elif (not obj.npc_id == u'SCRIPT'):
-                    obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                    self.warps.write(
+                    self.mob_cnt = True
+                elif isinstance(obj, Save):
+                    obj_name = "%s_%s_%s" % (self.base, obj.x, obj.y)
+                    self.saves.write(
                         SEPARATOR.join([
-                            '%s,%d,%d,0\tscript\t%s_h\tNPC_HIDDEN,0,0,{\n' % (self.base, obj.x, obj.y, obj_name),
-                            'OnTouch:\n    warp "%s", %d, %d;\nclose;\n\nOnUnTouch:\n    doevent "%s::OnUnTouch";\n}\n' % (obj.dest_map, obj.dest_x, obj.dest_y, obj_name),
-                            '%s,%d,%d,0\tscript\t%s\t%s,%d,%d,{\n    close;\nOnTouch:\n    doorTouch;\n\nOnUnTouch:\n    doorUnTouch;\n\nOnTimer340:\n    doorTimer;\n\nOnInit:\n    doorInit;\n}\n\n' % (self.base, obj.x, obj.y, obj_name, obj.npc_id, obj.trigger_x, obj.trigger_y),
+                            '%s,%d,%d,0\tscript\t#save_%s\tNPC_SAVE_POINT,{\n' % (self.base, obj.x, obj.y, obj_name),
+                            '    savepointparticle .map$, .x, .y, %s;\n    close;\n\nOnInit:\n    .distance = 2;\n    .sex = G_OTHER;\n    end;\n}\n' % (obj.inn),
                         ])
                     )
-                    self.warp_cnt = True
+                    self.save_cnt = True
+                elif isinstance(obj, Anchor):
+                    self.anchor_master.append('    htput(.ht, "%s", "%s %d %d");\n' % (obj.name.upper(), self.base, obj.x, obj.y))
+                elif isinstance(obj, Warp):
+                    if (obj.npc_id == u'WARP'):
+                        obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
+                        y_offset = int(self.heightmap[((obj.y * self.width) + obj.x)])/2
+                        self.warps.write(
+                            SEPARATOR.join([
+                                '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y + y_offset)),
+                                'warp\t',
+                                '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
+                            ])
+                        )
+                        self.warp_cnt = True
+                    elif (not obj.npc_id == u'SCRIPT'):
+                        obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
+                        self.warps.write(
+                            SEPARATOR.join([
+                                '%s,%d,%d,0\tscript\t%s_h\tNPC_HIDDEN,0,0,{\n' % (self.base, obj.x, obj.y, obj_name),
+                                'OnTouch:\n    warp "%s", %d, %d;\nclose;\n\nOnUnTouch:\n    doevent "%s::OnUnTouch";\n}\n' % (obj.dest_map, obj.dest_x, obj.dest_y, obj_name),
+                                '%s,%d,%d,0\tscript\t%s\t%s,%d,%d,{\n    close;\nOnTouch:\n    doorTouch;\n\nOnUnTouch:\n    doorUnTouch;\n\nOnTimer340:\n    doorTimer;\n\nOnInit:\n    doorInit;\n}\n\n' % (self.base, obj.x, obj.y, obj_name, obj.npc_id, obj.trigger_x, obj.trigger_y),
+                            ])
+                        )
+                        self.warp_cnt = True
+            except AttributeError, prop:
+                print("\n\nERROR: missing property on object \"%s\": %s is mandatory on a %s object." % (obj.name, prop, obj.__class__.__name__.lower()));
+                raise
 
         if name == u'data':
             if self.state is State.DATA:
@@ -413,25 +428,33 @@ def main(argv):
             tmx = posixpath.join(tmx_dir, arg)
             main.this_map_npc_dir = posixpath.join(npc_dir, base)
             os.path.isdir(main.this_map_npc_dir) or os.mkdir(main.this_map_npc_dir)
-            print('Converting %s' % (tmx))
-            with open(posixpath.join(main.this_map_npc_dir, NPC_MOBS), 'w') as mobs:
-                with open(posixpath.join(main.this_map_npc_dir, NPC_SAVES), 'w') as saves:
-                    with open(posixpath.join(main.this_map_npc_dir, NPC_WARPS), 'w') as warps:
-                        with open(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS), 'w') as imports:
-                            xml.sax.parse(tmx, ContentHandler(main.this_map_npc_dir, mobs, saves, warps, imports, anchor_master))
-            if os.path.isfile(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS)):
-                npc_master.append('@include "%s"\n' % posixpath.join(SERVER_NPCS, base, NPC_IMPORTS))
+            sys.stdout.write('\033[2K\rConverting: %s' % (tmx))
+            sys.stdout.flush()
+            try:
+                with open(posixpath.join(main.this_map_npc_dir, NPC_MOBS), 'w') as mobs:
+                    with open(posixpath.join(main.this_map_npc_dir, NPC_SAVES), 'w') as saves:
+                        with open(posixpath.join(main.this_map_npc_dir, NPC_WARPS), 'w') as warps:
+                            with open(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS), 'w') as imports:
+                                xml.sax.parse(tmx, ContentHandler(main.this_map_npc_dir, mobs, saves, warps, imports, anchor_master))
+                if os.path.isfile(posixpath.join(main.this_map_npc_dir, NPC_IMPORTS)):
+                    npc_master.append('@include "%s"\n' % posixpath.join(SERVER_NPCS, base, NPC_IMPORTS))
 
-
-            map_db.write('%s %d\n' % (arg.split('.')[0], map_count))
-            map_conf.write('    "%s",\n' % (arg.split('.')[0]))
-            map_count += 1
+                map_db.write('%s %d\n' % (arg.split('.')[0], map_count))
+                map_conf.write('    "%s",\n' % (arg.split('.')[0]))
+                map_count += 1
+            except Exception:
+                if 'CI' in os.environ:
+                    raise # re-raise to make CI jobs fail
+                else:
+                    print("map %s has been ignored." % base)
     map_conf.write(")\n")
+    sys.stdout.write('\033[2K\nDone: %i maps converted.\n' % map_count)
+    sys.stdout.flush()
     with open(posixpath.join(npc_dir, NPC_MASTER_ANCHORS), 'w') as out:
         out.write('// %s\n\n' % MESSAGE)
         out.write('-\tscript\t__anchors__\t32767,{\n')
         out.write('OnInit:\n')
-        out.write('    .ht = htnew();\n');
+        out.write('    .ht = htnew();\n')
         anchor_master.sort()
         for line in anchor_master:
             out.write(line)
@@ -441,7 +464,7 @@ def main(argv):
         npc_master.sort()
         for line in npc_master:
             out.write(line)
-        out.write('"%s",\n' % posixpath.join(SERVER_NPCS, NPC_MASTER_ANCHORS));
+        out.write('"%s",\n' % posixpath.join(SERVER_NPCS, NPC_MASTER_ANCHORS))
 
 if __name__ == '__main__':
     main(sys.argv)

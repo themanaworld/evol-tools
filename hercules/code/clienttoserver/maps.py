@@ -160,7 +160,7 @@ def recreateMap(names):
                 writeInt16(w, height)
                 writeInt32(w, len(binData))
                 writeData(w, binData)
-                print tmxName
+                #print tmxName
                 found = True
                 break
         if found == False:
