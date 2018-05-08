@@ -91,6 +91,7 @@ function build_all {
     ./build.sh 2>err.txt
     cat err.txt
     cd ../server-data
+    make updatedb
 }
 
 function build_clean {
