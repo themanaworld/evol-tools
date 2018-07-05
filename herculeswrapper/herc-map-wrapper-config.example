@@ -24,7 +24,7 @@ python -c '
 oauth = "01234567890123456789"
 
 import requests
-issues = requests.get("https://gitlab.com/api/v3/projects/%d/merge_requests" % '$1', params={"state": "opened"}, headers={"PRIVATE-TOKEN": "%s" % oauth, "Accept": "application/vnd.gitlab.v3+json"})
+issues = requests.get("https://gitlab.com/api/v4/projects/%d/merge_requests" % '$1', params={"state": "opened"}, headers={"PRIVATE-TOKEN": "%s" % oauth, "Accept": "application/vnd.gitlab.v4+json"})
 issues.raise_for_status()
 for issue in issues.json():
     if "test" in issue["labels"]:
