@@ -235,6 +235,12 @@ class ContentHandler(xml.sax.ContentHandler):
                 raise AttributeError('name')
 
             if name == u'object':
+                if not attr.has_key('type'):
+                    self.object = Object()
+                    self.object.name = attr[u'name']
+                    self.object.ignore = 'auto=>type' # no type: implicitly ignored
+                    return
+
                 obj_type = attr[u'type'].lower()
                 x = int(int(attr[u'x']) / TILESIZE)
                 y = int(int(attr[u'y']) / TILESIZE)
@@ -311,6 +317,8 @@ class ContentHandler(xml.sax.ContentHandler):
 
         if name == u'object':
             if hasattr(self.object, 'ignore'):
+                if (self.object.ignore == 'auto=>type'):
+                    print("\n\nwarning: object \"%s\" has no type and will be ignored.\nTo silence this warning, add an \"ignore\" property to the object." % self.object.name)
                 return
             obj = self.object
             try:
@@ -469,10 +477,14 @@ def main(argv):
                 map_conf.write('    "%s",\n' % (arg.split('.')[0]))
                 map_count += 1
             except Exception, e:
-                if 'CI' in os.environ and e != 'ignore':
+                if 'CI' in os.environ and str(e) != 'ignore':
                     raise # re-raise to make CI jobs fail
-                else:
+                elif str(e) == 'ignore':
                     print("map %s has been ignored." % base)
+                    pass
+                else:
+                    print("\n\nUnexpected error in map %s.\n" % base)
+                    raise
     map_conf.write(")\n")
     sys.stdout.write('\033[2K\nDone: %i maps converted.\n' % map_count)
     sys.stdout.flush()
