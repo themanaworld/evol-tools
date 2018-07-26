@@ -71,6 +71,10 @@ if [ "${VER}" -lt "14" ]; then
     run "2018-06-05--12-02.sql"
 fi
 
-if [ "${VER}" -lt "14" ]; then
-    echo "14" >versions/sqlver
+if [ "${VER}" -lt "15" ]; then
+    run ""
+fi
+
+if [ "${VER}" -lt "15" ]; then
+    echo "15" >versions/sqlver
 fi
