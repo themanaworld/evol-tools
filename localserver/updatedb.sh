@@ -72,7 +72,7 @@ if [ "${VER}" -lt "14" ]; then
 fi
 
 if [ "${VER}" -lt "15" ]; then
-    run ""
+    run "2018-07-24--03-23.sql"
 fi
 
 if [ "${VER}" -lt "15" ]; then
