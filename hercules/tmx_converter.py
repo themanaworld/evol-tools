@@ -367,10 +367,9 @@ class ContentHandler(xml.sax.ContentHandler):
                 elif isinstance(obj, Warp):
                     if (obj.npc_id == u'WARP'):
                         obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                        y_offset = int(self.heightmap[((obj.y * self.width) + obj.x)])/2
                         self.warps.write(
                             SEPARATOR.join([
-                                '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y + y_offset)),
+                                '%s,%d,%d,0\t' % (self.base, obj.x, obj.y),
                                 'warp\t',
                                 '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
                             ])
