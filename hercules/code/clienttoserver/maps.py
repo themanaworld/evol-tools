@@ -52,10 +52,13 @@ def findFirstGid(tilesets, tile):
 # 4 - sit, walkable ground
 # 5 - none
 # 6 - monster walk not allowed
-def convertTileType(tile):
+def convertTileType(tile, idx, width, height):
     if tile == 5:
         tile = 0;
-    if tile > 128 or tile < 0:
+    if tile > 6 or tile < 0:
+        y = int(idx / width)
+        x = idx - y * width
+        print "Error: wrong tile: ({0}, {1}) = {2}".format(x, y, tile)
         tile = 1
     return tile
 
@@ -74,6 +77,7 @@ def recreateMap(names):
     tmxName = names[0]
     mCaheName = destDir + names[1][:-3] + "mcache"
     with open(mCaheName, "wb") as w:
+        print tmxName
         dom = minidom.parse(tmxName)
         root = dom.documentElement
         tilesets = []
@@ -106,17 +110,20 @@ def recreateMap(names):
                     layerData = dc.decompress(binData)
                     arr = array.array("I")
                     arr.fromstring(layerData)
+                    idx = 0
                     for tile in arr:
                         if tile == 0:
                             tileType = 0
                         else:
                             firstgid = findFirstGid(tilesets, tile)
-                            tileType = convertTileType(tile - firstgid);
+                            tileType = convertTileType(tile - firstgid, idx, width, height);
                         tiles.append(tileType)
+                        idx = idx + 1
                 elif encoding == "csv":
                     binData = data.childNodes[0].data.strip()
                     f = StringIO.StringIO(binData)
                     arr = list(csv.reader(f, delimiter=',', quotechar='|'))
+                    idx = 0
                     for row in arr:
                         for item in row:
                             if item != "":
@@ -125,7 +132,7 @@ def recreateMap(names):
                                     tileType = 0
                                 else:
                                     firstgid = findFirstGid(tilesets, tile)
-                                    tileType = convertTileType(tile - firstgid);
+                                    tileType = convertTileType(tile - firstgid, idx, width, height);
                                 # tmx collision format
                                 # 0 - walkable ground
                                 # 1 - non walkable wall
@@ -146,6 +153,7 @@ def recreateMap(names):
                                 if tileType > 128 or tileType < 0:
                                     tileType = 1
                                 tiles.append(tileType)
+                                idx = idx + 1
                     f.close()
                 else:
                     print "map format not supported: " + tmxName
@@ -165,7 +173,12 @@ def recreateMap(names):
                 break
         if found == False:
             print "Error: missing collision layer in file: {0}".format(tmxName)
-
+            return
+    return
+    with open(mCaheName + ".debug", "wb") as w:
+        writeInt16(w, width)
+        writeInt16(w, height)
+        writeData(w, struct.pack(str(len(tiles))+"B", *tiles))
 
 
 def recreateMapCache():
