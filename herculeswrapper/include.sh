@@ -41,45 +41,33 @@ function server_logic {
     done
 }
 
-function stash_save {
-    STR=$(git diff --stat --color=always)
-    if [[ -n "${STR}" ]]; then
-        echo ${1}: git stash save "wrapper pull"
-        git stash save "wrapper pull"
-        export ${1}_saved="1"
-    else
-        export ${1}_saved="0"
-    fi
-}
-
-function stash_pop {
-    var="${1}_saved"
-    eval var=\$$var
-    if [[ "${var}" == "1" ]]; then
-        echo ${1}: git stash pop
-        git stash pop
-    fi
+function hard_reset {
+    echo ${1}: hard reset
+    git fetch upstream
+    git reset --hard upstream/master
+    git clean -f
+    # the following should be unnecessary, but just in case:
+    git checkout --detach
+    git branch -D master
+    git checkout upstream/master -b master
 }
 
 function pull_all {
-    stash_save "data"
+    hard_reset "data"
+    cd ../client-data
+    hard_reset "client"
+    cd ../music
+    hard_reset "music"
     cd ../server-code
-    stash_save "code"
+    hard_reset "code"
     cd src/evol
-    stash_save "plugin"
+    hard_reset "plugin"
     cd ../../../tools
-    stash_save "tools"
+    hard_reset "tools"
     cd ..
     ./pull.sh
     cd server-data
     git_merge
-    stash_pop "data"
-    cd ../server-code
-    stash_pop "code"
-    cd src/evol
-    stash_pop "plugin"
-    cd ../../../tools
-    stash_pop "tools"
     cd ../
     ./status.sh
     cd server-data
