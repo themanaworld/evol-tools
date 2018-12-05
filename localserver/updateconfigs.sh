@@ -28,3 +28,9 @@ if [ "${VER}" -lt "4" ]; then
     cp -f npc/motd-* ${CONFDIR}/npc/commands/
     echo "4" >versions/confver
 fi
+
+if [ "${VER}" -lt "5" ]; then
+    cp -f ${CONFDIR}/conf/channels.conf ${CONFDIR}/conf/channels.conf.bak
+    cp -f ${CONFDIR}/conf/channels.conf.base ${CONFDIR}/conf/channels.conf
+    echo "5" >versions/confver
+fi

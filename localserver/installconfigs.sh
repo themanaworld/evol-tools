@@ -9,4 +9,4 @@ cp conf/* $CONF
 cp -f ${SD}/conf/channels.conf.base ${SD}/conf/channels.conf
 cp -f npc/motd-* ${NPC}/commands/
 mkdir versions
-echo "4" >versions/confver
+echo "5" >versions/confver
