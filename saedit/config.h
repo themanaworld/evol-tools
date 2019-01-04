@@ -1,51 +1,32 @@
-/*=======================================*\
-|  ____                         ____      |
-| /    \         /\            |          |
-| \____         /  \           |____      |
-|      \       /____\          |          |
-| \____/prite /      \nimation |____ditor |
-|                                         |
-|      Copyleft Vasily_Makarov 2011       |
-|                                         |
-\*=======================================*/
-
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
 
 #include <glib.h>
-#include <glib/gstdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <string.h>
-#include <unistd.h>
-#include "common.h"
-#include "xml.h"
 
-#define OPTION_SPRITES_DEFAULT "graphics/sprites/"
+void
+config_keys_load (void);
 
-#define KEY_SHOW_GRID_DEFAULT TRUE
-#define KEY_CLIENTDATA_FOLDER_DEFAULT ""
-#define KEYS_CONFIG_DIR g_strjoin(SEPARATOR_SLASH, g_get_user_config_dir(), "saedit", NULL)
-#define KEYS_CONFIG_FILE g_strjoin(SEPARATOR_SLASH, KEYS_CONFIG_DIR, "config.ini", NULL)
+void
+config_keys_save (void);
 
-typedef struct {
-	gchar *sprites;
-} Options;
+gchar *
+config_keys_get_data_folder_path (void);
 
-Options *config_options_new();
-void config_options_load_from_file(Options *options,
-                                   gchar *file,
-                                   gchar *data_folder);
+void
+config_keys_set_data_folder_path (
+	const gchar *filename
+);
 
-typedef struct {
-	gchar *clientdata_folder;
-	gboolean show_grid;
-} Keys;
+gint
+config_keys_get_tile_size (void);
 
-Keys *config_keys_new();
-void config_keys_load(Keys *keys);
-void config_keys_save(Keys *keys);
+void
+config_data_paths_load (void);
+
+gchar *
+config_data_paths_get_sprites_path (void);
+
+gchar *
+config_data_path_get_full_sprite_path (const gchar *rel_path);
 
 #endif

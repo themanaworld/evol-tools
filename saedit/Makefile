@@ -1,33 +1,33 @@
-ifndef CFLAGS
-	CFLAGS = -O2 -pipe
-endif
-
-ifndef LDFLAGS
-	LDFLAGS = 
-endif
-
-ifndef OUTPUT
-	OUTPUT = saedit
-endif
-
-LDFLAGS += -export-dynamic
+CC ?= gcc
 
 CFLAGS += `pkg-config --cflags gtk+-3.0 gtksourceview-3.0`
+CFLAGS += -fPIC -Itreefolderview -Ispritedrawingarea
+CFLAGS += -Wall -Wdeclaration-after-statement -ansi
+CFLAGS += -Werror -Wextra -Wstrict-prototypes
+CFLAGS += -Wno-unused-parameter
 
 LDFLAGS += `pkg-config --libs gtk+-3.0 gtksourceview-3.0`
+LDFLAGS += -rdynamic -Ltreefolderview -Lspritedrawingarea
 
-all:main.o search.o config.o xml.o sae.o compile clean
-compile: main.o search.o config.o xml.o
-	gcc ${CFLAGS} -o '${OUTPUT}' main.o search.o config.o xml.o sae.o ${LDFLAGS}
-main.o: main.c main.h search.h config.h common.h xml.h
-	gcc ${CFLAGS}-c -o main.o main.c
-search.o: search.c search.h common.h
-	gcc ${CFLAGS} -c -o search.o search.c
-xml.o: xml.c xml.h common.h
-	gcc ${CFLAGS} -c -o xml.o xml.c
-config.o: config.c config.h common.h
-	gcc ${CFLAGS} -c -o config.o config.c
-sae.o: sae.c sae.h common.h
-	gcc ${CFLAGS} -c -o sae.o sae.c
+FLAGS = ${CFLAGS} ${LDFLAGS}
+
+all: saedit glade/libsaedit.so
+
+saedit: main.o treefolderview/treefolderview.o xml.o  \
+	spritedrawingarea/spritedrawingarea.o \
+	context.o imageset.o action.o animation.o common.o \
+	interactor.o callbacks.o errors.o config.o file.o \
+	buffer.o spritedrawingarea/sdalayer.o xmlsetup.o \
+	drawfuncs.o
+	${CC} $^ -o saedit ${FLAGS}
+
+glade/libsaedit.so: treefolderview/treefolderview.o \
+	spritedrawingarea/spritedrawingarea.o \
+	spritedrawingarea/sdalayer.o
+	${CC} $^ -o glade/libsaedit.so ${FLAGS} -shared
+
+%.o: %.c
+	${CC} $^ -c -o $@ ${CFLAGS}
+
 clean:
-	rm -rfv *.o *~
+	rm -f *.o */*.o *~ glade/libsaedit.so saedit

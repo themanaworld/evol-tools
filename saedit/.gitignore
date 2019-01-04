@@ -1,0 +1,6 @@
+*~
+*.swp
+*.o
+*/*.o
+glade/libsaedit.so
+saedit

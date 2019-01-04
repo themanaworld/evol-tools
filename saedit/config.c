@@ -1,82 +1,191 @@
-/*=======================================*\
-|  ____                         ____      |
-| /    \         /\            |          |
-| \____         /  \           |____      |
-|      \       /____\          |          |
-| \____/prite /      \nimation |____ditor |
-|                                         |
-|      Copyleft Vasily_Makarov 2011       |
-|                                         |
-\*=======================================*/
-
 #include "config.h"
+#include "xml.h"
+#include <unistd.h>
+#include <sys/stat.h>
 
-Options *config_options_new() {
-	return g_new0(Options, 1);
+static GKeyFile *_config_keyfile = NULL;
+
+gchar *
+_config_get_config_folder (void) {
+	return g_strjoin (
+		"/",
+		g_get_user_config_dir (),
+		"saedit2",
+		NULL
+	);
 }
 
-void config_options_load_from_file(Options *options,
-                                   gchar *file,
-                                   gchar *data_folder) {
-	options->sprites = NULL;
+gchar *
+_config_get_key_file_path (void) {
+	gchar *dir = _config_get_config_folder ();
+	gchar *result;
 
-	XMLNode *node = xml_parse_file(file);
+	result = g_strjoin (
+		"/",
+		dir,
+		"config.ini",
+		NULL
+	);
 
+	g_free (dir);
+	return result;
+}
+
+void
+config_keys_load () {
+	gchar *filename;
+
+	_config_keyfile = g_key_file_new ();
+
+	filename = _config_get_key_file_path ();
+
+	g_key_file_load_from_file (
+		_config_keyfile,
+		filename,
+		0,
+		NULL
+	);
+
+	g_free (filename);
+}
+
+gchar *
+config_keys_get_data_folder_path () {
+	gchar *result;
+
+	if (_config_keyfile == NULL)
+		config_keys_load ();
+	
+	result = g_key_file_get_value (
+		_config_keyfile,
+		"Default",
+		"Data Folder",
+		NULL
+	);
+
+	if (result == NULL)
+		result = g_strdup ("");
+
+	return result;
+}
+
+void
+config_keys_set_data_folder_path (const gchar *filename) {
+	if (_config_keyfile == NULL)
+		config_keys_load ();
+
+	g_key_file_set_value (
+		_config_keyfile,
+		"Default",
+		"Data Folder",
+		filename
+	);
+}
+
+gint
+config_keys_get_tile_size () {
+	/* TODO */
+	return 32;
+}
+
+void
+config_keys_save () {
+	gchar *filename;
+
+	if (_config_keyfile == NULL)
+		return;
+
+	filename = _config_get_config_folder ();
+	mkdir (filename, S_IRWXU);
+	g_free (filename);
+
+	filename = _config_get_key_file_path ();
+
+	g_key_file_save_to_file (
+		_config_keyfile,
+		filename,
+		NULL
+	);
+
+	g_free (filename);
+}
+
+static XMLNode *_config_paths_xml_root = NULL;
+
+void
+config_data_paths_load () {
+	gchar *filename;
+	gchar *df_path;
+
+	df_path = config_keys_get_data_folder_path ();
+
+	filename = g_strjoin (
+		"/",
+		df_path,
+		"paths.xml",
+		NULL
+	);
+
+	_config_paths_xml_root = xml_parse_file (filename);
+
+	g_free (df_path);
+	g_free (filename);
+}
+
+gchar *
+config_data_paths_get_sprites_path () {
+	XMLNode *node;
+	GList *list;
+	gchar *name;
+
+	if (_config_paths_xml_root == NULL)
+		config_data_paths_load ();
+
+	node = _config_paths_xml_root;
+	
 	if (node != NULL) {
-		GList *list = node->sub_nodes;
+		list = node->sub_nodes;
 		while (TRUE) {
-			list = g_list_find_custom(list, "option", xml_node_compare_with_name_func);
+			list = g_list_find_custom (
+					list,
+					"option",
+					xml_node_compare_with_name_func
+			);
+
 			if (list == NULL)
 				break;
-			gchar *name_attr = xml_node_get_attr_value(list->data, "name");
-			if (name_attr != NULL) {
-				if (g_strcmp0(name_attr, "sprites") == 0)
-					options->sprites = xml_node_get_attr_value(list->data, "value");
+
+			name = xml_node_get_attr_value (list->data, "name");
+			if (name != NULL && g_strcmp0 (name, "sprites") == 0) {
+				g_free (name);
+				return xml_node_get_attr_value (list->data, "value");
 			}
+
+			g_free(name);
 			list = list->next;
 		}
 	}
 
-	if (options->sprites == NULL) options->sprites = (gchar *)OPTION_SPRITES_DEFAULT;
-	options->sprites = g_strjoin(SEPARATOR_SLASH, data_folder, options->sprites, NULL);
+	return g_strdup ("");
 }
 
-Keys *config_keys_new() {
-	Keys *keys = g_new0(Keys, 1);
-	keys->clientdata_folder = (gchar *)KEY_CLIENTDATA_FOLDER_DEFAULT;
-	keys->show_grid = KEY_SHOW_GRID_DEFAULT;
-	return keys;
-}
+gchar *
+config_data_path_get_full_sprite_path (const gchar *rel_path) {
+	gchar *data_folder, *sprites_path, *filename;
 
-void config_keys_save(Keys *keys) {
-	GKeyFile *key_file = g_key_file_new();
-	g_key_file_set_value(key_file, "General", "ClientdataFolder",
-	                     g_strjoin(SEPARATOR_SLASH,
-	                               keys->clientdata_folder,
-	                               POSTFIX_FOLDER,
-	                               NULL));
-	g_key_file_set_boolean(key_file, "General", "ShowGrid", keys->show_grid);
+	data_folder = config_keys_get_data_folder_path ();
+	sprites_path = config_data_paths_get_sprites_path ();
 
-	mkdir(KEYS_CONFIG_DIR, S_IRWXU);
-	int fd = g_creat(KEYS_CONFIG_FILE, S_IREAD | S_IWRITE);
-	gchar *buf = g_key_file_to_data(key_file, NULL, NULL);
-	write(fd, buf, strlen(buf));
-	close(fd);
+	filename = g_strjoin (
+		"/",
+		data_folder,
+		sprites_path,
+		rel_path,
+		NULL
+	);
 
-	g_key_file_free(key_file);
-}
+	g_free (sprites_path);
+	g_free (data_folder);
 
-void config_keys_load(Keys *keys) {
-	GKeyFile *key_file = g_key_file_new();
-
-	g_key_file_load_from_file(key_file,
-	                          KEYS_CONFIG_FILE,
-	                          0,
-	                          NULL);
-	if (g_key_file_has_key(key_file, "General", "ClientdataFolder", NULL))
-		keys->clientdata_folder = g_key_file_get_value(key_file, "General", "ClientdataFolder", NULL);
-	if (g_key_file_has_key(key_file, "General", "ShowGrid", NULL))
-		keys->show_grid = g_key_file_get_boolean(key_file, "General", "ShowGrid", NULL);
-
-	g_key_file_free(key_file);
+	return filename;
 }
