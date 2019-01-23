@@ -81,6 +81,11 @@ if [ "${VER}" -lt "16" ]; then
     run "2018-09-01--05-22.sql"
 fi
 
-if [ "${VER}" -lt "16" ]; then
-    echo "16" >versions/sqlver
+if [ "${VER}" -lt "17" ]; then
+    run "2018-12-14--01-02.sql"
+    run "2018-12-29--07-51.sql"
+fi
+
+if [ "${VER}" -lt "17" ]; then
+    echo "17" >versions/sqlver
 fi
