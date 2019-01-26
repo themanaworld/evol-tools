@@ -246,6 +246,13 @@ def saveFiles(langDir, poDir):
         writeLangFile (langDir + "/lang_" + trans + ".old", oldLangFiles[trans], trans, True)
         writePoFile (poDir, langFiles[trans], trans)
 
+def removeGenderStr(trLine):
+    if trLine in ("test#0", "test#1", "test1#0", "test1#1", "test2#0", "test2#1",
+                  "test1 %s#0", "test1 %s#1", "test2 %s#0", "test2 %s#1",
+                  "test1 @@#0", "test1 @@#1", "test2 @@#0", "test2 @@#1"):
+        return trLine
+    return trLine[:-2]
+
 def writeLangFile(langDir, texts, trans, isold):
     with open (langDir, "w") as f:
         if texts[1] is not None:
@@ -256,7 +263,7 @@ def writeLangFile(langDir, texts, trans, isold):
                 trLine = line[1]
                 if trans == "en":
                     if len(trLine) > 2 and (trLine[-2:] == "#0" or trLine[-2:] == "#1"):
-                        trLine = trLine[:-2]
+                        trLine = removeGenderStr(trLine)
                 f.write (trLine + "\n\n")
 
 def writePoComments(w, comments):
