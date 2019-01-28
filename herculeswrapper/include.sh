@@ -178,6 +178,24 @@ function git_merge {
             "$@"
         }
 
+        wipe_logs()
+        {
+            echo -e "$(now)\n===\n" > $merge_log
+            chmod +r $merge_log
+        }
+
+        do_git()
+        {
+            info '$' "git $@"
+            echo -e "${PWD##*/} $ git $@" >> $merge_log
+            git "$@" 2> >(tee -a $merge_log >&2)
+            ec=$?
+
+            # print a newline to logs on error
+            if [[ $ec != 0 ]]; then echo "" >> $merge_log; fi
+            return $ec
+        }
+
         try_merge()
         {
             test -n "$1"
@@ -196,13 +214,13 @@ function git_merge {
                 warning already $branch
                 return
             fi
-            if run git merge --ff-only $branch $commit
+            if git merge-base --is-ancestor $branch $commit && do_git merge --ff-only $branch $commit
             then
                 good2 fast $branch $commit >> $motd
                 good fast $branch $commit
                 return
             fi
-            if run git merge $branch $commit
+            if do_git merge $branch $commit
             then
                 good2 merge $branch $commit >> $motd
                 good merge $branch $commit
@@ -219,8 +237,10 @@ function git_merge {
 
         run test -f $motd
         echo -e 'function\tscript\tMOTD_debug_text\t{\n    setarray $@Debug_Messages$[0],' > $motd
-        run git fetch --all
-        run git reset --hard $server_main_branch
+        merge_log=${tmw_tools}/herculeswrapper/stderr.log
+        wipe_logs
+        do_git fetch --all
+        do_git reset --hard $server_main_branch
         info 'commit=$(' git rev-parse --verify -q $server_main_branch ')'
         commit=$(git rev-parse --verify -q $server_main_branch)
         info2 server base $server_main_branch $commit >> $motd
@@ -232,8 +252,8 @@ function git_merge {
         run cd $client_data
 
         # force new master and back up for future restoration
-        run git fetch --all
-        run git reset --hard $client_main_branch
+        do_git fetch --all
+        do_git reset --hard $client_main_branch
 
         info 'commit=$(' git rev-parse --verify -q $client_main_branch ')'
         commit=$(git rev-parse --verify -q $client_main_branch)
@@ -245,8 +265,8 @@ function git_merge {
 
         run cd $evol_music
 
-        run git fetch --all
-        run git reset --hard $music_main_branch
+        do_git fetch --all
+        do_git reset --hard $music_main_branch
         info 'commit=$(' git rev-parse --verify -q $music_main_branch ')'
         commit=$(git rev-parse --verify -q $music_main_branch)
         info2 music base $music_main_branch $commit >> $motd
