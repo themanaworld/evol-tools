@@ -357,8 +357,8 @@ class ContentHandler(xml.sax.ContentHandler):
                     obj_name = "%s_%s_%s" % (self.base, obj.x, obj.y)
                     self.saves.write(
                         SEPARATOR.join([
-                            '%s,%d,%d,0\tscript\t#save_%s\tNPC_SAVE_POINT,{\n' % (self.base, obj.x, obj.y, obj_name),
-                            '    savepointparticle .map$, .x, .y, %s;\n    close;\n\nOnInit:\n    .distance = 2;\n    .sex = G_OTHER;\n    end;\n}\n' % (obj.inn),
+                            '%s,%d,%d,0\tscript\t#save_%s\tNPC_SAVE_POINT,0,0,{\n' % (self.base, obj.x, obj.y, obj_name),
+                            '    savepointparticle .map$, .x, .y, %s;\n    close;\n\nOnInit:\n    .distance = 2;\n    .sex = G_OTHER;\n    end;\n\nOnTouch:\n    bedTouch();\n    end;\n}\n' % (obj.inn),
                         ])
                     )
                     self.save_cnt = True
