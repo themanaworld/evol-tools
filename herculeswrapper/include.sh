@@ -45,7 +45,7 @@ function hard_reset {
     echo ${1}: hard reset
     git fetch upstream
     git reset --hard upstream/master
-    git clean -f
+    git clean -fd
     # the following should be unnecessary, but just in case:
     git checkout --detach
     git branch -D master
