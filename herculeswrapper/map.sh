@@ -9,7 +9,7 @@ source ${dir}/include.sh
 create_pipe
 
 while [ 1 ] ; do
-    ./map-server
+    $DEBUG_MAP ./map-server
     export ret=$?
     case "${ret}" in
     0)
@@ -18,7 +18,7 @@ while [ 1 ] ; do
         ;;
     1)
         echo "Returned 1. Probably error in server"
-        break
+        [ ! -z "$DEBUG_MAP" ] || break
         ;;
     100)
         echo "Terminating server"
