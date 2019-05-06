@@ -76,7 +76,7 @@ function pull_all {
 
 function build_all {
     cd ../server-code
-    ./build.sh 2>err.txt
+    ./build.sh $BUILD_MAP 2>err.txt
     cat err.txt
     cd ../server-data
     make updatedb
