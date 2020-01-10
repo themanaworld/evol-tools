@@ -390,7 +390,7 @@ def ItemWrite(tbl, ID=False, AEGIS=False, NAME=False, PRICE=False, WEIGHT=False,
             wikia.write("<td>Atk: %s</td>" % i.atk)
             if stgen:
                 lv=int(i.lvl)
-                at=int(i.atk)
+                #at=int(i.atk)
                 fc=7.5
                 ## Two hand swords are stronger
                 if i in IT_WEAPON['HAND_2']:
