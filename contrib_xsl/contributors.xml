@@ -101,6 +101,7 @@ http://wiki.themanaworld.org/index.php/Contributors
     </evol>
     <!-- "The Mana World: Legacy" contributors -->
     <tmw-legacy>
+        <contributor nick="Chicka-Maria" mailid="comfycheeks" mailserver="themanaworld.org"/>
         <contributor nick="Crush" name="Philipp Sehmisch" mailid="tmw" mailserver="crushnet.org"/>
         <contributor nick="Enchilado" name="W E Sayers"/>
         <contributor nick="gumi"/>
