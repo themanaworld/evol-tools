@@ -630,7 +630,9 @@ def ItemWrite(tbl, ID=False, AEGIS=False, NAME=False, PRICE=False, WEIGHT=True, 
         try:
             zt=int(i.weight)
         except:
+            zt=0
             tbl.remove(i)
+        del zt
 
     for i in sorted(tbl, key=lambda xcv: int(xcv.weight), reverse=True):
         if ID:
