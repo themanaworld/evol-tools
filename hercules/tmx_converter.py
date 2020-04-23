@@ -372,13 +372,22 @@ class ContentHandler(xml.sax.ContentHandler):
                 elif isinstance(obj, Warp):
                     if (obj.npc_id == u'WARP'):
                         obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
-                        self.warps.write(
-                            SEPARATOR.join([
-                                '%s,%d,%d,0\t' % (self.base, obj.x, obj.y),
-                                'warp\t',
-                                '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
-                            ])
-                        )
+                        if (obj.dest_map.lower() in ["slide", "self"]):
+                            self.warps.write(
+                                SEPARATOR.join([
+                                    '%s,%d,%d,0\t' % (self.base, obj.x, (obj.y)),
+                                    'script\t',
+                                    '%s\tNPC_HIDDEN,%d,%d,{\n\tend;\nOnTouch:\n\tslide %d,%d; end;\n}\n' % (obj_name, obj.w, obj.h, obj.dest_x, obj.dest_y),
+                                ])
+                            )
+                        else:
+                            self.warps.write(
+                                SEPARATOR.join([
+                                    '%s,%d,%d,0\t' % (self.base, obj.x, obj.y),
+                                    'warp\t',
+                                    '%s\t%s,%s,%s,%d,%d\n' % (obj_name, obj.w, obj.h, obj.dest_map, obj.dest_x, obj.dest_y),
+                                ])
+                            )
                         self.warp_cnt = True
                     elif (not obj.npc_id == u'SCRIPT'):
                         obj_name = "#%s_%s_%s" % (self.base, obj.x, obj.y)
