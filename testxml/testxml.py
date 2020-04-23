@@ -1571,6 +1571,7 @@ def testMap(mapName, file, path):
 
     fringe = None
     collision = None
+    heightLayer = None
     lowLayers = []
     overLayers = []
     beforeFringe = True
@@ -1590,6 +1591,10 @@ def testMap(mapName, file, path):
             if collision is not None:
                 showMsgFile(file, "duplicate Collision layer", True)
             collision = obj
+        elif name.lower() == "height" or name.lower() == "heights":
+            if heightLayer is not None:
+                showMsgFile(file, "duplicate Height layer", True)
+            heightLayer = obj
         elif beforeFringe == True:
             lowLayers.append(obj)
         else:
@@ -1619,6 +1624,8 @@ def testMap(mapName, file, path):
         showMsgFile(file, "missing fringe layer", True)
     if collision == None:
         showMsgFile(file, "missing collision layer", True)
+    if heightLayer == None:
+        showMsgFile(file, "missing heights layer", True)
     elif mapName != "test.tmx" and mapName != "testbg.tmx":
         ids = testCollisionLayer(file, collision, tilesMap)
         if ids[0] != None and len(ids[0]) > 0:
