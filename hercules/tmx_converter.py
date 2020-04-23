@@ -204,8 +204,8 @@ class ContentHandler(xml.sax.ContentHandler):
                 self.state = State.LAYER
                 # Map width must be enough to fill the largest widescreen on market
                 if (self.width < WIDESCREEN/TILESIZE):
-                    print('Bad map width: %d (min. %d)' % (self.width, WIDESCREEN/TILESIZE))
-                    raise Exception('Invalid map width: %d (min. %d)' % (self.width, WIDESCREEN/TILESIZE))
+                    print('\n\nERROR: invalid map width: %d (min. %d)' % (self.width, WIDESCREEN/TILESIZE))
+                    #raise SyntaxError('width')
         elif self.state is State.LAYER:
             if name == u'layer':
                 self.layers.add(attr[u'name'].lower())
