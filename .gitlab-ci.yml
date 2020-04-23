@@ -8,7 +8,7 @@ pyflakes2:
   script:
   - ./ci/install.sh python2.7 pyflakes
   - pyflakes .
-  image: debian:unstable
+  image: debian:stable
 
 .pyflakes3:
   stage: test
