@@ -45,6 +45,7 @@ other_warp_fields = (
 )
 
 TILESIZE = 32
+WIDESCREEN=1920
 SEPARATOR = ''
 MESSAGE = 'This file is generated automatically. All manually added changes will be removed when running the Converter.'
 CLIENT_MAPS = 'maps'
@@ -202,9 +203,9 @@ class ContentHandler(xml.sax.ContentHandler):
                 self.layer_name = attr[u'name'].lower()
                 self.state = State.LAYER
                 # Map width must be enough to fill the largest widescreen on market
-                if (self.width < 1920/TILESIZE):
-                    print('Bad map width: %d (min. %d)' % (self.width, 1920/TILESIZE))
-                    raise Exception('Invalid map width: %d (min. %d)' % (self.width, 1920/TILESIZE))
+                if (self.width < WIDESCREEN/TILESIZE):
+                    print('Bad map width: %d (min. %d)' % (self.width, WIDESCREEN/TILESIZE))
+                    raise Exception('Invalid map width: %d (min. %d)' % (self.width, WIDESCREEN/TILESIZE))
         elif self.state is State.LAYER:
             if name == u'layer':
                 self.layers.add(attr[u'name'].lower())
