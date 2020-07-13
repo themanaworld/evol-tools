@@ -95,6 +95,18 @@ if [ "${VER}" -lt "19" ]; then
     run "2019-05-09--18-07.sql"
 fi
 
-if [ "${VER}" -lt "19" ]; then
-    echo "19" >versions/sqlver
+if [ "${VER}" -lt "20" ]; then
+    run "2019-08-08--19-43.sql"
+    run "2019-10-05--19-01.sql"
+    run "2019-10-12--14-21.sql"
+    run "2019-11-22--23-58.sql"
+    run "2020-01-24--01-09.sql"
+    run "2020-03-22--01-56.sql"
+    run "2020-03-22--03-09.sql"
+    run "2020-05-01--04-44.sql"
+    run "2020-05-10--23-11.sql"
+fi
+
+if [ "${VER}" -lt "20" ]; then
+    echo "20" >versions/sqlver
 fi
