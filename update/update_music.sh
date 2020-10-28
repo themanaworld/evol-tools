@@ -29,7 +29,7 @@ if [ -f evol-${u1}..${u2}.zip ]; then
     mv ../muciscommit.txt ../muciscommit_old.txt
     echo ${head} >../muciscommit.txt
     sum=`../adler32 1 music-${u1}..${u2}.zip`
-    echo "    <update type=\"music\" required=\"no\" file=\"music-${u1}..${u2}.zip\" hash=\"${sum}\" description=\"Evol music\" />" >> xml_header.txt
+    echo "    <update type=\"music\" required=\"no\" file=\"music-${u1}..${u2}.zip\" hash=\"${sum}\" description=\"TMW music\" />" >> xml_header.txt
     cp xml_header.txt resources.xml
     cat xml_footer.txt >>resources.xml
 
