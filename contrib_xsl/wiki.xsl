@@ -12,6 +12,12 @@ Copyright (C) 2016 Evol Online -->
         <xsl:apply-templates/>
     </xsl:template>
 
+    <xsl:template match="tmw-revolt">
+        <xsl:text>^	rEvolt Contributors	^^&#xa;</xsl:text>
+        <xsl:text>^	Nickname	^	Real Name / Email	^	Link	^&#xa;</xsl:text>
+        <xsl:apply-templates/>
+    </xsl:template>
+
     <xsl:template match="evol">
         <xsl:text>^	Evol Online Contributors	^^&#xa;</xsl:text>
         <xsl:text>^	Nickname	^	Real Name / Email	^	Link	^&#xa;</xsl:text>
