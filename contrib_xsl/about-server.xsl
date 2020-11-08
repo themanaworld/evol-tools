@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<!-- Author: Reid
+<!-- Author: Reid, jak1
+Copyright (C) 2016-2020 The Mana World
 Copyright (C) 2016 Evol Online -->
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -12,6 +13,14 @@ Copyright (C) 2016 Evol Online -->
         <xsl:text>.&lt;- @@index|&lt;&lt;Back to Index&gt;&gt;@@&#xa;&#xa;</xsl:text>
         <xsl:text>@@http://evolonline.org/|&lt;&lt;Official site:&gt;&gt; http://evolonline.org@@&#xa;</xsl:text>
         <xsl:apply-templates/>
+    </xsl:template>
+
+    <xsl:template match="tmw-revolt">
+        <xsl:text>&#xa;##3---------------------------&#xa;</xsl:text>
+        <xsl:text>##3-- &lt;&lt;The Mana World rEvolt Contributors&gt;&gt; --&#xa;</xsl:text>
+        <xsl:text>##3---------------------------&#xa;&#xa;</xsl:text>
+
+        <xsl:apply-templates select="contributor"/>
     </xsl:template>
 
     <xsl:template match="evol">
