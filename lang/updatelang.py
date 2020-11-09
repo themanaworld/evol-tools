@@ -389,7 +389,7 @@ loadItemDb(rootPath + "db/re")
 loadMobNames(rootPath + "db/re")
 collectScriptStrings(rootPath + "/npc", "npc")
 collectScriptFileStrings("db/re/item_db.conf", rootPath + "/db/re/item_db.conf")
-collectMessages(rootPath + "/conf/messages.conf")
+#collectMessages(rootPath + "/conf/messages.conf")
 loadFiles(rootPath + "/langs")
 addMissingLines()
 loadPoFiles("in");
