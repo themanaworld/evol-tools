@@ -21,7 +21,7 @@ git log --pretty=oneline -n 1 | awk '{print $1}' >../tools/update/musiccommit.tx
 cd $dir/files
 sum=`../adler32 1 music.zip`
 
-echo "    <update type=\"music\" required=\"no\" file=\"music.zip\" hash=\"${sum}\" description=\"Evol music\" />" >> xml_header.txt
+echo "    <update type=\"music\" required=\"no\" file=\"music.zip\" hash=\"${sum}\" description=\"TMW music\" />" >> xml_header.txt
 
 cp xml_header.txt resources.xml
 cat xml_footer.txt >>resources.xml
