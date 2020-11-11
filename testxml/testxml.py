@@ -1309,7 +1309,6 @@ def testParticles(id, node, nodeName, src):
 
 def testSounds(id, node, type):
     global errors
-    havemiss = False
     for sound in node.getElementsByTagName("sound"):
         try:
             event = sound.attributes["event"].value
@@ -1323,14 +1322,9 @@ def testSounds(id, node, type):
                 print "error: incorrect sound event name " + event + " in id=" + id
                 errors = errors + 1
         elif type == "item":
-            if event != "hit" and event != "strike" and event != "miss":
+            if event != "hit" and event != "miss":
                 print "error: incorrect sound event name " + event + " in id=" + id
                 errors = errors + 1
-            if event == "strike" or event == "miss":
-                if havemiss:
-                    print "error: miss and strike attributes at same time in id=" + id
-                    errors = errors + 1
-                havemiss = True
 
         testSound(sound.childNodes[0].data, sfxDir, "")
 
