@@ -46,5 +46,5 @@ itstool -o pot/deadmessages1.pot tmp/deadmessages.xml
 
 find ../../client-data/maps -type f -name "*.tmx" -exec ./processtmx.sh {} \;
 
-msgcat pot/*.pot > clientdata-beta.pot
+msgcat pot/*.pot > clientdata.pot
 msgcat dict/*.pot > clientdata-dict.pot

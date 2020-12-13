@@ -396,3 +396,4 @@ loadPoFiles("in");
 #dumpTranslations();
 sorting()
 saveFiles(rootPath + "/langs", "out")
+os.rename("out/"+defaultLang+".pot", "serverdata.pot")
