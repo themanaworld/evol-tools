@@ -28,6 +28,7 @@ import sys
 import os
 import posixpath
 import xml.sax
+import traceback
 
 dump_all = False # wall of text
 check_mobs = True # mob_db.txt
@@ -497,7 +498,7 @@ def main(argv):
                     pass
                 else:
                     print("\n\nUnexpected error in map %s.\n" % base)
-                    raise
+                    traceback.print_exc()
     map_conf.write(")\n")
     sys.stdout.write('\033[2K\nDone: %i maps converted.\n' % map_count)
     sys.stdout.flush()
